@@ -22,6 +22,11 @@ class CreateArtikel extends Migration
             $table->text('excerpt');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
+            $table->bigInteger('user_id', false, true)->nullable()->default(null);
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 
