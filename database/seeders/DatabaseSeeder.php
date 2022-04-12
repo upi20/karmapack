@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(150)->create();
 
         // address seeders
-        AddressProvinceSeeders::run();
-        AddressRegenciesSeeder::run();
-        AddressDistrictSeeders::run();
-        AddressVillageSeeders::run();
+        // AddressProvinceSeeders::run();
+        // AddressRegenciesSeeder::run();
+        // AddressDistrictSeeders::run();
+        // AddressVillageSeeders::run();
     }
 }
