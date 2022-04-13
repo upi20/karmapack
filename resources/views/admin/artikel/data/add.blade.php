@@ -1,9 +1,19 @@
 @extends('templates.admin.master')
-
+@php
+$is_edit = isset($edit);
+$id = $is_edit ? $artikel->id : '';
+$route = $is_edit ? route('admin.artikel.data.update') : route('admin.artikel.data.insert');
+$nama = $is_edit ? $artikel->nama : '';
+$slug = $is_edit ? $artikel->slug : '';
+$excerpt = $is_edit ? $artikel->excerpt : '';
+$detail = $is_edit ? $artikel->detail : '';
+$status = $is_edit ? $artikel->status : 1;
+$status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
+@endphp
 @section('content')
     <div class="card">
         <div class="card-header bg-info">
-            <h3 class="card-title text-light">Tambah Artikel Baru</h3>
+            <h3 class="card-title text-light">Form {{ $page_attr['title'] }}</h3>
         </div>
         <div class="card-body">
             <form method="post" action="" enctype="multipart/form-data" id="MainForm">
@@ -12,14 +22,15 @@
                         <div class="form-group">
                             <label for="nama">Nama Artikel</label>
                             <input type="text" name="nama" id="nama" class="form-control" required
-                                placeholder="Nama Artikel" />
+                                placeholder="Nama Artikel" value="{{ $nama }}" />
+                            <input type="hidden" class="" name="id" id="id" value="{{ $id }}" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" name="slug" id="slug" class="form-control" required
-                                placeholder="Untuk URL" />
+                            <input type="text" name="slug" id="slug" class="form-control" required placeholder="Untuk URL"
+                                value="{{ $slug }}" />
                             <small>Slug digunakan untuk akses artikel lewat url atau alamt web, slug diatas tidak boleh sama
                                 dengan slug dari artikel yang lain</small>
 
@@ -29,13 +40,13 @@
                         <div class="form-group">
                             <label for="excerpt">Kilasan/Cuplikan</label>
                             <textarea class="form-control mb-4" placeholder="Kilasan/Cuplikan artikel" id="excerpt" name="excerpt" required
-                                rows="4"></textarea>
+                                rows="4">{{ $excerpt }}</textarea>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label><strong>Description :</strong></label>
-                            <textarea class="summernote" name="detail"></textarea>
+                            <textarea class="summernote" name="detail">{{ $detail }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -43,11 +54,13 @@
                             <div class="form-label">Publikasikan Artikel:</div>
                             <div class="custom-controls-stacked">
                                 <label class="custom-control custom-radio-md" style="display: unset">
-                                    <input type="radio" class="custom-control-input" name="status" value="0" checked>
+                                    <input type="radio" class="custom-control-input" name="status" value="0"
+                                        {{ $status[0] }}>
                                     <span class="custom-control-label">Simpan</span>
                                 </label>
                                 <label class="custom-control custom-radio-md" style="display: unset">
-                                    <input type="radio" class="custom-control-input" name="status" value="1">
+                                    <input type="radio" class="custom-control-input" name="status" value="1"
+                                        {{ $status[1] }}>
                                     <span class="custom-control-label">Publish</span>
                                 </label>
                             </div>
@@ -71,6 +84,7 @@
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script type="text/javascript">
+        const is_edit = '{{ $is_edit }}';
         let errorAfterInput = [];
         $(document).ready(function() {
             // init summernote
@@ -125,7 +139,7 @@
                         return button.render();
                     }
                 },
-                height: 300,
+                height: 600,
             });
 
             $("#nama").keyup(function() {
@@ -141,7 +155,7 @@
                 var formData = new FormData(this);
                 resetErrorAfterInput();
                 setBtnLoading('button[type=submit]', 'Save');
-                const route = "{{ route('admin.artikel.data.insert') }}";
+                const route = "{{ $route }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -156,11 +170,15 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully. You will be reload in 2 Seconds',
+                            title: 'Data saved successfully.' + (
+                                is_edit ? '' :
+                                'You will be reload in 2 Seconds'),
                             showConfirmButton: false,
                             timer: 2000
                         }).then(function() {
-                            window.location.reload()
+                            if (!is_edit) {
+                                window.location.reload()
+                            }
                         });
 
                     },

@@ -52,6 +52,21 @@ class ArtikelController extends Controller
         return view('admin.artikel.data.add', compact('page_attr'));
     }
 
+    public function edit(Artikel $artikel)
+    {
+        $navigation = 'admin.artikel.data';
+        $page_attr = [
+            'title' => 'Edit Artikel',
+            'breadcrumbs' => [
+                ['name' => 'Artikel'],
+                ['name' => 'Manage List Artikel', 'url' => $navigation],
+            ],
+            'navigation' => $navigation
+        ];
+        $edit = true;
+        return view('admin.artikel.data.add', compact('page_attr', 'edit', 'artikel'));
+    }
+
     public function insert(Request $request)
     {
         try {
@@ -119,12 +134,106 @@ class ArtikelController extends Controller
         }
     }
 
-    public function delete(Request $request)
+    public function update(Request $request)
     {
         try {
-            // get model
+            $request->validate([
+                'id' => ['required', 'int'],
+                'nama' => ['required', 'string', 'max:255'],
+                'slug' => ['required', 'string', 'max:255', 'unique:artikel,slug,' . $request->id],
+                'detail' => ['required'],
+                'excerpt' => ['required'],
+                'status' => ['required', 'int'],
+            ]);
             $artikel = Artikel::find($request->id);
+            $detail = $request->detail;
+            $dom = new \DomDocument();
+            $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            $images = $dom->getElementsByTagName('img');
 
+            // nama folder diambil dari 10 karakter slug
+            $folder = $artikel->foto_folder;
+
+            $path_image_src = "/assets/artikel/$folder";
+            $path_folder = public_path() . $path_image_src;
+            if (!file_exists($path_folder)) {
+                mkdir($path_folder, 777);
+            }
+
+            // foto / icon artikel diambil dari foto pertama dalam artikel
+            $image_icon_status = true;
+            $image_icon = $artikel->foto;
+
+            // foto yang dipakai
+            $foto_used = [];
+            foreach ($images as $k => $img) {
+                $data = $img->getAttribute('src');
+
+                // cek apakah foto dari insert summernote
+                if (str_contains($data, 'data:image')) {
+                    list($type, $data) = explode(';', $data);
+                    list(, $data)      = explode(',', $data);
+                    $data = base64_decode($data);
+
+                    $image_name = '/' . time() . $k . '.png';
+                    $path = $path_folder . $image_name;
+                    file_put_contents($path, $data);
+                    $img->removeAttribute('src');
+                    $img->setAttribute('src', $path_image_src . $image_name);
+                    $foto_used[] = $path_image_src . $image_name;
+
+                    // set foto icon
+                    if ($image_icon_status) {
+                        $image_icon_status = false;
+                        $image_icon = $path_image_src . $image_name;
+                    }
+                }
+
+                // simpan untuk icon
+                if (!str_contains($data, 'data:image')) {
+                    if ($image_icon_status) {
+                        $image_icon_status = false;
+                        $image_icon = $data;
+                    }
+                    $foto_used[] = $data;
+                }
+            }
+
+            $detail = $dom->saveHTML();
+            $artikel->foto = $image_icon_status ? null : $image_icon;
+            $artikel->nama = $request->nama;
+            $artikel->slug = $request->slug;
+            $artikel->detail = $detail;
+            $artikel->excerpt = $request->excerpt;
+            $artikel->status = $request->status;
+            $artikel->save();
+
+            // delete foto yang tidak dipakai
+            // $files = scandir($path_folder);
+            // $not_used = array_diff($files, $foto_used);
+            // dd($not_used, $files, $foto_used);
+            // foreach ($files as $file) {
+            //     // cek isi folder
+            //     if ($file != '.' && $file != '..') {
+            //         // delete file
+            //         // $this->deleteFile("$path_folder/$file");
+            //     }
+            // }
+
+
+
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function delete(Artikel $artikel)
+    {
+        try {
             // cek folder
             if ($artikel->foto_folder) {
                 // getfolder
