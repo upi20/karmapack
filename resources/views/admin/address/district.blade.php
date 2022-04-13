@@ -143,7 +143,6 @@
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script>
-        let errorAfterInput = [];
         const table_html = $('#tbl_main');
         let isUpdate = false;
         $(document).ready(function() {
@@ -412,36 +411,6 @@
                         }
                     });
                 }
-            });
-        }
-
-        function setErrorAfterInput(error, element) {
-            // get element after input
-            let after = $(element).next();
-            if (after.length == 0) $(element).after('<div></div>');
-            if (after.length == 0) after = $(element).next();
-
-            // highlight
-            $(element).addClass("is-invalid").removeClass("is-valid");
-            let errors = Array.isArray(error) ? '' : `<li class="text-danger">${error}</li>`;
-            if (Array.isArray(error)) {
-                error.forEach(err => {
-                    errors += `<li class="text-danger">${err}</li>`;
-                });
-            }
-
-            after.html(`<div><ul style="padding-left: 20px;">${errors}</ul></div>`);
-        }
-
-        function resetErrorAfterInput() {
-            errorAfterInput.forEach(id => {
-                // get element after input
-                const element = $(`#${id}`);
-                let after = $(element).next();
-                if (after.length == 0) $(element).after('<div></div>');
-                if (after.length == 0) after = $(element).next();
-                $(element).addClass("is-valid").removeClass("is-invalid");
-                after.html('');
             });
         }
 

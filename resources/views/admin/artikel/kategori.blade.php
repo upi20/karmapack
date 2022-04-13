@@ -6,23 +6,23 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Address Provinces Table</h3>
+                    <h3 class="card-title">Kategori Table</h3>
                     <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
                         data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
                         <i class="bi bi-plus-lg"></i> Add
                     </button>
                 </div>
                 <div class="card-body">
+                    <h5 class="h5">Filter Data</h5>
                     <div class="table-responsive table-striped">
                         <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Regencies</th>
-                                    <th>District</th>
-                                    <th>Village</th>
+                                    <th>Nama</th>
+                                    <th>Slug</th>
+                                    <th>Artikel</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -44,19 +44,26 @@
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
                         enctype="multipart/form-data">
+                        <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="form-label" for="id">ID <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="id" name="id" placeholder="Enter ID"
+                            <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama"
                                 required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
+                            <label class="form-label" for="slug">slug <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Nama"
                                 required="" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="status">Status</label>
+                            <select class="form-control" style="width: 100%;" required="" id="status" name="status">
+                                <option value="1">Dipakai</option>
+                                <option value="0">Tidak Dipakai</option>
+                            </select>
                         </div>
                     </form>
                 </div>
-
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
                         <li class="fa fa-save mr-1"></li> Save changes
@@ -85,7 +92,6 @@
 
     <script>
         const table_html = $('#tbl_main');
-        let isUpdate = false;
         $(document).ready(function() {
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -103,7 +109,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.address.province') }}",
+                    url: "{{ route('admin.artikel.kategori') }}",
                     data: function(d) {
                         d['filter[active]'] = $('#filter_active').val();
                         d['filter[role]'] = $('#filter_role').val();
@@ -115,24 +121,21 @@
                         orderable: false,
                     },
                     {
-                        data: 'id',
-                        name: 'id'
+                        data: 'nama',
+                        name: 'nama'
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'slug',
+                        name: 'slug'
                     },
                     {
-                        data: 'regencie',
-                        name: 'regencie'
-                    },
-                    {
-                        data: 'district',
-                        name: 'district'
-                    },
-                    {
-                        data: 'village',
-                        name: 'village'
+                        data: 'status_str',
+                        name: 'status',
+                        render(data, type, full, meta) {
+                            const class_el = full.status == 1 ? 'badge bg-success' :
+                                'badge bg-danger';
+                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                        },
                     },
                     {
                         data: 'id',
@@ -141,6 +144,7 @@
                             return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
                                 data-id="${full.id}"
                                 data-name="${full.name}"
+                                data-status="${full.status}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -177,9 +181,8 @@
                 e.preventDefault();
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
-                resetErrorAfterInput();
-                const route = isUpdate ? "{{ route('admin.address.province.update') }}" :
-                    "{{ route('admin.address.province.store') }}";
+                const route = ($('#id').val() == '') ? "{{ route('admin.artikel.kategori.insert') }}" :
+                    "{{ route('admin.artikel.kategori.update') }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -205,11 +208,6 @@
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
-                        errorAfterInput = [];
-                        for (const property in res.errors) {
-                            errorAfterInput.push(property);
-                            setErrorAfterInput(res.errors[property], `#${property}`);
-                        }
                         Swal.fire({
                             position: 'top-end',
                             icon: 'error',
@@ -228,27 +226,23 @@
         });
 
         function add() {
-            isUpdate = false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add Address Provinces");
+            $('#modal-default-title').html("Add Kategori");
             $('#modal-default').modal('show');
             $('#id').val('');
-            $('#id').removeAttr('readonly');
-            resetErrorAfterInput();
             $('#password').attr('required', true);
         }
 
 
         function editFunc(datas) {
-            isUpdate = true;
             const data = datas.dataset;
-            $('#modal-default-title').html("Edit Address Provinces");
+            $('#modal-default-title').html("Edit Kategori");
             $('#modal-default').modal('show');
             $('#MainForm').trigger("reset");
             $('#id').val(data.id);
-            $('#id').attr('readonly', true);
-            $('#name').val(data.name);
-            $('#password').removeAttr('required');
+            $('#nama').val(data.nama);
+            $('#status').val(data.status);
+            $('#slug').val(data.slug);
         }
 
         function deleteFunc(id) {
@@ -261,7 +255,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/address/province') }}/${id}`,
+                        url: `{{ url('admin/artikel/kategori') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
@@ -278,9 +272,9 @@
                         },
                         success: function(data) {
                             Swal.fire({
-                                position: 'top-end',
+                                position: 'center',
                                 icon: 'success',
-                                title: 'Address Provinces deleted successfully',
+                                title: 'Kategori  deleted successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -299,8 +293,4 @@
             });
         }
     </script>
-@endsection
-
-@section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
 @endsection

@@ -157,7 +157,6 @@
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script>
-        let errorAfterInput = [];
         const table_html = $('#tbl_main');
         let isUpdate = false;
         $(document).ready(function() {
@@ -495,30 +494,6 @@
             }
 
             after.html(`<div><ul style="padding-left: 20px;">${errors}</ul></div>`);
-        }
-
-        function resetErrorAfterInput() {
-            errorAfterInput.forEach(id => {
-                // get element after input
-                const element = $(`#${id}`);
-                let after = $(element).next();
-                if (after.length == 0) $(element).after('<div></div>');
-                if (after.length == 0) after = $(element).next();
-                $(element).addClass("is-valid").removeClass("is-invalid");
-                after.html('');
-            });
-        }
-
-        function clearRegency() {
-            $('#regency_id')
-                .append((new Option('', '', true, true)))
-                .trigger('change');
-        }
-
-        function clearDistrict() {
-            $('#district_id')
-                .append((new Option('', '', true, true)))
-                .trigger('change');
         }
     </script>
 @endsection
