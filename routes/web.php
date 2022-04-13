@@ -116,7 +116,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         // Data
         Route::group(['prefix' => 'data'], function () {
             Route::get('/', [ArtikelController::class, 'index'])->name('admin.artikel.data');
+            Route::delete('/{id}', [ArtikelController::class, 'delete'])->name('admin.artikel.data.delete');
             Route::get('/add', [ArtikelController::class, 'add'])->name('admin.artikel.data.add');
+            Route::get('/edit/{id}', [ArtikelController::class, 'edit'])->name('admin.artikel.data.edit');
             Route::post('/insert', [ArtikelController::class, 'insert'])->name('admin.artikel.data.insert');
         });
     });

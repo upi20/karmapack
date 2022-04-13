@@ -122,17 +122,10 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
-                                data-id="${full.id}"
-                                data-name="${full.name}"
-                                data-email="${full.email}"
-                                data-role="${full.role}"
-                                data-status="${full.status}"
-                                data-date_of_birth="${full.date_of_birth}"
-                                data-angkatan="${full.angkatan}"
-                                onClick="editFunc(this)">
+                            return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                                href="{{ url('admin/artikel/data/edit') }}/${data}" >
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
+                                </a>
                                 <button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
                                 </button>
@@ -142,7 +135,7 @@
                     },
                 ],
                 order: [
-                    [1, 'asc']
+                    [1, 'desc']
                 ]
             });
 
@@ -172,7 +165,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/user') }}/${id}`,
+                        url: `{{ url('admin/artikel/data') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
