@@ -25,9 +25,10 @@ Artikel
     Update [Done]
     Delete [Done]
     Kategori
-        Crud
+        Crud [Done]
         Implementasi Crud Artikel
     Tag
+        Crud  [Done]
         Implementasi Crud Artikel
     Implementasi Artikel Icon
     Implementasi Artikel Pagination

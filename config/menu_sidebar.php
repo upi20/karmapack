@@ -15,7 +15,7 @@ return [
             'children' => [
                 ['title' => 'Data', 'route' => 'admin.artikel.data'],
                 ['title' => 'Kategori', 'route' => 'admin.artikel.kategori'],
-                ['title' => 'Tag']
+                ['title' => 'Tag', 'route' => 'admin.artikel.tag']
             ],
         ],
         [

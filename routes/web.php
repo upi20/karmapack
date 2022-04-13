@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\Address\VillageController;
 // artikel
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
+use App\Http\Controllers\Admin\Artikel\TagController;
 
 
 // ====================================================================================================================
@@ -132,6 +133,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::post('/', [KategoriController::class, 'insert'])->name('admin.artikel.kategori.insert');
             Route::delete('/{model}', [KategoriController::class, 'delete'])->name('admin.artikel.kategori.delete');
             Route::post('/update', [KategoriController::class, 'update'])->name('admin.artikel.kategori.update');
+        });
+
+        // Tag
+        Route::group(['prefix' => 'tag'], function () {
+            Route::get('/', [TagController::class, 'index'])->name('admin.artikel.tag');
+            Route::get('/select2', [TagController::class, 'select2'])->name('admin.artikel.tag.select2');
+            Route::post('/', [TagController::class, 'insert'])->name('admin.artikel.tag.insert');
+            Route::delete('/{model}', [TagController::class, 'delete'])->name('admin.artikel.tag.delete');
+            Route::post('/update', [TagController::class, 'update'])->name('admin.artikel.tag.update');
         });
     });
 });
