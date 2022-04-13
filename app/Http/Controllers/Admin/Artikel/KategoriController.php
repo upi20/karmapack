@@ -17,8 +17,8 @@ class KategoriController extends Controller
         if (request()->ajax()) {
             // extend query
             $this->query['artikel'] = <<<SQL
-                        (select count(*) from artikel_keategori_detail
-                            where artikel_keategori_detail.kategori_id = artikel_kategori.id)
+                        (select count(*) from artikel_kategori_detail
+                            where artikel_kategori_detail.kategori_id = artikel_kategori.id)
                     SQL;
             $this->query['artikel_alias'] = 'artikel';
             $model = Kategori::select(['id', 'nama', 'slug', 'status'])
