@@ -10,6 +10,15 @@ return [
             // 'children' => [['title' => 'View User', 'route' => 'admin.user']],
         ],
         [
+            'title' => 'Artikel',
+            'icon' => 'fe fe-file-text',
+            'children' => [
+                ['title' => 'Data', 'route' => 'admin.artikel.data'],
+                ['title' => 'Kategori'],
+                ['title' => 'Tag']
+            ],
+        ],
+        [
             'title' => 'Address', 'icon' => 'fe fe-map-pin',
             'children' => [
                 ['title' => 'Province', 'route' => 'admin.address.province'],

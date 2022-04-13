@@ -1,0 +1,10 @@
+jika artikel tidak mempunyai foto
+        $str = '<p><br><div class="embed-container"><iframe src="https://www.youtube.com/embed/0jWD8zv3-8s?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div></p>';
+        $str = explode('src="', $str);
+        $matches = '';
+        preg_match(
+            "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",
+            $str[1],
+            $matches
+        );
+        dd($matches);

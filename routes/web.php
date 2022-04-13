@@ -16,16 +16,13 @@ use App\Http\Controllers\Admin\Address\ProvinceController;
 use App\Http\Controllers\Admin\Address\RegencieController;
 use App\Http\Controllers\Admin\Address\DistrictController;
 use App\Http\Controllers\Admin\Address\VillageController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+// artikel
+use App\Http\Controllers\Admin\Artikel\ArtikelController;
+
+
+// ====================================================================================================================
+// ====================================================================================================================
 
 // home default
 Route::get('/', function () {
@@ -110,6 +107,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::post('/', [VillageController::class, 'store'])->name('admin.address.village.store');
             Route::delete('/{id}', [VillageController::class, 'delete'])->name('admin.address.village.delete');
             Route::post('/update', [VillageController::class, 'update'])->name('admin.address.village.update');
+        });
+    });
+
+    // Artikel
+    Route::group(['prefix' => 'artikel'], function () {
+
+        // Data
+        Route::group(['prefix' => 'data'], function () {
+            Route::get('/', [ArtikelController::class, 'index'])->name('admin.artikel.data');
+            Route::get('/add', [ArtikelController::class, 'add'])->name('admin.artikel.data.add');
+            Route::post('/insert', [ArtikelController::class, 'insert'])->name('admin.artikel.data.insert');
         });
     });
 });

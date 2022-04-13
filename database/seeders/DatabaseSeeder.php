@@ -21,12 +21,13 @@ class DatabaseSeeder extends Seeder
             'role' => User::ROLE_ADMIN,
             'active' => '1'
         ]);
-        \App\Models\User::factory(150)->create();
+        // \App\Models\User::factory(150)->create();
 
         // address seeders
         // AddressProvinceSeeders::run();
         // AddressRegenciesSeeder::run();
         // AddressDistrictSeeders::run();
         // AddressVillageSeeders::run();
+        AnggotaSeeders::run();
     }
 }

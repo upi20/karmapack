@@ -21,6 +21,7 @@ class AddAddressAndOtherInformation extends Migration
             $table->date('date_of_birth')->after('name')->nullable()->default(null);
             $table->year('angkatan')->after('name')->nullable()->default(null);
             $table->string('username')->after('email')->unique()->nullable()->default(null);
+            $table->string('gender')->after('email')->unique()->nullable()->default(null);
 
             // relationship
             $table->foreign('province_id')
@@ -57,6 +58,7 @@ class AddAddressAndOtherInformation extends Migration
             $table->dropColumn('date_of_birth');
             $table->dropColumn('angkatan');
             $table->dropColumn('username');
+            $table->dropColumn('gender');
         });
     }
 }

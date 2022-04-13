@@ -92,7 +92,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                         @foreach ($page_attr->breadcrumbs as $breadcrumb)
                                             <li class="breadcrumb-item">
                                                 @if (isset($breadcrumb['url']))
-                                                    <a href="{{ $breadcrumb['url'] }}"
+                                                    <a href="{{ route($breadcrumb['url']) }}"
                                                         title="Page To {{ $breadcrumb['name'] }}">
                                                         {{ $breadcrumb['name'] }}
                                                     </a>
