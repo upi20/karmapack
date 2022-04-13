@@ -46,8 +46,8 @@ Route::get('/home', function () {
             return Redirect::route('admin.dashboard');
             break;
 
-        case User::ROLE_USER:
-            return Redirect::route('user.dashboard');
+        case User::ROLE_MEMBER:
+            return Redirect::route('member.dashboard');
             break;
 
         default:
@@ -124,10 +124,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
 
 // User Panel Admin
-Route::group(['prefix' => 'user', 'middleware' => ['auth:sanctum', 'verified', 'user']], function () {
+Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified', 'member']], function () {
     Route::get('/dashboard', function () {
-        return view('user.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
-    })->name('user.dashboard');
+        return view('member.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
+    })->name('member.dashboard');
 });
 
 Route::get('/tesadmin', function () {

@@ -14,13 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('users')->insert(array(
+            0 =>
+            array(
                 'id' => 1,
                 'name' => 'Isep Lutpi Nur',
                 'angkatan' => '2019',
@@ -44,13 +44,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2022-04-13 13:40:12',
                 'updated_at' => '2022-04-13 14:09:42',
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'id' => 6,
                 'name' => 'Isep Lutpi Nur',
                 'angkatan' => '2012',
                 'date_of_birth' => '2000-08-10',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'iseplutpinur7@gmail.com2',
                 'gender' => NULL,
                 'username' => NULL,
@@ -69,13 +69,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-13 13:44:04',
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'id' => 7,
                 'name' => 'Pengurus 2',
                 'angkatan' => '2019',
                 'date_of_birth' => '2001-02-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'pengurus2@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -94,13 +94,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
-            array (
+            3 =>
+            array(
                 'id' => 9,
                 'name' => 'Ilham Solehudin',
                 'angkatan' => '2019',
                 'date_of_birth' => '2000-08-13',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ilham@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -119,13 +119,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 => 
-            array (
+            4 =>
+            array(
                 'id' => 14,
                 'name' => 'Pengurus 2',
                 'angkatan' => '2011',
                 'date_of_birth' => '2000-08-14',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'pengurus2@gmail.coma',
                 'gender' => NULL,
                 'username' => NULL,
@@ -144,13 +144,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 => 
-            array (
+            5 =>
+            array(
                 'id' => 16,
                 'name' => 'Hilal',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-25',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'hilal@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -169,13 +169,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 => 
-            array (
+            6 =>
+            array(
                 'id' => 17,
                 'name' => 'Nita H',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-06-15',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'nita_h@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -194,13 +194,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 => 
-            array (
+            7 =>
+            array(
                 'id' => 18,
                 'name' => 'Isep Lutpi Nur',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-08-10',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'isep_lutpi_nur@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -219,13 +219,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-13 13:44:11',
             ),
-            8 => 
-            array (
+            8 =>
+            array(
                 'id' => 19,
                 'name' => 'Abdul Muhlis',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-03-24',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'abdul_muhlis@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -244,13 +244,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 => 
-            array (
+            9 =>
+            array(
                 'id' => 20,
                 'name' => 'Andi Taufik Permadi',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-06-13',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'andi_taufik_permadi@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -269,13 +269,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
-            array (
+            10 =>
+            array(
                 'id' => 21,
                 'name' => 'Sukirman Maulana',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-30',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'sukirman_maulana@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -294,13 +294,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 => 
-            array (
+            11 =>
+            array(
                 'id' => 22,
                 'name' => 'Dewi',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-09-19',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'dewi@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -319,13 +319,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 => 
-            array (
+            12 =>
+            array(
                 'id' => 23,
                 'name' => 'Wiwit Awaliyah',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-11-02',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'wiwit_awaliyah@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -344,13 +344,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 => 
-            array (
+            13 =>
+            array(
                 'id' => 24,
                 'name' => 'Saepul rohman',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-05-10',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'saepul_rohman@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -369,13 +369,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 => 
-            array (
+            14 =>
+            array(
                 'id' => 25,
                 'name' => 'Raden Bintang',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-07-25',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'raden_bintang@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -394,13 +394,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 => 
-            array (
+            15 =>
+            array(
                 'id' => 26,
                 'name' => 'Hilmi Fitriani',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-12-29',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'hilmi_fitriani@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -419,13 +419,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
-            array (
+            16 =>
+            array(
                 'id' => 27,
                 'name' => 'Samsul Maarip',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-01-15',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'samsul_maarip@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -444,13 +444,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
-            array (
+            17 =>
+            array(
                 'id' => 28,
                 'name' => 'Muhamad Raihan Rahman',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-09-23',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'muhamad_raihan_rahman@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -469,13 +469,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 => 
-            array (
+            18 =>
+            array(
                 'id' => 29,
                 'name' => 'Akbar Muhamad Ashoni',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-03-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'akbar_muhamad_ashoni@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -494,13 +494,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 => 
-            array (
+            19 =>
+            array(
                 'id' => 30,
                 'name' => 'Wahid Nursidik',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-06-04',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'wahid_nursidik@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -519,13 +519,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 => 
-            array (
+            20 =>
+            array(
                 'id' => 31,
                 'name' => 'M faisal l',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-06-13',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'm_faisal_l@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -544,13 +544,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 => 
-            array (
+            21 =>
+            array(
                 'id' => 32,
                 'name' => 'Salafia al zahra fauzia',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-06-07',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'salafia_al_zahra_fauzia@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -569,13 +569,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 => 
-            array (
+            22 =>
+            array(
                 'id' => 33,
                 'name' => 'Yusi Yusfita',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-15',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'yusi_yusfita@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -594,13 +594,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 => 
-            array (
+            23 =>
+            array(
                 'id' => 34,
                 'name' => 'Cucu Maryam Nurpadilah',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-10',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'cucu_maryam_nurpadilah@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -619,13 +619,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 => 
-            array (
+            24 =>
+            array(
                 'id' => 35,
                 'name' => 'Rifki Alfaizar',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-03-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'rifki_alfaizar@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -644,13 +644,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 => 
-            array (
+            25 =>
+            array(
                 'id' => 36,
                 'name' => 'M. Ridwan Abdul Aziz',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-03-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'm._ridwan_abdul_aziz@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -669,13 +669,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 => 
-            array (
+            26 =>
+            array(
                 'id' => 37,
                 'name' => 'Novianti',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-02-25',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'novianti@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -694,13 +694,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 => 
-            array (
+            27 =>
+            array(
                 'id' => 38,
                 'name' => 'Ayu pratiwi isman',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-05',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ayu_pratiwi_isman@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -719,13 +719,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 => 
-            array (
+            28 =>
+            array(
                 'id' => 39,
                 'name' => 'Ai rahma alia',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ai_rahma_alia@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -744,13 +744,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 => 
-            array (
+            29 =>
+            array(
                 'id' => 40,
                 'name' => 'Andi auliansyah',
                 'angkatan' => '2018',
                 'date_of_birth' => '1998-09-27',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'andi_auliansyah@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -769,13 +769,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 => 
-            array (
+            30 =>
+            array(
                 'id' => 41,
                 'name' => 'Khoridarul anisa',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-01-29',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'khoridarul_anisa@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -794,13 +794,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 => 
-            array (
+            31 =>
+            array(
                 'id' => 42,
                 'name' => 'Alwan A F',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-18',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'alwan_a_f@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -819,13 +819,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 => 
-            array (
+            32 =>
+            array(
                 'id' => 43,
                 'name' => 'Muhammad Cahyadi',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-08-16',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'muhammad_cahyadi@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -844,13 +844,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 => 
-            array (
+            33 =>
+            array(
                 'id' => 44,
                 'name' => 'Ahmad Kamil',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-02-16',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ahmad_kamil@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -869,13 +869,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 => 
-            array (
+            34 =>
+            array(
                 'id' => 45,
                 'name' => 'Sri Ayuni Wahyudin',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-03-20',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'sri_ayuni_wahyudin@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -894,13 +894,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 => 
-            array (
+            35 =>
+            array(
                 'id' => 46,
                 'name' => 'Encep Abdul Hakim',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-08-27',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'encep_abdul_hakim@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -919,13 +919,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 => 
-            array (
+            36 =>
+            array(
                 'id' => 47,
                 'name' => 'Lindawati Rusliha',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-10-24',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'lindawati_rusliha@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -944,13 +944,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 => 
-            array (
+            37 =>
+            array(
                 'id' => 48,
                 'name' => 'Moh Syahrul Ramdan',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-10-24',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'moh_syahrul_ramdan@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -969,13 +969,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 => 
-            array (
+            38 =>
+            array(
                 'id' => 49,
                 'name' => 'Lina Herlina',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-12-14',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'lina_herlina@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -994,13 +994,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 => 
-            array (
+            39 =>
+            array(
                 'id' => 50,
                 'name' => 'Agustiani Sri Rahayu',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-10-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'agustiani_sri_rahayu@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1019,13 +1019,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 => 
-            array (
+            40 =>
+            array(
                 'id' => 51,
                 'name' => 'Ruri C. Hetiawati',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-26',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ruri_c._hetiawati@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1044,13 +1044,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 => 
-            array (
+            41 =>
+            array(
                 'id' => 52,
                 'name' => 'Rinrin Irmayani',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-30',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'rinrin_irmayani@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1069,13 +1069,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 => 
-            array (
+            42 =>
+            array(
                 'id' => 53,
                 'name' => 'Ai Dian Haerani',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-15',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'ai_dian_haerani@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1094,13 +1094,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 => 
-            array (
+            43 =>
+            array(
                 'id' => 54,
                 'name' => 'Aprilia utami Herdi',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-04-03',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'aprilia_utami_herdi@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1119,13 +1119,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 => 
-            array (
+            44 =>
+            array(
                 'id' => 55,
                 'name' => 'Siti Basiroh',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-07-08',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'siti_basiroh@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1144,13 +1144,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 => 
-            array (
+            45 =>
+            array(
                 'id' => 56,
                 'name' => 'Odoss',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-05-01',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'odoss@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1169,13 +1169,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 => 
-            array (
+            46 =>
+            array(
                 'id' => 57,
                 'name' => 'Aang',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-09-08',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'aang@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1194,13 +1194,13 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 => 
-            array (
+            47 =>
+            array(
                 'id' => 58,
                 'name' => 'Maulana Yusuf',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-29',
-                'role' => 'user',
+                'role' => 'member',
                 'email' => 'maulana_yusuf@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
@@ -1220,7 +1220,5 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
-        
-        
     }
 }

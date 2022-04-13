@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class UserMiddleware
+class MemberMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role == User::ROLE_USER && $request->user()->active) {
+        if ($request->user()->role == User::ROLE_MEMBER && $request->user()->active) {
             return $next($request);
         }
         abort(404);

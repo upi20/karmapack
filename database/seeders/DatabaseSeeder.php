@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         // AddressDistrictSeeders::run();
         // AddressVillageSeeders::run();
         // AnggotaSeeders::run();
-        $this->call(ArtikelTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(ArtikelTableSeeder::class);
     }
 }

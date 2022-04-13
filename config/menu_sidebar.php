@@ -51,8 +51,8 @@ return [
             ]
         ]
     ],
-    'user' => [
-        ['title' => 'Dashboard', 'route' => 'user.dashboard', 'icon' => 'fe fe-home'],
+    'member' => [
+        ['title' => 'Dashboard', 'route' => 'member.dashboard', 'icon' => 'fe fe-home'],
     ]
 
 ];

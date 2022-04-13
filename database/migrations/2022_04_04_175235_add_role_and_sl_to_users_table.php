@@ -15,7 +15,7 @@ class AddRoleAndSlToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->after('name')->default(User::ROLE_USER);
+            $table->string('role')->after('name')->default(User::ROLE_MEMBER);
         });
     }
 

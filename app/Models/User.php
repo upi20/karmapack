@@ -19,7 +19,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     const ROLE_ADMIN = 'admin';
-    const ROLE_USER = 'user';
+    const ROLE_MEMBER = 'member';
 
     /**
      * The attributes that are mass assignable.
@@ -63,7 +63,7 @@ class User extends Authenticatable
     public static function getAllRole(): array
     {
         return [
-            self::ROLE_USER,
+            self::ROLE_MEMBER,
             self::ROLE_ADMIN,
         ];
     }
