@@ -23,7 +23,7 @@ Implementasi Frontend
 Artikel
     Datatable [Done]
     Update
-    Delete
+    Delete [Done]
     Kategori
         Crud
         Implementasi Crud Artikel
