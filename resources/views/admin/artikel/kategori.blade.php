@@ -51,7 +51,7 @@
                                 required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="slug">slug <span class="text-danger">*</span></label>
+                            <label class="form-label" for="slug">Slug <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Nama"
                                 required="" />
                         </div>
@@ -129,6 +129,10 @@
                         name: 'slug'
                     },
                     {
+                        data: 'artikel',
+                        name: 'artikel'
+                    },
+                    {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
@@ -143,8 +147,9 @@
                         render(data, type, full, meta) {
                             return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
                                 data-id="${full.id}"
-                                data-name="${full.name}"
+                                data-nama="${full.nama}"
                                 data-status="${full.status}"
+                                data-slug="${full.slug}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -176,9 +181,17 @@
                 oTable.fnDraw(false);
             });
 
+            $("#nama").keyup(function() {
+                var Text = $(this).val();
+                $("#slug").val(Text.toLowerCase()
+                    .replace(/[^\w ]+/g, '')
+                    .replace(/ +/g, '-'));
+            });
+
             // insertForm ===================================================================================
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
+                resetErrorAfterInput();
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 const route = ($('#id').val() == '') ? "{{ route('admin.artikel.kategori.insert') }}" :
@@ -208,6 +221,11 @@
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
                         Swal.fire({
                             position: 'top-end',
                             icon: 'error',
@@ -230,7 +248,7 @@
             $('#modal-default-title').html("Add Kategori");
             $('#modal-default').modal('show');
             $('#id').val('');
-            $('#password').attr('required', true);
+            resetErrorAfterInput();
         }
 
 

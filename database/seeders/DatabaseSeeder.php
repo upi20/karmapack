@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         // AddressVillageSeeders::run();
         $this->call(UsersTableSeeder::class);
         $this->call(ArtikelTableSeeder::class);
+        $this->call(ArtikelKategoriTableSeeder::class);
     }
 }

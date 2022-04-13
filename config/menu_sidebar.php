@@ -14,7 +14,7 @@ return [
             'icon' => 'fe fe-file-text',
             'children' => [
                 ['title' => 'Data', 'route' => 'admin.artikel.data'],
-                ['title' => 'Kategori'],
+                ['title' => 'Kategori', 'route' => 'admin.artikel.kategori'],
                 ['title' => 'Tag']
             ],
         ],

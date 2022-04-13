@@ -13,18 +13,18 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            $user = Artikel::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at'])
+            $model = Artikel::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at'])
                 ->selectRaw('IF(status = 1, "Dipublish", "Disimpan") as status_str');
 
             // filter
             if (isset($request->filter)) {
                 $filter = $request->filter;
                 if ($filter['status'] != '') {
-                    $user->where('status', '=', $filter['status']);
+                    $model->where('status', '=', $filter['status']);
                 }
             }
 
-            return Datatables::of($user)
+            return Datatables::of($model)
                 ->addIndexColumn()
                 ->make(true);
         }

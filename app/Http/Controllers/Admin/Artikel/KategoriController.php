@@ -7,25 +7,37 @@ use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 use App\Models\Artikel\Kategori;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
+    private $query = [];
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            $user = Kategori::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at'])
-                ->selectRaw('IF(status = 1, "Dipublish", "Disimpan") as status_str');
+            // extend query
+            $this->query['artikel'] = <<<SQL
+                        (select count(*) from artikel_keategori_detail
+                            where artikel_keategori_detail.kategori_id = artikel_kategori.id)
+                    SQL;
+            $this->query['artikel_alias'] = 'artikel';
+            $model = Kategori::select(['id', 'nama', 'slug', 'status'])
+                ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
+                ->selectRaw("{$this->query['artikel']} as {$this->query['artikel_alias']}");
 
             // filter
             if (isset($request->filter)) {
                 $filter = $request->filter;
                 if ($filter['status'] != '') {
-                    $user->where('status', '=', $filter['status']);
+                    $model->where('status', '=', $filter['status']);
                 }
             }
 
-            return Datatables::of($user)
+            return Datatables::of($model)
                 ->addIndexColumn()
+                ->filterColumn($this->query['artikel_alias'], function ($query, $keyword) {
+                    $query->whereRaw("{$this->query['artikel']} like '%$keyword%'");
+                })
                 ->make(true);
         }
         $page_attr = [
@@ -34,37 +46,7 @@ class KategoriController extends Controller
                 ['name' => 'Kategori'],
             ]
         ];
-        return view('admin.artikel.data.list', compact('page_attr'));
-    }
-
-    public function add(Request $request)
-    {
-        $navigation = 'admin.artikel.data';
-        $page_attr = [
-            'title' => 'Tambah Kategori',
-            'breadcrumbs' => [
-                ['name' => 'Kategori'],
-                ['name' => 'Manage List Kategori', 'url' => $navigation],
-            ],
-            'navigation' => $navigation
-        ];
-
-        return view('admin.artikel.data.add', compact('page_attr'));
-    }
-
-    public function edit(Kategori $artikel)
-    {
-        $navigation = 'admin.artikel.data';
-        $page_attr = [
-            'title' => 'Edit Kategori',
-            'breadcrumbs' => [
-                ['name' => 'Kategori'],
-                ['name' => 'Manage List Kategori', 'url' => $navigation],
-            ],
-            'navigation' => $navigation
-        ];
-        $edit = true;
-        return view('admin.artikel.data.add', compact('page_attr', 'edit', 'artikel'));
+        return view('admin.artikel.kategori', compact('page_attr'));
     }
 
     public function insert(Request $request)
@@ -72,58 +54,14 @@ class KategoriController extends Controller
         try {
             $request->validate([
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:artikel'],
-                'detail' => ['required'],
-                'excerpt' => ['required'],
+                'slug' => ['required', 'string', 'max:255', 'unique:artikel_kategori'],
                 'status' => ['required', 'int'],
             ]);
 
-            $detail = $request->detail;
-            $dom = new \DomDocument();
-            $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            $images = $dom->getElementsByTagName('img');
-
-            // nama folder diambil dari 10 karakter slug
-            $folder = substr($request->slug, 0, 10) . time();
-
-            $path_image_src = "/assets/artikel/$folder";
-            $path_folder = public_path() . $path_image_src;
-            if (!file_exists($path_folder)) {
-                mkdir($path_folder, 777);
-            }
-
-            // foto / icon artikel diambil dari foto pertama dalam artikel
-            $image_icon_status = true;
-            $image_icon = null;
-            foreach ($images as $k => $img) {
-                $data = $img->getAttribute('src');
-                list($type, $data) = explode(';', $data);
-                list(, $data)      = explode(',', $data);
-                $data = base64_decode($data);
-
-                $image_name = '/' . time() . $k . '.png';
-                $path = $path_folder . $image_name;
-                file_put_contents($path, $data);
-                $img->removeAttribute('src');
-                $img->setAttribute('src', $path_image_src . $image_name);
-
-                // set foto icon
-                if ($image_icon_status) {
-                    $image_icon_status = false;
-                    $image_icon = $path_image_src . $image_name;
-                }
-            }
-
-            $detail = $dom->saveHTML();
             Kategori::create([
                 'nama' => $request->nama,
                 'slug' => $request->slug,
-                'detail' => $detail,
-                'excerpt' => $request->excerpt,
                 'status' => $request->status,
-                'foto_folder' => $folder,
-                'foto' => $image_icon,
-                'user_id' => auth()->user()->id
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -137,91 +75,17 @@ class KategoriController extends Controller
     public function update(Request $request)
     {
         try {
+            $model = Kategori::find($request->id);
             $request->validate([
-                'id' => ['required', 'int'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:artikel,slug,' . $request->id],
-                'detail' => ['required'],
-                'excerpt' => ['required'],
+                'slug' => ['required', 'string', 'max:255', 'unique:artikel_kategori,slug,' . $request->id],
                 'status' => ['required', 'int'],
             ]);
-            $artikel = Kategori::find($request->id);
-            $detail = $request->detail;
-            $dom = new \DomDocument();
-            $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-            $images = $dom->getElementsByTagName('img');
 
-            // nama folder diambil dari 10 karakter slug
-            $folder = $artikel->foto_folder;
-
-            $path_image_src = "/assets/artikel/$folder";
-            $path_folder = public_path() . $path_image_src;
-            if (!file_exists($path_folder)) {
-                mkdir($path_folder, 777);
-            }
-
-            // foto / icon artikel diambil dari foto pertama dalam artikel
-            $image_icon_status = true;
-            $image_icon = $artikel->foto;
-
-            // foto yang dipakai
-            $foto_used = [];
-            foreach ($images as $k => $img) {
-                $data = $img->getAttribute('src');
-
-                // cek apakah foto dari insert summernote
-                if (str_contains($data, 'data:image')) {
-                    list($type, $data) = explode(';', $data);
-                    list(, $data)      = explode(',', $data);
-                    $data = base64_decode($data);
-
-                    $image_name = '/' . time() . $k . '.png';
-                    $path = $path_folder . $image_name;
-                    file_put_contents($path, $data);
-                    $img->removeAttribute('src');
-                    $img->setAttribute('src', $path_image_src . $image_name);
-                    $foto_used[] = $path_image_src . $image_name;
-
-                    // set foto icon
-                    if ($image_icon_status) {
-                        $image_icon_status = false;
-                        $image_icon = $path_image_src . $image_name;
-                    }
-                }
-
-                // simpan untuk icon
-                if (!str_contains($data, 'data:image')) {
-                    if ($image_icon_status) {
-                        $image_icon_status = false;
-                        $image_icon = $data;
-                    }
-                    $foto_used[] = $data;
-                }
-            }
-
-            $detail = $dom->saveHTML();
-            $artikel->foto = $image_icon_status ? null : $image_icon;
-            $artikel->nama = $request->nama;
-            $artikel->slug = $request->slug;
-            $artikel->detail = $detail;
-            $artikel->excerpt = $request->excerpt;
-            $artikel->status = $request->status;
-            $artikel->save();
-
-            // delete foto yang tidak dipakai
-            // $files = scandir($path_folder);
-            // $not_used = array_diff($files, $foto_used);
-            // dd($not_used, $files, $foto_used);
-            // foreach ($files as $file) {
-            //     // cek isi folder
-            //     if ($file != '.' && $file != '..') {
-            //         // delete file
-            //         // $this->deleteFile("$path_folder/$file");
-            //     }
-            // }
-
-
-
+            $model->nama = $request->nama;
+            $model->slug = $request->slug;
+            $model->status = $request->status;
+            $model->save();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -231,25 +95,10 @@ class KategoriController extends Controller
         }
     }
 
-    public function delete(Kategori $artikel)
+    public function delete(Kategori $model)
     {
         try {
-            // cek folder
-            if ($artikel->foto_folder) {
-                // getfolder
-                $path_folder = public_path() . "/assets/artikel/$artikel->foto_folder";
-                $files = scandir($path_folder);
-                foreach ($files as $file) {
-                    // cek isi folder
-                    if ($file != '.' && $file != '..') {
-                        // delete file
-                        $this->deleteFile("$path_folder/$file");
-                    }
-                }
-                // delete folder
-                rmdir($path_folder);
-            }
-            $artikel->delete();
+            $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -259,14 +108,21 @@ class KategoriController extends Controller
         }
     }
 
-    private function deleteFile($file)
+    public function select2(Request $request)
     {
-        $res_foto = true;
-        if ($file != null && $file != '') {
-            if (file_exists($file)) {
-                $res_foto = unlink($file);
+        try {
+            $model = Kategori::select(['id', DB::raw('name as text')])
+                ->whereRaw("(`name` like '%$request->search%' or `id` like '%$request->search%')")
+                ->limit(10);
+
+            $result = $model->get()->toArray();
+            if ($request->with_empty) {
+                $result = array_merge([['id' => '', 'text' => 'All Kategori']], $result);
             }
+
+            return response()->json(['results' => $result]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
         }
-        return $res_foto;
     }
 }
