@@ -419,7 +419,3 @@
         }
     </script>
 @endsection
-
-@section('stylesheet')
-    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
-@endsection

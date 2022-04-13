@@ -6,18 +6,34 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Artikel\Artikel;
 use League\Config\Exception\ValidationException;
+use Yajra\Datatables\Datatables;
 
 class ArtikelController extends Controller
 {
     public function index(Request $request)
     {
+        if (request()->ajax()) {
+            $user = Artikel::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at'])
+                ->selectRaw('IF(status = 1, "Dipublish", "Disimpan") as status_str');
+
+            // filter
+            if (isset($request->filter)) {
+                $filter = $request->filter;
+                if ($filter['status'] != '') {
+                    $user->where('status', '=', $filter['status']);
+                }
+            }
+
+            return Datatables::of($user)
+                ->addIndexColumn()
+                ->make(true);
+        }
         $page_attr = [
-            'title' => 'Manage Artikel',
+            'title' => 'Manage List Artikel',
             'breadcrumbs' => [
-                ['name' => 'Data'],
+                ['name' => 'Artikel'],
             ]
         ];
-
         return view('admin.artikel.data.list', compact('page_attr'));
     }
 
@@ -27,8 +43,8 @@ class ArtikelController extends Controller
         $page_attr = [
             'title' => 'Tambah Artikel',
             'breadcrumbs' => [
-                ['name' => 'Data'],
-                ['name' => 'Manage Artikel', 'url' => $navigation],
+                ['name' => 'Artikel'],
+                ['name' => 'Manage List Artikel', 'url' => $navigation],
             ],
             'navigation' => $navigation
         ];

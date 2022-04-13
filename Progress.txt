@@ -8,3 +8,27 @@ jika artikel tidak mempunyai foto
             $matches
         );
         dd($matches);
+
+// ide
+jadwal acara
+pengumuman
+
+// jadwal
+Member Profile
+Member Dashboard
+Implementasi Frontend
+
+
+// Progress
+Artikel
+    Datatable [Done]
+    Update
+    Delete
+    Kategori
+        Crud
+        Implementasi Crud Artikel
+    Tag
+        Implementasi Crud Artikel
+    Implementasi Artikel Icon
+    Implementasi Artikel Pagination
+
