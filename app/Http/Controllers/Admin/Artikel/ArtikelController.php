@@ -51,6 +51,7 @@ class ArtikelController extends Controller
 
         return view('admin.artikel.data.add', compact('page_attr'));
     }
+
     public function insert(Request $request)
     {
         try {
@@ -116,5 +117,47 @@ class ArtikelController extends Controller
                 'error' => $error,
             ], 500);
         }
+    }
+
+    public function delete(Request $request)
+    {
+        try {
+            // get model
+            $artikel = Artikel::find($request->id);
+
+            // cek folder
+            if ($artikel->foto_folder) {
+                // getfolder
+                $path_folder = public_path() . "/assets/artikel/$artikel->foto_folder";
+                $files = scandir($path_folder);
+                foreach ($files as $file) {
+                    // cek isi folder
+                    if ($file != '.' && $file != '..') {
+                        // delete file
+                        $this->deleteFile("$path_folder/$file");
+                    }
+                }
+                // delete folder
+                rmdir($path_folder);
+            }
+            $artikel->delete();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    private function deleteFile($file)
+    {
+        $res_foto = true;
+        if ($file != null && $file != '') {
+            if (file_exists($file)) {
+                $res_foto = unlink($file);
+            }
+        }
+        return $res_foto;
     }
 }
