@@ -43,9 +43,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Generation</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>User Role</th>
+                                    <th>Role</th>
+                                    <th>DOB</th>
+                                    <th>BIRTHDAY</th>
                                     <th>Active</th>
                                     <th>Action</th>
                                 </tr>
@@ -70,6 +73,13 @@
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
+                            <label class="form-label" for="angkatan">Generation <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="angkatan" name="angkatan"
+                                placeholder="Enter Generation" required="" />
+
+                        </div>
+                        <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
                                 required="" />
@@ -79,6 +89,13 @@
                             <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Email Address"
                                 required="" />
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="date_of_birth">Date Of Birth <span
+                                    class="text-danger">*</span></label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" class="form-control"
+                                placeholder="Date Of Birth" required="" />
                             <div class="help-block"></div>
                         </div>
                         <div class="form-group ">
@@ -165,6 +182,10 @@
                         orderable: false,
                     },
                     {
+                        data: 'angkatan',
+                        name: 'angkatan'
+                    },
+                    {
                         data: 'name',
                         name: 'name'
                     },
@@ -175,6 +196,17 @@
                     {
                         data: 'role_str',
                         name: 'role_str'
+                    },
+                    {
+                        data: 'date_of_birth',
+                        name: 'date_of_birth'
+                    },
+                    {
+                        data: 'birthday_countdown',
+                        name: 'birthday_countdown',
+                        render(data, type, full, meta) {
+                            return data == 0 ? 'Hari ini' : `${data} Hari Lagi`;
+                        },
                     },
                     {
                         data: 'active_str',
@@ -195,6 +227,8 @@
                                 data-email="${full.email}"
                                 data-role="${full.role}"
                                 data-active="${full.active}"
+                                data-date_of_birth="${full.date_of_birth}"
+                                data-angkatan="${full.angkatan}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -207,7 +241,7 @@
                     },
                 ],
                 order: [
-                    [1, 'asc']
+                    [5, 'asc']
                 ]
             });
 
@@ -299,6 +333,8 @@
             $('#id').val(data.id);
             $('#name').val(data.name);
             $('#email').val(data.email);
+            $('#date_of_birth').val(data.date_of_birth);
+            $('#angkatan').val(data.angkatan);
             $('#role').val(data.role);
             $('#active').val(data.active);
             $('#password').removeAttr('required');

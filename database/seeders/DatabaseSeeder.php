@@ -14,13 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::create([
-            'name' => 'Isep Lutpi Nur',
-            'email' => 'iseplutpinur7@gmail.com',
-            'password' => bcrypt('123456'),
-            'role' => User::ROLE_ADMIN,
-            'active' => '1'
-        ]);
+        // \App\Models\User::create([
+        //     'name' => 'Isep Lutpi Nur',
+        //     'email' => 'iseplutpinur7@gmail.com',
+        //     'password' => bcrypt('123456'),
+        //     'role' => User::ROLE_ADMIN,
+        //     'active' => '1'
+        // ]);
         // \App\Models\User::factory(150)->create();
 
         // address seeders
@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
         // AddressRegenciesSeeder::run();
         // AddressDistrictSeeders::run();
         // AddressVillageSeeders::run();
-        AnggotaSeeders::run();
+        // AnggotaSeeders::run();
         $this->call(ArtikelTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
