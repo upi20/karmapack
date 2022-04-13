@@ -22,7 +22,7 @@ Implementasi Frontend
 // Progress
 Artikel
     Datatable [Done]
-    Update
+    Update [Done]
     Delete [Done]
     Kategori
         Crud
