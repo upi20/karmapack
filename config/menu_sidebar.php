@@ -10,6 +10,11 @@ return [
             // 'children' => [['title' => 'View User', 'route' => 'admin.user']],
         ],
         [
+            'title' => 'Kepengurusan',
+            'route' => 'admin.pengurus.periode',
+            'icon' => 'fe fe-sliders'
+        ],
+        [
             'title' => 'Artikel',
             'icon' => 'fe fe-file-text',
             'children' => [
