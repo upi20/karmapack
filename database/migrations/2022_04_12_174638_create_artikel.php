@@ -18,7 +18,6 @@ class CreateArtikel extends Migration
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('foto')->nullable();
-            $table->string('foto_folder');
             $table->text('detail');
             $table->text('excerpt');
             $table->tinyInteger('status')->default(0);

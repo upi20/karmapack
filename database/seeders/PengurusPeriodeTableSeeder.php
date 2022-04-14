@@ -24,7 +24,6 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'id' => 1,
                 'nama' => 'Kabinet Masagi',
                 'foto' => NULL,
-                'foto_folder' => '',
                 'dari' => '2021',
                 'sampai' => '2022',
                 'slug' => 'kabinet-masagi',
@@ -42,7 +41,6 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'id' => 2,
                 'nama' => 'Pengaturan',
                 'foto' => NULL,
-                'foto_folder' => 'pengaturan1649927342',
                 'dari' => '2001',
                 'sampai' => '2001',
                 'slug' => 'pengaturan',
@@ -60,7 +58,6 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'id' => 3,
                 'nama' => 'tes',
                 'foto' => NULL,
-                'foto_folder' => 'tes1649927795',
                 'dari' => '2001',
                 'sampai' => '2001',
                 'slug' => 'tes',
@@ -72,6 +69,23 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2022-04-14 09:16:35',
                 'updated_at' => '2022-04-14 09:19:22',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'nama' => 'Periode tes',
+                'foto' => NULL,
+                'dari' => '2001',
+                'sampai' => '2001',
+                'slug' => 'periode-tes',
+                'slogan' => '1',
+                'visi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/visi16499523010.png"><br></p>
+',
+                'misi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/misi16499523010.png"><p><img style="width: 765.2px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499523941.png"><br></p></p>
+',
+                'status' => 1,
+                'created_at' => '2022-04-14 16:05:01',
+                'updated_at' => '2022-04-14 16:06:34',
             ),
         ));
         

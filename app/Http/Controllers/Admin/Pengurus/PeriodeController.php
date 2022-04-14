@@ -90,9 +90,8 @@ class PeriodeController extends Controller
                 'misi' => ['required', 'string'],
                 'status' => ['required', 'int'],
             ]);
-            $folder = substr($request->slug, 0, 10) . time();
-            $visi = Summernote::insert($request->visi, $this->image_folder, $folder, 'visi');
-            $misi = Summernote::insert($request->misi, $this->image_folder, $folder, 'misi');
+            $visi = Summernote::insert($request->visi, $this->image_folder, 'visi');
+            $misi = Summernote::insert($request->misi, $this->image_folder, 'misi');
             Periode::create([
                 'nama' => $request->nama,
                 'slug' => $request->slug,
@@ -102,7 +101,6 @@ class PeriodeController extends Controller
                 'status' => $request->status,
                 'visi' => $visi->html,
                 'misi' => $misi->html,
-                'foto_folder' => $folder,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -133,8 +131,8 @@ class PeriodeController extends Controller
                 'status' => ['required', 'int'],
             ]);
             $model = Periode::find($request->id);
-            $visi = Summernote::update($request->visi, $this->image_folder, $model->foto_folder, '', 'visi');
-            $misi = Summernote::update($request->misi, $this->image_folder, $model->foto_folder, '', 'misi');
+            $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi');
+            $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi');
 
             // save
             $model->nama = $request->nama;
@@ -160,9 +158,8 @@ class PeriodeController extends Controller
     {
         try {
             // cek folder
-            if ($model->foto_folder) {
-                Summernote::delete($this->image_folder, $model->foto_folder);;
-            }
+            Summernote::delete($model->visi);
+            Summernote::delete($model->misi);
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
