@@ -1,0 +1,31 @@
+Member/anggota
+    Admin
+     Crud Member
+    Member
+     Dashboard Selamat Datang
+     Profile
+        foto
+        kutipan
+        angkatan
+        alamat
+        profesi
+        kontak
+        pendidikan
+        pengalaman organisasi
+        pengalaman lain
+        hobi
+
+    Admin
+        Pendaftaran
+        kontak
+
+    Karmapack on instagram
+
+Frontend
+    Home
+    List artikel
+    pagination
+    list tag
+    list kategori
+
+
