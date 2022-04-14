@@ -17,6 +17,7 @@ class CreatePengurusPeriode extends Migration
             $table->integer('id', true, false);
             $table->string('nama');
             $table->string('foto')->nullable();
+            $table->string('foto_folder');
             $table->year('dari');
             $table->year('sampai');
             $table->text('slug');
