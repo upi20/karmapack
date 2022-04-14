@@ -32,5 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArtikelTableSeeder::class);
         $this->call(ArtikelKategoriTableSeeder::class);
         $this->call(ArtikelTagTableSeeder::class);
+        $this->call(PengurusPeriodeTableSeeder::class);
     }
 }

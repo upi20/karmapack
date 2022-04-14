@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
 
+// pengurus
+use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -142,6 +144,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::post('/', [TagController::class, 'insert'])->name('admin.artikel.tag.insert');
             Route::delete('/{model}', [TagController::class, 'delete'])->name('admin.artikel.tag.delete');
             Route::post('/update', [TagController::class, 'update'])->name('admin.artikel.tag.update');
+        });
+    });
+
+    // Pengurus
+    Route::group(['prefix' => 'pengurus'], function () {
+
+        // Data
+        Route::group(['prefix' => 'periode'], function () {
+            Route::get('/', [PeriodeController::class, 'index'])->name('admin.pengurus.periode'); // page
+            Route::get('/add', [PeriodeController::class, 'add'])->name('admin.pengurus.periode.add'); // page
+            Route::get('/edit/{model}', [PeriodeController::class, 'edit'])->name('admin.pengurus.periode.edit'); // page
+
+            Route::delete('/{model}', [PeriodeController::class, 'delete'])->name('admin.pengurus.periode.delete');
+            Route::post('/insert', [PeriodeController::class, 'insert'])->name('admin.pengurus.periode.insert');
+            Route::post('/update', [PeriodeController::class, 'update'])->name('admin.pengurus.periode.update');
         });
     });
 });
