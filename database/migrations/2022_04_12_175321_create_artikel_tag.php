@@ -16,7 +16,7 @@ class CreateArtikelTag extends Migration
         Schema::create('artikel_tag', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
-            $table->text('slug')->unique();
+            $table->string('slug')->unique();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

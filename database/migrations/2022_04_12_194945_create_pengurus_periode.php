@@ -20,7 +20,7 @@ class CreatePengurusPeriode extends Migration
             $table->string('foto_folder');
             $table->year('dari');
             $table->year('sampai');
-            $table->text('slug');
+            $table->string('slug')->unique();
             $table->text('slogan');
             $table->text('visi');
             $table->text('misi');

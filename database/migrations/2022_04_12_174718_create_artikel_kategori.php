@@ -16,7 +16,7 @@ class CreateArtikelKategori extends Migration
         Schema::create('artikel_kategori', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
-            $table->text('slug')->unique();
+            $table->string('slug')->unique();
             $table->string('foto')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

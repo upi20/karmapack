@@ -16,7 +16,7 @@ class CreateArtikel extends Migration
         Schema::create('artikel', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
-            $table->text('slug')->unique();
+            $table->string('slug')->unique();
             $table->string('foto')->nullable();
             $table->string('foto_folder');
             $table->text('detail');

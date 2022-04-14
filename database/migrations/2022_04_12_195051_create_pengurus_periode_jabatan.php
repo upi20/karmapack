@@ -19,7 +19,7 @@ class CreatePengurusPeriodeJabatan extends Migration
             $table->integer('parrent_id')->nullable()->default(null);
             $table->integer('no_urut');
             $table->string('nama');
-            $table->text('slug');
+            $table->string('slug')->unique();
             $table->string('foto')->nullable();
             $table->text('visi');
             $table->text('misi');
