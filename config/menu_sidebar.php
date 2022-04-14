@@ -32,6 +32,8 @@ return [
                 ['title' => 'Village', 'route' => 'admin.address.village'],
             ]
         ],
+
+        ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
         [
             'title' => 'Mail Box', 'icon' => 'fe fe-mail',
             'children' => [

@@ -33,3 +33,8 @@ Artikel
     Implementasi Artikel Icon
     Implementasi Artikel Pagination
 
+// filter data status
+    artikel
+        Kategori
+        Tag
+    galeri

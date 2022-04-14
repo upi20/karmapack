@@ -25,6 +25,10 @@ use App\Http\Controllers\Admin\Artikel\TagController;
 // pengurus
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 
+
+// Galeri
+use App\Http\Controllers\Admin\GaleriController;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -160,6 +164,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::post('/insert', [PeriodeController::class, 'insert'])->name('admin.pengurus.periode.insert');
             Route::post('/update', [PeriodeController::class, 'update'])->name('admin.pengurus.periode.update');
         });
+    });
+
+    // Galeri
+    Route::group(['prefix' => 'galeri'], function () {
+        Route::get('/', [GaleriController::class, 'index'])->name('admin.galeri');
+        Route::get('/select2', [GaleriController::class, 'select2'])->name('admin.galeri.select2');
+        Route::post('/', [GaleriController::class, 'insert'])->name('admin.galeri.insert');
+        Route::delete('/{model}', [GaleriController::class, 'delete'])->name('admin.galeri.delete');
+        Route::post('/update', [GaleriController::class, 'update'])->name('admin.galeri.update');
     });
 });
 
