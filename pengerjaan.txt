@@ -18,6 +18,7 @@ Member/anggota
     Admin
         Pendaftaran
         kontak
+        Sosial Media
 
     Karmapack on instagram
 
@@ -27,5 +28,6 @@ Frontend
     pagination
     list tag
     list kategori
+
 
 

@@ -17,7 +17,7 @@ class MemberMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role == User::ROLE_MEMBER && $request->user()->active) {
+        if ((($request->user()->role == User::ROLE_MEMBER) || ($request->user()->role == User::ROLE_ADMIN)) && ($request->user()->active)) {
             return $next($request);
         }
         abort(404);
