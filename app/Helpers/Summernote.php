@@ -16,6 +16,7 @@ class Summernote
     {
         try {
             $dom = new \DomDocument();
+            libxml_use_internal_errors(true);
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $images = $dom->getElementsByTagName('img');
 
@@ -63,6 +64,7 @@ class Summernote
     {
         try {
             $dom = new \DomDocument();
+            libxml_use_internal_errors(true);
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $images = $dom->getElementsByTagName('img');
 
