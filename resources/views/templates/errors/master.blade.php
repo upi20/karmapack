@@ -4,6 +4,7 @@ $page_attr = (object) [
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : {{ asset('assets/templates/admin/main/assets/images/brand/logo-1.png') }},
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
@@ -32,19 +33,19 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $page_attr_title }}">
     <meta property="og:description" content="{{ $page_attr->description }}">
-    <meta property="og:image" content="{{ asset('assets/templates/admin/main/assets/images/brand/logo-1.png') }}">
+    <meta property="og:image" content="{{ $page_attr->image }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url('') }}">
     <meta name="twitter:title" content="{{ $page_attr_title }}">
     <meta name="twitter:description" content="{{ $page_attr->description }}">
-    <meta name="twitter:image" content="{{ asset('assets/templates/admin/main/assets/images/brand/logo-1.png') }}">
+    <meta name="twitter:image" content="{{ $page_attr->image }}">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="{{ $page_attr_title }}">
     <meta itemprop="description" content="{{ $page_attr->description }}">
-    <meta itemprop="image" content="{{ asset('assets/templates/admin/main/assets/images/brand/logo-1.png') }}">
+    <meta itemprop="image" content="{{ $page_attr->image }}">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon/favicon.ico') }}">
