@@ -4,7 +4,7 @@ $page_attr = (object) [
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : {{ asset('assets/templates/admin/main/assets/images/brand/logo-1.png') }},
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/main/assets/images/brand/logo-1.png'),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
