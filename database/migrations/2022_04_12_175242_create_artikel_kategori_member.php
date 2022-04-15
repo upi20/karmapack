@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtikelKategoriDetail extends Migration
+class CreateArtikelKategoriMember extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateArtikelKategoriDetail extends Migration
      */
     public function up()
     {
-        Schema::create('artikel_kategori_detail', function (Blueprint $table) {
+        Schema::create('artikel_kategori_member', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->integer('artikel_id');
             $table->integer('kategori_id');

@@ -25,6 +25,7 @@ class CreatePengurusPeriodeJabatan extends Migration
             $table->text('misi');
             $table->text('slogan');
             $table->boolean('status')->default(0);
+            $table->timestamps();
 
             // relationship
             $table->foreign('periode_id')

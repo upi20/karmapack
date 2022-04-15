@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengurusPeriodeDetail extends Migration
+class CreatePengurusPeriodeJabatanMember extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePengurusPeriodeDetail extends Migration
      */
     public function up()
     {
-        Schema::create('pengurus_periode_detail', function (Blueprint $table) {
+        Schema::create('pengurus_periode_jabatan_member', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->integer('periode_jabatan_id')->nullable()->default(null);
             $table->bigInteger('user_id', false, true)->nullable()->default(null);

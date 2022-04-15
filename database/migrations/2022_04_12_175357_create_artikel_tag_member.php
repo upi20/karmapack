@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGaleriTagPengurus extends Migration
+class CreateArtikelTagMember extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateGaleriTagPengurus extends Migration
      */
     public function up()
     {
-        Schema::create('galeri_tag_pengurus', function (Blueprint $table) {
+        Schema::create('artikel_tag_member', function (Blueprint $table) {
             $table->integer('id', true, false);
-            $table->integer('galeri_id');
+            $table->integer('artikel_id');
             $table->integer('tag_id');
             $table->timestamps();
 
 
-            $table->foreign('galeri_id')
-                ->references('id')->on('galeri')
+            $table->foreign('artikel_id')
+                ->references('id')->on('artikel')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->foreign('tag_id')
@@ -38,6 +38,6 @@ class CreateGaleriTagPengurus extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri_tag_pengurus');
+        Schema::dropIfExists('artikel_tag_detail');
     }
 }
