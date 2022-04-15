@@ -14,23 +14,23 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('users')->insert(array(
+            0 =>
+            array(
                 'id' => 1,
-                'name' => 'Isep Lutpi Nur',
-                'angkatan' => '2019',
+                'name' => 'ISEP LUTPI NUR',
+                'angkatan' => '2012',
                 'date_of_birth' => '2000-08-10',
                 'role' => 'admin',
                 'email' => 'iseplutpinur7@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$zAEqBczSTQnd/ZBKsOKH7.U8GxWv5yUeq7pvwdqOi00Fzx29.thnS',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -41,38 +41,13 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'created_at' => '2022-04-13 13:40:12',
-                'updated_at' => '2022-04-13 14:09:42',
-            ),
-            1 => 
-            array (
-                'id' => 6,
-                'name' => 'Isep Lutpi Nur',
-                'angkatan' => '2012',
-                'date_of_birth' => '2000-08-10',
-                'role' => 'member',
-                'email' => 'iseplutpinur7@gmail.com2',
-                'gender' => NULL,
-                'username' => NULL,
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
-                'village_id' => NULL,
-                'district_id' => NULL,
-                'regency_id' => NULL,
-                'province_id' => NULL,
-                'active' => 0,
-                'two_factor_secret' => NULL,
-                'two_factor_recovery_codes' => NULL,
-                'remember_token' => NULL,
-                'current_team_id' => NULL,
-                'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-13 13:44:04',
+                'updated_at' => NULL,
             ),
-            2 => 
-            array (
+            1 =>
+            array(
                 'id' => 7,
-                'name' => 'Pengurus 2',
+                'name' => 'PENGUR\'US 2',
                 'angkatan' => '2019',
                 'date_of_birth' => '2001-02-01',
                 'role' => 'member',
@@ -80,7 +55,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$oX1.O4jVtDJ3GKn33D181uoEOiBr.sxIiefYStWnDvlET59zkjIY2',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -94,18 +69,18 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
-            array (
+            2 =>
+            array(
                 'id' => 9,
-                'name' => 'Ilham Solehudin',
-                'angkatan' => '2019',
+                'name' => 'ILHAM SOLEHUDIN',
+                'angkatan' => NULL,
                 'date_of_birth' => '2000-08-13',
                 'role' => 'member',
                 'email' => 'ilham@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$mK63RNRVBuPqKQrAN267nOv1s6UXy/eGCIX8nutJYtrbNr9/6p5Tq',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -119,10 +94,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 => 
-            array (
+            3 =>
+            array(
                 'id' => 14,
-                'name' => 'Pengurus 2',
+                'name' => 'PENGURUS 2',
                 'angkatan' => '2011',
                 'date_of_birth' => '2000-08-14',
                 'role' => 'member',
@@ -130,7 +105,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$pPmyKmnnsipWbEb8xXKWMu5hRJ0SZ.g8fkQeW8/.lQY4jVq3Nz7t2',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -144,10 +119,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 => 
-            array (
+            4 =>
+            array(
                 'id' => 16,
-                'name' => 'Hilal',
+                'name' => 'HILAL MUHAMMAD FATURAHMAN',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-25',
                 'role' => 'member',
@@ -155,7 +130,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -169,10 +144,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 => 
-            array (
+            5 =>
+            array(
                 'id' => 17,
-                'name' => 'Nita H',
+                'name' => 'NITA HALIMATUSSA’DIYAH',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-06-15',
                 'role' => 'member',
@@ -180,7 +155,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -194,35 +169,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 => 
-            array (
+            6 =>
+            array(
                 'id' => 18,
-                'name' => 'Isep Lutpi Nur',
+                'name' => 'ISEP LUTPI NUR',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-08-10',
-                'role' => 'member',
+                'role' => 'admin',
                 'email' => 'isep_lutpi_nur@gmail.com',
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
                 'province_id' => NULL,
-                'active' => 0,
+                'active' => 1,
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'remember_token' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-13 13:44:11',
+                'updated_at' => NULL,
             ),
-            8 => 
-            array (
+            7 =>
+            array(
                 'id' => 19,
-                'name' => 'Abdul Muhlis',
+                'name' => 'ABDUL MUHLIS',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-03-24',
                 'role' => 'member',
@@ -230,7 +205,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -244,10 +219,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 => 
-            array (
+            8 =>
+            array(
                 'id' => 20,
-                'name' => 'Andi Taufik Permadi',
+                'name' => 'ANDI TAUFIK PERMADI',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-06-13',
                 'role' => 'member',
@@ -255,7 +230,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -269,10 +244,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
-            array (
+            9 =>
+            array(
                 'id' => 21,
-                'name' => 'Sukirman Maulana',
+                'name' => 'SUKIRMAN MAULANA',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-30',
                 'role' => 'member',
@@ -280,7 +255,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -294,10 +269,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 => 
-            array (
+            10 =>
+            array(
                 'id' => 22,
-                'name' => 'Dewi',
+                'name' => 'DEWI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-09-19',
                 'role' => 'member',
@@ -305,7 +280,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -319,10 +294,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 => 
-            array (
+            11 =>
+            array(
                 'id' => 23,
-                'name' => 'Wiwit Awaliyah',
+                'name' => 'WIWIT AWALIYAH',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-11-02',
                 'role' => 'member',
@@ -330,7 +305,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -344,10 +319,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 => 
-            array (
+            12 =>
+            array(
                 'id' => 24,
-                'name' => 'Saepul rohman',
+                'name' => 'SAEPUL ROHMAN',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-05-10',
                 'role' => 'member',
@@ -355,7 +330,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -369,10 +344,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 => 
-            array (
+            13 =>
+            array(
                 'id' => 25,
-                'name' => 'Raden Bintang',
+                'name' => 'RADEN BINTANG',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-07-25',
                 'role' => 'member',
@@ -380,7 +355,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -394,10 +369,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 => 
-            array (
+            14 =>
+            array(
                 'id' => 26,
-                'name' => 'Hilmi Fitriani',
+                'name' => 'HILMI FITRIANI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-12-29',
                 'role' => 'member',
@@ -405,7 +380,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -419,10 +394,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
-            array (
+            15 =>
+            array(
                 'id' => 27,
-                'name' => 'Samsul Maarip',
+                'name' => 'SAMSUL MAARIP',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-01-15',
                 'role' => 'member',
@@ -430,7 +405,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -444,10 +419,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
-            array (
+            16 =>
+            array(
                 'id' => 28,
-                'name' => 'Muhamad Raihan Rahman',
+                'name' => 'MUHAMAD RAIHAN RAHMAN',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-09-23',
                 'role' => 'member',
@@ -455,7 +430,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -469,10 +444,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 => 
-            array (
+            17 =>
+            array(
                 'id' => 29,
-                'name' => 'Akbar Muhamad Ashoni',
+                'name' => 'AKBAR MUHAMAD ASHONI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-03-01',
                 'role' => 'member',
@@ -480,7 +455,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -494,10 +469,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 => 
-            array (
+            18 =>
+            array(
                 'id' => 30,
-                'name' => 'Wahid Nursidik',
+                'name' => 'WAHID NURSIDIK',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-06-04',
                 'role' => 'member',
@@ -505,7 +480,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -519,10 +494,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 => 
-            array (
+            19 =>
+            array(
                 'id' => 31,
-                'name' => 'M faisal l',
+                'name' => 'M FAISAL L',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-06-13',
                 'role' => 'member',
@@ -530,7 +505,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -544,10 +519,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 => 
-            array (
+            20 =>
+            array(
                 'id' => 32,
-                'name' => 'Salafia al zahra fauzia',
+                'name' => 'SALAFIA AL ZAHRA FAUZIA',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-06-07',
                 'role' => 'member',
@@ -555,7 +530,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -569,10 +544,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 => 
-            array (
+            21 =>
+            array(
                 'id' => 33,
-                'name' => 'Yusi Yusfita',
+                'name' => 'YUSI YUSFITA',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-15',
                 'role' => 'member',
@@ -580,7 +555,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -594,10 +569,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 => 
-            array (
+            22 =>
+            array(
                 'id' => 34,
-                'name' => 'Cucu Maryam Nurpadilah',
+                'name' => 'CUCU MARYAM NURPADILAH',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-10',
                 'role' => 'member',
@@ -605,7 +580,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -619,10 +594,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 => 
-            array (
+            23 =>
+            array(
                 'id' => 35,
-                'name' => 'Rifki Alfaizar',
+                'name' => 'RIFKI ALFAIZAR',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-03-01',
                 'role' => 'member',
@@ -630,7 +605,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -644,10 +619,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 => 
-            array (
+            24 =>
+            array(
                 'id' => 36,
-                'name' => 'M. Ridwan Abdul Aziz',
+                'name' => 'M. RIDWAN ABDUL AZIZ',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-03-01',
                 'role' => 'member',
@@ -655,7 +630,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -669,10 +644,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 => 
-            array (
+            25 =>
+            array(
                 'id' => 37,
-                'name' => 'Novianti',
+                'name' => 'NOVIANTI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-02-25',
                 'role' => 'member',
@@ -680,7 +655,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -694,10 +669,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 => 
-            array (
+            26 =>
+            array(
                 'id' => 38,
-                'name' => 'Ayu pratiwi isman',
+                'name' => 'AYU PRATIWI ISMAN',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-05',
                 'role' => 'member',
@@ -705,7 +680,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -719,10 +694,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 => 
-            array (
+            27 =>
+            array(
                 'id' => 39,
-                'name' => 'Ai rahma alia',
+                'name' => 'AI RAHMA ALIA',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-01',
                 'role' => 'member',
@@ -730,7 +705,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -744,10 +719,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 => 
-            array (
+            28 =>
+            array(
                 'id' => 40,
-                'name' => 'Andi auliansyah',
+                'name' => 'ANDI AULIANSYAH',
                 'angkatan' => '2018',
                 'date_of_birth' => '1998-09-27',
                 'role' => 'member',
@@ -755,7 +730,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -769,10 +744,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 => 
-            array (
+            29 =>
+            array(
                 'id' => 41,
-                'name' => 'Khoridarul anisa',
+                'name' => 'KHORIDARUL ANISA',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-01-29',
                 'role' => 'member',
@@ -780,7 +755,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -794,10 +769,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 => 
-            array (
+            30 =>
+            array(
                 'id' => 42,
-                'name' => 'Alwan A F',
+                'name' => 'ALWAN A F',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-18',
                 'role' => 'member',
@@ -805,7 +780,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -819,10 +794,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 => 
-            array (
+            31 =>
+            array(
                 'id' => 43,
-                'name' => 'Muhammad Cahyadi',
+                'name' => 'MUHAMMAD CAHYADI',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-08-16',
                 'role' => 'member',
@@ -830,7 +805,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -844,10 +819,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 => 
-            array (
+            32 =>
+            array(
                 'id' => 44,
-                'name' => 'Ahmad Kamil',
+                'name' => 'AHMAD KAMIL',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-02-16',
                 'role' => 'member',
@@ -855,7 +830,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -869,10 +844,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 => 
-            array (
+            33 =>
+            array(
                 'id' => 45,
-                'name' => 'Sri Ayuni Wahyudin',
+                'name' => 'SRI AYUNI WAHYUDIN',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-03-20',
                 'role' => 'member',
@@ -880,7 +855,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -894,10 +869,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 => 
-            array (
+            34 =>
+            array(
                 'id' => 46,
-                'name' => 'Encep Abdul Hakim',
+                'name' => 'ENCEP ABDUL HAKIM',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-08-27',
                 'role' => 'member',
@@ -905,7 +880,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -919,10 +894,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 => 
-            array (
+            35 =>
+            array(
                 'id' => 47,
-                'name' => 'Lindawati Rusliha',
+                'name' => 'LINDAWATI RUSLIHA',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-10-24',
                 'role' => 'member',
@@ -930,7 +905,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -944,10 +919,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 => 
-            array (
+            36 =>
+            array(
                 'id' => 48,
-                'name' => 'Moh Syahrul Ramdan',
+                'name' => 'MOH SYAHRUL RAMDAN',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-10-24',
                 'role' => 'member',
@@ -955,7 +930,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -969,10 +944,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 => 
-            array (
+            37 =>
+            array(
                 'id' => 49,
-                'name' => 'Lina Herlina',
+                'name' => 'LINA HERLINA',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-12-14',
                 'role' => 'member',
@@ -980,7 +955,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -994,10 +969,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 => 
-            array (
+            38 =>
+            array(
                 'id' => 50,
-                'name' => 'Agustiani Sri Rahayu',
+                'name' => 'AGUSTIANI SRI RAHAYU',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-10-01',
                 'role' => 'member',
@@ -1005,7 +980,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1019,10 +994,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 => 
-            array (
+            39 =>
+            array(
                 'id' => 51,
-                'name' => 'Ruri C. Hetiawati',
+                'name' => 'RURI C. HETIAWATI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-26',
                 'role' => 'member',
@@ -1030,7 +1005,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1044,10 +1019,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 => 
-            array (
+            40 =>
+            array(
                 'id' => 52,
-                'name' => 'Rinrin Irmayani',
+                'name' => 'RINRIN IRMAYANI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-10-30',
                 'role' => 'member',
@@ -1055,7 +1030,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1069,10 +1044,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 => 
-            array (
+            41 =>
+            array(
                 'id' => 53,
-                'name' => 'Ai Dian Haerani',
+                'name' => 'AI DIAN HAERANI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-04-15',
                 'role' => 'member',
@@ -1080,7 +1055,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1094,10 +1069,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 => 
-            array (
+            42 =>
+            array(
                 'id' => 54,
-                'name' => 'Aprilia utami Herdi',
+                'name' => 'APRILIA UTAMI HERDI',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-04-03',
                 'role' => 'member',
@@ -1105,7 +1080,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1119,10 +1094,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 => 
-            array (
+            43 =>
+            array(
                 'id' => 55,
-                'name' => 'Siti Basiroh',
+                'name' => 'SITI BASIROH',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-07-08',
                 'role' => 'member',
@@ -1130,7 +1105,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1144,10 +1119,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 => 
-            array (
+            44 =>
+            array(
                 'id' => 56,
-                'name' => 'Odoss',
+                'name' => 'ODOSS',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-05-01',
                 'role' => 'member',
@@ -1155,7 +1130,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1169,10 +1144,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 => 
-            array (
+            45 =>
+            array(
                 'id' => 57,
-                'name' => 'Aang',
+                'name' => 'NU’MAN BASIR',
                 'angkatan' => '2018',
                 'date_of_birth' => '1999-09-08',
                 'role' => 'member',
@@ -1180,7 +1155,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1194,10 +1169,10 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 => 
-            array (
+            46 =>
+            array(
                 'id' => 58,
-                'name' => 'Maulana Yusuf',
+                'name' => 'MAULANA YUSUF',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-29',
                 'role' => 'member',
@@ -1205,7 +1180,307 @@ class UsersTableSeeder extends Seeder
                 'gender' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$RXfPXJbC1.xQUnN6TwSObOheoyW0Vw0pwTCRVBfEMnb.I4NyTQRAW',
+                'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            47 =>
+            array(
+                'id' => 59,
+                'name' => 'INDRA KURNIA',
+                'angkatan' => '2020',
+                'date_of_birth' => '2010-10-10',
+                'role' => 'member',
+                'email' => 'indra.kurnia@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$VOyAj8QQJ9isyuYcZTn/1O3e6btYd0wmASNCHeEBcPTuD/MqBQw/K',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            48 =>
+            array(
+                'id' => 60,
+                'name' => 'EGI',
+                'angkatan' => '2020',
+                'date_of_birth' => '2020-10-10',
+                'role' => 'member',
+                'email' => 'egi@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$md/c/YEWpPvsuhY4zwZiNuD8EgnP3KFrzlyNDZuu4vJ1NIyaMaBjC',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            49 =>
+            array(
+                'id' => 61,
+                'name' => 'M RIDWANAN',
+                'angkatan' => '2020',
+                'date_of_birth' => '2022-02-21',
+                'role' => 'member',
+                'email' => 'm.ridwanan@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$W1u1ruF1aaXUYsAbahCareKkT4Go5OFZe3Av/Wm0QVtWsWNV51Ram',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            50 =>
+            array(
+                'id' => 62,
+                'name' => 'WITA DEWI LESTARI',
+                'angkatan' => '2018',
+                'date_of_birth' => '2010-10-10',
+                'role' => 'member',
+                'email' => 'wita.dewi.lestari@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$oOM3P/K.NrIOAgquvsSeEeHeE6pxQ98ZoSnDkukVThczDVH8KgIBK',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            51 =>
+            array(
+                'id' => 63,
+                'name' => 'M SYAHRUL RAMADHAN',
+                'angkatan' => '2020',
+                'date_of_birth' => '2000-10-10',
+                'role' => 'member',
+                'email' => 'm.syahrul.ramadhan@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$07BTQBqWOcoH7uWQO45gdOizR4idfnw8T/EC/w/M9IqRe8C25KQmW',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            52 =>
+            array(
+                'id' => 64,
+                'name' => 'ILHAM FAOZ',
+                'angkatan' => '2020',
+                'date_of_birth' => '2010-10-10',
+                'role' => 'member',
+                'email' => 'ilham.faoz@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$zrHUA6dAv2.SBwhKMhR7mur0DPPe/q53bDtD3hnK175hbYiFJ4AhG',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            53 =>
+            array(
+                'id' => 65,
+                'name' => 'ADRIAN SYAMSYUL RAMLI',
+                'angkatan' => '2019',
+                'date_of_birth' => '2020-10-10',
+                'role' => 'member',
+                'email' => 'adrian.syamsul.ramli@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$AfcdK0BLW/2Q6KfO7WwWC.7SucGq5g06nF4MtdbeJKLDQVmPgvDPi',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            54 =>
+            array(
+                'id' => 67,
+                'name' => 'AGUNG SETIABUDI',
+                'angkatan' => '2020',
+                'date_of_birth' => '2020-10-10',
+                'role' => 'member',
+                'email' => 'agung.setiabudi@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$MVhc0NLkLjyacLBzyOIGWeNMDGpPAulPZyVQ.rQpZ1DxHAcLGh8Q6',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            55 =>
+            array(
+                'id' => 68,
+                'name' => 'MOCH YUSUF MUGNI',
+                'angkatan' => '2019',
+                'date_of_birth' => '2022-02-22',
+                'role' => 'member',
+                'email' => 'moch.yusuf.mugni@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$pV.2136UCfrTSiTM1HbFx.6rvpJbK3APoTMwfr5nIolfQoPJMSF4O',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            56 =>
+            array(
+                'id' => 69,
+                'name' => 'SITI SUROH HOLISOH',
+                'angkatan' => '2012',
+                'date_of_birth' => '2000-10-10',
+                'role' => 'member',
+                'email' => 'siti.suroh.holisoh@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$U4m2c3rZhb6gimv48jiSE.FE56.X3K9lXED5Q6lx4ByvD9XF9jdEW',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            57 =>
+            array(
+                'id' => 70,
+                'name' => 'SAEPUL FIKRI',
+                'angkatan' => '2019',
+                'date_of_birth' => '2022-12-03',
+                'role' => 'member',
+                'email' => 'saepul.fikri@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$SNw45dAvfrbooIHV/y2KouyfifyZmP80JXclVrwDims7Aa14rwiHa',
+                'village_id' => NULL,
+                'district_id' => NULL,
+                'regency_id' => NULL,
+                'province_id' => NULL,
+                'active' => 1,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            58 =>
+            array(
+                'id' => 71,
+                'name' => 'MUHAMMAD FIKI NUGRAHA',
+                'angkatan' => '2019',
+                'date_of_birth' => '2020-10-10',
+                'role' => 'member',
+                'email' => 'm.fiki.nugraha@gmail.com',
+                'gender' => NULL,
+                'username' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$2rA9ULBt5w2GojbY9J6lZ.6xqPNxtNJIOeJv.SEcA8eHAoXHKAWxi',
                 'village_id' => NULL,
                 'district_id' => NULL,
                 'regency_id' => NULL,
@@ -1220,7 +1495,5 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
-        
-        
     }
 }
