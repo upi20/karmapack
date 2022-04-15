@@ -26,36 +26,36 @@ class JabatanController extends Controller
         $periode = Periode::find($request->periode_id);
         if (request()->ajax()) {
             // extend_query
-            $get_parrent_no_urut = "(select z.no_urut from pengurus_periode_jabatan as z where a.parrent_id = z.id)";
+            $get_parrent_no_urut = "(select z.no_urut from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parrent_id = z.id)";
 
 
             $this->query['parrent'] = <<<SQL
-                ( if(isnull(a.parrent_id),'', (select z.nama from pengurus_periode_jabatan as z where a.parrent_id = z.id)) )
+                ( if(isnull(pengurus_periode_jabatan.parrent_id),'', (select z.nama from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parrent_id = z.id)) )
             SQL;
             $this->query['parrent_alias'] = 'parrent';
 
             $this->query['kode'] = <<<SQL
-                concat( if(isnull(a.parrent_id),'',
+                concat( if(isnull(pengurus_periode_jabatan.parrent_id),'',
                         concat($get_parrent_no_urut, '.')
-                    ), a.no_urut
+                    ), pengurus_periode_jabatan.no_urut
                 )
             SQL;
             $this->query['kode_alias'] = 'kode';
 
             $this->query['parrent_no_urut'] = <<<SQL
-                (if(isnull(a.parrent_id), a.no_urut,
+                (if(isnull(pengurus_periode_jabatan.parrent_id), pengurus_periode_jabatan.no_urut,
                     $get_parrent_no_urut)
                 )
             SQL;
             $this->query['parrent_no_urut_alias'] = 'parrent_no_urut';
 
             $this->query['child_no_urut'] = <<<SQL
-                (if(isnull(a.parrent_id), 0, a.no_urut))
+                (if(isnull(pengurus_periode_jabatan.parrent_id), 0, pengurus_periode_jabatan.no_urut))
             SQL;
             $this->query['child_no_urut_alias'] = 'child_no_urut';
 
-            $model = DB::table('pengurus_periode_jabatan as a')->select([
-                'a.id', 'a.nama', 'a.slug', 'a.status',
+            $model = Jabatan::select([
+                'pengurus_periode_jabatan.id', 'pengurus_periode_jabatan.nama', 'pengurus_periode_jabatan.slug', 'pengurus_periode_jabatan.status',
                 DB::raw("{$this->query['parrent']} as {$this->query['parrent_alias']}"),
                 DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
                 DB::raw("{$this->query['parrent_no_urut']} as {$this->query['parrent_no_urut_alias']}"),
@@ -82,12 +82,12 @@ class JabatanController extends Controller
                 ->filterColumn($this->query['kode_alias'], function ($query, $keyword) {
                     $query->whereRaw("{$this->query['kode']} like '%$keyword%'");
                 })
-                // ->filterColumn($this->query['parrent_no_urut_alias'], function ($query, $keyword) {
-                //     $query->whereRaw("{$this->query['parrent_no_urut']} like '%$keyword%'");
-                // })
-                // ->filterColumn($this->query['child_no_urut_alias'], function ($query, $keyword) {
-                //     $query->whereRaw("{$this->query['child_no_urut']} like '%$keyword%'");
-                // })
+                ->filterColumn($this->query['parrent_no_urut_alias'], function ($query, $keyword) {
+                    $query->whereRaw("{$this->query['parrent_no_urut']} like '%$keyword%'");
+                })
+                ->filterColumn($this->query['child_no_urut_alias'], function ($query, $keyword) {
+                    $query->whereRaw("{$this->query['child_no_urut']} like '%$keyword%'");
+                })
                 ->make(true);
         }
         $page_attr = [
