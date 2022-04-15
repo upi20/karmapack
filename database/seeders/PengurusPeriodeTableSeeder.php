@@ -14,14 +14,14 @@ class PengurusPeriodeTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('pengurus_periode')->delete();
-        
-        \DB::table('pengurus_periode')->insert(array (
-            0 => 
-            array (
-                'id' => '1',
+
+        \DB::table('pengurus_periode')->insert(array(
+            0 =>
+            array(
+                'id' => '2',
                 'nama' => 'Kabinet Masagi',
                 'foto' => NULL,
                 'dari' => '2021',
@@ -36,9 +36,9 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'created_at' => '2022-04-14 08:31:00',
                 'updated_at' => '2022-04-14 08:31:00',
             ),
-            1 => 
-            array (
-                'id' => '2',
+            1 =>
+            array(
+                'id' => '1',
                 'nama' => 'Pengaturan',
                 'foto' => NULL,
                 'dari' => '2001',
@@ -53,8 +53,8 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'created_at' => '2022-04-14 09:09:02',
                 'updated_at' => '2022-04-14 09:09:02',
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'id' => '3',
                 'nama' => 'tes',
                 'foto' => NULL,
@@ -70,8 +70,8 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'created_at' => '2022-04-14 09:16:35',
                 'updated_at' => '2022-04-14 16:54:12',
             ),
-            3 => 
-            array (
+            3 =>
+            array(
                 'id' => '4',
                 'nama' => 'Periode tes',
                 'foto' => NULL,
@@ -88,7 +88,5 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'updated_at' => '2022-04-14 16:06:34',
             ),
         ));
-        
-        
     }
 }
