@@ -62,7 +62,7 @@
                         enctype="multipart/form-data">
                         <input type="hidden" id="id" name="id">
                         <input type="hidden" id="temp_foto" name="temp_foto">
-                        <input type="hidden" id="pengurus_periode_id" name="pengurus_periode_id" value="2">
+                        <input type="hidden" id="periode_id" name="periode_id" value="{{ $periode->id }}">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
@@ -184,7 +184,9 @@
                     ['float', ['floatLeft', 'floatRight', 'floatNone']],
                     ['remove', ['removeMedia']],
                     ['table', ['table']],
-                    ['insert', ['link', 'unlink', 'audio', 'hr', 'picture']],
+                    ['insert', ['link', 'unlink', 'audio', 'hr',
+                        // 'picture'
+                    ]],
                     ['mybutton', ['myVideo']],
                     ['view', ['fullscreen', 'codeview']],
                     ['help', ['help']],
@@ -330,8 +332,9 @@
                 resetErrorAfterInput();
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
-                const route = ($('#id').val() == '') ? "{{ route('admin.artikel.tag.insert') }}" :
-                    "{{ route('admin.artikel.tag.update') }}";
+                const route = ($('#id').val() == '') ?
+                    "{{ route('admin.pengurus.jabatan.insert', $periode->id) }}" :
+                    "{{ route('admin.pengurus.jabatan.update', $periode->id) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -384,6 +387,8 @@
             $('#modal-default-title').html("Add Bidang");
             $('#modal-default').modal('show');
             $('#id').val('');
+            $('#visi').summernote("code", '');
+            $('#misi').summernote("code", '');
             resetErrorAfterInput();
             refresh_parrent('{{ $periode->id }}', '', '#parrent_id');
         }
@@ -399,8 +404,8 @@
             $('#status').val(data.status);
             $('#slug').val(data.slug);
             $('#no_urut').val(data.no_urut);
-            $('#visi').val(data.visi);
-            $('#misi').val(data.misi);
+            $('#visi').summernote("code", data.visi);
+            $('#misi').summernote("code", data.misi);
             $('#slogan').val(data.slogan);
             refresh_parrent('{{ $periode->id }}', data.parrent_id, '#parrent_id');
         }
@@ -415,7 +420,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/artikel/tag') }}/${id}`,
+                        url: `{{ url('admin/pengurus/jabatan') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

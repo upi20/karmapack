@@ -8,11 +8,13 @@ use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\Periode;
+use App\Helpers\Summernote;
 use Illuminate\Support\Facades\DB;
 
 class JabatanController extends Controller
 {
     private $query = [];
+    private $image_folder = 'periode/jabatan';
     public function index(Request $request)
     {
         // Rencana =============================================================================
@@ -55,7 +57,15 @@ class JabatanController extends Controller
             $this->query['child_no_urut_alias'] = 'child_no_urut';
 
             $model = Jabatan::select([
-                'pengurus_periode_jabatan.id', 'pengurus_periode_jabatan.nama', 'pengurus_periode_jabatan.slug', 'pengurus_periode_jabatan.status',
+                'pengurus_periode_jabatan.id',
+                'pengurus_periode_jabatan.parrent_id',
+                'pengurus_periode_jabatan.nama',
+                'pengurus_periode_jabatan.slug',
+                'pengurus_periode_jabatan.status',
+                'pengurus_periode_jabatan.no_urut',
+                'pengurus_periode_jabatan.visi',
+                'pengurus_periode_jabatan.misi',
+                'pengurus_periode_jabatan.slogan',
                 DB::raw("{$this->query['parrent']} as {$this->query['parrent_alias']}"),
                 DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
                 DB::raw("{$this->query['parrent_no_urut']} as {$this->query['parrent_no_urut_alias']}"),
@@ -103,16 +113,30 @@ class JabatanController extends Controller
     {
         try {
             $request->validate([
+                'parrent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:artikel_kategori'],
+                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan'],
                 'status' => ['required', 'int'],
+                'no_urut' => ['required', 'int'],
+                'visi' => ['required', 'string'],
+                'misi' => ['required', 'string'],
+                'slogan' => ['required', 'string'],
+                'periode_id' => ['required', 'int'],
             ]);
-
+            $visi = Summernote::insert($request->visi, $this->image_folder, 'visi' . substr($request->slug, 0, 20));
+            $misi = Summernote::insert($request->misi, $this->image_folder, 'misi' . substr($request->slug, 0, 20));
             Jabatan::create([
+                'parrent_id' => $request->parrent_id,
                 'nama' => $request->nama,
                 'slug' => $request->slug,
                 'status' => $request->status,
+                'no_urut' => $request->no_urut,
+                'visi' => $visi->html,
+                'misi' => $misi->html,
+                'slogan' => $request->slogan,
+                'periode_id' => $request->periode_id,
             ]);
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -127,14 +151,27 @@ class JabatanController extends Controller
         try {
             $model = Jabatan::find($request->id);
             $request->validate([
+                'id' => ['required', 'int'],
+                'parrent_id' => ['int'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:artikel_kategori,slug,' . $request->id],
+                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan,slug,' . $request->id],
                 'status' => ['required', 'int'],
+                'no_urut' => ['required', 'int'],
+                'visi' => ['required', 'string'],
+                'misi' => ['required', 'string'],
+                'slogan' => ['required', 'string'],
             ]);
+            $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi' . substr($request->slug, 0, 20));
+            $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi' . substr($request->slug, 0, 20));
 
+            $model->parrent_id = $request->parrent_id;
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->status = $request->status;
+            $model->no_urut = $request->no_urut;
+            $model->visi = $visi->html;
+            $model->misi = $misi->html;
+            $model->slogan = $request->slogan;
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {
@@ -148,6 +185,9 @@ class JabatanController extends Controller
     public function delete(Jabatan $model)
     {
         try {
+            // cek folder
+            Summernote::delete($model->visi);
+            Summernote::delete($model->misi);
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
