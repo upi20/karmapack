@@ -113,7 +113,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                         {{ $breadcrumb['name'] }}
                                                     </a>
                                                 @else
-                                                    {{ $breadcrumb['name'] }}
+                                                    <span class="text-dark">
+                                                        {{ $breadcrumb['name'] }}
+                                                    </span>
                                                 @endif
                                             </li>
                                         @endforeach
