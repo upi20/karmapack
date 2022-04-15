@@ -24,9 +24,25 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="keywords" content="{{ $page_attr->keywords }}">
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon"
-        href="{{ asset('assets/templates/admin/main/assets/images/brand/favicon.ico') }}" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('favicon/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="##E72463">
+    <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon"
@@ -71,23 +87,15 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         <!-- PAGE -->
         <div class="page">
             <div class="">
-
-                <!-- CONTAINER OPEN -->
-                <div class="col col-login mx-auto mt-7">
-                    <div class="text-center">
-                        <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo-white.png') }}"
-                            class="header-brand-img" alt="">
-                    </div>
-                </div>
-
                 <div class="container-login100">
                     <div class="wrap-login100 p-6">
-                        <span class="login100-form-title pb-5">
-                            Sign in
-                        </span>
-                        <p class="text-center">Sign in to start your session</p>
+                        <div class="text-center">
+                            <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo-white.png') }}"
+                                class="header-brand-img" alt="Logo Karmapack" id="logo">
+                        </div>
+                        <p class="text-center mt-5">Sign in to start your session</p>
                         <div class="panel panel-primary">
-                            <div class="panel-body tabs-menu-body p-0 pt-5">
+                            <div class="panel-body tabs-menu-body p-0">
                                 <div class="tab-content">
                                     <form action="javascript:void(0)" id="Loginform" name="Loginform" method="POST"
                                         enctype="multipart/form-data">
@@ -110,10 +118,10 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                             <button type="submit" class="login100-form-btn btn-primary">
                                                 Sign in
                                             </button>
-                                            <div class="text-center pt-4">
+                                            {{-- <div class="text-center pt-4">
                                                 <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot
                                                         Password?</a></p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </form>
                                 </div>
@@ -122,6 +130,13 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                     </div>
                 </div>
                 <!-- CONTAINER CLOSED -->
+                <div class="col col-login mx-auto mt-7">
+                    <div class="text-center">
+                        © <span id="year"></span> Karmapack. Persembahan Dari
+                        <a class="text-light fw-bold" href="http://github.com/iseplutpinur">Isep Lutpi Nur</a>
+                        Bidang Kominfo.
+                    </div>
+                </div>
             </div>
         </div>
         <!-- End PAGE -->
@@ -148,6 +163,12 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <script>
         $(document).ready(function() {
+            if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
+                $('#logo').attr('src',
+                    "{{ asset('assets/templates/admin/main/assets/images/brand/logo-3.png') }}"
+                );
+            }
+            $('#year').text((new Date()).getFullYear());
             $('#Loginform').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
