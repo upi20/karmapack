@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class PengurusJabatanTableSeeder extends Seeder
+class PengurusPeriodeJabatanTableSeeder extends Seeder
 {
 
     /**
@@ -14,13 +14,13 @@ class PengurusJabatanTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('pengurus_periode_jabatan')->delete();
-
-        \DB::table('pengurus_periode_jabatan')->insert(array(
-            0 =>
-            array(
+        
+        \DB::table('pengurus_periode_jabatan')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -32,9 +32,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            1 =>
-            array(
+            1 => 
+            array (
                 'id' => 3,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -46,9 +48,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            2 =>
-            array(
+            2 => 
+            array (
                 'id' => 7,
                 'periode_id' => 2,
                 'parrent_id' => 1,
@@ -60,9 +64,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            3 =>
-            array(
+            3 => 
+            array (
                 'id' => 8,
                 'periode_id' => 2,
                 'parrent_id' => 1,
@@ -74,9 +80,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            4 =>
-            array(
+            4 => 
+            array (
                 'id' => 9,
                 'periode_id' => 2,
                 'parrent_id' => 1,
@@ -88,9 +96,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            5 =>
-            array(
+            5 => 
+            array (
                 'id' => 10,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -102,9 +112,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            6 =>
-            array(
+            6 => 
+            array (
                 'id' => 11,
                 'periode_id' => 2,
                 'parrent_id' => 10,
@@ -116,9 +128,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            7 =>
-            array(
+            7 => 
+            array (
                 'id' => 12,
                 'periode_id' => 2,
                 'parrent_id' => 10,
@@ -130,9 +144,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            8 =>
-            array(
+            8 => 
+            array (
                 'id' => 13,
                 'periode_id' => 2,
                 'parrent_id' => 10,
@@ -144,9 +160,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            9 =>
-            array(
+            9 => 
+            array (
                 'id' => 14,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -158,9 +176,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'Misi Indonesia raya merdeka',
                 'slogan' => 'Hebat Tamat',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            10 =>
-            array(
+            10 => 
+            array (
                 'id' => 15,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -172,9 +192,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => 'Misi',
                 'slogan' => 'Slogan',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            11 =>
-            array(
+            11 => 
+            array (
                 'id' => 17,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -186,9 +208,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '-',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            12 =>
-            array(
+            12 => 
+            array (
                 'id' => 18,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -200,9 +224,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '-',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            13 =>
-            array(
+            13 => 
+            array (
                 'id' => 19,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -214,9 +240,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            14 =>
-            array(
+            14 => 
+            array (
                 'id' => 20,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -228,9 +256,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            15 =>
-            array(
+            15 => 
+            array (
                 'id' => 21,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -242,9 +272,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            16 =>
-            array(
+            16 => 
+            array (
                 'id' => 22,
                 'periode_id' => 2,
                 'parrent_id' => NULL,
@@ -256,9 +288,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            17 =>
-            array(
+            17 => 
+            array (
                 'id' => 23,
                 'periode_id' => 2,
                 'parrent_id' => 14,
@@ -270,9 +304,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            18 =>
-            array(
+            18 => 
+            array (
                 'id' => 24,
                 'periode_id' => 2,
                 'parrent_id' => 14,
@@ -284,9 +320,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            19 =>
-            array(
+            19 => 
+            array (
                 'id' => 25,
                 'periode_id' => 2,
                 'parrent_id' => 14,
@@ -298,9 +336,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            20 =>
-            array(
+            20 => 
+            array (
                 'id' => 26,
                 'periode_id' => 2,
                 'parrent_id' => 15,
@@ -312,9 +352,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            21 =>
-            array(
+            21 => 
+            array (
                 'id' => 27,
                 'periode_id' => 2,
                 'parrent_id' => 15,
@@ -326,9 +368,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            22 =>
-            array(
+            22 => 
+            array (
                 'id' => 28,
                 'periode_id' => 2,
                 'parrent_id' => 15,
@@ -340,9 +384,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            23 =>
-            array(
+            23 => 
+            array (
                 'id' => 29,
                 'periode_id' => 2,
                 'parrent_id' => 19,
@@ -354,9 +400,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            24 =>
-            array(
+            24 => 
+            array (
                 'id' => 30,
                 'periode_id' => 2,
                 'parrent_id' => 19,
@@ -368,9 +416,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            25 =>
-            array(
+            25 => 
+            array (
                 'id' => 31,
                 'periode_id' => 2,
                 'parrent_id' => 19,
@@ -382,9 +432,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            26 =>
-            array(
+            26 => 
+            array (
                 'id' => 32,
                 'periode_id' => 2,
                 'parrent_id' => 20,
@@ -396,9 +448,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            27 =>
-            array(
+            27 => 
+            array (
                 'id' => 33,
                 'periode_id' => 2,
                 'parrent_id' => 20,
@@ -410,9 +464,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            28 =>
-            array(
+            28 => 
+            array (
                 'id' => 34,
                 'periode_id' => 2,
                 'parrent_id' => 20,
@@ -424,9 +480,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            29 =>
-            array(
+            29 => 
+            array (
                 'id' => 35,
                 'periode_id' => 2,
                 'parrent_id' => 21,
@@ -438,9 +496,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            30 =>
-            array(
+            30 => 
+            array (
                 'id' => 36,
                 'periode_id' => 2,
                 'parrent_id' => 21,
@@ -452,9 +512,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            31 =>
-            array(
+            31 => 
+            array (
                 'id' => 37,
                 'periode_id' => 2,
                 'parrent_id' => 21,
@@ -466,9 +528,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            32 =>
-            array(
+            32 => 
+            array (
                 'id' => 38,
                 'periode_id' => 2,
                 'parrent_id' => 22,
@@ -480,9 +544,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            33 =>
-            array(
+            33 => 
+            array (
                 'id' => 39,
                 'periode_id' => 2,
                 'parrent_id' => 22,
@@ -494,9 +560,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
-            34 =>
-            array(
+            34 => 
+            array (
                 'id' => 40,
                 'periode_id' => 2,
                 'parrent_id' => 22,
@@ -508,7 +576,11 @@ class PengurusJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'created_at' => NULL,
+                'updated_at' => NULL,
             ),
         ));
+        
+        
     }
 }
