@@ -14,13 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('users')->delete();
-
-        \DB::table('users')->insert(array(
-            0 =>
-            array(
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'name' => 'ISEP LUTPI NUR',
                 'angkatan' => '2012',
@@ -44,8 +44,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 =>
-            array(
+            1 => 
+            array (
                 'id' => 7,
                 'name' => 'PENGUR\'US 2',
                 'angkatan' => '2019',
@@ -69,8 +69,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 =>
-            array(
+            2 => 
+            array (
                 'id' => 9,
                 'name' => 'ILHAM SOLEHUDIN',
                 'angkatan' => NULL,
@@ -94,8 +94,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 =>
-            array(
+            3 => 
+            array (
                 'id' => 14,
                 'name' => 'PENGURUS 2',
                 'angkatan' => '2011',
@@ -119,8 +119,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 =>
-            array(
+            4 => 
+            array (
                 'id' => 16,
                 'name' => 'HILAL MUHAMMAD FATURAHMAN',
                 'angkatan' => '2018',
@@ -144,8 +144,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 =>
-            array(
+            5 => 
+            array (
                 'id' => 17,
                 'name' => 'NITA HALIMATUSSA’DIYAH',
                 'angkatan' => '2018',
@@ -169,8 +169,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 =>
-            array(
+            6 => 
+            array (
                 'id' => 18,
                 'name' => 'ISEP LUTPI NUR',
                 'angkatan' => '2018',
@@ -194,8 +194,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 =>
-            array(
+            7 => 
+            array (
                 'id' => 19,
                 'name' => 'ABDUL MUHLIS',
                 'angkatan' => '2018',
@@ -219,8 +219,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 =>
-            array(
+            8 => 
+            array (
                 'id' => 20,
                 'name' => 'ANDI TAUFIK PERMADI',
                 'angkatan' => '2018',
@@ -244,8 +244,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 =>
-            array(
+            9 => 
+            array (
                 'id' => 21,
                 'name' => 'SUKIRMAN MAULANA',
                 'angkatan' => '2018',
@@ -269,8 +269,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 =>
-            array(
+            10 => 
+            array (
                 'id' => 22,
                 'name' => 'DEWI',
                 'angkatan' => '2018',
@@ -294,8 +294,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 =>
-            array(
+            11 => 
+            array (
                 'id' => 23,
                 'name' => 'WIWIT AWALIYAH',
                 'angkatan' => '2018',
@@ -319,8 +319,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 =>
-            array(
+            12 => 
+            array (
                 'id' => 24,
                 'name' => 'SAEPUL ROHMAN',
                 'angkatan' => '2018',
@@ -344,8 +344,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 =>
-            array(
+            13 => 
+            array (
                 'id' => 25,
                 'name' => 'RADEN BINTANG',
                 'angkatan' => '2018',
@@ -369,8 +369,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 =>
-            array(
+            14 => 
+            array (
                 'id' => 26,
                 'name' => 'HILMI FITRIANI',
                 'angkatan' => '2018',
@@ -394,8 +394,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 =>
-            array(
+            15 => 
+            array (
                 'id' => 27,
                 'name' => 'SAMSUL MAARIP',
                 'angkatan' => '2018',
@@ -419,8 +419,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 =>
-            array(
+            16 => 
+            array (
                 'id' => 28,
                 'name' => 'MUHAMAD RAIHAN RAHMAN',
                 'angkatan' => '2018',
@@ -444,8 +444,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 =>
-            array(
+            17 => 
+            array (
                 'id' => 29,
                 'name' => 'AKBAR MUHAMAD ASHONI',
                 'angkatan' => '2018',
@@ -469,8 +469,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 =>
-            array(
+            18 => 
+            array (
                 'id' => 30,
                 'name' => 'WAHID NURSIDIK',
                 'angkatan' => '2018',
@@ -494,8 +494,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 =>
-            array(
+            19 => 
+            array (
                 'id' => 31,
                 'name' => 'M FAISAL L',
                 'angkatan' => '2018',
@@ -519,8 +519,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 =>
-            array(
+            20 => 
+            array (
                 'id' => 32,
                 'name' => 'SALAFIA AL ZAHRA FAUZIA',
                 'angkatan' => '2018',
@@ -544,8 +544,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 =>
-            array(
+            21 => 
+            array (
                 'id' => 33,
                 'name' => 'YUSI YUSFITA',
                 'angkatan' => '2018',
@@ -569,8 +569,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 =>
-            array(
+            22 => 
+            array (
                 'id' => 34,
                 'name' => 'CUCU MARYAM NURPADILAH',
                 'angkatan' => '2018',
@@ -594,8 +594,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 =>
-            array(
+            23 => 
+            array (
                 'id' => 35,
                 'name' => 'RIFKI ALFAIZAR',
                 'angkatan' => '2018',
@@ -619,8 +619,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 =>
-            array(
+            24 => 
+            array (
                 'id' => 36,
                 'name' => 'M. RIDWAN ABDUL AZIZ',
                 'angkatan' => '2018',
@@ -644,8 +644,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 =>
-            array(
+            25 => 
+            array (
                 'id' => 37,
                 'name' => 'NOVIANTI',
                 'angkatan' => '2018',
@@ -669,8 +669,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 =>
-            array(
+            26 => 
+            array (
                 'id' => 38,
                 'name' => 'AYU PRATIWI ISMAN',
                 'angkatan' => '2018',
@@ -694,8 +694,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 =>
-            array(
+            27 => 
+            array (
                 'id' => 39,
                 'name' => 'AI RAHMA ALIA',
                 'angkatan' => '2018',
@@ -719,8 +719,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 =>
-            array(
+            28 => 
+            array (
                 'id' => 40,
                 'name' => 'ANDI AULIANSYAH',
                 'angkatan' => '2018',
@@ -744,8 +744,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 =>
-            array(
+            29 => 
+            array (
                 'id' => 41,
                 'name' => 'KHORIDARUL ANISA',
                 'angkatan' => '2018',
@@ -769,8 +769,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 =>
-            array(
+            30 => 
+            array (
                 'id' => 42,
                 'name' => 'ALWAN A F',
                 'angkatan' => '2018',
@@ -794,8 +794,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 =>
-            array(
+            31 => 
+            array (
                 'id' => 43,
                 'name' => 'MUHAMMAD CAHYADI',
                 'angkatan' => '2018',
@@ -819,8 +819,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 =>
-            array(
+            32 => 
+            array (
                 'id' => 44,
                 'name' => 'AHMAD KAMIL',
                 'angkatan' => '2018',
@@ -844,8 +844,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 =>
-            array(
+            33 => 
+            array (
                 'id' => 45,
                 'name' => 'SRI AYUNI WAHYUDIN',
                 'angkatan' => '2018',
@@ -869,8 +869,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 =>
-            array(
+            34 => 
+            array (
                 'id' => 46,
                 'name' => 'ENCEP ABDUL HAKIM',
                 'angkatan' => '2018',
@@ -894,8 +894,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 =>
-            array(
+            35 => 
+            array (
                 'id' => 47,
                 'name' => 'LINDAWATI RUSLIHA',
                 'angkatan' => '2018',
@@ -919,8 +919,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 =>
-            array(
+            36 => 
+            array (
                 'id' => 48,
                 'name' => 'MOH SYAHRUL RAMDAN',
                 'angkatan' => '2018',
@@ -944,8 +944,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 =>
-            array(
+            37 => 
+            array (
                 'id' => 49,
                 'name' => 'LINA HERLINA',
                 'angkatan' => '2018',
@@ -969,8 +969,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 =>
-            array(
+            38 => 
+            array (
                 'id' => 50,
                 'name' => 'AGUSTIANI SRI RAHAYU',
                 'angkatan' => '2018',
@@ -994,8 +994,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 =>
-            array(
+            39 => 
+            array (
                 'id' => 51,
                 'name' => 'RURI C. HETIAWATI',
                 'angkatan' => '2018',
@@ -1019,8 +1019,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 =>
-            array(
+            40 => 
+            array (
                 'id' => 52,
                 'name' => 'RINRIN IRMAYANI',
                 'angkatan' => '2018',
@@ -1044,8 +1044,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 =>
-            array(
+            41 => 
+            array (
                 'id' => 53,
                 'name' => 'AI DIAN HAERANI',
                 'angkatan' => '2018',
@@ -1069,8 +1069,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 =>
-            array(
+            42 => 
+            array (
                 'id' => 54,
                 'name' => 'APRILIA UTAMI HERDI',
                 'angkatan' => '2018',
@@ -1094,8 +1094,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 =>
-            array(
+            43 => 
+            array (
                 'id' => 55,
                 'name' => 'SITI BASIROH',
                 'angkatan' => '2018',
@@ -1119,8 +1119,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 =>
-            array(
+            44 => 
+            array (
                 'id' => 56,
                 'name' => 'ODOSS',
                 'angkatan' => '2018',
@@ -1144,8 +1144,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 =>
-            array(
+            45 => 
+            array (
                 'id' => 57,
                 'name' => 'NU’MAN BASIR',
                 'angkatan' => '2018',
@@ -1169,8 +1169,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 =>
-            array(
+            46 => 
+            array (
                 'id' => 58,
                 'name' => 'MAULANA YUSUF',
                 'angkatan' => '2018',
@@ -1194,8 +1194,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 =>
-            array(
+            47 => 
+            array (
                 'id' => 59,
                 'name' => 'INDRA KURNIA',
                 'angkatan' => '2020',
@@ -1219,8 +1219,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 =>
-            array(
+            48 => 
+            array (
                 'id' => 60,
                 'name' => 'EGI',
                 'angkatan' => '2020',
@@ -1244,8 +1244,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            49 =>
-            array(
+            49 => 
+            array (
                 'id' => 61,
                 'name' => 'M RIDWANAN',
                 'angkatan' => '2020',
@@ -1269,8 +1269,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            50 =>
-            array(
+            50 => 
+            array (
                 'id' => 62,
                 'name' => 'WITA DEWI LESTARI',
                 'angkatan' => '2018',
@@ -1294,8 +1294,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 =>
-            array(
+            51 => 
+            array (
                 'id' => 63,
                 'name' => 'M SYAHRUL RAMADHAN',
                 'angkatan' => '2020',
@@ -1319,8 +1319,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 =>
-            array(
+            52 => 
+            array (
                 'id' => 64,
                 'name' => 'ILHAM FAOZ',
                 'angkatan' => '2020',
@@ -1344,8 +1344,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 =>
-            array(
+            53 => 
+            array (
                 'id' => 65,
                 'name' => 'ADRIAN SYAMSYUL RAMLI',
                 'angkatan' => '2019',
@@ -1369,8 +1369,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            54 =>
-            array(
+            54 => 
+            array (
                 'id' => 67,
                 'name' => 'AGUNG SETIABUDI',
                 'angkatan' => '2020',
@@ -1394,8 +1394,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            55 =>
-            array(
+            55 => 
+            array (
                 'id' => 68,
                 'name' => 'MOCH YUSUF MUGNI',
                 'angkatan' => '2019',
@@ -1419,8 +1419,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            56 =>
-            array(
+            56 => 
+            array (
                 'id' => 69,
                 'name' => 'SITI SUROH HOLISOH',
                 'angkatan' => '2012',
@@ -1444,8 +1444,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 =>
-            array(
+            57 => 
+            array (
                 'id' => 70,
                 'name' => 'SAEPUL FIKRI',
                 'angkatan' => '2019',
@@ -1469,8 +1469,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            58 =>
-            array(
+            58 => 
+            array (
                 'id' => 71,
                 'name' => 'MUHAMMAD FIKI NUGRAHA',
                 'angkatan' => '2019',
@@ -1495,5 +1495,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
+        
+        
     }
 }

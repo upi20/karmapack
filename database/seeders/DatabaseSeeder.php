@@ -29,10 +29,11 @@ class DatabaseSeeder extends Seeder
         // AddressDistrictSeeders::run();
         // AddressVillageSeeders::run();
         $this->call(UsersTableSeeder::class);
+        $this->call(GaleriTableSeeder::class);
         $this->call(ArtikelTableSeeder::class);
         $this->call(ArtikelKategoriTableSeeder::class);
         $this->call(ArtikelTagTableSeeder::class);
         $this->call(PengurusPeriodeTableSeeder::class);
-        $this->call(GaleriTableSeeder::class);
+        $this->call(PengurusPeriodeJabatanTableSeeder::class);
     }
 }

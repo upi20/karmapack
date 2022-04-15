@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\Artikel\TagController;
 
 // pengurus
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
-
+use App\Http\Controllers\Admin\Pengurus\JabatanController;
 
 // Galeri
 use App\Http\Controllers\Admin\GaleriController;
@@ -163,6 +163,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::delete('/{model}', [PeriodeController::class, 'delete'])->name('admin.pengurus.periode.delete');
             Route::post('/insert', [PeriodeController::class, 'insert'])->name('admin.pengurus.periode.insert');
             Route::post('/update', [PeriodeController::class, 'update'])->name('admin.pengurus.periode.update');
+        });
+
+        // Jabatan
+        Route::group(['prefix' => 'jabatan'], function () {
+            Route::get('/{periode_id}', [JabatanController::class, 'index'])->name('admin.pengurus.jabatan');
+            Route::get('/get_parrent', [JabatanController::class, 'parrent'])->name('admin.pengurus.jabatan.parrent');
+            Route::get('/select2', [JabatanController::class, 'select2'])->name('admin.pengurus.jabatan.select2');
+            Route::post('/{periode_id}', [JabatanController::class, 'insert'])->name('admin.pengurus.jabatan.insert');
+            Route::delete('/{model}', [JabatanController::class, 'delete'])->name('admin.pengurus.jabatan.delete');
+            Route::post('/update', [JabatanController::class, 'update'])->name('admin.pengurus.jabatan.update');
         });
     });
 

@@ -15,8 +15,15 @@ class PeriodeController extends Controller
     public function index(Request $request) // page
     {
         // Rencana =============================================================================
-        // jumlah bidang
+        // jumlah bidang yang mempunyai child
         // jumlah pengurus / Member
+        // yang aktif cuman 1
+        // yang aktif selalu di atas
+        // modal detail
+        // modal image /icon
+        // lihat
+        // tombol atifkan di status
+        // tombol lihat yang di arahkan ke frontend
         // Rencana =============================================================================
 
         if (request()->ajax()) {

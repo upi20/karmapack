@@ -123,7 +123,11 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                            return ` <a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
+                                href="{{ url('admin/pengurus/jabatan') }}/${data}" >
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bidang
+                                </a>
+                                <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
                                 href="{{ url('admin/pengurus/periode/edit') }}/${data}" >
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </a>
