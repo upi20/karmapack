@@ -223,7 +223,7 @@
                         var oTable = table_html.dataTable();
                         oTable.fnDraw(false);
                         Swal.fire({
-                            position: 'top-end',
+                            position: 'center',
                             icon: 'success',
                             title: 'Data saved successfully',
                             showConfirmButton: false,
