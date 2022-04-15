@@ -85,6 +85,7 @@ class UserController extends Controller
                 'role' => $request->role,
                 'active' => $request->active,
                 'password' => Hash::make($request->password),
+                // // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -108,7 +109,8 @@ class UserController extends Controller
                 'date_of_birth' => ['required', 'date'],
                 'angkatan' => ['required', 'int'],
                 'active' => ['required', 'int', 'in:1,0'],
-                'password' => $request->password ? ['required', 'string', new Password] : ''
+                'password' => $request->password ? ['required', 'string', new Password] : '',
+                'updated_at' => auth()->user()->id,
             ]);
 
             if ($request->password) {
@@ -121,6 +123,7 @@ class UserController extends Controller
             $user->date_of_birth = $request->date_of_birth;
             $user->angkatan = $request->angkatan;
             $user->active = $request->active;
+            // $model->updated_by = auth()->user()->id;
 
             $user->save();
             return response()->json();

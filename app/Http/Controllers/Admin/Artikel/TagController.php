@@ -62,6 +62,7 @@ class TagController extends Controller
                 'nama' => $request->nama,
                 'slug' => $request->slug,
                 'status' => $request->status,
+                // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -85,6 +86,7 @@ class TagController extends Controller
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->status = $request->status;
+            // $model->updated_by = auth()->user()->id;
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {

@@ -19,6 +19,17 @@ class CreateArtikelTag extends Migration
             $table->string('slug')->unique();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
+
+            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
+            // $table->foreign('created_at')
+            //     ->references('id')->on('users')
+            //     ->nullOnDelete()
+            //     ->cascadeOnUpdate();
+            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
+            // $table->foreign('updated_at')
+            //     ->references('id')->on('users')
+            //     ->nullOnDelete()
+            //     ->cascadeOnUpdate();
         });
     }
 

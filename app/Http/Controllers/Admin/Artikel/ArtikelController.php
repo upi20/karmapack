@@ -88,7 +88,8 @@ class ArtikelController extends Controller
                 'status' => $request->status,
                 'detail' => $detail->html,
                 'foto' => $detail->first_img,
-                'user_id' => auth()->user()->id
+                'user_id' => auth()->user()->id,
+                // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -119,6 +120,7 @@ class ArtikelController extends Controller
             $model->nama = $request->nama;
             $model->excerpt = $request->excerpt;
             $model->status = $request->status;
+            $model->updated_by = auth()->user()->id;
             $model->save();
 
             return response()->json();

@@ -15,18 +15,19 @@ class CreatePengurusPeriodeJabatanMember extends Migration
     {
         Schema::create('pengurus_periode_jabatan_member', function (Blueprint $table) {
             $table->integer('id', true, false);
-            $table->integer('periode_jabatan_id')->nullable()->default(null);
-            $table->bigInteger('user_id', false, true)->nullable()->default(null);
+            $table->integer('periode_jabatan_id');
+            $table->bigInteger('user_id', false, true);
+            $table->unique(['periode_jabatan_id', 'user_id'], 'periode_jabatan_id_user_id');
 
             // relationship
             $table->foreign('periode_jabatan_id')
                 ->references('id')->on('pengurus_periode_jabatan')
-                ->nullOnDelete()
+                ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 
             $table->foreign('user_id')
                 ->references('id')->on('users')
-                ->nullOnDelete()
+                ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->timestamps();
         });

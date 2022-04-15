@@ -27,6 +27,17 @@ class CreateArtikelKategoriMember extends Migration
                 ->references('id')->on('artikel_kategori')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
+
+            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
+            // $table->foreign('created_at')
+            //     ->references('id')->on('users')
+            //     ->nullOnDelete()
+            //     ->cascadeOnUpdate();
+            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
+            // $table->foreign('updated_at')
+            //     ->references('id')->on('users')
+            //     ->nullOnDelete()
+            //     ->cascadeOnUpdate();
         });
     }
 

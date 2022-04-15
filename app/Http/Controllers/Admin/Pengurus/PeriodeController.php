@@ -108,6 +108,7 @@ class PeriodeController extends Controller
                 'status' => $request->status,
                 'visi' => $visi->html,
                 'misi' => $misi->html,
+                // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -150,6 +151,7 @@ class PeriodeController extends Controller
             $model->status = $request->status;
             $model->visi = $visi->html;
             $model->misi = $misi->html;
+            // $model->updated_by = auth()->user()->id;
             $model->save();
 
             return response()->json();

@@ -135,6 +135,7 @@ class JabatanController extends Controller
                 'misi' => $misi->html,
                 'slogan' => $request->slogan,
                 'periode_id' => $request->periode_id,
+                // 'created_by' => auth()->user()->id,
             ]);
 
             return response()->json();
@@ -172,6 +173,7 @@ class JabatanController extends Controller
             $model->visi = $visi->html;
             $model->misi = $misi->html;
             $model->slogan = $request->slogan;
+            // $model->updated_by = auth()->user()->id;
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {

@@ -60,6 +60,7 @@ class GaleriController extends Controller
                 'foto_id_gdrive' => $request->foto_id_gdrive,
                 'id_gdrive' => $request->id_gdrive,
                 'keterangan' => $request->keterangan,
+                // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
         } catch (ValidationException $error) {
@@ -91,6 +92,7 @@ class GaleriController extends Controller
             $model->foto_id_gdrive = $request->foto_id_gdrive;
             $model->id_gdrive = $request->id_gdrive;
             $model->keterangan = $request->keterangan;
+            // $model->updated_by = auth()->user()->id;
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {

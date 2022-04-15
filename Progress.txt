@@ -36,3 +36,9 @@ Artikel
 
 // Rencana
     Tampilkan kantegori dan tag di artikel
+    Tambah pengumuman untuk frontednd
+    Pengumuman di backend bisa di kategori menggunakan select2.
+        umum
+        per periode
+        per angkatan
+        dan lain lain
