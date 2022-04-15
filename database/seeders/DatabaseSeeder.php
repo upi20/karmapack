@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
         // ]);
         // \App\Models\User::factory(150)->create();
 
-        // address seeders
-        // AddressProvinceSeeders::run();
-        // AddressRegenciesSeeder::run();
-        // AddressDistrictSeeders::run();
-        // AddressVillageSeeders::run();
+       	// address seeders
+        AddressProvinceSeeders::run();
+        AddressRegenciesSeeder::run();
+        AddressDistrictSeeders::run();
+        AddressVillageSeeders::run();
         $this->call(UsersTableSeeder::class);
         $this->call(ArtikelTableSeeder::class);
         $this->call(ArtikelKategoriTableSeeder::class);
