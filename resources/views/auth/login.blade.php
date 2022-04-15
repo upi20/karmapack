@@ -44,10 +44,6 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta name="theme-color" content="##E72463">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon"
-        href="{{ asset('assets/templates/admin/main/assets/images/brand/favicon.ico') }}" />
-
     <!-- TITLE -->
     <title>{{ $page_attr_title }}</title>
 
