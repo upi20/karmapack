@@ -93,18 +93,11 @@
                                         placeholder="No Uurut" required />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-12">
                                 <div class="form-group">
                                     <label for="slogan">Slogan</label>
                                     <input type="text" class="form-control" id="slogan" name="slogan"
                                         placeholder="Slogan" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="foto">Icon</label>
-                                    <input type="file" class="form-control-file" id="foto" name="foto"
-                                        accept="image/png, image/jpeg, image/JPG, image/PNG, image/JPEG">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -115,6 +108,13 @@
                                         <option value="1">Aktif</option>
                                         <option value="0">Tidak Aktif</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="foto">Icon</label>
+                                    <input type="file" class="form-control-file" id="foto" name="foto"
+                                        accept="image/png, image/jpeg, image/JPG, image/PNG, image/JPEG">
                                 </div>
                             </div>
                         </div>
@@ -158,9 +158,65 @@
     {{-- loading --}}
     <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
 
+    {{-- summernote --}}
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/summernote/summernote1.js') }}"></script>
+
     <script>
         const table_html = $('#tbl_main');
         $(document).ready(function() {
+            $('.summernote').summernote({
+                toolbar: [
+                    ['fontsize', ['fontsize']],
+                    ['fontname', ['fontname']],
+                    ['style',
+                        ['bold',
+                            'italic',
+                            'underline',
+                            'strikethrough',
+                            'superscript',
+                            'subscript',
+                            'clear'
+                        ]
+                    ],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['color', ['color']],
+                    ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                    ['remove', ['removeMedia']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'unlink', 'audio', 'hr', 'picture']],
+                    ['mybutton', ['myVideo']],
+                    ['view', ['fullscreen', 'codeview']],
+                    ['help', ['help']],
+                ],
+                buttons: {
+                    myVideo: function(context) {
+                        var ui = $.summernote.ui;
+                        var button = ui.button({
+                            contents: '<i class="fa fa-video-camera"/>',
+                            tooltip: 'video',
+                            click: function() {
+                                var div = document.createElement('div');
+                                div.classList.add('embed-container');
+                                var iframe = document.createElement('iframe');
+                                var src = prompt('Enter video url:');
+                                src = youtube_parser(src);
+                                iframe.src =
+                                    `https://www.youtube.com/embed/${src}?autoplay=1&fs=1&iv_load_policy=&showinfo=1&rel=0&cc_load_policy=1&start=0&modestbranding&end=0&controls=1`;
+                                iframe.setAttribute('frameborder', 0);
+                                iframe.setAttribute('width', '100%');
+                                iframe.setAttribute('height', '500px');
+                                iframe.setAttribute('type', 'text/html');
+                                iframe.setAttribute('allowfullscreen', true);
+                                div.appendChild(iframe);
+                                context.invoke('editor.insertNode', div);
+                            }
+                        });
+                        return button.render();
+                    }
+                },
+                height: 200,
+            });
             // datatable ====================================================================================
             $.ajaxSetup({
                 headers: {
@@ -221,17 +277,21 @@
                         name: 'id',
                         render(data, type, full, meta) {
                             return ` <button type="button" class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
-                data-id="${full.id}"
-                data-nama="${full.nama}"
-                data-status="${full.status}"
-                data-slug="${full.slug}"
-                onClick="editFunc(this)">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                </button>
-                <button type="button" class="btn btn-rounded btn-danger btn-sm  my-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                </button>
-                `;
+                                data-id="${full.id}"
+                                data-nama="${full.nama}"
+                                data-status="${full.status}"
+                                data-slug="${full.slug}"
+                                data-parrent_id="${full.parrent_id}"
+                                data-no_urut="${full.no_urut}"
+                                data-visi="${full.visi}"
+                                data-misi="${full.misi}"
+                                data-slogan="${full.slogan}"
+                                onClick="editFunc(this)">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </button>
+                                <button type="button" class="btn btn-rounded btn-danger btn-sm  my-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                </button> `;
                         },
                         orderable: false
                     },
@@ -257,10 +317,11 @@
             });
 
             $("#nama").keyup(function() {
-                var Text = $(this).val();
-                $("#slug").val(Text.toLowerCase()
-                    .replace(/[^\w ]+/g, '')
-                    .replace(/ +/g, '-'));
+                refreshSlug();
+            });
+
+            $("#parrent_id").change(function() {
+                refreshSlug();
             });
 
             // insertForm ===================================================================================
@@ -337,7 +398,11 @@
             $('#nama').val(data.nama);
             $('#status').val(data.status);
             $('#slug').val(data.slug);
-            refresh_parrent('{{ $periode->id }}', data.periode_id, '#parrent_id');
+            $('#no_urut').val(data.no_urut);
+            $('#visi').val(data.visi);
+            $('#misi').val(data.misi);
+            $('#slogan').val(data.slogan);
+            refresh_parrent('{{ $periode->id }}', data.parrent_id, '#parrent_id');
         }
 
         function deleteFunc(id) {
@@ -404,14 +469,13 @@
                         custom_fun(data);
                         return;
                     }
-
                     if (data.results) {
                         const selected_element = $(`${option_id}`);
                         selected_element.html('');
                         let options = '';
                         data.results.forEach(e => {
-                            const selected = e.id == selected_id;
-                            options += `<option ${selected}>${e.text}</option>`;
+                            const selected = (e.id == selected_id) ? 'selected' : '';
+                            options += `<option ${selected} value="${e.id}">${e.text}</option>`;
                         });
                         selected_element.html(options);
 
@@ -456,6 +520,21 @@
                     console.log(data);
                 },
             });
+        }
+
+        function refreshSlug() {
+            var Text = $("#nama").val();
+            const sel = document.getElementById('parrent_id');
+            let bidang_utama = sel.value != '' ? sel.options[sel.selectedIndex].text + ' ' : '';
+            bidang_utama = bidang_utama.toLowerCase()
+                .replace(/[^\w ]+/g, '')
+                .replace(/ +/g, '-');
+
+            Text = Text.toLowerCase()
+                .replace(/[^\w ]+/g, '')
+                .replace(/ +/g, '-');
+
+            $("#slug").val(`{{ $periode->dari }}-{{ $periode->sampai }}-${bidang_utama + Text}`);
         }
     </script>
 @endsection
