@@ -100,11 +100,15 @@ class JabatanController extends Controller
                 })
                 ->make(true);
         }
+        $navigation = 'admin.pengurus.periode';
         $page_attr = [
-            'title' => "Manage List Bidang",
+            'title' => "Bidang Periode " . $periode->nama,
             'breadcrumbs' => [
-                ['name' => 'Bidang'],
-            ]
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Kepengurusan'],
+                ['name' => 'Periode', 'url' => $navigation],
+            ],
+            'navigation' => $navigation,
         ];
         return view('admin.pengurus.jabatan.list', compact('page_attr', 'periode'));
     }

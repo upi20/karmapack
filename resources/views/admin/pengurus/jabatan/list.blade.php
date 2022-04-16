@@ -278,7 +278,12 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                            return `
+                                <a class="btn btn-rounded btn-info btn-sm my-1" title="Member"
+                                href="{{ url('admin/pengurus/jabatan/member') }}/${data}" >
+                                <i class="fa fa-user" aria-hidden="true"></i> Member
+                                </a>
+                                <button type="button" class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"

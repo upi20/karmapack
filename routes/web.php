@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\Artikel\TagController;
 // pengurus
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
+use App\Http\Controllers\Admin\Pengurus\JabatanMemberController;
 
 // Galeri
 use App\Http\Controllers\Admin\GaleriController;
@@ -176,6 +177,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::get('/{periode_id}', [JabatanController::class, 'index'])->name('admin.pengurus.jabatan'); // page
             Route::post('/{periode_id}', [JabatanController::class, 'insert'])->name('admin.pengurus.jabatan.insert'); // insert
             Route::delete('/{model}', [JabatanController::class, 'delete'])->name('admin.pengurus.jabatan.delete'); // delete
+
+            // Member
+            Route::group(['prefix' => 'member'], function () {
+                Route::get('/select2', [JabatanMemberController::class, 'select2'])->name('admin.pengurus.jabatan.member.select2'); // select2
+                Route::get('/{id}', [JabatanMemberController::class, 'index'])->name('admin.pengurus.jabatan.member'); // page
+                Route::post('/update', [JabatanMemberController::class, 'update'])->name('admin.pengurus.jabatan.member.update'); // update
+            });
         });
     });
 

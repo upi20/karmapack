@@ -45,6 +45,7 @@ class PeriodeController extends Controller
         $page_attr = [
             'title' => 'Manage List Periode',
             'breadcrumbs' => [
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'Kepengurusan'],
             ]
         ];
