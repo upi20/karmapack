@@ -4,11 +4,17 @@ $is_edit = isset($edit);
 $id = $is_edit ? $artikel->id : '';
 $route = $is_edit ? route('admin.artikel.data.update') : route('admin.artikel.data.insert');
 $nama = $is_edit ? $artikel->nama : '';
+$date = $is_edit ? explode(' ', $artikel->date)[0] : '';
 $slug = $is_edit ? $artikel->slug : '';
 $excerpt = $is_edit ? $artikel->excerpt : '';
 $detail = $is_edit ? $artikel->detail : '';
+$detail = $is_edit ? $artikel->detail : '';
 $status = $is_edit ? $artikel->status : 1;
 $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
+
+$kategori = isset($kategori) ? $kategori : [];
+$tag = isset($tag) ? $tag : [];
+// dd($date);
 @endphp
 @section('content')
     <div class="card">
@@ -51,6 +57,38 @@ $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label for="kategori">Kategori Artikel</label>
+                            <select class="form-control select2" id="kategori" multiple name="kategori[]"
+                                style="width: 100%">
+                                @foreach ($kategori as $k)
+                                    <option value="{{ $k->id }}" selected>
+                                        {{ $k->text }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tag">Tag Artikel</label>
+                            <select class="form-control select2" id="tag" multiple name="tag[]" style="width: 100%">
+                                @foreach ($tag as $t)
+                                    <option value="{{ $t->id }}" selected>
+                                        {{ $t->text }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="date">Tanggal Artikel</label>
+                            <input type="date" name="date" id="date" class="form-control" required
+                                placeholder="Tanggal Artikel" value="{{ $date }}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <div class="form-label">Publikasikan Artikel:</div>
                             <div class="custom-controls-stacked">
                                 <label class="custom-control custom-radio-md" style="display: unset">
@@ -82,10 +120,44 @@ $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
 @section('javascript')
     <script src="{{ asset('assets/templates/admin/main/assets/plugins/summernote/summernote1.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script type="text/javascript">
         const is_edit = '{{ $is_edit }}';
         $(document).ready(function() {
+            $('#kategori').select2({
+                ajax: {
+                    url: "{{ route('admin.artikel.kategori.select2') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                            with_empty: 1,
+                        }
+                        return query;
+                    }
+                }
+            });
+
+            $('#tag').select2({
+                ajax: {
+                    url: "{{ route('admin.artikel.tag.select2') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                            with_empty: 1,
+                        }
+                        return query;
+                    }
+                }
+            });
             // init summernote
             $('.summernote').summernote({
                 toolbar: [
@@ -169,15 +241,11 @@ $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully.' + (
-                                is_edit ? '' :
-                                'You will be reload in 2 Seconds'),
+                            title: 'You will be reload in 2 Seconds',
                             showConfirmButton: false,
                             timer: 2000
                         }).then(function() {
-                            if (!is_edit) {
-                                window.location.reload()
-                            }
+                            window.location.reload()
                         });
 
                     },

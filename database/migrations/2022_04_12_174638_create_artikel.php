@@ -20,6 +20,7 @@ class CreateArtikel extends Migration
             $table->string('foto')->nullable();
             $table->text('detail');
             $table->text('excerpt');
+            $table->date('date')->nullable()->default(null);
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->bigInteger('user_id', false, true)->nullable()->default(null);

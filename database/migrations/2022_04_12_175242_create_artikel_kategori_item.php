@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtikelTagMember extends Migration
+class CreateArtikelKategoriItem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateArtikelTagMember extends Migration
      */
     public function up()
     {
-        Schema::create('artikel_tag_member', function (Blueprint $table) {
+        Schema::create('artikel_kategori_item', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->integer('artikel_id');
-            $table->integer('tag_id');
+            $table->integer('kategori_id');
             $table->timestamps();
-
 
             $table->foreign('artikel_id')
                 ->references('id')->on('artikel')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-            $table->foreign('tag_id')
-                ->references('id')->on('artikel_tag')
+            $table->foreign('kategori_id')
+                ->references('id')->on('artikel_kategori')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 
@@ -49,6 +48,6 @@ class CreateArtikelTagMember extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artikel_tag_detail');
+        Schema::dropIfExists('artikel_kategori_detail');
     }
 }

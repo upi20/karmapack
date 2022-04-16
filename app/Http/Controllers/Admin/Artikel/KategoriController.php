@@ -17,8 +17,8 @@ class KategoriController extends Controller
         if (request()->ajax()) {
             // extend query
             $this->query['artikel'] = <<<SQL
-                        (select count(*) from artikel_kategori_detail
-                            where artikel_kategori_detail.kategori_id = artikel_kategori.id)
+                        (select count(*) from artikel_kategori_item
+                            where artikel_kategori_item.kategori_id = artikel_kategori.id)
                     SQL;
             $this->query['artikel_alias'] = 'artikel';
             $model = Kategori::select(['id', 'nama', 'slug', 'status'])
@@ -113,15 +113,14 @@ class KategoriController extends Controller
     public function select2(Request $request)
     {
         try {
-            $model = Kategori::select(['id', DB::raw('name as text')])
-                ->whereRaw("(`name` like '%$request->search%' or `id` like '%$request->search%')")
+            $model = Kategori::select(['id', DB::raw('nama as text')])
+                ->whereRaw("(`nama` like '%$request->search%' or `id` like '%$request->search%')")
                 ->limit(10);
 
             $result = $model->get()->toArray();
-            if ($request->with_empty) {
-                $result = array_merge([['id' => '', 'text' => 'All Kategori']], $result);
+            if ($request->with_empty && $request->search) {
+                $result = array_merge([['id' => $request->search, 'text' => $request->search . ' (Buat Kategori Baru)']], $result);
             }
-
             return response()->json(['results' => $result]);
         } catch (\Exception $error) {
             return response()->json($error, 500);

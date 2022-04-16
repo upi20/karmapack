@@ -102,11 +102,11 @@
                         name: 'excerpt'
                     },
                     {
-                        data: 'created_at',
-                        name: 'created_at',
+                        data: 'date',
+                        name: 'date',
                         render(data, type, full, meta) {
                             const d = new Date(data);
-                            return `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
+                            return data ? `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}` : '';
                         },
                     },
                     {
