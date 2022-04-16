@@ -14,6 +14,7 @@ $foto = $is_edit ? $model->foto : '';
 $status = $is_edit ? $model->status : 1;
 $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
 $foto_required = $is_edit ? '' : 'required';
+$foto_folder = isset($foto_folder) ? $foto_folder : false;
 @endphp
 @section('content')
     <div class="card">
@@ -64,7 +65,13 @@ $foto_required = $is_edit ? '' : 'required';
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="foto">Icon Periode</label>
+                            <label for="foto">Icon Periode
+                                @if ($foto_folder)
+                                    <a class="btn-link" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-icon" onclick="viewIcon('{{ $foto }}')"
+                                        data-target="#modal-icon">View Icon</a>
+                                @endif
+                            </label>
                             <input type="file" name="foto" id="foto" class="form-control" placeholder="Sampai Tahun"
                                 value="{{ $foto }}" {{ $foto_required }} />
                         </div>
@@ -83,7 +90,7 @@ $foto_required = $is_edit ? '' : 'required';
                                 rows="4">{{ $misi }}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="form-group">
                             <div class="form-label">Status Kepengurusan</div>
                             <div class="custom-controls-stacked">
@@ -99,7 +106,7 @@ $foto_required = $is_edit ? '' : 'required';
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </form>
         </div>
@@ -108,6 +115,27 @@ $foto_required = $is_edit ? '' : 'required';
                 <button type="submit" class="btn btn-success" form="MainForm">
                     <li class="fa fa-save mr-1"></li> Save
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Row -->
+    <div class="modal fade" id="modal-icon">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon {{ $nama }}">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -203,17 +231,12 @@ $foto_required = $is_edit ? '' : 'required';
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully.' + (
-                                is_edit ? '' :
-                                'You will be reload in 2 Seconds'),
+                            title: 'You will be reload in 2 Seconds',
                             showConfirmButton: false,
                             timer: 2000
                         }).then(function() {
-                            if (!is_edit) {
-                                window.location.reload()
-                            }
+                            window.location.reload();
                         });
-
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
@@ -238,5 +261,10 @@ $foto_required = $is_edit ? '' : 'required';
                 });
             });
         });
+
+        function viewIcon(image) {
+            console.log(`{{ url($foto_folder) }}/${image}`);
+            $('#icon-view-image').attr('src', `{{ url($foto_folder) }}/${image}`)
+        }
     </script>
 @endsection

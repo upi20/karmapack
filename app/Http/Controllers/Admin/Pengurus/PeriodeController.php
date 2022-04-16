@@ -8,6 +8,7 @@ use App\Models\Pengurus\Periode;
 use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 use App\Helpers\Summernote;
+use Illuminate\Support\Facades\DB;
 
 class PeriodeController extends Controller
 {
@@ -17,8 +18,6 @@ class PeriodeController extends Controller
         // Rencana =============================================================================
         // jumlah bidang yang mempunyai child
         // jumlah pengurus / Member
-        // yang aktif cuman 1
-        // yang aktif selalu di atas
         // modal detail
         // modal image /icon
         // lihat
@@ -79,7 +78,8 @@ class PeriodeController extends Controller
             'navigation' => $navigation
         ];
         $edit = true;
-        return view('admin.pengurus.periode.add', compact('page_attr', 'edit', 'model'));
+        $foto_folder = $this->image_folder;
+        return view('admin.pengurus.periode.add', compact('page_attr', 'edit', 'model', 'foto_folder'));
     }
 
     public function insert(Request $request)
@@ -96,19 +96,29 @@ class PeriodeController extends Controller
                 'slogan' => ['required', 'string'],
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
-                'status' => ['required', 'int'],
+                // 'status' => ['required', 'int'],
+                'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
+
+            // foto handle
+            $foto = '';
+            if ($image = $request->file('foto')) {
+                $foto = 'icon' . substr($request->slug, 0, 10) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($this->image_folder, $foto);
+            }
             $visi = Summernote::insert($request->visi, $this->image_folder, 'visi');
             $misi = Summernote::insert($request->misi, $this->image_folder, 'misi');
+            $status = $this->getCountActive() <= 0 ? 1 : 0;
             Periode::create([
                 'nama' => $request->nama,
                 'slug' => $request->slug,
                 'dari' => $request->dari,
                 'sampai' => $request->sampai,
                 'slogan' => $request->slogan,
-                'status' => $request->status,
+                'status' => $status,
                 'visi' => $visi->html,
                 'misi' => $misi->html,
+                'foto' => $foto,
                 // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
@@ -137,11 +147,26 @@ class PeriodeController extends Controller
                 'slogan' => ['required', 'string'],
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
-                'status' => ['required', 'int'],
             ]);
             $model = Periode::find($request->id);
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi');
             $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi');
+
+            // foto handle
+            $foto = '';
+            if ($image = $request->file('foto')) {
+                $foto = 'icon' . substr($request->slug, 0, 10) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($this->image_folder, $foto);
+
+                // delete foto
+                if ($model->foto) {
+                    $path = public_path("$this->image_folder/$model->foto");
+                    Summernote::deleteFile($path);
+                }
+
+                // save foto
+                $model->foto = $foto;
+            }
 
             // save
             $model->nama = $request->nama;
@@ -149,7 +174,7 @@ class PeriodeController extends Controller
             $model->dari = $request->dari;
             $model->sampai = $request->sampai;
             $model->slogan = $request->slogan;
-            $model->status = $request->status;
+            // $model->status = $request->status;
             $model->visi = $visi->html;
             $model->misi = $misi->html;
             // $model->updated_by = auth()->user()->id;
@@ -178,5 +203,30 @@ class PeriodeController extends Controller
                 'error' => $error,
             ], 500);
         }
+    }
+
+    public function setActive(Periode $model)
+    {
+        try {
+            DB::beginTransaction();
+            // set active
+            $model->status = 1;
+            $model->save();
+
+            // set other nonactive
+            Periode::where('id', '<>', $model->id)->update(['status' => '0']);
+            DB::commit();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    private function getCountActive()
+    {
+        return Periode::where('status', '=', 1)->count();
     }
 }

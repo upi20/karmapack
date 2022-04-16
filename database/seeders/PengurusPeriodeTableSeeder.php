@@ -34,13 +34,13 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 09:09:02',
-                'updated_at' => '2022-04-14 09:09:02',
+                'updated_at' => '2022-04-16 17:27:55',
             ),
             1 => 
             array (
                 'id' => 2,
                 'nama' => 'Kabinet Masagi',
-                'foto' => NULL,
+                'foto' => 'iconkabinet-ma20220416180139.png',
                 'dari' => '2021',
                 'sampai' => '2022',
                 'slug' => 'kabinet-masagi',
@@ -51,7 +51,7 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 1,
                 'created_at' => '2022-04-14 08:31:00',
-                'updated_at' => '2022-04-15 11:39:55',
+                'updated_at' => '2022-04-16 18:01:39',
             ),
             2 => 
             array (
@@ -66,9 +66,9 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'misi' => '<p><img style="width: 1050px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499552520.png"><br></p>
 ',
-                'status' => 1,
+                'status' => 0,
                 'created_at' => '2022-04-14 09:16:35',
-                'updated_at' => '2022-04-14 16:54:12',
+                'updated_at' => '2022-04-16 17:27:55',
             ),
             3 => 
             array (
@@ -83,9 +83,26 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'misi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/misi16499523010.png"><p><img style="width: 765.2px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499523941.png"><br></p></p>
 ',
-                'status' => 1,
+                'status' => 0,
                 'created_at' => '2022-04-14 16:05:01',
-                'updated_at' => '2022-04-14 16:06:34',
+                'updated_at' => '2022-04-16 17:27:55',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'nama' => 'asdfsdaf',
+                'foto' => 'iconasdfsdaf20220416174744.jpeg',
+                'dari' => '2001',
+                'sampai' => '2001',
+                'slug' => 'asdfsdaf',
+                'slogan' => '11',
+                'visi' => '<p>1</p>
+',
+                'misi' => '<p>1</p>
+',
+                'status' => 0,
+                'created_at' => '2022-04-16 17:38:09',
+                'updated_at' => '2022-04-16 17:47:44',
             ),
         ));
         

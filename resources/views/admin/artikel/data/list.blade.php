@@ -184,7 +184,7 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'User  deleted successfully',
+                                title: 'Data deleted successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

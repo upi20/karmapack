@@ -116,7 +116,11 @@
                         render(data, type, full, meta) {
                             const class_el = full.status == 1 ? 'badge bg-success' :
                                 'badge bg-danger';
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const btn = full.status == 1 ? '' : `
+                                <button type="button" class="btn btn-rounded btn-secondary btn-sm my-1" title="Active Periode" onClick="activeFunc('${full.id}')">
+                                <i class="fa fa-check" aria-hidden="true"></i> Aktifkan
+                                </button> `;
+                            return `<span class="${class_el} p-2">${full.status_str}</span> ${btn}`;
                         },
                     },
                     {
@@ -125,7 +129,7 @@
                         render(data, type, full, meta) {
                             return ` <a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
                                 href="{{ url('admin/pengurus/jabatan') }}/${data}" >
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Bidang
+                                <i class="fe fe-git-pull-request" aria-hidden="true"></i> Bidang
                                 </a>
                                 <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
                                 href="{{ url('admin/pengurus/periode/edit') }}/${data}" >
@@ -189,7 +193,55 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'User  deleted successfully',
+                                title: 'Data saved successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            var oTable = table_html.dataTable();
+                            oTable.fnDraw(false);
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function activeFunc(id) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('admin/pengurus/periode/active') }}/${id}`,
+                        type: 'GET',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data deleted successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

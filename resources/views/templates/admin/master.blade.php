@@ -109,7 +109,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                             <li class="breadcrumb-item">
                                                 @if (isset($breadcrumb['url']))
                                                     @php
-                                                        $url = is_array($breadcrumb['url']) ? route($breadcrumb['url'][0], $breadcrumb['url'][1]) : $breadcrumb['url'];
+                                                        $url = is_array($breadcrumb['url']) ? route($breadcrumb['url'][0], $breadcrumb['url'][1]) : route($breadcrumb['url']);
                                                     @endphp
                                                     <a href="{{ $url }}"
                                                         title="Page To {{ $breadcrumb['name'] }}">
