@@ -1,5 +1,4 @@
 @extends('templates.admin.master')
-
 @section('content')
     <div class="row row-sm">
         <div class="col-lg-12">
@@ -12,7 +11,7 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
+                    {{-- <h5 class="h5">Filter Data</h5>
                     <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
                         <div class="form-group me-md-3">
                             <label for="filter_status">Status</label>
@@ -25,7 +24,7 @@
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
                             <i class="bi bi-arrow-repeat"></i> Refresh
                         </button>
-                    </form>
+                    </form> --}}
                     <div class="table-responsive table-striped">
                         <table class="table table-bordered border-bottom" id="tbl_main">
                             <thead>
@@ -35,6 +34,7 @@
                                     <th>Dari</th>
                                     <th>Sampai</th>
                                     <th>Slug</th>
+                                    <th>Member</th>
                                     <th>Foto</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -43,6 +43,58 @@
                             <tbody> </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Row -->
+    <div class="modal fade" id="modal-icon">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon Periode">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Row -->
+    <div class="modal fade" id="modal-member">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-member-title">View Member</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive table-striped">
+                        <table class="table table-bordered border-bottom text-nowrap" id="tbl_member">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Angkatan</th>
+                                    <th>Nama</th>
+                                    <th>Jabatan</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbl_member_body"> </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
@@ -107,8 +159,26 @@
                         name: 'slug'
                     },
                     {
+                        data: 'id',
+                        name: 'id',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-member" onclick="viewMember('${data}')"
+                                        data-target="#modal-member"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
+                    },
+                    {
                         data: 'foto',
-                        name: 'foto'
+                        name: 'foto',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-icon" onclick="viewIcon('${data}')"
+                                        data-target="#modal-icon"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
                     },
                     {
                         data: 'status_str',
@@ -144,7 +214,7 @@
                     },
                 ],
                 order: [
-                    [6, 'desc']
+                    [7, 'desc']
                 ]
             });
 
@@ -257,6 +327,92 @@
                         }
                     });
                 }
+            });
+        }
+
+        function viewIcon(image) {
+            $('#icon-view-image').attr('src', `{{ url($image_folder) }}/${image}`)
+        }
+
+        let init = 0;
+
+        function viewMember(id) {
+            $.ajax({
+                method: 'post',
+                url: "{{ route('admin.pengurus.periode.member') }}",
+                data: {
+                    periode_id: id
+                }
+            }).done((data) => {
+                const table_body = $("#tbl_member_body");
+                table_body.html('');
+                const element_table = $('#tbl_member');
+                $(element_table).dataTable().fnDestroy();
+                let table_body_html = '';
+                let number = 1;
+                data.results.forEach(e => {
+                    table_body_html += `
+                <tr>
+                    <td>${number++}</td>
+                    <td>${e.angkatan}</td>
+                    <td>${e.name}</td>
+                    <td>${e.jabatan}</td>
+                </tr>
+              `;
+                });
+                table_body.html(table_body_html);
+                renderTable(element_table);
+
+            }).fail(($xhr) => {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Gagal mendapatkan data.'
+                })
+            })
+        }
+
+        function renderTable(element_table) {
+            const tableUser = $(element_table).DataTable({
+                columnDefs: [{
+                    orderable: false,
+                    targets: [0]
+                }],
+                "responsive": true,
+                "lengthChange": true,
+                "autoWidth": false,
+                order: [
+                    [0, 'asc']
+                ]
+            });
+            tableUser.on('draw.dt', function() {
+                var PageInfo = $(element_table).DataTable().page.info();
+                tableUser.column(0, {
+                    page: 'current'
+                }).nodes().each(function(cell, i) {
+                    cell.innerHTML = i + 1 + PageInfo.start;
+                });
+            });
+        }
+
+        function tes_datatable(custom_fun = null) {
+            $.ajax({
+                type: "POST",
+                url: "{{ route('admin.pengurus.periode.member') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    periode_id: 2
+                },
+                success: (data) => {
+                    if (custom_fun) {
+                        custom_fun(data);
+                    }
+                    console.log(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                },
             });
         }
     </script>

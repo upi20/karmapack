@@ -161,6 +161,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
             Route::get('/add', [PeriodeController::class, 'add'])->name('admin.pengurus.periode.add'); // page
             Route::get('/edit/{model}', [PeriodeController::class, 'edit'])->name('admin.pengurus.periode.edit'); // page
             Route::get('/active/{model}', [PeriodeController::class, 'setActive'])->name('admin.pengurus.periode.active');
+            Route::post('/member', [PeriodeController::class, 'member'])->name('admin.pengurus.periode.member');
 
             Route::delete('/{model}', [PeriodeController::class, 'delete'])->name('admin.pengurus.periode.delete');
             Route::post('/insert', [PeriodeController::class, 'insert'])->name('admin.pengurus.periode.insert');

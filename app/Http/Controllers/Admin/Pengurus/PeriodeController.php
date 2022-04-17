@@ -8,6 +8,7 @@ use App\Models\Pengurus\Periode;
 use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 use App\Helpers\Summernote;
+use App\Models\Pengurus\PeriodeMember;
 use Illuminate\Support\Facades\DB;
 
 class PeriodeController extends Controller
@@ -16,12 +17,10 @@ class PeriodeController extends Controller
     public function index(Request $request) // page
     {
         // Rencana =============================================================================
-        // jumlah bidang yang mempunyai child
-        // jumlah pengurus / Member
+        // lihat member
         // modal detail
-        // modal image /icon
-        // lihat
-        // tombol atifkan di status
+
+
         // tombol lihat yang di arahkan ke frontend
         // Rencana =============================================================================
 
@@ -48,7 +47,9 @@ class PeriodeController extends Controller
                 ['name' => 'Kepengurusan'],
             ]
         ];
-        return view('admin.pengurus.periode.list', compact('page_attr'));
+
+        $image_folder = $this->image_folder;
+        return view('admin.pengurus.periode.list', compact('page_attr', 'image_folder'));
     }
 
     public function add(Request $request) // page
@@ -78,8 +79,8 @@ class PeriodeController extends Controller
             'navigation' => $navigation
         ];
         $edit = true;
-        $foto_folder = $this->image_folder;
-        return view('admin.pengurus.periode.add', compact('page_attr', 'edit', 'model', 'foto_folder'));
+        $image_folder = $this->image_folder;
+        return view('admin.pengurus.periode.add', compact('page_attr', 'edit', 'model', 'image_folder'));
     }
 
     public function insert(Request $request)
@@ -223,6 +224,50 @@ class PeriodeController extends Controller
                 'error' => $error,
             ], 500);
         }
+    }
+
+    public function member(Request $request)
+    {
+        if (!$request->periode_id) abort(404);
+        $periode_id = $request->periode_id;
+        $jabatan = <<<SQL
+                ( select concat(nama, (if(ppj.parrent_id is null, '', concat(' -> ',(select nama from pengurus_periode_jabatan ppj1 where id = ppj.parrent_id))))) from pengurus_periode_jabatan ppj
+                join pengurus_periode_jabatan_member ppjm
+                    on ppj.id = ppjm.jabatan_id
+                where ppj.periode_id = $periode_id and ppjm.user_id = a.user_id
+                limit 1 )
+        SQL;
+
+        $order_parent = <<<SQL
+            ( select if(ppj_2.no_urut is null, 0, (
+                    select no_urut from pengurus_periode_jabatan ppj_2_1 where ppj_2_1.id = ppj_2.parrent_id
+                )) from pengurus_periode_jabatan ppj_2
+                join pengurus_periode_jabatan_member ppjm_2
+                    on ppj_2.id = ppjm_2.jabatan_id
+                where ppj_2.periode_id = $periode_id and ppjm_2.user_id = a.user_id
+                limit 1 )
+        SQL;
+
+        $order_child = <<<SQL
+            (select no_urut from pengurus_periode_jabatan ppj_1
+                join pengurus_periode_jabatan_member ppjm_1
+                    on ppj_1.id = ppjm_1.jabatan_id
+                where ppj_1.periode_id = $periode_id and ppjm_1.user_id = a.user_id
+                limit 1  )
+        SQL;
+
+        $table = PeriodeMember::tableName;
+        $query = DB::table("$table as a")
+            ->select([
+                'b.id', 'b.name', 'b.angkatan',
+                DB::raw("$jabatan as jabatan")
+            ])
+            ->join("users as b", 'a.user_id', '=', 'b.id')
+            ->orderByRaw($order_parent)
+            ->orderByRaw($order_child)
+            ->get();
+
+        return response()->json(['results' => $query]);
     }
 
     private function getCountActive()

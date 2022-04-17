@@ -14,7 +14,7 @@ $foto = $is_edit ? $model->foto : '';
 $status = $is_edit ? $model->status : 1;
 $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
 $foto_required = $is_edit ? '' : 'required';
-$foto_folder = isset($foto_folder) ? $foto_folder : false;
+$image_folder = isset($image_folder) ? $image_folder : false;
 @endphp
 @section('content')
     <div class="card">
@@ -66,7 +66,7 @@ $foto_folder = isset($foto_folder) ? $foto_folder : false;
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="foto">Icon Periode
-                                @if ($foto_folder)
+                                @if ($image_folder)
                                     <a class="btn-link" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-icon" onclick="viewIcon('{{ $foto }}')"
                                         data-target="#modal-icon">View Icon</a>
@@ -263,8 +263,7 @@ $foto_folder = isset($foto_folder) ? $foto_folder : false;
         });
 
         function viewIcon(image) {
-            console.log(`{{ url($foto_folder) }}/${image}`);
-            $('#icon-view-image').attr('src', `{{ url($foto_folder) }}/${image}`)
+            $('#icon-view-image').attr('src', `{{ url($image_folder) }}/${image}`)
         }
     </script>
 @endsection
