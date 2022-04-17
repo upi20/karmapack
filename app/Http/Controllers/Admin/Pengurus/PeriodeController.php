@@ -263,6 +263,7 @@ class PeriodeController extends Controller
                 DB::raw("$jabatan as jabatan")
             ])
             ->join("users as b", 'a.user_id', '=', 'b.id')
+            ->where('a.periode_id', '=', $periode_id)
             ->orderByRaw($order_parent)
             ->orderByRaw($order_child)
             ->get();
