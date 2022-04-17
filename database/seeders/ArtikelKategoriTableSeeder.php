@@ -29,6 +29,26 @@ class ArtikelKategoriTableSeeder extends Seeder
                 'created_at' => '2022-04-13 19:11:56',
                 'updated_at' => '2022-04-13 19:11:56',
             ),
+            1 => 
+            array (
+                'id' => 3,
+                'nama' => 'Inspirasi',
+                'slug' => 'inspirasi',
+                'foto' => NULL,
+                'status' => 1,
+                'created_at' => '2022-04-17 14:46:50',
+                'updated_at' => '2022-04-17 14:46:50',
+            ),
+            2 => 
+            array (
+                'id' => 4,
+                'nama' => 'Hari Besar Nasional',
+                'slug' => 'hari-besar-nasional',
+                'foto' => NULL,
+                'status' => 1,
+                'created_at' => '2022-04-17 15:13:33',
+                'updated_at' => '2022-04-17 15:13:33',
+            ),
         ));
         
         

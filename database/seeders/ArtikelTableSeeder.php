@@ -21,129 +21,32 @@ class ArtikelTableSeeder extends Seeder
         \DB::table('artikel')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'nama' => 'Toleransi di Jabar Dianggap Rendah, MUI: Tidak Benar!',
-                'slug' => 'toleransi-di-jabar-dianggap-rendah-mui-tidak-benar',
-                'foto' => '/assets/artikel/toleransi-1649852159/16498734050.png',
-                'detail' => '<p><br><p>
-
-
-</p><p style="text-align: center; "><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/artikel/toleransi-1649852159/16498734050.png"><br></p><p>Bandung &Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&cent;&acirc;&#130;&not;&Aring;&#147; Indeks kerukunan umat beragama di Jawa Barat (Jabar) sempat disorot lembaga survei karena dianggap rendah. Majelis Ulama Indonesia (MUI) menilai hasil penelitian kerukunan umat beragama di Jabar kerap berbeda.</p><p>Ketua MUI Jabar Rachmat Syafe&Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&cent;&acirc;&#128;&#158;&Acirc;&cent;i mengatakan, pihaknya sempat berdiskusi dengan Kemenag tentang hasil survei kerukunan umat beragama. Pada tahun sebelumnya, hasil penelitian Kemenag menyebutkan indeks kerukunan di Jabar mencapai 72,7 persen. Namun, MUI menilai kondisi tersebut tidak sepenuhnya benar.</p><p>&Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&#133;&acirc;&#128;&#156;Kita coba teliti lagi. Memang soal ukuran (instrumen) rendahnya toleransi tidak disepakati waktu itu. Survei itu tidak sepenuhnya benar,&Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&#130;&Acirc;&#157; kata Rachmat kepada detikJabar, Rabu (23/3/2022).</p><p>Bagi MUI, hasil survei tak harus menjadi patokan utama. Menurutnya, MUI bersama masyarakat harus terus meningkat dan mengimplementasikan nilai-nilai toleransi di Jabar.</p><p>MUI pun telah terjun langsung untuk tetap menjaga kerukunan umat beragama di Jabar. &Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&#133;&acirc;&#128;&#156;Kita terus upayakan melalui komisi kerukunan umat beragama, dan komisi ukhuwah Islamiyah,&Atilde;&#131;&Acirc;&cent;&Atilde;&cent;&acirc;&#128;&#154;&Acirc;&not;&Atilde;&#130;&Acirc;&#157; ungkapnya Rachmat.</p><p>Ia pun berharap kerukunan umat beragama di Jabar terus terjaga. Jangan sampai ada riak-riak yang dapat mengganggu kenyamanan di antara umat beragama.</p><p>Jabar tak masuk dalam 10 provinsi dengan indeks kerukunan umat bergama terbaik. Namun, berdasarkan penelitian Sistem Informasi Penelitian Pengembangan Pendidikan dan Pelatihan (Simlibangdiklat) Kemenag menyebutkan, pada tahun 2021 indeks kerukunan umat bergama di Jabar mencapai 72,7 persen. Meningkat dibandingkan tahun 2019, yakni 64,41 persen.</p><p>Sedangkan, Indonesia Political Opinion (IPO) menyebutkan toleransi antarumat beragama di Jabar rendah. Hanya menuliskan skor satu untuk kerukunan umat beragama di Jabar.</p><p>Survei IPO digelar pada 1-7 Maret 2022 menggunakan metode multistage random sampling. Dengan total wawancara dilakukan kepada 880 responden. Margin of error sebesar 2.90 persen. Dengan kurasi data mencapai 95 persen asumsi simple random sampling. (detik.com)</p><p></p></p>
+                'id' => 27,
+                'nama' => 'Perempuan berhak menjadi manusia sepenuhnya',
+                'slug' => 'perempuan-berhak-menjadi-manusia-sepenuhnya',
+                'foto' => '/assets/artikel/perempuan-16502068100.png',
+            'detail' => '<p style="text-align: center; "><img style="width: 399.4px; height: 399.4px;" data-bs-filename="243879440_1199208743908116_8009084175971361223_n.jpg" src="/assets/artikel/perempuan-16502068100.png"><p style="text-align: center; "><img style="width: 400.4px; height: 400.4px;" data-bs-filename="243879440_1199208743908116_8009084175971361223_n.jpg" src="/assets/artikel/perempuan-16502068101.png"><br></p><p>"Kita dapat menjadi manusia sepenuhnya, tanpa berhenti menjadi wanita sepenuhnya. RA Kartini"<br style=""><br style="">Perempuan berhak menjadi manusia sepenuhnya, sesuai apa yang diinginkan. Mengejar keinginan dan cita-cita tanpa harus melupakan peran utamanya sebagai Ibu dan istri nantinya.<br style=""><br style="">Join Us:<br style="">}Youtube (Orda Karmapack)<br style=""><a href="https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg" target="_blank">https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg</a><br style="">}Instagram (orda_karmapack)<br style=""><a href="https://instagram.com/orda_karmapack?utm_medium=copy_link" target="_blank">https://instagram.com/orda_karmapack?utm_medium=copy_link</a><br style="">}Facebook (Orda Karmapack)<br style=""><a href="https://www.facebook.com/karmapack.id" target="_blank">https://www.facebook.com/karmapack.id</a><br style=""><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapack/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#karmapack</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/ordakarmapack/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#ordakarmapack</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/halingkuaing/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#halingkuaing</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/inicianjurkidul/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#inicianjurkidul</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur24jam/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur24jam</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackkabinetmasagi/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#karmapackkabinetmasagi</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/keperempuanankarmapack/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#keperempuanankarmapack</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/perempuanbersatukarmapackmaju/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#perempuanbersatukarmapackmaju</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/kominfokarmapack/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#kominfokarmapack</a><br style=""><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackmengudara/" tabindex="0" style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; overflow-wrap: break-word;">#karmapackmengudara</a><br></p><p></p><p></p></p>
 ',
-            'excerpt' => 'Indeks kerukunan umat beragama di Jawa Barat (Jabar) sempat disorot lembaga survei karena dianggap rendah. Majelis Ulama Indonesia (MUI) menilai hasil penelitian kerukunan umat beragama di Jabar kerap berbeda.',
-                'date' => NULL,
+                'excerpt' => '“Kita dapat menjadi manusia sepenuhnya, tanpa berhenti menjadi wanita sepenuhnya.” RA Kartini',
+                'date' => '2021-09-30',
                 'status' => 1,
-                'created_at' => '2022-04-13 12:15:59',
-                'updated_at' => '2022-04-13 18:10:32',
-                'user_id' => NULL,
+                'created_at' => '2022-04-17 14:46:50',
+                'updated_at' => '2022-04-17 14:50:04',
+                'user_id' => 1,
             ),
             1 => 
             array (
-                'id' => 2,
-                'nama' => 'Pengaturan',
-                'slug' => 'pengaturan',
-                'foto' => '/16498533970.png',
-                'detail' => '<p><img style="width: 765.2px;" data-bs-filename="b1f322dbbed952c183357f0fdab19249.png" src="/assets/artikel/pengaturan1649853397/16498533970.png"><br></p>
+                'id' => 28,
+                'nama' => 'Peringatan Hari Pengkhianatan G30S PKI',
+                'slug' => '2021-peringatan-hari-pengkhianatan-g30s-pki',
+                'foto' => '/assets/artikel/2021-perin16502083510.png',
+            'detail' => '<p style="text-align: center; "><img style="width: 429.2px; height: 429.2px;" data-bs-filename="243376117_865703194118466_5174505604356463028_n.jpg" src="/assets/artikel/2021-perin16502083510.png"><p style="text-align: center; "><br></p><p style="text-align: left;">Tidak ada kematian yang sia sia, begitu juga dengan kematian pahlawan kita di tanggal 30 September, mereka mati atas nama bangsa indonesia.<br></p><div class="MOdxS " style="border: 0px solid rgb(0, 0, 0); font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; -webkit-box-align: stretch; align-items: stretch; display: inline; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; flex-shrink: 0; position: relative;"><span class="_7UhW9   xLCgt      MMzan   KV-D4            se6yk       T0kll " style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: 18px; vertical-align: baseline; display: inline !important;">Join Us:<br>}Youtube (Orda Karmapack)<br><a href="https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg" target="_blank">https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg</a><br>}Instagram (orda_karmapack)<br><a href="https://instagram.com/orda_karmapack?utm_medium=copy_link" target="_blank">https://instagram.com/orda_karmapack?utm_medium=copy_link</a><br>}Facebook (Orda Karmapack)<br><a href="https://www.facebook.com/karmapack.id" target="_blank">https://www.facebook.com/karmapack.id</a><br><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/ordakarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#ordakarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/halingkuaing/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#halingkuaing</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/inicianjurkidul/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#inicianjurkidul</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur24jam/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur24jam</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackkabinetmasagi/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackkabinetmasagi</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/kominfokarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#kominfokarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackmengudara/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackmengudara</a></span></div></p>
 ',
-                'excerpt' => 'tes',
-                'date' => NULL,
+                'excerpt' => 'Tidak ada kematian yang sia sia, begitu juga dengan kematian pahlawan kita di tanggal 30 September, mereka mati atas nama bangsa indonesia.',
+                'date' => '2021-09-30',
                 'status' => 1,
-                'created_at' => '2022-04-13 12:36:37',
-                'updated_at' => '2022-04-13 12:36:37',
-                'user_id' => NULL,
-            ),
-            2 => 
-            array (
-                'id' => 3,
-                'nama' => 'Pengaturan',
-                'slug' => 'pengaturanq',
-                'foto' => '/assets/artikel/pengaturan16499549800.png',
-                'detail' => '<p><img style="width: 1050px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/artikel/pengaturan16499549800.png"><br><p><img style="width: 765.2px;" data-bs-filename="b1f322dbbed952c183357f0fdab19249.png" src="/assets/artikel/pengaturan1649853443/16498534430.png"><br></p></p>
-',
-                'excerpt' => 'tes',
-                'date' => NULL,
-                'status' => 1,
-                'created_at' => '2022-04-13 12:37:23',
-                'updated_at' => '2022-04-14 16:49:40',
-                'user_id' => NULL,
-            ),
-            3 => 
-            array (
-                'id' => 4,
-                'nama' => 'Pengaturan',
-                'slug' => 'pengaturanq11',
-                'foto' => '/assets/artikel/pengaturan1649853483/16498534830.png',
-                'detail' => '<p><img style="width: 765.2px;" data-bs-filename="b1f322dbbed952c183357f0fdab19249.png" src="/assets/artikel/pengaturan1649853483/16498534830.png"><br></p>
-',
-                'excerpt' => 'tes',
-                'date' => NULL,
-                'status' => 1,
-                'created_at' => '2022-04-13 12:38:03',
-                'updated_at' => '2022-04-13 12:38:03',
-                'user_id' => 1,
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'nama' => 'Pengaturan',
-                'slug' => 'pengaturanq11aa',
-                'foto' => '/assets/artikel/pengaturan1649853550/16498535500.png',
-                'detail' => '<p><img style="width: 765.2px;" data-bs-filename="b1f322dbbed952c183357f0fdab19249.png" src="/assets/artikel/pengaturan1649853550/16498535500.png"><br></p>
-',
-                'excerpt' => 'tes',
-                'date' => '2022-04-22',
-                'status' => 1,
-                'created_at' => '2022-04-13 12:39:10',
-                'updated_at' => '2022-04-16 09:34:17',
-                'user_id' => 1,
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'nama' => 'Tes Video Artikel',
-                'slug' => 'tes-video-artikel',
-                'foto' => NULL,
-                'detail' => '<p><br><div class="embed-container"><iframe src="https://www.youtube.com/embed/0jWD8zv3-8s?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div></p>
-',
-                'excerpt' => 'as',
-                'date' => NULL,
-                'status' => 0,
-                'created_at' => '2022-04-13 12:54:11',
-                'updated_at' => '2022-04-13 12:54:11',
-                'user_id' => 1,
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'nama' => 'SMVLL - Adek Berjilbab Ungu versi Reggae',
-                'slug' => 'smvll-adek-berjilbab-ungu-versi-reggae',
-                'foto' => NULL,
-                'detail' => '<p><br><div class="embed-container"><iframe src="https://www.youtube.com/embed/O5dV7n8WVSQ?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div><div class="embed-container"><br></div><p>&acirc;&#143;&cedil; ADEK BERJILBAB UNGU
-</p><p>&eth;&#159;&#148;&#130; COVER SMVLL
-</p><p>&eth;&#159;&#148;&#128; VERSI REGGAE
-</p><p>&acirc;&#143;&copy; HUMBLE
-</p><p>&eth;&#159;&#148;&#129; SUBCRIBE : MUSIC ILLUSIONS<br></p></p>
-',
-                'excerpt' => 'Musik Youtube',
-                'date' => NULL,
-                'status' => 0,
-                'created_at' => '2022-04-13 13:24:51',
-                'updated_at' => '2022-04-13 13:24:51',
-                'user_id' => 1,
-            ),
-            7 => 
-            array (
-                'id' => 26,
-                'nama' => 'tesa',
-                'slug' => 'tesa',
-                'foto' => '',
-                'detail' => '<p>aa</p>
-',
-                'excerpt' => 'a',
-                'date' => '2022-04-16',
-                'status' => 1,
-                'created_at' => '2022-04-16 11:32:23',
-                'updated_at' => '2022-04-16 11:33:29',
+                'created_at' => '2022-04-17 15:12:31',
+                'updated_at' => '2022-04-17 15:12:31',
                 'user_id' => 1,
             ),
         ));
