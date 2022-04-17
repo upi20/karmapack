@@ -140,7 +140,7 @@ class ArtikelController extends Controller
                 'excerpt' => ['required'],
                 'status' => ['required', 'int'],
             ]);
-
+            DB::beginTransaction();
             $model = Artikel::find($request->id);
             $detail = Summernote::update($request->detail, $this->image_folder, $model->foto ?? '', substr($request->slug, 0, 10));
 
@@ -151,8 +151,11 @@ class ArtikelController extends Controller
             $model->date = $request->date;
             $model->status = $request->status;
             // $model->updated_by = auth()->user()->id;
-            $model->save();
 
+            $this->kategori_store($request->kategori, $model->id);
+            $this->tag_store($request->tag, $model->id);
+            $model->save();
+            DB::commit();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
