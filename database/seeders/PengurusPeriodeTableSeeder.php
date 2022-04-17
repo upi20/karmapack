@@ -28,13 +28,13 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'sampai' => '2001',
                 'slug' => 'pengaturan',
                 'slogan' => '1',
-                'visi' => '<p><img style="width: 1050px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/pengaturan1649927342/visi16499273420.png"><br></p>
+                'visi' => '<p><img style="width: 783px;" data-bs-filename="Picture1.jpg" src="/assets/pengurus/periode/visi16502030810.png"><br></p>
 ',
-                'misi' => '<p><img style="width: 1113.2px;" data-bs-filename="b1f322dbbed952c183357f0fdab19249.png" src="/assets/pengurus/periode/pengaturan1649927342/misi16499273420.png"><br></p>
+                'misi' => '<p><img style="width: 157px;" data-bs-filename="Group 5.png" src="/assets/pengurus/periode/misi16502030810.png"><br></p>
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 09:09:02',
-                'updated_at' => '2022-04-16 17:27:55',
+                'updated_at' => '2022-04-17 13:44:41',
             ),
             1 => 
             array (

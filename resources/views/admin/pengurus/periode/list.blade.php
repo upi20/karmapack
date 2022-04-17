@@ -35,6 +35,7 @@
                                     <th>Sampai</th>
                                     <th>Slug</th>
                                     <th>Member</th>
+                                    <th>Detail</th>
                                     <th>Foto</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -89,6 +90,26 @@
                             <tbody id="tbl_member_body"> </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-detail">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-detail-title">Detail Periode</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" id="modal-detail-body">
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -166,6 +187,17 @@
                             <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-member" onclick="viewMember('${data}')"
                                         data-target="#modal-member"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
+                    },
+                    {
+                        data: 'id',
+                        name: 'id',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-detail" onclick="viewDetail('${data}')"
+                                        data-target="#modal-detail"><i class="fa fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     },
@@ -364,9 +396,12 @@
                 renderTable(element_table);
 
             }).fail(($xhr) => {
-                Toast.fire({
+                Swal.fire({
+                    position: 'top-end',
                     icon: 'error',
-                    title: 'Gagal mendapatkan data.'
+                    title: 'Something went wrong, try again later',
+                    showConfirmButton: false,
+                    timer: 3500
                 })
             })
         }
@@ -414,6 +449,27 @@
                     console.log(data);
                 },
             });
+        }
+
+        function viewDetail(id) {
+            $.ajax({
+                method: 'post',
+                url: `{{ url('admin/pengurus/periode/detail') }}/${id}`
+            }).done((data) => {
+                $('#modal-detail-body').html(`
+                    <h4 class="h4">Visi:</h4><p>${data.results.visi}</p>
+                    <h4 class="h4">Misi:</h4><p>${data.results.misi}</p>
+                    <h4 class="h4">Slogan:</h4><p>${data.results.slogan}</p>
+                `);
+            }).fail(($xhr) => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Something went wrong, try again later',
+                    showConfirmButton: false,
+                    timer: 3500
+                })
+            })
         }
     </script>
 @endsection

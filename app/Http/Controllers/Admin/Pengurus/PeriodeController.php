@@ -17,10 +17,6 @@ class PeriodeController extends Controller
     public function index(Request $request) // page
     {
         // Rencana =============================================================================
-        // lihat member
-        // modal detail
-
-
         // tombol lihat yang di arahkan ke frontend
         // Rencana =============================================================================
 
@@ -85,9 +81,6 @@ class PeriodeController extends Controller
 
     public function insert(Request $request)
     {
-        // Rencana =============================================================================
-        // insert foto belum wkwk
-        // Rencana =============================================================================
         try {
             $request->validate([
                 'nama' => ['required', 'string', 'max:255'],
@@ -133,11 +126,6 @@ class PeriodeController extends Controller
 
     public function update(Request $request)
     {
-        // Rencana =============================================================================
-        // delete foto yang tidak dipakai
-        // Foto icon belum wkwk
-        // Rencana =============================================================================
-
         try {
             $request->validate([
                 'id' => ['required', 'int'],
@@ -224,6 +212,11 @@ class PeriodeController extends Controller
                 'error' => $error,
             ], 500);
         }
+    }
+
+    public function detail(Periode $model)
+    {
+        return response()->json(['results' => $model]);
     }
 
     public function member(Request $request)
