@@ -184,6 +184,14 @@ class PeriodeController extends Controller
             // cek folder
             Summernote::delete($model->visi);
             Summernote::delete($model->misi);
+
+            // delete foto
+            if ($model->foto) {
+                $path = public_path("$this->image_folder/$model->foto");
+                Summernote::deleteFile($path);
+            }
+
+            // delete data
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {

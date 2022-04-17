@@ -37,7 +37,7 @@
                                     <th>Bidang</th>
                                     <th>Sub Bidang</th>
                                     <th style="min-width: 150px;">Slug</th>
-                                    <th>Detail</th>
+                                    <th>Icon</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -133,6 +133,25 @@
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
                         <li class="fa fa-save mr-1"></li> Save changes
                     </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-icon">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon Jabatan">
+                </div>
+                <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="bi bi-x-lg"></i>
                         Close
@@ -262,8 +281,15 @@
                         name: 'slug'
                     },
                     {
-                        data: 'id',
-                        name: 'id'
+                        data: 'foto',
+                        name: 'foto',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-icon" onclick="viewIcon('${data}')"
+                                        data-target="#modal-icon"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
                     },
                     {
                         data: 'status_str',
@@ -545,6 +571,10 @@
                 .replace(/ +/g, '-');
 
             $("#slug").val(`{{ $periode->dari }}-{{ $periode->sampai }}-${bidang_utama + Text}`);
+        }
+
+        function viewIcon(image) {
+            $('#icon-view-image').attr('src', `{{ url($image_folder) }}/${image}`)
         }
     </script>
 @endsection

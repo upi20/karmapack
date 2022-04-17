@@ -20,8 +20,6 @@ class JabatanController extends Controller
         // Rencana =============================================================================
         // modal detail
         // modal image /icon
-        // lihat
-        // tombol atifkan di status
         // tombol lihat yang di arahkan ke frontend
         // upload foto
         // Rencana =============================================================================
@@ -65,6 +63,7 @@ class JabatanController extends Controller
                 'pengurus_periode_jabatan.no_urut',
                 'pengurus_periode_jabatan.visi',
                 'pengurus_periode_jabatan.misi',
+                'pengurus_periode_jabatan.foto',
                 'pengurus_periode_jabatan.slogan',
                 DB::raw("{$this->query['parent']} as {$this->query['parent_alias']}"),
                 DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
@@ -110,7 +109,8 @@ class JabatanController extends Controller
             ],
             'navigation' => $navigation,
         ];
-        return view('admin.pengurus.jabatan.list', compact('page_attr', 'periode'));
+        $image_folder = $this->image_folder;
+        return view('admin.pengurus.jabatan.list', compact('page_attr', 'periode', 'image_folder'));
     }
 
     public function insert(Request $request)
@@ -129,6 +129,12 @@ class JabatanController extends Controller
             ]);
             $visi = Summernote::insert($request->visi, $this->image_folder, 'visi' . substr($request->slug, 0, 20));
             $misi = Summernote::insert($request->misi, $this->image_folder, 'misi' . substr($request->slug, 0, 20));
+            // foto handle
+            $foto = '';
+            if ($image = $request->file('foto')) {
+                $foto = 'icon' . substr($request->slug, 10, 40) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($this->image_folder, $foto);
+            }
             Jabatan::create([
                 'parent_id' => $request->parent_id,
                 'nama' => $request->nama,
@@ -138,6 +144,7 @@ class JabatanController extends Controller
                 'visi' => $visi->html,
                 'misi' => $misi->html,
                 'slogan' => $request->slogan,
+                'foto' => $foto,
                 'periode_id' => $request->periode_id,
                 // 'created_by' => auth()->user()->id,
             ]);
@@ -157,7 +164,7 @@ class JabatanController extends Controller
             $model = Jabatan::find($request->id);
             $request->validate([
                 'id' => ['required', 'int'],
-                'parent_id' => ['int'],
+                'parent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
                 'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan,slug,' . $request->id],
                 'status' => ['required', 'int'],
@@ -168,6 +175,22 @@ class JabatanController extends Controller
             ]);
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi' . substr($request->slug, 0, 20));
             $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi' . substr($request->slug, 0, 20));
+
+            // foto handle
+            $foto = '';
+            if ($image = $request->file('foto')) {
+                $foto = 'icon' . substr($request->slug, 10, 40) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($this->image_folder, $foto);
+
+                // delete foto
+                if ($model->foto) {
+                    $path = public_path("$this->image_folder/$model->foto");
+                    Summernote::deleteFile($path);
+                }
+
+                // save foto
+                $model->foto = $foto;
+            }
 
             $model->parent_id = $request->parent_id;
             $model->nama = $request->nama;
@@ -194,6 +217,14 @@ class JabatanController extends Controller
             // cek folder
             Summernote::delete($model->visi);
             Summernote::delete($model->misi);
+
+            // delete foto
+            if ($model->foto) {
+                $path = public_path("$this->image_folder/$model->foto");
+                Summernote::deleteFile($path);
+            }
+
+            // delete data
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
