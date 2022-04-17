@@ -171,7 +171,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         // Jabatan
         Route::group(['prefix' => 'jabatan'], function () {
             // suffix
-            Route::get('/get_parrent', [JabatanController::class, 'parrent'])->name('admin.pengurus.jabatan.parrent'); // list option element
+            Route::get('/get_parent', [JabatanController::class, 'parent'])->name('admin.pengurus.jabatan.parent'); // list option element
             Route::get('/select2', [JabatanController::class, 'select2'])->name('admin.pengurus.jabatan.select2'); // select2
             Route::post('/update', [JabatanController::class, 'update'])->name('admin.pengurus.jabatan.update'); // update
 

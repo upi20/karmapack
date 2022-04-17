@@ -231,7 +231,7 @@ class PeriodeController extends Controller
         if (!$request->periode_id) abort(404);
         $periode_id = $request->periode_id;
         $jabatan = <<<SQL
-                ( select concat(nama, (if(ppj.parrent_id is null, '', concat(' -> ',(select nama from pengurus_periode_jabatan ppj1 where id = ppj.parrent_id))))) from pengurus_periode_jabatan ppj
+                ( select concat(nama, (if(ppj.parent_id is null, '', concat(' -> ',(select nama from pengurus_periode_jabatan ppj1 where id = ppj.parent_id))))) from pengurus_periode_jabatan ppj
                 join pengurus_periode_jabatan_member ppjm
                     on ppj.id = ppjm.jabatan_id
                 where ppj.periode_id = $periode_id and ppjm.user_id = a.user_id
@@ -240,7 +240,7 @@ class PeriodeController extends Controller
 
         $order_parent = <<<SQL
             ( select if(ppj_2.no_urut is null, 0, (
-                    select no_urut from pengurus_periode_jabatan ppj_2_1 where ppj_2_1.id = ppj_2.parrent_id
+                    select no_urut from pengurus_periode_jabatan ppj_2_1 where ppj_2_1.id = ppj_2.parent_id
                 )) from pengurus_periode_jabatan ppj_2
                 join pengurus_periode_jabatan_member ppjm_2
                     on ppj_2.id = ppjm_2.jabatan_id

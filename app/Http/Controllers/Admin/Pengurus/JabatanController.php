@@ -28,37 +28,37 @@ class JabatanController extends Controller
         $periode = Periode::find($request->periode_id);
         if (request()->ajax()) {
             // extend_query
-            $get_parrent_no_urut = "(select z.no_urut from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parrent_id = z.id)";
+            $get_parent_no_urut = "(select z.no_urut from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parent_id = z.id)";
 
 
-            $this->query['parrent'] = <<<SQL
-                ( if(isnull(pengurus_periode_jabatan.parrent_id),'', (select z.nama from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parrent_id = z.id)) )
+            $this->query['parent'] = <<<SQL
+                ( if(isnull(pengurus_periode_jabatan.parent_id),'', (select z.nama from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parent_id = z.id)) )
             SQL;
-            $this->query['parrent_alias'] = 'parrent';
+            $this->query['parent_alias'] = 'parent';
 
             $this->query['kode'] = <<<SQL
-                concat( if(isnull(pengurus_periode_jabatan.parrent_id),'',
-                        concat($get_parrent_no_urut, '.')
+                concat( if(isnull(pengurus_periode_jabatan.parent_id),'',
+                        concat($get_parent_no_urut, '.')
                     ), pengurus_periode_jabatan.no_urut
                 )
             SQL;
             $this->query['kode_alias'] = 'kode';
 
-            $this->query['parrent_no_urut'] = <<<SQL
-                (if(isnull(pengurus_periode_jabatan.parrent_id), pengurus_periode_jabatan.no_urut,
-                    $get_parrent_no_urut)
+            $this->query['parent_no_urut'] = <<<SQL
+                (if(isnull(pengurus_periode_jabatan.parent_id), pengurus_periode_jabatan.no_urut,
+                    $get_parent_no_urut)
                 )
             SQL;
-            $this->query['parrent_no_urut_alias'] = 'parrent_no_urut';
+            $this->query['parent_no_urut_alias'] = 'parent_no_urut';
 
             $this->query['child_no_urut'] = <<<SQL
-                (if(isnull(pengurus_periode_jabatan.parrent_id), 0, pengurus_periode_jabatan.no_urut))
+                (if(isnull(pengurus_periode_jabatan.parent_id), 0, pengurus_periode_jabatan.no_urut))
             SQL;
             $this->query['child_no_urut_alias'] = 'child_no_urut';
 
             $model = Jabatan::select([
                 'pengurus_periode_jabatan.id',
-                'pengurus_periode_jabatan.parrent_id',
+                'pengurus_periode_jabatan.parent_id',
                 'pengurus_periode_jabatan.nama',
                 'pengurus_periode_jabatan.slug',
                 'pengurus_periode_jabatan.status',
@@ -66,14 +66,14 @@ class JabatanController extends Controller
                 'pengurus_periode_jabatan.visi',
                 'pengurus_periode_jabatan.misi',
                 'pengurus_periode_jabatan.slogan',
-                DB::raw("{$this->query['parrent']} as {$this->query['parrent_alias']}"),
+                DB::raw("{$this->query['parent']} as {$this->query['parent_alias']}"),
                 DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
-                DB::raw("{$this->query['parrent_no_urut']} as {$this->query['parrent_no_urut_alias']}"),
+                DB::raw("{$this->query['parent_no_urut']} as {$this->query['parent_no_urut_alias']}"),
                 DB::raw("{$this->query['child_no_urut']} as {$this->query['child_no_urut_alias']}"),
             ])
                 ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
                 ->where('periode_id', '=', $periode->id)
-                ->orderBy('parrent_no_urut')
+                ->orderBy('parent_no_urut')
                 ->orderBy('child_no_urut');
 
             // filter
@@ -86,14 +86,14 @@ class JabatanController extends Controller
 
             return Datatables::of($model)
                 ->addIndexColumn()
-                ->filterColumn($this->query['parrent_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['parrent']} like '%$keyword%'");
+                ->filterColumn($this->query['parent_alias'], function ($query, $keyword) {
+                    $query->whereRaw("{$this->query['parent']} like '%$keyword%'");
                 })
                 ->filterColumn($this->query['kode_alias'], function ($query, $keyword) {
                     $query->whereRaw("{$this->query['kode']} like '%$keyword%'");
                 })
-                ->filterColumn($this->query['parrent_no_urut_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['parrent_no_urut']} like '%$keyword%'");
+                ->filterColumn($this->query['parent_no_urut_alias'], function ($query, $keyword) {
+                    $query->whereRaw("{$this->query['parent_no_urut']} like '%$keyword%'");
                 })
                 ->filterColumn($this->query['child_no_urut_alias'], function ($query, $keyword) {
                     $query->whereRaw("{$this->query['child_no_urut']} like '%$keyword%'");
@@ -117,7 +117,7 @@ class JabatanController extends Controller
     {
         try {
             $request->validate([
-                'parrent_id' => ['nullable'],
+                'parent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
                 'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan'],
                 'status' => ['required', 'int'],
@@ -130,7 +130,7 @@ class JabatanController extends Controller
             $visi = Summernote::insert($request->visi, $this->image_folder, 'visi' . substr($request->slug, 0, 20));
             $misi = Summernote::insert($request->misi, $this->image_folder, 'misi' . substr($request->slug, 0, 20));
             Jabatan::create([
-                'parrent_id' => $request->parrent_id,
+                'parent_id' => $request->parent_id,
                 'nama' => $request->nama,
                 'slug' => $request->slug,
                 'status' => $request->status,
@@ -157,7 +157,7 @@ class JabatanController extends Controller
             $model = Jabatan::find($request->id);
             $request->validate([
                 'id' => ['required', 'int'],
-                'parrent_id' => ['int'],
+                'parent_id' => ['int'],
                 'nama' => ['required', 'string', 'max:255'],
                 'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan,slug,' . $request->id],
                 'status' => ['required', 'int'],
@@ -169,7 +169,7 @@ class JabatanController extends Controller
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi' . substr($request->slug, 0, 20));
             $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi' . substr($request->slug, 0, 20));
 
-            $model->parrent_id = $request->parrent_id;
+            $model->parent_id = $request->parent_id;
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->status = $request->status;
@@ -222,13 +222,13 @@ class JabatanController extends Controller
         }
     }
 
-    public function parrent(Request $request)
+    public function parent(Request $request)
     {
         if (!$request->periode_id) return abort(404);
         try {
             $model = Jabatan::select(['id', DB::raw('nama as text')])
                 ->where('periode_id', '=', $request->periode_id)
-                ->where('parrent_id', '=', null);
+                ->where('parent_id', '=', null);
             $result = $model->get()->toArray();
             $result = array_merge([['id' => '', 'text' => 'Pilih Bidang']], $result);
 

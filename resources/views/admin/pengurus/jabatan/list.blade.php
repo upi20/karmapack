@@ -66,8 +66,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="parrent_id">Utama</label>
-                                    <select class="form-control" id="parrent_id" name="parrent_id">
+                                    <label for="parent_id">Utama</label>
+                                    <select class="form-control" id="parent_id" name="parent_id">
 
                                     </select>
                                 </div>
@@ -254,8 +254,8 @@
                         name: 'nama'
                     },
                     {
-                        data: 'parrent',
-                        name: 'parrent'
+                        data: 'parent',
+                        name: 'parent'
                     },
                     {
                         data: 'slug',
@@ -288,7 +288,7 @@
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
                                 data-slug="${full.slug}"
-                                data-parrent_id="${full.parrent_id}"
+                                data-parent_id="${full.parent_id}"
                                 data-no_urut="${full.no_urut}"
                                 data-visi="${full.visi}"
                                 data-misi="${full.misi}"
@@ -327,7 +327,7 @@
                 refreshSlug();
             });
 
-            $("#parrent_id").change(function() {
+            $("#parent_id").change(function() {
                 refreshSlug();
             });
 
@@ -395,7 +395,7 @@
             $('#visi').summernote("code", '');
             $('#misi').summernote("code", '');
             resetErrorAfterInput();
-            refresh_parrent('{{ $periode->id }}', '', '#parrent_id');
+            refresh_parent('{{ $periode->id }}', '', '#parent_id');
         }
 
 
@@ -412,7 +412,7 @@
             $('#visi').summernote("code", data.visi);
             $('#misi').summernote("code", data.misi);
             $('#slogan').val(data.slogan);
-            refresh_parrent('{{ $periode->id }}', data.parrent_id, '#parrent_id');
+            refresh_parent('{{ $periode->id }}', data.parent_id, '#parent_id');
         }
 
         function deleteFunc(id) {
@@ -463,11 +463,11 @@
             });
         }
 
-        function refresh_parrent(periode_id, selected_id = '', option_id = '', custom_fun = null) {
+        function refresh_parent(periode_id, selected_id = '', option_id = '', custom_fun = null) {
             $.LoadingOverlay("show");
             $.ajax({
                 type: "GET",
-                url: "{{ route('admin.pengurus.jabatan.parrent') }}",
+                url: "{{ route('admin.pengurus.jabatan.parent') }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -534,7 +534,7 @@
 
         function refreshSlug() {
             var Text = $("#nama").val();
-            const sel = document.getElementById('parrent_id');
+            const sel = document.getElementById('parent_id');
             let bidang_utama = sel.value != '' ? sel.options[sel.selectedIndex].text + ' ' : '';
             bidang_utama = bidang_utama.toLowerCase()
                 .replace(/[^\w ]+/g, '')

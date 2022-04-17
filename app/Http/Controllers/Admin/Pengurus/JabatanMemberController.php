@@ -20,16 +20,16 @@ class JabatanMemberController extends Controller
     {
         // model
         $tbl_jabatan = Jabatan::tableName;
-        $parrent = <<<SQL
+        $parent = <<<SQL
             concat(
-                (if(isnull($tbl_jabatan.parrent_id),'', (select z.nama from $tbl_jabatan as z where $tbl_jabatan.parrent_id = z.id))),
-                (if(isnull($tbl_jabatan.parrent_id),'', ' ->')),
+                (if(isnull($tbl_jabatan.parent_id),'', (select z.nama from $tbl_jabatan as z where $tbl_jabatan.parent_id = z.id))),
+                (if(isnull($tbl_jabatan.parent_id),'', ' ->')),
                 ' ',$tbl_jabatan.nama)
         SQL;
         $model = Jabatan::select([
             "$tbl_jabatan.id",
             "$tbl_jabatan.periode_id",
-            DB::raw("$parrent as nama")
+            DB::raw("$parent as nama")
         ])->where("$tbl_jabatan.id", '=', $request->id);
         $model = $model->first();
 
