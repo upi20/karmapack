@@ -67,7 +67,7 @@ Route::get('/home', function () {
 
 // Admin route
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 'admin']], function () {
-    Route::get('/dashboard', function () {
+    Route::get('/', function () {
         return view('admin.dashboard', ['page_attr' => ['title' => 'Dashboard']]);
     })->name('admin.dashboard');
 
