@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class PeriodeController extends Controller
 {
-    private $image_folder = 'pengurus/periode';
+    private $image_folder = 'assets/pengurus/periode';
     public function index(Request $request) // page
     {
         // Rencana =============================================================================

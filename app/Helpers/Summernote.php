@@ -20,7 +20,7 @@ class Summernote
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $images = $dom->getElementsByTagName('img');
 
-            $path_image_src = "/assets/$folder_asset";
+            $path_image_src = "$folder_asset";
 
             // foto / icon artikel diambil dari foto pertama dalam artikel
             $image_icon_status = true;
@@ -68,7 +68,7 @@ class Summernote
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
             $images = $dom->getElementsByTagName('img');
 
-            $path_image_src = "/assets/$folder_asset";
+            $path_image_src = "$folder_asset";
             $path_folder = public_path() . $path_image_src;
 
             // foto / icon artikel diambil dari foto pertama dalam artikel

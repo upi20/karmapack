@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class JabatanController extends Controller
 {
     private $query = [];
-    private $image_folder = 'periode/jabatan';
+    private $image_folder = 'assets/pengurus/jabatan';
     public function index(Request $request)
     {
         // Rencana =============================================================================
