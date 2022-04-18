@@ -34,6 +34,9 @@ use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\Profile\KontakTipeController;
 use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 
+// social medie
+use App\Http\Controllers\Admin\SocialMediaController;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -201,6 +204,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/', [GaleriController::class, 'insert'])->name('admin.galeri.insert');
         Route::delete('/{model}', [GaleriController::class, 'delete'])->name('admin.galeri.delete');
         Route::post('/update', [GaleriController::class, 'update'])->name('admin.galeri.update');
+    });
+
+    // Sosial media
+    Route::group(['prefix' => 'social_media'], function () {
+        Route::get('/', [SocialMediaController::class, 'index'])->name('admin.social_media'); // page
+        Route::post('/', [SocialMediaController::class, 'insert'])->name('admin.social_media.insert');
+        Route::delete('/{id}', [SocialMediaController::class, 'delete'])->name('admin.social_media.delete');
+        Route::post('/update', [SocialMediaController::class, 'update'])->name('admin.social_media.update');
     });
 });
 

@@ -82,5 +82,6 @@ class DatabaseSeeder extends Seeder
         // pengalaman
         $this->call(PengurusProfilePengalamanLainTableSeeder::class);
         $this->call(PengurusProfilePengalamanOrganisasiTableSeeder::class);
+        $this->call(SocialMediaTableSeeder::class);
     }
 }
