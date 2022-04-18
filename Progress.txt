@@ -45,6 +45,7 @@ Artikel
     Perbaiki breadcumb
     Sensus Anggota seluruh angkatan
     Pendaftaran
+    Kontak keluhan/bug/saran di aplikasi
 
 
 

@@ -7,7 +7,13 @@ $admin = [
         'title' => 'Member',
         'icon' => 'fe fe-users',
         'route' => 'admin.user',
-        // 'children' => [['title' => 'View User', 'route' => 'admin.user']],
+    ],
+    [
+        'title' => 'Profile Addon', 'icon' => 'fe fe-user-plus',
+        'children' => [
+            ['title' => 'Sekolah Jenis'],
+            ['title' => 'Kontak Tipe'],
+        ]
     ],
     [
         'title' => 'Kepengurusan',
@@ -40,10 +46,11 @@ $admin = [
 // set member menu
 $member  = [
     ['title' => 'Dashboard', 'route' => 'member.dashboard', 'icon' => 'fe fe-home'],
+    ['title' => 'Profile', 'route' => 'member.profile', 'icon' => 'fe fe-user'],
+    ['title' => 'Ganti Password', 'icon' => 'fe fe-lock'],
 ];
 
 return [
     'admin' => array_merge($admin, $member),
     'member' => $member
-
 ];

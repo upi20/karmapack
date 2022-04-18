@@ -203,9 +203,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
 // User Panel Admin
 Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified', 'member']], function () {
-    Route::get('/dashboard', function () {
+    Route::get('/', function () {
         return view('member.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
     })->name('member.dashboard');
+
+    // profile
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', [UserController::class, 'index'])->name('member.profile'); // page
+        Route::post('/', [UserController::class, 'store'])->name('member.profile.store');
+        Route::delete('/{id}', [UserController::class, 'delete'])->name('member.profile.delete');
+        Route::post('/update', [UserController::class, 'update'])->name('member.profile.update');
+    });
 });
 
 Route::get('/tesadmin', function () {
