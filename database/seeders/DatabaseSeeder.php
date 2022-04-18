@@ -86,5 +86,6 @@ class DatabaseSeeder extends Seeder
         // Lainnya
         $this->call(SocialMediaTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
+        $this->call(FooterInstagramsTableSeeder::class);
     }
 }

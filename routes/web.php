@@ -40,6 +40,9 @@ use App\Http\Controllers\Admin\SocialMediaController;
 // contact
 use App\Http\Controllers\Admin\ContactController;
 
+// Footer Instagram
+use App\Http\Controllers\Admin\FooterInstagramController;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -223,6 +226,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/', [ContactController::class, 'insert'])->name('admin.contact.insert');
         Route::delete('/{id}', [ContactController::class, 'delete'])->name('admin.contact.delete');
         Route::post('/update', [ContactController::class, 'update'])->name('admin.contact.update');
+    });
+
+    // Footer instagram
+    Route::group(['prefix' => 'footer_instagram'], function () {
+        Route::get('/', [FooterInstagramController::class, 'index'])->name('admin.footer_instagram'); // page
+        Route::post('/', [FooterInstagramController::class, 'insert'])->name('admin.footer_instagram.insert');
+        Route::delete('/{id}', [FooterInstagramController::class, 'delete'])->name('admin.footer_instagram.delete');
+        Route::post('/update', [FooterInstagramController::class, 'update'])->name('admin.footer_instagram.update');
     });
 });
 
