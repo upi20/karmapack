@@ -235,10 +235,26 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::delete('/{id}', [FooterInstagramController::class, 'delete'])->name('admin.footer_instagram.delete');
         Route::post('/update', [FooterInstagramController::class, 'update'])->name('admin.footer_instagram.update');
     });
+
+    // jenis pendidikan
+    Route::group(['prefix' => 'pendidikan_jenis'], function () {
+        Route::get('/', [PendidikanJenisController::class, 'index'])->name('admin.profile.pendidikan_jenis'); // page
+        Route::post('/', [PendidikanJenisController::class, 'insert'])->name('admin.profile.pendidikan_jenis.insert');
+        Route::delete('/{id}', [PendidikanJenisController::class, 'delete'])->name('admin.profile.pendidikan_jenis.delete');
+        Route::post('/update', [PendidikanJenisController::class, 'update'])->name('admin.profile.pendidikan_jenis.update');
+    });
+
+    // kontak tipe
+    Route::group(['prefix' => 'kontak_tipe'], function () {
+        Route::get('/', [KontakTipeController::class, 'index'])->name('admin.profile.kontak_tipe'); // page
+        Route::post('/', [KontakTipeController::class, 'insert'])->name('admin.profile.kontak_tipe.insert');
+        Route::delete('/{id}', [KontakTipeController::class, 'delete'])->name('admin.profile.kontak_tipe.delete');
+        Route::post('/update', [KontakTipeController::class, 'update'])->name('admin.profile.kontak_tipe.update');
+    });
 });
 
 
-// User Panel Admin
+// Member Panel Admin
 Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified', 'member']], function () {
     Route::get('/', function () {
         return view('member.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
@@ -246,21 +262,6 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
     // profile
     Route::group(['prefix' => 'profile'], function () {
-        // jenis pendidikan
-        Route::group(['prefix' => 'pendidikan_jenis'], function () {
-            Route::get('/', [PendidikanJenisController::class, 'index'])->name('member.profile.pendidikan_jenis'); // page
-            Route::post('/', [PendidikanJenisController::class, 'insert'])->name('member.profile.pendidikan_jenis.insert');
-            Route::delete('/{id}', [PendidikanJenisController::class, 'delete'])->name('member.profile.pendidikan_jenis.delete');
-            Route::post('/update', [PendidikanJenisController::class, 'update'])->name('member.profile.pendidikan_jenis.update');
-        });
-
-        // kontak tipe
-        Route::group(['prefix' => 'kontak_tipe'], function () {
-            Route::get('/', [KontakTipeController::class, 'index'])->name('member.profile.kontak_tipe'); // page
-            Route::post('/', [KontakTipeController::class, 'insert'])->name('member.profile.kontak_tipe.insert');
-            Route::delete('/{id}', [KontakTipeController::class, 'delete'])->name('member.profile.kontak_tipe.delete');
-            Route::post('/update', [KontakTipeController::class, 'update'])->name('member.profile.kontak_tipe.update');
-        });
 
 
         Route::get('/', [UserController::class, 'index'])->name('member.profile'); // page

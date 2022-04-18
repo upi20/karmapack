@@ -123,7 +123,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('member.profile.pendidikan_jenis') }}",
+                    url: "{{ route('admin.profile.pendidikan_jenis') }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -201,8 +201,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 const route = ($('#id').val() == '') ?
-                    "{{ route('member.profile.pendidikan_jenis.insert') }}" :
-                    "{{ route('member.profile.pendidikan_jenis.update') }}";
+                    "{{ route('admin.profile.pendidikan_jenis.insert') }}" :
+                    "{{ route('admin.profile.pendidikan_jenis.update') }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -280,7 +280,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('member/profile/pendidikan_jenis') }}/${id}`,
+                        url: `{{ url('admin/profile/pendidikan_jenis') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

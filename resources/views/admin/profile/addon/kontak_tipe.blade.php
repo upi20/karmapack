@@ -123,7 +123,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('member.profile.kontak_tipe') }}",
+                    url: "{{ route('admin.profile.kontak_tipe') }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -201,8 +201,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 const route = ($('#id').val() == '') ?
-                    "{{ route('member.profile.kontak_tipe.insert') }}" :
-                    "{{ route('member.profile.kontak_tipe.update') }}";
+                    "{{ route('admin.profile.kontak_tipe.insert') }}" :
+                    "{{ route('admin.profile.kontak_tipe.update') }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -280,7 +280,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('member/profile/kontak_tipe') }}/${id}`,
+                        url: `{{ url('admin/profile/kontak_tipe') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

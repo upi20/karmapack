@@ -11,8 +11,8 @@ $admin = [
     [
         'title' => 'Profile Addon', 'icon' => 'fe fe-user-plus',
         'children' => [
-            ['title' => 'Pendidikan Jenis', 'route' => 'member.profile.pendidikan_jenis'],
-            ['title' => 'Kontak Tipe', 'route' => 'member.profile.kontak_tipe'],
+            ['title' => 'Pendidikan Jenis', 'route' => 'admin.profile.pendidikan_jenis'],
+            ['title' => 'Kontak Tipe', 'route' => 'admin.profile.kontak_tipe'],
         ]
     ],
     [
