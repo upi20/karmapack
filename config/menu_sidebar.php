@@ -11,8 +11,8 @@ $admin = [
     [
         'title' => 'Profile Addon', 'icon' => 'fe fe-user-plus',
         'children' => [
-            ['title' => 'Sekolah Jenis'],
-            ['title' => 'Kontak Tipe'],
+            ['title' => 'Pendidikan Jenis', 'route' => 'member.profile.pendidikan_jenis'],
+            ['title' => 'Kontak Tipe', 'route' => 'member.profile.kontak_tipe'],
         ]
     ],
     [
@@ -40,6 +40,9 @@ $admin = [
     ],
 
     ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
+    ['title' => 'Sosial Media', 'icon' => 'fe fe-image'],
+    ['title' => 'Kontak', 'icon' => 'fe fe-image'],
+    ['title' => 'Footer Instagram', 'icon' => 'fe fe-image'],
     ['title' => 'Member Menu', 'separator' => true],
 ];
 

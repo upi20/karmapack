@@ -30,6 +30,10 @@ use App\Http\Controllers\Admin\Pengurus\JabatanMemberController;
 // Galeri
 use App\Http\Controllers\Admin\GaleriController;
 
+// profile addon
+use App\Http\Controllers\Admin\Profile\KontakTipeController;
+use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -209,6 +213,23 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
     // profile
     Route::group(['prefix' => 'profile'], function () {
+        // jenis pendidikan
+        Route::group(['prefix' => 'pendidikan_jenis'], function () {
+            Route::get('/', [PendidikanJenisController::class, 'index'])->name('member.profile.pendidikan_jenis'); // page
+            Route::post('/', [PendidikanJenisController::class, 'insert'])->name('member.profile.pendidikan_jenis.insert');
+            Route::delete('/{id}', [PendidikanJenisController::class, 'delete'])->name('member.profile.pendidikan_jenis.delete');
+            Route::post('/update', [PendidikanJenisController::class, 'update'])->name('member.profile.pendidikan_jenis.update');
+        });
+
+        // kontak tipe
+        Route::group(['prefix' => 'kontak_tipe'], function () {
+            Route::get('/', [KontakTipeController::class, 'index'])->name('member.profile.kontak_tipe'); // page
+            Route::post('/', [KontakTipeController::class, 'insert'])->name('member.profile.kontak_tipe.insert');
+            Route::delete('/{id}', [KontakTipeController::class, 'delete'])->name('member.profile.kontak_tipe.delete');
+            Route::post('/update', [KontakTipeController::class, 'update'])->name('member.profile.kontak_tipe.update');
+        });
+
+
         Route::get('/', [UserController::class, 'index'])->name('member.profile'); // page
         Route::post('/', [UserController::class, 'store'])->name('member.profile.store');
         Route::delete('/{id}', [UserController::class, 'delete'])->name('member.profile.delete');
