@@ -40,8 +40,8 @@ $admin = [
     ],
 
     ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
-    ['title' => 'Sosial Media', 'icon' => 'fe fe-image', 'route' => 'admin.social_media'],
-    ['title' => 'Kontak', 'icon' => 'fe fe-image'],
+    ['title' => 'Sosial Media', 'icon' => 'fe fe-aperture', 'route' => 'admin.social_media'],
+    ['title' => 'Kontak', 'icon' => 'fe fe-phone', 'route' => 'admin.contact'],
     ['title' => 'Footer Instagram', 'icon' => 'fe fe-image'],
     ['title' => 'Member Menu', 'separator' => true],
 ];

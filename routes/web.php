@@ -37,6 +37,9 @@ use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 // social medie
 use App\Http\Controllers\Admin\SocialMediaController;
 
+// contact
+use App\Http\Controllers\Admin\ContactController;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -212,6 +215,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/', [SocialMediaController::class, 'insert'])->name('admin.social_media.insert');
         Route::delete('/{id}', [SocialMediaController::class, 'delete'])->name('admin.social_media.delete');
         Route::post('/update', [SocialMediaController::class, 'update'])->name('admin.social_media.update');
+    });
+
+    // contact
+    Route::group(['prefix' => 'contact'], function () {
+        Route::get('/', [ContactController::class, 'index'])->name('admin.contact'); // page
+        Route::post('/', [ContactController::class, 'insert'])->name('admin.contact.insert');
+        Route::delete('/{id}', [ContactController::class, 'delete'])->name('admin.contact.delete');
+        Route::post('/update', [ContactController::class, 'update'])->name('admin.contact.update');
     });
 });
 
