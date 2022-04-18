@@ -34,7 +34,7 @@ function sidebarMenu(array $menus, $navigation): string
         $children = isset($menu['children']) ? $menu['children'] : false;
 
         if ($separator) {
-            $menu_body .= '<li class=\"sub-category\">' . $menu['title'] . '</li> ';
+            $menu_body .= "<li class=\"sub-category\"><h3>{$menu['title']}</h3></li> ";
         } elseif (is_array($children)) {
             $child_menu = '';
             $active = false;

@@ -190,6 +190,11 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <!-- CUSTOM JS -->
     <script src="{{ asset('assets/templates/admin/main/assets/js/custom.js') }}"></script>
 
+    {{-- scroll --}}
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/pscroll.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/pscroll-1.js') }}"></script>
+
     <script>
         let errorAfterInput = [];
 

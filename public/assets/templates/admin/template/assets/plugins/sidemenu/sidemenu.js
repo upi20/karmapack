@@ -9,104 +9,104 @@
         $('.app').toggleClass('sidenav-toggled');
     });
     responsive();
-   // clearing the clicking functions already present on the element
-   $("[data-bs-toggle='slide']").off('click');
-   $("[data-bs-toggle='sub-slide']").off('click');
-   $("[data-bs-toggle='sub-slide2']").off('click');
+    // clearing the clicking functions already present on the element
+    $("[data-bs-toggle='slide']").off('click');
+    $("[data-bs-toggle='sub-slide']").off('click');
+    $("[data-bs-toggle='sub-slide2']").off('click');
 
-   // initiating the click function
-   $("[data-bs-toggle='slide']").on('click', function (e) {
-       var $this = $(this);
-       var checkElement = $this.next();
-       var animationSpeed = 300,
-           slideMenuSelector = '.slide-menu';
-       if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
-           checkElement.slideUp(animationSpeed, function () {
-               checkElement.removeClass('open');
-           });
-           checkElement.parent("li").removeClass("is-expanded");
-       } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
-           var parent = $this.parents('ul').first();
-           var ul = parent.find('ul:visible').slideUp(animationSpeed);
-           ul.removeClass('open');
-           var parent_li = $this.parent("li");
-           checkElement.slideDown(animationSpeed, function () {
-               checkElement.addClass('open');
-               parent.find('li.is-expanded').removeClass('is-expanded');
-               parent_li.addClass('is-expanded');
-           });
-       }
-       if (checkElement.is(slideMenuSelector)) {
-           e.preventDefault();
-       }
-   });
+    // initiating the click function
+    $("[data-bs-toggle='slide']").on('click', function (e) {
+        var $this = $(this);
+        var checkElement = $this.next();
+        var animationSpeed = 300,
+            slideMenuSelector = '.slide-menu';
+        if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
+            checkElement.slideUp(animationSpeed, function () {
+                checkElement.removeClass('open');
+            });
+            checkElement.parent("li").removeClass("is-expanded");
+        } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
+            var parent = $this.parents('ul').first();
+            var ul = parent.find('ul:visible').slideUp(animationSpeed);
+            ul.removeClass('open');
+            var parent_li = $this.parent("li");
+            checkElement.slideDown(animationSpeed, function () {
+                checkElement.addClass('open');
+                parent.find('li.is-expanded').removeClass('is-expanded');
+                parent_li.addClass('is-expanded');
+            });
+        }
+        if (checkElement.is(slideMenuSelector)) {
+            e.preventDefault();
+        }
+    });
 
-   // Activate sidebar slide toggle
-   $("[data-bs-toggle='sub-slide']").on('click', function (e) {
-       var $this = $(this);
-       var checkElement = $this.next();
-       var animationSpeed = 300,
-           slideMenuSelector = '.sub-slide-menu';
-       if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
-           checkElement.slideUp(animationSpeed, function () {
-               checkElement.removeClass('open');
-           });
-           checkElement.parent("li").removeClass("is-expanded");
-       } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
-           var parent = $this.parents('ul').first();
-           var ul = parent.find('ul:visible').slideUp(animationSpeed);
-           ul.removeClass('open');
-           var parent_li = $this.parent("li");
-           checkElement.slideDown(animationSpeed, function () {
-               checkElement.addClass('open');
-               parent.find('li.is-expanded').removeClass('is-expanded');
-               parent_li.addClass('is-expanded');
-           });
-       }
-       if (checkElement.is(slideMenuSelector)) {
-           e.preventDefault();
-       }
-   });
+    // Activate sidebar slide toggle
+    $("[data-bs-toggle='sub-slide']").on('click', function (e) {
+        var $this = $(this);
+        var checkElement = $this.next();
+        var animationSpeed = 300,
+            slideMenuSelector = '.sub-slide-menu';
+        if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
+            checkElement.slideUp(animationSpeed, function () {
+                checkElement.removeClass('open');
+            });
+            checkElement.parent("li").removeClass("is-expanded");
+        } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
+            var parent = $this.parents('ul').first();
+            var ul = parent.find('ul:visible').slideUp(animationSpeed);
+            ul.removeClass('open');
+            var parent_li = $this.parent("li");
+            checkElement.slideDown(animationSpeed, function () {
+                checkElement.addClass('open');
+                parent.find('li.is-expanded').removeClass('is-expanded');
+                parent_li.addClass('is-expanded');
+            });
+        }
+        if (checkElement.is(slideMenuSelector)) {
+            e.preventDefault();
+        }
+    });
 
-   // Activate sidebar slide toggle
-   $("[data-bs-toggle='sub-slide2']").on('click', function (e) {
-       var $this = $(this);
-       var checkElement = $this.next();
-       var animationSpeed = 300,
-           slideMenuSelector = '.sub-slide-menu2';
-       if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
-           checkElement.slideUp(animationSpeed, function () {
-               checkElement.removeClass('open');
-           });
-           checkElement.parent("li").removeClass("is-expanded");
-       } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
-           var parent = $this.parents('ul').first();
-           var ul = parent.find('ul:visible').slideUp(animationSpeed);
-           ul.removeClass('open');
-           var parent_li = $this.parent("li");
-           checkElement.slideDown(animationSpeed, function () {
-               checkElement.addClass('open');
-               parent.find('li.is-expanded').removeClass('is-expanded');
-               parent_li.addClass('is-expanded');
-           });
-       }
-       if (checkElement.is(slideMenuSelector)) {
-           e.preventDefault();
-       }
-   });
+    // Activate sidebar slide toggle
+    $("[data-bs-toggle='sub-slide2']").on('click', function (e) {
+        var $this = $(this);
+        var checkElement = $this.next();
+        var animationSpeed = 300,
+            slideMenuSelector = '.sub-slide-menu2';
+        if (checkElement.is(slideMenuSelector) && checkElement.is(':visible')) {
+            checkElement.slideUp(animationSpeed, function () {
+                checkElement.removeClass('open');
+            });
+            checkElement.parent("li").removeClass("is-expanded");
+        } else if ((checkElement.is(slideMenuSelector)) && (!checkElement.is(':visible'))) {
+            var parent = $this.parents('ul').first();
+            var ul = parent.find('ul:visible').slideUp(animationSpeed);
+            ul.removeClass('open');
+            var parent_li = $this.parent("li");
+            checkElement.slideDown(animationSpeed, function () {
+                checkElement.addClass('open');
+                parent.find('li.is-expanded').removeClass('is-expanded');
+                parent_li.addClass('is-expanded');
+            });
+        }
+        if (checkElement.is(slideMenuSelector)) {
+            e.preventDefault();
+        }
+    });
 
-   // To close the sub menu dropdown by clicking on inner content
-   $('.hor-content').on('click', function () {
-       $('.side-menu li').each(function () {
-           $('.side-menu ul.open').slideUp(300)
-           $(this).parent().removeClass("is-expanded");
-           $(this).parent().parent().removeClass("open");
-           $(this).parent().parent().prev().removeClass("is-expanded");
-           $(this).parent().parent().parent().removeClass("is-expanded");
-           $(this).parent().parent().parent().parent().removeClass("open");
-           $(this).parent().parent().parent().parent().parent().removeClass("is-expanded");
-       })
-   })
+    // To close the sub menu dropdown by clicking on inner content
+    $('.hor-content').on('click', function () {
+        $('.side-menu li').each(function () {
+            $('.side-menu ul.open').slideUp(300)
+            $(this).parent().removeClass("is-expanded");
+            $(this).parent().parent().removeClass("open");
+            $(this).parent().parent().prev().removeClass("is-expanded");
+            $(this).parent().parent().parent().removeClass("is-expanded");
+            $(this).parent().parent().parent().parent().removeClass("open");
+            $(this).parent().parent().parent().parent().parent().removeClass("is-expanded");
+        })
+    })
 
     var position = window.location.pathname.split('/');
     $(".app-sidebar li a").each(function () {
@@ -212,7 +212,7 @@ jQuery(function () {
 }());
 
 // for Icon-text Menu
-//icontext(); 
+//icontext();
 
 // default layout
 hovermenu();
@@ -247,12 +247,12 @@ function icontext() {
         $('body').removeClass('sidenav-toggled-open');
     });
 
-    //Mobile menu 
+    //Mobile menu
     var alterClass = function () {
         var ww = document.body.clientWidth;
         if (ww < 992) {
             $('body').removeClass('sidenav-toggled');
-        } else if (ww >= 991  && !(document.querySelector('.horizontal') !== null)) {
+        } else if (ww >= 991 && !(document.querySelector('.horizontal') !== null)) {
             $('body').addClass('sidenav-toggled');
         };
     };
@@ -302,7 +302,7 @@ $(window).resize(
     () => {
         let menuWidth = document.querySelector('.horizontal-main');
         let menuItems = document.querySelector('.side-menu');
-        let mainSidemenuWidth = document.querySelector('.main-sidemenu')  ;  
+        let mainSidemenuWidth = document.querySelector('.main-sidemenu');
         let menuContainerWidth = menuWidth?.offsetWidth - mainSidemenuWidth?.offsetWidth;
         let marginLeftValue = Math.ceil(window.getComputedStyle(menuItems).marginLeft.split('px')[0]);
         let marginRightValue = Math.ceil(window.getComputedStyle(menuItems).marginRight.split('px')[0]);
@@ -359,13 +359,13 @@ $(window).resize(
                 ul1.removeClass('open');
             }
         }
-        else{
+        else {
             ActiveSubmenu();
         }
     }
 )
 
-function ActiveSubmenu(){
+function ActiveSubmenu() {
     var position = window.location.pathname.split('/');
     $(".app-sidebar li a").each(function () {
         var $this = $(this);
@@ -392,7 +392,7 @@ function checkHoriMenu() {
 
     let menuWidth = document.querySelector('.horizontal-main')
     let menuItems = document.querySelector('.side-menu')
-    let mainSidemenuWidth = document.querySelector('.main-sidemenu')    
+    let mainSidemenuWidth = document.querySelector('.main-sidemenu')
     let menuContainerWidth = menuWidth?.offsetWidth - mainSidemenuWidth?.offsetWidth
     let marginLeftValue = Math.ceil(window.getComputedStyle(menuItems).marginLeft.split('px')[0]);
     let marginRightValue = Math.ceil(window.getComputedStyle(menuItems).marginRight.split('px')[0]);
@@ -405,20 +405,20 @@ function checkHoriMenu() {
         menuItems.style.marginLeft = 0;
     }
 
-    if(menuItems.scrollWidth - 2 < (menuWidth?.offsetWidth - menuContainerWidth)){
+    if (menuItems.scrollWidth - 2 < (menuWidth?.offsetWidth - menuContainerWidth)) {
         $("#slide-right").addClass("d-none");
         $("#slide-left").addClass("d-none");
     }
-    else if(marginLeftValue != 0 ){
+    else if (marginLeftValue != 0) {
         $("#slide-left").removeClass("d-none");
     }
-    else if(marginLeftValue != -check){
+    else if (marginLeftValue != -check) {
         $("#slide-right").removeClass("d-none");
     }
-    else if(marginRightValue != 0 ){
+    else if (marginRightValue != 0) {
         $("#slide-left").removeClass("d-none");
     }
-    else if(marginRightValue != -check){
+    else if (marginRightValue != -check) {
         $("#slide-right").removeClass("d-none");
     }
 }
@@ -426,7 +426,7 @@ checkHoriMenu();
 $(document).on("click", ".ltr #slide-left", function () {
     let menuWidth = document.querySelector('.horizontal-main')
     let menuItems = document.querySelector('.side-menu')
-    let mainSidemenuWidth = document.querySelector('.main-sidemenu')    
+    let mainSidemenuWidth = document.querySelector('.main-sidemenu')
     let menuContainerWidth = menuWidth?.offsetWidth - mainSidemenuWidth?.offsetWidth
     let marginLeftValue = Math.ceil(window.getComputedStyle(menuItems).marginLeft.split('px')[0]) + 100;
 
@@ -437,12 +437,12 @@ $(document).on("click", ".ltr #slide-left", function () {
         }, {
             duration: 400
         })
-        if((menuWidth?.offsetWidth - menuContainerWidth)  < menuItems.scrollWidth){
+        if ((menuWidth?.offsetWidth - menuContainerWidth) < menuItems.scrollWidth) {
             $("#slide-right").removeClass("d-none");
         }
     }
-    else{
-    	$("#slide-left").addClass("d-none");
+    else {
+        $("#slide-left").addClass("d-none");
     }
 
     if (marginLeftValue >= 0) {
@@ -452,8 +452,8 @@ $(document).on("click", ".ltr #slide-left", function () {
         }, {
             duration: 400
         })
-        
-        if(menuWidth?.offsetWidth < menuItems.scrollWidth){
+
+        if (menuWidth?.offsetWidth < menuItems.scrollWidth) {
             // $("#slide-left").addClass("d-none");
         }
     }
@@ -514,7 +514,7 @@ $(document).on("click", ".ltr #slide-right", function () {
 $(document).on("click", ".rtl #slide-left", function () {
     let menuWidth = document.querySelector('.horizontal-main')
     let menuItems = document.querySelector('.side-menu')
-    let mainSidemenuWidth = document.querySelector('.main-sidemenu')    
+    let mainSidemenuWidth = document.querySelector('.main-sidemenu')
     let menuContainerWidth = menuWidth?.offsetWidth - mainSidemenuWidth?.offsetWidth
     let marginRightValue = Math.ceil(window.getComputedStyle(menuItems).marginRight.split('px')[0]) + 100;
 
@@ -526,7 +526,7 @@ $(document).on("click", ".rtl #slide-left", function () {
         }, {
             duration: 400
         })
-        if((menuWidth?.offsetWidth - menuContainerWidth)  < menuItems.scrollWidth){
+        if ((menuWidth?.offsetWidth - menuContainerWidth) < menuItems.scrollWidth) {
             $("#slide-right").removeClass("d-none");
         }
     }
