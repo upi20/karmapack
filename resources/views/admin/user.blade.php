@@ -76,7 +76,7 @@
                             <label class="form-label" for="angkatan">Generation <span
                                     class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="angkatan" name="angkatan"
-                                placeholder="Enter Generation" required="" />
+                                placeholder="Enter Generation" required="" min="2003" max="2999" />
 
                         </div>
                         <div class="form-group">

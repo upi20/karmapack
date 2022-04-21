@@ -9,7 +9,6 @@ use Yajra\Datatables\Datatables;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use League\Config\Exception\ValidationException;
-use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -110,8 +109,7 @@ class UserController extends Controller
                 'date_of_birth' => ['required', 'date'],
                 'angkatan' => ['required', 'int'],
                 'active' => ['required', 'int', 'in:1,0'],
-                'password' => $request->password ? ['required', 'string', new Password] : '',
-                'updated_at' => auth()->user()->id,
+                'password' => $request->password ? ['required', 'string', new Password] : ''
             ]);
 
             if ($request->password) {
