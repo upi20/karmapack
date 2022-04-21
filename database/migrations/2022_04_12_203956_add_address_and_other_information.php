@@ -19,6 +19,7 @@ class AddAddressAndOtherInformation extends Migration
             $table->char('regency_id', 4)->after('password')->nullable()->default(null);
             $table->char('district_id', 7)->after('password')->nullable()->default(null);
             $table->char('village_id', 10)->after('password')->nullable()->default(null);
+            $table->text('alamat_lengkap')->after('password')->nullable()->default(null);
 
             $table->date('date_of_birth')->after('name')->nullable()->default(null);
             $table->year('angkatan')->after('name')->nullable()->default(null);

@@ -108,7 +108,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                             <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo-white.png') }}"
                                 class="header-brand-img" alt="Logo Karmapack" id="logo">
                         </div>
-                        <p class="text-center mt-5">Sign in to start your session</p>
+                        <p class="text-center mt-5">Sistem Informasi Anggota (SIA)</p>
                         <div class="panel panel-primary">
                             <div class="panel-body tabs-menu-body p-0">
                                 <div class="tab-content">

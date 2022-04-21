@@ -11,4 +11,5 @@ class District extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'address_districts';
+    const tableName = 'address_districts';
 }

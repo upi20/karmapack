@@ -11,4 +11,5 @@ class Village extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'address_villages';
+    const tableName = 'address_villages';
 }

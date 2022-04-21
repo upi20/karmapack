@@ -277,6 +277,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', [ProfileController::class, 'index'])->name('member.profile'); // page
         Route::post('/save_basic', [ProfileController::class, 'save_basic'])->name('member.profile.save_basic');
+        Route::post('/save_address', [ProfileController::class, 'save_address'])->name('member.profile.save_address');
     });
 });
 

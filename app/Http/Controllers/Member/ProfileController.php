@@ -7,6 +7,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
 use App\Helpers\Summernote;
+use App\Models\Address\District;
+use App\Models\Address\Province;
+use App\Models\Address\Regencie;
+use App\Models\Address\Village;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\JabatanMember;
 use App\Models\Pengurus\Periode;
@@ -17,7 +21,10 @@ class ProfileController extends Controller
     private $image_folder = 'assets/pengurus/profile';
     public function index(Request $request)
     {
-        $user = ($request->id) ? User::find($request->id) : auth()->user();
+        $user_id = $request->id ?? auth()->user()->id;
+        if (!$user_id) abort(404);
+
+        $user = $this->getUser($user_id);
         if (!$user) abort(404);
         $page_attr = [
             'title' => 'Profile',
@@ -28,7 +35,8 @@ class ProfileController extends Controller
         $image_folder = $this->image_folder;
 
         $kepengurusan = $this->getRiwayatKepengurusan($user->id);
-        return view('member.profile', compact('page_attr', 'user', 'image_folder', 'kepengurusan'));
+        $provinces = Province::all();
+        return view('member.profile', compact('page_attr', 'user', 'image_folder', 'kepengurusan', 'provinces'));
     }
 
     public function save_basic(Request $request)
@@ -62,6 +70,34 @@ class ProfileController extends Controller
             $model->profesi = $request->profesi;
             $model->gender = $request->jenis_kelamin;
             $model->bio = $request->bio;
+            $model->save();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function save_address(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'province_id' => ['nullable', 'string'],
+                'regency_id' => ['nullable', 'string'],
+                'district_id' => ['nullable', 'string'],
+                'village_id' => ['nullable', 'string'],
+                'alamat_lengkap' => ['nullable', 'string'],
+            ]);
+            $model = User::find($request->id);
+            if (!$this->savePermission($request->id)) abort(401);
+
+            $model->province_id = $request->province_id;
+            $model->regency_id = $request->regency_id;
+            $model->district_id = $request->district_id;
+            $model->village_id = $request->village_id;
+            $model->alamat_lengkap = $request->alamat_lengkap;
             $model->save();
         } catch (ValidationException $error) {
             return response()->json([
@@ -113,5 +149,26 @@ class ProfileController extends Controller
             ->orderBy('jabatan', 'desc')
             ->get();
         return $user->toArray() ?? [];
+    }
+
+    private function getUser(int $id): mixed
+    {
+        $a = User::tableName;
+        $b = Province::tableName;
+        $c = Regencie::tableName;
+        $d = District::tableName;
+        $e = Village::tableName;
+
+        return User::selectRaw("$a.*,
+        $b.name as province,
+        $c.name as regencie,
+        $d.name as district,
+        $e.name as village
+        ")
+            ->leftJoin($b, "$b.id", '=', "$a.province_id")
+            ->leftJoin($c, "$c.id", '=', "$a.regency_id")
+            ->leftJoin($d, "$d.id", '=', "$a.district_id")
+            ->leftJoin($e, "$e.id", '=', "$a.village_id")
+            ->where("$a.id", '=', $id)->first();
     }
 }

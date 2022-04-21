@@ -20,6 +20,8 @@ class User extends Authenticatable
 
     const ROLE_ADMIN = 'admin';
     const ROLE_MEMBER = 'member';
+    const tableName = 'users';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.

@@ -495,5 +495,17 @@
 
             after.html(`<div><ul style="padding-left: 20px;">${errors}</ul></div>`);
         }
+
+        function clearRegency() {
+            $('#regency_id')
+                .append((new Option('', '', true, true)))
+                .trigger('change');
+        }
+
+        function clearDistrict() {
+            $('#district_id')
+                .append((new Option('', '', true, true)))
+                .trigger('change');
+        }
     </script>
 @endsection

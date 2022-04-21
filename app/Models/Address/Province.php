@@ -11,4 +11,5 @@ class Province extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'address_provinces';
+    const tableName = 'address_provinces';
 }

@@ -11,4 +11,5 @@ class Regencie extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'address_regencies';
+    const tableName = 'address_regencies';
 }

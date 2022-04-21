@@ -41,7 +41,8 @@
                                     class="nav-link leading-none d-flex">
                                     <img onerror="this.src='{{ asset('assets/templates/admin/main/assets/images/profile.png') }}';this.onerror='';"
                                         src="{{ asset('assets/pengurus/profile/' . auth()->user()->foto) }}"
-                                        alt="profile-user" class="avatar  profile-user brround cover-image">
+                                        alt="profile-user" class="avatar  profile-user brround cover-image"
+                                        id="header_foto_profile">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
