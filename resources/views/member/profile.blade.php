@@ -4,6 +4,7 @@
     <!-- ROW-1 OPEN -->
     <div class="row">
         <div class="col-xl-4">
+            {{-- profile basic --}}
             <div class="card">
                 <div class="card-body">
                     <form action="" id="basic_profile">
@@ -80,6 +81,7 @@
                 </div>
             </div>
 
+            {{-- profile address --}}
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Alamat</div>
@@ -144,47 +146,64 @@
             </div>
         </div>
         <div class="col-xl-8">
+            {{-- Edit Profile --}}
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Edit Profile</h3>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="nama">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Nama Profile</label>
-                        <div class="input-group">
-                            <span class="input-group-text">@</span>
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="Ex: iseplutpinur">
-                            <input type="hidden" id="username_slug" name="username_slug">
+                    <form action="" id="detail_profile">
+                        <input type="hidden" name="id" value="{{ $user->id }}">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Lengkap"
+                                value="{{ $user->name }}" required>
                         </div>
-                        <small id="username_preview">{{ env('APP_URL') }}</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Alamat Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="telepon">Nomor Telepon</label>
-                        <input type="text" class="form-control" id="telepon" name="telepon"
-                            title="Nomor telepon yang bisa di hubungi" placeholder="Nomor telepon">
-                    </div>
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="whatsapp">+62</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="whatsapp"
-                                name="whatsapp" title="Nomor Whatsapp" placeholder="85798132505">
+                        <div class="form-group">
+                            <label for="username">Nama Profile</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="username" placeholder="Ex: iseplutpinur"
+                                    value="{{ $user->username }}">
+                                <input type="hidden" id="username_slug" name="username">
+                            </div>
+                            <small id="username_preview">{{ env('APP_URL') . '/' . $user->username }}</small>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="date_of_birth">Tanggal Lahir</label>
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                title="Tanggal Lahir" value="{{ $user->date_of_birth }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email"
+                                value="{{ $user->email }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telepon">Nomor Telepon</label>
+                            <input type="text" class="form-control" id="telepon" name="telepon"
+                                title="Nomor telepon yang bisa di hubungi" placeholder="Nomor telepon"
+                                value="{{ $user->telepon }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="whatsapp">+62</span>
+                                <input type="number" class="form-control" id="basic-url" aria-describedby="whatsapp"
+                                    name="whatsapp" title="Nomor Whatsapp" placeholder="85798132505"
+                                    value="{{ $user->whatsapp }}">
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="card-footer text-end">
-                    <button type="submit" class="btn btn-success my-1">Save</button>
+                    <button type="submit" form="detail_profile" class="btn btn-success my-1">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
                 </div>
             </div>
+
+            {{-- Other information --}}
             <div class="row">
                 <div class="col-12">
                     {{-- kontak --}}
@@ -499,6 +518,56 @@
                     },
                     complete: function() {
                         setBtnLoading('button[type=submit][form=address_profile]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+
+            // Detail Profile
+            $('#detail_profile').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=detail_profile]', 'Save Changes');
+                const route = "{{ route('member.profile.save_detail') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $('#header_foto_profile').attr('src', ($('#img_profile').attr('src')));
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=detail_profile]',
                             '<li class="fa fa-save mr-1"></li> Save changes',
                             false);
                     }

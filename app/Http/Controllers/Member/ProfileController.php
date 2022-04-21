@@ -44,9 +44,9 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'profesi' => ['nullable', 'string'],
-                'jenis_kelamin' => ['nullable', 'string'],
-                'bio' => ['nullable', 'string'],
+                'profesi' => ['nullable', 'string', 'max:255'],
+                'jenis_kelamin' => ['nullable', 'string', 'max:255'],
+                'bio' => ['nullable', 'string', 'max:255'],
             ]);
             $model = User::find($request->id);
             if (!$this->savePermission($request->id)) abort(401);
@@ -84,11 +84,11 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'province_id' => ['nullable', 'string'],
-                'regency_id' => ['nullable', 'string'],
-                'district_id' => ['nullable', 'string'],
-                'village_id' => ['nullable', 'string'],
-                'alamat_lengkap' => ['nullable', 'string'],
+                'province_id' => ['nullable', 'string', 'max:255'],
+                'regency_id' => ['nullable', 'string', 'max:255'],
+                'district_id' => ['nullable', 'string', 'max:255'],
+                'village_id' => ['nullable', 'string', 'max:255'],
+                'alamat_lengkap' => ['nullable', 'string', 'max:255'],
             ]);
             $model = User::find($request->id);
             if (!$this->savePermission($request->id)) abort(401);
@@ -98,6 +98,36 @@ class ProfileController extends Controller
             $model->district_id = $request->district_id;
             $model->village_id = $request->village_id;
             $model->alamat_lengkap = $request->alamat_lengkap;
+            $model->save();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function save_detail(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'name' => ['required', 'string', 'max:255'],
+                'date_of_birth' => ['required', 'date'],
+                'email' => ['required', 'string', 'max:255', 'unique:users,email,' . $request->id],
+                'telepon' => ['nullable', 'string', 'max:255'],
+                'whatsapp' => ['nullable', 'string', 'max:255'],
+                'username' => ['nullable', 'string', 'max:255', 'unique:users,username,' . $request->id],
+            ]);
+            $model = User::find($request->id);
+            if (!$this->savePermission($request->id)) abort(401);
+
+            $model->username = $request->username;
+            $model->name = $request->name;
+            $model->date_of_birth = $request->date_of_birth;
+            $model->email = $request->email;
+            $model->telepon = $request->telepon;
+            $model->whatsapp = $request->whatsapp;
             $model->save();
         } catch (ValidationException $error) {
             return response()->json([
