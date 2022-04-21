@@ -22,20 +22,52 @@ class PengurusProfileKontakTipeTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'nama' => 'Pengaturan',
-                'keterangan' => 'Siswa Kelas VI',
+                'nama' => 'Facebook',
+                'icon' => 'fab fa-facebook-f',
+                'keterangan' => 'Sosial Media',
                 'status' => 1,
                 'created_at' => '2022-04-18 04:04:06',
-                'updated_at' => '2022-04-18 04:04:06',
+                'updated_at' => '2022-04-21 15:09:52',
             ),
             1 => 
             array (
                 'id' => 2,
                 'nama' => 'Twitter',
+                'icon' => 'fab fa-twitter',
                 'keterangan' => 'Sosial Media',
                 'status' => 1,
                 'created_at' => '2022-04-18 04:05:42',
-                'updated_at' => '2022-04-18 04:05:42',
+                'updated_at' => '2022-04-21 15:11:42',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'nama' => 'Whatsapp',
+                'icon' => 'fab fa-whatsapp',
+                'keterangan' => 'Nomor Whatsapp Lain',
+                'status' => 1,
+                'created_at' => '2022-04-21 15:01:21',
+                'updated_at' => '2022-04-21 15:10:13',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'nama' => 'Youtube',
+                'icon' => 'fab fa-youtube',
+                'keterangan' => 'Youtube',
+                'status' => 1,
+                'created_at' => '2022-04-21 15:02:17',
+                'updated_at' => '2022-04-21 15:10:03',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'nama' => 'Instagram',
+                'icon' => 'fab fa-instagram',
+                'keterangan' => 'Sosial Media',
+                'status' => 1,
+                'created_at' => '2022-04-21 15:10:33',
+                'updated_at' => '2022-04-21 15:10:33',
             ),
         ));
         

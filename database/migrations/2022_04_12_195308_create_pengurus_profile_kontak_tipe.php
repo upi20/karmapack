@@ -16,6 +16,7 @@ class CreatePengurusProfileKontakTipe extends Migration
         Schema::create('pengurus_profile_kontak_tipe', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
+            $table->string('icon');
             $table->text('keterangan')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();

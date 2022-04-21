@@ -43,6 +43,7 @@ $admin = [
     ['title' => 'Sosial Media', 'icon' => 'fe fe-aperture', 'route' => 'admin.social_media'],
     ['title' => 'Kontak', 'icon' => 'fe fe-phone', 'route' => 'admin.contact'],
     ['title' => 'Footer Instagram', 'icon' => 'fe fe-image', 'route' => 'admin.footer_instagram'],
+    ['title' => 'Username Role', 'icon' => 'fe fe-check', 'route' => 'admin.username_validation'],
     ['title' => 'Member Menu', 'separator' => true],
 ];
 

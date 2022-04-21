@@ -33,6 +33,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Icon</th>
                                     <th>Keterangan</th>
                                     <th>Kontak</th>
                                     <th>Status</th>
@@ -64,6 +65,11 @@
                                 required="" />
                         </div>
                         <div class="form-group">
+                            <label class="form-label" for="icon">Icon <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="icon" name="icon"
+                                placeholder="Menggunakan fontawesome 5.5 versi gratis" required="" />
+                        </div>
+                        <div class="form-group">
                             <label class="form-label" for="keterangan">Keterangan <span
                                     class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="keterangan" name="keterangan"
@@ -92,6 +98,11 @@
     </div>
 @endsection
 
+@section('stylesheet')
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
+@endsection
+
 @section('javascript')
     <!-- DATA TABLE JS-->
     <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
@@ -103,6 +114,8 @@
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}">
+    </script>
 
     <script>
         const table_html = $('#tbl_main');
@@ -138,6 +151,13 @@
                         name: 'nama'
                     },
                     {
+                        data: 'icon',
+                        name: 'icon',
+                        render(data, type, full, meta) {
+                            return `<i class="${data}"></i> <span>${data}</span>`;
+                        },
+                    },
+                    {
                         data: 'keterangan',
                         name: 'keterangan'
                     },
@@ -163,6 +183,7 @@
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
                                 data-keterangan="${full.keterangan}"
+                                data-icon="${full.icon}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -268,6 +289,7 @@
             $('#nama').val(data.nama);
             $('#status').val(data.status);
             $('#keterangan').val(data.keterangan);
+            $('#icon').val(data.icon);
         }
 
         function deleteFunc(id) {

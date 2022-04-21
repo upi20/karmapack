@@ -42,6 +42,9 @@ use App\Http\Controllers\Admin\ContactController;
 
 // Footer Instagram
 use App\Http\Controllers\Admin\FooterInstagramController;
+use App\Http\Controllers\Admin\UsernameValidateController;
+use App\Http\Controllers\Member\ProfileController;
+use Illuminate\Http\Request;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -90,6 +93,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/', [UserController::class, 'store'])->name('admin.user.store');
         Route::delete('/{id}', [UserController::class, 'delete'])->name('admin.user.delete');
         Route::post('/update', [UserController::class, 'update'])->name('admin.user.update');
+
+        // select2
+        Route::get('/select2_profesi', [UserController::class, 'select2_profesi'])->name('admin.user.select2.profesi');
     });
 
     // address
@@ -251,6 +257,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::delete('/{id}', [KontakTipeController::class, 'delete'])->name('admin.profile.kontak_tipe.delete');
         Route::post('/update', [KontakTipeController::class, 'update'])->name('admin.profile.kontak_tipe.update');
     });
+
+    // kontak tipe
+    Route::group(['prefix' => 'username_validation'], function () {
+        Route::get('/', [UsernameValidateController::class, 'index'])->name('admin.username_validation'); // page
+        Route::get('/update', [UsernameValidateController::class, 'select2'])->name('admin.username_validation.select2');
+        Route::post('/save', [UsernameValidateController::class, 'save'])->name('admin.username_validation.save');
+    });
 });
 
 
@@ -262,15 +275,14 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
     // profile
     Route::group(['prefix' => 'profile'], function () {
-
-
-        Route::get('/', [UserController::class, 'index'])->name('member.profile'); // page
-        Route::post('/', [UserController::class, 'store'])->name('member.profile.store');
-        Route::delete('/{id}', [UserController::class, 'delete'])->name('member.profile.delete');
-        Route::post('/update', [UserController::class, 'update'])->name('member.profile.update');
+        Route::get('/', [ProfileController::class, 'index'])->name('member.profile'); // page
+        Route::post('/save_basic', [ProfileController::class, 'save_basic'])->name('member.profile.save_basic');
     });
 });
 
-Route::get('/tesadmin', function () {
-    return view('templates.admin.index');
+
+
+// profile username
+Route::get('/{username}', function ($username) {
+    dd($username);
 });

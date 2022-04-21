@@ -22,7 +22,7 @@ class KontakTipeController extends Controller
                             where pengurus_profile_kontak.kontak_tipe_id = $a.id)
                     SQL;
             $this->query['kontak_alias'] = 'kontak';
-            $model = KontakTipe::select(['id', 'nama', 'keterangan', 'status'])
+            $model = KontakTipe::select(['id', 'nama', 'keterangan', 'status', 'icon'])
                 ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
                 ->selectRaw("{$this->query['kontak']} as {$this->query['kontak_alias']}");
 
@@ -54,12 +54,14 @@ class KontakTipeController extends Controller
     {
         try {
             $request->validate([
+                'icon' => ['required', 'string', 'max:255'],
                 'nama' => ['required', 'string', 'max:255'],
                 'keterangan' => ['required', 'string', 'max:255'],
                 'status' => ['required', 'int'],
             ]);
 
             KontakTipe::create([
+                'icon' => $request->icon,
                 'nama' => $request->nama,
                 'keterangan' => $request->keterangan,
                 'status' => $request->status,
@@ -79,11 +81,13 @@ class KontakTipeController extends Controller
         try {
             $model = KontakTipe::find($request->id);
             $request->validate([
+                'icon' => ['required', 'string', 'max:255'],
                 'nama' => ['required', 'string', 'max:255'],
                 'keterangan' => ['required', 'string', 'max:255'],
                 'status' => ['required', 'int'],
             ]);
 
+            $model->icon = $request->icon;
             $model->nama = $request->nama;
             $model->keterangan = $request->keterangan;
             $model->status = $request->status;

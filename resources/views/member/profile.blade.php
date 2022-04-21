@@ -5,89 +5,96 @@
     <div class="row">
         <div class="col-xl-4">
             <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Edit Password</div>
-                </div>
                 <div class="card-body">
-                    <div class="text-center chat-image mb-5">
-                        <div class="avatar avatar-xxl chat-profile mb-3 brround">
-                            <a class="" href="profile.html"><img alt="avatar"
+                    <form action="" id="basic_profile">
+                        {{-- Poto profile --}}
+                        <div class="text-center chat-image mb-5">
+                            <input type="hidden" name="id" value="{{ $user->id }}">
+                            <input type="file" hidden="" id="profile" name="profile" accept="image/*"
+                                onchange="showPreview(event, 'img_profile');">
+                            <div class="avatar avatar-xxl chat-profile mb-3 brround">
+                                <img alt="avatar" onclick="{$('#profile').trigger('click')}"
+                                    data-src="{{ asset('assets/templates/admin/main/assets/images/profile.png') }}"
                                     src="{{ asset('assets/templates/admin/main/assets/images/profile.png') }}"
-                                    class="brround"></a>
+                                    class="brround" id="img_profile"
+                                    style="height: 80px; width: 80px; object-fit: cover; object-position: center; border-radius: 50%;">
+
+                                <label for="profile"><span class="badge rounded-pill avatar-icons bg-primary"><i
+                                            class="fe fe-edit fs-12"></i></span></label>
+                            </div>
+                            <div class="text-center">
+                                <h5 class="mb-1 text-dark fw-semibold">{{ $user->name }}</h5>
+                                @if ($user->username)
+                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">@{{ $user - > username }}</p>
+                                @endif
+                            </div>
                         </div>
-                        <div class="main-chat-msg-name">
-                            <a href="profile.html">
-                                <h5 class="mb-1 text-dark fw-semibold">Percy Kewshun</h5>
-                            </a>
-                            <p class="text-muted mt-0 mb-0 pt-0 fs-13">Web Designer</p>
+
+                        {{-- angkatan --}}
+                        <div class="text-left mt-3">
+                            <h5 class="mb-1 text-dark fw-semibold">Angkatan:</h5>
+                            <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ $user->angkatan }}</p>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Current Password</label>
-                        <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                            </a>
-                            <input class="input100 form-control" type="password" placeholder="Current Password">
+
+                        {{-- riwayat kepengurusan --}}
+                        @if ($kepengurusan)
+                            <div class="text-left mt-3">
+                                <h5 class="mb-1 text-dark fw-semibold">Riwayat Kepengurusan:</h5>
+                                @foreach ($kepengurusan as $p)
+                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ $p['jabatan'] }}</p>
+                                @endforeach
+                            </div>
+                        @endif
+                        <hr>
+
+                        {{-- form profile --}}
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="laki-laki" {{ $user->gender == 'laki-laki' ? 'selected' : '' }}>Laki-Laki
+                                </option>
+                                <option value="perempuan" {{ $user->gender == 'perempuan' ? 'selected' : '' }}>Perempuan
+                                </option>
+                            </select>
                         </div>
-                        <!-- <input type="password" class="form-control" value="password"> -->
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">New Password</label>
-                        <div class="wrap-input100 validate-input input-group" id="Password-toggle1">
-                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                            </a>
-                            <input class="input100 form-control" type="password" placeholder="New Password">
+                        <div class="form-group">
+                            <label class="form-label">Tentang Saya</label>
+                            <textarea class="form-control" rows="6" name="bio" id="bio"
+                                placeholder="My bio.........">{{ $user->bio }}</textarea>
                         </div>
-                        <!-- <input type="password" class="form-control" value="password"> -->
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Confirm Password</label>
-                        <div class="wrap-input100 validate-input input-group" id="Password-toggle2">
-                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
-                            </a>
-                            <input class="input100 form-control" type="password" placeholder="Confirm Password">
+
+                        <div class="form-group">
+                            <label for="profesi">Profesi</label>
+                            <select class="form-control select2" id="profesi" name="profesi" style="width: 100%">
+                                @if ($user->profesi)
+                                    <option value="{{ $user->profesi }}" selected>{{ $user->profesi }}</option>
+                                @endif
+                            </select>
                         </div>
-                        <!-- <input type="password" class="form-control" value="password"> -->
-                    </div>
+                    </form>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="javascript:void(0)" class="btn btn-primary">Update</a>
-                    <a href="javascript:void(0)" class="btn btn-danger">Cancel</a>
+                    <button type="submit" form="basic_profile" class="btn btn-success my-1">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
                 </div>
             </div>
+
+            {{-- kontak --}}
             <div class="card panel-theme">
                 <div class="card-header">
                     <div class="float-start">
-                        <h3 class="card-title">Contact</h3>
+                        <h3 class="card-title">Kontak/Media Sosial</h3>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="card-body no-padding">
-                    <ul class="list-group no-margin">
-                        <li class="list-group-item d-flex ps-3">
-                            <div class="social social-profile-buttons me-2">
-                                <a class="social-icon text-primary" href=""><i class="fe fe-mail"></i></a>
-                            </div>
-                            <a href="javascript:void(0)" class="my-auto">support@demo.com</a>
-                        </li>
-                        <li class="list-group-item d-flex ps-3">
-                            <div class="social social-profile-buttons me-2">
-                                <a class="social-icon text-primary" href=""><i class="fe fe-globe"></i></a>
-                            </div>
-                            <a href="javascript:void(0)" class="my-auto">www.abcd.com</a>
-                        </li>
-                        <li class="list-group-item d-flex ps-3">
-                            <div class="social social-profile-buttons me-2">
-                                <a class="social-icon text-primary" href=""><i class="fe fe-phone"></i></a>
-                            </div>
-                            <a href="javascript:void(0)" class="my-auto">+125 5826 3658</a>
-                        </li>
-                    </ul>
+                <div class="card-body">
+                    Kontak here
                 </div>
             </div>
+
+
         </div>
         <div class="col-xl-8">
             <div class="card">
@@ -95,278 +102,188 @@
                     <h3 class="card-title">Edit Profile</h3>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label for="exampleInputname">First Name</label>
-                                <input type="text" class="form-control" id="exampleInputname" placeholder="First Name">
-                            </div>
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Nama Profile</label>
+                        <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Ex: iseplutpinur">
+                            <input type="hidden" id="username_slug" name="username_slug">
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label for="exampleInputname1">Last Name</label>
-                                <input type="text" class="form-control" id="exampleInputname1"
-                                    placeholder="Enter Last Name">
-                            </div>
-                        </div>
+                        <small id="username_preview">{{ env('APP_URL') }}</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Alamat Email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputnumber">Contact Number</label>
-                        <input type="number" class="form-control" id="exampleInputnumber" placeholder="Contact number">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="text" class="form-control" id="telepon" name="telepon"
+                            title="Nomor telepon yang bisa di hubungi" placeholder="Nomor telepon">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">About Me</label>
-                        <textarea class="form-control" rows="6">My bio.........</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Website</label>
-                        <input class="form-control" placeholder="http://splink.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Date Of Birth</label>
-                        <div class="row">
-                            <div class="col-md-4 mb-2">
-                                <select class="form-control select2 form-select">
-                                    <option value="0">Date</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
-                                    <option value="8">08</option>
-                                    <option value="9">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-2">
-                                <select class="form-control select2 form-select">
-                                    <option value="0">Mon</option>
-                                    <option value="1">Jan</option>
-                                    <option value="2">Feb</option>
-                                    <option value="3">Mar</option>
-                                    <option value="4">Apr</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">Aug</option>
-                                    <option value="9">Sep</option>
-                                    <option value="10">Oct</option>
-                                    <option value="11">Nov</option>
-                                    <option value="12">Dec</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-2">
-                                <select class="form-control select2 form-select">
-                                    <option value="0">Year</option>
-                                    <option value="1">2018</option>
-                                    <option value="2">2017</option>
-                                    <option value="3">2016</option>
-                                    <option value="4">2015</option>
-                                    <option value="5">2014</option>
-                                    <option value="6">2013</option>
-                                    <option value="7">2102</option>
-                                    <option value="8">2012</option>
-                                    <option value="9">2011</option>
-                                    <option value="10">2010</option>
-                                    <option value="11">2009</option>
-                                    <option value="12">2008</option>
-                                    <option value="13">2007</option>
-                                    <option value="14">2006</option>
-                                    <option value="15">2005</option>
-                                    <option value="16">2004</option>
-                                    <option value="17">2003</option>
-                                    <option value="18">2002</option>
-                                    <option value="19">2001</option>
-                                    <option value="20">1999</option>
-                                    <option value="21">1998</option>
-                                    <option value="22">1997</option>
-                                    <option value="23">1996</option>
-                                    <option value="24">1995</option>
-                                    <option value="25">1994</option>
-                                    <option value="26">1993</option>
-                                    <option value="27">1992</option>
-                                    <option value="28">1991</option>
-                                    <option value="29">1990</option>
-                                    <option value="30">1989</option>
-                                    <option value="31">1988</option>
-                                </select>
-                            </div>
+                        <label for="whatsapp">WhatsApp</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="whatsapp">+62</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="whatsapp"
+                                name="whatsapp" title="Nomor Whatsapp" placeholder="85798132505">
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="javascript:void(0)" class="btn btn-success my-1">Save</a>
-                    <a href="javascript:void(0)" class="btn btn-danger my-1">Cancel</a>
+                    <button type="submit" class="btn btn-success my-1">Save</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Notifications</div>
+                            <div class="card-title">Alamat</div>
                         </div>
                         <div class="card-body">
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Updates
-                                        Automatically</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Allow Location
-                                        Map</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Show
-                                        Contacts</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Show
-                                        Notfication</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Show Tasks
-                                        Statistics</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Show Email
-                                        Notification</span>
-                                </label>
-                            </div>
+                            Address Here
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Privacy and Security</div>
+                            <div class="card-title">Riwayat Pendidikan</div>
                         </div>
                         <div class="card-body">
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Allow Others to
-                                        see my profile</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Make my profile
-                                        Public</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Security
-                                        Alert</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Passcode and
-                                        Face ID</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Two Step
-                                        Verification</span>
-                                </label>
-                            </div>
-                            <div class="form-group mg-b-10">
-                                <label class="custom-switch ps-0">
-                                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                                        checked="">
-                                    <span class="custom-switch-indicator me-3"></span>
-                                    <span class="custom-switch-description mg-l-10">Always Sign
-                                        In</span>
-                                </label>
-                            </div>
+                            Riwayat Pendidikan
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Delete Account</div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Pengalaman Organisasi</div>
+                        </div>
+                        <div class="card-body">
+                            Pengalaman Organisasi
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>Its Advisable for you to request your data to be sent to your Email.</p>
-                    <label class="custom-control custom-checkbox mb-0">
-                        <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1"
-                            checked>
-                        <span class="custom-control-label">Yes, Send my data to my Email.</span>
-                    </label>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Pengalaman Lain</div>
+                        </div>
+                        <div class="card-body">
+                            Pengalaman Lain
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer text-end">
-                    <a href="javascript:void(0)" class="btn btn-primary my-1">Deactivate</a>
-                    <a href="javascript:void(0)" class="btn btn-danger my-1">Delete Account</a>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Hobi</div>
+                        </div>
+                        <div class="card-body">
+                            Hobi
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- ROW-1 CLOSED -->
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script>
+        function showPreview(event, image_id) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById(image_id);
+                preview.src = src;
+            }
+        }
+
+        $(document).ready(() => {
+            // select 2 =====================================================================================
+            $('#profesi').select2({
+                ajax: {
+                    url: "{{ route('admin.user.select2.profesi') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                        }
+                        return query;
+                    }
+                }
+            });
+
+            $("#username").keyup(function() {
+                var Text = $(this).val();
+                var result = Text.toLowerCase()
+                    .replace(/[^\w ]+/g, '')
+                    .replace(/ +/g, '-');
+
+                $('#username_preview').html(`{{ env('APP_URL') }}/${result}`);
+                $('#username_slug').val(result);
+            });
+
+            // insertForm ===================================================================================
+            $('#basic_profile').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=basic_profile]', 'Save Changes');
+                const route = "{{ route('member.profile.save_basic') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=basic_profile]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+        })
+    </script>
 @endsection

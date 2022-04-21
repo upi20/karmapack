@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Pengurus;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Periode extends Model
+class UsernameValidation extends Model
 {
     use HasFactory;
     protected $guarded = [];
     protected $primaryKey = 'id';
-    protected $table = 'pengurus_periode';
-    const tableName = 'pengurus_periode';
+    protected $table = 'username_validations';
+    const tableName = 'username_validations';
 }

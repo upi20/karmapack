@@ -9,6 +9,7 @@ use Yajra\Datatables\Datatables;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use League\Config\Exception\ValidationException;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -146,6 +147,36 @@ class UserController extends Controller
                 'message' => 'Something went wrong',
                 'error' => $error,
             ], 500);
+        }
+    }
+
+    public function select2_profesi(Request $request)
+    {
+        try {
+            $model = User::selectRaw('profesi as text')
+                ->whereRaw("(`profesi` like '%$request->search%')")
+                ->distinct()
+                ->limit(10);
+
+            $results = $model->get()->toArray();
+
+            $get = true;
+            $filter = [];
+            foreach ($results as $result) {
+                if ($request->search == $result['text']) $get = false;
+                $filter[] = [
+                    'id' => $result['text'],
+                    'text' => $result['text']
+                ];
+            }
+
+            if ($get) {
+                $results = array_merge([['id' => $request->search, 'text' => $request->search]], $filter);
+            }
+
+            return response()->json(['results' => $results]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
         }
     }
 }

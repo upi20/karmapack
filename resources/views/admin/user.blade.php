@@ -220,7 +220,11 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            return ` <a class="btn btn-rounded btn-info btn-sm my-1" title="Edit Profile"
+                                href="{{ route('member.profile') }}?id=${data}" >
+                                <i class="fa fa-user" aria-hidden="true"></i> Profile
+                                </a>
+                                <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
                                 data-id="${full.id}"
                                 data-name="${full.name}"
                                 data-email="${full.email}"

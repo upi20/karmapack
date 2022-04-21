@@ -110,6 +110,11 @@
     </div>
 @endsection
 
+@section('stylesheet')
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
+@endsection
+
 @section('javascript')
     <!-- DATA TABLE JS-->
     <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
@@ -121,6 +126,8 @@
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}">
+    </script>
 
     <script>
         const table_html = $('#tbl_main');
@@ -157,7 +164,10 @@
                     },
                     {
                         data: 'icon',
-                        name: 'icon'
+                        name: 'icon',
+                        render(data, type, full, meta) {
+                            return `<i class="${data}"></i> <span>${data}</span>`;
+                        },
                     },
                     {
                         data: 'url',

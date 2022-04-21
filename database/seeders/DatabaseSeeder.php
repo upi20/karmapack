@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(150)->create();
 
         // address seeders
-        // AddressProvinceSeeders::run();
-        // AddressRegenciesSeeder::run();
-        // AddressDistrictSeeders::run();
-        // AddressVillageSeeders::run();
+        AddressProvinceSeeders::run();
+        AddressRegenciesSeeder::run();
+        AddressDistrictSeeders::run();
+        AddressVillageSeeders::run();
 
         // ============================================================================================================
         // ============================================================================================================
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PengurusProfilePendidikanJenisTableSeeder::class);
         $this->call(PengurusProfilePendidikanTableSeeder::class);
 
-        // pengalaman
+        // profile pengalaman
         $this->call(PengurusProfilePengalamanLainTableSeeder::class);
         $this->call(PengurusProfilePengalamanOrganisasiTableSeeder::class);
 
@@ -87,5 +87,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialMediaTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
         $this->call(FooterInstagramsTableSeeder::class);
+        $this->call(UsernameValidationsTableSeeder::class);
     }
 }
