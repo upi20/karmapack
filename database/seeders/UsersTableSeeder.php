@@ -23,8 +23,8 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'ISEP LUTPI NUR',
-                'whatsapp' => NULL,
-                'telepon' => NULL,
+                'whatsapp' => '85798132505',
+                'telepon' => '085798132505',
                 'foto' => 'isep-lutpi-nur20220421161046.jpg',
                 'profesi' => 'Pelajar/Mahasiswa',
                 'bio' => 'My bio',
@@ -48,7 +48,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-21 21:31:50',
+                'updated_at' => '2022-04-21 22:00:51',
             ),
             1 => 
             array (
