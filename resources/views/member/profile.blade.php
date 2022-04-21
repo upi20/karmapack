@@ -10,8 +10,7 @@
                         {{-- Poto profile --}}
                         <div class="text-center chat-image mb-5">
                             <input type="hidden" name="id" value="{{ $user->id }}">
-                            <input type="file" hidden="" id="profile" name="profile" accept="image/*"
-                                onchange="showPreview(event, 'img_profile');">
+                            <input type="file" hidden="" id="profile" name="profile" accept="image/*">
                             <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                 <img alt="avatar" onclick="{$('#profile').trigger('click')}"
                                     onerror="this.src='{{ asset('assets/templates/admin/main/assets/images/profile.png') }}';this.onerror='';"
@@ -284,6 +283,22 @@
                     }
                 });
             });
+            $("body").on("change", "#profile", function(e) {
+                var file = e.target.files[0];
+                var mediabase64data;
+                getBase64(file).then(
+                    mediabase64data => $('#img_profile').attr('src', mediabase64data)
+                );
+            });
         })
+
+        function getBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+        }
     </script>
 @endsection
