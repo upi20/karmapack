@@ -14,9 +14,9 @@
                                 onchange="showPreview(event, 'img_profile');">
                             <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                 <img alt="avatar" onclick="{$('#profile').trigger('click')}"
-                                    data-src="{{ asset('assets/templates/admin/main/assets/images/profile.png') }}"
-                                    src="{{ asset('assets/templates/admin/main/assets/images/profile.png') }}"
-                                    class="brround" id="img_profile"
+                                    onerror="this.src='{{ asset('assets/templates/admin/main/assets/images/profile.png') }}';this.onerror='';"
+                                    src="{{ asset('assets/pengurus/profile/' . $user->foto) }}" class="brround"
+                                    id="img_profile"
                                     style="height: 80px; width: 80px; object-fit: cover; object-position: center; border-radius: 50%;">
 
                                 <label for="profile"><span class="badge rounded-pill avatar-icons bg-primary"><i
