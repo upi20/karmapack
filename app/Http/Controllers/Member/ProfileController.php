@@ -14,6 +14,8 @@ use App\Models\Address\Village;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\JabatanMember;
 use App\Models\Pengurus\Periode;
+use App\Models\Profile\Kontak;
+use App\Models\Profile\KontakTipe;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
@@ -36,7 +38,8 @@ class ProfileController extends Controller
 
         $kepengurusan = $this->getRiwayatKepengurusan($user->id);
         $provinces = Province::all();
-        return view('member.profile', compact('page_attr', 'user', 'image_folder', 'kepengurusan', 'provinces'));
+        $kontak_tipe = KontakTipe::where('status', '=', 1)->select(['id', 'nama'])->get();
+        return view('member.profile', compact('page_attr', 'user', 'image_folder', 'kepengurusan', 'provinces', 'kontak_tipe'));
     }
 
     public function save_basic(Request $request)
@@ -200,5 +203,94 @@ class ProfileController extends Controller
             ->leftJoin($d, "$d.id", '=', "$a.district_id")
             ->leftJoin($e, "$e.id", '=', "$a.village_id")
             ->where("$a.id", '=', $id)->first();
+    }
+
+    // Kontak crud =======================================================
+    public function kontak_insert(Request $request)
+    {
+        try {
+            $request->validate([
+                'user_id' => ['required', 'int'],
+                'tipe' => ['required', 'int'],
+                'kontak' => ['required', 'string'],
+            ]);
+            $model = new Kontak();
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->kontak_tipe_id = $request->tipe;
+            $model->value = $request->kontak;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function kontak_update(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'user_id' => ['required', 'int'],
+                'tipe' => ['required', 'int'],
+                'kontak' => ['required', 'string'],
+            ]);
+            $model = Kontak::find($request->id);
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->kontak_tipe_id = $request->tipe;
+            $model->value = $request->kontak;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function kontak(Request $request)
+    {
+        return response()->json(['datas' => $this->getListKontak($request->user_id)]);
+    }
+
+    private function getListKontak(?int $user_id): mixed
+    {
+        if (!$user_id) return [];
+        $a = Kontak::tableName;
+        $b = KontakTipe::tableName;
+        $kontak = Kontak::select([
+            DB::raw("$a.id"),
+            DB::raw("$a.value"),
+            DB::raw("$b.id as kontak_id"),
+            DB::raw("$b.nama as kontak"),
+            DB::raw("$b.icon as icon"),
+        ])
+            ->where("$a.user_id", '=', $user_id)
+            ->join($b, "$a.kontak_tipe_id", '=', "$b.id")
+            ->get();
+
+        return $kontak;
+    }
+
+    public function kontak_delete(Kontak $model)
+    {
+        try {
+            $model->delete();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
     }
 }

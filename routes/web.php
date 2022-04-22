@@ -279,6 +279,13 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
         Route::post('/save_basic', [ProfileController::class, 'save_basic'])->name('member.profile.save_basic');
         Route::post('/save_address', [ProfileController::class, 'save_address'])->name('member.profile.save_address');
         Route::post('/save_detail', [ProfileController::class, 'save_detail'])->name('member.profile.save_detail');
+
+        // other information ==========================================================================================
+        // kontak
+        Route::get('/kontak', [ProfileController::class, 'kontak'])->name('member.profile.kontak');
+        Route::post('/kontak_insert', [ProfileController::class, 'kontak_insert'])->name('member.profile.kontak_insert');
+        Route::post('/kontak_update', [ProfileController::class, 'kontak_update'])->name('member.profile.kontak_update');
+        Route::delete('/kontak_delete/{model}', [ProfileController::class, 'kontak_delete'])->name('member.profile.kontak_delete');
     });
 });
 

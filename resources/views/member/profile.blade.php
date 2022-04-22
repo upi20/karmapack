@@ -205,64 +205,26 @@
 
             {{-- Other information --}}
             <div class="row">
+                {{-- kontak --}}
                 <div class="col-12">
-                    {{-- kontak --}}
                     <div class="card panel-theme">
-                        <div class="card-header">
+                        <div class="card-header  d-flex flex-row justify-content-between">
                             <div class="float-start">
                                 <h3 class="card-title">Kontak/Media Sosial</h3>
                             </div>
-                            <div class="clearfix"></div>
+                            <button class="btn btn-info btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                href="#modal-kontak" onclick="kontakAdd()" data-target="#modal-kontak"><i
+                                    class="fa fa-plus me-2"></i>Tambah</button>
                         </div>
                         <div class="card-body p-0">
-                            <div class="list-group">
-                                <div class="list-group-item list-group-item-action flex-column align-items-start active">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <div class="btn-group mt-2 mb-2">
-                                            <button type="button" class="btn btn-facebook btn-pill dropdown-toggle"
-                                                data-bs-toggle="dropdown">
-                                                <i class="fa fa-facebook"></i> <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li class="dropdown-plus-title">
-                                                    Dropdown
-                                                    <b class="fa fa-angle-up" aria-hidden="true"></b>
-                                                </li>
-                                                <li><a href="javascript:void(0)">Action</a></li>
-                                                <li><a href="javascript:void(0)">Another action</a></li>
-                                                <li><a href="javascript:void(0)">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="javascript:void(0)">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-                                        Maecenas sed diam eget risus varius blandit.</p>
-                                    <small class="text-muted">Donec id elit non mi porta.</small>
-                                </div>
-                                <div class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small class="text-muted">3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-                                        Maecenas sed diam eget risus varius blandit.</p>
-                                    <small class="text-muted">Donec id elit non mi porta.</small>
-                                </div>
-                                <div class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1">List group item heading</h5>
-                                        <small class="text-muted">3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus.
-                                        Maecenas sed diam eget risus varius blandit.</p>
-                                    <small class="text-muted">Donec id elit non mi porta.</small>
-                                </div>
+                            <div class="list-group" id="kontak-body">
+
                             </div>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
@@ -307,11 +269,54 @@
         </div>
     </div>
     <!-- ROW-1 CLOSED -->
+
+    {{-- modal --}}
+    {{-- modal kontak --}}
+    <div class="modal fade" id="modal-kontak">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-kontak-title"></h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:void(0)" id="kontak_form" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="id" id="kontak_id">
+                        <div class="form-group">
+                            <label class="form-label" for="kontak_tipe">Kontak Jenis/Tipe</label>
+                            <select class="form-control" style="width: 100%;" required="" id="kontak_tipe" name="tipe">
+                                @foreach ($kontak_tipe as $kontak)
+                                    <option value="{{ $kontak->id }}">{{ $kontak->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="kontak">Kontak <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="kontak" name="kontak"
+                                placeholder="Ex: https://facebook.com/iseplutpinur7" required="" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btn-save" form="kontak_form">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('javascript')
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
     <script>
         function showPreview(event, image_id) {
             if (event.target.files.length > 0) {
@@ -409,6 +414,10 @@
                 clearVillage();
             });
 
+            // Crud
+            $('#kontak_tipe').select2({
+                dropdownParent: $('#modal-kontak')
+            });
 
 
 
@@ -581,6 +590,59 @@
                     mediabase64data => $('#img_profile').attr('src', mediabase64data)
                 );
             });
+
+            // kontak insert/update
+            $('#kontak_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=kontak_form]', 'Save Changes');
+                const route = ($('#kontak_id').val() == '') ?
+                    "{{ route('member.profile.kontak_insert') }}" :
+                    "{{ route('member.profile.kontak_update') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        $("#modal-kontak").modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        kontakRender();
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=kontak_form]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
         })
 
         function getBase64(file) {
@@ -609,5 +671,136 @@
                 .append((new Option('', '', true, true)))
                 .trigger('change');
         }
+
+        function isValidURL(string) {
+            // https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url | Vikasdeep Singh
+            var res = string.match(
+                /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+            return (res !== null)
+        };
+
+        function kontakAdd() {
+            $('#modal-kontak-title').html('Tambah Kontak');
+            $('#kontak_form').trigger("reset");
+            $('#kontak_id').val('');
+        }
+
+        function kontakEdit(datas) {
+            const data = datas.dataset;
+            $('#modal-kontak-title').html("Edit Kontak");
+            $('#modal-kontak').modal('show');
+            $('#kontak_form').trigger("reset");
+            $('#kontak_id').val(data.id);
+            $('#kontak').val(data.kontak);
+            $('#kontak_tipe').val(data.kontak_tipe_id).trigger('change');;
+        }
+
+        function kontakDelete(id) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('member/profile/kontak_delete') }}/${id}`,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Kontak deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            kontakRender();
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function kontakRender() {
+            const kontak_body = $('#kontak-body');
+            kontak_body.LoadingOverlay("show");
+            $.ajax({
+                type: "GET",
+                url: "{{ route('member.profile.kontak') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    user_id: '{{ $user->id }}'
+                },
+                success: (data) => {
+                    kontak_body.html('');
+                    data.datas.forEach(e => {
+                        const value = isValidURL(e.value) ?
+                            `<a href="${e.value}" class="link-primary">${e.value}</a>` :
+                            `<p class="mb-1">${e.value}</p>`;
+                        kontak_body.append(`
+                        <div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                <div>
+                                    <div class="d-flex w-100">
+                                        <i class="${e.icon} me-3"></i>
+                                        <h5 class="mb-1">${e.kontak}</h5>
+                                    </div>
+                                    ${value}
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-primary btn-sm"
+                                        data-kontak="${e.value}"
+                                        data-id="${e.id}"
+                                        data-kontak_tipe_id="${e.kontak_id}"
+                                        onclick="kontakEdit(this)">
+                                        <i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger btn-sm"
+                                    onclick="kontakDelete('${e.id}')"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </div>
+                        `);
+                    });
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: res.message ?? 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                complete: function() {
+                    kontak_body.LoadingOverlay("hide");
+                }
+            });
+        }
+
+        // initial function
+        kontakRender();
     </script>
 @endsection
