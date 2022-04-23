@@ -19,6 +19,7 @@ use App\Models\Profile\Kontak;
 use App\Models\Profile\KontakTipe;
 use App\Models\Profile\Pendidikan;
 use App\Models\Profile\PendidikanJenis;
+use App\Models\Profile\PengalamanOrganisasi;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
@@ -512,6 +513,171 @@ class ProfileController extends Controller
                 'message' => 'Something went wrong',
                 'error' => $error,
             ], 500);
+        }
+    }
+
+    public function pendidikan_select2(Request $request)
+    {
+        try {
+            $model = Pendidikan::selectRaw('instansi as text')
+                ->whereRaw("(`instansi` like '%$request->search%')")
+                ->distinct()
+                ->limit(10);
+
+            if ($request->pendidikan_jenis_id) {
+                $model->where('pendidikan_jenis_id', '=', $request->pendidikan_jenis_id);
+            }
+
+            $results = $model->get()->toArray();
+
+            $get = true;
+            $filter = [];
+            foreach ($results as $result) {
+                if ($request->search == $result['text']) $get = false;
+                $filter[] = [
+                    'id' => $result['text'],
+                    'text' => $result['text']
+                ];
+            }
+
+            if ($get) {
+                $results = array_merge([['id' => $request->search, 'text' => $request->search]], $filter);
+            }
+
+            return response()->json(['results' => $results]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
+        }
+    }
+
+    // Pengalaman Organisasi ======================================================================
+    public function penalaman_organisasi_insert(Request $request)
+    {
+        try {
+            $request->validate([
+                'user_id' => ['required', 'int'],
+                'nama' => ['required', 'string'],
+                'dari' => ['required', 'int'],
+                'sampai' => ['nullable', 'int'],
+                'jabatan' => ['required', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = new PengalamanOrganisasi();
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->nama = $request->nama;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->jabatan = $request->jabatan;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function penalaman_organisasi_update(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'user_id' => ['required', 'int'],
+                'nama' => ['required', 'string'],
+                'dari' => ['required', 'int'],
+                'sampai' => ['nullable', 'int'],
+                'jabatan' => ['required', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = Pendidikan::find($request->id);
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->nama = $request->nama;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->jabatan = $request->jabatan;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function penalaman_organisasi(Request $request)
+    {
+        return response()->json(['datas' => $this->getListPengalamanOrganisasi($request->user_id)]);
+    }
+
+    private function getListPengalamanOrganisasi(?int $user_id): mixed
+    {
+        if (!$user_id) return [];
+        $a = PengalamanOrganisasi::tableName;
+        $kontak = Pendidikan::select([
+            DB::raw("$a.id"),
+            DB::raw("$a.instansi"),
+            DB::raw("$a.dari"),
+            DB::raw("$a.sampai"),
+            DB::raw("$a.jurusan"),
+            DB::raw("$a.keterangan"),
+        ])
+            ->where("$a.user_id", '=', $user_id)
+            ->orderBy("$a.dari", 'desc')
+            ->get();
+
+        return $kontak;
+    }
+
+    public function penalaman_organisasi_delete(PengalamanOrganisasi $model)
+    {
+        try {
+            $model->delete();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function pengalaman_organisasi_select2(Request $request)
+    {
+        try {
+            $model = PengalamanOrganisasi::selectRaw('nama as text')
+                ->whereRaw("(`nama` like '%$request->search%')")
+                ->distinct()
+                ->limit(10);
+
+            $results = $model->get()->toArray();
+
+            $get = true;
+            $filter = [];
+            foreach ($results as $result) {
+                if ($request->search == $result['text']) $get = false;
+                $filter[] = [
+                    'id' => $result['text'],
+                    'text' => $result['text']
+                ];
+            }
+
+            if ($get) {
+                $results = array_merge([['id' => $request->search, 'text' => $request->search]], $filter);
+            }
+
+            return response()->json(['results' => $results]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
         }
     }
 }

@@ -358,8 +358,9 @@
                         <div class="form-group">
                             <label class="form-label" for="pendidikan">Instansi <span
                                     class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="pendidikan" name="pendidikan"
-                                placeholder="Nama Tempat belajar, Sekolah DLL" required="" />
+                            <select style="width: 100%;" class="form-control" id="pendidikan" name="pendidikan"
+                                placeholder="Nama Tempat belajar, Sekolah DLL" required="">
+                            </select>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -510,7 +511,26 @@
             $('#kontak_tipe').select2({
                 dropdownParent: $('#modal-kontak')
             });
+
             $('#pendidikan_jenis').select2({
+                dropdownParent: $('#modal-pendidikan')
+            });
+
+            $('#pendidikan').select2({
+                ajax: {
+                    url: "{{ route('member.profile.pendidikan_select2') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                            pendidikan_jenis_id: $('#pendidikan_jenis').val()
+                        }
+                        return query;
+                    }
+                },
                 dropdownParent: $('#modal-pendidikan')
             });
 
