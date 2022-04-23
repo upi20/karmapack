@@ -255,13 +255,27 @@
                         </div>
                     </div>
                 </div>
+                {{-- Hobi --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">Hobi</div>
+                        <div class="card-header  d-flex flex-row justify-content-between">
+                            <div class="float-start">
+                                <h3 class="card-title">Hobi</h3>
+                            </div>
+                            <button type="submit" form="hobi_form" class="btn btn-info btn-sm">
+                                <li class="fa fa-save mr-1"></li> Save changes
+                            </button>
                         </div>
                         <div class="card-body">
-                            Hobi
+                            <form action="" id="hobi_form">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                <select class="form-control" style="width: 100%;" required="" id="hobbies" multiple
+                                    name="hobbies[]">
+                                    @foreach ($hobbies as $hobby)
+                                        <option value="{{ $hobby->name }}" selected>{{ $hobby->name }}</option>
+                                    @endforeach
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -330,7 +344,7 @@
             // select 2 =====================================================================================
             $('#profesi').select2({
                 ajax: {
-                    url: "{{ route('admin.user.select2.profesi') }}",
+                    url: "{{ route('member.profile.profesi_select2') }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -343,6 +357,7 @@
                     }
                 }
             });
+
             $('#province_id').select2();
 
             // initial
@@ -419,7 +434,21 @@
                 dropdownParent: $('#modal-kontak')
             });
 
-
+            $('#hobbies').select2({
+                ajax: {
+                    url: "{{ route('member.profile.hobby_select2') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                        }
+                        return query;
+                    }
+                }
+            });
 
             // ==============================================================================================
             $("#username").keyup(function() {
@@ -643,6 +672,57 @@
                     }
                 });
             });
+
+            // hobbies save
+            $('#hobi_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=hobi_form]', 'Save Changes');
+                const route = "{{ route('member.profile.hobby_save') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $('#header_foto_profile').attr('src', ($('#img_profile').attr('src')));
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=hobi_form]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+
         })
 
         function getBase64(file) {

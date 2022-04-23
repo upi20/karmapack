@@ -93,9 +93,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/', [UserController::class, 'store'])->name('admin.user.store');
         Route::delete('/{id}', [UserController::class, 'delete'])->name('admin.user.delete');
         Route::post('/update', [UserController::class, 'update'])->name('admin.user.update');
-
-        // select2
-        Route::get('/select2_profesi', [UserController::class, 'select2_profesi'])->name('admin.user.select2.profesi');
     });
 
     // address
@@ -286,6 +283,13 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
         Route::post('/kontak_insert', [ProfileController::class, 'kontak_insert'])->name('member.profile.kontak_insert');
         Route::post('/kontak_update', [ProfileController::class, 'kontak_update'])->name('member.profile.kontak_update');
         Route::delete('/kontak_delete/{model}', [ProfileController::class, 'kontak_delete'])->name('member.profile.kontak_delete');
+
+        // hobi
+        Route::get('/hobby_select2', [ProfileController::class, 'hobby_select2'])->name('member.profile.hobby_select2');
+        Route::post('/hobby_save', [ProfileController::class, 'hobby_save'])->name('member.profile.hobby_save');
+
+        // profesi
+        Route::get('/profesi_select2', [ProfileController::class, 'profesi_select2'])->name('member.profile.profesi_select2');
     });
 });
 

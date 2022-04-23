@@ -83,6 +83,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PengurusProfilePengalamanLainTableSeeder::class);
         $this->call(PengurusProfilePengalamanOrganisasiTableSeeder::class);
 
+        // profiel hobbies
+        $this->call(HobbiesTableSeeder::class);
+
         // Lainnya
         $this->call(SocialMediaTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
