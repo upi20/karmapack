@@ -31,7 +31,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#fff">
-    <meta name="theme-color" content="#E72463">
+    <meta name="theme-color" content="#0191D7">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- META DATA -->
@@ -145,11 +145,15 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                     </div>
                 </div>
                 <!-- CONTAINER CLOSED -->
-                <div class="col col-login mx-auto mt-7">
-                    <div class="text-center">
-                        © <span id="year"></span> Karmapack. Persembahan Dari
-                        <a class="text-light fw-bold" href="http://github.com/iseplutpinur">Isep Lutpi Nur</a>
-                        Bidang Kominfo.
+                <div class="col col-login mx-auto">
+                    <div class="text-center d-md-flex  justify-content-center">
+                        <div>
+                            © <span id="year"></span> Karmapack.
+                        </div>
+                        <div>
+                            Persembahan Dari <a href="http://github.com/iseplutpinur" class="text-light">Isep Lutpi
+                                Nur</a> Bidang Kominfo.
+                        </div>
                     </div>
                 </div>
             </div>

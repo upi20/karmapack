@@ -32,7 +32,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#fff">
-    <meta name="theme-color" content="#E72463">
+    <meta name="theme-color" content="#0191D7">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- META DATA -->
@@ -84,7 +84,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#fff">
-    <meta name="theme-color" content="#E72463">
+    <meta name="theme-color" content="#0191D7">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- BOOTSTRAP CSS -->

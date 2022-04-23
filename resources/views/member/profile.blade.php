@@ -25,7 +25,7 @@
                             <div class="text-center">
                                 <h5 class="mb-1 text-dark fw-semibold">{{ $user->name }}</h5>
                                 @if ($user->username)
-                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">@{{ $user - > username }}</p>
+                                    <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ '@' . $user->username }}</p>
                                 @endif
                             </div>
                         </div>
