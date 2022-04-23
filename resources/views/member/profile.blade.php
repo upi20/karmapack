@@ -359,7 +359,7 @@
                             <label class="form-label" for="pendidikan">Instansi <span
                                     class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="pendidikan" name="pendidikan"
-                                placeholder="Ex: SMK Negeri 1 Tanggeung" required="" />
+                                placeholder="Nama Tempat belajar, Sekolah DLL" required="" />
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -367,26 +367,26 @@
                                     <label class="form-label" for="pendidikan_dari">Dari <span
                                             class="text-danger">*</span></label>
                                     <input type="number" class="form-control" id="pendidikan_dari" name="dari"
-                                        placeholder="Ex: 2016" required="" />
+                                        placeholder="Tahun Masuk" required="" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="pendidikan_sampai">Sampai</label>
                                     <input type="number" class="form-control" id="pendidikan_sampai" name="sampai"
-                                        placeholder="Ex: 2019" />
+                                        placeholder="Tahun Keluar" />
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="pendidikan_jurusan">Jurusan </label>
                             <input type="text" class="form-control" id="pendidikan_jurusan" name="jurusan"
-                                placeholder="Ex: Otomatisasi Tata Kelola Perkantoran" />
+                                placeholder="Jika tidak ada bisa di kosongkan." />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="pendidikan_keterangan">Keterangan/Lainnya </label>
                             <input type="text" class="form-control" id="pendidikan_keterangan" name="keterangan"
-                                placeholder="Ex: Kelas OTKP 2" />
+                                placeholder="Contoh nama, kode, kelas DLL" />
                         </div>
                     </form>
                 </div>
@@ -1111,7 +1111,7 @@
                                         ${keterangan}
                                     </div>
 
-                                    <div class="text-center">
+                                    <div class="text-md-center">
                                         <button class="btn btn-primary btn-sm my-1"
                                             data-id="${e.id}"
 
