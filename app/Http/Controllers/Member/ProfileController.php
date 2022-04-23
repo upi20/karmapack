@@ -17,6 +17,8 @@ use App\Models\Pengurus\Periode;
 use App\Models\Profile\Hobby;
 use App\Models\Profile\Kontak;
 use App\Models\Profile\KontakTipe;
+use App\Models\Profile\Pendidikan;
+use App\Models\Profile\PendidikanJenis;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
@@ -40,6 +42,7 @@ class ProfileController extends Controller
         $kepengurusan = $this->getRiwayatKepengurusan($user->id);
         $provinces = Province::all();
         $kontak_tipe = KontakTipe::where('status', '=', 1)->select(['id', 'nama'])->get();
+        $pendidikan_jenis = PendidikanJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
         $hobbies = Hobby::where('user_id', '=', $user->id)->select(['name'])->get();
         return view('member.profile', compact(
             'page_attr',
@@ -48,6 +51,7 @@ class ProfileController extends Controller
             'kepengurusan',
             'provinces',
             'kontak_tipe',
+            'pendidikan_jenis',
             'hobbies'
         ));
     }
@@ -393,6 +397,116 @@ class ProfileController extends Controller
             Hobby::insert($hobbies);
 
             DB::commit();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    // Pendidikan crud ============================================================================
+    public function pendidikan_insert(Request $request)
+    {
+        try {
+            $request->validate([
+                'user_id' => ['required', 'int'],
+                'jenis' => ['required', 'int'],
+                'pendidikan' => ['required', 'string'],
+                'dari' => ['required', 'int'],
+                'sampai' => ['nullable', 'int'],
+                'jurusan' => ['nullable', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = new Pendidikan();
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->pendidikan_jenis_id = $request->jenis;
+            $model->instansi = $request->pendidikan;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->jurusan = $request->jurusan;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function pendidikan_update(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'user_id' => ['required', 'int'],
+                'jenis' => ['required', 'int'],
+                'pendidikan' => ['required', 'string'],
+                'dari' => ['required', 'int'],
+                'sampai' => ['nullable', 'int'],
+                'jurusan' => ['nullable', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = Pendidikan::find($request->id);
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->pendidikan_jenis_id = $request->jenis;
+            $model->instansi = $request->pendidikan;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->jurusan = $request->jurusan;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function pendidikan(Request $request)
+    {
+        return response()->json(['datas' => $this->getListPendidikan($request->user_id)]);
+    }
+
+    private function getListPendidikan(?int $user_id): mixed
+    {
+        if (!$user_id) return [];
+        $a = Pendidikan::tableName;
+        $b = PendidikanJenis::tableName;
+        $kontak = Pendidikan::select([
+            DB::raw("$a.id"),
+            DB::raw("$a.instansi"),
+            DB::raw("$a.dari"),
+            DB::raw("$a.sampai"),
+            DB::raw("$a.jurusan"),
+            DB::raw("$a.keterangan"),
+
+            DB::raw("$b.id as pendidikan_id"),
+            DB::raw("$b.nama as pendidikan"),
+        ])
+            ->where("$a.user_id", '=', $user_id)
+            ->join($b, "$a.pendidikan_jenis_id", '=', "$b.id")
+            ->orderBy("$a.dari", 'desc')
+            ->get();
+
+        return $kontak;
+    }
+
+    public function pendidikan_delete(Pendidikan $model)
+    {
+        try {
+            $model->delete();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',

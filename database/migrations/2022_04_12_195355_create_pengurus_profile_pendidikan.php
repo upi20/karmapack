@@ -18,11 +18,10 @@ class CreatePengurusProfilePendidikan extends Migration
             $table->integer('pendidikan_jenis_id')->nullable()->default(null);
             $table->bigInteger('user_id', false, true)->nullable()->default(null);
             $table->year('dari');
-            $table->year('sampai');
+            $table->year('sampai')->nullable();
             $table->string('instansi');
-            $table->string('jurusan');
+            $table->string('jurusan')->nullable();
             $table->text('keterangan')->nullable();
-            $table->boolean('status')->default(0);
 
             // relationship
             $table->foreign('pendidikan_jenis_id')

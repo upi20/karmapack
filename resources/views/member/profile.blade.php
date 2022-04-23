@@ -217,24 +217,29 @@
                                     class="fa fa-plus me-2"></i>Tambah</button>
                         </div>
                         <div class="card-body p-0">
-                            <div class="list-group" id="kontak-body">
+                            <div class="list-group list-group-flush" id="kontak-body">
 
                             </div>
                         </div>
                     </div>
                 </div>
 
-
+                {{-- Riwayat Pendidikan --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header d-flex flex-row justify-content-between">
                             <div class="card-title">Riwayat Pendidikan</div>
+                            <button class="btn btn-info btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                href="#modal-pendidikan" onclick="pendidikanAdd()" data-target="#modal-pendidikan"><i
+                                    class="fa fa-plus me-2"></i>Tambah</button>
                         </div>
-                        <div class="card-body">
-                            Riwayat Pendidikan
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="pendidikan-body"> </div>
                         </div>
                     </div>
                 </div>
+
+                {{-- Pengalaman Organisasi --}}
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
@@ -245,6 +250,8 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Pengalaman Lain --}}
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
@@ -315,6 +322,76 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="kontak_form">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- modal pendidikan --}}
+    <div class="modal fade" id="modal-pendidikan">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-pendidikan-title"></h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="javascript:void(0)" id="pendidikan_form" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="id" id="pendidikan_id">
+                        <div class="form-group">
+                            <label class="form-label" for="pendidikan_jenis">Pendidikan Jenis/Tipe</label>
+                            <select class="form-control" style="width: 100%;" required="" id="pendidikan_jenis"
+                                name="jenis">
+                                @foreach ($pendidikan_jenis as $pendidikan)
+                                    <option value="{{ $pendidikan->id }}">{{ $pendidikan->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pendidikan">Instansi <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="pendidikan" name="pendidikan"
+                                placeholder="Ex: SMK Negeri 1 Tanggeung" required="" />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="pendidikan_dari">Dari <span
+                                            class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="pendidikan_dari" name="dari"
+                                        placeholder="Ex: 2016" required="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="pendidikan_sampai">Sampai</label>
+                                    <input type="number" class="form-control" id="pendidikan_sampai" name="sampai"
+                                        placeholder="Ex: 2019" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pendidikan_jurusan">Jurusan </label>
+                            <input type="text" class="form-control" id="pendidikan_jurusan" name="jurusan"
+                                placeholder="Ex: Otomatisasi Tata Kelola Perkantoran" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pendidikan_keterangan">Keterangan/Lainnya </label>
+                            <input type="text" class="form-control" id="pendidikan_keterangan" name="keterangan"
+                                placeholder="Ex: Kelas OTKP 2" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btn-save" form="pendidikan_form">
                         <li class="fa fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -432,6 +509,9 @@
             // Crud
             $('#kontak_tipe').select2({
                 dropdownParent: $('#modal-kontak')
+            });
+            $('#pendidikan_jenis').select2({
+                dropdownParent: $('#modal-pendidikan')
             });
 
             $('#hobbies').select2({
@@ -723,6 +803,59 @@
                 });
             });
 
+            // pendidikan insert/update
+            $('#pendidikan_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=pendidikan_form]', 'Save Changes');
+                const route = ($('#pendidikan_id').val() == '') ?
+                    "{{ route('member.profile.pendidikan_insert') }}" :
+                    "{{ route('member.profile.pendidikan_update') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        $("#modal-pendidikan").modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        pendidikanRender();
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=pendidikan_form]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+
         })
 
         function getBase64(file) {
@@ -759,6 +892,7 @@
             return (res !== null)
         };
 
+        // Kontak =================================================================================
         function kontakAdd() {
             $('#modal-kontak-title').html('Tambah Kontak');
             $('#kontak_form').trigger("reset");
@@ -880,7 +1014,142 @@
             });
         }
 
+        // pendidikan =================================================================================
+        function pendidikanAdd() {
+            $('#modal-pendidikan-title').html('Tambah Pendidikan');
+            $('#pendidikan_form').trigger("reset");
+            $('#pendidikan_id').val('');
+        }
+
+        function pendidikanEdit(datas) {
+            const data = datas.dataset;
+            $('#modal-pendidikan-title').html("Edit Kontak");
+            $('#modal-pendidikan').modal('show');
+            $('#pendidikan_form').trigger("reset");
+            $('#pendidikan_id').val(data.id);
+            $('#pendidikan').val(data.instansi);
+            $('#pendidikan_dari').val(data.dari);
+            $('#pendidikan_sampai').val(data.sampai);
+            $('#pendidikan_jurusan').val(data.jurusan);
+            $('#pendidikan_keterangan').val(data.keterangan);
+            $('#pendidikan_jenis').val(data.pendidikan_jenis_id).trigger('change');
+        }
+
+        function pendidikanDelete(id) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('member/profile/pendidikan_delete') }}/${id}`,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Kontak deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            pendidikanRender();
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function pendidikanRender() {
+            const element = $('#pendidikan-body');
+            element.LoadingOverlay("show");
+            $.ajax({
+                type: "GET",
+                url: "{{ route('member.profile.pendidikan') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    user_id: '{{ $user->id }}'
+                },
+                success: (data) => {
+                    element.html('');
+                    data.datas.forEach(e => {
+                        const jurusan = e.jurusan ? `<p class="my-0">${e.jurusan}</p>` : '';
+                        const keterangan = e.keterangan ? `<p class="my-0">${e.keterangan}</p>` : '';
+
+                        element.append(`
+                                <div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex w-100">
+                                            <h5 class="mb-1 fw-bold">${e.pendidikan}</h5>
+                                        </div>
+                                        <p class="my-0">${e.dari}-${e.sampai ?? 'Sekarang'} | ${e.instansi}</p>
+                                        ${jurusan}
+                                        ${keterangan}
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-primary btn-sm my-1"
+                                            data-id="${e.id}"
+
+                                            data-instansi="${e.instansi}"
+                                            data-dari="${e.dari}"
+                                            data-jurusan="${e.jurusan ?? ''}"
+                                            data-sampai="${e.sampai ?? ''}"
+                                            data-keterangan="${e.keterangan ?? ''}"
+                                            data-pendidikan_jenis_id="${e.pendidikan_id}"
+                                            onclick="pendidikanEdit(this)">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm my-1" onclick="pendidikanDelete('${e.id}')">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                        `);
+                    });
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: res.message ?? 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                complete: function() {
+                    element.LoadingOverlay("hide");
+                }
+            });
+        }
+
         // initial function
         kontakRender();
+        pendidikanRender();
     </script>
 @endsection

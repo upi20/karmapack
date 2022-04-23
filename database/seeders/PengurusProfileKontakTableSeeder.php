@@ -21,30 +21,21 @@ class PengurusProfileKontakTableSeeder extends Seeder
         \DB::table('pengurus_profile_kontak')->insert(array (
             0 => 
             array (
-                'id' => 2,
+                'id' => 7,
                 'kontak_tipe_id' => 1,
                 'user_id' => 1,
-                'value' => 'asdfsdf',
-                'created_at' => '2022-04-22 15:14:10',
-                'updated_at' => '2022-04-22 15:14:10',
+                'value' => 'https://facebook.com/iseplutpinur7/',
+                'created_at' => '2022-04-23 07:05:43',
+                'updated_at' => '2022-04-23 07:05:43',
             ),
             1 => 
             array (
-                'id' => 4,
-                'kontak_tipe_id' => 1,
+                'id' => 8,
+                'kontak_tipe_id' => 5,
                 'user_id' => 1,
-                'value' => 'https://web.facebook.com/iseplutpinur7',
-                'created_at' => '2022-04-22 15:32:43',
-                'updated_at' => '2022-04-22 15:44:20',
-            ),
-            2 => 
-            array (
-                'id' => 6,
-                'kontak_tipe_id' => 2,
-                'user_id' => 1,
-                'value' => 'https://web.facebook.com/iseplutpinur7',
-                'created_at' => '2022-04-22 15:49:07',
-                'updated_at' => '2022-04-22 15:49:13',
+                'value' => 'https://www.instagram.com/iseplutpinur/',
+                'created_at' => '2022-04-23 07:06:21',
+                'updated_at' => '2022-04-23 07:06:21',
             ),
         ));
         

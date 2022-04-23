@@ -290,6 +290,13 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
         // profesi
         Route::get('/profesi_select2', [ProfileController::class, 'profesi_select2'])->name('member.profile.profesi_select2');
+
+        // pendidikan
+        Route::get('/pendidikan', [ProfileController::class, 'pendidikan'])->name('member.profile.pendidikan');
+        Route::get('/pendidikan_select2', [ProfileController::class, 'pendidikan_select2'])->name('member.profile.pendidikan_select2');
+        Route::post('/pendidikan_insert', [ProfileController::class, 'pendidikan_insert'])->name('member.profile.pendidikan_insert');
+        Route::post('/pendidikan_update', [ProfileController::class, 'pendidikan_update'])->name('member.profile.pendidikan_update');
+        Route::delete('/pendidikan_delete/{model}', [ProfileController::class, 'pendidikan_delete'])->name('member.profile.pendidikan_delete');
     });
 });
 
