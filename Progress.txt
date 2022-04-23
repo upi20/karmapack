@@ -1,0 +1,38 @@
+jika artikel tidak mempunyai foto
+        $str = '<p><br><div class="embed-container"><iframe src="https://www.youtube.com/embed/0jWD8zv3-8s?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div></p>';
+        $str = explode('src="', $str);
+        $matches = '';
+        preg_match(
+            "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",
+            $str[1],
+            $matches
+        );
+        dd($matches);
+
+// ide
+jadwal acara
+pengumuman
+Sejarah
+
+
+// Rencana
+    Tampilkan kantegori dan tag di artikel
+    Tambah pengumuman untuk frontednd
+    Pengumuman di backend bisa di kategori menggunakan select2.
+        umum
+        per periode
+        per angkatan
+        dan lain lain
+    Perbaiki breadcumb
+    Sensus Anggota seluruh angkatan
+    Pendaftaran
+    Kontak keluhan/bug/saran di aplikasi
+    Kontak
+    Instagram
+    Sosial Media
+    Celebration in file:///E:/xampp8/htdocs/aplikasi/karmapack-master/docs/category.html jadi ulang tahun
+    Laporan ke admin di member ada menu khusus kemudian bisa di balas status [1=>'diterima', 0=>'diproses', 2=>'balasan']
+    Pendidikan, pengalaman organisasi, dan lain lain  ada tahun dari sampai coba cek lagi wkwk.
+
+// artikel template
+<div class="MOdxS " style="border: 0px solid rgb(0, 0, 0); font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; -webkit-box-align: stretch; align-items: stretch; display: inline; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; flex-shrink: 0; position: relative;"><span class="_7UhW9   xLCgt      MMzan   KV-D4            se6yk       T0kll " style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: 18px; vertical-align: baseline; display: inline !important;">Join Us:<br>}Youtube (Orda Karmapack)<br><a href="https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg" target="_blank">https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg</a><br>}Instagram (orda_karmapack)<br><a href="https://instagram.com/orda_karmapack?utm_medium=copy_link" target="_blank">https://instagram.com/orda_karmapack?utm_medium=copy_link</a><br>}Facebook (Orda Karmapack)<br><a href="https://www.facebook.com/karmapack.id" target="_blank">https://www.facebook.com/karmapack.id</a><br><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/ordakarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#ordakarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/halingkuaing/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#halingkuaing</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/inicianjurkidul/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#inicianjurkidul</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur24jam/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur24jam</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackkabinetmasagi/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackkabinetmasagi</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/kominfokarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#kominfokarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackmengudara/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackmengudara</a></span></div>
