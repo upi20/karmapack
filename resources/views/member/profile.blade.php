@@ -242,11 +242,14 @@
                 {{-- Pengalaman Organisasi --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header d-flex flex-row justify-content-between">
                             <div class="card-title">Pengalaman Organisasi</div>
+                            <button class="btn btn-info btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                href="#modal-pengalaman_organisasi" onclick="pengalaman_organisasiAdd()"
+                                data-target="#modal-pengalaman_organisasi"><i class="fa fa-plus me-2"></i>Tambah</button>
                         </div>
-                        <div class="card-body">
-                            Pengalaman Organisasi
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="pengalaman_organisasi-body"> </div>
                         </div>
                     </div>
                 </div>
@@ -262,6 +265,7 @@
                         </div>
                     </div>
                 </div>
+
                 {{-- Hobi --}}
                 <div class="col-lg-6">
                     <div class="card">
@@ -321,7 +325,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id="btn-save" form="kontak_form">
+                    <button type="submit" class="btn btn-primary" form="kontak_form">
                         <li class="fa fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -392,7 +396,72 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id="btn-save" form="pendidikan_form">
+                    <button type="submit" class="btn btn-primary" form="pendidikan_form">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- modal pengalaman_organisasi --}}
+    <div class="modal fade" id="modal-pengalaman_organisasi">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-pengalaman_organisasi-title"></h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="javascript:void(0)" id="pengalaman_organisasi_form" method="POST"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="id" id="pengalaman_organisasi_id">
+                        <div class="form-group">
+                            <label class="form-label" for="pengalaman_organisasi_nama">Nama Organisasi<span
+                                    class="text-danger">*</span></label>
+                            <select style="width: 100%;" class="form-control" id="pengalaman_organisasi_nama" name="nama"
+                                placeholder="Nama Organisasi" required="">
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="pengalaman_organisasi_dari">Dari <span
+                                            class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="pengalaman_organisasi_dari" name="dari"
+                                        placeholder="Tahun Dari" required="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="pengalaman_organisasi_sampai">Sampai</label>
+                                    <input type="number" class="form-control" id="pengalaman_organisasi_sampai"
+                                        name="sampai" placeholder="Tahun Sampai" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pengalaman_organisasi_jabatan">Jabatan <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="pengalaman_organisasi_jabatan" name="jabatan"
+                                placeholder="Nama jabatan" required="" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="pengalaman_organisasi_keterangan">Keterangan/Lainnya
+                            </label>
+                            <input type="text" class="form-control" id="pengalaman_organisasi_keterangan"
+                                name="keterangan" placeholder="Keterangan" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="pengalaman_organisasi_form">
                         <li class="fa fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -532,6 +601,23 @@
                     }
                 },
                 dropdownParent: $('#modal-pendidikan')
+            });
+
+            $('#pengalaman_organisasi_nama').select2({
+                ajax: {
+                    url: "{{ route('member.profile.pengalaman_organisasi_select2') }}",
+                    type: "GET",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: function(params) {
+                        var query = {
+                            search: params.term,
+                        }
+                        return query;
+                    }
+                },
+                dropdownParent: $('#modal-pengalaman_organisasi')
             });
 
             $('#hobbies').select2({
@@ -876,6 +962,59 @@
                 });
             });
 
+            // pengalaman_organisasi insert/update
+            $('#pengalaman_organisasi_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=pengalaman_organisasi_form]', 'Save Changes');
+                const route = ($('#pengalaman_organisasi_id').val() == '') ?
+                    "{{ route('member.profile.pengalaman_organisasi_insert') }}" :
+                    "{{ route('member.profile.pengalaman_organisasi_update') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        $("#modal-pengalaman_organisasi").modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        pengalaman_organisasiRender();
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=pengalaman_organisasi_form]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+
         })
 
         function getBase64(file) {
@@ -1168,8 +1307,142 @@
             });
         }
 
+        // pengalaman_organisasi ==================================================================
+        function pengalaman_organisasiAdd() {
+            $('#modal-pengalaman_organisasi-title').html('Tambah Pengalaman Organisasi');
+            $('#pengalaman_organisasi_form').trigger("reset");
+            $('#pengalaman_organisasi_id').val('');
+            $('#pengalaman_organisasi_nama').append((new Option('Nama Organisasi', '', true, true)))
+                .trigger('change');
+        }
+
+        function pengalaman_organisasiEdit(datas) {
+            const data = datas.dataset;
+            $('#modal-pengalaman_organisasi-title').html("Edit Kontak");
+            $('#modal-pengalaman_organisasi').modal('show');
+            $('#pengalaman_organisasi_form').trigger("reset");
+            $('#pengalaman_organisasi_id').val(data.id);
+            $('#pengalaman_organisasi_keterangan').val(data.keterangan);
+            $('#pengalaman_organisasi_dari').val(data.dari);
+            $('#pengalaman_organisasi_sampai').val(data.sampai);
+            $('#pengalaman_organisasi_jabatan').val(data.jabatan);
+            $('#pengalaman_organisasi_nama').append((new Option(data.nama, data.nama, true, true)))
+                .trigger('change');
+        }
+
+        function pengalaman_organisasiDelete(id) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('member/profile/pengalaman_organisasi_delete') }}/${id}`,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Kontak deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            pengalaman_organisasiRender();
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function pengalaman_organisasiRender() {
+            const element = $('#pengalaman_organisasi-body');
+            element.LoadingOverlay("show");
+            $.ajax({
+                type: "GET",
+                url: "{{ route('member.profile.pengalaman_organisasi') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    user_id: '{{ $user->id }}'
+                },
+                success: (data) => {
+                    element.html('');
+                    data.datas.forEach(e => {
+                        const keterangan = e.keterangan ? `<p class="my-0">${e.keterangan}</p>` : '';
+
+                        element.append(`
+                                <div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex w-100">
+                                            <h5 class="mb-1 fw-bold">${e.nama}</h5>
+                                        </div>
+                                        <p class="my-0">${e.dari}-${e.sampai ?? 'Sekarang'} | ${e.jabatan}</p>
+                                        ${keterangan}
+                                    </div>
+
+                                    <div class="text-md-center">
+                                        <button class="btn btn-primary btn-sm my-1"
+                                            data-id="${e.id}"
+
+                                            data-nama="${e.nama}"
+                                            data-dari="${e.dari}"
+                                            data-jabatan="${e.jabatan ?? ''}"
+                                            data-sampai="${e.sampai ?? ''}"
+                                            data-keterangan="${e.keterangan ?? ''}"
+                                            onclick="pengalaman_organisasiEdit(this)">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm my-1" onclick="pengalaman_organisasiDelete('${e.id}')">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                        `);
+                    });
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: res.message ?? 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                complete: function() {
+                    element.LoadingOverlay("hide");
+                }
+            });
+        }
+
         // initial function
         kontakRender();
         pendidikanRender();
+        pengalaman_organisasiRender();
     </script>
 @endsection

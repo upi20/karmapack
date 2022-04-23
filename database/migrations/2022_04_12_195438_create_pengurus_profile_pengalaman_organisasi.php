@@ -18,10 +18,9 @@ class CreatePengurusProfilePengalamanOrganisasi extends Migration
             $table->bigInteger('user_id', false, true)->nullable()->default(null);
             $table->text('nama');
             $table->year('dari');
-            $table->year('sampai');
+            $table->year('sampai')->nullable();
             $table->string('jabatan');
             $table->text('keterangan')->nullable();
-            $table->boolean('status')->default(0);
 
             // relationship
             $table->foreign('user_id')

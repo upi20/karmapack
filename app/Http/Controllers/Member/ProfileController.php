@@ -19,6 +19,7 @@ use App\Models\Profile\Kontak;
 use App\Models\Profile\KontakTipe;
 use App\Models\Profile\Pendidikan;
 use App\Models\Profile\PendidikanJenis;
+use App\Models\Profile\PengalamanLain;
 use App\Models\Profile\PengalamanOrganisasi;
 use Illuminate\Support\Facades\DB;
 
@@ -551,7 +552,7 @@ class ProfileController extends Controller
     }
 
     // Pengalaman Organisasi ======================================================================
-    public function penalaman_organisasi_insert(Request $request)
+    public function pengalaman_organisasi_insert(Request $request)
     {
         try {
             $request->validate([
@@ -582,7 +583,7 @@ class ProfileController extends Controller
         }
     }
 
-    public function penalaman_organisasi_update(Request $request)
+    public function pengalaman_organisasi_update(Request $request)
     {
         try {
             $request->validate([
@@ -594,7 +595,7 @@ class ProfileController extends Controller
                 'jabatan' => ['required', 'string'],
                 'keterangan' => ['nullable', 'string'],
             ]);
-            $model = Pendidikan::find($request->id);
+            $model = PengalamanOrganisasi::find($request->id);
             if (!$this->savePermission($request->user_id)) abort(401);
 
             $model->user_id = $request->user_id;
@@ -614,7 +615,7 @@ class ProfileController extends Controller
         }
     }
 
-    public function penalaman_organisasi(Request $request)
+    public function pengalaman_organisasi(Request $request)
     {
         return response()->json(['datas' => $this->getListPengalamanOrganisasi($request->user_id)]);
     }
@@ -622,23 +623,22 @@ class ProfileController extends Controller
     private function getListPengalamanOrganisasi(?int $user_id): mixed
     {
         if (!$user_id) return [];
-        $a = PengalamanOrganisasi::tableName;
-        $kontak = Pendidikan::select([
-            DB::raw("$a.id"),
-            DB::raw("$a.instansi"),
-            DB::raw("$a.dari"),
-            DB::raw("$a.sampai"),
-            DB::raw("$a.jurusan"),
-            DB::raw("$a.keterangan"),
+        $kontak = PengalamanOrganisasi::select([
+            'id',
+            'nama',
+            'dari',
+            'sampai',
+            'jabatan',
+            'keterangan',
         ])
-            ->where("$a.user_id", '=', $user_id)
-            ->orderBy("$a.dari", 'desc')
+            ->where("user_id", '=', $user_id)
+            ->orderBy("dari", 'desc')
             ->get();
 
         return $kontak;
     }
 
-    public function penalaman_organisasi_delete(PengalamanOrganisasi $model)
+    public function pengalaman_organisasi_delete(PengalamanOrganisasi $model)
     {
         try {
             $model->delete();
