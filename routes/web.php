@@ -304,6 +304,12 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
         Route::post('/pengalaman_organisasi_insert', [ProfileController::class, 'pengalaman_organisasi_insert'])->name('member.profile.pengalaman_organisasi_insert');
         Route::post('/pengalaman_organisasi_update', [ProfileController::class, 'pengalaman_organisasi_update'])->name('member.profile.pengalaman_organisasi_update');
         Route::delete('/pengalaman_organisasi_delete/{model}', [ProfileController::class, 'pengalaman_organisasi_delete'])->name('member.profile.pengalaman_organisasi_delete');
+
+        // pengalaman_lain
+        Route::get('/pengalaman_lain', [ProfileController::class, 'pengalaman_lain'])->name('member.profile.pengalaman_lain');
+        Route::post('/pengalaman_lain_insert', [ProfileController::class, 'pengalaman_lain_insert'])->name('member.profile.pengalaman_lain_insert');
+        Route::post('/pengalaman_lain_update', [ProfileController::class, 'pengalaman_lain_update'])->name('member.profile.pengalaman_lain_update');
+        Route::delete('/pengalaman_lain_delete/{model}', [ProfileController::class, 'pengalaman_lain_delete'])->name('member.profile.pengalaman_lain_delete');
     });
 });
 

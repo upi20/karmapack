@@ -257,11 +257,14 @@
                 {{-- Pengalaman Lain --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header d-flex flex-row justify-content-between">
                             <div class="card-title">Pengalaman Lain</div>
+                            <button class="btn btn-info btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                href="#modal-pengalaman_lain" onclick="pengalaman_lainAdd()"
+                                data-target="#modal-pengalaman_lain"><i class="fa fa-plus me-2"></i>Tambah</button>
                         </div>
-                        <div class="card-body">
-                            Pengalaman Lain
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="pengalaman_lain-body"> </div>
                         </div>
                     </div>
                 </div>
@@ -462,6 +465,47 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="pengalaman_organisasi_form">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- modal pengalaman_lain --}}
+    <div class="modal fade" id="modal-pengalaman_lain">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-pengalaman_lain-title"></h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="javascript:void(0)" id="pengalaman_lain_form" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="id" id="pengalaman_lain_id">
+                        <div class="form-group">
+                            <label class="form-label" for="pengalaman_lain_pengalaman">Pengalaman <span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control" rows="6" name="pengalaman" id="pengalaman_lain_pengalaman" placeholder=""
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="pengalaman_lain_keterangan">Keterangan/Lainnya
+                            </label>
+                            <input type="text" class="form-control" id="pengalaman_lain_keterangan" name="keterangan"
+                                placeholder="Keterangan" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" form="pengalaman_lain_form">
                         <li class="fa fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -1015,6 +1059,59 @@
                 });
             });
 
+            // pengalaman_lain insert/update
+            $('#pengalaman_lain_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit][form=pengalaman_lain_form]', 'Save Changes');
+                const route = ($('#pengalaman_lain_id').val() == '') ?
+                    "{{ route('member.profile.pengalaman_lain_insert') }}" :
+                    "{{ route('member.profile.pengalaman_lain_update') }}";
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        $("#modal-pengalaman_lain").modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        pengalaman_lainRender();
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit][form=pengalaman_lain_form]',
+                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
+            });
+
         })
 
         function getBase64(file) {
@@ -1318,7 +1415,7 @@
 
         function pengalaman_organisasiEdit(datas) {
             const data = datas.dataset;
-            $('#modal-pengalaman_organisasi-title').html("Edit Kontak");
+            $('#modal-pengalaman_organisasi-title').html("Edit Pengalaman Organisasi");
             $('#modal-pengalaman_organisasi').modal('show');
             $('#pengalaman_organisasi_form').trigger("reset");
             $('#pengalaman_organisasi_id').val(data.id);
@@ -1440,9 +1537,129 @@
             });
         }
 
+
+        // pengalaman_lain ==================================================================
+        function pengalaman_lainAdd() {
+            $('#modal-pengalaman_lain-title').html('Tambah Pengalaman Lain');
+            $('#pengalaman_lain_form').trigger("reset");
+            $('#pengalaman_lain_id').val('');
+        }
+
+        function pengalaman_lainEdit(datas) {
+            const data = datas.dataset;
+            $('#modal-pengalaman_lain-title').html("Edit Pengalaman Lain");
+            $('#modal-pengalaman_lain').modal('show');
+            $('#pengalaman_lain_form').trigger("reset");
+            $('#pengalaman_lain_id').val(data.id);
+            $('#pengalaman_lain_keterangan').val(data.keterangan);
+            $('#pengalaman_lain_pengalaman').val(data.pengalaman);
+        }
+
+        function pengalaman_lainDelete(id) {
+            swal.fire({
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('member/profile/pengalaman_lain_delete') }}/${id}`,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Kontak deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            pengalaman_lainRender();
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function pengalaman_lainRender() {
+            const element = $('#pengalaman_lain-body');
+            element.LoadingOverlay("show");
+            $.ajax({
+                type: "GET",
+                url: "{{ route('member.profile.pengalaman_lain') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    user_id: '{{ $user->id }}'
+                },
+                success: (data) => {
+                    element.html('');
+                    data.datas.forEach(e => {
+                        element.append(`
+                                <div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <p class="my-0">${e.pengalaman}</p>
+                                    </div>
+
+                                    <div class="text-md-center">
+                                        <button class="btn btn-primary btn-sm my-1"
+                                            data-id="${e.id}"
+
+                                            data-pengalaman="${e.pengalaman}"
+                                            data-keterangan="${e.keterangan ?? ''}"
+                                            onclick="pengalaman_lainEdit(this)">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-danger btn-sm my-1" onclick="pengalaman_lainDelete('${e.id}')">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                        `);
+                    });
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: res.message ?? 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                complete: function() {
+                    element.LoadingOverlay("hide");
+                }
+            });
+        }
+
         // initial function
         kontakRender();
         pendidikanRender();
         pengalaman_organisasiRender();
+        pengalaman_lainRender();
     </script>
 @endsection

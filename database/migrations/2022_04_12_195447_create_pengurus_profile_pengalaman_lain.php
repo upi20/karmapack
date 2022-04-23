@@ -16,9 +16,8 @@ class CreatePengurusProfilePengalamanLain extends Migration
         Schema::create('pengurus_profile_pengalaman_lain', function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->bigInteger('user_id', false, true)->nullable()->default(null);
-            $table->text('nama');
+            $table->text('pengalaman');
             $table->text('keterangan')->nullable();
-            $table->boolean('status')->default(0);
 
             // relationship
             $table->foreign('user_id')

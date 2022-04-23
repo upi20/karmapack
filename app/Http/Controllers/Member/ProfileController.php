@@ -680,4 +680,89 @@ class ProfileController extends Controller
             return response()->json($error, 500);
         }
     }
+
+    // Pengalaman lain ============================================================================
+    public function pengalaman_lain_insert(Request $request)
+    {
+        try {
+            $request->validate([
+                'user_id' => ['required', 'int'],
+                'pengalaman' => ['required', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = new PengalamanLain();
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->pengalaman = $request->pengalaman;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function pengalaman_lain_update(Request $request)
+    {
+        try {
+            $request->validate([
+                'id' => ['required', 'int'],
+                'user_id' => ['required', 'int'],
+                'pengalaman' => ['required', 'string'],
+                'keterangan' => ['nullable', 'string'],
+            ]);
+            $model = PengalamanLain::find($request->id);
+            if (!$this->savePermission($request->user_id)) abort(401);
+
+            $model->user_id = $request->user_id;
+            $model->pengalaman = $request->pengalaman;
+            $model->keterangan = $request->keterangan;
+            $model->save();
+
+            return response()->json([]);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function pengalaman_lain(Request $request)
+    {
+        return response()->json(['datas' => $this->getListPengalamanLain($request->user_id)]);
+    }
+
+    public function pengalaman_lain_delete(PengalamanLain $model)
+    {
+        try {
+            $model->delete();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    private function getListPengalamanLain(?int $user_id): mixed
+    {
+        if (!$user_id) return [];
+        $kontak = PengalamanLain::select([
+            'id',
+            'pengalaman',
+            'keterangan',
+        ])
+            ->where("user_id", '=', $user_id)
+            ->orderBy("created_at", 'desc')
+            ->get();
+
+        return $kontak;
+    }
 }
