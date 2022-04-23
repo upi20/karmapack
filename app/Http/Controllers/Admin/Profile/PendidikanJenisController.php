@@ -22,7 +22,7 @@ class PendidikanJenisController extends Controller
                             where pengurus_profile_pendidikan.pendidikan_jenis_id = $a.id)
                     SQL;
             $this->query['pendidikan_alias'] = 'pendidikan';
-            $model = PendidikanJenis::select(['id', 'nama', 'keterangan', 'status'])
+            $model = PendidikanJenis::select(['id', 'nama', 'keterangan', 'status', 'no_urut'])
                 ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
                 ->selectRaw("{$this->query['pendidikan']} as {$this->query['pendidikan_alias']}");
 
@@ -57,12 +57,14 @@ class PendidikanJenisController extends Controller
                 'nama' => ['required', 'string', 'max:255'],
                 'keterangan' => ['required', 'string', 'max:255'],
                 'status' => ['required', 'int'],
+                'no_urut' => ['required', 'int'],
             ]);
 
             PendidikanJenis::create([
                 'nama' => $request->nama,
                 'keterangan' => $request->keterangan,
                 'status' => $request->status,
+                'no_urut' => $request->no_urut,
                 // 'created_by' => auth()->user()->id,
             ]);
             return response()->json();
@@ -82,11 +84,13 @@ class PendidikanJenisController extends Controller
                 'nama' => ['required', 'string', 'max:255'],
                 'keterangan' => ['required', 'string', 'max:255'],
                 'status' => ['required', 'int'],
+                'no_urut' => ['required', 'int'],
             ]);
 
             $model->nama = $request->nama;
             $model->keterangan = $request->keterangan;
             $model->status = $request->status;
+            $model->no_urut = $request->no_urut;
             // $model->updated_by = auth()->user()->id;
             $model->save();
             return response()->json();

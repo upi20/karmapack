@@ -243,7 +243,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     Route::group(['prefix' => 'pendidikan_jenis'], function () {
         Route::get('/', [PendidikanJenisController::class, 'index'])->name('admin.profile.pendidikan_jenis'); // page
         Route::post('/', [PendidikanJenisController::class, 'insert'])->name('admin.profile.pendidikan_jenis.insert');
-        Route::delete('/{id}', [PendidikanJenisController::class, 'delete'])->name('admin.profile.pendidikan_jenis.delete');
+        Route::delete('/{model}', [PendidikanJenisController::class, 'delete'])->name('admin.profile.pendidikan_jenis.delete');
         Route::post('/update', [PendidikanJenisController::class, 'update'])->name('admin.profile.pendidikan_jenis.update');
     });
 

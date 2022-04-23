@@ -32,7 +32,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
+                                    <th>No Urut</th>
                                     <th>Keterangan</th>
                                     <th>Pendidikan</th>
                                     <th>Status</th>
@@ -58,6 +58,12 @@
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
+                        <div class="form-group">
+                            <label class="form-label" for="no_urut">Nomor Urut <span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" id="no_urut" name="no_urut" placeholder="Nomor Urut"
+                                required="" />
+                        </div>
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama"
@@ -134,6 +140,10 @@
                         orderable: false,
                     },
                     {
+                        data: 'no_urut',
+                        name: 'no_urut'
+                    },
+                    {
                         data: 'nama',
                         name: 'nama'
                     },
@@ -163,6 +173,7 @@
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
                                 data-keterangan="${full.keterangan}"
+                                data-no_urut="${full.no_urut}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -267,6 +278,7 @@
             $('#id').val(data.id);
             $('#nama').val(data.nama);
             $('#status').val(data.status);
+            $('#no_urut').val(data.no_urut);
             $('#keterangan').val(data.keterangan);
         }
 
@@ -280,7 +292,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/profile/pendidikan_jenis') }}/${id}`,
+                        url: `{{ url('admin/pendidikan_jenis') }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

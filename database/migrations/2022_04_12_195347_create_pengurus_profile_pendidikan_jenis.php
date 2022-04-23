@@ -17,6 +17,7 @@ class CreatePengurusProfilePendidikanJenis extends Migration
             $table->integer('id', true, false);
             $table->string('nama');
             $table->text('keterangan')->nullable();
+            $table->integer('no_urut')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
 
