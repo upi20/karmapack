@@ -43,6 +43,7 @@ use App\Http\Controllers\Admin\ContactController;
 // Footer Instagram
 use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\Member\ProfileController;
 use Illuminate\Http\Request;
 
@@ -319,7 +320,10 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
     });
 });
 
-
+// change password
+Route::group(['prefix' => 'lab'], function () {
+    Route::get('/phpspreadsheet', [LabController::class, 'phpspreadsheet'])->name('member.password');
+});
 
 // profile username
 Route::get('/{username}', function ($username) {

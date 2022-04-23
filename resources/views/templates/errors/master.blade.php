@@ -111,11 +111,11 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <!-- BACKGROUND-IMAGE -->
     <div class="login-img">
 
-        <!-- GLOBAL-LOADER -->
+        {{-- <!-- GLOBAL-LOADER -->
         <div id="global-loader">
             <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
         </div>
-        <!-- End GLOBAL-LOADER -->
+        <!-- End GLOBAL-LOADER --> --}}
 
         <!-- PAGE -->
         <div class="page" style="position: absolute; width: 100%; height: 100vh;">
