@@ -91,6 +91,10 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
             border-radius: 16px;
         }
 
+        .swal2-container {
+            z-index: 9999999999 !important;
+        }
+
     </style>
 </head>
 
