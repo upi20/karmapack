@@ -164,11 +164,16 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
+    </script>
 
 
     {{-- sweetalert --}}
@@ -178,7 +183,7 @@
     <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
 
     {{-- summernote --}}
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/summernote/summernote1.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/summernote/summernote1.js') }}"></script>
 
     <script>
         const table_html = $('#tbl_main');

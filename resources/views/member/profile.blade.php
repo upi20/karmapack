@@ -14,7 +14,7 @@
                             <input type="file" hidden="" id="profile" name="profile" accept="image/*">
                             <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                 <img alt="avatar" onclick="{$('#profile').trigger('click')}"
-                                    onerror="this.src='{{ asset('assets/templates/admin/main/assets/images/profile.png') }}';this.onerror='';"
+                                    onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
                                     src="{{ asset('assets/pengurus/profile/' . $user->foto) }}" class="brround"
                                     id="img_profile"
                                     style="height: 80px; width: 80px; object-fit: cover; object-position: center; border-radius: 50%;">

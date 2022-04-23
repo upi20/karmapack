@@ -12,9 +12,9 @@
             <div>
 
                 <a class="logo-horizontal " href="{{ url('/') }}">
-                    <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo.png') }}"
+                    <img src="{{ asset('assets/templates/admin/images/brand/logo.png') }}"
                         class="header-brand-img desktop-logo" alt="logo">
-                    <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo-3.png') }}"
+                    <img src="{{ asset('assets/templates/admin/images/brand/logo-3.png') }}"
                         class="header-brand-img light-logo1" alt="logo">
                 </a>
             </div>
@@ -39,7 +39,7 @@
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                     class="nav-link leading-none d-flex">
-                                    <img onerror="this.src='{{ asset('assets/templates/admin/main/assets/images/profile.png') }}';this.onerror='';"
+                                    <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
                                         src="{{ asset('assets/pengurus/profile/' . auth()->user()->foto) }}"
                                         alt="profile-user" class="avatar  profile-user brround cover-image"
                                         id="header_foto_profile">

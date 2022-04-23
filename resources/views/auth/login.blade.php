@@ -4,7 +4,7 @@ $page_attr = (object) [
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/main/assets/images/brand/logo-1.png'),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
@@ -67,21 +67,21 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/css/bootstrap.min.css') }}"
+    <link id="style" href="{{ asset('assets/templates/admin/plugins/bootstrap/css/bootstrap.min.css') }}"
         rel="stylesheet" />
 
     <!-- STYLE CSS -->
-    <link href="{{ asset('assets/templates/admin/main/assets/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/templates/admin/main/assets/css/dark-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/dark-style.css') }}" rel="stylesheet" />
 
-    <link href="{{ asset('assets/templates/admin/main/assets/css/skin-modes.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/skin-modes.css') }}" rel="stylesheet" />
 
     <!--- FONT-ICONS CSS -->
-    <link href="{{ asset('assets/templates/admin/main/assets/css/icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet" />
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all"
-        href="{{ asset('assets/templates/admin/main/assets/colors/color1.css') }}" />
+        href="{{ asset('assets/templates/admin/colors/color1.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
 
@@ -94,8 +94,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
         <!-- GLOABAL LOADER -->
         <div id="global-loader">
-            <img src="{{ asset('assets/templates/admin/main/assets/images/loader.svg') }}" class="loader-img"
-                alt="Loader">
+            <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
         </div>
         <!-- /GLOABAL LOADER -->
 
@@ -105,7 +104,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                 <div class="container-login100">
                     <div class="wrap-login100 p-6">
                         <div class="text-center">
-                            <img src="{{ asset('assets/templates/admin/main/assets/images/brand/logo-white.png') }}"
+                            <img src="{{ asset('assets/templates/admin/images/brand/logo-white.png') }}"
                                 class="header-brand-img" alt="Logo Karmapack" id="logo">
                         </div>
                         <p class="text-center mt-5">Sistem Informasi Anggota (SIA)</p>
@@ -165,31 +164,31 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <!-- BACKGROUND-IMAGE CLOSED -->
 
     <!-- JQUERY JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
 
     <!-- BOOTSTRAP JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <!-- SHOW PASSWORD JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/show-password.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/show-password.min.js') }}"></script>
 
     <!-- Color Theme js -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/themeColors.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/themeColors.js') }}"></script>
 
     <!-- CUSTOM JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/custom.js') }}"></script>
 
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/particle/particles.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/particle/particles.js') }}"></script>
 
     <script>
         $(document).ready(function() {
 
             if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
                 $('#logo').attr('src',
-                    "{{ asset('assets/templates/admin/main/assets/images/brand/logo-3.png') }}"
+                    "{{ asset('assets/templates/admin/images/brand/logo-3.png') }}"
                 );
             }
             $('#year').text((new Date()).getFullYear());

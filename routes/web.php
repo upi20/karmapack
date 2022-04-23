@@ -235,7 +235,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     Route::group(['prefix' => 'footer_instagram'], function () {
         Route::get('/', [FooterInstagramController::class, 'index'])->name('admin.footer_instagram'); // page
         Route::post('/', [FooterInstagramController::class, 'insert'])->name('admin.footer_instagram.insert');
-        Route::delete('/{id}', [FooterInstagramController::class, 'delete'])->name('admin.footer_instagram.delete');
+        Route::delete('/{model}', [FooterInstagramController::class, 'delete'])->name('admin.footer_instagram.delete');
         Route::post('/update', [FooterInstagramController::class, 'update'])->name('admin.footer_instagram.update');
     });
 

@@ -18,10 +18,12 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
     const ROLE_ADMIN = 'admin';
     const ROLE_MEMBER = 'member';
     const tableName = 'users';
     protected $table = 'users';
+
 
     /**
      * The attributes that are mass assignable.
@@ -31,6 +33,7 @@ class User extends Authenticatable
     protected $guarded = [
         'id',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.

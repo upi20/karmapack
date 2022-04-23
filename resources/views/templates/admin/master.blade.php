@@ -4,7 +4,7 @@ $page_attr = (object) [
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/main/assets/images/brand/logo-1.png'),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
@@ -67,21 +67,21 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/css/bootstrap.min.css') }}"
+    <link id="style" href="{{ asset('assets/templates/admin/plugins/bootstrap/css/bootstrap.min.css') }}"
         rel="stylesheet" />
 
     <!-- STYLE CSS -->
-    <link href="{{ asset('assets/templates/admin/main/assets/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/templates/admin/main/assets/css/dark-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/dark-style.css') }}" rel="stylesheet" />
 
-    <link href="{{ asset('assets/templates/admin/main/assets/css/skin-modes.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/skin-modes.css') }}" rel="stylesheet" />
 
     <!--- FONT-ICONS CSS -->
-    <link href="{{ asset('assets/templates/admin/main/assets/css/icons.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet" />
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all"
-        href="{{ asset('assets/templates/admin/main/assets/colors/color1.css') }}" />
+        href="{{ asset('assets/templates/admin/colors/color1.css') }}" />
 
     <!-- CSS PLUGINS -->
     @yield('stylesheet')
@@ -102,8 +102,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <!-- GLOBAL-LOADER -->
     <div id="global-loader">
-        <img src="{{ asset('assets/templates/admin/main/assets/images/loader.svg') }}" class="loader-img"
-            alt="Loader">
+        <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
     </div>
     <!-- /GLOBAL-LOADER -->
 
@@ -186,37 +185,37 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- JQUERY JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
 
     <!-- BOOTSTRAP JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <!-- SPARKLINE JS-->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/jquery.sparkline.min.js') }}"></script>
 
     <!-- Sticky js -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/sticky.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/sticky.js') }}"></script>
 
     <!-- CHART-CIRCLE JS-->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/circle-progress.min.js') }}"></script>
 
     <!-- SIDEBAR JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/sidebar/sidebar.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/sidebar/sidebar.js') }}"></script>
 
     <!-- SIDE-MENU JS-->
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/sidemenu/sidemenu.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/sidemenu/sidemenu.js') }}"></script>
 
     <!-- Color Theme js -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/themeColors.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/themeColors.js') }}"></script>
 
     <!-- CUSTOM JS -->
-    <script src="{{ asset('assets/templates/admin/main/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/custom.js') }}"></script>
 
     {{-- scroll --}}
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/pscroll.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/p-scroll/pscroll-1.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/p-scroll/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll-1.js') }}"></script>
 
     <script>
         let errorAfterInput = [];

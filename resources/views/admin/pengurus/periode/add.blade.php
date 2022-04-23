@@ -142,7 +142,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/summernote/summernote1.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/summernote/summernote1.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script type="text/javascript">

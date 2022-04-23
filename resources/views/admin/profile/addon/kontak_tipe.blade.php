@@ -100,21 +100,26 @@
 
 @section('stylesheet')
     <link rel="stylesheet"
-        href="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
+        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
 @endsection
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
+    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
+    </script>
 
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/main/assets/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}">
+    <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}">
     </script>
 
     <script>
