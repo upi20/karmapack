@@ -1,1 +1,0 @@
- lightGallery(document.getElementById('lightgallery'));
