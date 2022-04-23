@@ -311,6 +311,12 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
         Route::post('/pengalaman_lain_update', [ProfileController::class, 'pengalaman_lain_update'])->name('member.profile.pengalaman_lain_update');
         Route::delete('/pengalaman_lain_delete/{model}', [ProfileController::class, 'pengalaman_lain_delete'])->name('member.profile.pengalaman_lain_delete');
     });
+
+    // change password
+    Route::group(['prefix' => 'password'], function () {
+        Route::get('/', [UserController::class, 'change_password'])->name('member.password'); // page
+        Route::post('/save', [UserController::class, 'save_password'])->name('member.password.save');
+    });
 });
 
 

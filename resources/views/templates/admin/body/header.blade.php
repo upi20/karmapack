@@ -57,7 +57,7 @@
                                     <a class="dropdown-item" href="{{ route('member.profile') }}">
                                         <i class="dropdown-icon fe fe-user"></i> Profile
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{ route('member.password') }}">
                                         <i class="dropdown-icon fe fe-lock"></i> Ganti Password
                                     </a>
                                     <a class="dropdown-item" href="{{ route('login.logout') }}">

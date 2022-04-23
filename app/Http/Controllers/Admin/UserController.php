@@ -9,6 +9,7 @@ use Yajra\Datatables\Datatables;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use League\Config\Exception\ValidationException;
+use League\Flysystem\Exception;
 
 class UserController extends Controller
 {
@@ -139,6 +140,41 @@ class UserController extends Controller
         try {
             $user = User::find($user->id);
             $user->delete();
+            return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function change_password(Request $request)
+    {
+        $page_attr = [
+            'title' => 'View User',
+            'breadcrumbs' => [
+                ['name' => 'Dashboard'],
+            ],
+        ];
+        $user_role = User::getAllRole();
+        return view('admin.change_password', compact('page_attr', 'user_role'));
+    }
+
+    public function save_password(Request $request)
+    {
+        try {
+            $request->validate([
+                'current_password' => ['required', 'string', 'max:255'],
+                'new_password' => ['required', 'string', new Password]
+            ]);
+            $user = User::find(auth()->user()->id);
+            if (Hash::check($request->current_password, $user->password)) {
+                $user->password = Hash::make($request->new_password);
+                $user->save();
+            } else {
+                throw new Exception("Password Lama Salah. Jika anda lupa silahkan hubungi administrator.");
+            }
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

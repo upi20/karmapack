@@ -51,7 +51,7 @@ $admin = [
 $member  = [
     ['title' => 'Dashboard', 'route' => 'member.dashboard', 'icon' => 'fe fe-home'],
     ['title' => 'Profile', 'route' => 'member.profile', 'icon' => 'fe fe-user'],
-    ['title' => 'Ganti Password', 'icon' => 'fe fe-lock'],
+    ['title' => 'Ganti Password', 'icon' => 'fe fe-lock', 'route' => 'member.password'],
 ];
 
 return [
