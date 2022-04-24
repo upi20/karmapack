@@ -16,7 +16,7 @@
                     <ul class="social-icons list-unstyled list-inline mb-0">
                         @foreach ($list_sosmed as $sosmed)
                             <li class="list-inline-item">
-                                <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}">
+                                <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
                                     <i class="{{ $sosmed['icon'] }}"></i>
                                 </a>
                             </li>
