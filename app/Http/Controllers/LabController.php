@@ -9,10 +9,22 @@ use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use \PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
+use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
+use MatthiasMullie\Minify\JS;
 
 class LabController extends Controller
 {
+    public function javascript(Request $request)
+    {
+        $minifier = new JS(resource_path('views/js/tes.js'));
+        return response($minifier->minify())->header('Content-Type', 'application/javascript');
+    }
+
+    public function jstes()
+    {
+        return view('js.view');
+    }
+
     public function phpspreadsheet()
     {
         // data body

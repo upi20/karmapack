@@ -30,9 +30,14 @@
                         <div class="d-flex order-lg-2">
                             <!-- COUNTRY -->
                             <div class="d-flex country">
-                                <a class="nav-link icon theme-layout layout-setting">
+                                <a class="nav-link icon theme-layout layout-setting" title="Dark Mode or Light Mode">
                                     <span class="dark-layout"><i class="fe fe-moon"></i></span>
                                     <span class="light-layout"><i class="fe fe-sun"></i></span>
+                                </a>
+                            </div>
+                            <div class="dropdown d-flex">
+                                <a class="nav-link icon full-screen-link nav-link-bg" title="Full Screen">
+                                    <i class="fe fe-minimize fullscreen-button"></i>
                                 </a>
                             </div>
                             <!-- SIDE-MENU -->

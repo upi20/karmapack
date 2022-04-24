@@ -43,7 +43,9 @@ use App\Http\Controllers\Admin\ContactController;
 // Footer Instagram
 use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\LoaderController;
 use App\Http\Controllers\Member\ProfileController;
 use Illuminate\Http\Request;
 
@@ -51,20 +53,15 @@ use Illuminate\Http\Request;
 // ====================================================================================================================
 
 // home default
-Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect('/home');
-    }
-    return view('auth.login');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // auth
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'check_login'])->name('login.check_login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
-// home
-Route::get('/home', function () {
+// dashboard
+Route::get('/dashboard', function () {
     $user = Auth::user();
     $role = isset($user->role) ? $user->role : null;
     switch ($role) {
@@ -320,9 +317,15 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
     });
 });
 
-// change password
+Route::group(['prefix' => 'loader'], function () {
+    Route::get('/js/{file}', [LoaderController::class, 'javascript'])->name('lab.phpspreadsheet');
+});
+
+// laboartorium
 Route::group(['prefix' => 'lab'], function () {
-    Route::get('/phpspreadsheet', [LabController::class, 'phpspreadsheet'])->name('member.password');
+    Route::get('/phpspreadsheet', [LabController::class, 'phpspreadsheet'])->name('lab.phpspreadsheet');
+    Route::get('/javascript', [LabController::class, 'javascript'])->name('lab.javascript');
+    Route::get('/jstes', [LabController::class, 'jstes'])->name('lab.jstes');
 });
 
 // profile username
