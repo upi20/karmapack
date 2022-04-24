@@ -65,6 +65,7 @@ class JabatanController extends Controller
                 'pengurus_periode_jabatan.misi',
                 'pengurus_periode_jabatan.foto',
                 'pengurus_periode_jabatan.slogan',
+                'pengurus_periode_jabatan.singkatan',
                 DB::raw("{$this->query['parent']} as {$this->query['parent_alias']}"),
                 DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
                 DB::raw("{$this->query['parent_no_urut']} as {$this->query['parent_no_urut_alias']}"),
@@ -125,6 +126,7 @@ class JabatanController extends Controller
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
                 'slogan' => ['required', 'string'],
+                'singkatan' => ['nullable', 'string'],
                 'periode_id' => ['required', 'int'],
             ]);
             $visi = Summernote::insert($request->visi, $this->image_folder, 'visi' . substr($request->slug, 0, 20));
@@ -144,6 +146,7 @@ class JabatanController extends Controller
                 'visi' => $visi->html,
                 'misi' => $misi->html,
                 'slogan' => $request->slogan,
+                'singkatan' => $request->singkatan ?? null,
                 'foto' => $foto,
                 'periode_id' => $request->periode_id,
                 // 'created_by' => auth()->user()->id,
@@ -172,6 +175,7 @@ class JabatanController extends Controller
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
                 'slogan' => ['required', 'string'],
+                'singkatan' => ['nullable', 'string'],
             ]);
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi' . substr($request->slug, 0, 20));
             $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi' . substr($request->slug, 0, 20));
@@ -200,6 +204,7 @@ class JabatanController extends Controller
             $model->visi = $visi->html;
             $model->misi = $misi->html;
             $model->slogan = $request->slogan;
+            $model->singkatan = $request->singkatan ?? null;
             // $model->updated_by = auth()->user()->id;
             $model->save();
             return response()->json();

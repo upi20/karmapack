@@ -34,7 +34,7 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 09:09:02',
-                'updated_at' => '2022-04-17 13:44:41',
+                'updated_at' => '2022-04-24 16:04:08',
             ),
             1 => 
             array (
@@ -45,13 +45,20 @@ class PengurusPeriodeTableSeeder extends Seeder
                 'sampai' => '2022',
                 'slug' => 'kabinet-masagi',
                 'slogan' => 'Ngabdi ka nagri bela ka nagara piken ngawujudkeun lemah nu sajati tur ngawangun cianjur pakidulan.',
-                'visi' => '<p><p>"Terwujudnya KARMAPACK dan masyarakat Cianjur Kidul yang menjungjung tinggi nilai, dan norma agama, sosial serta budaya lokal."<br></p></p>
+                'visi' => '<p>"Terwujudnya KARMAPACK dan masyarakat Cianjur Kidul yang menjungjung tinggi nilai, dan
+norma agama,
+sosial
+serta budaya lokal."</p>
 ',
-                'misi' => '<p><p>1. Meningkatkan pemahaman dan pengalaman keagamaan bagi anggota KARMAPACK dan masyarakat Cianjru Kidul<br style="">2. Melakukan pengabdian kepada masyarakat<br style="">3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan<br></p></p>
+                'misi' => '<p>1. Meningkatkan pemahaman dan pengalaman keagamaan bagi anggota KARMAPACK dan masyarakat
+Cianjru Kidul
+<br>
+2. Melakukan pengabdian kepada masyarakat<br>
+3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
                 'status' => 1,
                 'created_at' => '2022-04-14 08:31:00',
-                'updated_at' => '2022-04-16 18:01:39',
+                'updated_at' => '2022-04-24 16:16:45',
             ),
             2 => 
             array (
@@ -68,7 +75,7 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 09:16:35',
-                'updated_at' => '2022-04-16 17:27:55',
+                'updated_at' => '2022-04-24 16:04:08',
             ),
             3 => 
             array (
@@ -85,7 +92,7 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 16:05:01',
-                'updated_at' => '2022-04-16 17:27:55',
+                'updated_at' => '2022-04-24 16:04:08',
             ),
             4 => 
             array (
@@ -102,7 +109,7 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'status' => 0,
                 'created_at' => '2022-04-16 17:38:09',
-                'updated_at' => '2022-04-16 17:47:44',
+                'updated_at' => '2022-04-24 16:04:08',
             ),
         ));
         

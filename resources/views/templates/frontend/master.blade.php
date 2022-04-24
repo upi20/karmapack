@@ -8,33 +8,43 @@ $page_attr = (object) [
     'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
+    'periode_id' => isset($page_attr['periode_id']) ? $page_attr['periode_id'] : false,
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
 
-// sosmed
-function getSosmed()
+class MasterHelper
 {
-    $get = \App\Models\SocialMedia::where('status', '=', 1)
-        ->orderBy('order')
-        ->get();
-    return $get ? $get->toArray() : [];
-}
-
-// menu bidang
-function menuBidang()
-{
-    function menu_bidang_get()
+    private $periode_id;
+    public function __construct($periode_id = false)
     {
-        // get periode aktif
-        $periode = \App\Models\Pengurus\Periode::where('status', '=', '1')
-            ->select(['id'])
-            ->first();
-        if ($periode) {
+        $this->periode_id = $periode_id;
+    }
+
+    public function getSosmed()
+    {
+        $get = \App\Models\SocialMedia::where('status', '=', 1)
+            ->orderBy('order')
+            ->get();
+        return $get ? $get->toArray() : [];
+    }
+
+    private function menu_bidang_get()
+    {
+        if ($this->periode_id) {
+            $periode_q = (object) ['id' => $this->periode_id];
+        } else {
+            // get periode aktif
+            $periode_q = \App\Models\Pengurus\Periode::where('status', '=', '1')
+                ->select(['id'])
+                ->first();
+        }
+
+        if ($periode_q) {
             // get menu where sum menu count > 0
             $a = \App\Models\Pengurus\Jabatan::tableName;
             $where = " (
                 ((select count(*) from $a as z where z.parent_id = $a.id) > 0) and
-                (`status` = 1)
+                (`status` = 1) and ($a.periode_id = $periode_q->id)
             )";
 
             $periode_jabatan = \App\Models\Pengurus\Jabatan::select(['id', 'nama', 'slug'])
@@ -47,36 +57,39 @@ function menuBidang()
         }
     }
 
-    $menus_temp = [];
-    foreach (menu_bidang_get() as $m) {
-        $menus_temp[] = [
-            'title' => $m['nama'],
-            'route' => 'bidang/' . $m['slug'],
-            'route_type' => 'url',
-        ];
+    public function menuBidang()
+    {
+        $menus_temp = [];
+        foreach ($this->menu_bidang_get() as $m) {
+            $menus_temp[] = [
+                'title' => $m['nama'],
+                'route' => 'bidang/' . $m['slug'],
+                'route_type' => 'url',
+            ];
+        }
+
+        return [['name' => 'bidang', 'title' => 'Bidang', 'children' => $menus_temp]];
     }
 
-    return [['name' => 'bidang', 'title' => 'Bidang', 'children' => $menus_temp]];
+    public function footerInstagram()
+    {
+        $result = \App\Models\FooterInstagram::where('status', '=', 1)
+            ->orderBy('order')
+            ->get();
+        $result->map(function ($item) {
+            $image_folder = \App\Models\FooterInstagram::image_folder;
+            $item['foto'] = url("$image_folder/$item->foto");
+            return $item;
+        });
+
+        return $result->toArray();
+    }
 }
 
-// instagram feed
-function footerInstagram()
-{
-    $result = \App\Models\FooterInstagram::where('status', '=', 1)
-        ->orderBy('order')
-        ->get();
-    $result->map(function ($item) {
-        $image_folder = \App\Models\FooterInstagram::image_folder;
-        $item['foto'] = url("$image_folder/$item->foto");
-        return $item;
-    });
-
-    return $result->toArray();
-}
-
-$getSosmed_val = getSosmed();
-$menuBidang_val = menuBidang();
-$footerInstagram_val = footerInstagram();
+$master_helper = new MasterHelper($page_attr->periode_id);
+$getSosmed_val = $master_helper->getSosmed();
+$menuBidang_val = $master_helper->menuBidang();
+$footerInstagram_val = $master_helper->footerInstagram();
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

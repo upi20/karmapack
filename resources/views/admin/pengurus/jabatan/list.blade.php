@@ -93,11 +93,18 @@
                                         placeholder="No Uurut" required />
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="form-group">
                                     <label for="slogan">Slogan</label>
                                     <input type="text" class="form-control" id="slogan" name="slogan"
                                         placeholder="Slogan" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="singkatan">Singkatan</label>
+                                    <input type="text" class="form-control" id="singkatan" name="singkatan"
+                                        placeholder="Singkatan" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -324,6 +331,7 @@
                                 data-visi="${full.visi}"
                                 data-misi="${full.misi}"
                                 data-slogan="${full.slogan}"
+                                data-singkatan="${full.singkatan ?? ''}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
@@ -439,6 +447,7 @@
             $('#nama').val(data.nama);
             $('#status').val(data.status);
             $('#slug').val(data.slug);
+            $('#singkatan').val(data.singkatan);
             $('#no_urut').val(data.no_urut);
             $('#visi').summernote("code", data.visi);
             $('#misi').summernote("code", data.misi);

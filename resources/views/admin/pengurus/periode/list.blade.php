@@ -234,7 +234,11 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
+                            return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Lihat Periode"
+                                href="{{ url('periode') }}/${full.slug}" target="_blank">
+                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Lihat
+                                </a>
+                                <a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
                                 href="{{ url('admin/pengurus/jabatan') }}/${data}" >
                                 <i class="fe fe-git-pull-request" aria-hidden="true"></i> Bidang
                                 </a>

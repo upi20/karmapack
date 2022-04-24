@@ -52,17 +52,34 @@ use Illuminate\Http\Request;
 // ====================================================================================================================
 // ====================================================================================================================
 
-// home default
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// auth
+
+
+// auth ===============================================================================================================
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'check_login'])->name('login.check_login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+// ====================================================================================================================
 
+
+
+
+// home default =======================================================================================================
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/periode/{model:slug}', [HomeController::class, 'periode'])->name('periode');
+// ====================================================================================================================
+
+
+
+
+// ====================================================================================================================
 Route::get('/bidang/{model:slug}', [HomeController::class, 'bidang'])->name('bidang');
+// ====================================================================================================================
 
-// dashboard
+
+
+
+// dashboard ==========================================================================================================
 Route::get('/dashboard', function () {
     $user = Auth::user();
     $role = isset($user->role) ? $user->role : null;
@@ -80,8 +97,13 @@ Route::get('/dashboard', function () {
             break;
     }
 })->name('dashboard');
+// ====================================================================================================================
 
-// Admin route
+
+
+
+
+// Admin route ========================================================================================================
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 'admin']], function () {
     Route::get('/', function () {
         return view('admin.dashboard', ['page_attr' => ['title' => 'Dashboard']]);
@@ -262,9 +284,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::post('/save', [UsernameValidateController::class, 'save'])->name('admin.username_validation.save');
     });
 });
+// ====================================================================================================================
 
 
-// Member Panel Admin
+
+
+// Member Panel Admin =================================================================================================
 Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified', 'member']], function () {
     Route::get('/', function () {
         return view('member.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
@@ -318,19 +343,32 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
         Route::post('/save', [UserController::class, 'save_password'])->name('member.password.save');
     });
 });
+// ====================================================================================================================
 
+
+
+
+// Utility ============================================================================================================
 Route::group(['prefix' => 'loader'], function () {
     Route::get('/js/{file}', [LoaderController::class, 'javascript'])->name('lab.phpspreadsheet');
 });
+// ====================================================================================================================
 
-// laboartorium
+
+
+
+// laboartorium =======================================================================================================
 Route::group(['prefix' => 'lab'], function () {
     Route::get('/phpspreadsheet', [LabController::class, 'phpspreadsheet'])->name('lab.phpspreadsheet');
     Route::get('/javascript', [LabController::class, 'javascript'])->name('lab.javascript');
     Route::get('/jstes', [LabController::class, 'jstes'])->name('lab.jstes');
 });
+// ====================================================================================================================
 
-// profile username
+
+
+
+// profile username ===================================================================================================
 Route::get('/{username}', function ($username) {
     dd($username);
 });

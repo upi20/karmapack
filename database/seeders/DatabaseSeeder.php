@@ -43,6 +43,10 @@ class DatabaseSeeder extends Seeder
 
         // backup profile
         // php artisan iseed users,pengurus_profile_kontak,pengurus_profile_kontak_tipe,pengurus_profile_pendidikan,pengurus_profile_pendidikan_jenis,pengurus_profile_pengalaman_lain,pengurus_profile_pengalaman_organisasi --force
+
+        // backup lainnya
+        // php artisan iseed users,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member --force
+
         // ============================================================================================================
         // ============================================================================================================
 
@@ -91,5 +95,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactsTableSeeder::class);
         $this->call(FooterInstagramsTableSeeder::class);
         $this->call(UsernameValidationsTableSeeder::class);
+        $this->call(GaleriTagMemberTableSeeder::class);
     }
 }

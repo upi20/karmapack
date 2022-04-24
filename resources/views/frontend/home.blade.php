@@ -4,24 +4,15 @@
         data-bg-image="{{ asset('assets/templates/frontend/images/other/hero.jpg') }}" style="height: auto;">
         <div class="container-xl">
             <div class="cta text-center p-0 m-0" style="max-width: none;">
-                <h6 class="section-title h6 mb-3 w-100 text-light">Visi dan Misi Kabinet Masagi</h6>
+                <h6 class="section-title h6 mb-3 w-100 text-light">Visi dan Misi {{ $periode->nama }}</h6>
                 <div class="row">
                     <div class="col-md-6">
                         <h4 class="section-title h6 mb-3 text-light">Visi</h4>
-                        <p>"Terwujudnya KARMAPACK dan masyarakat Cianjur Kidul yang menjungjung tinggi nilai, dan
-                            norma agama,
-                            sosial
-                            serta budaya lokal."</p>
+                        <p>{!! $periode->visi !!}</p>
                     </div>
                     <div class="col-md-6">
                         <h4 class="section-title h6 mb-3 text-light">Misi</h4>
-                        <p>
-                            1. Meningkatkan pemahaman dan pengalaman keagamaan bagi anggota KARMAPACK dan masyarakat
-                            Cianjru Kidul
-                            <br>
-                            2. Melakukan pengabdian kepada masyarakat<br>
-                            3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan
-                        </p>
+                        <p> {!! $periode->misi !!}</p>
                     </div>
                 </div>
                 <br>
@@ -30,172 +21,41 @@
             </div>
         </div>
     </section>
-
-    <section class="hero-carousel py-5 bg-light">
-        <div class="container-xl">
-            <h4 class="section-title text-center mb-3">Kenali Kami Lebih Dekat</h4>
-        </div>
-        <div class="row post-carousel-featured post-carousel w-100 px-0 mx-0">
-            <!-- start -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <!-- <h4 class="post-title my-1"><a href="blog-single.html">Andi Taufik Permadi</a></h4> -->
-                    <!-- <h6 class="text-white fw-bold my-1">Ketua Bidang</h6> -->
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <!-- <a href="category.html" class="category-badge position-absolute">Kominfo</a> -->
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Andi Taufik Permadi.jpg') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
+    @if ($anggota->count())
+        <section class="hero-carousel py-5 bg-light">
+            <div class="container-xl">
+                <h4 class="section-title text-center mb-3">Kenali Kami Lebih Dekat</h4>
             </div>
-            <!-- end -->
+            <div class="row post-carousel-featured post-carousel w-100 px-0 mx-0">
+                @foreach ($anggota as $a)
+                    <div class="post featured-post-md">
+                        <div class="details clearfix">
+                            <h4 class="post-title my-1"><a href="blog-single.html">{{ $a->name }}</a></h4>
+                            <h6 class="text-white fw-bold my-1">{{ $a->jabatan }}</h6>
+                        </div>
 
+                        <a href="blog-single.html">
+                            <div class="thumb rounded">
+                                @if ($a->utama == 0)
+                                    <a href="{{ route('bidang', $a->parent_slug) }}"
+                                        class="category-badge position-absolute">
+                                        @if ($a->singkatan)
+                                            {{ $a->singkatan }}
+                                        @else
+                                            {{ $a->parent }}
+                                        @endif
+                                    </a>
+                                @endif
 
-            <!-- start -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <!-- <h4 class="post-title my-1"><a href="blog-single.html">Ahmad Kamil</a></h4> -->
-                    <!-- <h6 class="text-white fw-bold my-1">Ketua Bidang</h6> -->
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <!-- <a href="category.html" class="category-badge position-absolute">Kominfo</a> -->
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Ahmad Kamil.jpg') }}"
-                            style="background-position: top;"></div>
+                                <div class="inner data-bg-image" data-bg-image="{{ $a->foto }}"
+                                    style="background-position: top;"></div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                @endforeach
             </div>
-            <!-- end -->
-
-
-            <!-- start -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <!-- <h4 class="post-title my-1"><a href="blog-single.html">Lina Herlina</a></h4> -->
-                    <!-- <h6 class="text-white fw-bold my-1">Ketua Bidang</h6> -->
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <!-- <a href="category.html" class="category-badge position-absolute">Kominfo</a> -->
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Lina Herlina.jpg') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-            <!-- end -->
-
-
-
-            <!-- start -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Hilal Muhaman F</a></h4>
-                    <h6 class="text-white fw-bold my-1">Ketua Bidang</h6>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Hilal Muhaman F.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-            <!-- end -->
-
-            <!-- post -->
-
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Abdul Muhlis</a></h4>
-                    <h6 class="text-white fw-bold my-1">Sekertaris Bidang</h6>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Abdul Muhlis.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- post -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Isep Lutpi Nur</a></h4>
-                    <h6 class="text-white fw-bold my-1">Staff Ahli</h6>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- post -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Indra Kurnia</a></h4>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Indra Kurnia.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- post -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Nita H.S</a></h4>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Nita H.S.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- post -->
-            <div class="post featured-post-md">
-                <div class="details clearfix">
-                    <h4 class="post-title my-1"><a href="blog-single.html">Sukriman M</a></h4>
-                </div>
-
-                <a href="blog-single.html">
-                    <div class="thumb rounded">
-                        <a href="category.html" class="category-badge position-absolute">Kominfo</a>
-                        <div class="inner data-bg-image"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/member/Sukriman M.png') }}"
-                            style="background-position: top;"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    @endif
 @endsection
 @section('content')
     <div class="container-xl">
@@ -493,10 +353,7 @@
                     <div class="widget rounded bg-white shadow-sm">
                         <div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png">
                             <h3 class="widget-title">Kabinet Masagi</h3>
-                            <br>
-                            Ngabdi ka nagri bela ka nagara piken ngawujudkeun lemah nu sajati tur ngawangun
-                            cianjur pakidulan.
-                            </p>
+                            <br>{{ $periode->slogan }}</p>
                         </div>
                     </div>
 

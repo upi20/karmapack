@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    private $image_folder = 'assets/pengurus/profile';
+    private $image_folder = User::image_folder;
     public function index(Request $request)
     {
         $user_id = $request->id ?? auth()->user()->id;
