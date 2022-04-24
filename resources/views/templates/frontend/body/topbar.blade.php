@@ -1,5 +1,5 @@
 <?php
-class SidebarMenu
+class TopbarMenu
 {
     private $navigation = '';
     private $menus = [];
@@ -34,8 +34,8 @@ class SidebarMenu
                 $active = false;
                 foreach ($children as $child) {
                     $child_filter = $this->filterMenu($child);
-                    $active_1 = $child_filter->active ? ' text-primary' : '';
-                    $child_menu .= "<li><a class=\"$child_filter->active_class $active_1\" href=\"$child_filter->route\">$child_filter->title</a></li>";
+                    $active_class = $child_filter->active ? ' text-primary' : '';
+                    $child_menu .= "<li><a class=\"dropdown-item $active_class\" href=\"$child_filter->route\">$child_filter->title</a></li>";
 
                     if ($child_filter->active) {
                         $active = $child_filter->active;
@@ -43,30 +43,34 @@ class SidebarMenu
                 }
 
                 $menu = $this->filterMenu($menu);
-                $active_1 = $active ? ' class="openmenu active"' : '';
-                $active_2 = $active ? '<i class="icon-arrow-down switch"></i>' : '';
-                $active_3 = $active ? ' style="display: block;"' : '';
-                $menu_body .= "<li $active_1>
-                                <a href=\"#\">$menu->title</a>
-                                $active_2
-                                <ul class=\"submenu\" $active_3>
+                $active_2 = $active ? 'active' : '';
+                $menu_body .= "<li class=\"nav-item dropdown $active_2\">
+                                <a class=\"nav-link dropdown-toggle\" href=\"#\">$menu->title</a>
+                                <ul class=\"dropdown-menu\">
                                     $child_menu
                                 </ul>
                             </li>";
             } else {
                 $menu = $this->filterMenu($menu);
-                $menu_body .= " <li class=\"$menu->active_class\"> <a href=\"$menu->route\">$menu->title</a> </li>";
+                $menu_body .= "
+                <li class=\"nav-item  $menu->active_class\">
+                    <a class=\"nav-link\" href=\"$menu->route\">$menu->title</a>
+                </li>";
             }
         }
 
         // head element
-        $menu_head = '<ul class="vertical-menu">';
+        $menu_head = '<ul class="navbar-nav">';
 
         // Menu Extra =================================================================================
         $dashboard = route('dashboard');
-        $dashboard = "<li><a href=\"$dashboard\">Dashboard</a></li>";
+        $dashboard = "<li class=\"nav-item \">
+                <a class=\"nav-link\" href=\"$dashboard\">Dashboard</a>
+            </li>";
         $login = route('login');
-        $login = "<li><a href=\"$login\">Login</a></li>";
+        $login = "<li class=\"nav-item \">
+                <a class=\"nav-link\" href=\"$login\">Login</a>
+            </li>";
         $menu_extra = auth()->user() ? $dashboard : $login;
         // Menu Extra =================================================================================
 
@@ -122,30 +126,12 @@ class SidebarMenu
     }
 }
 ?>
-<!-- canvas menu -->
-<div class="canvas-menu d-flex align-items-end flex-column">
-    <!-- close button -->
-    <button type="button" class="btn-close" aria-label="Close"></button>
 
-    <!-- logo -->
-    <div class="logo">
-        <h3>Karmapack</h3>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-xl">
+        <div class="collapse navbar-collapse justify-content-center centered-nav">
+            <!-- menus -->
+            {!! (new TopbarMenu(app('config')->get('menu_sidebar')['frontend'], $page_attr_navigation, $menu_bidang))->generate() !!}
+        </div>
     </div>
-
-    <!-- menu -->
-    <nav>
-        {!! (new SidebarMenu(app('config')->get('menu_sidebar')['frontend'], $page_attr_navigation, $menu_bidang))->generate() !!}
-    </nav>
-
-
-    <!-- social icons -->
-    <ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
-        @foreach ($list_sosmed as $sosmed)
-            <li class="list-inline-item">
-                <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}">
-                    <i class="{{ $sosmed['icon'] }}"></i>
-                </a>
-            </li>
-        @endforeach
-    </ul>
-</div>
+</nav>

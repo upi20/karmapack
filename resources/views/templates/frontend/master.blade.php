@@ -20,6 +20,47 @@ function getSosmed()
     return $get ? $get->toArray() : [];
 }
 
+// menu bidang
+function menuBidang()
+{
+    function menu_bidang_get()
+    {
+        // get periode aktif
+        $periode = \App\Models\Pengurus\Periode::where('status', '=', '1')
+            ->select(['id'])
+            ->first();
+        if ($periode) {
+            // get menu where sum menu count > 0
+            $a = \App\Models\Pengurus\Jabatan::tableName;
+            $where = " (
+                ((select count(*) from $a as z where z.parent_id = $a.id) > 0) and
+                (`status` = 1)
+            )";
+
+            $periode_jabatan = \App\Models\Pengurus\Jabatan::select(['id', 'nama', 'slug'])
+                ->whereRaw($where)
+                ->orderBy('no_urut')
+                ->get();
+            return $periode_jabatan->toArray();
+        } else {
+            return [];
+        }
+    }
+
+    $menus_temp = [];
+    foreach (menu_bidang_get() as $m) {
+        $menus_temp[] = [
+            'title' => $m['nama'],
+            'route' => 'bidang/' . $m['slug'],
+            'route_type' => 'url',
+        ];
+    }
+
+    return [['name' => 'bidang', 'title' => 'Bidang', 'children' => $menus_temp]];
+}
+
+$getSosmed_val = getSosmed();
+$menuBidang_val = menuBidang();
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -202,99 +243,12 @@ function getSosmed()
             </div>
         </div>
 
-        <!-- header -->
-        <header class="header-personal">
-            <div class="container-xl header-top">
-                <div class="row align-items-center">
-
-                    <div class="col-4 d-none d-md-block d-lg-block">
-                        <!-- social icons -->
-                        <ul class="social-icons list-unstyled list-inline mb-0">
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-                        <!-- site logo -->
-                        <a class="navbar-brand" href="./"><img
-                                src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}"
-                                style="max-width: 80px;" alt="logo" /></a>
-                        <a href="./" class="d-block text-logo">KARMAPACK</a>
-                        <span class="slogan d-block">Keluarga Mahasiswa dan Pelajar Cianjur Kidul</span>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <!-- header buttons -->
-                        <div class="header-buttons float-md-end mt-4 mt-md-0">
-                            <button class="search icon-button">
-                                <i class="icon-magnifier"></i>
-                            </button>
-                            <button class="burger-menu icon-button ms-2 float-end float-md-none">
-                                <span class="burger-icon"></span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-xl">
-
-                    <div class="collapse navbar-collapse justify-content-center centered-nav">
-                        <!-- menus -->
-                        <ul class="navbar-nav">
-                            <li class="nav-item  active">
-                                <a class="nav-link" href="./">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#">Tentang Kami</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Struktur Kepengurusan</a></li>
-                                    <li><a class="dropdown-item" href="#">Visi Misi</a></li>
-                                    <li><a class="dropdown-item" href="#">Periode Kepengurusan</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#">Profil</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Kominfo</a></li>
-                                    <li><a class="dropdown-item" href="#">Wira Usaha</a></li>
-                                    <li><a class="dropdown-item" href="#">Minat Dan Bakat</a></li>
-                                    <li><a class="dropdown-item" href="#">PAO</a></li>
-                                    <li><a class="dropdown-item" href="#">Nalar Dan Intelektual</a></li>
-                                    <li><a class="dropdown-item" href="#">Pakeak</a></li>
-                                    <li><a class="dropdown-item" href="#">Keperempuanan</a></li>
-                                    <li><a class="dropdown-item" href="#">Sosmas</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Artikel</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#">Galeri</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Kegiatan</a></li>
-                                    <li><a class="dropdown-item" href="#">Lain Lain</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Pendaftaran</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Kontak</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-        </header>
+        {{-- header template --}}
+        @include('templates.frontend.body.header', [
+            'list_sosmed' => $getSosmed_val,
+            'page_attr_navigation' => $page_attr->navigation,
+            'menu_bidang' => $menuBidang_val,
+        ])
 
         <section class="hero data-bg-image d-flex align-items-center py-5 my-0"
             data-bg-image="{{ asset('assets/templates/frontend/images/other/hero.jpg') }}" style="height: auto;">
@@ -908,7 +862,7 @@ function getSosmed()
         </div>
 
         @include('templates.frontend.body.footer', [
-            'list_sosmed' => getSosmed(),
+            'list_sosmed' => $getSosmed_val,
         ])
 
     </div><!-- end site wrapper -->
@@ -931,66 +885,12 @@ function getSosmed()
         </div>
     </div>
 
-    <!-- canvas menu -->
-    <div class="canvas-menu d-flex align-items-end flex-column">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
-
-        <!-- logo -->
-        <div class="logo">
-            <h3>Karmapack</h3>
-        </div>
-
-        <!-- menu -->
-        <nav>
-            <ul class="vertical-menu">
-                <li class="active">
-                    <a href="./">Home</a>
-                </li>
-                <li>
-                    <a href="#">Tentang Kami</a>
-                    <ul class="submenu">
-                        <li><a href="#">Struktur Kepengurusan</a></li>
-                        <li><a href="#">Visi Misi</a></li>
-                        <li><a href="#">Periode Kepengurusan</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Profil</a>
-                    <ul class="submenu">
-                        <li><a href="#">Kominfo</a></li>
-                        <li><a href="#">Wira Usaha</a></li>
-                        <li><a href="#">Minat Dan Bakat</a></li>
-                        <li><a href="#">PAO</a></li>
-                        <li><a href="#">Nalar Dan Intelektual</a></li>
-                        <li><a href="#">Pakeak</a></li>
-                        <li><a href="#">Keperempuanan</a></li>
-                        <li><a href="#">Sosmas</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Artikel</a></li>
-                <li>
-                    <a href="#">Pages</a>
-                    <ul class="submenu">
-                        <li><a href="#">Kegiatan</a></li>
-                        <li><a href="#">Lain Lain</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Kontak</a></li>
-            </ul>
-        </nav>
-
-
-        <!-- social icons -->
-        <ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
-            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-    </div>
+    {{-- menu sidebar --}}
+    @include('templates.frontend.body.sidebar', [
+        'list_sosmed' => $getSosmed_val,
+        'page_attr_navigation' => $page_attr->navigation,
+        'menu_bidang' => $menuBidang_val,
+    ])
 
     <!-- JAVA SCRIPTS -->
     <script src="{{ asset('assets/templates/frontend/js/jquery.min.js') }}"></script>
