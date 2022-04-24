@@ -497,14 +497,6 @@
                             Ngabdi ka nagri bela ka nagara piken ngawujudkeun lemah nu sajati tur ngawangun
                             cianjur pakidulan.
                             </p>
-                            <ul class="social-icons list-unstyled list-inline mb-0">
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
                         </div>
                     </div>
 

@@ -218,6 +218,8 @@ $footerInstagram_val = footerInstagram();
         }
 
     </style>
+
+    @yield('stylesheet')
 </head>
 
 <body>
@@ -271,7 +273,7 @@ $footerInstagram_val = footerInstagram();
         <!-- section main content -->
         <div class="w-100 py-5 mb-5 mt-0">
             <section class="main-content mt-0">
-                @yield('content')
+                @yield('content', '')
             </section>
         </div>
 
@@ -317,7 +319,7 @@ $footerInstagram_val = footerInstagram();
     <script src="{{ asset('assets/templates/frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
-
+    @yield('javascript')
 </body>
 
 </html>
