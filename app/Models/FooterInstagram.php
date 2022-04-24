@@ -12,4 +12,5 @@ class FooterInstagram extends Model
     protected $primaryKey = 'id';
     protected $table = 'footer_instagrams';
     const tableName = 'footer_instagrams';
+    const image_folder = 'assets/footer_instagram';
 }

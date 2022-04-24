@@ -19,7 +19,7 @@ class FooterInstagramController extends Controller
         'status' => ['required', 'int'],
         'order' => ['required', 'int'],
     ];
-    private $image_folder = 'assets/footer_instagram';
+    private $image_folder = FooterInstagram::image_folder;
 
     public function index(Request $request)
     {

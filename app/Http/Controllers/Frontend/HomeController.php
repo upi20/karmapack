@@ -11,12 +11,12 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $page_attr = ['loader' => false];
-        return view('templates.frontend.master', compact('page_attr'));
+        return view('frontend.home', compact('page_attr'));
     }
 
     public function bidang(Jabatan $model)
     {
         $page_attr = ['loader' => false, 'navigation' => "bidang/$model->slug"];
-        return view('templates.frontend.master', compact('page_attr'));
+        return view('frontend.home', compact('page_attr'));
     }
 }
