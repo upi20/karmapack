@@ -219,7 +219,7 @@
                                 data-url="${full.url}"
                                 data-foto="${full.foto}"
                                 data-status="${full.status}"
-                                data-keterangan="${full.keterangan}"
+                                data-keterangan="${full.keterangan ?? ''}"
                                 data-order="${full.order}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
@@ -313,6 +313,7 @@
             $('#modal-default-title').html("Add Footer Instagram");
             $('#modal-default').modal('show');
             $('#id').val('');
+            $('#foto').attr('required', true);
             resetErrorAfterInput();
         }
 
@@ -326,7 +327,7 @@
             $('#nama').val(data.nama);
             $('#status').val(data.status);
             $('#url').val(data.url);
-            $('#foto').val(data.foto);
+            $('#foto').removeAttr('required');
             $('#order').val(data.order);
             $('#keterangan').val(data.keterangan);
         }
