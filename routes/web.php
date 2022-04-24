@@ -60,6 +60,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'check_login'])->name('login.check_login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
+Route::get('/bidang/{model:slug}', [HomeController::class, 'bidang'])->name('bidang');
+
 // dashboard
 Route::get('/dashboard', function () {
     $user = Auth::user();

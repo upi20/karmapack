@@ -1,5 +1,4 @@
 <?php
-// set admin menu
 $admin = [
     ['title' => 'Administrator Menu', 'separator' => true],
     ['title' => 'Dashboard', 'route' => 'admin.dashboard', 'icon' => 'fe fe-home'],
@@ -44,7 +43,6 @@ $admin = [
     ['title' => 'Kontak', 'icon' => 'fe fe-phone', 'route' => 'admin.contact'],
     ['title' => 'Footer Instagram', 'icon' => 'fe fe-image', 'route' => 'admin.footer_instagram'],
     ['title' => 'Username Role', 'icon' => 'fe fe-check', 'route' => 'admin.username_validation'],
-    ['title' => 'Member Menu', 'separator' => true],
 ];
 
 // set member menu
@@ -54,7 +52,29 @@ $member  = [
     ['title' => 'Ganti Password', 'icon' => 'fe fe-lock', 'route' => 'member.password'],
 ];
 
+// set frontend menu
+$frontend  = [
+    ['title' => 'Home', 'route' => 'home'],
+    [
+        'title' => 'Tentang Kami',
+        'children' => [
+            ['title' => 'Struktur Kepengurusan'],
+            ['title' => 'Periode Kepengurusan'],
+        ]
+    ],
+    [
+        'name' => 'bidang',
+    ],
+    ['title' => 'Anggota'],
+    ['title' => 'Galeri'],
+    ['title' => 'Pendaftaran'],
+    ['title' => 'Kontak'],
+];
+
+$member = array_merge($member, [['title' => 'Home Menu', 'separator' => true]], $frontend);
+
 return [
-    'admin' => array_merge($admin, $member),
-    'member' => $member
+    'admin' => array_merge($admin, [['title' => 'Member Menu', 'separator' => true]], $member),
+    'member' => $member,
+    'frontend' => $frontend,
 ];

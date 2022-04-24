@@ -12,4 +12,10 @@ class Jabatan extends Model
     protected $primaryKey = 'id';
     protected $table = 'pengurus_periode_jabatan';
     const tableName = 'pengurus_periode_jabatan';
+
+    public static function toMenu()
+    {
+        $tes = self::all();
+        return $tes;
+    }
 }

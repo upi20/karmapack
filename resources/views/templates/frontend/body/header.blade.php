@@ -90,11 +90,11 @@
                     class="header-brand-img light-logo1" alt="logo">
             </a>
             <!-- LOGO -->
-            <div class="main-header-center ms-3 d-none d-lg-block">
-                <input class="form-control" placeholder="Search for results..." type="search">
-                <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button>
-            </div>
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
+                <div class="main-header-center ms-3 d-none d-lg-block mt-1">
+                    <input class="form-control" placeholder="Search for results..." type="search">
+                    <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button>
+                </div>
                 <div class="dropdown d-none">
                     <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
                         <i class="fe fe-search"></i>
@@ -146,37 +146,57 @@
                                 </a>
                             </div>
 
-                            <!-- SIDE-MENU -->
-                            <div class="dropdown d-flex profile-1">
-                                <a href="javascript:void(0)" data-bs-toggle="dropdown"
-                                    class="nav-link leading-none d-flex">
-                                    <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
-                                        src="{{ asset('assets/pengurus/profile/' . '') }}" alt="profile-user"
-                                        class="avatar  profile-user brround cover-image" id="header_foto_profile">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                    <div class="drop-heading">
-                                        <div class="text-center">
-                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
-                                            <small class="text-muted">Senior Admin</small>
+                            @if (auth()->user())
+                                <div class="dropdown d-flex profile-1">
+                                    <a href="javascript:void(0)" data-bs-toggle="dropdown"
+                                        class="nav-link leading-none d-flex">
+                                        <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
+                                            src="{{ asset('assets/pengurus/profile/' . auth()->user()->foto) }}"
+                                            alt="profile-user" class="avatar  profile-user brround cover-image"
+                                            id="header_foto_profile">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <div class="drop-heading">
+                                            <div class="text-center">
+                                                <h5 class="text-dark mb-0 fs-14 fw-semibold">
+                                                    {{ ucfirst(auth()->user()->name) }}
+                                                </h5>
+                                                <small
+                                                    class="text-muted">{{ ucfirst(auth()->user()->role) }}</small>
+                                            </div>
                                         </div>
+                                        <div class="dropdown-divider m-0"></div>
+                                        <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                            <i class="dropdown-icon fe fe-home"></i> Dashboard
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('member.profile') }}">
+                                            <i class="dropdown-icon fe fe-user"></i> Profile
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('member.password') }}">
+                                            <i class="dropdown-icon fe fe-lock"></i> Ganti Password
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('login.logout') }}">
+                                            <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
+                                        </a>
                                     </div>
-                                    <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item" href="profile.html">
-                                        <i class="dropdown-icon fe fe-user"></i> Profile
-                                    </a>
-                                    <a class="dropdown-item" href="email-inbox.html">
-                                        <i class="dropdown-icon fe fe-mail"></i> Inbox
-                                        <span class="badge bg-danger rounded-pill float-end">5</span>
-                                    </a>
-                                    <a class="dropdown-item" href="lockscreen.html">
-                                        <i class="dropdown-icon fe fe-lock"></i> Lockscreen
-                                    </a>
-                                    <a class="dropdown-item" href="login.html">
-                                        <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
-                                    </a>
                                 </div>
-                            </div>
+                            @else
+                                <div class="dropdown d-flex profile-1">
+                                    <a href="javascript:void(0)" data-bs-toggle="dropdown"
+                                        class="nav-link leading-none d-flex">
+                                        <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
+                                            src="{{ asset('assets/templates/admin/images/profile.png') }}"
+                                            alt="profile-user" class="avatar  profile-user brround cover-image"
+                                            id="header_foto_profile">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <div class="dropdown-divider m-0"></div>
+                                        <a class="dropdown-item" href="{{ route('login') }}">
+                                            <i class="dropdown-icon fe fe-user"></i> Log In
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

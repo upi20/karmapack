@@ -1,6 +1,7 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : true,
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
@@ -101,11 +102,14 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 <body class="app ltr horizontal-hover horizontal">
     <div class="horizontalMenucontainer">
 
-        <!-- GLOBAL-LOADER -->
-        <div id="global-loader">
-            <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
-        </div>
-        <!-- /GLOBAL-LOADER -->
+        @if ($page_attr->loader)
+            <!-- GLOBAL-LOADER -->
+            <div id="global-loader">
+                <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img"
+                    alt="Loader">
+            </div>
+            <!-- /GLOBAL-LOADER -->
+        @endif
 
         <!-- PAGE -->
         <div class="page">
@@ -255,6 +259,11 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                 /^https?\:\/\/(?:www\.youtube(?:\-nocookie)?\.com\/|m\.youtube\.com\/|youtube\.com\/)?(?:ytscreeningroom\?vi?=|youtu\.be\/|vi?\/|user\/.+\/u\/\w{1,2}\/|embed\/|watch\?(?:.*\&)?vi?=|\&vi?=|\?(?:.*\&)?vi?=)([^#\&\?\n\/<>"']*)/i;
             var match = url.match(regExp);
             return (match && match[1].length == 11) ? match[1] : false;
+        }
+
+        // close expand menu
+        if (window.innerWidth >= 992) {
+            $('.slide.is-expanded').removeClass('is-expanded');
         }
     </script>
 
