@@ -12,4 +12,5 @@ class Periode extends Model
     protected $primaryKey = 'id';
     protected $table = 'pengurus_periode';
     const tableName = 'pengurus_periode';
+    const image_folder = '/assets/pengurus/periode';
 }

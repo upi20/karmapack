@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class PeriodeController extends Controller
 {
-    private $image_folder = PeriodeMember::image_folder;
+    private $image_folder = Periode::image_folder;
     public function index(Request $request) // page
     {
         // Rencana =============================================================================
