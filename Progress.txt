@@ -41,3 +41,4 @@ Menu acara di frontend (Untuk Dokumentasi)
 tambah struktur kepengursan semuanya bisa di klik
 jabatan jadi mencari jabatan
 anggota jadi ke profile
+seo banyak yang ketinggalan
