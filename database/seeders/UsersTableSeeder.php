@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
                 'profesi' => 'Pelajar/Mahasiswa',
                 'bio' => 'My bio',
                 'role' => 'admin',
-                'angkatan' => '2012',
+                'angkatan' => '2019',
                 'date_of_birth' => '2000-08-10',
                 'email' => 'iseplutpinur7@gmail.com',
                 'gender' => 'laki-laki',
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-24 17:32:48',
+                'updated_at' => '2022-04-25 03:12:25',
             ),
             1 => 
             array (
@@ -160,7 +160,7 @@ class UsersTableSeeder extends Seeder
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-25',
                 'email' => 'hilal@gmail.com',
-                'gender' => NULL,
+                'gender' => 'laki-laki',
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$WyiwgWVzoHrGeXQS5Fv9g..qf48SiPHuA4M0zOQzQ.uHAj4GKb7ju',
@@ -177,7 +177,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-21 14:13:10',
+                'updated_at' => '2022-04-25 03:14:12',
             ),
             5 => 
             array (

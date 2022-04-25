@@ -30,12 +30,6 @@
                             </div>
                         </div>
 
-                        {{-- angkatan --}}
-                        <div class="text-left mt-3">
-                            <h5 class="mb-1 text-dark fw-semibold">Angkatan:</h5>
-                            <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ $user->angkatan }}</p>
-                        </div>
-
                         {{-- riwayat kepengurusan --}}
                         @if ($kepengurusan)
                             <div class="text-left mt-3">
@@ -45,6 +39,13 @@
                                 @endforeach
                             </div>
                         @endif
+
+                        {{-- angkatan --}}
+                        <div class="form-group  mt-3">
+                            <label for="angkatan">Angkatan</label>
+                            <input type="number" min="2003" max="9999" class="form-control" id="angkatan" name="angkatan"
+                                placeholder="Tahun Masuk" value="{{ $user->angkatan }}" required>
+                        </div>
                         <hr>
 
                         {{-- form profile --}}

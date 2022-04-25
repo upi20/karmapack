@@ -112,6 +112,7 @@ class ProfileController extends Controller
                 'profesi' => ['nullable', 'string', 'max:255'],
                 'jenis_kelamin' => ['nullable', 'string', 'max:255'],
                 'bio' => ['nullable', 'string', 'max:255'],
+                'angkatan' => ['required', 'int', 'max:9999', 'min:2003'],
             ]);
             $model = User::find($request->id);
             if (!$this->savePermission($request->id)) abort(401);
@@ -135,6 +136,7 @@ class ProfileController extends Controller
             $model->profesi = $request->profesi;
             $model->gender = $request->jenis_kelamin;
             $model->bio = $request->bio;
+            $model->angkatan = $request->angkatan;
             $model->save();
         } catch (ValidationException $error) {
             return response()->json([

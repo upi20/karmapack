@@ -24,7 +24,7 @@ class AddAddressAndOtherInformation extends Migration
             $table->date('date_of_birth')->after('name')->nullable()->default(null);
             $table->year('angkatan')->after('name')->nullable()->default(null);
             $table->string('username')->after('email')->unique()->nullable()->default(null);
-            $table->string('gender')->after('email')->unique()->nullable()->default(null);
+            $table->string('gender')->after('email')->nullable()->default(null);
 
             $table->boolean('active')->after('password')->default('0');
             $table->string('role')->after('name')->default(User::ROLE_MEMBER);
