@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class JabatanController extends Controller
 {
     private $query = [];
-    private $image_folder = 'assets/pengurus/jabatan';
+    private $image_folder = Jabatan::image_folder;
     public function index(Request $request)
     {
         // Rencana =============================================================================
@@ -135,7 +135,7 @@ class JabatanController extends Controller
             $foto = '';
             if ($image = $request->file('foto')) {
                 $foto = 'icon' . substr($request->slug, 10, 40) . date('YmdHis') . "." . $image->getClientOriginalExtension();
-                $image->move($this->image_folder, $foto);
+                $image->move(public_path($this->image_folder), $foto);
             }
             Jabatan::create([
                 'parent_id' => $request->parent_id,
@@ -184,7 +184,7 @@ class JabatanController extends Controller
             $foto = '';
             if ($image = $request->file('foto')) {
                 $foto = 'icon' . substr($request->slug, 10, 40) . date('YmdHis') . "." . $image->getClientOriginalExtension();
-                $image->move($this->image_folder, $foto);
+                $image->move(public_path($this->image_folder), $foto);
 
                 // delete foto
                 if ($model->foto) {

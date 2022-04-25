@@ -22,7 +22,7 @@ class User extends Authenticatable
     const ROLE_ADMIN = 'admin';
     const ROLE_MEMBER = 'member';
     const tableName = 'users';
-    const image_folder = 'assets/pengurus/profile';
+    const image_folder = '/assets/pengurus/profile';
     protected $table = 'users';
 
 
