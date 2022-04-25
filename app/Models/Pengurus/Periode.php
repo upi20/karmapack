@@ -13,4 +13,10 @@ class Periode extends Model
     protected $table = 'pengurus_periode';
     const tableName = 'pengurus_periode';
     const image_folder = '/assets/pengurus/periode';
+
+    public function fotoUrl()
+    {
+        $foto = $this->attributes['foto'];
+        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/image/anggota_default.png');
+    }
 }

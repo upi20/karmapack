@@ -145,7 +145,7 @@ class PeriodeController extends Controller
             $foto = '';
             if ($image = $request->file('foto')) {
                 $foto = 'icon' . substr($request->slug, 0, 10) . date('YmdHis') . "." . $image->getClientOriginalExtension();
-                $image->move($this->image_folder, $foto);
+                $image->move(public_path($this->image_folder), $foto);
 
                 // delete foto
                 if ($model->foto) {

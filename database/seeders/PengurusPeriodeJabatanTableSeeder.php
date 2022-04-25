@@ -46,14 +46,16 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'no_urut' => 1,
                 'nama' => 'Ketua Umum',
                 'slug' => '2021-2022-ketua-umum',
-                'foto' => '2021-12-06_11-03-40_karmapack_image_Ketua_Umum.png',
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'foto' => 'iconketua-umum20220425133058.png',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'singkatan' => NULL,
                 'status' => 1,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-04-25 13:30:58',
             ),
             2 => 
             array (

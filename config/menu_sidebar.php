@@ -59,6 +59,7 @@ $frontend  = [
         'title' => 'Tentang Kami',
         'children' => [
             ['title' => 'Sejarah'],
+            ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
             ['title' => 'Periode Kepengurusan'],
         ]
     ],

@@ -47,7 +47,12 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\LoaderController;
 use App\Http\Controllers\Member\ProfileController;
-use Illuminate\Http\Request;
+
+// Frontend ===========================================================================================================
+
+// Tentang Kami =======================================================================================================
+use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
+
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -67,6 +72,20 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 // home default =======================================================================================================
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/periode/{model:slug}', [HomeController::class, 'periode'])->name('periode');
+// ====================================================================================================================
+
+
+
+
+// Periode Kepengurusan ===============================================================================================
+Route::group(['prefix' => 'about'], function () {
+    Route::group(['prefix' => 'kepengurusan'], function () {
+        Route::group(['prefix' => 'struktur'], function () {
+            Route::get('/', [StrukturController::class, 'index'])->name('about.kepengurusan.struktur');
+            Route::get('/{model:slug}', [StrukturController::class, 'periode'])->name('about.kepengurusan.struktur.periode');
+        });
+    });
+});
 // ====================================================================================================================
 
 

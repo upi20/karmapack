@@ -40,7 +40,7 @@ class PengurusPeriodeTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'nama' => 'Kabinet Masagi',
-                'foto' => 'iconkabinet-ma20220416180139.png',
+                'foto' => 'iconkabinet-ma20220425164938.png',
                 'dari' => '2021',
                 'sampai' => '2022',
                 'slug' => 'kabinet-masagi',
@@ -58,7 +58,7 @@ Cianjru Kidul
 ',
                 'status' => 1,
                 'created_at' => '2022-04-14 08:31:00',
-                'updated_at' => '2022-04-24 16:16:45',
+                'updated_at' => '2022-04-25 16:49:38',
             ),
             2 => 
             array (

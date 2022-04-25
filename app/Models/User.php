@@ -73,4 +73,10 @@ class User extends Authenticatable
             self::ROLE_ADMIN,
         ];
     }
+
+    public function fotoUrl()
+    {
+        $foto = $this->attributes['foto'];
+        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/image/anggota_default.png');
+    }
 }
