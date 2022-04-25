@@ -35,6 +35,78 @@ class ArtikelKategoriItemTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            2 => 
+            array (
+                'id' => 9,
+                'artikel_id' => 29,
+                'kategori_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 10,
+                'artikel_id' => 30,
+                'kategori_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 11,
+                'artikel_id' => 31,
+                'kategori_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 12,
+                'artikel_id' => 31,
+                'kategori_id' => 5,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 13,
+                'artikel_id' => 32,
+                'kategori_id' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 14,
+                'artikel_id' => 32,
+                'kategori_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 15,
+                'artikel_id' => 33,
+                'kategori_id' => 4,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 16,
+                'artikel_id' => 34,
+                'kategori_id' => 6,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 17,
+                'artikel_id' => 35,
+                'kategori_id' => 6,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         

@@ -49,6 +49,26 @@ class ArtikelKategoriTableSeeder extends Seeder
                 'created_at' => '2022-04-17 15:13:33',
                 'updated_at' => '2022-04-17 15:13:33',
             ),
+            3 => 
+            array (
+                'id' => 5,
+                'nama' => 'Hari Internasional',
+                'slug' => 'hari-internasional',
+                'foto' => NULL,
+                'status' => 1,
+                'created_at' => '2022-04-25 04:15:09',
+                'updated_at' => '2022-04-25 04:15:09',
+            ),
+            4 => 
+            array (
+                'id' => 6,
+                'nama' => 'Berita',
+                'slug' => 'berita',
+                'foto' => NULL,
+                'status' => 1,
+                'created_at' => '2022-04-25 12:46:55',
+                'updated_at' => '2022-04-25 12:46:55',
+            ),
         ));
         
         

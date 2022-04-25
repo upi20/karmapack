@@ -39,7 +39,11 @@ class HomeController extends Controller
             'loader' => false, 'navigation' => "bidang/$model->slug",
             'periode_id' => $model->periode_id,
         ];
-        return view('frontend.home', compact('page_attr'));
+        // $periode = Periode::find($model->periode_id)->first();
+        // if (!$periode) abort(404);
+        // $anggota = $this->getPengurusList($model->periode_id);
+
+        // return view('frontend.home', compact('page_attr', 'periode', 'anggota'));
     }
 
     private function getPengurusList($periode_id)
