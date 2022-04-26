@@ -11,13 +11,21 @@
                 <tr>
                     <td style="border: 0;" colspan="2">{{ $utama->jabatan->nama }}</td>
                     <td style="border: 0; max-width: 5px;">:</td>
-                    <td style="border: 0;">{{ $utama->pejabat->name }}</td>
+                    <td style="border: 0;">
+                        @php
+                            $url = $utama->pejabat->username ? url($utama->pejabat->username) : url('profile') . '/' . $utama->pejabat->id;
+                        @endphp
+                        <a href="{{ $url }}">{{ $utama->pejabat->name }}</a>
+                    </td>
                 </tr>
             @endforeach
 
             @foreach ($member->bidang as $bidang)
                 <tr>
-                    <td colspan="4" style="border: 0;">{{ $bidang->header->nama }}</td>
+                    <td colspan="4" style="border: 0;"><a href="{{ route('bidang', $bidang->header->slug) }}">
+                            {{ $bidang->header->nama }}
+                        </a>
+                    </td>
                 </tr>
 
                 @foreach ($bidang->body as $body)
@@ -27,9 +35,13 @@
                             <td style="border: 0;">{{ $body->jabatan->nama }}</td>
                             <td style="border: 0;">:</td>
                             <td style="border: 0;">
-                                @php
-                                    echo isset($body->pejabat[0]->name) ? $body->pejabat[0]->name : '';
-                                @endphp
+                                @if (isset($body->pejabat[0]))
+                                    @php
+                                        $pejabat = $body->pejabat[0];
+                                        $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                    @endphp
+                                    <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                @endif
                             </td>
                         </tr>
                         @foreach ($body->pejabat as $key => $pejabat)
@@ -38,7 +50,12 @@
                                     <td style="border: 0;"></td>
                                     <td style="border: 0;"></td>
                                     <td style="border: 0;">:</td>
-                                    <td style="border: 0;"> {{ $pejabat->name }} </td>
+                                    <td style="border: 0;">
+                                        @php
+                                            $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                        @endphp
+                                        <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
@@ -47,7 +64,13 @@
                             <td style="border: 0;"></td>
                             <td style="border: 0;">{{ $body->jabatan->nama }}</td>
                             <td style="border: 0;">:</td>
-                            <td style="border: 0;">{{ $body->pejabat->name }}</td>
+                            <td style="border: 0;">
+                                @php
+                                    $pejabat = $body->pejabat;
+                                    $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                @endphp
+                                <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                            </td>
                         </tr>
                     @endif
                 @endforeach

@@ -29,6 +29,7 @@ class StrukturController extends Controller
         ];
         $member = $this->member_list($model->id);
         $periode = $model;
+        // dd($member);
         return view('frontend.about.kepengurusan.struktur', compact('page_attr', 'periode', 'member'));
     }
 
