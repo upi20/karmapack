@@ -11,6 +11,7 @@ $page_attr = (object) [
     'periode_id' => isset($page_attr['periode_id']) ? $page_attr['periode_id'] : false,
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
+$search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 
 class MasterHelper
 {
@@ -310,9 +311,9 @@ $footerInstagram_val = $master_helper->footerInstagram();
                 <h3 class="mb-4 mt-0">Press ESC to close</h3>
             </div>
             <!-- form -->
-            <form class="d-flex search-form">
-                <input class="form-control me-2" type="search" placeholder="Search and press enter ..."
-                    aria-label="Search">
+            <form class="d-flex search-form" action="{{ url('anggota') }}" method="GET">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search and press enter ..."
+                    aria-label="Search" value="{{ $search_master_key }}">
                 <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
             </form>
         </div>
