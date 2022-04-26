@@ -52,7 +52,7 @@ use App\Http\Controllers\Member\ProfileController;
 
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
-
+use App\Http\Controllers\Frontend\MemberController;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -85,6 +85,15 @@ Route::group(['prefix' => 'about'], function () {
             Route::get('/{model:slug}', [StrukturController::class, 'periode'])->name('about.kepengurusan.struktur.periode');
         });
     });
+});
+// ====================================================================================================================
+
+
+
+
+// Periode Kepengurusan ===============================================================================================
+Route::group(['prefix' => 'anggota'], function () {
+    Route::get('/', [MemberController::class, 'index'])->name('anggota');
 });
 // ====================================================================================================================
 

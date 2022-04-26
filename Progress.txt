@@ -42,3 +42,4 @@ tambah struktur kepengursan semuanya bisa di klik
 jabatan jadi mencari jabatan
 anggota jadi ke profile
 seo banyak yang ketinggalan
+anggota address tambah kode pos

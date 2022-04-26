@@ -66,7 +66,7 @@ $frontend  = [
     [
         'name' => 'bidang',
     ],
-    ['title' => 'Anggota'],
+    ['title' => 'Anggota', 'route' => 'anggota'],
     ['title' => 'Galeri'],
     ['title' => 'Pendaftaran'],
     ['title' => 'Kontak'],
