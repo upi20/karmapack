@@ -38,8 +38,55 @@ Sejarah
 <div class="MOdxS " style="border: 0px solid rgb(0, 0, 0); font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; -webkit-box-align: stretch; align-items: stretch; display: inline; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; flex-shrink: 0; position: relative;"><span class="_7UhW9   xLCgt      MMzan   KV-D4            se6yk       T0kll " style="border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: 18px; vertical-align: baseline; display: inline !important;">Join Us:<br>}Youtube (Orda Karmapack)<br><a href="https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg" target="_blank">https://youtube.com/channel/UCYLkZIjHmDkQH7j7qfVIHbg</a><br>}Instagram (orda_karmapack)<br><a href="https://instagram.com/orda_karmapack?utm_medium=copy_link" target="_blank">https://instagram.com/orda_karmapack?utm_medium=copy_link</a><br>}Facebook (Orda Karmapack)<br><a href="https://www.facebook.com/karmapack.id" target="_blank">https://www.facebook.com/karmapack.id</a><br><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/ordakarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#ordakarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/halingkuaing/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#halingkuaing</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/inicianjurkidul/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#inicianjurkidul</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/infocianjur24jam/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#infocianjur24jam</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackkabinetmasagi/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackkabinetmasagi</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/kominfokarmapack/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#kominfokarmapack</a><br><a class=" xil3i" href="https://www.instagram.com/explore/tags/karmapackmengudara/" tabindex="0" style="font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; border: 0px; vertical-align: baseline; overflow-wrap: break-word;">#karmapackmengudara</a></span></div>
 
 Menu acara di frontend (Untuk Dokumentasi)
-tambah struktur kepengursan semuanya bisa di klik
-jabatan jadi mencari jabatan
-anggota jadi ke profile
 seo banyak yang ketinggalan
 anggota address tambah kode pos
+
+// tombol share
+Facebook:
+https://www.facebook.com/sharer.php?u=[post-url]
+
+WhatsApp Share Button:
+https://api.whatsapp.com/send?text=[post-title] [post-url]
+
+Twitter:
+https://twitter.com/share?url=[post-url]&text=[post-title]&via=[via]&hashtags=[hashtags]
+
+Google+:
+https://plus.google.com/share?url=[post-url]
+
+Pinterest:
+https://pinterest.com/pin/create/button/?url=[post-url]&media=[post-image]&description=[post-title]
+
+LinkedIn:
+https://www.linkedin.com/shareArticle?mini=true&url=[post-url]&title=[post-title]&summary=[post-excerpt]&source=[post-source]
+
+Buffer:
+https://buffer.com/add?url=[post-url]&text=[post-title]
+
+Tumblr:
+https://www.tumblr.com/widgets/share/tool?canonicalUrl=[post-url]&title=[post-title]&caption=[post-excerpt]&tags=[post-tags]&posttype=[post-type]
+
+Reddit:
+https://reddit.com/submit?url=[post-url]&title=[post-title]
+
+StumbleUpon:
+https://www.stumbleupon.com/submit?url=[post-url]&title=[post-title]
+
+Delicious:
+https://delicious.com/save?v2&url=[post-url]&title=[post-title]
+
+Evernote:
+https://www.evernote.com/clip.action?url=[post-url]&title=[post-title]
+
+Email:
+mailto:?subject=[post-title]&body=[post-excerpt]
+$email = 'mailto:?subject=' . $[post-title] . '&body=Check out this site: '. $[post-url] .'" title="Share by Email';
+
+WordPress:
+https://wordpress.com/press-this.php?u=[post-url]&t=[post-title]&s=[post-excerpt]
+
+Pocket:
+https://getpocket.com/edit?url=[post-url]&title=[post-title]
+
+Telegram:
+https://telegram.me/share/url?url=[post-url]&text=[post-title]

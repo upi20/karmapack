@@ -1,6 +1,8 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
+    'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
+    'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
     'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : true,
     'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
     'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
@@ -13,81 +15,7 @@ $page_attr = (object) [
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 
-class MasterHelper
-{
-    private $periode_id;
-    public function __construct($periode_id = false)
-    {
-        $this->periode_id = $periode_id;
-    }
-
-    public function getSosmed()
-    {
-        $get = \App\Models\SocialMedia::where('status', '=', 1)
-            ->orderBy('order')
-            ->get();
-        return $get ? $get->toArray() : [];
-    }
-
-    private function menu_bidang_get()
-    {
-        if ($this->periode_id) {
-            $periode_q = (object) ['id' => $this->periode_id];
-        } else {
-            // get periode aktif
-            $periode_q = \App\Models\Pengurus\Periode::where('status', '=', '1')
-                ->select(['id'])
-                ->first();
-        }
-
-        if ($periode_q) {
-            // get menu where sum menu count > 0
-            $a = \App\Models\Pengurus\Jabatan::tableName;
-            $where = " (
-                ((select count(*) from $a as z where z.parent_id = $a.id) > 0) and
-                (`status` = 1) and ($a.periode_id = $periode_q->id)
-            )";
-
-            $periode_jabatan = \App\Models\Pengurus\Jabatan::select(['id', 'nama', 'slug'])
-                ->whereRaw($where)
-                ->orderBy('no_urut')
-                ->get();
-            return $periode_jabatan->toArray();
-        } else {
-            return [];
-        }
-    }
-
-    public function menuBidang()
-    {
-        $menus_temp = [];
-        foreach ($this->menu_bidang_get() as $m) {
-            $menus_temp[] = [
-                'title' => $m['nama'],
-                'route' => 'bidang/' . $m['slug'],
-                'route_type' => 'url',
-            ];
-        }
-
-        return [['name' => 'bidang', 'title' => 'Bidang', 'children' => $menus_temp]];
-    }
-
-    public function footerInstagram()
-    {
-        $result = \App\Models\FooterInstagram::where('status', '=', 1)
-            ->orderBy('order')
-            ->get();
-        $result->map(function ($item) {
-            $image_folder = \App\Models\FooterInstagram::image_folder;
-            $item['foto'] = url("$image_folder/$item->foto");
-            return $item;
-        });
-
-        return $result->toArray();
-    }
-}
-
-$master_helper = new MasterHelper($page_attr->periode_id);
+$master_helper = new \App\Helpers\Frontend\Template\Master($page_attr->periode_id);
 $getSosmed_val = $master_helper->getSosmed();
 $menuBidang_val = $master_helper->menuBidang();
 $footerInstagram_val = $master_helper->footerInstagram();
@@ -130,15 +58,15 @@ $footerInstagram_val = $master_helper->footerInstagram();
     <meta name="keywords" content="{{ $page_attr->keywords }}">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:url" content="{{ url('') }}">
-    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ $page_attr->url }}">
+    <meta property="og:type" content="{{ $page_attr->type }}">
     <meta property="og:title" content="{{ $page_attr_title }}">
     <meta property="og:description" content="{{ $page_attr->description }}">
     <meta property="og:image" content="{{ $page_attr->image }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url('') }}">
+    <meta property="twitter:url" content="{{ $page_attr->url }}">
     <meta name="twitter:title" content="{{ $page_attr_title }}">
     <meta name="twitter:description" content="{{ $page_attr->description }}">
     <meta name="twitter:image" content="{{ $page_attr->image }}">

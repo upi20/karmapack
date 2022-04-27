@@ -30,7 +30,12 @@ class HomeController extends Controller
 
         $periode = $model;
         $anggota = $this->getPengurusList($model->id);
-        return view('frontend.home', compact('page_attr', 'periode', 'anggota'));
+
+        // frontend
+        $fe = new \App\Helpers\Frontend\Template\Master($model->id);
+        $sosmed = $fe->getSosmed();
+
+        return view('frontend.home', compact('page_attr', 'periode', 'anggota', 'sosmed'));
     }
 
     public function bidang(Jabatan $model)
