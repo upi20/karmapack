@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\Pagination;
 use App\Http\Controllers\Controller;
 use App\Models\Address\District;
 use App\Models\Address\Province;
@@ -209,69 +210,7 @@ class MemberController extends Controller
             $params .= $filter ? "$key=$filter" : '';
         }
 
-        // dd($users);
-        $pagination = $this->pagination($users, $params);
+        $pagination = Pagination::generate($users, $params);
         return view('frontend.member.list', compact('page_attr', 'users', 'image', 'params', 'filters', 'pagination'));
-    }
-
-    public function pagination($users, $params)
-    {
-        if (count($users->data) < 1) return null;
-        // generate pagination
-        // active
-        $active = isset($users->links[$users->current_page])  ? ($users->links[$users->current_page]->url ? '<li class="page-item active" title="Go to page ' . $users->links[$users->current_page]->label . '" aria-current="page">
-            <a href="#" class="page-link">' . $users->links[$users->current_page]->label . '</a>
-        </li>' : '') : '';
-
-        $active_set = isset($users->links[$users->current_page]) ? ($users->links[$users->current_page]->url ? $users->current_page : null) : null;
-
-        // previous
-        $previous = $users->current_page != 1 ? '
-            <li class="page-item" title="Go to page ' . $users->links[0]->label . '" aria-current="page">
-                <a href="' . $users->links[0]->url . ($params ? '&' . $params : '') . '" class="page-link">&laquo;</a>
-            </li>
-        ' : '';
-
-        // next
-        $next = !($users->current_page >= $users->last_page) ? '
-            <li class="page-item" title="Go to page ' . $users->links[$users->last_page + 1]->label . '" aria-current="page">
-                <a href="' . $users->links[$users->last_page + 1]->url . ($params ? '&' . $params : '') . '" class="page-link">' . $users->links[$users->last_page + 1]->label . '</a>
-            </li>
-        ' : '';
-
-        // first
-        $first = !$users->links[1]->active ? '
-            <li class="page-item" title="Go to page ' . $users->links[1]->label . '" aria-current="page">
-                <a href="' . $users->links[1]->url . ($params ? '&' . $params : '') . '" class="page-link">' . $users->links[1]->label . '</a>
-            </li>
-        ' : '';
-
-        $last = !$users->links[$users->last_page]->active ? '
-            <li class="page-item" title="Go to page ' . $users->links[$users->last_page]->label . '" aria-current="page">
-                <a href="' . $users->links[$users->last_page]->url . ($params ? '&' . $params : '') . '" class="page-link">' . $users->links[$users->last_page]->label . '</a>
-            </li>
-        ' : '';
-
-        // $side_active = 4;
-        // $active_before = '';
-        // $active_before_count = 1;
-        // $active_before_max = 2;
-
-        $active_after = '';
-        $active_after_count = 1;
-        $active_after_max = 3;
-
-        if ($active_set >= 1) {
-            foreach ($users->links as $k => $link) {
-                if (($k > $active_set) && ($k <= $users->last_page) && ($active_after_count <= $active_after_max)) {
-                    $active_after .= '<li class="page-item" title="Go to page ' . $link->label . '" aria-current="page">
-                        <a href="' . $link->url . ($params ? '&' . $params : '') . '" class="page-link">' . $link->label . '</a>
-                    </li>';
-                    $active_after_count++;
-                }
-            }
-        }
-
-        return $previous . $first . $active . $active_after .  $last . $next;
     }
 }
