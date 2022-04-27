@@ -10,8 +10,8 @@ use Yajra\Datatables\Datatables;
 use App\Helpers\Summernote;
 use App\Models\Artikel\Kategori;
 use App\Models\Artikel\Tag;
-use App\Models\ArtikelKategori;
-use App\Models\ArtikelTag;
+use App\Models\Artikel\TagArtikel;
+use App\Models\Artikel\KategoriArtikel;
 use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
@@ -71,8 +71,8 @@ class ArtikelController extends Controller
             'navigation' => $navigation
         ];
         $edit = true;
-        $tbl = ArtikelKategori::tableName;
-        $kategori = ArtikelKategori::select([
+        $tbl = KategoriArtikel::tableName;
+        $kategori = KategoriArtikel::select([
             'artikel_kategori.nama as text',
             'artikel_kategori.id'
         ])
@@ -80,8 +80,8 @@ class ArtikelController extends Controller
             ->where("$tbl.artikel_id", "=", $artikel->id)
             ->get();
 
-        $tbl = ArtikelTag::tableName;
-        $tag = ArtikelTag::select([
+        $tbl = TagArtikel::tableName;
+        $tag = TagArtikel::select([
             'artikel_tag.nama as text',
             'artikel_tag.id'
         ])
@@ -185,7 +185,7 @@ class ArtikelController extends Controller
         if (!$kategori) return false;
 
         // delete all kategori item where artikel_id
-        ArtikelKategori::where('artikel_id', '=', $artikel_id)->delete();
+        KategoriArtikel::where('artikel_id', '=', $artikel_id)->delete();
 
         // insert all kategori item where artikel_id
         $kategories = [];
@@ -197,7 +197,7 @@ class ArtikelController extends Controller
                 'kategori_id' => $id,
             ];
         }
-        ArtikelKategori::insert($kategories);
+        KategoriArtikel::insert($kategories);
         return true;
     }
 
@@ -218,7 +218,7 @@ class ArtikelController extends Controller
         if (!$tag) return false;
 
         // delete all tag item where artikel_id
-        ArtikelTag::where('artikel_id', '=', $artikel_id)->delete();
+        TagArtikel::where('artikel_id', '=', $artikel_id)->delete();
 
         // insert all tag item where artikel_id
         $tages = [];
@@ -230,7 +230,7 @@ class ArtikelController extends Controller
                 'tag_id' => $id,
             ];
         }
-        ArtikelTag::insert($tages);
+        TagArtikel::insert($tages);
         return true;
     }
 
