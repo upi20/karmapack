@@ -11,4 +11,5 @@ class Kategori extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'artikel_kategori';
+    const tableName = 'artikel_kategori';
 }

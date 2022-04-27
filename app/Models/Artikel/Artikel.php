@@ -11,4 +11,5 @@ class Artikel extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'artikel';
+    const tableName = 'artikel';
 }

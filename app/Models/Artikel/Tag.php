@@ -11,4 +11,5 @@ class Tag extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'artikel_tag';
+    const tableName = 'artikel_tag';
 }
