@@ -52,7 +52,9 @@ use App\Http\Controllers\Member\ProfileController;
 
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
+use App\Http\Controllers\Frontend\KontakController;
 use App\Http\Controllers\Frontend\MemberController;
+use App\Http\Controllers\Frontend\GaleriController as GaleriControllerFrontend;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -102,8 +104,27 @@ Route::group(['prefix' => 'anggota'], function () {
 
 
 
-// ====================================================================================================================
+// Bidang =============================================================================================================
 Route::get('/bidang/{model:slug}', [HomeController::class, 'bidang'])->name('bidang');
+// ====================================================================================================================
+
+
+
+
+// Kontak =============================================================================================================
+Route::group(['prefix' => 'kontak'], function () {
+    Route::get('/', [KontakController::class, 'index'])->name('kontak'); // page
+});
+// ====================================================================================================================
+
+
+
+
+// Galeri =============================================================================================================
+Route::group(['prefix' => 'galeri'], function () {
+    Route::get('/', [GaleriControllerFrontend::class, 'index'])->name('galeri'); // page
+    Route::get('/detail/{model:slug}', [GaleriControllerFrontend::class, 'detail'])->name('galeri.detail');
+});
 // ====================================================================================================================
 
 

@@ -67,9 +67,9 @@ $frontend  = [
         'name' => 'bidang',
     ],
     ['title' => 'Anggota', 'route' => 'anggota'],
-    ['title' => 'Galeri'],
+    ['title' => 'Galeri', 'route' => 'galeri'],
     ['title' => 'Pendaftaran'],
-    ['title' => 'Kontak'],
+    ['title' => 'Kontak', 'route' => 'kontak'],
 ];
 
 $member = array_merge($member, [['title' => 'Home Menu', 'separator' => true]], $frontend);
