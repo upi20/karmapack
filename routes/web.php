@@ -72,7 +72,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 // home default =======================================================================================================
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/periode/{model:slug}', [HomeController::class, 'periode'])->name('periode');
+Route::get('/artikel/{model:slug}', [HomeController::class, 'artikel'])->name('artikel');
 // ====================================================================================================================
+
 
 
 

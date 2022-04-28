@@ -74,4 +74,16 @@ class Master
 
         return $result->toArray();
     }
+
+    public static function checkImageYoutube(string $src): ?string
+    {
+        $data = explode('src="', $src);
+        $matches = '';
+        preg_match(
+            "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",
+            $data[1],
+            $matches
+        );
+        return isset($matches[1]) ? $matches[1] : null;
+    }
 }

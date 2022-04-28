@@ -60,288 +60,143 @@
 @section('content')
     <div class="container-xl">
         <h4 class="section-title text-center mb-3">Daftar artikel terbaru</h4>
+        @if ($tag_selected)
+            <a href="{{ url('') }}" type="button" class="btn btn-default my-3">
+                Tag: {{ $tag_selected->nama }} <span><i class="fas fa-times ms-2"></i></span>
+            </a>
+        @endif
+        @if ($kategori_selected)
+            <a href="{{ url('') }}" type="button" class="btn btn-default my-3">
+                Kategori: {{ $kategori_selected->nama }} <span><i class="fas fa-times ms-2"></i></span>
+            </a>
+        @endif
         <div class="row gy-4">
             <div class="col-lg-8">
                 <div class="row gy-4">
-                    <div class="col-sm-6">
-                        <!-- post -->
-                        <div class="post post-grid rounded bordered bg-white shadow-sm">
-                            <div class="thumb top-rounded">
-                                <a href="category.html" class="category-badge position-absolute">Lifestyle</a>
-                                <span class="post-format">
-                                    <i class="icon-picture"></i>
-                                </span>
-                                <a href="blog-single.html">
-                                    <div class="inner">
-                                        <img src="{{ asset('assets/templates/frontend/images/insta/insta-1.jpg') }}"
-                                            alt="post-title" />
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <ul class="meta list-inline mb-0">
-                                    <li class="list-inline-item"><a href="#"><img
-                                                src="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                                                class="author"
-                                                style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
-                                                alt="author" />Isep
-                                            Lutpi Nur</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">hari Ayah
-                                        Nasional</a></h5>
-                                <p class="excerpt mb-0">Tangan yang selalu sigap menggenggam, bahu yang
-                                    siap sedia menopang, dan
-                                    mata yang selalu menyorotkan kasih sayang, "Ayah".
-                                    Terimakasih selalu menjadi tameng bagi putra putri-Mu.
+                    @foreach ($articles as $a)
+                        <div class="col-sm-6">
+                            <!-- post -->
+                            <div class="post post-grid rounded bordered bg-white shadow-sm">
+                                <div class="thumb top-rounded">
+                                    @if ($a->kategori)
+                                        <a href="{{ url("?kategori=$a->kategori_slug") }}"
+                                            class="category-badge position-absolute" title="Kategori {{ $a->kategori }}">
+                                            {{ $a->kategori }}
+                                        </a>
+                                    @elseif ($a->tag)
+                                        <a href="{{ url("?tag=$a->tag_slug") }}" class="category-badge position-absolute"
+                                            title="Tag {{ $a->tag }}">
+                                            {{ $a->tag }}
+                                        </a>
+                                    @endif
 
-                                    Selamat Hari Ayah Nasional</p>
-                            </div>
-                            <div class="post-bottom clearfix d-flex align-items-center">
-                                <div class="social-share me-auto">
-                                    <button class="toggle-button icon-share"></button>
-                                    <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                                    </ul>
+                                    @php
+                                        $get_id_yt = \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail);
+                                        $youtube = $get_id_yt ? true : false;
+                                        $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
+                                    @endphp
+                                    @if ($youtube)
+                                        <span class="post-format">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                    @endif
+                                    <a href="{{ route('artikel', $a->slug) }}">
+                                        <div class="inner">
+
+                                            <img src="{{ $foto }}" alt="{{ $a->nama }}" />
+
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="more-button float-end">
-                                    <a href="blog-single.html"><span class="icon-options"></span></a>
+                                <div class="details">
+                                    <ul class="meta list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <a
+                                                href="{{ $a->user_username ? url($a->user_username) : url("profile/$a->user_id") }}">
+                                                <img src="{{ asset("$image_folder_user/$a->user_foto") }}"
+                                                    onerror="this.src='{{ asset($image_default_user) }}';this.onerror='';"
+                                                    class="author"
+                                                    style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
+                                                    alt="{{ $a->user }}" />
+                                                {{ $a->user }}
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            {{ date_format(date_create($a->date), 'd M Y') }}</li>
+                                    </ul>
+                                    <h5 class="post-title mb-3 mt-3">
+                                        <a href="{{ route('artikel', $a->slug) }}">
+                                            {{ $a->nama }}
+                                        </a>
+                                    </h5>
+                                    <p class="excerpt mb-0">{{ $a->excerpt }}</p>
+                                </div>
+                                <div class="post-bottom clearfix d-flex align-items-center">
+                                    <div class="social-share me-auto">
+                                        <button class="toggle-button icon-share"></button>
+                                        <ul class="icons list-unstyled list-inline mb-0">
+
+                                            <li class="list-inline-item">
+                                                <a href="https://www.facebook.com/sharer.php?u={{ route('artikel', $a->slug) }}"
+                                                    title="Share To Facebook">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <a href="https://api.whatsapp.com/send?text={{ route('artikel', $a->nama) }} {{ route('artikel', $a->slug) }}"
+                                                    title="Share To Whatsapp">
+                                                    <i class="fab fa-whatsapp"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <a href="https://twitter.com/share?url={{ route('artikel', $a->slug) }}&text={{ route('artikel', $a->nama) }}"
+                                                    title="Share To Twitter">
+                                                    <i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $a->slug) }}&title={{ route('artikel', $a->nama) }}&summary={{ route('artikel', $a->excerpt) }}"
+                                                    title="Share To Linkedin">
+                                                    <i class="fab fa-linkedin-in"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <a href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $a->slug) }}&media={{ asset($a->foto) }}&description={{ route('artikel', $a->nama) }}"
+                                                    title="Share To Pinterest">
+                                                    <i class="fab fa-pinterest"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <a href="https://telegram.me/share/url?url={{ route('artikel', $a->slug) }}&text={{ route('artikel', $a->nama) }}"
+                                                    title="Share To Telegram">
+                                                    <i class="fab fa-telegram-plane"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <a href="mailto:?subject={{ route('artikel', $a->nama) }}&body=Check out this site: {{ route('artikel', $a->slug) }}"
+                                                    title="Share by Email';" title="Share Via Email">
+                                                    <i class="far fa-envelope"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <!-- post -->
-                        <div class="post post-grid rounded bordered bg-white shadow-sm">
-                            <div class="thumb top-rounded">
-                                <a href="category.html" class="category-badge position-absolute">Inspiration</a>
-                                <a href="blog-single.html">
-                                    <div class="inner">
-                                        <img src="{{ asset('assets/templates/frontend/images/insta/insta-2.jpg') }}"
-                                            alt="post-title" />
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <ul class="meta list-inline mb-0">
-                                    <li class="list-inline-item"><a href="#"><img
-                                                src="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                                                class="author"
-                                                style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
-                                                alt="author" />Isep
-                                            Lutpi Nur</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">HARI GERAKAN
-                                        NASIONAL MEMBACA</a></h5>
-                                <p class="excerpt mb-0">Makin aku banyak membaca, makin aku banyak
-                                    berfikir, makin banyak aku
-                                    belajar, makin aku sadar bahwa aku tak mengetahui apapun.
-                                    -Voltaire-
-
-                                    Selamat Hari Gerakan Nasional Membaca✨</p>
-                            </div>
-                            <div class="post-bottom clearfix d-flex align-items-center">
-                                <div class="social-share me-auto">
-                                    <button class="toggle-button icon-share"></button>
-                                    <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="more-button float-end">
-                                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <!-- post -->
-                        <div class="post post-grid rounded bordered bg-white shadow-sm">
-                            <div class="thumb top-rounded">
-                                <a href="category.html" class="category-badge position-absolute">Inspiration</a>
-                                <a href="blog-single.html">
-                                    <div class="inner">
-                                        <img src="{{ asset('assets/templates/frontend/images/insta/insta-3.jpg') }}"
-                                            alt="post-title" />
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <ul class="meta list-inline mb-0">
-                                    <li class="list-inline-item"><a href="#"><img
-                                                src="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                                                class="author"
-                                                style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
-                                                alt="author" />Isep
-                                            Lutpi Nur</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">Menuntut
-                                        Ilmu</a></h5>
-                                <p class="excerpt mb-0">Artinya : _“Siapa yang menempuh jalan untuk
-                                    mencari ilmu, maka Allah akan
-                                    mudahkan baginya jalan menuju surga.”_ (HR. Muslim, no. 2699)</p>
-                            </div>
-                            <div class="post-bottom clearfix d-flex align-items-center">
-                                <div class="social-share me-auto">
-                                    <button class="toggle-button icon-share"></button>
-                                    <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="more-button float-end">
-                                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <!-- post -->
-                        <div class="post post-grid rounded bordered bg-white shadow-sm">
-                            <div class="thumb top-rounded">
-                                <a href="category.html" class="category-badge position-absolute">HBN</a>
-                                <span class="post-format">
-                                    <i class="icon-camrecorder"></i>
-                                </span>
-                                <a href="blog-single.html">
-                                    <div class="inner">
-                                        <img src="{{ asset('assets/templates/frontend/images/insta/insta-5.jpg') }}"
-                                            alt="post-title" />
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <ul class="meta list-inline mb-0">
-                                    <li class="list-inline-item"><a href="#"><img
-                                                src="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                                                class="author"
-                                                style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
-                                                alt="author" />Isep
-                                            Lutpi Nur</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">Hari Pahlawan
-                                        Nasional</a></h5>
-                                <p class="excerpt mb-0">"Bangsa yang besar adalah bangsa yang menghormati
-                                    jasa pahlawannya." (Ir.
-                                    Soekarno)
-                                    Sudah saatnya kita mengingat, menghargai, dan belajar dari tokoh bangsa
-                                    dimasa lalu, untuk
-                                    membangun generasi muda indonesia yang lebih baik.</p>
-                            </div>
-                            <div class="post-bottom clearfix d-flex align-items-center">
-                                <div class="social-share me-auto">
-                                    <button class="toggle-button icon-share"></button>
-                                    <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="more-button float-end">
-                                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <!-- post -->
-                        <div class="post post-grid rounded bordered bg-white shadow-sm">
-                            <div class="thumb top-rounded">
-                                <a href="category.html" class="category-badge position-absolute">Trending</a>
-                                <a href="blog-single.html">
-                                    <div class="inner">
-                                        <img src="{{ asset('assets/templates/frontend/images/insta/insta-6.jpg') }}"
-                                            alt="post-title" />
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <ul class="meta list-inline mb-0">
-                                    <li class="list-inline-item"><a href="#"><img
-                                                src="{{ asset('assets/templates/frontend/images/member/Isep Lutpi Nur.png') }}"
-                                                class="author"
-                                                style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
-                                                alt="author" />Isep
-                                            Lutpi Nur</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">Membaca adalah
-                                        senjata</a></h5>
-                                <p class="excerpt mb-0">Buku yang dibaca adalah senjata bagi perempuan
-                                    dari pembodohan, penindasan
-                                    dan perlakuan tidak adil.
-                                    Buka bukumu sekarang juga, niscaya dunia akan terlihat jelas!</p>
-                            </div>
-                            <div class="post-bottom clearfix d-flex align-items-center">
-                                <div class="social-share me-auto">
-                                    <button class="toggle-button icon-share"></button>
-                                    <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="more-button float-end">
-                                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
+                    @endforeach
                 </div>
 
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">1</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    </ul>
-                </nav>
+                @if ($pagination)
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            {!! $pagination !!}
+                        </ul>
+                    </nav>
+                @endif
 
             </div>
             <div class="col-lg-4">
@@ -349,27 +204,95 @@
                 <!-- sidebar -->
                 <div class="sidebar">
                     <!-- widget about -->
-
                     <div class="widget rounded bg-white shadow-sm">
-                        <div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png">
+                        <div class="widget-about data-bg-image text-center"
+                            data-bg-image="{{ asset('assets/templates/frontend/images/map-bg.png') }}">
                             <h3 class="widget-title">Kabinet Masagi</h3>
                             <br>{{ $periode->slogan }}</p>
+                            <ul class="social-icons list-unstyled list-inline mb-0">
+                                @foreach ($list_sosmed as $sosmed)
+                                    <li class="list-inline-item">
+                                        <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
+                                            <i class="{{ $sosmed['icon'] }}"></i>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- widget popular posts -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Popular Posts</h3>
+                            <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            @foreach ($top_article as $k => $a)
+                                <!-- post -->
+                                <div class="post post-list-sm circle">
+                                    <div class="thumb circle">
+                                        <span class="number">{{ $k + 1 }}</span>
+                                        <a href="{{ route('artikel', $a->slug) }}">
+                                            <div class="inner">
+                                                @php
+                                                    $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail) . '/sddefault.jpg';
+                                                @endphp
+                                                <img src="{{ $foto }}" alt="{{ $a->nama }}"
+                                                    style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details clearfix">
+                                        <h6 class="post-title my-0"><a
+                                                href="{{ route('artikel', $a->slug) }}">{{ $a->nama }}</a>
+                                        </h6>
+                                        <ul class="meta list-inline mt-1 mb-0">
+                                            <li class="list-inline-item">
+                                                {{ date_format(date_create($a->date), 'd M Y') }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 
                     <!-- widget categories -->
-                    <div class="widget rounded bg-white shadow-sm">
+                    <div class="widget rounded">
                         <div class="widget-header text-center">
-                            <h3 class="widget-title">Kategori</h3>
+                            <h3 class="widget-title">Explore Topics</h3>
                             <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
                                 alt="wave" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">
-                                <li><a href="#">Hari Besar Nasional</a><span>(5)</span></li>
-                                <li><a href="#">Akhlakul Kharimah</a><span>(2)</span></li>
-                                <li><a href="#">Berita Dan Informasi</a><span>(4)</span></li>
+                                @foreach ($categories as $kategori)
+                                    <li><a href="{{ url("?kategori=$kategori->slug") }}"
+                                            class="{{ $kategori_selected ? ($kategori_selected->slug == $kategori->slug ? 'text-primary' : '') : '' }}">
+                                            {{ $kategori->nama }}
+                                        </a>
+                                        <span>({{ $kategori->artikel }})</span>
+                                    </li>
+                                @endforeach
                             </ul>
+                        </div>
+                    </div>
+
+                    <!-- widget tags -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Tag Clouds</h3>
+                            <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            @foreach ($tags as $tag)
+                                <a href="{{ url("?tag=$tag->slug") }}"
+                                    class="tag {{ $tag_selected ? ($tag_selected->slug == $tag->slug ? 'text-primary' : '') : '' }}">
+                                    {{ $tag->nama }}
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
