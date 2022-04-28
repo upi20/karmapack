@@ -53,7 +53,14 @@ class Pagination
 
         if ($active_set >= 1) {
             foreach ($datas->links as $k => $link) {
-                if (($k > $active_set) && ($k <= $datas->last_page) && ($active_after_count <= $active_after_max)) {
+                if (
+                    // lebih dari nomor aktif
+                    ($k > $active_set) &&
+                    // kurang dari dua angka di untuk next dan angka terakhir
+                    ($k <= $datas->last_page - 1) &&
+                    // kurang dari max
+                    ($active_after_count <= $active_after_max)
+                ) {
                     $active_after .= '<li class="page-item" title="Go to page ' . $link->label . '" aria-current="page">
                         <a href="' . $link->url . ($params ? '&' . $params : '') . '" class="page-link">' . $link->label . '</a>
                     </li>';
