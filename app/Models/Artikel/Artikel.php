@@ -12,4 +12,5 @@ class Artikel extends Model
     protected $primaryKey = 'id';
     protected $table = 'artikel';
     const tableName = 'artikel';
+    const image_folder = '/assets/artikel';
 }

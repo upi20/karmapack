@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
 {
-    private $image_folder = '/assets/artikel';
+    private $image_folder = Artikel::image_folder;
     public function index(Request $request)
     {
         if (request()->ajax()) {
