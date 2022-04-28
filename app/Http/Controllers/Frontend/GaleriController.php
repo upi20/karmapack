@@ -28,7 +28,7 @@ class GaleriController extends Controller
             'description' => 'List Galeri Kegiatan Karmapack',
             'url' => route('galeri'),
             'keywords' =>  'Galeri Kegiatan, Galeri, Kegiatan, Karmapack',
-            'image' => $foto,
+            // 'image' => $foto,
         ];
 
         return view('frontend.galeri.list', compact(
@@ -48,7 +48,7 @@ class GaleriController extends Controller
             'description' => $model->keterangan,
             'url' => route('galeri.detail', $model->slug),
             'keywords' =>  'Galeri Kegiatan, Galeri, Kegiatan, Karmapack, ' . $model->nama,
-            'image' => "https://drive.google.com/uc?export=view&id={$model->foto_id_gdrive}",
+            // 'image' => "https://drive.google.com/uc?export=view&id={$model->foto_id_gdrive}",
         ];
 
         return view('frontend.galeri.detail', compact('page_attr', 'model'));
