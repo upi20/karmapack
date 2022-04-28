@@ -34,6 +34,63 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $galery->nama }}</h5>
                                     <p class="card-text text-dark">{{ $galery->keterangan }}</p>
+                                    <!-- social icons -->
+                                    <ul class="social-icons list-unstyled list-inline mb-0 float-md-end">
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://www.facebook.com/sharer.php?u={{ route('artikel', $galery->slug) }}"
+                                                title="Share To Facebook">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://api.whatsapp.com/send?text={{ route('artikel', $galery->slug) }} {{ $galery->nama }}"
+                                                title="Share To Whatsapp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://twitter.com/share?url={{ route('artikel', $galery->slug) }}&text={{ $galery->nama }}"
+                                                title="Share To Twitter">
+                                                <i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $galery->slug) }}&title={{ $galery->nama }}&summary={{ $galery->keterangan }}"
+                                                title="Share To Linkedin">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $galery->slug) }}&media={{ asset($galery->foto) }}&description={{ $galery->nama }}"
+                                                title="Share To Pinterest">
+                                                <i class="fab fa-pinterest"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="https://telegram.me/share/url?url={{ route('artikel', $galery->slug) }}&text={{ $galery->nama }}"
+                                                title="Share To Telegram">
+                                                <i class="fab fa-telegram-plane"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <a target="_blank"
+                                                href="mailto:?subject={{ $galery->nama }}&body=Check out this site: {{ route('artikel', $galery->slug) }}"
+                                                title="Share by Email">
+                                                <i class="far fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </a>
