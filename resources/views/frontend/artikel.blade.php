@@ -63,47 +63,54 @@
                                     <ul class="social-icons list-unstyled list-inline mb-0 float-md-end">
 
                                         <li class="list-inline-item">
-                                            <a href="https://www.facebook.com/sharer.php?u={{ route('artikel', $model->slug) }}"
+                                            <a target="_blank"
+                                                href="https://www.facebook.com/sharer.php?u={{ route('artikel', $a->slug) }}"
                                                 title="Share To Facebook">
                                                 <i class="fab fa-facebook-f"></i>
                                             </a>
                                         </li>
 
                                         <li class="list-inline-item">
-                                            <a href="https://api.whatsapp.com/send?text={{ route('artikel', $model->nama) }} {{ route('artikel', $model->slug) }}"
+                                            <a target="_blank"
+                                                href="https://api.whatsapp.com/send?text={{ route('artikel', $a->slug) }} {{ $a->nama }}"
                                                 title="Share To Whatsapp">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
                                         </li>
 
                                         <li class="list-inline-item">
-                                            <a href="https://twitter.com/share?url={{ route('artikel', $model->slug) }}&text={{ route('artikel', $model->nama) }}"
+                                            <a target="_blank"
+                                                href="https://twitter.com/share?url={{ route('artikel', $a->slug) }}&text={{ $a->nama }}"
                                                 title="Share To Twitter">
                                                 <i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $model->slug) }}&title={{ route('artikel', $model->nama) }}&summary={{ route('artikel', $model->excerpt) }}"
+                                            <a target="_blank"
+                                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $a->slug) }}&title={{ $a->nama }}&summary={{ $a->excerpt }}"
                                                 title="Share To Linkedin">
                                                 <i class="fab fa-linkedin-in"></i>
                                             </a>
                                         </li>
 
                                         <li class="list-inline-item">
-                                            <a href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $model->slug) }}&media={{ asset($model->foto) }}&description={{ route('artikel', $model->nama) }}"
+                                            <a target="_blank"
+                                                href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $a->slug) }}&media={{ asset($a->foto) }}&description={{ $a->nama }}"
                                                 title="Share To Pinterest">
                                                 <i class="fab fa-pinterest"></i>
                                             </a>
                                         </li>
 
                                         <li class="list-inline-item">
-                                            <a href="https://telegram.me/share/url?url={{ route('artikel', $model->slug) }}&text={{ route('artikel', $model->nama) }}"
+                                            <a target="_blank"
+                                                href="https://telegram.me/share/url?url={{ route('artikel', $a->slug) }}&text={{ $a->nama }}"
                                                 title="Share To Telegram">
                                                 <i class="fab fa-telegram-plane"></i>
                                             </a>
                                         </li>
 
                                         <li class="list-inline-item">
-                                            <a href="mailto:?subject={{ route('artikel', $model->nama) }}&body=Check out this site: {{ route('artikel', $model->slug) }}"
+                                            <a target="_blank"
+                                                href="mailto:?subject={{ $a->nama }}&body=Check out this site: {{ route('artikel', $a->slug) }}"
                                                 title="Share by Email';" title="Share Via Email">
                                                 <i class="far fa-envelope"></i>
                                             </a>
