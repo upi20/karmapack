@@ -53,24 +53,24 @@ class ArtikelTagItemTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 11,
-                'artikel_id' => 31,
-                'tag_id' => 2,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            5 => 
-            array (
                 'id' => 13,
                 'artikel_id' => 33,
                 'tag_id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 => 
+            5 => 
             array (
                 'id' => 15,
                 'artikel_id' => 32,
+                'tag_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 19,
+                'artikel_id' => 31,
                 'tag_id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,

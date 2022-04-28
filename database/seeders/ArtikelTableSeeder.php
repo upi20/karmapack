@@ -547,9 +547,9 @@ Goals Report 2021<p></p></span></p><p class="MsoNormal" style="margin-bottom: 11
                 'excerpt' => 'Testing video youtube',
                 'counter' => 0,
                 'date' => '2022-04-27',
-                'status' => 0,
+                'status' => 1,
                 'created_at' => '2022-04-28 07:19:02',
-                'updated_at' => '2022-04-28 07:40:34',
+                'updated_at' => '2022-04-28 07:46:51',
                 'user_id' => 1,
             ),
         ));
