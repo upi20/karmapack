@@ -64,7 +64,7 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://www.facebook.com/sharer.php?u={{ route('artikel', $a->slug) }}"
+                                                href="https://www.facebook.com/sharer.php?u={{ route('artikel', $model->slug) }}"
                                                 title="Share To Facebook">
                                                 <i class="fab fa-facebook-f"></i>
                                             </a>
@@ -72,7 +72,7 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://api.whatsapp.com/send?text={{ route('artikel', $a->slug) }} {{ $a->nama }}"
+                                                href="https://api.whatsapp.com/send?text={{ route('artikel', $model->slug) }} {{ $model->nama }}"
                                                 title="Share To Whatsapp">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
@@ -80,13 +80,13 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://twitter.com/share?url={{ route('artikel', $a->slug) }}&text={{ $a->nama }}"
+                                                href="https://twitter.com/share?url={{ route('artikel', $model->slug) }}&text={{ $model->nama }}"
                                                 title="Share To Twitter">
                                                 <i class="fab fa-twitter"></i></a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $a->slug) }}&title={{ $a->nama }}&summary={{ $a->excerpt }}"
+                                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $model->slug) }}&title={{ $model->nama }}&summary={{ $model->excerpt }}"
                                                 title="Share To Linkedin">
                                                 <i class="fab fa-linkedin-in"></i>
                                             </a>
@@ -94,7 +94,7 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $a->slug) }}&media={{ asset($a->foto) }}&description={{ $a->nama }}"
+                                                href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $model->slug) }}&media={{ asset($model->foto) }}&description={{ $model->nama }}"
                                                 title="Share To Pinterest">
                                                 <i class="fab fa-pinterest"></i>
                                             </a>
@@ -102,7 +102,7 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="https://telegram.me/share/url?url={{ route('artikel', $a->slug) }}&text={{ $a->nama }}"
+                                                href="https://telegram.me/share/url?url={{ route('artikel', $model->slug) }}&text={{ $model->nama }}"
                                                 title="Share To Telegram">
                                                 <i class="fab fa-telegram-plane"></i>
                                             </a>
@@ -110,7 +110,7 @@
 
                                         <li class="list-inline-item">
                                             <a target="_blank"
-                                                href="mailto:?subject={{ $a->nama }}&body=Check out this site: {{ route('artikel', $a->slug) }}"
+                                                href="mailto:?subject={{ $model->nama }}&body=Check out this site: {{ route('artikel', $model->slug) }}"
                                                 title="Share by Email';" title="Share Via Email">
                                                 <i class="far fa-envelope"></i>
                                             </a>
