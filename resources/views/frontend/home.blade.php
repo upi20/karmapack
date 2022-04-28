@@ -30,11 +30,13 @@
                 @foreach ($anggota as $a)
                     <div class="post featured-post-md">
                         <div class="details clearfix">
-                            <h4 class="post-title my-1"><a href="blog-single.html">{{ $a->name }}</a></h4>
+                            <h4 class="post-title my-1"><a
+                                    href="{{ $a->username ? url($a->username) : url("profile/$a->id") }}">{{ $a->name }}</a>
+                            </h4>
                             <h6 class="text-white fw-bold my-1">{{ $a->jabatan }}</h6>
                         </div>
 
-                        <a href="blog-single.html">
+                        <a href="{{ $a->username ? url($a->username) : url("profile/$a->id") }}">
                             <div class="thumb rounded">
                                 @if ($a->utama == 0)
                                     <a href="{{ route('bidang', $a->parent_slug) }}"
