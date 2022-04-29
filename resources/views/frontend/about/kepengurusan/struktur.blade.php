@@ -13,7 +13,7 @@
                     <td style="border: 0; max-width: 5px;">:</td>
                     <td style="border: 0;">
                         @php
-                            $url = $utama->pejabat->username ? url($utama->pejabat->username) : url('profile') . '/' . $utama->pejabat->id;
+                            $url = $utama->pejabat->username ? url($utama->pejabat->username) : route('anggota.id', $utama->pejabat->id);
                         @endphp
                         <a href="{{ $url }}">{{ $utama->pejabat->name }}</a>
                     </td>
@@ -38,7 +38,7 @@
                                 @if (isset($body->pejabat[0]))
                                     @php
                                         $pejabat = $body->pejabat[0];
-                                        $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                        $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                     @endphp
                                     <a href="{{ $url }}">{{ $pejabat->name }}</a>
                                 @endif
@@ -52,7 +52,7 @@
                                     <td style="border: 0;">:</td>
                                     <td style="border: 0;">
                                         @php
-                                            $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                            $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                         @endphp
                                         <a href="{{ $url }}">{{ $pejabat->name }}</a>
                                     </td>
@@ -67,7 +67,7 @@
                             <td style="border: 0;">
                                 @php
                                     $pejabat = $body->pejabat;
-                                    $url = $pejabat->username ? url($pejabat->username) : url('profile') . '/' . $pejabat->id;
+                                    $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                 @endphp
                                 <a href="{{ $url }}">{{ $pejabat->name }}</a>
                             </td>
