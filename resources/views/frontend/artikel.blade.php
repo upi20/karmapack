@@ -27,7 +27,7 @@
                             <ul class="meta list-inline mb-0">
 
                                 <li class="list-inline-item"> <a
-                                        href="{{ $user->username ? url($user->username) : url("profile/$user->id") }}">
+                                        href="{{ $user->username ? url($user->username) : route('anggota.id', $user->id) }}">
                                         <img src="{{ asset("$image_folder_user/$user->foto") }}"
                                             onerror="this.src='{{ asset($image_default_user) }}';this.onerror='';"
                                             class="author"

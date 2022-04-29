@@ -31,12 +31,12 @@
                     <div class="post featured-post-md">
                         <div class="details clearfix">
                             <h4 class="post-title my-1"><a
-                                    href="{{ $a->username ? url($a->username) : url("profile/$a->id") }}">{{ $a->name }}</a>
+                                    href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}">{{ $a->name }}</a>
                             </h4>
                             <h6 class="text-white fw-bold my-1">{{ $a->jabatan }}</h6>
                         </div>
 
-                        <a href="{{ $a->username ? url($a->username) : url("profile/$a->id") }}">
+                        <a href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}">
                             <div class="thumb rounded">
                                 @if ($a->utama == 0)
                                     <a href="{{ route('bidang', $a->parent_slug) }}"
@@ -114,7 +114,7 @@
                                     <ul class="meta list-inline mb-0">
                                         <li class="list-inline-item">
                                             <a
-                                                href="{{ $a->user_username ? url($a->user_username) : url("profile/$a->user_id") }}">
+                                                href="{{ $a->user_username ? url($a->user_username) : route('anggota.id', $a->user_id) }}">
                                                 <img src="{{ asset("$image_folder_user/$a->user_foto") }}"
                                                     onerror="this.src='{{ asset($image_default_user) }}';this.onerror='';"
                                                     class="author"

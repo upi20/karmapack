@@ -42,7 +42,8 @@ $angkatan = 0;
                             <div class="card mb-3 card-main">
                                 <div class="row g-0">
                                     <div class="col-md-4 p-0 p-0">
-                                        <a href="{{ $item->username ? url($item->username) : url("profile/$item->id") }}">
+                                        <a
+                                            href="{{ $item->username ? url($item->username) : route('anggota.id', $item->id) }}">
                                             <img onerror="this.src='{{ asset($image->default) }}';this.onerror='';"
                                                 src="{{ asset("$image->folder/$item->foto") }}"
                                                 class="img-fluid rounded-start" alt="{{ $item->name }}"
@@ -52,7 +53,7 @@ $angkatan = 0;
                                     <div class="col-md-8">
                                         <div class="card-body">
                                             <a
-                                                href="{{ $item->username ? url($item->username) : url("profile/$item->id") }}">
+                                                href="{{ $item->username ? url($item->username) : route('anggota.id', $item->id) }}">
                                                 <h5 class="card-title mt-1 mb-0">{{ $item->name }}</h5>
                                             </a>
 
