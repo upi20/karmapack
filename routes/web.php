@@ -80,15 +80,6 @@ Route::get('/artikel/{model:slug}', [HomeController::class, 'artikel'])->name('a
 
 
 
-// Profile ============================================================================================================
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/periode/{model:slug}', [HomeController::class, 'periode'])->name('periode');
-Route::get('/artikel/{model:slug}', [HomeController::class, 'artikel'])->name('artikel');
-// ====================================================================================================================
-
-
-
-
 // Periode Kepengurusan ===============================================================================================
 Route::group(['prefix' => 'about'], function () {
     Route::group(['prefix' => 'kepengurusan'], function () {

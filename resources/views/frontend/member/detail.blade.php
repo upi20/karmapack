@@ -146,53 +146,179 @@
                     </div>
                 </div>
 
+
                 <div class="col-lg-9 col-md-6 col-sm-6">
-                    <div class="widget rounded card-main">
-                        <div class="widget-header">
-                            <h3 class="widget-title">Kontak</h3>
-                        </div>
-                        <div class="widget-content">
-                            Kontak
-                        </div>
-                    </div>
+                    @if ($model->whatsapp || $model->telepon || $contacts->count() > 0)
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title mb-0">Kontak</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="row">
+                                    @if ($model->telepon)
+                                        <div class="col-md-6 mb-2">
+                                            <span class="fw-bold d-block">
+                                                <i class="fas fa-phone me-2"></i> Telepon
+                                            </span>
+                                            <a href="tel:{{ $model->telepon }}" target="_blank">
+                                                {{ $model->telepon }}
+                                            </a>
+                                        </div>
+                                    @endif
+                                    @if ($model->whatsapp)
+                                        <div class="col-md-6 mb-2">
+                                            <span class="fw-bold d-block">
+                                                <i class="fab fa-whatsapp me-2"></i> Whatsapp
+                                            </span>
+                                            <a href="https://api.whatsapp.com/send?phone=62{{ $model->whatsapp }}"
+                                                target="_blank">
+                                                +62{{ $model->whatsapp }}
+                                            </a>
+                                        </div>
+                                    @endif
+                                    @foreach ($contacts as $item)
+                                        <div class="col-md-6 mb-2">
+                                            <span class="fw-bold d-block">
+                                                <i class="{{ $item->icon }} me-2"></i>
+                                                {{ $item->kontak }}
+                                            </span>
+                                            @if (filter_var($item->value, FILTER_VALIDATE_URL))
+                                                <a href="{{ $item->value }}" target="_blank">
+                                                    {{ $item->value }}
+                                                </a>
+                                            @else
+                                                {{ $item->value }}
+                                            @endif
 
+                                        </div>
+                                    @endforeach
 
-                    <div class="widget rounded card-main">
-                        <div class="widget-header">
-                            <h3 class="widget-title">Riwayat Kepengurusan</h3>
+                                </div>
+                            </div>
                         </div>
-                        <div class="widget-content">
-                            Riwayat Kepengurusan
-                        </div>
-                    </div>
+                    @endif
 
-                    <div class="widget rounded card-main">
-                        <div class="widget-header">
-                            <h3 class="widget-title">Riwayat Pendidikan</h3>
+                    @if ($kepengurusan)
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title">Riwayat Kepengurusan</h3>
+                            </div>
+                            <div class="widget-content">
+                                @foreach ($kepengurusan as $item)
+                                    <p class="my-1">
+                                        <a href="{{ url('anggota?search=' . $item->sampai) }}">{{ $item->sampai }}</a>
+                                        -
+                                        <a href="{{ url('anggota?search=' . $item->dari) }}">{{ $item->dari }}</a>
+                                        |
+                                        @if ($item->bidang)
+                                            <a href="{{ route('bidang', $item->slug_bidang) }}">
+                                                {{ $item->jabatan }}
+                                                {{ $item->bidang ? '->' . ' ' . $item->bidang : '' }}
+                                            </a>
+                                        @else
+                                            {{ $item->jabatan }}
+                                        @endif
+                                        |
+                                        <a
+                                            href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                            {{ $item->periode }}
+                                        </a>
+                                    </p>
+                                @endforeach
+                            </div>
                         </div>
-                        <div class="widget-content">
-                            Riwayat Pendidikan
-                        </div>
-                    </div>
+                    @endif
 
-                    <div class="widget rounded card-main">
-                        <div class="widget-header">
-                            <h3 class="widget-title">Pengalaman Organisasi</h3>
+                    @if ($pendidikan->count())
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title mb-0">Riwayat Pendidikan</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="row">
+                                    @foreach ($pendidikan as $item)
+                                        <div class="col-lg-6 mb-3">
+                                            <span class="fw-bold d-block">
+                                                <a href="{{ url('anggota?search=') . $item->instansi }}">
+                                                    {{ $item->instansi }}
+                                                </a>
+                                            </span>
+                                            <p class="my-1">
+                                                {{ $item->dari }} -
+                                                {{ $item->sampai ? $item->sampai : 'sekarang' }}
+                                            </p>
+                                            @if ($item->jurusan)
+                                                <p class="my-1">{{ $item->jurusan }}</p>
+                                            @endif
+                                            @if ($item->keterangan)
+                                                <p class="my-1">{{ $item->keterangan }}</p>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
-                        <div class="widget-content">
-                            Pengalaman Organisasi
-                        </div>
-                    </div>
+                    @endif
 
-                    <div class="widget rounded card-main">
-                        <div class="widget-header">
-                            <h3 class="widget-title">Pengalaman Lain</h3>
+                    @if ($pengalaman_organisasi->count())
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title mb-0">Pengalaman Organisasi</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="row">
+                                    @foreach ($pengalaman_organisasi as $item)
+                                        <div class="col-lg-6 mb-3">
+                                            <span class="fw-bold d-block">
+                                                {{ $item->nama }}
+                                            </span>
+                                            <p class="my-1">
+                                                {{ $item->dari }} -
+                                                {{ $item->sampai ? $item->sampai : 'sekarang' }}
+                                            </p>
+                                            @if ($item->jabatan)
+                                                <p class="my-1">{{ $item->jabatan }}</p>
+                                            @endif
+                                            @if ($item->keterangan)
+                                                <p class="my-1">{{ $item->keterangan }}</p>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
-                        <div class="widget-content">
-                            Pengalaman Lain
-                        </div>
-                    </div>
+                    @endif
 
+                    @if ($pengalaman_lain->count())
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title mb-0">Pengalaman Lain</h3>
+                            </div>
+                            <div class="widget-content">
+                                @foreach ($pengalaman_lain as $items)
+                                    <p>{{ $items->pengalaman }}</p>
+                                    <hr>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
+                    @if ($hobbies->count())
+                        <div class="widget rounded card-main">
+                            <div class="widget-header mb-2">
+                                <h3 class="widget-title mb-0">Hobi</h3>
+                            </div>
+                            <div class="widget-content">
+                                @foreach ($hobbies as $item)
+                                    <span class="tag">
+                                        <a href="{{ url('anggota?search=' . $item->name) }}">
+                                            {{ $item->name }}
+                                        </a>
+                                    </span>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
