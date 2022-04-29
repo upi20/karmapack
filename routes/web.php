@@ -80,6 +80,14 @@ Route::get('/artikel/{model:slug}', [HomeController::class, 'artikel'])->name('a
 
 
 
+// Profile ============================================================================================================
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/periode/{model:slug}', [HomeController::class, 'periode'])->name('periode');
+Route::get('/artikel/{model:slug}', [HomeController::class, 'artikel'])->name('artikel');
+// ====================================================================================================================
+
+
+
 
 // Periode Kepengurusan ===============================================================================================
 Route::group(['prefix' => 'about'], function () {
@@ -98,6 +106,7 @@ Route::group(['prefix' => 'about'], function () {
 // Periode Kepengurusan ===============================================================================================
 Route::group(['prefix' => 'anggota'], function () {
     Route::get('/', [MemberController::class, 'index'])->name('anggota');
+    Route::get('/{model:id}', [MemberController::class, 'member'])->name('anggota.id');
 });
 // ====================================================================================================================
 
@@ -420,6 +429,4 @@ Route::group(['prefix' => 'lab'], function () {
 
 
 // profile username ===================================================================================================
-Route::get('/{username}', function ($username) {
-    dd($username);
-});
+Route::get('/{model:username}', [MemberController::class, 'member'])->name('anggota.username');
