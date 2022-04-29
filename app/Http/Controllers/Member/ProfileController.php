@@ -29,10 +29,10 @@ class ProfileController extends Controller
     public function index(Request $request)
     {
         $user_id = $request->id ?? auth()->user()->id;
-        if (!$user_id) abort(404);
+        if (!$user_id) return abort(404);
 
         $user = $this->getUser($user_id);
-        if (!$user) abort(404);
+        if (!$user) return abort(404);
         $page_attr = [
             'title' => 'Profile',
             'breadcrumbs' => [
