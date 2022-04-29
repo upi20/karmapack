@@ -198,7 +198,7 @@
                         </div>
                     @endif
 
-                    @if ($kepengurusan)
+                    @if ($kepengurusan->count())
                         <div class="widget rounded card-main">
                             <div class="widget-header mb-2">
                                 <h3 class="widget-title">Riwayat Kepengurusan</h3>
