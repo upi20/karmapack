@@ -121,7 +121,8 @@ class ProfileController extends Controller
             $foto = '';
             if ($image = $request->file('profile')) {
                 $foto =   ($model->username ?? strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $model->name))) . date('YmdHis') . "." . $image->getClientOriginalExtension();
-                $image->move($this->image_folder, $foto);
+
+                $image->move(public_path($this->image_folder), $foto);
 
                 // delete foto
                 if ($model->foto) {
