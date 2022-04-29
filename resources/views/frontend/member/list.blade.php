@@ -7,7 +7,7 @@ $angkatan = 0;
     <section class="page-header">
         <div class="container-xl">
             <div class="text-center">
-                <h1 class="mt-0 mb-2">Anggota Karmapack</h1>
+                <h1 class="mt-0 mb-2">Semua Anggota</h1>
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="{{ url('') }}" class="me-1">Home</a> > Anggota
                 </div>
