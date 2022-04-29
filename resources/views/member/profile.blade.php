@@ -174,11 +174,15 @@
                             <label for="date_of_birth">Tanggal Lahir</label>
                             <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
                                 title="Tanggal Lahir" value="{{ $user->date_of_birth }}" required>
+                            <small class="text-danger">Tanggal lahir hanya di gunakan oleh admin untuk pengingat ulang
+                                tahun anggota dan tidak akan di tampilkan/akses di halaman depan/utama.</small>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email"
                                 value="{{ $user->email }}" required>
+                            <small class="text-danger">Email hanya digunakan untuk login anggota dan tidak akan di
+                                tampilkan/akses di halaman depan/utama.</small>
                         </div>
                         <div class="form-group">
                             <label for="telepon">Nomor Telepon</label>
@@ -517,6 +521,11 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('stylesheet')
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
 @endsection
 
 @section('javascript')
@@ -1247,7 +1256,7 @@
                                         data-id="${e.id}"
                                         data-kontak_tipe_id="${e.kontak_id}"
                                         onclick="kontakEdit(this)">
-                                        <i class="fa fa-pencil"></i></button>
+                                        <i class="fas fa-edit"></i></button>
                                     <button class="btn btn-danger btn-sm"
                                     onclick="kontakDelete('${e.id}')"><i class="fa fa-trash"></i></button>
                                 </div>
@@ -1379,7 +1388,7 @@
                                             data-keterangan="${e.keterangan ?? ''}"
                                             data-pendidikan_jenis_id="${e.pendidikan_id}"
                                             onclick="pendidikanEdit(this)">
-                                            <i class="fa fa-pencil"></i>
+                                            <i class="fas fa-edit"></i>
                                         </button>
                                         <button class="btn btn-danger btn-sm my-1" onclick="pendidikanDelete('${e.id}')">
                                             <i class="fa fa-trash"></i>
@@ -1512,7 +1521,7 @@
                                             data-sampai="${e.sampai ?? ''}"
                                             data-keterangan="${e.keterangan ?? ''}"
                                             onclick="pengalaman_organisasiEdit(this)">
-                                            <i class="fa fa-pencil"></i>
+                                            <i class="fas fa-edit"></i>
                                         </button>
                                         <button class="btn btn-danger btn-sm my-1" onclick="pengalaman_organisasiDelete('${e.id}')">
                                             <i class="fa fa-trash"></i>
@@ -1631,7 +1640,7 @@
                                             data-pengalaman="${e.pengalaman}"
                                             data-keterangan="${e.keterangan ?? ''}"
                                             onclick="pengalaman_lainEdit(this)">
-                                            <i class="fa fa-pencil"></i>
+                                            <i class="fas fa-edit"></i>
                                         </button>
                                         <button class="btn btn-danger btn-sm my-1" onclick="pengalaman_lainDelete('${e.id}')">
                                             <i class="fa fa-trash"></i>
