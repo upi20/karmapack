@@ -115,7 +115,7 @@ class ProfileController extends Controller
                 'angkatan' => ['required', 'int', 'max:9999', 'min:2003'],
             ]);
             $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) abort(401);
+            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             // foto handle
             $foto = '';
@@ -189,7 +189,7 @@ class ProfileController extends Controller
                 'alamat_lengkap' => ['nullable', 'string', 'max:255'],
             ]);
             $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) abort(401);
+            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->province_id = $request->province_id;
             $model->regency_id = $request->regency_id;
@@ -219,7 +219,7 @@ class ProfileController extends Controller
                 'username' => ['nullable', 'string', 'max:255', 'unique:users,username,' . $request->id],
             ]);
             $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) abort(401);
+            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->username = $request->username;
             $model->name = $request->name;
@@ -267,7 +267,7 @@ class ProfileController extends Controller
                 'kontak' => ['required', 'string'],
             ]);
             $model = new Kontak();
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->kontak_tipe_id = $request->tipe;
@@ -293,7 +293,7 @@ class ProfileController extends Controller
                 'kontak' => ['required', 'string'],
             ]);
             $model = Kontak::find($request->id);
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->kontak_tipe_id = $request->tipe;
@@ -387,7 +387,7 @@ class ProfileController extends Controller
             DB::beginTransaction();
 
             // cek hak akses
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             // delete hobbies
             Hobby::where('user_id', '=', $request->user_id)->delete();
@@ -423,7 +423,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = new Pendidikan();
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->pendidikan_jenis_id = $request->jenis;
@@ -457,7 +457,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = Pendidikan::find($request->id);
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->pendidikan_jenis_id = $request->jenis;
@@ -566,7 +566,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = new PengalamanOrganisasi();
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->nama = $request->nama;
@@ -598,7 +598,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = PengalamanOrganisasi::find($request->id);
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->nama = $request->nama;
@@ -693,7 +693,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = new PengalamanLain();
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->pengalaman = $request->pengalaman;
@@ -719,7 +719,7 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = PengalamanLain::find($request->id);
-            if (!$this->savePermission($request->user_id)) abort(401);
+            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             $model->user_id = $request->user_id;
             $model->pengalaman = $request->pengalaman;
