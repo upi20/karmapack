@@ -1,7 +1,24 @@
 @extends('templates.frontend.master')
 
 @section('content')
-    <div class="container">
+    <!-- page header -->
+    <section class="page-header">
+        <div class="container-xl">
+            <div class="text-center">
+                <h1 class="mt-0 mb-2">
+                    {{ $model->nama }}
+                    @if ($model->singkatan)
+                        ({{ $model->singkatan }})
+                    @endif
+                </h1>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="{{ url('') }}" class="me-1">Home</a> > Bidang
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5">
         <img src="{{ $model->fotoUrl() }}" alt="{{ $periode->nama }}"
             onerror="this.src='{{ asset('assets/templates/frontend/images/logo/300x300.png') }}';this.onerror='';"
             class="rounded mx-auto d-block">

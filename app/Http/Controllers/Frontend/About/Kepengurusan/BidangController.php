@@ -13,12 +13,15 @@ class BidangController extends Controller
     {
         $image_folder = Jabatan::image_folder;
         $member_list = BidangRepository::member_list($model->id);
+        $periode = Periode::find($model->periode_id);
+
         $page_attr = [
             'title' => $model->nama,
             'navigation' => ['about.kepengurusan.bidang', $model->slug],
+            'description' => "Struktur Kepengurusan Bidang $model->nama | Keluarga Mahasiswa Dan Pelajar Cianjur Kidul Periode $model->dari - $model->sampai $model->nama",
+            'image' => $model->fotoUrl(),
         ];
 
-        $periode = Periode::find($model->periode_id);
         return view('frontend.about.kepengurusan.bidang', compact('page_attr', 'model', 'member_list', 'periode'));
     }
 }
