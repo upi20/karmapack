@@ -21,7 +21,10 @@ class StrukturController extends Controller
     {
         $page_attr = [
             // 'loader' => false,
+            'title' => $model->nama,
+            'description' => "STRUKTUR KEPENGURUSAN KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL PERIODE $model->dari - $model->sampai $model->nama",
             'periode_id' => $model->id,
+            'image' => $model->fotoUrl(),
             'navigation' => 'about.kepengurusan.struktur',
         ];
         $member = StrukturRepository::member_list($model->id);

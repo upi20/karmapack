@@ -1,7 +1,19 @@
 @extends('templates.frontend.master')
 
 @section('content')
-    <div class="container">
+    <!-- page header -->
+    <section class="page-header">
+        <div class="container-xl">
+            <div class="text-center">
+                <h1 class="mt-0 mb-2">Struktur Kepengursan</h1>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="{{ url('') }}" class="me-1">Home</a> > Tentang Kami > Struktur Kepengursan
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5">
         <img src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}" class="rounded mx-auto d-block">
         <h1 class="h5 text-center text-uppercase">STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA DAN PELAJAR CIANJUR
             KIDUL<br>PERIODE {{ $periode->dari }} - {{ $periode->sampai }}<br> {{ $periode->nama }}</h1>
@@ -22,7 +34,8 @@
 
             @foreach ($member->bidang as $bidang)
                 <tr>
-                    <td colspan="4" style="border: 0;"><a href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
+                    <td colspan="4" style="border: 0;"><a
+                            href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
                             {{ $bidang->header->nama }}
                         </a>
                     </td>
