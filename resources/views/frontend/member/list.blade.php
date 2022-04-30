@@ -94,7 +94,7 @@ $angkatan = 0;
 
                                             @if ($item->jabatan_nama)
                                                 <small class="text-muted d-block">
-                                                    <a href="{{ route('bidang', $item->jabatan_slug) }}">
+                                                    <a href="{{ route('about.kepengurusan.bidang', $item->jabatan_slug) }}">
                                                         {{ $item->jabatan_nama }}
                                                     </a>
                                                 </small>

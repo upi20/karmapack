@@ -328,9 +328,9 @@
                                 data-slug="${full.slug}"
                                 data-parent_id="${full.parent_id}"
                                 data-no_urut="${full.no_urut}"
-                                data-visi="${full.visi}"
-                                data-misi="${full.misi}"
-                                data-slogan="${full.slogan}"
+                                data-visi="${full.visi ?? ''}"
+                                data-misi="${full.misi ?? ''}"
+                                data-slogan="${full.slogan ?? ''}"
                                 data-singkatan="${full.singkatan ?? ''}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit

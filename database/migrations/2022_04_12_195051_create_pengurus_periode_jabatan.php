@@ -22,9 +22,9 @@ class CreatePengurusPeriodeJabatan extends Migration
             $table->string('slug')->unique();
             $table->string('foto')->nullable();
             $table->string('singkatan')->nullable()->default(null);
-            $table->text('visi');
-            $table->text('misi');
-            $table->text('slogan');
+            $table->text('visi')->nullable()->default(null);
+            $table->text('misi')->nullable()->default(null);
+            $table->text('slogan')->nullable()->default(null);
             $table->boolean('status')->default(0);
             $table->timestamps();
 

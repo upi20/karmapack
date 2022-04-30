@@ -13,4 +13,9 @@ class Jabatan extends Model
     protected $table = 'pengurus_periode_jabatan';
     const tableName = 'pengurus_periode_jabatan';
     const image_folder = '/assets/pengurus/jabatan';
+    public function fotoUrl()
+    {
+        $foto = $this->attributes['foto'];
+        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/templates/frontend/images/logo/300x300.png');
+    }
 }

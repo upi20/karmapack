@@ -39,7 +39,7 @@
                         <a href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}">
                             <div class="thumb rounded">
                                 @if ($a->utama == 0)
-                                    <a href="{{ route('bidang', $a->parent_slug) }}"
+                                    <a href="{{ route('about.kepengurusan.bidang', $a->parent_slug) }}"
                                         class="category-badge position-absolute">
                                         @if ($a->singkatan)
                                             {{ $a->singkatan }}

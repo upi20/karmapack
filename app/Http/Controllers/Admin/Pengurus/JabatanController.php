@@ -123,9 +123,9 @@ class JabatanController extends Controller
                 'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan'],
                 'status' => ['required', 'int'],
                 'no_urut' => ['required', 'int'],
-                'visi' => ['required', 'string'],
-                'misi' => ['required', 'string'],
-                'slogan' => ['required', 'string'],
+                'visi' => ['nullable', 'string'],
+                'misi' => ['nullable', 'string'],
+                'slogan' => ['nullable', 'string'],
                 'singkatan' => ['nullable', 'string'],
                 'periode_id' => ['required', 'int'],
             ]);
@@ -143,8 +143,8 @@ class JabatanController extends Controller
                 'slug' => $request->slug,
                 'status' => $request->status,
                 'no_urut' => $request->no_urut,
-                'visi' => $visi->html,
-                'misi' => $misi->html,
+                'visi' => (trim($visi->html) == '<p><br></p>') ? null : $visi->html,
+                'misi' => (trim($misi->html) == '<p><br></p>') ? null : $misi->html,
                 'slogan' => $request->slogan,
                 'singkatan' => $request->singkatan ?? null,
                 'foto' => $foto,
@@ -172,9 +172,9 @@ class JabatanController extends Controller
                 'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan,slug,' . $request->id],
                 'status' => ['required', 'int'],
                 'no_urut' => ['required', 'int'],
-                'visi' => ['required', 'string'],
-                'misi' => ['required', 'string'],
-                'slogan' => ['required', 'string'],
+                'visi' => ['nullable', 'string'],
+                'misi' => ['nullable', 'string'],
+                'slogan' => ['nullable', 'string'],
                 'singkatan' => ['nullable', 'string'],
             ]);
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi' . substr($request->slug, 0, 20));
@@ -201,8 +201,8 @@ class JabatanController extends Controller
             $model->slug = $request->slug;
             $model->status = $request->status;
             $model->no_urut = $request->no_urut;
-            $model->visi = $visi->html;
-            $model->misi = $misi->html;
+            $model->visi = (trim($visi->html) == '<p><br></p>') ? null : $visi->html;
+            $model->misi = (trim($misi->html) == '<p><br></p>') ? null : $misi->html;
             $model->slogan = $request->slogan;
             $model->singkatan = $request->singkatan ?? null;
             // $model->updated_by = auth()->user()->id;

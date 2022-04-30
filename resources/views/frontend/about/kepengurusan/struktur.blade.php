@@ -22,7 +22,7 @@
 
             @foreach ($member->bidang as $bidang)
                 <tr>
-                    <td colspan="4" style="border: 0;"><a href="{{ route('bidang', $bidang->header->slug) }}">
+                    <td colspan="4" style="border: 0;"><a href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
                             {{ $bidang->header->nama }}
                         </a>
                     </td>

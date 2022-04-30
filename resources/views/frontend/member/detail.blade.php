@@ -211,7 +211,7 @@
                                         <a href="{{ url('anggota?search=' . $item->dari) }}">{{ $item->dari }}</a>
                                         |
                                         @if ($item->bidang)
-                                            <a href="{{ route('bidang', $item->slug_bidang) }}">
+                                            <a href="{{ route('about.kepengurusan.bidang', $item->slug_bidang) }}">
                                                 {{ $item->jabatan }}
                                                 {{ $item->bidang ? '->' . ' ' . $item->bidang : '' }}
                                             </a>
