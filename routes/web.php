@@ -49,13 +49,13 @@ use App\Http\Controllers\LoaderController;
 use App\Http\Controllers\Member\ProfileController;
 
 // Frontend ===========================================================================================================
-
-// Tentang Kami =======================================================================================================
-use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\KontakController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\GaleriController as GaleriControllerFrontend;
 
+// Tentang Kami =======================================================================================================
+use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
+use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -87,6 +87,7 @@ Route::group(['prefix' => 'about'], function () {
             Route::get('/', [StrukturController::class, 'index'])->name('about.kepengurusan.struktur');
             Route::get('/{model:slug}', [StrukturController::class, 'periode'])->name('about.kepengurusan.struktur.periode');
         });
+        Route::get('/bidang/{model:slug}', [BidangController::class, 'index'])->name('about.kepengurusan.bidang');
     });
 });
 // ====================================================================================================================
@@ -99,13 +100,6 @@ Route::group(['prefix' => 'anggota'], function () {
     Route::get('/', [MemberController::class, 'index'])->name('anggota');
     Route::get('/{model:id}', [MemberController::class, 'member'])->name('anggota.id');
 });
-// ====================================================================================================================
-
-
-
-
-// Bidang =============================================================================================================
-Route::get('/bidang/{model:slug}', [HomeController::class, 'bidang'])->name('bidang');
 // ====================================================================================================================
 
 

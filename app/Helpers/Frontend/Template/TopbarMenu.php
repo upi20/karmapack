@@ -76,14 +76,20 @@ class TopbarMenu
             </li>";
         $menu_extra = auth()->user() ? $dashboard : $login;
         // Menu Extra =================================================================================
-
         $menu_footer = $menu_extra . '</ul>';
         return $menu_head . $menu_body . $menu_footer;
     }
 
-    private function checkActive($route): bool
+    private function checkActive($route, $param): bool
     {
-        return request()->routeIs($route) || $this->navigation == $route;
+        // mempunyai parameter
+        if (is_array($this->navigation) && count($this->navigation) == 2) {
+            $route_nav = $this->navigation[0];
+            $param_nav = $this->navigation[1];
+            return request()->routeIs($route_nav) && $param ==  $param_nav;
+        } else {
+            return request()->routeIs($route) || $this->navigation == $route;
+        }
     }
 
     private function generate_route($route, $param = null, $metod = 'route'): string
@@ -116,7 +122,7 @@ class TopbarMenu
         $route = isset($menu['route']) ? $menu['route'] : '#';
         $metod = isset($menu['route_type']) ? $menu['route_type'] : 'route';
         $param = isset($menu['param']) ? $menu['param'] : null;
-        $active = $this->checkActive($route);
+        $active = $this->checkActive($route, $param, $metod);
         $active_class = $active ? 'active' : '';
         $route = $route == '#' ? '#' : $this->generate_route($route, $param, $metod);
         return (object) [

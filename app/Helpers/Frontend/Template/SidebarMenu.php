@@ -77,9 +77,15 @@ class SidebarMenu
         return $menu_head . $menu_body . $menu_footer;
     }
 
-    private function checkActive($route): bool
+    private function checkActive($route, $param): bool
     {
-        return request()->routeIs($route) || $this->navigation == $route;
+        if (is_array($this->navigation) && count($this->navigation) == 2) {
+            $route_nav = $this->navigation[0];
+            $param_nav = $this->navigation[1];
+            return request()->routeIs($route_nav) && $param ==  $param_nav;
+        } else {
+            return request()->routeIs($route) || $this->navigation == $route;
+        }
     }
 
     private function generate_route($route, $param = null, $metod = 'route'): string
@@ -112,7 +118,7 @@ class SidebarMenu
         $route = isset($menu['route']) ? $menu['route'] : '#';
         $metod = isset($menu['route_type']) ? $menu['route_type'] : 'route';
         $param = isset($menu['param']) ? $menu['param'] : null;
-        $active = $this->checkActive($route);
+        $active = $this->checkActive($route, $param);
         $active_class = $active ? 'active' : '';
         $route = $route == '#' ? '#' : $this->generate_route($route, $param, $metod);
         return (object) [

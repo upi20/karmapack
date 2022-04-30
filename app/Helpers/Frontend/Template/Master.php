@@ -53,8 +53,8 @@ class Master
         foreach ($this->menu_bidang_get() as $m) {
             $menus_temp[] = [
                 'title' => $m['nama'],
-                'route' => 'bidang/' . $m['slug'],
-                'route_type' => 'url',
+                'route' => 'about.kepengurusan.bidang',
+                'param' => $m['slug'],
             ];
         }
 
