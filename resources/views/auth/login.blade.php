@@ -187,10 +187,6 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
             $('#logo').attr('src', "{{ asset('assets/templates/admin/images/brand/logo-3.png') }}");
         }
-
-        // route
-        const dashboard_route = "{{ route('dashboard') }}";
-        const check_login_route = "{{ route('login.check_login') }}";
     </script>
 
     <script src="{{ url('loader/js/auth.login.js') }}"></script>

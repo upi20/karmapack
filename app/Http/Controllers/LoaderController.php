@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Blade;
 use MatthiasMullie\Minify\JS;
 
 class LoaderController extends Controller
@@ -18,7 +19,8 @@ class LoaderController extends Controller
                 // check file exists
                 if (file_exists($full_path)) {
                     $minifier = new JS($full_path);
-                    return response($minifier->minify())->header('Content-Type', 'application/javascript');
+                    $result = Blade::render($minifier->minify());
+                    return response($result)->header('Content-Type', 'application/javascript');
                 } else return $this->js_nf($a[0]);
             } else return $this->js_nf($a[0]);
         } else return $this->js_nf($a[0]);

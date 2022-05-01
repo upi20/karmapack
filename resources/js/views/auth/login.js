@@ -18,7 +18,7 @@ $(document).ready(function () {
             });
         } else {
             $.ajax({
-                url: check_login_route,
+                url: "{{ route('login.check_login') }}",
                 type: "POST",
                 dataType: "JSON",
                 headers: {
@@ -39,7 +39,7 @@ $(document).ready(function () {
                             showConfirmButton: false
                         })
                             .then(function () {
-                                window.location.href = dashboard_route;
+                                window.location.href = "{{ route('dashboard') }}";
 
                             });
                     } else {
