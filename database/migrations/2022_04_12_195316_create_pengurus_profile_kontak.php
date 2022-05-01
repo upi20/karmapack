@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengurusProfileKontak extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -53,4 +53,4 @@ class CreatePengurusProfileKontak extends Migration
     {
         Schema::dropIfExists('pengurus_profile_kontak');
     }
-}
+};
