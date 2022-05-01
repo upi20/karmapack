@@ -39,7 +39,7 @@ $admin = [
     ],
 
     ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
-    ['title' => 'Pendaftaran', 'route' => 'admin.pendaftaran', 'icon' => 'fe fe-pencil'],
+    ['title' => 'Pendaftaran', 'route' => 'admin.pendaftaran', 'icon' => 'fe fe-edit'],
     ['title' => 'Sosial Media', 'icon' => 'fe fe-aperture', 'route' => 'admin.social_media'],
     ['title' => 'Kontak', 'icon' => 'fe fe-phone', 'route' => 'admin.contact'],
     ['title' => 'Footer Instagram', 'icon' => 'fe fe-image', 'route' => 'admin.footer_instagram'],
