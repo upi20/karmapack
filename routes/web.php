@@ -1,54 +1,57 @@
 <?php
-// utility
+
+// ====================================================================================================================
+use App\Models\User;
+
+// ====================================================================================================================
+// utility ============================================================================================================
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
-// model
-use App\Models\User;
-
-// controller
-use App\Http\Controllers\Admin\UserController;
+// Controller =========================================================================================================
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LabController;
+use App\Http\Controllers\LoaderController;
 
-// Address
+// ====================================================================================================================
+// Admin ==============================================================================================================
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\SocialMediaController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\FooterInstagramController;
+use App\Http\Controllers\Admin\PendaftaranController;
+use App\Http\Controllers\Admin\UsernameValidateController;
+
+// Address ============================================================================================================
 use App\Http\Controllers\Admin\Address\ProvinceController;
 use App\Http\Controllers\Admin\Address\RegencieController;
 use App\Http\Controllers\Admin\Address\DistrictController;
 use App\Http\Controllers\Admin\Address\VillageController;
 
-// artikel
+// Artikel ============================================================================================================
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
 
-// pengurus
+// Pengurus ============================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
 use App\Http\Controllers\Admin\Pengurus\JabatanMemberController;
 
-// Galeri
-use App\Http\Controllers\Admin\GaleriController;
-
-// profile addon
+// Profile ============================================================================================================
 use App\Http\Controllers\Admin\Profile\KontakTipeController;
 use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 
-// social medie
-use App\Http\Controllers\Admin\SocialMediaController;
 
-// contact
-use App\Http\Controllers\Admin\ContactController;
-
-// Footer Instagram
-use App\Http\Controllers\Admin\FooterInstagramController;
-use App\Http\Controllers\Admin\UsernameValidateController;
-use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\LabController;
-use App\Http\Controllers\LoaderController;
+// ====================================================================================================================
+// Member =============================================================================================================
 use App\Http\Controllers\Member\ProfileController;
 
+// ====================================================================================================================
 // Frontend ===========================================================================================================
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\KontakController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\GaleriController as GaleriControllerFrontend;
@@ -327,6 +330,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::get('/', [UsernameValidateController::class, 'index'])->name('admin.username_validation'); // page
         Route::get('/update', [UsernameValidateController::class, 'select2'])->name('admin.username_validation.select2');
         Route::post('/save', [UsernameValidateController::class, 'save'])->name('admin.username_validation.save');
+    });
+
+    // Footer instagram
+    Route::group(['prefix' => 'pendaftaran'], function () {
+        Route::get('/', [PendaftaranController::class, 'index'])->name('admin.pendaftaran'); // page
+        Route::post('/', [PendaftaranController::class, 'insert'])->name('admin.pendaftaran.insert');
+        Route::delete('/{model}', [PendaftaranController::class, 'delete'])->name('admin.pendaftaran.delete');
+        Route::post('/update', [PendaftaranController::class, 'update'])->name('admin.pendaftaran.update');
     });
 });
 // ====================================================================================================================
