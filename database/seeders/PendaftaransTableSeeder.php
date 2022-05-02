@@ -21,33 +21,18 @@ class PendaftaransTableSeeder extends Seeder
         \DB::table('pendaftarans')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'nama' => 'Komunikasi dan Informasi',
-                'deskripsi' => 'des',
-                'pengumuman' => 'peng',
+                'id' => 3,
+                'nama' => 'Sensus Anggota',
+                'deskripsi' => 'Sensus anggota bertujuan untuk mendokumentasikan data anggota dan untuk mempermudah komunikasi pengurus terhadap anggota yang masih menjabat maupun alumni.',
+            'pengumuman' => 'Sensus anggota sedang dilakukan, untuk semua anggota karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota. diharapkan untuk mengisi sensus disini(link)',
                 'no_urut' => 1,
                 'dari' => '2022-05-01',
-                'sampai' => '2022-05-21',
-                'route' => 'admin',
-                'foto' => '20220501195849.png',
+                'sampai' => '2022-06-01',
+                'route' => 'sensus',
+                'foto' => '20220502200252.webp',
                 'status' => 1,
-                'created_at' => '2022-05-01 19:55:43',
-                'updated_at' => '2022-05-01 20:00:43',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'nama' => 'Komunikasi dan Informasi',
-                'deskripsi' => 'a',
-                'pengumuman' => 'a',
-                'no_urut' => 1,
-                'dari' => '2022-05-12',
-                'sampai' => '2022-06-10',
-                'route' => 'admin',
-                'foto' => '20220501195930.webp',
-                'status' => 2,
-                'created_at' => '2022-05-01 19:59:30',
-                'updated_at' => '2022-05-01 20:00:49',
+                'created_at' => '2022-05-02 20:02:52',
+                'updated_at' => '2022-05-02 20:02:52',
             ),
         ));
         

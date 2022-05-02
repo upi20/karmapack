@@ -395,6 +395,46 @@ class PengurusPeriodeJabatanMemberTableSeeder extends Seeder
                 'created_at' => '2022-04-21 14:58:12',
                 'updated_at' => '2022-04-21 14:58:12',
             ),
+            47 => 
+            array (
+                'id' => 79,
+                'jabatan_id' => 38,
+                'user_id' => 37,
+                'created_at' => '2022-05-02 19:49:06',
+                'updated_at' => '2022-05-02 19:49:06',
+            ),
+            48 => 
+            array (
+                'id' => 80,
+                'jabatan_id' => 39,
+                'user_id' => 33,
+                'created_at' => '2022-05-02 19:49:20',
+                'updated_at' => '2022-05-02 19:49:20',
+            ),
+            49 => 
+            array (
+                'id' => 81,
+                'jabatan_id' => 40,
+                'user_id' => 51,
+                'created_at' => '2022-05-02 19:49:47',
+                'updated_at' => '2022-05-02 19:49:47',
+            ),
+            50 => 
+            array (
+                'id' => 82,
+                'jabatan_id' => 40,
+                'user_id' => 50,
+                'created_at' => '2022-05-02 19:49:47',
+                'updated_at' => '2022-05-02 19:49:47',
+            ),
+            51 => 
+            array (
+                'id' => 83,
+                'jabatan_id' => 40,
+                'user_id' => 22,
+                'created_at' => '2022-05-02 19:49:47',
+                'updated_at' => '2022-05-02 19:49:47',
+            ),
         ));
         
         
