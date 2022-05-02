@@ -6,6 +6,7 @@ $page_attr = (object) [
     'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
     'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : true,
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
@@ -100,11 +101,13 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
 <body class="app sidebar-mini ltr light-mode">
 
-    <!-- GLOBAL-LOADER -->
-    {{-- <div id="global-loader">
-        <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
-    </div> --}}
-    <!-- /GLOBAL-LOADER -->
+    @if ($page_attr->loader)
+        <!-- GLOBAL-LOADER -->
+        <div id="global-loader">
+            <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
+        </div>
+        <!-- /GLOBAL-LOADER -->
+    @endif
 
     <!-- PAGE -->
     <div class="page">
