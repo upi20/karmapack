@@ -28,11 +28,11 @@ class PendaftaransTableSeeder extends Seeder
                 'no_urut' => 1,
                 'dari' => '2022-05-01',
                 'sampai' => '2022-06-01',
-                'route' => 'sensus',
-                'foto' => '20220502200252.webp',
+                'route' => 'pendaftaran.sensus',
+                'foto' => '20220502202741.png',
                 'status' => 1,
                 'created_at' => '2022-05-02 20:02:52',
-                'updated_at' => '2022-05-02 20:02:52',
+                'updated_at' => '2022-05-02 22:17:08',
             ),
         ));
         
