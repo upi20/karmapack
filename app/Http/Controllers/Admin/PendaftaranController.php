@@ -46,4 +46,9 @@ class PendaftaranController extends Controller
     {
         return $this->repository->delete($model);
     }
+
+    public function getOne(Pendaftaran $model)
+    {
+        return response()->json($model);
+    }
 }

@@ -347,6 +347,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     // Footer instagram
     Route::controller(PendaftaranController::class)->prefix('pendaftaran')->group(function () {
         Route::get('/',  'index')->name('admin.pendaftaran'); // page
+        Route::get('/get_one/{model}',  'getOne')->name('admin.pendaftaran.get_one'); // page
         Route::post('/',  'insert')->name('admin.pendaftaran.insert');
         Route::delete('/{model}',  'delete')->name('admin.pendaftaran.delete');
         Route::post('/update',  'update')->name('admin.pendaftaran.update');

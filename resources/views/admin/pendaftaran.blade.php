@@ -39,8 +39,7 @@
                                     <th>Dari</th>
                                     <th>Sampai</th>
                                     <th>Route</th>
-                                    <th>Deskripsi</th>
-                                    <th>Pengumuman</th>
+                                    <th>Detail</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -147,6 +146,26 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modal-detail">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-detail-title">Detail</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body" id="modal-detail-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('javascript')
@@ -227,12 +246,15 @@
                         name: 'route'
                     },
                     {
-                        data: 'deskripsi',
-                        name: 'deskripsi'
-                    },
-                    {
-                        data: 'pengumuman',
-                        name: 'pengumuman'
+                        data: 'id',
+                        name: 'id',
+                        render(data, type, full, meta) {
+                            return `
+                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Delete Data" onClick="detail('${data}')">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                </button>
+                                `;
+                        },
                     },
                     {
                         data: 'status_str',
@@ -423,6 +445,35 @@
 
         function viewIcon(image) {
             $('#icon-view-image').attr('src', `{{ asset($image_folder) }}/${image}`)
+        }
+
+        function detail(id) {
+            $.ajax({
+                type: "GET",
+                url: `{{ url('admin/pendaftaran/get_one') }}/${id}`,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: (data) => {
+                    $("#modal-detail").modal('show');
+                    $("#modal-detail-body").html(`
+                    <h3>Deskripsi</h3>
+                    <p>${data.deskripsi}</p>
+                    <h3>Pengumuman</h3>
+                    ${data.pengumuman}
+                    `);
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: res.message ?? 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+            });
         }
     </script>
 @endsection
