@@ -21,7 +21,6 @@ use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FooterInstagramController;
-use App\Http\Controllers\Admin\PendaftaranController;
 use App\Http\Controllers\Admin\UsernameValidateController;
 
 // Address ============================================================================================================
@@ -44,6 +43,9 @@ use App\Http\Controllers\Admin\Pengurus\JabatanMemberController;
 use App\Http\Controllers\Admin\Profile\KontakTipeController;
 use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 
+// Pendaftaran ========================================================================================================
+use App\Http\Controllers\Admin\PendaftaranController;
+use App\Http\Controllers\Admin\Pendaftaran\SensusController as SensusControllerAdmin;
 
 // ====================================================================================================================
 // Member =============================================================================================================
@@ -345,12 +347,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     });
 
     // Footer instagram
-    Route::controller(PendaftaranController::class)->prefix('pendaftaran')->group(function () {
-        Route::get('/',  'index')->name('admin.pendaftaran'); // page
-        Route::get('/get_one/{model}',  'getOne')->name('admin.pendaftaran.get_one'); // page
-        Route::post('/',  'insert')->name('admin.pendaftaran.insert');
-        Route::delete('/{model}',  'delete')->name('admin.pendaftaran.delete');
-        Route::post('/update',  'update')->name('admin.pendaftaran.update');
+    Route::prefix('pendaftaran')->group(function () {
+        Route::controller(PendaftaranController::class)->group(function () {
+            Route::get('/',  'index')->name('admin.pendaftaran'); // page
+            Route::get('/get_one/{model}',  'getOne')->name('admin.pendaftaran.get_one'); // page
+            Route::post('/',  'insert')->name('admin.pendaftaran.insert');
+            Route::delete('/{model}',  'delete')->name('admin.pendaftaran.delete');
+            Route::post('/update',  'update')->name('admin.pendaftaran.update');
+        });
+
+        Route::controller(SensusControllerAdmin::class)->prefix('sensus')->group(function () {
+            Route::get('/',  'index')->name('admin.pendaftaran.sensus'); // page
+        });
     });
 });
 // ====================================================================================================================
