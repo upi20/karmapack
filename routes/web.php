@@ -418,7 +418,14 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
 // Utility ============================================================================================================
 Route::controller(LoaderController::class)->prefix('loader')->group(function () {
-    Route::get('/js/{file}', 'javascript')->name('lab.phpspreadsheet');
+    Route::prefix('js')->group(function () {
+        Route::get('/{file}.js', 'js')->name('load_js');
+        Route::get('/{f}/{file}.js', 'js_a')->name('load_js_a');
+        Route::get('/{f}/{f_a}/{file}.js', 'js_b')->name('load_js_b');
+        Route::get('/{f}/{f_a}/{f_b}/{file}.js', 'js_b')->name('load_js_b');
+        Route::get('/{f}/{f_a}/{f_b}/{f_c}/{file}.js', 'js_c')->name('load_js_c');
+        Route::get('/{f}/{f_a}/{f_b}/{f_c}/{f_d}/{file}.js', 'js_d')->name('load_js_d');
+    });
 });
 // ====================================================================================================================
 

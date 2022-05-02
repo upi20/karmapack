@@ -7,23 +7,44 @@ use MatthiasMullie\Minify\JS;
 
 class LoaderController extends Controller
 {
-    public function javascript($file)
+    public function js($file)
     {
-        $a = explode('.js', $file);
-        // check javascript extension
-        if (isset($a[1])) {
-            // check javascript extension
-            if ($a[1] == '') {
-                $b = str_replace('.', '/', $a[0]);
-                $full_path = resource_path("js/views/$b.js");
-                // check file exists
-                if (file_exists($full_path)) {
-                    $minifier = new JS($full_path);
-                    $result = Blade::render($minifier->minify());
-                    return response($result)->header('Content-Type', 'application/javascript');
-                } else return $this->js_nf($a[0]);
-            } else return $this->js_nf($a[0]);
-        } else return $this->js_nf($a[0]);
+        $path = "$file.js";
+        return $this->render($path);
+    }
+
+    public function js_a(string $f, string $file)
+    {
+        $path = "$f/$file.js";
+        return $this->render($path);
+    }
+
+    public function js_b(string $f, string $f_a, string $file)
+    {
+        $path = "$f/$f_a/$file.js";
+        return $this->render($path);
+    }
+
+    public function js_c(string $f, string $f_a, string $f_c, string $file)
+    {
+        $path = "$f/$f_a/$f_c/$file.js";
+        return $this->render($path);
+    }
+
+    public function js_d(string $f, string $f_a, string $f_c, string $f_d, string $file)
+    {
+        $path = "$f/$f_a/$f_c/$f_d/$file.js";
+        return $this->render($path);
+    }
+
+    private function render($path)
+    {
+        $full_path = resource_path("js/views/$path");
+        if (file_exists($full_path)) {
+            $minifier = new JS($full_path);
+            $result = Blade::render($minifier->minify());
+            return response($result)->header('Content-Type', 'application/javascript');
+        } else return $this->js_nf($path);
     }
 
     private function js_nf($file)
