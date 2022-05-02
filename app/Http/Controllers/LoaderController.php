@@ -13,27 +13,33 @@ class LoaderController extends Controller
         return $this->render($path);
     }
 
-    public function js_a(string $f, string $file)
+    public function js_f(string $f, string $file)
     {
         $path = "$f/$file.js";
         return $this->render($path);
     }
 
-    public function js_b(string $f, string $f_a, string $file)
+    public function js_a(string $f, string $f_a, string $file)
     {
         $path = "$f/$f_a/$file.js";
         return $this->render($path);
     }
 
-    public function js_c(string $f, string $f_a, string $f_c, string $file)
+    public function js_b(string $f, string $f_a, string $f_b, string $file)
     {
-        $path = "$f/$f_a/$f_c/$file.js";
+        $path = "$f/$f_a/$f_b/$file.js";
         return $this->render($path);
     }
 
-    public function js_d(string $f, string $f_a, string $f_c, string $f_d, string $file)
+    public function js_c(string $f, string $f_a, string $f_b,  string $f_c, string $file)
     {
-        $path = "$f/$f_a/$f_c/$f_d/$file.js";
+        $path = "$f/$f_a/$f_b/$f_c/$file.js";
+        return $this->render($path);
+    }
+
+    public function js_d(string $f, string $f_a, string $f_b,  string $f_c, string $f_d, string $file)
+    {
+        $path = "$f/$f_a/$f_b/$f_c/$f_d/$file.js";
         return $this->render($path);
     }
 

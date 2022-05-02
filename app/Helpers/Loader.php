@@ -13,6 +13,8 @@ class Loader
         if (file_exists($full_path)) {
             $minifier = new JS($full_path);
             $result = Blade::render($minifier->minify(), $data);
+            // $text = (string)file_get_contents($full_path);
+            // $result = Blade::render($text, $data);
             return $result;
         } else {
             return "console.log('javascript {$path} not found')";

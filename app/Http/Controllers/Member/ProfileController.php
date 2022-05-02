@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Member;
 
+use App\Helpers\Loader;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ class ProfileController extends Controller
         $kontak_tipe = KontakTipe::where('status', '=', 1)->select(['id', 'nama'])->get();
         $pendidikan_jenis = PendidikanJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
         $hobbies = Hobby::where('user_id', '=', $user->id)->select(['name'])->get();
+        $javascript = Loader::render_js("member/profile.js", ['user' => $user]);
         return view('member.profile', compact(
             'page_attr',
             'user',
@@ -54,7 +56,8 @@ class ProfileController extends Controller
             'provinces',
             'kontak_tipe',
             'pendidikan_jenis',
-            'hobbies'
+            'hobbies',
+            'javascript'
         ));
     }
 

@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'ISEP LUTPI NUR',
                 'whatsapp' => '85798132505',
                 'telepon' => '085798132505',
-                'foto' => 'iseplutpinur20220424173248.jpg',
+                'foto' => 'iseplutpinur20220502090847.png',
                 'profesi' => 'Pelajar/Mahasiswa',
                 'bio' => 'My bio',
                 'role' => 'admin',
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
                 'date_of_birth' => '2000-08-10',
                 'email' => 'iseplutpinur7@gmail.com',
                 'gender' => 'laki-laki',
-                'username' => 'iseplutpinur',
+                'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$7Rf4vzppRE6L7zvgOtyrCuB0e3mm7Z4OiS3Hex7tQZCkx3QfgpTJi',
                 'active' => 1,
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-25 03:12:25',
+                'updated_at' => '2022-05-02 09:08:51',
             ),
             1 => 
             array (
@@ -92,7 +92,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => NULL,
                 'profesi' => 'Pelajar/Mahasiswa',
                 'bio' => NULL,
-                'role' => 'member',
+                'role' => 'admin',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-04-25',
                 'email' => 'hilal@gmail.com',
@@ -113,7 +113,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-25 03:14:12',
+                'updated_at' => '2022-05-02 09:05:03',
             ),
             3 => 
             array (
@@ -124,7 +124,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => NULL,
                 'profesi' => NULL,
                 'bio' => NULL,
-                'role' => 'member',
+                'role' => 'admin',
                 'angkatan' => '2018',
                 'date_of_birth' => '2002-06-15',
                 'email' => 'nita_h@gmail.com',
@@ -145,7 +145,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-05-02 09:05:48',
             ),
             4 => 
             array (
@@ -188,7 +188,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => NULL,
                 'profesi' => NULL,
                 'bio' => NULL,
-                'role' => 'member',
+                'role' => 'admin',
                 'angkatan' => '2018',
                 'date_of_birth' => '2001-03-24',
                 'email' => 'abdul_muhlis@gmail.com',
@@ -209,7 +209,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-05-02 09:05:35',
             ),
             6 => 
             array (
@@ -252,7 +252,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => NULL,
                 'profesi' => NULL,
                 'bio' => NULL,
-                'role' => 'member',
+                'role' => 'admin',
                 'angkatan' => '2018',
                 'date_of_birth' => '2000-01-30',
                 'email' => 'sukirman_maulana@gmail.com',
@@ -273,7 +273,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-05-02 09:06:05',
             ),
             8 => 
             array (
@@ -1468,7 +1468,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => NULL,
                 'profesi' => NULL,
                 'bio' => NULL,
-                'role' => 'member',
+                'role' => 'admin',
                 'angkatan' => '2020',
                 'date_of_birth' => '2010-10-10',
                 'email' => 'indra.kurnia@gmail.com',
@@ -1489,7 +1489,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-05-02 09:06:17',
             ),
             46 => 
             array (
