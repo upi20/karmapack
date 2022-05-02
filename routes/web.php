@@ -57,10 +57,13 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\KontakController;
 use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\GaleriController as GaleriControllerFrontend;
+use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranControllerFrontend;
 
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
+use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
+
 // ====================================================================================================================
 // ====================================================================================================================
 
@@ -135,6 +138,22 @@ Route::controller(KontakController::class)->prefix('kontak')->group(function () 
 Route::controller(GaleriControllerFrontend::class)->prefix('galeri')->group(function () {
     Route::get('/', 'index')->name('galeri'); // page
     Route::get('/detail/{model:slug}', 'detail')->name('galeri.detail');
+});
+// ====================================================================================================================
+
+
+
+
+// Pendaftaran ========================================================================================================
+Route::prefix('pendaftaran')->group(function () {
+    Route::controller(PendaftaranControllerFrontend::class)->group(function () {
+        Route::get('/', 'index')->name('pendaftaran'); // page
+    });
+
+    Route::controller(SensusControllerFrontend::class)->prefix('sensus')->group(function () {
+        Route::get('/', 'index')->name('pendaftaran.sensus'); // page
+        Route::post('/insert', 'insert')->name('pendaftaran.sensus.insert'); // insert
+    });
 });
 // ====================================================================================================================
 

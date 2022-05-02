@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         // php artisan iseed users,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member --force
 
         // backup frontend
-        // php artisan iseed users,pendaftarans --force
+        // php artisan iseed users,pendaftarans,pend_sensus --force
 
         // ============================================================================================================
         // ============================================================================================================
@@ -100,5 +100,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsernameValidationsTableSeeder::class);
         $this->call(GaleriTagMemberTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
+        $this->call(PendSensusTableSeeder::class);
     }
 }

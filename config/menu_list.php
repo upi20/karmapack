@@ -71,7 +71,7 @@ $frontend  = [
     ],
     ['title' => 'Anggota', 'route' => 'anggota'],
     ['title' => 'Galeri', 'route' => 'galeri'],
-    ['title' => 'Pendaftaran'],
+    ['title' => 'Pendaftaran', 'route' => 'pendaftaran'],
     ['title' => 'Kontak', 'route' => 'kontak'],
 ];
 

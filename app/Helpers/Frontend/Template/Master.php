@@ -98,7 +98,7 @@ class Master
         foreach ($this->menu_pendaftaran_get() as $m) {
             $menus_temp[] = [
                 'title' => $m['nama'],
-                'route' => $m['route'],
+                'route' => 'admin.' . $m['route'],
             ];
         }
         return [['name' => 'pendaftaran', 'title' => 'Pendaftaran', 'icon' => 'fe fe-edit', 'children' => $menus_temp]];

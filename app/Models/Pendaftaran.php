@@ -13,4 +13,5 @@ class Pendaftaran extends Model
     protected $table = 'pendaftarans';
     const tableName = 'pendaftarans';
     const image_folder = '/assets/pendaftarans';
+    const image_default = 'assets/image/anggota_default.png';
 }
