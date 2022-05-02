@@ -17,7 +17,7 @@
             <div class="row mt-3">
                 @if (!$pendaftaran->isEmpty())
                     @foreach ($pendaftaran as $item)
-                        <div class="col-sm-6">
+                        <div class="col-lg-6">
                             <div class="card mb-3 card-main">
                                 <div class="row g-0">
                                     <div class="col-md-4 p-0 p-0">
