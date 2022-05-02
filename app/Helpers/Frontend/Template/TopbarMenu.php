@@ -2,6 +2,8 @@
 
 namespace App\Helpers\Frontend\Template;
 
+use Illuminate\Support\Facades\Route;
+
 class TopbarMenu
 {
     private $navigation = '';
@@ -95,12 +97,20 @@ class TopbarMenu
     private function generate_route($route, $param = null, $metod = 'route'): string
     {
         if ($metod == 'route') {
-            return $param ? route($route, $param) : route($route);
+            return $param ? $this->route_build($route, $param) : $this->route_build($route);
         } elseif ($metod == 'url') {
             return $param ? url("$route/$param") : url($route);
         } else {
-            return $param ? route($route, $param) : route($route);
+            return $param ? $this->route_build($route, $param) : $this->route_build($route);
         }
+    }
+
+    private function route_build(string $route, $params = null)
+    {
+        if (Route::has($route)) {
+            if ($params) return route($route, $params);
+            else return route($route);
+        } else return url('');
     }
 
     private function getExtend(string $name): array

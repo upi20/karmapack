@@ -2,6 +2,8 @@
 
 namespace App\Helpers\Frontend\Template;
 
+use App\Models\Pendaftaran;
+
 class Master
 {
     private $periode_id;
@@ -85,5 +87,26 @@ class Master
             $matches
         );
         return isset($matches[1]) ? $matches[1] : null;
+    }
+
+    public function menuPendaftaran()
+    {
+        $menus_temp = [];
+        $menus_temp[] = [
+            'title' => 'List Data', 'route' => 'admin.pendaftaran'
+        ];
+        foreach ($this->menu_pendaftaran_get() as $m) {
+            $menus_temp[] = [
+                'title' => $m['nama'],
+                'route' => $m['route'],
+            ];
+        }
+        return [['name' => 'pendaftaran', 'title' => 'Pendaftaran', 'icon' => 'fe fe-edit', 'children' => $menus_temp]];
+    }
+
+    private function menu_pendaftaran_get()
+    {
+        $result = Pendaftaran::select(['nama', 'route'])->orderBy('no_urut')->get();
+        return $result;
     }
 }

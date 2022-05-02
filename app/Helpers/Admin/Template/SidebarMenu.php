@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers\Frontend\Template;
+namespace App\Helpers\Admin\Template;
 
 use Illuminate\Support\Facades\Route;
 
@@ -32,15 +32,14 @@ class SidebarMenu
             $children = isset($menu['children']) ? $menu['children'] : false;
 
             if ($separator) {
-                // not use separator
-                // $menu_body .= "<li class=\"sub-category\"><h3>{$menu['title']}</h3></li> ";
+                // separator
+                $menu_body .= "<li class=\"sub-category\"><h3>{$menu['title']}</h3></li> ";
             } elseif (is_array($children)) {
                 $child_menu = '';
                 $active = false;
                 foreach ($children as $child) {
                     $child_filter = $this->filterMenu($child);
-                    $active_1 = $child_filter->active ? ' text-primary' : '';
-                    $child_menu .= "<li><a class=\"$child_filter->active_class $active_1\" href=\"$child_filter->route\">$child_filter->title</a></li>";
+                    $child_menu .= "<li><a href=\"$child_filter->route\" class=\"slide-item $child_filter->active_class\">$child_filter->title</a></li>";
 
                     if ($child_filter->active) {
                         $active = $child_filter->active;
@@ -48,34 +47,51 @@ class SidebarMenu
                 }
 
                 $menu = $this->filterMenu($menu);
-                $active_1 = $active ? ' class="openmenu active"' : '';
-                $active_2 = $active ? '<i class="icon-arrow-down switch"></i>' : '';
-                $active_3 = $active ? ' style="display: block;"' : '';
-                $menu_body .= "<li $active_1>
-                                <a href=\"#\">$menu->title</a>
-                                $active_2
-                                <ul class=\"submenu\" $active_3>
-                                    $child_menu
-                                </ul>
-                            </li>";
+                $active_1 = $active ? 'is-expanded' : '';
+                $active_2 = $active ? 'active' : '';
+                $menu_body .= " <li class=\"slide $active_1\">
+                                    <a class=\"side-menu__item $active_1 $active_2\" data-bs-toggle=\"slide\" href=\"javascript:void(0)\">
+                                        <i class=\"side-menu__icon $menu->icon\"></i>
+                                        <span class=\"side-menu__label\">$menu->title</span>
+                                        <i class=\"angle fe fe-chevron-right\"></i>
+                                    </a>
+                                    <ul class=\"slide-menu\">
+                                        $child_menu
+                                    </ul>
+                                </li> ";
             } else {
                 $menu = $this->filterMenu($menu);
-                $menu_body .= " <li class=\"$menu->active_class\"> <a href=\"$menu->route\">$menu->title</a> </li>";
+                $menu_body .= "<li class=\"slide\">
+                        <a class=\"side-menu__item $menu->active_class\" data-bs-toggle=\"slide\" href=\"$menu->route\">
+                            <i class=\"side-menu__icon $menu->icon\"></i>
+                            <span class=\"side-menu__label\">$menu->title</span>
+                        </a>
+                    </li>";
             }
         }
 
         // head element
-        $menu_head = '<ul class="vertical-menu">';
+        $menu_head = '<ul class="side-menu">';
 
-        // Menu Extra =================================================================================
+        // Dashboard
         $dashboard = route('dashboard');
-        $dashboard = "<li><a href=\"$dashboard\">Dashboard</a></li>";
-        $login = route('login');
-        $login = "<li><a href=\"$login\">Login</a></li>";
-        $menu_extra = auth()->user() ? $dashboard : $login;
-        // Menu Extra =================================================================================
 
-        $menu_footer = $menu_extra . '</ul>';
+        $dashboard = "<li class=\"slide\">
+                        <a class=\"side-menu__item\" data-bs-toggle=\"slide\" href=\"$dashboard\">
+                            <i class=\"\"></i>
+                            <span class=\"side-menu__label\">Dashboard</span>
+                        </a>
+                    </li>";
+
+        $login = route('login');
+
+        $login = "<li class=\"slide\">
+                        <a class=\"side-menu__item\" data-bs-toggle=\"slide\" href=\"$login\">
+                            <i class=\"\"></i>
+                            <span class=\"side-menu__label\">Log In</span>
+                        </a>
+                    </li>";
+        $menu_footer = (auth()->user() ? $dashboard : $login) . '</ul>';
         return $menu_head . $menu_body . $menu_footer;
     }
 

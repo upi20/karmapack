@@ -101,9 +101,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 <body class="app sidebar-mini ltr light-mode">
 
     <!-- GLOBAL-LOADER -->
-    <div id="global-loader">
+    {{-- <div id="global-loader">
         <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
-    </div>
+    </div> --}}
     <!-- /GLOBAL-LOADER -->
 
     <!-- PAGE -->
