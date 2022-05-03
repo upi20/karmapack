@@ -7,10 +7,14 @@
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">User Table</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </button>
+                    <div>
+                        <a href="{{ route('admin.user.excel') }}" class="btn btn-success"><i class="bi bi-excel"></i>
+                            Excel</a>
+                        <button type="button" class="btn btn-rounded btn-primary" data-bs-effect="effect-scale"
+                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h5 class="h5">Filter Data</h5>

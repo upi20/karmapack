@@ -5,12 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repository\Admin\UserRepository;
-use Exception;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Datatables;
-use Laravel\Fortify\Rules\Password;
-use Illuminate\Support\Facades\Hash;
-use League\Config\Exception\ValidationException;
 
 class UserController extends Controller
 {
@@ -67,5 +62,10 @@ class UserController extends Controller
     public function save_password(Request $request)
     {
         return $this->repository->save_password($request);
+    }
+
+    public function excel(Request $request)
+    {
+        return $this->repository->excel($request);
     }
 }

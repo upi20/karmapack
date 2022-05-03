@@ -193,6 +193,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     // user
     Route::controller(UserController::class)->prefix('user')->group(function () {
         Route::get('/', 'index')->name('admin.user');
+        Route::get('/excel', 'excel')->name('admin.user.excel');
         Route::post('/', 'store')->name('admin.user.store');
         Route::delete('/{id}', 'delete')->name('admin.user.delete');
         Route::post('/update', 'update')->name('admin.user.update');
