@@ -64,6 +64,7 @@ $frontend  = [
             ['title' => 'Sejarah'],
             ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
             ['title' => 'Periode Kepengurusan'],
+            ['title' => 'Anggaran Dasar Anggaran Rumah Tangga'],
         ]
     ],
     [
