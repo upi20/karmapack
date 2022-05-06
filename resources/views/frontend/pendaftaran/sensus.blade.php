@@ -26,32 +26,6 @@
                 <h3 class="section-title">Masukan data diri</h3>
                 <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave" alt="wave" />
             </div>
-            <div id="sensus_alert">
-                <div class="alert alert-success alert-dismissible fade show rounded" role="alert">
-                    <div class="container d-flex justify-content-between align-items-center">
-                        <p>
-                            <strong>
-                                Suksess.
-                            </strong>
-                            Data sensus berhasil dikirim, silahkan tunggu konfirmasi dari administrator untuk tahap
-                            selajutnya.
-                            <br>Administrator akan memberikan informasi akun untuk login <strong>Sistem Informasi
-                                Anggota (SIA)</strong> yang akan di kirimkan ke <strong>Nomor Telepon</strong> atau
-                            <strong>Nomor Whatsapp</strong> yang
-                            sebelumnya sudah di kirim. <br>Terima Kasih
-                        </p>
-                        <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-x-lg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-                                <path fill-rule="evenodd"
-                                    d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
             <!-- Contact Form -->
             <form id="MainForm" class="MainForm" method="post">
@@ -106,6 +80,33 @@
                 <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default mt-3">
                     Kirim Data
                 </button>
+
+                <div id="sensus_alert">
+                    <div class="alert alert-success alert-dismissible fade show rounded mt-3" role="alert">
+                        <div class="container d-flex justify-content-between align-items-center">
+                            <p>
+                                <strong>
+                                    Suksess.
+                                </strong>
+                                Data sensus berhasil dikirim, silahkan tunggu konfirmasi dari administrator untuk tahap
+                                selajutnya.
+                                <br>Administrator akan memberikan informasi akun untuk login <strong>Sistem Informasi
+                                    Anggota (SIA)</strong> yang akan di kirimkan ke <strong>Nomor Telepon</strong> atau
+                                <strong>Nomor Whatsapp</strong> yang
+                                sebelumnya sudah di kirim. <br>Terima Kasih
+                            </p>
+                            <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                                    <path fill-rule="evenodd"
+                                        d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </section>
