@@ -33,9 +33,9 @@ class UsersTableSeeder extends Seeder
                 'date_of_birth' => '2000-08-10',
                 'email' => 'iseplutpinur7@gmail.com',
                 'gender' => 'laki-laki',
-                'username' => NULL,
+                'username' => 'iseplutpinur',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$7Rf4vzppRE6L7zvgOtyrCuB0e3mm7Z4OiS3Hex7tQZCkx3QfgpTJi',
+                'password' => '$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA/oIKwHD4AIGzIHmHZO',
                 'active' => 1,
                 'alamat_lengkap' => 'Jl. Tipar, Rt 23/Rw 12 Dekat SD Negeri 1 Tipar',
                 'village_id' => '3203051006',
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-05-02 09:08:51',
+                'updated_at' => '2022-05-07 01:44:19',
             ),
             1 => 
             array (

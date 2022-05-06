@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
 // Address ============================================================================================================
 use App\Http\Controllers\Admin\Address\ProvinceController;
@@ -187,9 +188,7 @@ Route::get('/dashboard', function () {
 
 // Admin route ========================================================================================================
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 'admin']], function () {
-    Route::get('/', function () {
-        return view('admin.dashboard', ['page_attr' => ['title' => 'Dashboard']]);
-    })->name('admin.dashboard');
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     // user
     Route::controller(UserController::class)->prefix('user')->group(function () {
