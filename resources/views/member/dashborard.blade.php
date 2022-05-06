@@ -4,14 +4,72 @@
     <div class="page-header">
         <h1 class="page-title">Dashboard</h1>
     </div>
+
+    <!-- ROW OPEN -->
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <div class="card bg-primary img-card box-primary-shadow">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="text-white">
+                            <h2 class="mb-0 number-font">{{ $total_anggota }}</h2>
+                            <p class="text-white mb-0">Total Anggota </p>
+                        </div>
+                        <div class="ms-auto"> <i class="fa fa-user-o text-white fs-30 me-2 mt-2"></i> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    {{-- list menu member --}}
+    <!-- ROW OPEN -->
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <a href="{{ route('member.profile') }}">
+                <div class="card bg-secondary img-card box-secondary-shadow card-main">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h3 class="mb-0 number-font">Profile</h3>
+                            </div>
+                            <div class="ms-auto"> <i class="fe fe-user text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- COL END -->
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
+            <a href="{{ route('member.password') }}">
+                <div class="card  bg-success img-card box-success-shadow card-main">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h3 class="mb-0 number-font">Ganti Password</h3>
+                            </div>
+                            <div class="ms-auto"> <i class="fe fe-lock text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- COL END -->
+    </div>
+    <!-- ROW CLOSED -->
+    <hr>
+
+    <!-- ROW CLOSED -->
     <div class="card p-1">
         <div class="card-header">
             <h3 class="card-title">List Fitur Aplikasi</h3>
         </div>
-        <div class="card-body">
+        <div class="card-body p-0">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="card m-0">
+                    <div class="card  m-lg-0">
                         <div class="card-status bg-blue br-te-7 br-ts-7"></div>
                         <div class="card-header">
                             <h3 class="card-title">Aplikasi Sistem Informasi Anggota (Khusus Anggota)</h3>
@@ -53,7 +111,7 @@
 
 
                 <div class="col-lg-6">
-                    <div class="card m-0">
+                    <div class="card m-lg-0">
                         <div class="card-status bg-blue br-te-7 br-ts-7"></div>
                         <div class="card-header">
                             <h3 class="card-title">Publik | Umum (Halaman yang bisa di akses semua orang)</h3>
@@ -120,4 +178,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('stylesheet')
+    <style>
+        .card-main {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            margin: 3px;
+        }
+
+        .card-main:hover {
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+    </style>
 @endsection

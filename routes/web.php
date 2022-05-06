@@ -50,6 +50,7 @@ use App\Http\Controllers\Admin\Pendaftaran\SensusController as SensusControllerA
 // ====================================================================================================================
 // Member =============================================================================================================
 use App\Http\Controllers\Member\ProfileController;
+use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
 
 // ====================================================================================================================
 // Frontend ===========================================================================================================
@@ -388,9 +389,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
 // Member Panel Admin =================================================================================================
 Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified', 'member']], function () {
-    Route::get('/', function () {
-        return view('member.dashborard', ['page_attr' => ['title' => 'Dashboard']]);
-    })->name('member.dashboard');
+    Route::get('/', [MemberDashboardController::class, 'index'])->name('member.dashboard');
 
     // profile
     Route::controller(ProfileController::class)->prefix('profile')->group(function () {
