@@ -4,17 +4,21 @@ namespace App\Http\Controllers\Admin\Pendaftaran;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Datatables;
-use App\Models\Pendaftaran\Sensus;
+
+use App\Repository\Admin\Pendaftaran\SensusRepository;
 
 class SensusController extends Controller
 {
+    private $repository;
+    public function __construct(SensusRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            return Datatables::of(Sensus::query())
-                ->addIndexColumn()
-                ->make(true);
+            return $this->repository->datatable($request);
         }
 
         $page_attr = [
@@ -24,5 +28,10 @@ class SensusController extends Controller
             ]
         ];
         return view('admin.pendaftaran.sensus', compact('page_attr'));
+    }
+
+    public function excel(Request $request)
+    {
+        return $this->repository->excel($request);
     }
 }

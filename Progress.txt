@@ -27,9 +27,9 @@ anggota address tambah kode pos
 
 Roadmap
 Pendaftaran Sensus Anggota
-    Buat status [0=>'diterima', 1=>'diproses', 2=>'selsai', 3=>'ditolak']
-    Buat Status Keterangan
-    Export Excel
+    Buat status [0=>'diterima', 1=>'diproses', 2=>'selsai', 3=>'ditolak'] [done]
+    Buat Status Keterangan [done]
+    Export Excel [done]
     Export Excel By Status
 
 Membuat CRUD Kontak

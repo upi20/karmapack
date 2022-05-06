@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('email')->nullable()->default(null);
             $table->string('whatsapp')->nullable()->default(null);
             $table->string('telepon')->nullable()->default(null);
+            $table->text('keterangan')->nullable()->default(null);
+            $table->boolean('status')->default(0)->comment("0=>diterima, 1=>diproses, 2=>selsai, 3=>ditolak");
             $table->timestamps();
         });
     }

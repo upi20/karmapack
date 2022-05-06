@@ -11,4 +11,5 @@ class Sensus extends Model
     protected $guarded = [];
     protected $primaryKey = 'id';
     protected $table = 'pend_sensus';
+    const tableName = 'pend_sensus';
 }

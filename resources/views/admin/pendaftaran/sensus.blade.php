@@ -6,6 +6,11 @@
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Sensus Anggota</h3>
+                    <div>
+                        <a href="{{ route('admin.pendaftaran.sensus.excel') }}" class="btn btn-success"><i
+                                class="fa fa-file-excel-o"></i>
+                            Excel</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive table-striped">
@@ -18,6 +23,8 @@
                                     <th>Email</th>
                                     <th>Whatsapp</th>
                                     <th>Telepon</th>
+                                    <th>Keterangan</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -91,9 +98,38 @@
                         data: 'telepon',
                         name: 'telepon'
                     },
+                    {
+                        data: 'keterangan',
+                        name: 'keterangan'
+                    },
+                    {
+                        data: 'status',
+                        name: 'status',
+                        render(data, type, full, meta) {
+                            let class_bg = '';
+                            switch (data) {
+                                case 0:
+                                    class_bg = 'primary'
+                                    break;
+                                case 1:
+                                    class_bg = 'secondary'
+                                    break;
+                                case 2:
+                                    class_bg = 'success'
+                                    break;
+                                case 3:
+                                    class_bg = 'danger'
+                                    break;
+                                default:
+                                    class_bg = 'warning'
+                                    break;
+                            }
+                            return `<span class="badge bg-${class_bg}">${full.status_str}</span>`;
+                        }
+                    },
                 ],
                 order: [
-                    [1, 'asc']
+                    [7, 'asc']
                 ]
             });
 
