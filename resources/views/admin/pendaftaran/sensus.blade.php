@@ -163,17 +163,17 @@
                         name: 'status',
                         render(data, type, full, meta) {
                             let class_bg = '';
-                            switch (data) {
-                                case '0':
+                            switch (Number(data)) {
+                                case 0:
                                     class_bg = 'primary'
                                     break;
-                                case '1':
+                                case 1:
                                     class_bg = 'secondary'
                                     break;
-                                case '2':
+                                case 2:
                                     class_bg = 'success'
                                     break;
-                                case '3':
+                                case 3:
                                     class_bg = 'danger'
                                     break;
                                 default:
@@ -192,7 +192,7 @@
 
                             return `
                             <div class="dropstart btn-group mt-2 mb-2">
-                                <button class="btn btn-${class_bg} dropdown-toggle" type="button"
+                                <button class="btn btn-sm btn-${class_bg} dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown">${full.status_str}
                                     <span class="caret"></span>
                                 </button>
