@@ -332,7 +332,7 @@ class UserRepository
 
         // $row += 3;
         // $sheet->setCellValue("Q" . $row, "(.....................................)");
-        // $row++;
+        $row++;
         // // waktu dan tangggal
         $tanggal = date("d-m-Y H:i:s");
         $sheet->mergeCells($col_start . $row . ":" . $col_end . $row)
