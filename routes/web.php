@@ -380,6 +380,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::controller(SensusControllerAdmin::class)->prefix('sensus')->group(function () {
             Route::get('/',  'index')->name('admin.pendaftaran.sensus'); // page
             Route::get('/excel',  'excel')->name('admin.pendaftaran.sensus.excel'); // export excel
+            Route::post('/status',  'status')->name('admin.pendaftaran.sensus.status'); // set status
         });
     });
 });

@@ -34,6 +34,15 @@ class SensusRepository
 
         $model = Sensus::selectRaw("$a.*")
             ->selectRaw($status_str);
+
+        // filter
+        if (isset($request->filter)) {
+            $filter = $request->filter;
+            if ($filter['status'] != '') {
+                $model->where('status', '=', $filter['status']);
+            }
+        }
+
         return Datatables::of($model)
             ->addIndexColumn()
             ->make(true);
@@ -53,9 +62,30 @@ class SensusRepository
                 )
             ) as status_str
         SQL;
-        $details = Sensus::selectRaw("$a.*")
-            ->selectRaw($status_str)
-            ->get();
+        $model = Sensus::selectRaw("$a.*")
+            ->selectRaw($status_str);
+
+        if ($request->status != null) {
+            $model->where('status', '=', $request->status);
+        }
+
+        if ($request->search) {
+            $search = $request->search;
+            $search_query = <<<SQL
+                    (nama like '%$search%' or
+                    angkatan like '%$search%' or
+                    email like '%$search%' or
+                    whatsapp like '%$search%' or
+                    telepon like '%$search%' or
+                    keterangan like '%$search%' or
+                    status like '%$search%')
+                SQL;
+            $model->whereRaw($search_query);
+        }
+
+        $model->orderBy('status');
+        $model->orderBy('nama');
+        $details = $model->get();
 
         $strFilename = "Daftar Sensus Anggota Aplikasi SIA";
         $bulan_array = [

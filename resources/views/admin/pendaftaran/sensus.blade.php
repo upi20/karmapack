@@ -7,12 +7,28 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Sensus Anggota</h3>
                     <div>
-                        <a href="{{ route('admin.pendaftaran.sensus.excel') }}" class="btn btn-success"><i
-                                class="fa fa-file-excel-o"></i>
-                            Excel</a>
+                        <button class="btn btn-success" onclick="exportExcel()">
+                            <i class="fa fa-file-excel-o"></i> Excel
+                        </button>
                     </div>
                 </div>
                 <div class="card-body">
+                    <h5 class="h5">Filter Data</h5>
+                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                        <div class="form-group me-md-3">
+                            <label for="filter_status">Status</label>
+                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                                <option value="">Semua Status</option>
+                                <option value="0">Diterima</option>
+                                <option value="1">Diproses</option>
+                                <option value="2">Selesai</option>
+                                <option value="3">Ditolak</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                            <i class="bi bi-arrow-repeat"></i> Refresh
+                        </button>
+                    </form>
                     <div class="table-responsive table-striped">
                         <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
                             <thead>
@@ -48,9 +64,12 @@
     </script>
     <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
     </script>
+    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
         const table_html = $('#tbl_main');
+        let table_html_global = () => {};
         $(document).ready(function() {
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -124,7 +143,30 @@
                                     class_bg = 'warning'
                                     break;
                             }
-                            return `<span class="badge bg-${class_bg}">${full.status_str}</span>`;
+
+                            const diterima = data == 0 ? '' :
+                                `<li><button class="btn btn-primary m-1" onclick="setStatus(${full.id},0)" value="0">Diterima</button></li>`;
+                            const diproses = data == 1 ? '' :
+                                `<li><button class="btn btn-secondary m-1" onclick="setStatus(${full.id},1)" value="1">Diproses</button></li>`;
+                            const selesai = data == 2 ? '' :
+                                `<li><button class="btn btn-success m-1" onclick="setStatus(${full.id},2)" value="2">Selesai</button></li>`;
+                            const ditolak = data == 3 ? '' :
+                                `<li><button class="btn btn-danger m-1" onclick="setStatus(${full.id},3)" value="3">Ditolak</button></li>`;
+
+                            return `
+                            <div class="dropstart btn-group mt-2 mb-2">
+                                <button class="btn btn-${class_bg} dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown">${full.status_str}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    ${diterima}
+                                    ${diproses}
+                                    ${selesai}
+                                    ${ditolak}
+                                </ul>
+                            </div>
+                            `;
                         }
                     },
                 ],
@@ -132,6 +174,7 @@
                     [7, 'asc']
                 ]
             });
+            table_html_global = table_html;
 
             new_table.on('draw.dt', function() {
                 var PageInfo = table_html.DataTable().page.info();
@@ -142,6 +185,62 @@
                 });
             });
 
+            // filter
+            $('#FilterForm').submit(function(e) {
+                e.preventDefault();
+                var oTable = table_html.dataTable();
+                oTable.fnDraw(false);
+            });
         });
+
+        function exportExcel() {
+            const base = "{{ route('admin.pendaftaran.sensus.excel') }}";
+            const status = $('#filter_status').val();
+            const search = $('[type=search]').val();
+            let arg = status ? `?status=${status}` : '';
+            arg += (status ? `&` : '?') + (search ? `search=${search}` : '');
+            window.location.href = base + arg;
+        }
+
+        function setStatus(id, status) {
+            $.LoadingOverlay('show');
+            $.ajax({
+                type: "POST",
+                url: `{{ route('admin.pendaftaran.sensus.status') }}?id=${id}&status=${status}`,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    id: id,
+                    status: status,
+                },
+                success: (data) => {
+                    var oTable = table_html_global.dataTable();
+                    oTable.fnDraw(false);
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Data saved successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                error: function(data) {
+                    const res = data.responseJSON ?? {};
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: (res.errors ? res.errors.new_password : res
+                                .message) ??
+                            'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+                },
+                complete: function() {
+                    $.LoadingOverlay('hide');
+                }
+            });
+        }
     </script>
 @endsection
