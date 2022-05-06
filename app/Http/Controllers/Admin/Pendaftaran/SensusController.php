@@ -42,9 +42,10 @@ class SensusController extends Controller
         if ($model) {
             if ($request->status != null) {
                 $model->status = $request->status;
-                $model->save();
             }
+            $model->keterangan = $request->keterangan;
         }
+        $model->save();
         return response()->json($model);
     }
 }

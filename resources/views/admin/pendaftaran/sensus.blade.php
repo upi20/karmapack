@@ -50,6 +50,43 @@
             </div>
         </div>
     </div>
+
+    <!-- End Row -->
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-default-title">Konfirmasi Ditolak</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
+                        enctype="multipart/form-data">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group">
+                            <label class="form-label" for="keterangan">
+                                Keterangan Ditolak
+                                <span class="text-danger">*</span>
+                            </label>
+                            <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Enter Keterangan Ditolak"
+                                required=""></textarea>
+                            <input type="hidden" id="id" name="id">
+                            <input type="hidden" id="status" name="status">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
+                        <li class="fa fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('javascript')
@@ -151,7 +188,7 @@
                             const selesai = data == 2 ? '' :
                                 `<li><button class="btn btn-success m-1" onclick="setStatus(${full.id},2)" value="2">Selesai</button></li>`;
                             const ditolak = data == 3 ? '' :
-                                `<li><button class="btn btn-danger m-1" onclick="setStatus(${full.id},3)" value="3">Ditolak</button></li>`;
+                                `<li><button class="btn btn-danger m-1" data-bs-effect="effect-scale" data-bs-toggle="modal" href="#modal-default" onclick="statusTolak('${full.id}', 3)" data-target="#modal-default">Ditolak</button></li>`;
 
                             return `
                             <div class="dropstart btn-group mt-2 mb-2">
@@ -191,6 +228,11 @@
                 var oTable = table_html.dataTable();
                 oTable.fnDraw(false);
             });
+
+            $('#MainForm').submit(function(e) {
+                e.preventDefault();
+                setStatus($('#id').val(), $('#status').val(), $('#keterangan').val());
+            });
         });
 
         function exportExcel() {
@@ -202,17 +244,18 @@
             window.location.href = base + arg;
         }
 
-        function setStatus(id, status) {
+        function setStatus(id, status, keterangan = '') {
             $.LoadingOverlay('show');
             $.ajax({
                 type: "POST",
-                url: `{{ route('admin.pendaftaran.sensus.status') }}?id=${id}&status=${status}`,
+                url: `{{ route('admin.pendaftaran.sensus.status') }}?id=${id}&status=${status}&keterangan=${keterangan}`,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 data: {
                     id: id,
                     status: status,
+                    keterangan: keterangan,
                 },
                 success: (data) => {
                     var oTable = table_html_global.dataTable();
@@ -224,6 +267,7 @@
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    $('#modal-default').modal('hide');
                 },
                 error: function(data) {
                     const res = data.responseJSON ?? {};
@@ -241,6 +285,12 @@
                     $.LoadingOverlay('hide');
                 }
             });
+        }
+
+        function statusTolak(id, status) {
+            $('#keterangan').val('');
+            $('#id').val(id);
+            $('#status').val(status);
         }
     </script>
 @endsection
