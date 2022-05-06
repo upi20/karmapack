@@ -465,11 +465,11 @@ Goals Report 2021<p></p></span></p><p class="MsoNormal" style="margin-bottom: 11
             'detail' => '<p style="text-align: center; "><img style="width: 350px; height: 420.547px;" data-bs-filename="278987778_958380894820976_8231711504543053067_n.webp" src="/assets/artikel/tema-hari-16508601090.png"><p style="text-align: left;"><br></p><p>Organisasi Pendidikan, Keilmuan, dan Kebudayaan PBB (UNESCO) memperingati Hari Buku dan Hak Cipta Sedunia pada 23 April 2022.&nbsp;</p><p>UNESCO menciptakan World Book and Copyright Day untuk meningkatkan kesadaran bahwa membaca adalah hal yang sangat penting dan banyak mempengaruhi kehidupan.&nbsp;</p><p>"Melalui membaca dan memperingati Hari Buku dan Hak Cipta Sedunia, 23 April, kita dapat membuka diri kepada orang lain meskipun jauh, dan kita dapat bepergian berkat imajinasi," tulis UNESCO. Dalam persiapan Hari Buku dan Hak Cipta Sedunia, UNESCO mendorong Anda untuk membaca buku dan mengeksplorasi topik, format, atau genre baru yang tidak biasa. "Tujuan kami adalah untuk melibatkan orang dalam membaca, dan untuk bersenang-senang melakukannya," ujar UNESCO.&nbsp;</p><p><br></p><p><b>Tema Hari Buku Sedunia 2022&nbsp;</b></p><p>Dalam lamannya, UNESCO menuliskan, sebagai perayaan Hari Buku dan Hak Cipta Sedunia tahun ini, UNESCO telah membuat tantangan Bookfacechallenge. Tantangan ini meminta Anda untuk mengunggah foto bersama sampul buku yang unik.&nbsp;</p><p>Usahakan agar sampul buku tersebut cocok atau matching dengan wajah Anda.&nbsp;</p><p>Pandemi juga mengingatkan kita semua akan pentingnya buku dan membaca untuk kenyamanan dan mengisi waktu.&nbsp;</p><p>"Kami selalu senang melihat ketika sebuah judul telah disajikan dengan baik, karena sampul yang baik dapat membuat atau menghancurkan sebuah judul," tulis UNESCO. UNESCO mengajak siswa, guru, pembaca dari seluruh dunia serta industri buku dan layanan perpustakaan untuk bersaksi dan mengekspresikan kecintaan mereka terhadap membaca dengan berpartisipasi dalam tantangan ini.&nbsp;</p><p>Sejarah Hari Buku dan Hak Cipta Sedunia Hari Buku dan Hak Cipta Sedunia adalah perayaan untuk mempromosikan kenikmatan buku dan membaca. Setiap tahun, pada tanggal 23 April, perayaan diadakan di seluruh dunia untuk mengenali ruang lingkup buku.&nbsp;</p><p>Buku adalah penghubung antara masa lalu dan masa depan, jembatan antar generasi dan lintas budaya.&nbsp;</p><p>Tanggal 23 April dipilih karena ini adalah tanggal simbolis dalam sastra dunia, di mana beberapa penulis terkemuka, William Shakespeare, Miguel de Cervantes dan Inca Garcilaso de la Vega meninggal. Tanggal ini juga merupakan hari diadakannya Konferensi Umum UNESCO di Paris pada tahun 1995, untuk memberikan penghormatan di seluruh dunia kepada buku dan penulis. Dengan memperjuangkan buku dan hak cipta, UNESCO membela kreativitas, keragaman, dan akses yang setara ke pengetahuan, dengan pekerjaan di seluruh bidang.</p><div><br></div></p>
 ',
                 'excerpt' => 'UNESCO menciptakan World Book and Copyright Day untuk meningkatkan kesadaran bahwa membaca adalah hal yang sangat penting dan banyak mempengaruhi kehidupan.',
-                'counter' => 0,
+                'counter' => 1,
                 'date' => '2022-04-23',
                 'status' => 1,
                 'created_at' => '2022-04-25 04:15:09',
-                'updated_at' => '2022-04-25 04:15:09',
+                'updated_at' => '2022-05-07 01:51:53',
                 'user_id' => 1,
             ),
             5 => 
@@ -542,14 +542,14 @@ Goals Report 2021<p></p></span></p><p class="MsoNormal" style="margin-bottom: 11
                 'nama' => 'Tes youtube',
                 'slug' => 'tes-youtube',
                 'foto' => '',
-                'detail' => '<p><br><div class="embed-container"><iframe src="https://www.youtube.com/embed/hphbXmfo12U?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div></p>
+                'detail' => '<p><br><div class="embed-container"><br></div><div class="embed-container"><iframe src="https://www.youtube.com/embed/WH1SduDRL_Y?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1" frameborder="0" width="100%" height="500px" type="text/html" allowfullscreen="true"></iframe></div><p></p></p>
 ',
                 'excerpt' => 'Testing video youtube',
-                'counter' => 0,
+                'counter' => 1,
                 'date' => '2022-04-27',
                 'status' => 1,
                 'created_at' => '2022-04-28 07:19:02',
-                'updated_at' => '2022-04-28 07:46:51',
+                'updated_at' => '2022-05-07 01:53:50',
                 'user_id' => 1,
             ),
         ));

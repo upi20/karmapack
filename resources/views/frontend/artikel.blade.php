@@ -121,8 +121,7 @@
                         </div>
                     </div>
 
-
-                    <div class="spacer" data-height="50"></div>
+                    {{-- <div class="spacer" data-height="50"></div>
 
                     <!-- section header -->
                     <div class="section-header">
@@ -238,7 +237,7 @@
                             <!-- Submit Button -->
 
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <div class="col-lg-4">
@@ -257,7 +256,7 @@
                                 <ul class="list">
                                     @foreach ($categories as $kategori)
                                         <li><a href="{{ url("?kategori=$kategori->slug") }}"
-                                                class="{{ \App\Repository\Frontend\HomeRepository::checkActiveArtikelOrTag($artikel_kategori, $kategori->slug)? 'text-primary': '' }}">
+                                                class="{{ \App\Repository\Frontend\HomeRepository::checkActiveArtikelOrTag($artikel_kategori, $kategori->slug) ? 'text-primary' : '' }}">
                                                 {{ $kategori->nama }}
                                             </a>
                                             <span>({{ $kategori->artikel }})</span>
@@ -277,7 +276,7 @@
                             <div class="widget-content">
                                 @foreach ($tags as $tag)
                                     <a href="{{ url("?tag=$tag->slug") }}"
-                                        class="tag {{ \App\Repository\Frontend\HomeRepository::checkActiveArtikelOrTag($artikel_tag, $tag->slug)? 'text-primary': '' }}">
+                                        class="tag {{ \App\Repository\Frontend\HomeRepository::checkActiveArtikelOrTag($artikel_tag, $tag->slug) ? 'text-primary' : '' }}">
                                         {{ $tag->nama }}
                                     </a>
                                 @endforeach

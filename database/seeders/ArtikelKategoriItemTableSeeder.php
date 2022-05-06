@@ -123,6 +123,14 @@ class ArtikelKategoriItemTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            13 => 
+            array (
+                'id' => 28,
+                'artikel_id' => 36,
+                'kategori_id' => 2,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
