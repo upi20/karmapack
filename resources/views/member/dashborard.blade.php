@@ -8,7 +8,7 @@
     <!-- ROW OPEN -->
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
-            <div class="card bg-primary img-card box-primary-shadow">
+            <div class="card bg-primary img-card box-primary-shadow card-main">
                 <div class="card-body">
                     <div class="d-flex">
                         <div class="text-white">
@@ -20,19 +20,13 @@
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-
-    {{-- list menu member --}}
-    <!-- ROW OPEN -->
-    <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3">
             <a href="{{ route('member.profile') }}">
                 <div class="card bg-secondary img-card box-secondary-shadow card-main">
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="text-white">
-                                <h3 class="mb-0 number-font">Profile</h3>
+                                <h3 class="mb-0 number-font">Edit Profile</h3>
                             </div>
                             <div class="ms-auto"> <i class="fe fe-user text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
@@ -56,9 +50,7 @@
                 </div>
             </a>
         </div>
-        <!-- COL END -->
     </div>
-    <!-- ROW CLOSED -->
     <hr>
 
     <!-- ROW CLOSED -->
