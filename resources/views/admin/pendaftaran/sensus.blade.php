@@ -164,16 +164,16 @@
                         render(data, type, full, meta) {
                             let class_bg = '';
                             switch (data) {
-                                case 0:
+                                case '0':
                                     class_bg = 'primary'
                                     break;
-                                case 1:
+                                case '1':
                                     class_bg = 'secondary'
                                     break;
-                                case 2:
+                                case '2':
                                     class_bg = 'success'
                                     break;
-                                case 3:
+                                case '3':
                                     class_bg = 'danger'
                                     break;
                                 default:
