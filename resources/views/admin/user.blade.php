@@ -8,8 +8,9 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">User Table</h3>
                     <div>
-                        <a href="{{ route('admin.user.excel') }}" class="btn btn-success"><i class="bi bi-excel"></i>
-                            Excel</a>
+                        <button class="btn btn-success" onclick="exportExcel()">
+                            <i class="fa fa-file-excel-o"></i> Excel
+                        </button>
                         <button type="button" class="btn btn-rounded btn-primary" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
                             <i class="bi bi-plus-lg"></i> Add
@@ -398,6 +399,15 @@
                     });
                 }
             });
+        }
+
+        function exportExcel() {
+            const base = "{{ route('admin.user.excel') }}";
+            const active = $('#filter_active').val();
+            const role = $('#filter_role').val();
+            const search = $('[type=search]').val();
+            let arg = `?active=${active}&role=${role}&search=${search}`;
+            window.location.href = base + arg;
         }
     </script>
 @endsection

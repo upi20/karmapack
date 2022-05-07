@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use League\Config\Exception\ValidationException;
 
 // excel
@@ -171,7 +172,41 @@ class UserRepository
     public function excel(Request $request)
     {
         // data body
-        $details = User::orderBy('name')->get();
+        $a = User::tableName;
+
+        $active_str = <<<SQL
+                    if($a.active = 0, 'No',
+                        if($a.active = 1, 'Yes',
+                            'Unknown')
+                    ) as active_str
+                SQL;
+        $model = User::selectRaw("$a.*")
+            ->selectRaw($active_str);
+
+        if ($request->active != null) {
+            $model->where('active', '=', $request->active);
+        }
+
+        if ($request->role != null) {
+            $model->where('role', '=', $request->role);
+        }
+
+        if ($request->search != null) {
+            $search = $request->search;
+            $columns = Schema::getColumnListing($a);
+            $search_query = '(';
+            foreach ($columns as $i => $col) {
+                $search_query .= "$col like '%$search%' " . ($i == (count($columns) - 1) ? '' : 'or ');
+            }
+            $search_query .= ')';
+            $model->whereRaw($search_query);
+        }
+
+        // $model->orderBy('angkatan', 'desc');
+        $model->orderBy('name');
+        $details = $model->get();
+
+
         $strFilename = "Daftar Users Aplikasi SIA";
         $bulan_array = [
             1 => 'Januari',
