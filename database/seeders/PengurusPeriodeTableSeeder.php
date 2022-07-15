@@ -21,7 +21,7 @@ class PengurusPeriodeTableSeeder extends Seeder
         \DB::table('pengurus_periode')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'nama' => 'Pengaturan',
                 'foto' => NULL,
                 'dari' => '2001',
@@ -32,13 +32,13 @@ class PengurusPeriodeTableSeeder extends Seeder
 ',
                 'misi' => '<p><img style="width: 157px;" data-bs-filename="Group 5.png" src="/assets/pengurus/periode/misi16502030810.png"><br></p>
 ',
-                'status' => 0,
+                'status' => '0',
                 'created_at' => '2022-04-14 09:09:02',
                 'updated_at' => '2022-04-24 16:04:08',
             ),
             1 => 
             array (
-                'id' => 2,
+                'id' => '2',
                 'nama' => 'Kabinet Masagi',
                 'foto' => 'iconkabinet-ma20220425164938.png',
                 'dari' => '2021',
@@ -56,13 +56,13 @@ Cianjru Kidul
 2. Melakukan pengabdian kepada masyarakat<br>
 3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2022-04-14 08:31:00',
                 'updated_at' => '2022-04-25 16:49:38',
             ),
             2 => 
             array (
-                'id' => 3,
+                'id' => '3',
                 'nama' => 'tes',
                 'foto' => NULL,
                 'dari' => '2001',
@@ -73,13 +73,13 @@ Cianjru Kidul
 ',
                 'misi' => '<p><img style="width: 1050px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499552520.png"><br></p>
 ',
-                'status' => 0,
+                'status' => '0',
                 'created_at' => '2022-04-14 09:16:35',
                 'updated_at' => '2022-04-24 16:04:08',
             ),
             3 => 
             array (
-                'id' => 4,
+                'id' => '4',
                 'nama' => 'Periode tes',
                 'foto' => NULL,
                 'dari' => '2001',
@@ -90,13 +90,13 @@ Cianjru Kidul
 ',
                 'misi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/misi16499523010.png"><p><img style="width: 765.2px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499523941.png"><br></p></p>
 ',
-                'status' => 0,
+                'status' => '0',
                 'created_at' => '2022-04-14 16:05:01',
                 'updated_at' => '2022-04-24 16:04:08',
             ),
             4 => 
             array (
-                'id' => 5,
+                'id' => '5',
                 'nama' => 'asdfsdaf',
                 'foto' => 'iconasdfsdaf20220416174744.jpeg',
                 'dari' => '2001',
@@ -107,7 +107,7 @@ Cianjru Kidul
 ',
                 'misi' => '<p>1</p>
 ',
-                'status' => 0,
+                'status' => '0',
                 'created_at' => '2022-04-16 17:38:09',
                 'updated_at' => '2022-04-24 16:04:08',
             ),

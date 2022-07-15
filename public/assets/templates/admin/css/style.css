@@ -84,7 +84,13 @@ body {
     line-height: 1.5;
     color: #282f53;
     text-align: left;
-    background-color: #f0f0f5
+    background-color: #f0f0f5;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .number-font {

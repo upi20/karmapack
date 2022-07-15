@@ -21,8 +21,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
         \DB::table('pengurus_profile_pengalaman_organisasi')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'user_id' => 1,
+                'id' => '1',
+                'user_id' => '1',
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2017',
                 'sampai' => '2018',
@@ -33,8 +33,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
-                'user_id' => 1,
+                'id' => '2',
+                'user_id' => '1',
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -45,8 +45,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 3,
-                'user_id' => 1,
+                'id' => '3',
+                'user_id' => '1',
                 'nama' => 'Majelis Perwakilan Kelas',
                 'dari' => '2018',
                 'sampai' => '2018',
@@ -57,8 +57,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 4,
-                'user_id' => 1,
+                'id' => '4',
+                'user_id' => '1',
                 'nama' => 'Majelis Perwakilan Kelas',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -69,8 +69,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 5,
-                'user_id' => 1,
+                'id' => '5',
+                'user_id' => '1',
                 'nama' => 'DKM Ulil Albab USB YPKP',
                 'dari' => '2020',
                 'sampai' => '2021',
@@ -81,8 +81,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'user_id' => 1,
+                'id' => '6',
+                'user_id' => '1',
                 'nama' => 'DKM Ulil Albab USB YPKP',
                 'dari' => '2021',
                 'sampai' => NULL,
@@ -93,8 +93,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 7,
-                'user_id' => 1,
+                'id' => '7',
+                'user_id' => '1',
                 'nama' => 'Karmapack',
                 'dari' => '2021',
                 'sampai' => NULL,

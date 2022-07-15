@@ -21,9 +21,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
         \DB::table('pengurus_profile_pendidikan')->insert(array (
             0 => 
             array (
-                'id' => 5,
-                'pendidikan_jenis_id' => 2,
-                'user_id' => 1,
+                'id' => '5',
+                'pendidikan_jenis_id' => '2',
+                'user_id' => '1',
                 'dari' => '2007',
                 'sampai' => '2013',
                 'instansi' => 'SD Negeri 1 Tipar',
@@ -34,9 +34,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 6,
-                'pendidikan_jenis_id' => 3,
-                'user_id' => 1,
+                'id' => '6',
+                'pendidikan_jenis_id' => '3',
+                'user_id' => '1',
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'SMP PGRI 46 CIBINONG',
@@ -47,9 +47,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 7,
-                'pendidikan_jenis_id' => 4,
-                'user_id' => 1,
+                'id' => '7',
+                'pendidikan_jenis_id' => '4',
+                'user_id' => '1',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMK Negeri 1 Tanggeung',
@@ -60,9 +60,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 8,
-                'pendidikan_jenis_id' => 5,
-                'user_id' => 1,
+                'id' => '8',
+                'pendidikan_jenis_id' => '5',
+                'user_id' => '1',
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Sangga Buana YPKP Bandung',
