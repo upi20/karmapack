@@ -216,12 +216,13 @@
                     <div class="widget rounded bg-white shadow-sm">
                         <div class="widget-about data-bg-image text-center"
                             data-bg-image="{{ asset('assets/templates/frontend/images/map-bg.png') }}">
-                            <h3 class="widget-title">Kabinet Masagi</h3>
+                            <h3 class="widget-title">{{ $periode->nama }}</h3>
                             <br>{{ $periode->slogan }}</p>
                             <ul class="social-icons list-unstyled list-inline mb-0">
                                 @foreach ($list_sosmed as $sosmed)
                                     <li class="list-inline-item">
-                                        <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
+                                        <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}"
+                                            target="_blank">
                                             <i class="{{ $sosmed['icon'] }}"></i>
                                         </a>
                                     </li>

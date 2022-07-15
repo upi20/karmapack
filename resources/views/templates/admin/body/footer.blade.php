@@ -7,7 +7,7 @@
                     © <span id="year"></span> Karmapack.
                 </div>
                 <div>
-                    Persembahan Dari <a href="http://github.com/iseplutpinur">Isep Lutpi Nur</a> Bidang Kominfo.
+                    Persembahan Dari <a href="{{ url('iseplutpinur') }}">Isep Lutpi Nur</a> Bidang Kominfo.
                 </div>
             </div>
         </div>

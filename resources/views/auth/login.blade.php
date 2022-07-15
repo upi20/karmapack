@@ -126,7 +126,8 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                             </a>
                                             <input class="input100 border-start-0 form-control ms-0" type="password"
-                                                placeholder="Password" id="password" required="" name="password">
+                                                placeholder="Password" id="password" required=""
+                                                name="password">
                                         </div>
                                         <div class="container-login100-form-btn">
                                             <button type="submit" class="login100-form-btn btn-primary">
@@ -150,7 +151,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                             © <span id="year"></span> Karmapack.
                         </div>
                         <div>
-                            Persembahan Dari <a href="http://github.com/iseplutpinur" class="text-light">Isep Lutpi
+                            Persembahan Dari <a href="{{ url('iseplutpinur') }}" class="text-light">Isep Lutpi
                                 Nur</a> Bidang Kominfo.
                         </div>
                     </div>

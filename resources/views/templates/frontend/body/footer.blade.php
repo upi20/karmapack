@@ -7,7 +7,7 @@
                 <div class="col-md-4">
                     <span class="copyright">© 2021 Karmapack.
                         <br>Persembahan Dari
-                        <a href="http://github.com/iseplutpinur">Isep Lutpi Nur</a>
+                        <a href="{{ url('iseplutpinur') }}">Isep Lutpi Nur</a>
                         Bidang Kominfo.</span>
                 </div>
 

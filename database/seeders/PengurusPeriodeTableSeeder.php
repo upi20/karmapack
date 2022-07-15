@@ -21,24 +21,7 @@ class PengurusPeriodeTableSeeder extends Seeder
         \DB::table('pengurus_periode')->insert(array (
             0 => 
             array (
-                'id' => '1',
-                'nama' => 'Pengaturan',
-                'foto' => NULL,
-                'dari' => '2001',
-                'sampai' => '2001',
-                'slug' => 'pengaturan',
-                'slogan' => '1',
-                'visi' => '<p><img style="width: 783px;" data-bs-filename="Picture1.jpg" src="/assets/pengurus/periode/visi16502030810.png"><br></p>
-',
-                'misi' => '<p><img style="width: 157px;" data-bs-filename="Group 5.png" src="/assets/pengurus/periode/misi16502030810.png"><br></p>
-',
-                'status' => '0',
-                'created_at' => '2022-04-14 09:09:02',
-                'updated_at' => '2022-04-24 16:04:08',
-            ),
-            1 => 
-            array (
-                'id' => '2',
+                'id' => 2,
                 'nama' => 'Kabinet Masagi',
                 'foto' => 'iconkabinet-ma20220425164938.png',
                 'dari' => '2021',
@@ -56,60 +39,26 @@ Cianjru Kidul
 2. Melakukan pengabdian kepada masyarakat<br>
 3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
-                'status' => '1',
+                'status' => 0,
                 'created_at' => '2022-04-14 08:31:00',
-                'updated_at' => '2022-04-25 16:49:38',
+                'updated_at' => '2022-07-15 15:25:17',
             ),
-            2 => 
+            1 => 
             array (
-                'id' => '3',
-                'nama' => 'tes',
-                'foto' => NULL,
-                'dari' => '2001',
-                'sampai' => '2001',
-                'slug' => 'tes',
-                'slogan' => '1',
-                'visi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/visi16499552520.png"><br></p>
+                'id' => 6,
+                'nama' => 'Kabinet Sauyunan',
+                'foto' => 'iconkabinet-sa20220715162230.png',
+                'dari' => '2022',
+                'sampai' => '2023',
+                'slug' => 'kabinet-sauyunan',
+                'slogan' => '-',
+                'visi' => '<p>-</p>
 ',
-                'misi' => '<p><img style="width: 1050px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499552520.png"><br></p>
+                'misi' => '<p>-</p>
 ',
-                'status' => '0',
-                'created_at' => '2022-04-14 09:16:35',
-                'updated_at' => '2022-04-24 16:04:08',
-            ),
-            3 => 
-            array (
-                'id' => '4',
-                'nama' => 'Periode tes',
-                'foto' => NULL,
-                'dari' => '2001',
-                'sampai' => '2001',
-                'slug' => 'periode-tes',
-                'slogan' => '1',
-                'visi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/visi16499523010.png"><br></p>
-',
-                'misi' => '<p><img style="width: 700px;" data-bs-filename="34166-toleransi-di-jabar-dianggap-rendah-mui-tidak-benar.jpeg" src="/assets/pengurus/periode/misi16499523010.png"><p><img style="width: 765.2px;" data-bs-filename="How-to-Use-Summernote-Editor-for-Image-Upload-in-Laravel-9.jpg" src="/assets/pengurus/periode/misi16499523941.png"><br></p></p>
-',
-                'status' => '0',
-                'created_at' => '2022-04-14 16:05:01',
-                'updated_at' => '2022-04-24 16:04:08',
-            ),
-            4 => 
-            array (
-                'id' => '5',
-                'nama' => 'asdfsdaf',
-                'foto' => 'iconasdfsdaf20220416174744.jpeg',
-                'dari' => '2001',
-                'sampai' => '2001',
-                'slug' => 'asdfsdaf',
-                'slogan' => '11',
-                'visi' => '<p>1</p>
-',
-                'misi' => '<p>1</p>
-',
-                'status' => '0',
-                'created_at' => '2022-04-16 17:38:09',
-                'updated_at' => '2022-04-24 16:04:08',
+                'status' => 1,
+                'created_at' => '2022-07-15 15:25:06',
+                'updated_at' => '2022-07-15 16:22:30',
             ),
         ));
         
