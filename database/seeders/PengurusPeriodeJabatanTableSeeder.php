@@ -655,7 +655,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'id' => 43,
                 'periode_id' => 6,
                 'parent_id' => NULL,
-                'no_urut' => 1,
+                'no_urut' => 3,
                 'nama' => 'Bendahara Umum',
                 'slug' => '2022-2023-bendahara-umum',
                 'foto' => '',
@@ -667,7 +667,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slogan' => 'Hebat',
                 'status' => 1,
                 'created_at' => NULL,
-                'updated_at' => '2022-07-15 16:25:11',
+                'updated_at' => '2022-07-15 17:00:25',
             ),
             38 => 
             array (
@@ -739,76 +739,6 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
             ),
             42 => 
             array (
-                'id' => 48,
-                'periode_id' => 6,
-                'parent_id' => NULL,
-                'no_urut' => 5,
-                'nama' => 'Wira Usaha',
-                'slug' => '2022-2023-wirausaha',
-                'foto' => '',
-                'singkatan' => 'WIRUS',
-                'visi' => '<p>-</p>
-',
-                'misi' => '<p>-</p>
-',
-                'slogan' => NULL,
-                'status' => 0,
-                'created_at' => NULL,
-                'updated_at' => '2022-07-15 16:49:41',
-            ),
-            43 => 
-            array (
-                'id' => 49,
-                'periode_id' => 6,
-                'parent_id' => 48,
-                'no_urut' => 1,
-                'nama' => 'Ketua Bidang',
-                'slug' => '2022-2023-wirausaha-ketua-bidang',
-                'foto' => '',
-                'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
-                'slogan' => 'Hebat',
-                'status' => 1,
-                'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
-            ),
-            44 => 
-            array (
-                'id' => 50,
-                'periode_id' => 6,
-                'parent_id' => 48,
-                'no_urut' => 2,
-                'nama' => 'Sekertaris bidang',
-                'slug' => '2022-2023-wirausaha-sekertaris-bidang',
-                'foto' => '',
-                'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
-                'slogan' => 'Hebat',
-                'status' => 1,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            45 => 
-            array (
-                'id' => 51,
-                'periode_id' => 6,
-                'parent_id' => 48,
-                'no_urut' => 3,
-                'nama' => 'Anggota',
-                'slug' => '2022-2023-wirausaha-anggota',
-                'foto' => '',
-                'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
-                'slogan' => 'Hebat',
-                'status' => 1,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
-            46 => 
-            array (
                 'id' => 52,
                 'periode_id' => 6,
                 'parent_id' => NULL,
@@ -826,7 +756,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 16:37:28',
             ),
-            47 => 
+            43 => 
             array (
                 'id' => 53,
                 'periode_id' => 6,
@@ -845,7 +775,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 16:37:42',
             ),
-            48 => 
+            44 => 
             array (
                 'id' => 54,
                 'periode_id' => 6,
@@ -864,7 +794,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 16:38:08',
             ),
-            49 => 
+            45 => 
             array (
                 'id' => 56,
                 'periode_id' => 6,
@@ -881,7 +811,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
-            50 => 
+            46 => 
             array (
                 'id' => 57,
                 'periode_id' => 6,
@@ -898,7 +828,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
-            51 => 
+            47 => 
             array (
                 'id' => 58,
                 'periode_id' => 6,
@@ -915,7 +845,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 => 
+            48 => 
             array (
                 'id' => 59,
                 'periode_id' => 6,
@@ -932,7 +862,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 => 
+            49 => 
             array (
                 'id' => 60,
                 'periode_id' => 6,
@@ -949,7 +879,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
-            54 => 
+            50 => 
             array (
                 'id' => 61,
                 'periode_id' => 6,
@@ -966,7 +896,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
-            55 => 
+            51 => 
             array (
                 'id' => 62,
                 'periode_id' => 6,
@@ -983,7 +913,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            56 => 
+            52 => 
             array (
                 'id' => 63,
                 'periode_id' => 6,
@@ -1000,7 +930,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 => 
+            53 => 
             array (
                 'id' => 64,
                 'periode_id' => 6,
@@ -1017,7 +947,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
-            58 => 
+            54 => 
             array (
                 'id' => 65,
                 'periode_id' => 6,
@@ -1034,7 +964,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
-            59 => 
+            55 => 
             array (
                 'id' => 66,
                 'periode_id' => 6,
@@ -1051,7 +981,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            60 => 
+            56 => 
             array (
                 'id' => 67,
                 'periode_id' => 6,
@@ -1068,7 +998,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            61 => 
+            57 => 
             array (
                 'id' => 68,
                 'periode_id' => 6,
@@ -1085,7 +1015,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
-            62 => 
+            58 => 
             array (
                 'id' => 69,
                 'periode_id' => 6,
@@ -1102,7 +1032,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
-            63 => 
+            59 => 
             array (
                 'id' => 70,
                 'periode_id' => 6,
@@ -1119,7 +1049,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            64 => 
+            60 => 
             array (
                 'id' => 72,
                 'periode_id' => 6,
@@ -1136,7 +1066,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
-            65 => 
+            61 => 
             array (
                 'id' => 73,
                 'periode_id' => 6,
@@ -1153,7 +1083,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
-            66 => 
+            62 => 
             array (
                 'id' => 74,
                 'periode_id' => 6,
@@ -1170,7 +1100,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            67 => 
+            63 => 
             array (
                 'id' => 75,
                 'periode_id' => 6,
@@ -1187,7 +1117,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            68 => 
+            64 => 
             array (
                 'id' => 76,
                 'periode_id' => 6,
@@ -1206,7 +1136,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:38:31',
                 'updated_at' => '2022-07-15 16:38:31',
             ),
-            69 => 
+            65 => 
             array (
                 'id' => 77,
                 'periode_id' => 6,
