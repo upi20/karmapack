@@ -121,123 +121,30 @@
                         </div>
                     </div>
 
-                    {{-- <div class="spacer" data-height="50"></div>
-
-                    <!-- section header -->
-                    <div class="section-header">
-                        <h3 class="section-title">Comments (3)</h3>
-                        <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
-                            alt="wave" />
-                    </div>
-                    <!-- post comments -->
-                    <div class="comments bordered padding-30 rounded">
-
-                        <ul class="comments">
-                            <!-- comment item -->
-                            <li class="comment rounded">
-                                <div class="thumb">
-                                    <img src="{{ asset('assets/templates/frontend/images/other/comment-1.png') }}"
-                                        alt="John Doe" />
-                                </div>
-                                <div class="details">
-                                    <h4 class="name"><a href="#">John Doe</a></h4>
-                                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae odio ut tortor
-                                        fringilla
-                                        cursus sed quis odio.</p>
-                                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                                </div>
-                            </li>
-                            <!-- comment item -->
-                            <li class="comment child rounded">
-                                <div class="thumb">
-                                    <img src="{{ asset('assets/templates/frontend/images/other/comment-2.png') }}"
-                                        alt="John Doe" />
-                                </div>
-                                <div class="details">
-                                    <h4 class="name"><a href="#">Helen Doe</a></h4>
-                                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                                    <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
-                                        adipiscing sem
-                                        neque sed ipsum.</p>
-                                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                                </div>
-                            </li>
-                            <!-- comment item -->
-                            <li class="comment rounded">
-                                <div class="thumb">
-                                    <img src="{{ asset('assets/templates/frontend/images/other/comment-3.png') }}"
-                                        alt="John Doe" />
-                                </div>
-                                <div class="details">
-                                    <h4 class="name"><a href="#">Anna Doe</a></h4>
-                                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                                    <p>Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in
-                                        faucibus orci
-                                        luctus et ultrices posuere cubilia.</p>
-                                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
                     <div class="spacer" data-height="50"></div>
 
-                    <!-- section header -->
-                    <div class="section-header">
-                        <h3 class="section-title">Leave Comment</h3>
-                        <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
-                            alt="wave" />
-                    </div>
-                    <!-- comment form -->
-                    <div class="comment-form rounded bordered padding-30">
-
-                        <form id="comment-form" class="comment-form" method="post">
-
-                            <div class="messages"></div>
-
-                            <div class="row">
-
-                                <div class="column col-md-12">
-                                    <!-- Comment textarea -->
-                                    <div class="form-group">
-                                        <textarea name="InputComment" id="InputComment" class="form-control" rows="4" placeholder="Your comment here..."
-                                            required="required"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="column col-md-6">
-                                    <!-- Email input -->
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="InputEmail" name="InputEmail"
-                                            placeholder="Email address" required="required">
-                                    </div>
-                                </div>
-
-                                <div class="column col-md-6">
-                                    <!-- Name input -->
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="InputWeb" id="InputWeb"
-                                            placeholder="Website" required="required">
-                                    </div>
-                                </div>
-
-                                <div class="column col-md-12">
-                                    <!-- Email input -->
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="InputName" name="InputName"
-                                            placeholder="Your name" required="required">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <button type="submit" name="submit" id="submit" value="Submit"
-                                class="btn btn-default">Submit</button>
-                            <!-- Submit Button -->
-
-                        </form>
-                    </div> --}}
+               
+                    <!-- post comments -->
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    var disqus_config = function () {
+    this.page.url = '{{ Request::url(); }}';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{ $model->slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://karmapack.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ 
                 </div>
 
                 <div class="col-lg-4">
