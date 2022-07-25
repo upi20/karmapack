@@ -48,12 +48,12 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'id' => '3',
                 'user_id' => '1',
                 'nama' => 'Majelis Perwakilan Kelas',
-                'dari' => '2018',
+                'dari' => '2017',
                 'sampai' => '2018',
                 'jabatan' => 'Anggota',
                 'keterangan' => NULL,
                 'created_at' => '2022-04-23 08:54:43',
-                'updated_at' => '2022-04-23 08:55:28',
+                'updated_at' => '2022-07-15 17:27:43',
             ),
             3 => 
             array (
@@ -102,6 +102,66 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'keterangan' => NULL,
                 'created_at' => '2022-04-23 08:57:40',
                 'updated_at' => '2022-04-23 09:05:21',
+            ),
+            7 => 
+            array (
+                'id' => '8',
+                'user_id' => '101',
+                'nama' => 'Palang Merah Remaja',
+                'dari' => '2017',
+                'sampai' => '2020',
+                'jabatan' => 'Bendahara umum',
+                'keterangan' => '-',
+                'created_at' => '2022-07-15 22:29:42',
+                'updated_at' => '2022-07-15 22:29:42',
+            ),
+            8 => 
+            array (
+                'id' => '9',
+                'user_id' => '21',
+                'nama' => 'OSIS SMPN 2 Sindangbarang',
+                'dari' => '2012',
+                'sampai' => '2013',
+                'jabatan' => 'Ketua bidang kerohanian',
+                'keterangan' => NULL,
+                'created_at' => '2022-07-15 22:46:14',
+                'updated_at' => '2022-07-15 22:46:14',
+            ),
+            9 => 
+            array (
+                'id' => '10',
+                'user_id' => '101',
+                'nama' => 'Gerakan Mengajar Desa',
+                'dari' => '2020',
+                'sampai' => '2022',
+                'jabatan' => 'Tutor inspiratif',
+                'keterangan' => NULL,
+                'created_at' => '2022-07-15 22:49:13',
+                'updated_at' => '2022-07-15 22:49:13',
+            ),
+            10 => 
+            array (
+                'id' => '11',
+                'user_id' => '99',
+                'nama' => 'Karmapack',
+                'dari' => '2020',
+                'sampai' => '2024',
+                'jabatan' => 'Sekbid Kominfo',
+                'keterangan' => NULL,
+                'created_at' => '2022-07-16 11:23:00',
+                'updated_at' => '2022-07-16 11:23:00',
+            ),
+            11 => 
+            array (
+                'id' => '12',
+                'user_id' => '100',
+                'nama' => 'Lembaga Dakwah kampus Stisip Guna Nusantara',
+                'dari' => '2022',
+                'sampai' => '2023',
+                'jabatan' => 'Divisi Syiar',
+                'keterangan' => 'Pengelola Media sosial',
+                'created_at' => '2022-07-19 20:01:31',
+                'updated_at' => '2022-07-19 20:01:31',
             ),
         ));
         
