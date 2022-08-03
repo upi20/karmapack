@@ -43,8 +43,8 @@
                         {{-- angkatan --}}
                         <div class="form-group  mt-3">
                             <label for="angkatan">Angkatan</label>
-                            <input type="number" min="2003" max="9999" class="form-control" id="angkatan" name="angkatan"
-                                placeholder="Tahun Masuk" value="{{ $user->angkatan }}" required>
+                            <input type="number" min="2003" max="9999" class="form-control" id="angkatan"
+                                name="angkatan" placeholder="Tahun Masuk" value="{{ $user->angkatan }}" required>
                         </div>
                         <hr>
 
@@ -61,8 +61,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Tentang Saya</label>
-                            <textarea class="form-control" rows="6" name="bio" id="bio"
-                                placeholder="My bio.........">{{ $user->bio }}</textarea>
+                            <textarea class="form-control" rows="6" name="bio" id="bio" placeholder="My bio.........">{{ $user->bio }}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -157,8 +156,8 @@
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <div class="form-group">
                             <label for="name">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nama Lengkap"
-                                value="{{ $user->name }}" required>
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Nama Lengkap" value="{{ $user->name }}" required>
                         </div>
                         <div class="form-group">
                             <label for="username">Nama Profile</label>
@@ -179,8 +178,8 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Alamat Email"
-                                value="{{ $user->email }}" required>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Alamat Email" value="{{ $user->email }}" required>
                             <small class="text-danger">Email hanya digunakan untuk login anggota dan tidak akan di
                                 tampilkan/akses di halaman depan/utama.</small>
                         </div>
@@ -309,8 +308,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-kontak-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-kontak-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="kontak_form" method="POST" enctype="multipart/form-data">
@@ -318,15 +317,15 @@
                         <input type="hidden" name="id" id="kontak_id">
                         <div class="form-group">
                             <label class="form-label" for="kontak_tipe">Kontak Jenis/Tipe</label>
-                            <select class="form-control" style="width: 100%;" required="" id="kontak_tipe" name="tipe">
+                            <select class="form-control" style="width: 100%;" required="" id="kontak_tipe"
+                                name="tipe">
                                 @foreach ($kontak_tipe as $kontak)
                                     <option value="{{ $kontak->id }}">{{ $kontak->nama }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="kontak">Kontak <span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label" for="kontak">Kontak <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="kontak" name="kontak"
                                 placeholder="Ex: https://facebook.com/iseplutpinur7" required="" />
                         </div>
@@ -433,8 +432,8 @@
                         <div class="form-group">
                             <label class="form-label" for="pengalaman_organisasi_nama">Nama Organisasi<span
                                     class="text-danger">*</span></label>
-                            <select style="width: 100%;" class="form-control" id="pengalaman_organisasi_nama" name="nama"
-                                placeholder="Nama Organisasi" required="">
+                            <select style="width: 100%;" class="form-control" id="pengalaman_organisasi_nama"
+                                name="nama" placeholder="Nama Organisasi" required="">
                             </select>
                         </div>
                         <div class="row">
@@ -442,8 +441,8 @@
                                 <div class="form-group">
                                     <label class="form-label" for="pengalaman_organisasi_dari">Dari <span
                                             class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" id="pengalaman_organisasi_dari" name="dari"
-                                        placeholder="Tahun Dari" required="" />
+                                    <input type="number" class="form-control" id="pengalaman_organisasi_dari"
+                                        name="dari" placeholder="Tahun Dari" required="" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -491,7 +490,8 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="javascript:void(0)" id="pengalaman_lain_form" method="POST" enctype="multipart/form-data">
+                    <form action="javascript:void(0)" id="pengalaman_lain_form" method="POST"
+                        enctype="multipart/form-data">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
                         <input type="hidden" name="id" id="pengalaman_lain_id">
                         <div class="form-group">

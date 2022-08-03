@@ -50,6 +50,8 @@ class DatabaseSeeder extends Seeder
         // backup frontend
         // php artisan iseed users,pendaftarans,pend_sensus --force
 
+        // backup user access
+        // php artisan iseed p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions --force
         // ============================================================================================================
         // ============================================================================================================
 
@@ -101,5 +103,13 @@ class DatabaseSeeder extends Seeder
         $this->call(GaleriTagMemberTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
         $this->call(PendSensusTableSeeder::class);
+
+        // user role
+        // $this->call(UserRolePermissionSeeder::class);
+        $this->call(PPermissionsTableSeeder::class);
+        $this->call(PRolesTableSeeder::class);
+        $this->call(PModelHasRolesTableSeeder::class);
+        $this->call(PModelHasPermissionsTableSeeder::class);
+        $this->call(PRoleHasPermissionsTableSeeder::class);
     }
 }

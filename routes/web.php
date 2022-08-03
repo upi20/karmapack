@@ -48,10 +48,15 @@ use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 use App\Http\Controllers\Admin\PendaftaranController;
 use App\Http\Controllers\Admin\Pendaftaran\SensusController as SensusControllerAdmin;
 
+// User Access ========================================================================================================
+use App\Http\Controllers\Admin\UserAccess\PermissionController;
+use App\Http\Controllers\Admin\UserAccess\RoleController;
+
 // ====================================================================================================================
 // Member =============================================================================================================
 use App\Http\Controllers\Member\ProfileController;
 use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
+
 
 // ====================================================================================================================
 // Frontend ===========================================================================================================
@@ -129,7 +134,7 @@ Route::controller(MemberController::class)->prefix('anggota')->group(function ()
 
 // Kontak =============================================================================================================
 Route::controller(KontakController::class)->prefix('kontak')->group(function () {
-    Route::get('/', 'index')->name('kontak'); // page
+    Route::get('/', 'index')->name('kontak');
 });
 // ====================================================================================================================
 
@@ -138,7 +143,7 @@ Route::controller(KontakController::class)->prefix('kontak')->group(function () 
 
 // Galeri =============================================================================================================
 Route::controller(GaleriControllerFrontend::class)->prefix('galeri')->group(function () {
-    Route::get('/', 'index')->name('galeri'); // page
+    Route::get('/', 'index')->name('galeri');
     Route::get('/detail/{model:slug}', 'detail')->name('galeri.detail');
 });
 // ====================================================================================================================
@@ -149,12 +154,12 @@ Route::controller(GaleriControllerFrontend::class)->prefix('galeri')->group(func
 // Pendaftaran ========================================================================================================
 Route::prefix('pendaftaran')->group(function () {
     Route::controller(PendaftaranControllerFrontend::class)->group(function () {
-        Route::get('/', 'index')->name('pendaftaran'); // page
+        Route::get('/', 'index')->name('pendaftaran');
     });
 
     Route::controller(SensusControllerFrontend::class)->prefix('sensus')->group(function () {
-        Route::get('/', 'index')->name('pendaftaran.sensus'); // page
-        Route::post('/insert', 'insert')->name('pendaftaran.sensus.insert'); // insert
+        Route::get('/', 'index')->name('pendaftaran.sensus');
+        Route::post('/insert', 'insert')->name('pendaftaran.sensus.insert');
     });
 });
 // ====================================================================================================================
@@ -243,9 +248,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
         // Data
         Route::controller(ArtikelController::class)->prefix('data')->group(function () {
-            Route::get('/',  'index')->name('admin.artikel.data'); // page
-            Route::get('/add',  'add')->name('admin.artikel.data.add'); // page
-            Route::get('/edit/{artikel}',  'edit')->name('admin.artikel.data.edit'); // page
+            Route::get('/',  'index')->name('admin.artikel.data');
+            Route::get('/add',  'add')->name('admin.artikel.data.add');
+            Route::get('/edit/{artikel}',  'edit')->name('admin.artikel.data.edit');
 
             Route::delete('/{artikel}',  'delete')->name('admin.artikel.data.delete');
             Route::post('/insert',  'insert')->name('admin.artikel.data.insert');
@@ -276,12 +281,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
         // Data
         Route::controller(PeriodeController::class)->prefix('periode')->group(function () {
-            Route::get('/',  'index')->name('admin.pengurus.periode'); // page
-            Route::get('/add',  'add')->name('admin.pengurus.periode.add'); // page
-            Route::get('/edit/{model}',  'edit')->name('admin.pengurus.periode.edit'); // page
+            Route::get('/',  'index')->name('admin.pengurus.periode');
+            Route::get('/add',  'add')->name('admin.pengurus.periode.add');
+            Route::get('/edit/{model}',  'edit')->name('admin.pengurus.periode.edit');
             Route::get('/active/{model}',  'setActive')->name('admin.pengurus.periode.active');
-            Route::post('/member',  'member')->name('admin.pengurus.periode.member'); // member json
-            Route::post('/detail/{model}',  'detail')->name('admin.pengurus.periode.detail'); // detail json
+            Route::post('/member',  'member')->name('admin.pengurus.periode.member');
+            Route::post('/detail/{model}',  'detail')->name('admin.pengurus.periode.detail');
 
             Route::delete('/{model}',  'delete')->name('admin.pengurus.periode.delete');
             Route::post('/insert',  'insert')->name('admin.pengurus.periode.insert');
@@ -292,20 +297,20 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
         Route::group(['prefix' => 'jabatan'], function () {
             // suffix
             Route::controller(JabatanController::class)->group(function () {
-                Route::get('/get_parent',  'parent')->name('admin.pengurus.jabatan.parent'); // list option element
-                Route::get('/select2',  'select2')->name('admin.pengurus.jabatan.select2'); // select2
-                Route::post('/update',  'update')->name('admin.pengurus.jabatan.update'); // update
+                Route::get('/get_parent',  'parent')->name('admin.pengurus.jabatan.parent');
+                Route::get('/select2',  'select2')->name('admin.pengurus.jabatan.select2');
+                Route::post('/update',  'update')->name('admin.pengurus.jabatan.update');
 
                 // base
-                Route::get('/{periode_id}',  'index')->name('admin.pengurus.jabatan'); // page
-                Route::post('/{periode_id}',  'insert')->name('admin.pengurus.jabatan.insert'); // insert
-                Route::delete('/{model}',  'delete')->name('admin.pengurus.jabatan.delete'); // delete
+                Route::get('/{periode_id}',  'index')->name('admin.pengurus.jabatan');
+                Route::post('/{periode_id}',  'insert')->name('admin.pengurus.jabatan.insert');
+                Route::delete('/{model}',  'delete')->name('admin.pengurus.jabatan.delete');
             });
             // Member
             Route::controller(JabatanMemberController::class)->prefix('member')->group(function () {
-                Route::get('/select2', 'select2')->name('admin.pengurus.jabatan.member.select2'); // select2
-                Route::get('/{id}', 'index')->name('admin.pengurus.jabatan.member'); // page
-                Route::post('/update', 'update')->name('admin.pengurus.jabatan.member.update'); // update
+                Route::get('/select2', 'select2')->name('admin.pengurus.jabatan.member.select2');
+                Route::get('/{id}', 'index')->name('admin.pengurus.jabatan.member');
+                Route::post('/update', 'update')->name('admin.pengurus.jabatan.member.update');
             });
         });
     });
@@ -321,7 +326,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // Sosial media
     Route::controller(SocialMediaController::class)->prefix('social_media')->group(function () {
-        Route::get('/',  'index')->name('admin.social_media'); // page
+        Route::get('/',  'index')->name('admin.social_media');
         Route::post('/',  'insert')->name('admin.social_media.insert');
         Route::delete('/{id}',  'delete')->name('admin.social_media.delete');
         Route::post('/update',  'update')->name('admin.social_media.update');
@@ -329,7 +334,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // contact
     Route::controller(ContactController::class)->prefix('contact')->group(function () {
-        Route::get('/', 'index')->name('admin.contact'); // page
+        Route::get('/', 'index')->name('admin.contact');
         Route::post('/', 'insert')->name('admin.contact.insert');
         Route::delete('/{id}', 'delete')->name('admin.contact.delete');
         Route::post('/update', 'update')->name('admin.contact.update');
@@ -337,7 +342,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // Footer instagram
     Route::controller(FooterInstagramController::class)->prefix('footer_instagram')->group(function () {
-        Route::get('/',  'index')->name('admin.footer_instagram'); // page
+        Route::get('/',  'index')->name('admin.footer_instagram');
         Route::post('/',  'insert')->name('admin.footer_instagram.insert');
         Route::delete('/{model}',  'delete')->name('admin.footer_instagram.delete');
         Route::post('/update',  'update')->name('admin.footer_instagram.update');
@@ -345,7 +350,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // jenis pendidikan
     Route::controller(PendidikanJenisController::class)->prefix('pendidikan_jenis')->group(function () {
-        Route::get('/',  'index')->name('admin.profile.pendidikan_jenis'); // page
+        Route::get('/',  'index')->name('admin.profile.pendidikan_jenis');
         Route::post('/',  'insert')->name('admin.profile.pendidikan_jenis.insert');
         Route::delete('/{id}',  'delete')->name('admin.profile.pendidikan_jenis.delete');
         Route::post('/update',  'update')->name('admin.profile.pendidikan_jenis.update');
@@ -353,7 +358,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // kontak tipe
     Route::controller(KontakTipeController::class)->prefix('kontak_tipe')->group(function () {
-        Route::get('/', 'index')->name('admin.profile.kontak_tipe'); // page
+        Route::get('/', 'index')->name('admin.profile.kontak_tipe');
         Route::post('/', 'insert')->name('admin.profile.kontak_tipe.insert');
         Route::delete('/{id}', 'delete')->name('admin.profile.kontak_tipe.delete');
         Route::post('/update', 'update')->name('admin.profile.kontak_tipe.update');
@@ -361,7 +366,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
 
     // kontak tipe
     Route::controller(UsernameValidateController::class)->prefix('username_validation')->group(function () {
-        Route::get('/', 'index')->name('admin.username_validation'); // page
+        Route::get('/', 'index')->name('admin.username_validation');
         Route::get('/update', 'select2')->name('admin.username_validation.select2');
         Route::post('/save', 'save')->name('admin.username_validation.save');
     });
@@ -369,17 +374,41 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum', 'verified', 
     // Footer instagram
     Route::prefix('pendaftaran')->group(function () {
         Route::controller(PendaftaranController::class)->group(function () {
-            Route::get('/',  'index')->name('admin.pendaftaran'); // page
-            Route::get('/get_one/{model}',  'getOne')->name('admin.pendaftaran.get_one'); // page
+            Route::get('/',  'index')->name('admin.pendaftaran');
+            Route::get('/get_one/{model}',  'getOne')->name('admin.pendaftaran.get_one');
             Route::post('/',  'insert')->name('admin.pendaftaran.insert');
             Route::delete('/{model}',  'delete')->name('admin.pendaftaran.delete');
             Route::post('/update',  'update')->name('admin.pendaftaran.update');
         });
 
         Route::controller(SensusControllerAdmin::class)->prefix('sensus')->group(function () {
-            Route::get('/',  'index')->name('admin.pendaftaran.sensus'); // page
-            Route::get('/excel',  'excel')->name('admin.pendaftaran.sensus.excel'); // export excel
-            Route::post('/status',  'status')->name('admin.pendaftaran.sensus.status'); // set status
+            Route::get('/',  'index')->name('admin.pendaftaran.sensus');
+            Route::get('/excel',  'excel')->name('admin.pendaftaran.sensus.excel');
+            Route::post('/status',  'status')->name('admin.pendaftaran.sensus.status');
+        });
+    });
+
+    Route::group(['prefix' => 'user_access'], function () {
+        // Permission
+        Route::controller(PermissionController::class)->prefix('permission')->group(function () {
+            Route::get('/',  'index')->name('admin.user_access.permission');
+            Route::get('/select2',  'select2')->name('admin.user_access.permission.select2');
+            Route::post('/',  'store')->name('admin.user_access.permission.store');
+            Route::delete('/{id}',  'delete')->name('admin.user_access.permission.delete');
+            Route::post('/update',  'update')->name('admin.user_access.permission.update');
+        });
+
+        // Role
+        Route::controller(RoleController::class)->prefix('role')->group(function () {
+            Route::get('/',  'index')->name('admin.user_access.role');
+            Route::get('/create',  'create')->name('admin.user_access.role.create');
+            Route::get('/edit/{model}',  'edit')->name('admin.user_access.role.edit');
+            Route::get('/select2',  'select2')->name('admin.user_access.role.select2');
+
+            Route::post('/',  'store')->name('admin.user_access.role.store');
+            Route::post('/update',  'update')->name('admin.user_access.role.update');
+
+            Route::delete('/{id}',  'delete')->name('admin.user_access.role.delete');
         });
     });
 });
@@ -394,7 +423,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
     // profile
     Route::controller(ProfileController::class)->prefix('profile')->group(function () {
-        Route::get('/', 'index')->name('member.profile'); // page
+        Route::get('/', 'index')->name('member.profile');
         Route::post('/save_basic', 'save_basic')->name('member.profile.save_basic');
         Route::post('/save_address', 'save_address')->name('member.profile.save_address');
         Route::post('/save_detail', 'save_detail')->name('member.profile.save_detail');
@@ -436,7 +465,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth:sanctum', 'verified',
 
     // change password
     Route::controller(UserController::class)->prefix('password')->group(function () {
-        Route::get('/',  'change_password')->name('member.password'); // page
+        Route::get('/',  'change_password')->name('member.password');
         Route::post('/save',  'save_password')->name('member.password.save');
     });
 });
