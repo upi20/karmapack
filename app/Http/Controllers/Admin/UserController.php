@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repository\Admin\UserRepository;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -28,8 +29,10 @@ class UserController extends Controller
             ],
             'navigation' => 'user.view',
         ];
-        $user_role = User::getAllRole();
-        return view('admin.user', compact('page_attr', 'user_role'));
+        $user_role = Role::all();
+        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
+        $prefix = str_replace('/', '.', $prefix_uri);
+        return view('admin.user', compact('page_attr', 'user_role', 'prefix_uri', 'prefix'));
     }
 
     public function store(Request $request)
@@ -67,5 +70,11 @@ class UserController extends Controller
     public function excel(Request $request)
     {
         return $this->repository->excel($request);
+    }
+
+    public function find(Request $request)
+    {
+        $user = User::with('roles', 'permissions')->find($request->id);
+        return response()->json($user);
     }
 }

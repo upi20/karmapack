@@ -2,7 +2,6 @@
 
 namespace App\Repository\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -36,9 +35,29 @@ class UserRepository
         SQL;
         $this->query['birthday_countdown_alias'] = 'birthday_countdown';
 
+        $tableNames = config('permission.table_names');
+        $columnNames = config('permission.column_names');
+        // roles
+
+        $c_roles = 'roles';
+        $t_has_roles = $tableNames['model_has_roles'];
+        $t_roles = $tableNames['roles'];
+        $t_user = User::tableName;
+
+        $c_model_id = $columnNames['model_morph_key'];
+
+        $this->query[$c_roles] = <<<SQL
+            (SELECT GROUP_CONCAT($t_roles.`name` SEPARATOR ', ') FROM $t_has_roles 
+            join $t_roles on $t_has_roles.role_id = $t_roles.id
+            where $t_has_roles.$c_model_id = $t_user.id)
+        SQL;
+
+        $this->query["{$c_roles}_alias"] = $c_roles;
+
         $user = User::select(['id', 'name', 'role', 'email', 'active', 'profile_photo_path', 'date_of_birth', 'angkatan'])
             ->selectRaw('IF(active = 1, "Yes", "No") as active_str')
-            ->selectRaw("{$this->query['birthday_countdown']} as {$this->query['birthday_countdown_alias']}");
+            ->selectRaw("{$this->query['birthday_countdown']} as {$this->query['birthday_countdown_alias']}")
+            ->selectRaw($this->query[$c_roles] . ' as ' . $this->query["{$c_roles}_alias"]);
         // filter
         if (isset($request->filter)) {
             $filter = $request->filter;
@@ -46,7 +65,13 @@ class UserRepository
                 $user->where('active', '=', $filter['active']);
             }
             if ($filter['role'] != '') {
-                $user->where('role',  '=', $filter['role']);
+                $f = $filter['role'];
+                $where = <<<SQL
+                    ((SELECT count(*) FROM $t_has_roles 
+                    join $t_roles on $t_has_roles.role_id = $t_roles.id
+                    where $t_has_roles.$c_model_id = $t_user.id and $t_roles.`name` = '$f') > 0)
+                SQL;
+                $user->whereRaw($where);
             }
         }
 
@@ -58,33 +83,35 @@ class UserRepository
             ->filterColumn($this->query['birthday_countdown_alias'], function ($query, $keyword) {
                 $query->whereRaw("{$this->query['birthday_countdown']} like '%$keyword%'");
             })
+            ->filterColumn($this->query["{$c_roles}_alias"], function ($query, $keyword) use ($c_roles) {
+                $query->whereRaw($this->query[$c_roles] . " like '%$keyword%'");
+            })
             ->make(true);
     }
 
     public function store(Request $request)
     {
         try {
-            $user_role = implode(",", User::getAllRole());
             $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'role' => ['required', 'string', 'in:' . $user_role],
                 'date_of_birth' => ['required', 'date'],
                 'angkatan' => ['required', 'int'],
                 'active' => ['required', 'int', 'in:1,0'],
                 'password' => ['required', 'string', new Password]
             ]);
 
-            User::create([
+            $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'date_of_birth' => $request->date_of_birth,
                 'angkatan' => $request->angkatan,
-                'role' => $request->role,
                 'active' => $request->active,
                 'password' => Hash::make($request->password),
-                // // 'created_by' => auth()->user()->id,
             ]);
+
+            $user->assignRole($request->roles);
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -103,7 +130,6 @@ class UserRepository
                 'id' => ['required', 'int'],
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $user->id],
-                'role' => ['required', 'string', 'in:' . $user_role],
                 'date_of_birth' => ['required', 'date'],
                 'angkatan' => ['required', 'int'],
                 'active' => ['required', 'int', 'in:1,0'],
@@ -116,11 +142,11 @@ class UserRepository
 
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->role = $request->role;
             $user->date_of_birth = $request->date_of_birth;
             $user->angkatan = $request->angkatan;
             $user->active = $request->active;
-            // $model->updated_by = auth()->user()->id;
+
+            $user->syncRoles($request->roles);
 
             $user->save();
             return response()->json();

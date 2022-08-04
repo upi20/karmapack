@@ -24,16 +24,16 @@ class PRolesTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'admin',
                 'guard_name' => 'web',
-                'created_at' => '2022-08-04 04:07:30',
-                'updated_at' => '2022-08-04 04:07:30',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
             ),
             1 => 
             array (
                 'id' => 2,
                 'name' => 'member',
                 'guard_name' => 'web',
-                'created_at' => '2022-08-04 04:07:30',
-                'updated_at' => '2022-08-04 04:07:30',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
             ),
         ));
         
