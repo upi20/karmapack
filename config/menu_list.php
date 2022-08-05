@@ -39,6 +39,7 @@ $admin = [
     ],
 
     ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
+    ['title' => 'Menu', 'route' => 'admin.menu', 'icon' => 'fe fe-align-justify'],
     [
         'name' => 'pendaftaran',
     ],

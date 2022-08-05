@@ -52,6 +52,9 @@ use App\Http\Controllers\Admin\Pendaftaran\SensusController as SensusControllerA
 use App\Http\Controllers\Admin\UserAccess\PermissionController;
 use App\Http\Controllers\Admin\UserAccess\RoleController;
 
+// Menu ===============================================================================================================
+use App\Http\Controllers\Admin\MenuController;
+
 // ====================================================================================================================
 // Member =============================================================================================================
 use App\Http\Controllers\Member\ProfileController;
@@ -432,6 +435,21 @@ Route::group(['prefix' => $name, 'middleware' => ['auth:sanctum']], function () 
             Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
             Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         });
+    });
+
+    $prefix = 'menu';
+    Route::controller(MenuController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.menu
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::put('/save', 'save')->name("$name.save")->middleware("permission:$name.save");
+
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+        Route::get('/list', 'list')->name("$name.list")->middleware("permission:$name.list");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.find");
+        Route::get('/parent_list', 'parent_list')->name("$name.parent_list")->middleware("permission:$name.list");
     });
 });
 // ====================================================================================================================

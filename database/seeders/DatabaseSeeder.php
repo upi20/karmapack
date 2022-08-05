@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         // php artisan iseed users,pendaftarans,pend_sensus --force
 
         // backup user access
-        // php artisan iseed p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions --force
+        // php artisan iseed p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu --force
         // ============================================================================================================
         // ============================================================================================================
 
@@ -110,5 +110,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PPermissionsTableSeeder::class);
         $this->call(PRolesTableSeeder::class);
         $this->call(PRoleHasPermissionsTableSeeder::class);
+
+        // role menu
+        $this->call(PMenuTableSeeder::class);
+        $this->call(PRoleHasMenuTableSeeder::class);
     }
 }

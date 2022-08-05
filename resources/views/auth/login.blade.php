@@ -102,7 +102,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         <div class="page" style="position: absolute; width: 100%; height: 100vh;">
             <div class="">
                 <div class="container-login100">
-                    <div class="wrap-login100 p-6">
+                    <div class="wrap-login100 p-6" style="border-radius: 24px; box-shadow: none">
                         <div class="text-center">
                             <img src="{{ asset('assets/templates/admin/images/brand/logo-white.png') }}"
                                 class="header-brand-img" alt="Logo Karmapack" id="logo">
@@ -112,25 +112,29 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                             <div class="panel-body tabs-menu-body p-0">
                                 <div class="tab-content">
                                     <form action="javascript:void(0)" id="Loginform" name="Loginform" method="POST"
-                                        enctype="multipart/form-data">
+                                        enctype="multipart/form-data" autocomplete="false">
                                         <div class="wrap-input100 validate-input input-group"
                                             data-bs-validate="Valid email is required: ex@abc.xyz">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
+                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
+                                                style="border-radius: 24px 0 0 24px;">
+                                                <i class="zmdi zmdi-email text-muted ms-1" aria-hidden="true"></i>
                                             </a>
-                                            <input class="input100 border-start-0 form-control ms-0" type="email"
-                                                placeholder="Email" id="email" required="" name="email">
+                                            <input class="input100 border-start-0 form-control ms-0 bg-white"
+                                                type="email" placeholder="Email" id="email" required=""
+                                                name="email" style="border-radius: 0 24px 24px 0;">
                                         </div>
                                         <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
-                                                <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
+                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
+                                                style="border-radius: 24px 0 0 24px;">
+                                                <i class="zmdi zmdi-eye text-muted ms-1" aria-hidden="true"></i>
                                             </a>
-                                            <input class="input100 border-start-0 form-control ms-0" type="password"
-                                                placeholder="Password" id="password" required=""
-                                                name="password">
+                                            <input class="input100 border-start-0 form-control ms-0 bg-white"
+                                                type="password" placeholder="Password" id="password" required=""
+                                                name="password" style="border-radius: 0 24px 24px 0;">
                                         </div>
                                         <div class="container-login100-form-btn">
-                                            <button type="submit" class="login100-form-btn btn-primary">
+                                            <button type="submit" class="login100-form-btn btn-primary"
+                                                style="border: 0; border-radius: 24px">
                                                 Sign in
                                             </button>
                                             {{-- <div class="text-center pt-4">

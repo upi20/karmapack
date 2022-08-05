@@ -78,7 +78,6 @@
     <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
-
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
@@ -225,7 +224,7 @@
             $('#modal-default-title').html("Add Permission");
             $('#modal-default').modal('show');
             $('#id').val('');
-            $('#guard').val('web');
+            $('#guard_name').val('web');
             resetErrorAfterInput();
             isUpdate = false;
         }
