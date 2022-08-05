@@ -59,7 +59,7 @@ class RoleController extends Controller
         ];
 
         $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles');
-        return view('admin.user_access.role.editor2',  array_merge($data, ['compact' => $data]));
+        return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }
 
     public function edit(Role $model)
@@ -95,7 +95,7 @@ class RoleController extends Controller
 
         $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles');
 
-        return view('admin.user_access.role.editor2',  array_merge($data, ['compact' => $data]));
+        return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }
 
     public function store(Request $request)
@@ -184,5 +184,10 @@ class RoleController extends Controller
         } catch (\Exception $error) {
             return response()->json($error, 500);
         }
+    }
+
+    private function get_editor()
+    {
+        return request('v') == 1 ? 'admin.user_access.role.editor' : 'admin.user_access.role.editor2';
     }
 }
