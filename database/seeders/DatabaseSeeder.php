@@ -105,10 +105,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PendSensusTableSeeder::class);
 
         // user role
+        $this->call(PRolesTableSeeder::class);
+        $this->call(PPermissionsTableSeeder::class);
         $this->call(PModelHasPermissionsTableSeeder::class);
         $this->call(PModelHasRolesTableSeeder::class);
-        $this->call(PPermissionsTableSeeder::class);
-        $this->call(PRolesTableSeeder::class);
         $this->call(PRoleHasPermissionsTableSeeder::class);
 
         // role menu
