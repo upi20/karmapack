@@ -39,6 +39,7 @@ $admin = [
     ],
 
     ['title' => 'Galeri', 'route' => 'admin.galeri', 'icon' => 'fe fe-image'],
+    ['title' => 'Menu', 'route' => 'admin.menu', 'icon' => 'fe fe-align-justify'],
     [
         'name' => 'pendaftaran',
     ],
@@ -46,6 +47,13 @@ $admin = [
     ['title' => 'Kontak', 'icon' => 'fe fe-phone', 'route' => 'admin.contact'],
     ['title' => 'Footer Instagram', 'icon' => 'fe fe-image', 'route' => 'admin.footer_instagram'],
     ['title' => 'Username Role', 'icon' => 'fe fe-check', 'route' => 'admin.username_validation'],
+    [
+        'title' => 'User Access', 'icon' => 'fe fe-user-check',
+        'children' => [
+            ['title' => 'Permission', 'route' => 'admin.user_access.permission'],
+            ['title' => 'Role', 'route' => 'admin.user_access.role'],
+        ]
+    ],
 ];
 
 // set member menu

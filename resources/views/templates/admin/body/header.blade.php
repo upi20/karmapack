@@ -4,10 +4,8 @@
         <div class="d-flex flex-row  justify-content-between">
             <!-- sidebar-toggle-->
             <div>
-                <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar"
-                    href="javascript:void(0)">
+                <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)">
                 </a>
-
             </div>
             <div>
 
@@ -55,7 +53,15 @@
                                             <h5 class="text-dark mb-0 fs-14 fw-semibold">
                                                 {{ ucfirst(auth()->user()->name) }}
                                             </h5>
-                                            <small class="text-muted">{{ ucfirst(auth()->user()->role) }}</small>
+                                            <small
+                                                class="text-muted">{{ ucfirst(
+                                                    implode(
+                                                        ', ',
+                                                        auth()->user()->roles->map(function ($v) {
+                                                                return $v->name;
+                                                            })->toArray(),
+                                                    ),
+                                                ) }}</small>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>

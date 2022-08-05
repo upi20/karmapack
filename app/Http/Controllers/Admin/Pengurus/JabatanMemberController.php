@@ -13,6 +13,7 @@ use League\Flysystem\Exception;
 use App\Models\Pengurus\PeriodeMember;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\JabatanMember;
+use Error;
 
 class JabatanMemberController extends Controller
 {
@@ -107,7 +108,7 @@ class JabatanMemberController extends Controller
             foreach ($request->members as $member) {
                 $cek = $this->cekPeriodeMember($request->periode_id, $member);
                 if ($cek) {
-                    throw new Exception($this->getNamaUsersById($member) . " Sudah terdaftar di jabatan lain");
+                    throw new Error($this->getNamaUsersById($member) . " Sudah terdaftar di jabatan lain");
                 } else {
                     // insert $request->member tabel pengurus_periode, pengurus_periode_jabatan
                     JabatanMember::create([

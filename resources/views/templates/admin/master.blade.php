@@ -95,7 +95,6 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         .swal2-container {
             z-index: 9999999999 !important;
         }
-
     </style>
 </head>
 
@@ -116,6 +115,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
             @include('templates.admin.body.header')
 
             @include('templates.admin.body.sidebar', [
+                'page_attr' => $page_attr,
                 'page_attr_navigation' => $page_attr->navigation,
             ])
 
@@ -164,8 +164,8 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         </div>
 
         <div class="position-fixed end-0 p-3" style="top: 85px">
-            <div class="toast align-items-center" role="alert" id="toast" aria-live="assertive" aria-atomic="true"
-                data-bs-delay="5000">
+            <div class="toast align-items-center" role="alert" id="toast" aria-live="assertive"
+                aria-atomic="true" data-bs-delay="5000">
                 <div class="d-flex">
                     <div class="toast-body" id="toast-body">
                         Hello, world! This is a toast message.

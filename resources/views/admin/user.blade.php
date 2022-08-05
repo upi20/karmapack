@@ -25,8 +25,8 @@
                             <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
                                 <option value="">All User Role</option>
                                 @foreach ($user_role as $role)
-                                    <option value="{{ $role }}">
-                                        {{ ucfirst(implode(' ', explode('_', $role))) }}
+                                    <option value="{{ $role->name }}">
+                                        {{ ucfirst(implode(' ', explode('_', $role->name))) }}
                                     </option>
                                 @endforeach
                             </select>
@@ -70,30 +70,29 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="UserForm" name="UserForm" method="POST"
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="form-label" for="angkatan">Generation <span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label" for="angkatan">Generation <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="angkatan" name="angkatan"
                                 placeholder="Enter Generation" required="" min="2003" max="2999" />
 
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
-                                required="" />
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Enter Name" required="" />
 
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Email Address"
-                                required="" />
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="Email Address" required="" />
                             <div class="help-block"></div>
                         </div>
                         <div class="form-group">
@@ -104,24 +103,25 @@
                             <div class="help-block"></div>
                         </div>
                         <div class="form-group ">
-                            <label class="form-label" for="password">Password <span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="password" name="password"
                                 placeholder="Enter Password" required="">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="role">User Role</label>
-                            <select class="form-control" style="width: 100%;" required="" id="role" name="role">
+                            <select class="form-control select2" multiple style="width: 100%;" required=""
+                                id="roles" name="roles[]">
                                 @foreach ($user_role as $role)
-                                    <option value="{{ $role }}">
-                                        {{ ucfirst(implode(' ', explode('_', $role))) }}
+                                    <option value="{{ $role->name }}">
+                                        {{ ucfirst(implode(' ', explode('_', $role->name))) }}
                                     </option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="active">Active</label>
-                            <select class="form-control" style="width: 100%;" required="" id="active" name="active">
+                            <select class="form-control" style="width: 100%;" required="" id="active"
+                                name="active">
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
                             </select>
@@ -145,24 +145,23 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-
-
-    {{-- sweetalert --}}
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
 
     <script>
         const table_html = $('#tbl_main');
         $(document).ready(function() {
+            $('#roles').select2({
+                dropdownParent: $('#modal-default'),
+                placeholder: 'Select role'
+            });
+
             // datatable ====================================================================================
             $.ajaxSetup({
                 headers: {
@@ -203,8 +202,13 @@
                         name: 'email'
                     },
                     {
-                        data: 'role_str',
-                        name: 'role_str'
+                        data: 'roles',
+                        name: 'roles',
+                        render(data, type, full, meta) {
+                            return String(data).split(', ').reduce((r, v) => {
+                                return r + `<span class="badge bg-primary me-2">${v}</span>`;
+                            }, "");
+                        },
                     },
                     {
                         data: 'date_of_birth',
@@ -235,14 +239,7 @@
                                 <i class="fa fa-user" aria-hidden="true"></i> Profile
                                 </a>
                                 <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
-                                data-id="${full.id}"
-                                data-name="${full.name}"
-                                data-email="${full.email}"
-                                data-role="${full.role}"
-                                data-active="${full.active}"
-                                data-date_of_birth="${full.date_of_birth}"
-                                data-angkatan="${full.angkatan}"
-                                onClick="editFunc(this)">
+                                onClick="editFunc('${full.id}')">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
                                 <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
@@ -333,24 +330,49 @@
             $('#modal-default-title').html("Add User");
             $('#modal-default').modal('show');
             $('#id').val('');
+            $('#roles').val('').trigger('change');
             resetErrorAfterInput();
             $('#password').attr('required', true);
         }
 
+        function editFunc(id) {
+            $.LoadingOverlay("show");
+            $.ajax({
+                type: "GET",
+                url: `{{ route($prefix . '.find') }}`,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    id
+                },
+                success: (data) => {
+                    $('#modal-default-title').html("Edit User");
+                    $('#modal-default').modal('show');
+                    $('#UserForm').trigger("reset");
+                    $('#id').val(data.id);
+                    $('#name').val(data.name);
+                    $('#email').val(data.email);
+                    $('#date_of_birth').val(data.date_of_birth);
+                    $('#angkatan').val(data.angkatan);
 
-        function editFunc(datas) {
-            const data = datas.dataset;
-            $('#modal-default-title').html("Edit User");
-            $('#modal-default').modal('show');
-            $('#UserForm').trigger("reset");
-            $('#id').val(data.id);
-            $('#name').val(data.name);
-            $('#email').val(data.email);
-            $('#date_of_birth').val(data.date_of_birth);
-            $('#angkatan').val(data.angkatan);
-            $('#role').val(data.role);
-            $('#active').val(data.active);
-            $('#password').removeAttr('required');
+                    $('#roles').val(data.roles.map(e => e.name)).trigger('change');
+                    $('#active').val(data.active);
+                    $('#password').removeAttr('required');
+                },
+                error: function(data) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Something went wrong',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                },
+                complete: function() {
+                    $.LoadingOverlay("hide");
+                }
+            });
         }
 
         function deleteFunc(id) {
