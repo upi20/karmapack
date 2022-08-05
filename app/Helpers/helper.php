@@ -61,7 +61,7 @@ if (!function_exists('sidebar_menu_admin')) {
      *
      * @return array
      */
-    function sidebar_menu_admin()
+    function sidebar_menu_admin($navigation = null)
     {
         $menus = menu(auth()->user()->id);
         $menu_body = '';
@@ -72,6 +72,7 @@ if (!function_exists('sidebar_menu_admin')) {
             $separator = $menu->type == 0;
 
             // active
+            $menu->active = $menu->active || $menu->route == $navigation;
             $active_class = $menu->active ? 'active' : '';
 
             if ($separator) {
@@ -79,14 +80,17 @@ if (!function_exists('sidebar_menu_admin')) {
                 $menu_body .= "<li class=\"sub-category\"><h3>{$menu->title}</h3></li> ";
             } elseif ($menu->children) {
                 $child_menu = '';
+                $child_active = false;
                 foreach ($menu->children as $c) {
                     $child = (object)$c;
+                    $child->active = $child->active || $child->route == $navigation;
                     $active = $child->active ? 'active' : '';
                     $child_menu .= "<li><a href=\"$child->url\" class=\"slide-item $active\">$child->title</a></li>";
+                    if ($child->active) $child_active = $child->active;
                 }
 
-                $active_1 = $menu->active ? 'is-expanded' : '';
-                $active_2 = $menu->active ? 'active' : '';
+                $active_1 = ($menu->active || $child_active) ? 'is-expanded' : '';
+                $active_2 = ($menu->active || $child_active) ? 'active' : '';
                 $menu_body .= " <li class=\"slide $active_1\">
                                     <a class=\"side-menu__item $active_1 $active_2\" data-bs-toggle=\"slide\" href=\"javascript:void(0)\">
                                         <i class=\"side-menu__icon $menu->icon\"></i>
