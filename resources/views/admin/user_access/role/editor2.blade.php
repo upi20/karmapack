@@ -27,15 +27,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-label">Permission</div>
-                <div class="custom-controls-stacked">
-                    @foreach ($permissions as $p)
-                        <label class="custom-control custom-checkbox-md float-start me-2" style="min-width: 320px">
-                            <input type="checkbox" class="custom-control-input" name="permissions[]"
-                                value="{{ $p->name }}" {{ in_array($p->name, $roles) ? 'checked' : '' }}>
-                            <span class="custom-control-label">{{ $p->name }}</span>
-                        </label>
-                    @endforeach
+                <div class="form-group">
+                    <label class="form-label" for="guard_name">Permission <span class="text-danger">*</span></label>
+                    <select name="permissions[]" id="permissions" multiple class="form-control">
+                        @foreach ($permissions as $p)
+                            <option value="{{ $p->name }}" {{ in_array($p->name, $roles) ? 'selected' : '' }}>
+                                {{ $p->name }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
             </form>
         </div>
@@ -50,8 +50,14 @@
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js">
+    </script>
     <script>
         $(document).ready(function() {
+            $('#permissions').bootstrapDualListbox();
+            setTimeout(() => {
+                $('.btn-group').next().addClass('p-2').height('250px');;
+            }, 500);
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
@@ -104,4 +110,9 @@
             });
         });
     </script>
+@endsection
+
+@section('stylesheet')
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css">
 @endsection
