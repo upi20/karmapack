@@ -30,7 +30,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:53:19',
+                'updated_at' => '2022-08-06 00:38:58',
             ),
             1 => 
             array (
@@ -43,7 +43,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:58:55',
+                'updated_at' => '2022-08-06 00:38:58',
             ),
             2 => 
             array (
@@ -173,7 +173,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:46:52',
             ),
             12 => 
             array (
@@ -186,7 +186,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:46:52',
             ),
             13 => 
             array (
@@ -199,7 +199,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:42:29',
             ),
             14 => 
             array (
@@ -212,7 +212,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:42:29',
             ),
             15 => 
             array (
@@ -225,7 +225,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:42:29',
             ),
             16 => 
             array (
@@ -247,11 +247,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Menu',
                 'icon' => 'fe fe-align-justify',
                 'route' => 'admin.menu',
-                'sequence' => 18,
+                'sequence' => 25,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             18 => 
             array (
@@ -260,11 +260,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Pendaftaran',
                 'icon' => 'fe fe-edit',
                 'route' => NULL,
-                'sequence' => 19,
+                'sequence' => 18,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 00:00:58',
+                'updated_at' => '2022-08-06 00:19:59',
             ),
             19 => 
             array (
@@ -273,11 +273,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Sosial Media',
                 'icon' => 'fe fe-aperture',
                 'route' => 'admin.social_media',
-                'sequence' => 20,
+                'sequence' => 21,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:19:59',
             ),
             20 => 
             array (
@@ -286,11 +286,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Kontak',
                 'icon' => 'fe fe-phone',
                 'route' => 'admin.contact',
-                'sequence' => 21,
+                'sequence' => 22,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             21 => 
             array (
@@ -299,11 +299,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Footer Instagram',
                 'icon' => 'fe fe-image',
                 'route' => 'admin.footer_instagram',
-                'sequence' => 22,
+                'sequence' => 23,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             22 => 
             array (
@@ -312,11 +312,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Username Role',
                 'icon' => 'fe fe-check',
                 'route' => 'admin.username_validation',
-                'sequence' => 23,
+                'sequence' => 24,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             23 => 
             array (
@@ -325,11 +325,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'User Access',
                 'icon' => 'fe fe-user-check',
                 'route' => '',
-                'sequence' => 24,
+                'sequence' => 26,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             24 => 
             array (
@@ -338,11 +338,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Permission',
                 'icon' => NULL,
                 'route' => 'admin.user_access.permission',
-                'sequence' => 25,
+                'sequence' => 27,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             25 => 
             array (
@@ -351,11 +351,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Role',
                 'icon' => NULL,
                 'route' => 'admin.user_access.role',
-                'sequence' => 26,
+                'sequence' => 28,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             26 => 
             array (
@@ -364,11 +364,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Member Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 27,
+                'sequence' => 29,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 00:08:33',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             27 => 
             array (
@@ -377,11 +377,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Profile',
                 'icon' => 'fe fe-user',
                 'route' => 'member.profile',
-                'sequence' => 29,
+                'sequence' => 30,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             28 => 
             array (
@@ -390,11 +390,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Ganti Password',
                 'icon' => 'fe fe-lock',
                 'route' => 'member.password',
-                'sequence' => 30,
+                'sequence' => 31,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-05 23:50:28',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             29 => 
             array (
@@ -403,11 +403,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Logout',
                 'icon' => 'fe fe-alert-circle',
                 'route' => 'logout',
-                'sequence' => 66,
+                'sequence' => 32,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:54:09',
-                'updated_at' => '2022-08-05 23:54:09',
+                'updated_at' => '2022-08-06 00:20:00',
             ),
             30 => 
             array (
@@ -416,11 +416,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'List Data',
                 'icon' => NULL,
                 'route' => 'admin.pendaftaran',
-                'sequence' => 66,
+                'sequence' => 19,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-06 00:05:47',
-                'updated_at' => '2022-08-06 00:10:07',
+                'updated_at' => '2022-08-06 00:19:59',
             ),
             31 => 
             array (
@@ -429,11 +429,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Sensus Anggota',
                 'icon' => NULL,
                 'route' => 'admin.pendaftaran.sensus',
-                'sequence' => 67,
+                'sequence' => 20,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-06 00:06:23',
-                'updated_at' => '2022-08-06 00:09:52',
+                'updated_at' => '2022-08-06 00:19:59',
             ),
         ));
         
