@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Member\ProfileController;
 
 $name = 'member';
-Route::get('/', [MemberDashboardController::class, 'index'])->name("$name.dashboard")->middleware("permission:$name.dashboard");
+Route::get('/dashboard', [DashboardController::class, 'index'])->name("$name.dashboard")->middleware("permission:$name.dashboard");
 
 $prefix = 'profile';
 Route::controller(ProfileController::class)->prefix($prefix)->group(function () use ($name, $prefix) {

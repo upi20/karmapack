@@ -53,6 +53,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js">
     </script>
     <script>
+        const reload = {{ $reload == 1 ? 'true' : 'false' }};
         $(document).ready(function() {
             $('#permissions').bootstrapDualListbox();
             setTimeout(() => {
@@ -82,9 +83,11 @@
                             timer: 1500
                         })
 
-                        setTimeout(() => {
-                            window.location.href = `{{ route($prefix_parent) }}`;
-                        }, 1500);
+                        if (reload) {
+                            setTimeout(() => {
+                                window.location.href = `{{ route($prefix_parent) }}`;
+                            }, 1500);
+                        }
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};

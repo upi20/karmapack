@@ -138,19 +138,11 @@ Route::prefix($name)->group(function () use ($name) {
 // dashboard ==========================================================================================================
 Route::get('/dashboard', function () {
     $user = Auth::user();
-    $role = isset($user->role) ? $user->role : null;
-    switch ($role) {
-        case User::ROLE_ADMIN:
-            return Redirect::route('admin.dashboard');
-            break;
 
-        case User::ROLE_MEMBER:
-            return Redirect::route('member.dashboard');
-            break;
-
-        default:
-            return view('auth.login');
-            break;
+    if ($user->hasRole(config('app.super_admin_role'))) {
+        return Redirect::route('admin.dashboard');
+    } else {
+        return Redirect::route('member.dashboard');
     }
 })->name("dashboard");
 // ====================================================================================================================

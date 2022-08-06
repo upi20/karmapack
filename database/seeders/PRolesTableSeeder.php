@@ -25,7 +25,7 @@ class PRolesTableSeeder extends Seeder
                 'name' => 'Administrator',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-04 16:05:41',
-                'updated_at' => '2022-08-06 00:47:48',
+                'updated_at' => '2022-08-06 14:36:10',
             ),
             1 => 
             array (
@@ -90,6 +90,14 @@ class PRolesTableSeeder extends Seeder
                 'guard_name' => 'web',
                 'created_at' => '2022-08-06 01:26:51',
                 'updated_at' => '2022-08-06 01:26:51',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'name' => 'Penulis Artikel',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-06 14:15:34',
+                'updated_at' => '2022-08-06 14:15:34',
             ),
         ));
         

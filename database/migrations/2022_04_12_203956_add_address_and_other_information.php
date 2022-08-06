@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('gender')->after('email')->nullable()->default(null);
 
             $table->boolean('active')->after('password')->default('0');
-            $table->string('role')->after('name')->default(User::ROLE_MEMBER);
 
             $table->text('bio')->after('name')->nullable()->default(null);
             $table->string('profesi')->after('name')->nullable()->default(null);

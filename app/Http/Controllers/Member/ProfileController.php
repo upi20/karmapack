@@ -67,7 +67,7 @@ class ProfileController extends Controller
         // periksa role
         $user = auth()->user();
 
-        if ($user->role == User::ROLE_ADMIN) {
+        if (auth_can('admin.profile.save_another')) {
             return true;
         } else {
             if ($user->id == $id) {

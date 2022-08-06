@@ -8,9 +8,11 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">User Table</h3>
                     <div>
-                        <button class="btn btn-success" onclick="exportExcel()">
-                            <i class="fa fa-file-excel-o"></i> Excel
-                        </button>
+                        @if (auth()->user()->can("$prefix.excel"))
+                            <button class="btn btn-success" onclick="exportExcel()">
+                                <i class="fa fa-file-excel-o"></i> Excel
+                            </button>
+                        @endif
                         <button type="button" class="btn btn-rounded btn-primary" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
                             <i class="bi bi-plus-lg"></i> Add

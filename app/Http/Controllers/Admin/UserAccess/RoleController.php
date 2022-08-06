@@ -49,6 +49,8 @@ class RoleController extends Controller
         //get permission all
         $permissions = Permission::orderBy('name', 'asc')->get();
 
+        $reload = true;
+
         $page_attr = [
             'title' => 'Create Role',
             'breadcrumbs' => [
@@ -58,7 +60,7 @@ class RoleController extends Controller
             'navigation' => $prefix_parent,
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles');
+        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles', 'reload');
         return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }
 
@@ -77,7 +79,7 @@ class RoleController extends Controller
         //get permission all
         $permissions = Permission::orderBy('name', 'asc')->get();
 
-
+        $reload = (request('r') == "1") ? false : true;
         // role
         $role = Role::with('permissions')->findOrFail($id);
         $roles = $role->permissions->map(function ($v) {
@@ -93,7 +95,7 @@ class RoleController extends Controller
             'navigation' => $prefix_parent,
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles');
+        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles', 'reload');
 
         return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }

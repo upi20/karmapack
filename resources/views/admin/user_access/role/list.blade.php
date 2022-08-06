@@ -1,15 +1,22 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php
+    $can_add = auth_can("$prefix.create") && auth_can("$prefix.store");
+    $can_edit = auth_can("$prefix.edit") && auth_can("$prefix.update");
+    $can_delete = auth_can("$prefix.delete");
+    @endphp
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Permission Table</h3>
-                    <a type="button" class="btn btn-rounded btn-success" href="{{ route($prefix . '.create') }}">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </a>
+                    @if ($can_add)
+                        <a type="button" class="btn btn-rounded btn-success" href="{{ route($prefix . '.create') }}">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </a>
+                    @endif
                 </div>
                 <div class="card-body">
                     <div class="table-responsive table-striped">
@@ -20,49 +27,14 @@
                                     <th>Name</th>
                                     <th>Guard</th>
                                     <th>Updated At</th>
-                                    <th>Action</th>
+                                    @if ($can_edit || $can_delete)
+                                        <th>Action</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody></tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Row -->
-    <div class="modal fade" id="modal-default">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-content-demo">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
-                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
-                        enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter Name" required="" />
-                            <input type="hidden" id="id" name="id" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="guard_name">Guard <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="guard_name" name="guard_name"
-                                placeholder="Enter Guard" required="" />
-                        </div>
-                    </form>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
-                    </button>
-                    <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
-                        Close
-                    </button>
                 </div>
             </div>
         </div>
@@ -84,6 +56,8 @@
     <script>
         const table_html = $('#tbl_main');
         let isUpdate = true;
+        const can_edit = {{ $can_edit ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         $(document).ready(function() {
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -91,6 +65,25 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+            const column = [];
+            if (can_edit || can_delete) {
+                column.push({
+                    data: 'id',
+                    name: 'id',
+                    render(data, type, full, meta) {
+                        const btn_edit = can_edit ? `<a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </a>` : '';
+
+                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                </button>
+                                ` : '';
+                        return btn_edit + btn_delete;
+                    },
+                    orderable: false
+                });
+            }
             const new_table = table_html.DataTable({
                 searchDelay: 500,
                 processing: true,
@@ -124,20 +117,9 @@
                         data: 'created_at',
                         name: 'created_at'
                     },
-                    {
-                        data: 'id',
-                        name: 'id',
-                        render(data, type, full, meta) {
-                            return ` <a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </a>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
-                        },
-                        orderable: false
-                    },
+                    ...column
+
+
                 ],
                 order: [
                     [1, 'asc']

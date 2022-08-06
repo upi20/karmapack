@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Isep Lutpi Nur',
         //     'email' => 'iseplutpinur7@gmail.com',
         //     'password' => bcrypt('123456'),
-        //     'role' => User::ROLE_ADMIN,
         //     'active' => '1'
         // ]);
         // \App\Models\User::factory(150)->create();
@@ -51,7 +50,10 @@ class DatabaseSeeder extends Seeder
         // php artisan iseed users,pendaftarans,pend_sensus --force
 
         // backup user access
-        // php artisan iseed p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu --force
+        // php artisan iseed users,p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu --force
+
+        // backup all
+        // php artisan iseed users,artikel,artikel_tag,artikel_kategori,artikel_tag_item,artikel_kategori_item,galeri,galeri_tag_member,pengurus_periode,pengurus_periode_jabatan,pengurus_periode_jabatan_member,pengurus_periode_member,pengurus_profile_kontak,pengurus_profile_kontak_tipe,pengurus_profile_pendidikan,pengurus_profile_pendidikan_jenis,pengurus_profile_pengalaman_lain,pengurus_profile_pengalaman_organisasi,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member,pendaftarans,pend_sensus,p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu  --force
         // ============================================================================================================
         // ============================================================================================================
 

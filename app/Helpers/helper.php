@@ -63,7 +63,8 @@ if (!function_exists('sidebar_menu_admin')) {
      */
     function sidebar_menu_admin($navigation = null)
     {
-        $menus = menu(auth()->user()->id);
+        $user_id = auth()->user()->hasRole(config('app.super_admin_role')) ? null : auth()->user()->id;
+        $menus = menu($user_id);
         $menu_body = '';
         foreach ($menus as $m) {
             $menu = (object)$m;
@@ -72,7 +73,7 @@ if (!function_exists('sidebar_menu_admin')) {
             $separator = $menu->type == 0;
 
             // active
-            $menu->active = $menu->active || $menu->route == $navigation;
+            $menu->active = $menu->active || ($menu->route === $navigation);
             $active_class = $menu->active ? 'active' : '';
 
             if ($separator) {
@@ -83,7 +84,7 @@ if (!function_exists('sidebar_menu_admin')) {
                 $child_active = false;
                 foreach ($menu->children as $c) {
                     $child = (object)$c;
-                    $child->active = $child->active || $child->route == $navigation;
+                    $child->active = $child->active || ($child->route === $navigation);
                     $active = $child->active ? 'active' : '';
                     $child_menu .= "<li><a href=\"$child->url\" class=\"slide-item $active\">$child->title</a></li>";
                     if ($child->active) $child_active = $child->active;
@@ -115,5 +116,17 @@ if (!function_exists('sidebar_menu_admin')) {
         $menu_head = '<ul class="side-menu">';
         $menu_footer = '</ul>';
         return $menu_head . $menu_body . $menu_footer;
+    }
+}
+
+if (!function_exists('auth_can')) {
+    /**
+     * Helpers for build menu admin sidebar admin.
+     *
+     * @return array
+     */
+    function auth_can(string $route)
+    {
+        return auth()->user()->can($route);
     }
 }

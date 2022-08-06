@@ -51,6 +51,7 @@
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const reload = {{ $reload == 1 ? 'true' : 'false' }};
         $(document).ready(function() {
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
@@ -76,9 +77,11 @@
                             timer: 1500
                         })
 
-                        setTimeout(() => {
-                            window.location.href = `{{ route($prefix_parent) }}`;
-                        }, 1500);
+                        if (reload) {
+                            setTimeout(() => {
+                                window.location.href = `{{ route($prefix_parent) }}`;
+                            }, 1500);
+                        }
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
