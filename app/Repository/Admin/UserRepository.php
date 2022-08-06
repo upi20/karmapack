@@ -54,7 +54,7 @@ class UserRepository
 
         $this->query["{$c_roles}_alias"] = $c_roles;
 
-        $user = User::select(['id', 'name', 'role', 'email', 'active', 'profile_photo_path', 'date_of_birth', 'angkatan'])
+        $user = User::select(['id', 'name', 'email', 'active', 'profile_photo_path', 'date_of_birth', 'angkatan'])
             ->selectRaw('IF(active = 1, "Yes", "No") as active_str')
             ->selectRaw("{$this->query['birthday_countdown']} as {$this->query['birthday_countdown_alias']}")
             ->selectRaw($this->query[$c_roles] . ' as ' . $this->query["{$c_roles}_alias"]);
