@@ -49,7 +49,7 @@ class PRolesTableSeeder extends Seeder
                 'name' => 'Ketua Umum',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-06 01:25:18',
-                'updated_at' => '2022-08-06 01:25:18',
+                'updated_at' => '2022-08-06 17:30:18',
             ),
             4 => 
             array (

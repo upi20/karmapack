@@ -1,6 +1,12 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php
+    $can_insert = auth_can(h_prefix('insert', 1));
+    $can_update = auth_can(h_prefix('update', 1));
+    $can_delete = auth_can(h_prefix('delete', 1));
+    $can_member = auth_can(h_prefix('member', 1));
+    @endphp
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
@@ -8,10 +14,12 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">List Bidang Periode <span class="fw-bold">{{ $periode->nama }}</span>
                     </h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </button>
+                    @if ($can_insert)
+                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    @endif
                 </div>
                 <div class="card-body">
                     <h5 class="h5">Filter Data</h5>
@@ -39,7 +47,7 @@
                                     <th style="min-width: 150px;">Slug</th>
                                     <th>Icon</th>
                                     <th>Status</th>
-                                    <th>Aksi</th>
+                                    {!! $can_member || $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -54,8 +62,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
@@ -75,8 +83,8 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
-                                        required />
+                                    <input type="text" class="form-control" id="nama" name="nama"
+                                        placeholder="Nama" required />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -128,11 +136,13 @@
 
                         <div class="form-group">
                             <label for="visi">Visi</label>
-                            <textarea cols="3" rows="4" class="form-control summernote" id="visi" name="visi" placeholder="Visi"></textarea>
+                            <textarea cols="3" rows="4" class="form-control summernote" id="visi" name="visi"
+                                placeholder="Visi"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="misi">Misi</label>
-                            <textarea cols="3" rows="4" class="form-control summernote" id="misi" name="misi" placeholder="Misi"></textarea>
+                            <textarea cols="3" rows="4" class="form-control summernote" id="misi" name="misi"
+                                placeholder="Misi"></textarea>
                         </div>
                     </form>
                 </div>
@@ -171,16 +181,11 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
@@ -193,6 +198,9 @@
     <script src="{{ asset('assets/templates/admin/plugins/summernote/summernote1.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
+        const can_member = {{ $can_member ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             $('.summernote').summernote({
@@ -312,16 +320,15 @@
                             return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
-                    {
+                    ...((can_member || can_update || can_delete) ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return `
-                                <a class="btn btn-rounded btn-info btn-sm my-1" title="Member"
-                                href="{{ url('admin/pengurus/jabatan/member') }}/${data}" >
+                            const btn_member = can_member ? `<a class="btn btn-rounded btn-info btn-sm my-1 me-1" title="Member"
+                                href="{{ url(h_prefix_uri('member', 1)) }}/${data}" >
                                 <i class="fa fa-user" aria-hidden="true"></i> Member
-                                </a>
-                                <button type="button" class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                                </a>` : '';
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
@@ -334,13 +341,14 @@
                                 data-singkatan="${full.singkatan ?? ''}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm  my-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                </button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button> `;
+                                </button>` : '';
+                            return btn_member + btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
                     [1, 'asc']
@@ -377,8 +385,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 const route = ($('#id').val() == '') ?
-                    "{{ route('admin.pengurus.jabatan.insert', $periode->id) }}" :
-                    "{{ route('admin.pengurus.jabatan.update', $periode->id) }}";
+                    "{{ route(h_prefix('insert', 1), $periode->id) }}" :
+                    "{{ route(h_prefix('update', 1), $periode->id) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -465,7 +473,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/pengurus/jabatan') }}/${id}`,
+                        url: `{{ url(h_prefix_uri(null, 1)) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
@@ -507,7 +515,7 @@
             $.LoadingOverlay("show");
             $.ajax({
                 type: "GET",
-                url: "{{ route('admin.pengurus.jabatan.parent') }}",
+                url: "{{ route(h_prefix('parent', 1)) }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -556,7 +564,7 @@
         function tes_datatable(custom_fun = null) {
             $.ajax({
                 type: "GET",
-                url: "{{ route('admin.pengurus.jabatan', $periode->id) }}",
+                url: "{{ route(h_prefix(null, 1), $periode->id) }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },

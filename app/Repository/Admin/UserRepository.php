@@ -213,10 +213,6 @@ class UserRepository
             $model->where('active', '=', $request->active);
         }
 
-        if ($request->role != null) {
-            $model->where('role', '=', $request->role);
-        }
-
         if ($request->search != null) {
             $search = $request->search;
             $columns = Schema::getColumnListing($a);

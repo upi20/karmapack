@@ -75,7 +75,7 @@ class DistrictController extends Controller
         return view('admin.address.district', compact('page_attr', 'provinces'));
     }
 
-    public function store(Request $request)
+    public function insert(Request $request)
     {
         try {
             $request->validate([

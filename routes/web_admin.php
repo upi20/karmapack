@@ -1,11 +1,6 @@
 <?php
 // ====================================================================================================================
-use App\Models\User;
-
-// ====================================================================================================================
 // utility ============================================================================================================
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 // ====================================================================================================================
@@ -57,27 +52,35 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
     $name = "$name.$prefix"; // admin.user
     Route::get('/', 'index')->name($name)->middleware("permission:$name");
     Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
-    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.find");
-    Route::post('/', 'store')->name("$name.store")->middleware("permission:$name.store");
+
+    Route::post('/', 'store')->name("$name.store")->middleware("permission:$name.insert");
     Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
     Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
 });
 
 $prefix = 'address';
 Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.address
-    foreach ([
+    $addreses = [
         ['prefix' => 'province', 'class' => ProvinceController::class],
         ['prefix' => 'regencie', 'class' => RegencieController::class],
         ['prefix' => 'district', 'class' => DistrictController::class],
         ['prefix' => 'village', 'class' => VillageController::class],
-    ] as $r) {
+    ];
+    foreach ($addreses as $r) {
         $prefix = $r['prefix'];
-        Route::controller($r['class'])->prefix($prefix)->group(function () use ($name, $prefix) {
+        Route::controller($r['class'])->prefix($prefix)->group(function () use ($name, $prefix, $addreses) {
             $name = "$name.$prefix"; // admin.address. ...
+            // generate perrmision for select2
+            $p = implode('|', array_map(function ($a) use ($name) {
+                return $name . '.' . $a['prefix'];
+            }, $addreses));
+
             Route::get('/', 'index')->name($name)->middleware("permission:$name");
-            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
-            Route::post('/', 'store')->name("$name.store")->middleware("permission:$name.store");
+            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$p|member.profile");
+            Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
             Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
             Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
         });
@@ -92,8 +95,8 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     Route::controller(ArtikelController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.data
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
-        Route::get('/add', 'add')->name("$name.add")->middleware("permission:$name.add");
-        Route::get('/edit/{artikel}', 'edit')->name("$name.edit")->middleware("permission:$name.edit");
+        Route::get('/add', 'add')->name("$name.add")->middleware("permission:$name.insert");
+        Route::get('/edit/{artikel}', 'edit')->name("$name.edit")->middleware("permission:$name.update");
 
         Route::delete('/{artikel}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/insert', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
@@ -104,7 +107,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     Route::controller(KategoriController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; //admin.artikel.kategori
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
-        Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
+        Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
         Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
@@ -114,7 +117,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     Route::controller(TagController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.artikel.tag
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
-        Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
+        Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
         Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
@@ -129,15 +132,17 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     Route::controller(PeriodeController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.pengurus.periode
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
-        Route::get('/add', 'add')->name("$name.add")->middleware("permission:$name.add");
-        Route::get('/edit/{model}', 'edit')->name("$name.edit")->middleware("permission:$name.edit");
+
+        Route::get('/add', 'add')->name("$name.add")->middleware("permission:$name.insert");
+        Route::get('/edit/{model}', 'edit')->name("$name.edit")->middleware("permission:$name.update");
+
         Route::get('/active/{model}', 'setActive')->name("$name.active")->middleware("permission:$name.active");
         Route::post('/member', 'member')->name("$name.member")->middleware("permission:$name.member");
         Route::post('/detail/{model}', 'detail')->name("$name.detail")->middleware("permission:$name.detail");
 
-        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/insert', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     });
 
     $prefix = 'jabatan';
@@ -145,9 +150,10 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.pengurus.jabatan
 
         Route::controller(JabatanController::class)->group(function () use ($name) {
-            Route::get('/get_parent', 'parent')->name("$name.parent")->middleware("permission:$name.parent");
-            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
+            Route::get('/get_parent', 'parent')->name("$name.parent")->middleware("permission:$name");
+            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
             Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+
             // base
             Route::get('/{periode_id}', 'index')->name($name)->middleware("permission:$name");
             Route::post('/{periode_id}', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
@@ -158,9 +164,9 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         $prefix = 'member';
         Route::controller(JabatanMemberController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
             $name = "$name.$prefix"; // admin.pengurus.jabatan.member
-            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
+            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
             Route::get('/{id}', 'index')->name($name)->middleware("permission:$name");
-            Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+            Route::post('/save', 'save')->name("$name.save")->middleware("permission:$name.save");
         });
     });
 });

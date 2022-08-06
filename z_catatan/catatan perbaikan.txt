@@ -2,3 +2,5 @@ Menerapkan role sesuai dengan kapasitas masing masing jabatan
 Implementasi perijinan untuk curd;
 Role permission tidak bisa di akses menggunakan chrome di hp
 Dashboard hanya satu
+profile -> angkatan view nya ke config dan env
+artikel -> belum ada author

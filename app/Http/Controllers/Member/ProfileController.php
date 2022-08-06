@@ -341,6 +341,7 @@ class ProfileController extends Controller
     {
         try {
             $model->delete();
+            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -513,6 +514,7 @@ class ProfileController extends Controller
     public function pendidikan_delete(Pendidikan $model)
     {
         try {
+            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
@@ -647,6 +649,7 @@ class ProfileController extends Controller
     public function pengalaman_organisasi_delete(PengalamanOrganisasi $model)
     {
         try {
+            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
@@ -748,6 +751,7 @@ class ProfileController extends Controller
     {
         try {
             $model->delete();
+            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

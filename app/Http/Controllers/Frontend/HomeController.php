@@ -88,6 +88,9 @@ class HomeController extends Controller
     // artikel render
     public function artikel(Artikel $model)
     {
+        if (request('preview') != 1) {
+            if ($model->status == 0) return abort(404);
+        }
         // tambah pengunjung
         $model->counter = $model->counter + 1;
         $model->save();

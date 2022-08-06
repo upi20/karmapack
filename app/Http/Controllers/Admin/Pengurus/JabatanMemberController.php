@@ -13,6 +13,7 @@ use League\Flysystem\Exception;
 use App\Models\Pengurus\PeriodeMember;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\JabatanMember;
+use App\Models\Pengurus\Periode;
 use Error;
 
 class JabatanMemberController extends Controller
@@ -44,15 +45,15 @@ class JabatanMemberController extends Controller
         ])->join('users', 'users.id', '=', "$tbl_name.user_id")
             ->where('jabatan_id', '=', $model->id)
             ->get();
-        $navigation = 'admin.pengurus.periode';
+        $navigation = h_prefix('periode', 3);
 
         // page atribut
         $page_attr = [
             'title' => "Member " . $model->nama,
             'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Dashboard', 'url' => 'dashboard'],
                 ['name' => 'Kepengurusan'],
-                ['name' => 'Periode', 'url' => 'admin.pengurus.periode'],
+                ['name' => 'Periode', 'url' => $navigation],
                 ['name' => 'Bidang', 'url' => ['admin.pengurus.jabatan', $model->periode_id]],
             ],
             'navigation' => $navigation,
@@ -79,13 +80,8 @@ class JabatanMemberController extends Controller
         }
     }
 
-    public function update(Request $request)
+    public function save(Request $request)
     {
-        // Rencana =============================================================================
-        // delete foto yang tidak dipakai
-        // Foto icon belum wkwk
-        // Rencana =============================================================================
-
         try {
             $request->validate([
                 'members' => ['required'],
@@ -93,6 +89,14 @@ class JabatanMemberController extends Controller
                 'jabatan_id' => ['required', 'int'],
             ]);
             DB::beginTransaction();
+
+            // check
+            if (!auth_has_role(config('app.super_admin_role'))) {
+                $periode = Periode::where('id', '=', $request->periode_id)->first();
+                if ($periode->status == 0) {
+                    throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
+                }
+            }
 
             // get jabatan member terdahulu
             $collection = JabatanMember::where('jabatan_id', '=', $request->jabatan_id)->get(['user_id']);

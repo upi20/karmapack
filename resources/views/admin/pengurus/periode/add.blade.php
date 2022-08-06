@@ -29,14 +29,15 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                             <label for="nama">Nama Periode</label>
                             <input type="text" name="nama" id="nama" class="form-control" required
                                 placeholder="Nama Periode" value="{{ $nama }}" />
-                            <input type="hidden" class="" name="id" id="id" value="{{ $id }}" />
+                            <input type="hidden" class="" name="id" id="id"
+                                value="{{ $id }}" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" name="slug" id="slug" class="form-control" required placeholder="Untuk URL"
-                                value="{{ $slug }}" />
+                            <input type="text" name="slug" id="slug" class="form-control" required
+                                placeholder="Untuk URL" value="{{ $slug }}" />
                             <small>Slug digunakan untuk akses periode lewat url atau alamt web, slug diatas tidak boleh sama
                                 dengan slug dari periode yang lain</small>
 
@@ -72,8 +73,8 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                                         data-target="#modal-icon">View Icon</a>
                                 @endif
                             </label>
-                            <input type="file" name="foto" id="foto" class="form-control" placeholder="Sampai Tahun"
-                                value="{{ $foto }}" {{ $foto_required }} />
+                            <input type="file" name="foto" id="foto" class="form-control"
+                                placeholder="Sampai Tahun" value="{{ $foto }}" {{ $foto_required }} />
                         </div>
                     </div>
                     <div class="col-12">

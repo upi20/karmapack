@@ -9,6 +9,7 @@ use Yajra\Datatables\Datatables;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\Periode;
 use App\Helpers\Summernote;
+use Error;
 use Illuminate\Support\Facades\DB;
 
 class JabatanController extends Controller
@@ -100,11 +101,11 @@ class JabatanController extends Controller
                 })
                 ->make(true);
         }
-        $navigation = 'admin.pengurus.periode';
+        $navigation = h_prefix('periode', 2);
         $page_attr = [
             'title' => "Bidang Periode " . $periode->nama,
             'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Dashboard', 'url' => 'dashboard'],
                 ['name' => 'Kepengurusan'],
                 ['name' => 'Periode', 'url' => $navigation],
             ],
@@ -117,6 +118,15 @@ class JabatanController extends Controller
     public function insert(Request $request)
     {
         try {
+            // check
+            if (!auth_has_role(config('app.super_admin_role'))) {
+                $periode = Periode::where('id', '=', $request->periode_id)->first();
+                if ($periode->status == 0) {
+                    throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
+                }
+            }
+
+            DB::beginTransaction();
             $request->validate([
                 'parent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
@@ -152,6 +162,8 @@ class JabatanController extends Controller
                 // 'created_by' => auth()->user()->id,
             ]);
 
+            DB::commit();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -164,6 +176,14 @@ class JabatanController extends Controller
     public function update(Request $request)
     {
         try {
+            // check
+            if (!auth_has_role(config('app.super_admin_role'))) {
+                $periode = Periode::where('id', '=', $request->periode_id)->first();
+                if ($periode->status == 0) {
+                    throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
+                }
+            }
+
             $model = Jabatan::find($request->id);
             $request->validate([
                 'id' => ['required', 'int'],
@@ -207,6 +227,8 @@ class JabatanController extends Controller
             $model->singkatan = $request->singkatan ?? null;
             // $model->updated_by = auth()->user()->id;
             $model->save();
+
+            DB::commit();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -219,6 +241,16 @@ class JabatanController extends Controller
     public function delete(Jabatan $model)
     {
         try {
+            DB::beginTransaction();
+
+            // check
+            if (!auth_has_role(config('app.super_admin_role'))) {
+                $periode = Periode::where('id', '=', $model->periode_id)->first();
+                if ($periode->status == 0) {
+                    throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
+                }
+            }
+
             // cek folder
             Summernote::delete($model->visi);
             Summernote::delete($model->misi);
@@ -231,6 +263,8 @@ class JabatanController extends Controller
 
             // delete data
             $model->delete();
+
+            DB::commit();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

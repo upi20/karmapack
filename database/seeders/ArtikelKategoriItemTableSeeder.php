@@ -109,25 +109,25 @@ class ArtikelKategoriItemTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => 26,
-                'artikel_id' => 31,
+                'id' => 28,
+                'artikel_id' => 36,
                 'kategori_id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             12 => 
             array (
-                'id' => 27,
+                'id' => 31,
                 'artikel_id' => 31,
-                'kategori_id' => 5,
+                'kategori_id' => 2,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             13 => 
             array (
-                'id' => 28,
-                'artikel_id' => 36,
-                'kategori_id' => 2,
+                'id' => 32,
+                'artikel_id' => 31,
+                'kategori_id' => 5,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

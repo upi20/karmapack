@@ -70,7 +70,7 @@ class ProvinceController extends Controller
         return view('admin.address.province', compact('page_attr'));
     }
 
-    public function store(Request $request)
+    public function insert(Request $request)
     {
 
         try {

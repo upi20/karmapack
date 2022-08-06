@@ -74,7 +74,7 @@ class VillageController extends Controller
         return view('admin.address.village', compact('page_attr', 'provinces'));
     }
 
-    public function store(Request $request)
+    public function insert(Request $request)
     {
         try {
             $request->validate([

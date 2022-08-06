@@ -71,7 +71,6 @@ return new class extends Migration
             $table->dropColumn('username');
             $table->dropColumn('gender');
             $table->dropColumn('active');
-            $table->dropColumn('role');
             $table->dropColumn('bio');
             $table->dropColumn('profesi');
             $table->dropColumn('foto');

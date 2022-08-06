@@ -39,7 +39,7 @@ class PeriodeController extends Controller
         $page_attr = [
             'title' => 'Manage List Periode',
             'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Dashboard', 'url' => 'dashboard'],
                 ['name' => 'Kepengurusan'],
             ]
         ];
@@ -65,7 +65,7 @@ class PeriodeController extends Controller
 
     public function edit(Periode $model) // page
     {
-        $navigation = 'admin.pengurus.periode';
+        $navigation = h_prefix(null, 1);
         $page_attr = [
             'title' => 'Edit Periode',
             'breadcrumbs' => [

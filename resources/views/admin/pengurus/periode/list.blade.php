@@ -1,30 +1,27 @@
 @extends('templates.admin.master')
 @section('content')
+    @php
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
+    $can_active = auth_can(h_prefix('active'));
+    $can_member = auth_can(h_prefix('member'));
+    $can_detail = auth_can(h_prefix('detail'));
+    $can_bidang = auth_can(h_prefix('jabatan', 1));
+    @endphp
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">List Periode</h3>
-                    <a class="btn btn-rounded btn-success" href="{{ route('admin.pengurus.periode.add') }}"
-                        data-bs-effect="effect-scale">
-                        <i class="bi bi-plus-lg"></i> Tambah Periode
-                    </a>
+                    @if ($can_insert)
+                        <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
+                            data-bs-effect="effect-scale">
+                            <i class="bi bi-plus-lg"></i> Tambah Periode
+                        </a>
+                    @endif
                 </div>
                 <div class="card-body">
-                    {{-- <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">All Status</option>
-                                <option value="1">Aktif</option>
-                                <option value="0">Tidak Aktif</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
-                        </button>
-                    </form> --}}
                     <div class="table-responsive table-striped">
                         <table class="table table-bordered border-bottom" id="tbl_main">
                             <thead>
@@ -34,8 +31,8 @@
                                     <th>Dari</th>
                                     <th>Sampai</th>
                                     <th>Slug</th>
-                                    <th>Member</th>
-                                    <th>Detail</th>
+                                    {!! $can_member ? '<th>Member</th>' : '' !!}
+                                    {!! $can_detail ? '<th>Detail</th>' : '' !!}
                                     <th>Foto</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -53,8 +50,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <img src="" class="img-fluid" id="icon-view-image" alt="Icon Periode">
@@ -124,22 +121,24 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
+        const can_active = {{ $can_active ? 'true' : 'false' }};
+        const can_member = {{ $can_member ? 'true' : 'false' }};
+        const can_detail = {{ $can_detail ? 'true' : 'false' }};
+        const can_bidang = {{ $can_bidang ? 'true' : 'false' }};
+
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -158,7 +157,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.pengurus.periode') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -184,7 +183,7 @@
                         data: 'slug',
                         name: 'slug'
                     },
-                    {
+                    ...(can_member ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
@@ -194,8 +193,8 @@
                                         data-target="#modal-member"><i class="fa fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
-                    },
-                    {
+                    }] : []),
+                    ...(can_detail ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
@@ -205,7 +204,7 @@
                                         data-target="#modal-detail"><i class="fa fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
-                    },
+                    }] : []),
                     {
                         data: 'foto',
                         name: 'foto',
@@ -223,10 +222,10 @@
                         render(data, type, full, meta) {
                             const class_el = full.status == 1 ? 'badge bg-success' :
                                 'badge bg-danger';
-                            const btn = full.status == 1 ? '' : `
+                            const btn = can_active ? (full.status == 1 ? '' : `
                                 <button type="button" class="btn btn-rounded btn-secondary btn-sm my-1" title="Active Periode" onClick="activeFunc('${full.id}')">
                                 <i class="fa fa-check" aria-hidden="true"></i> Aktifkan
-                                </button> `;
+                                </button> `) : '';
                             return `<span class="${class_el} p-2">${full.status_str}</span> ${btn}`;
                         },
                     },
@@ -234,21 +233,24 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
+                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                                href="{{ url(h_prefix_uri('edit')) }}/${data}" >
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </a>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                </button>` : '';
+                            const btn_bidang = can_bidang ? `<a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
+                                href="{{ url(h_prefix_uri('jabatan', 1)) }}/${data}" >
+                                <i class="fe fe-git-pull-request" aria-hidden="true"></i> Bidang
+                                </a>` : '';
                             return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Lihat Periode"
                                 href="{{ url('periode') }}/${full.slug}" target="_blank">
                                 <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Lihat
                                 </a>
-                                <a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
-                                href="{{ url('admin/pengurus/jabatan') }}/${data}" >
-                                <i class="fe fe-git-pull-request" aria-hidden="true"></i> Bidang
-                                </a>
-                                <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
-                                href="{{ url('admin/pengurus/periode/edit') }}/${data}" >
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </a>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
+                                ${btn_bidang}
+                                ${btn_update}
+                                ${btn_delete}
                                 `;
                         },
                         orderable: false
@@ -285,7 +287,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/pengurus/periode') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
@@ -333,7 +335,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/pengurus/periode/active') }}/${id}`,
+                        url: `{{ url(h_prefix_uri('active')) }}/${id}`,
                         type: 'GET',
                         dataType: 'json',
                         headers: {
@@ -380,7 +382,7 @@
         function viewMember(id) {
             $.ajax({
                 method: 'post',
-                url: "{{ route('admin.pengurus.periode.member') }}",
+                url: "{{ route(h_prefix('member')) }}",
                 data: {
                     periode_id: id
                 }
@@ -441,7 +443,7 @@
         function tes_datatable(custom_fun = null) {
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.pengurus.periode.member') }}",
+                url: "{{ route(h_prefix('member')) }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -463,7 +465,7 @@
         function viewDetail(id) {
             $.ajax({
                 method: 'post',
-                url: `{{ url('admin/pengurus/periode/detail') }}/${id}`
+                url: `{{ url(h_prefix_uri('detail')) }}/${id}`
             }).done((data) => {
                 $('#modal-detail-body').html(`
                     <h4 class="h4">Visi:</h4><p>${data.results.visi}</p>

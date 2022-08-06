@@ -49,14 +49,14 @@ class PMenuTableSeeder extends Seeder
             array (
                 'id' => 346,
                 'parent_id' => NULL,
-                'title' => 'Member',
+                'title' => 'Anggota',
                 'icon' => 'fe fe-users',
                 'route' => 'admin.user',
                 'sequence' => 4,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-06 16:09:19',
             ),
             3 => 
             array (
@@ -64,12 +64,12 @@ class PMenuTableSeeder extends Seeder
                 'parent_id' => NULL,
                 'title' => 'Profile Addon',
                 'icon' => 'fe fe-user-plus',
-                'route' => '',
+                'route' => NULL,
                 'sequence' => 5,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-06 17:30:59',
             ),
             4 => 
             array (
@@ -168,12 +168,12 @@ class PMenuTableSeeder extends Seeder
                 'parent_id' => NULL,
                 'title' => 'Address',
                 'icon' => 'fe fe-map-pin',
-                'route' => '',
+                'route' => NULL,
                 'sequence' => 13,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-06 21:46:20',
             ),
             12 => 
             array (

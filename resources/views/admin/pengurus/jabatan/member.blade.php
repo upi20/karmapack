@@ -1,5 +1,8 @@
 @extends('templates.admin.master')
 @section('content')
+    @php
+    $can_insert = auth_can(h_prefix('save', 1));
+    @endphp
     <div class="card">
         <div class="card-header bg-info">
             <h3 class="card-title text-light">Member bidang</h3>
@@ -18,13 +21,15 @@
                 </div>
             </form>
         </div>
-        <div class="card-footer">
-            <div class="form-group">
-                <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fa fa-save mr-1"></li> Save
-                </button>
+        @if ($can_insert)
+            <div class="card-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" form="MainForm">
+                        <li class="fa fa-save mr-1"></li> Save
+                    </button>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
 @section('stylesheet')
@@ -38,7 +43,7 @@
         $(document).ready(function() {
             $('#members').select2({
                 ajax: {
-                    url: "{{ route('admin.pengurus.jabatan.member.select2') }}",
+                    url: "{{ route(h_prefix('select2', 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -61,7 +66,7 @@
                 setBtnLoading('#btn-save', 'Save Changes');
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('admin.pengurus.jabatan.member.update') }}",
+                    url: "{{ route(h_prefix('save', 1)) }}",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -90,8 +95,8 @@
                             position: 'center',
                             icon: 'error',
                             title: res.message ?? 'Something went wrong',
-                            showConfirmButton: false,
-                            timer: 1500
+                            showConfirmButton: true,
+                            timer: 10000
                         })
                     },
                     complete: function() {

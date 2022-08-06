@@ -1,6 +1,12 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php
+    $can_insert = auth_can("$prefix.insert");
+    $can_update = auth_can("$prefix.update");
+    $can_delete = auth_can("$prefix.delete");
+    $can_save_another = auth_can('admin.profile.save_another');
+    @endphp
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
@@ -8,15 +14,17 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">User Table</h3>
                     <div>
-                        @if (auth()->user()->can("$prefix.excel"))
+                        @if (auth_can("$prefix.excel"))
                             <button class="btn btn-success" onclick="exportExcel()">
                                 <i class="fa fa-file-excel-o"></i> Excel
                             </button>
                         @endif
-                        <button type="button" class="btn btn-rounded btn-primary" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="bi bi-plus-lg"></i> Add
-                        </button>
+                        @if ($can_insert)
+                            <button type="button" class="btn btn-rounded btn-primary" data-bs-effect="effect-scale"
+                                data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                                <i class="bi bi-plus-lg"></i> Add
+                            </button>
+                        @endif
                     </div>
                 </div>
                 <div class="card-body">
@@ -57,7 +65,9 @@
                                     <th>DOB</th>
                                     <th>BIRTHDAY</th>
                                     <th>Active</th>
-                                    <th>Action</th>
+                                    @if ($can_delete || $can_update || $can_save_another)
+                                        <th>Action</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -158,6 +168,9 @@
 
     <script>
         const table_html = $('#tbl_main');
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
+        const can_save_another = {{ $can_save_another ? 'true' : 'false' }};
         $(document).ready(function() {
             $('#roles').select2({
                 dropdownParent: $('#modal-default'),
@@ -170,6 +183,28 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+            const column = [];
+            if (can_update || can_delete || can_save_another) {
+                column.push({
+                    data: 'id',
+                    name: 'id',
+                    render(data, type, full, meta) {
+                        const btn_profile = can_save_another ? `<a class="btn btn-rounded btn-info btn-sm me-1" title="Edit Profile"
+                                href="{{ route('member.profile') }}?id=${data}" >
+                                <i class="fa fa-user" aria-hidden="true"></i> Profile
+                                </a>` : '';
+                        const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
+                                onClick="editFunc('${full.id}')">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                </button>` : '';
+                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                </button>` : '';
+                        return btn_profile + btn_update + btn_delete;
+                    },
+                    orderable: false
+                });
+            }
             const new_table = table_html.DataTable({
                 searchDelay: 500,
                 processing: true,
@@ -180,7 +215,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.user') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[active]'] = $('#filter_active').val();
                         d['filter[role]'] = $('#filter_role').val();
@@ -232,25 +267,7 @@
                             return `<span class="${class_el} p-2">${full.active_str}</span>`;
                         },
                     },
-                    {
-                        data: 'id',
-                        name: 'id',
-                        render(data, type, full, meta) {
-                            return ` <a class="btn btn-rounded btn-info btn-sm my-1" title="Edit Profile"
-                                href="{{ route('member.profile') }}?id=${data}" >
-                                <i class="fa fa-user" aria-hidden="true"></i> Profile
-                                </a>
-                                <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
-                                onClick="editFunc('${full.id}')">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
-                        },
-                        orderable: false
-                    },
+                    ...column
                 ],
                 order: [
                     [6, 'asc']
@@ -341,7 +358,7 @@
             $.LoadingOverlay("show");
             $.ajax({
                 type: "GET",
-                url: `{{ route($prefix . '.find') }}`,
+                url: `{{ route(h_prefix('find')) }}`,
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -387,7 +404,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/user') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {
@@ -424,14 +441,15 @@
                 }
             });
         }
-
-        function exportExcel() {
-            const base = "{{ route('admin.user.excel') }}";
-            const active = $('#filter_active').val();
-            const role = $('#filter_role').val();
-            const search = $('[type=search]').val();
-            let arg = `?active=${active}&role=${role}&search=${search}`;
-            window.location.href = base + arg;
-        }
+        @if (auth_can("$prefix.excel"))
+            function exportExcel() {
+                const base = "{{ route(h_prefix('excel')) }}";
+                const active = $('#filter_active').val();
+                const role = $('#filter_role').val();
+                const search = $('[type=search]').val();
+                let arg = `?active=${active}&role=${role}&search=${search}`;
+                window.location.href = base + arg;
+            }
+        @endif
     </script>
 @endsection

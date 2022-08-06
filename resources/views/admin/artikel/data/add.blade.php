@@ -1,8 +1,9 @@
 @extends('templates.admin.master')
 @php
 $is_edit = isset($edit);
+$min = $is_edit ? 2 : 1;
 $id = $is_edit ? $artikel->id : '';
-$route = $is_edit ? route('admin.artikel.data.update') : route('admin.artikel.data.insert');
+$route = $is_edit ? route(h_prefix('update', $min)) : route(h_prefix('insert', $min));
 $nama = $is_edit ? $artikel->nama : '';
 $date = $is_edit ? explode(' ', $artikel->date)[0] : '';
 $slug = $is_edit ? $artikel->slug : '';
@@ -14,7 +15,6 @@ $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
 
 $kategori = isset($kategori) ? $kategori : [];
 $tag = isset($tag) ? $tag : [];
-// dd($date);
 @endphp
 @section('content')
     <div class="card">
@@ -29,14 +29,15 @@ $tag = isset($tag) ? $tag : [];
                             <label for="nama">Nama Artikel</label>
                             <input type="text" name="nama" id="nama" class="form-control" required
                                 placeholder="Nama Artikel" value="{{ $nama }}" />
-                            <input type="hidden" class="" name="id" id="id" value="{{ $id }}" />
+                            <input type="hidden" class="" name="id" id="id"
+                                value="{{ $id }}" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" name="slug" id="slug" class="form-control" required placeholder="Untuk URL"
-                                value="{{ $slug }}" />
+                            <input type="text" name="slug" id="slug" class="form-control" required
+                                placeholder="Untuk URL" value="{{ $slug }}" />
                             <small>Slug digunakan untuk akses artikel lewat url atau alamt web, slug diatas tidak boleh sama
                                 dengan slug dari artikel yang lain</small>
 
@@ -127,7 +128,7 @@ $tag = isset($tag) ? $tag : [];
         $(document).ready(function() {
             $('#kategori').select2({
                 ajax: {
-                    url: "{{ route('admin.artikel.kategori.select2') }}",
+                    url: "{{ route(h_prefix('kategori.select2', $min + 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -144,7 +145,7 @@ $tag = isset($tag) ? $tag : [];
 
             $('#tag').select2({
                 ajax: {
-                    url: "{{ route('admin.artikel.tag.select2') }}",
+                    url: "{{ route(h_prefix('tag.select2', $min + 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

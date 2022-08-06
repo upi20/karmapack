@@ -49,8 +49,7 @@
                             <div class="row d-flex align-items-center">
                                 <div class="col-md-6 col-12 text-center text-md-start">
                                     @foreach ($artikel_tag as $tag)
-                                        <a href="{{ url("?tag=$tag->slug") }}"
-                                            class="tag">#{{ $tag->nama }}</a>
+                                        <a href="{{ url("?tag=$tag->slug") }}" class="tag">#{{ $tag->nama }}</a>
                                     @endforeach
                                     @foreach ($artikel_kategori as $kategori)
                                         <a href="{{ url("?kategori=$kategori->slug") }}"
@@ -123,28 +122,32 @@
 
                     <div class="spacer" data-height="50"></div>
 
-               
+
                     <!-- post comments -->
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    
-    var disqus_config = function () {
-    this.page.url = '{{ Request::url(); }}';  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = '{{ $model->slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://karmapack.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
- 
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                        var disqus_config = function() {
+                            this.page.url = '{{ Request::url() }}'; // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier =
+                                '{{ $model->slug }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document,
+                                s = d.createElement('script');
+                            s.src = 'https://karmapack.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the
+                        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                    </noscript>
+
                 </div>
 
                 <div class="col-lg-4">
@@ -156,8 +159,8 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Explore Topics</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}"
-                                    class="wave" alt="wave" />
+                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                    alt="wave" />
                             </div>
                             <div class="widget-content">
                                 <ul class="list">
@@ -177,8 +180,8 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Tag Clouds</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}"
-                                    class="wave" alt="wave" />
+                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                    alt="wave" />
                             </div>
                             <div class="widget-content">
                                 @foreach ($tags as $tag)
@@ -194,8 +197,8 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Popular Posts</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}"
-                                    class="wave" alt="wave" />
+                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                    alt="wave" />
                             </div>
                             <div class="widget-content">
                                 @foreach ($top_article as $k => $a)

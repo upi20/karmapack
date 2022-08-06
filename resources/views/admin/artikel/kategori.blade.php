@@ -1,16 +1,22 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <!-- Row -->
+    @php
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
+    @endphp
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Kategori Table</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </button>
+                    @if ($can_insert)
+                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    @endif
                 </div>
                 <div class="card-body">
                     <h5 class="h5">Filter Data</h5>
@@ -36,7 +42,7 @@
                                     <th>Slug</th>
                                     <th>Artikel</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -51,8 +57,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
@@ -60,13 +66,13 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama"
-                                required="" />
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Enter Nama" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="slug">Slug <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Nama"
-                                required="" />
+                            <input type="text" class="form-control" id="slug" name="slug"
+                                placeholder="Enter Nama" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
@@ -93,22 +99,19 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -127,7 +130,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.artikel.kategori') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -158,25 +161,25 @@
                             return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
                                 data-slug="${full.slug}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                </button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
                     [1, 'asc']
@@ -211,8 +214,8 @@
                 resetErrorAfterInput();
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
-                const route = ($('#id').val() == '') ? "{{ route('admin.artikel.kategori.insert') }}" :
-                    "{{ route('admin.artikel.kategori.update') }}";
+                const route = ($('#id').val() == '') ? "{{ route(h_prefix('insert')) }}" :
+                    "{{ route(h_prefix('update')) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -290,7 +293,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/artikel/kategori') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

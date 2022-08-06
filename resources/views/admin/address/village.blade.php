@@ -1,16 +1,22 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <!-- Row -->
+    @php
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
+    @endphp
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Address Village Table</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </button>
+                    @if ($can_insert)
+                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    @endif
                 </div>
                 <div class="card-body">
                     <div class="container-fluid">
@@ -72,7 +78,7 @@
                                     <th>District</th>
                                     <th>Regencie</th>
                                     <th>Province</th>
-                                    <th>Action</th>
+                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -87,8 +93,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
@@ -100,8 +106,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
-                                required="" />
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Enter Name" required="" />
                         </div>
                         <div class="form-group">
                             <label for="province_id">Province</label>
@@ -146,22 +152,19 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         let isUpdate = false;
         $(document).ready(function() {
@@ -183,7 +186,7 @@
             // filter
             $('#filter_regencie').select2({
                 ajax: {
-                    url: "{{ route('admin.address.regencie.select2') }}",
+                    url: "{{ route(h_prefix('regencie.select2', 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -201,7 +204,7 @@
 
             $('#filter_district').select2({
                 ajax: {
-                    url: "{{ route('admin.address.district.select2') }}",
+                    url: "{{ route(h_prefix('district.select2', 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -220,7 +223,7 @@
             // modal form
             $('#regency_id').select2({
                 ajax: {
-                    url: "{{ route('admin.address.regencie.select2') }}",
+                    url: "{{ route(h_prefix('regencie.select2', 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -238,7 +241,7 @@
 
             $('#district_id').select2({
                 ajax: {
-                    url: "{{ route('admin.address.district.select2') }}",
+                    url: "{{ route(h_prefix('district.select2', 1)) }}",
                     type: "GET",
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -272,7 +275,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.address.village') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[province]'] = $('#filter_province').val();
                         d['filter[regencie]'] = $('#filter_regencie').val();
@@ -304,11 +307,11 @@
                         data: 'province',
                         name: 'province'
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-name="${full.name}"
                                 data-province_id="${full.province_id}"
@@ -318,14 +321,14 @@
                                 data-district="${full.district}"
                                 onClick="editFunc(this)">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                </button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
                     [1, 'asc']
@@ -353,8 +356,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 resetErrorAfterInput();
-                const route = isUpdate ? "{{ route('admin.address.village.update') }}" :
-                    "{{ route('admin.address.village.store') }}";
+                const route = isUpdate ? "{{ route(h_prefix('update')) }}" :
+                    "{{ route(h_prefix('insert')) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -445,7 +448,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/address/village') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

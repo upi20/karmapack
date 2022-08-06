@@ -1,15 +1,22 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
+    @endphp
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">List Artikel</h3>
-                    <a class="btn btn-rounded btn-success" href="{{ route('admin.artikel.data.add') }}"
-                        data-bs-effect="effect-scale">
-                        <i class="bi bi-plus-lg"></i> Tambah Artikel
-                    </a>
+                    @if ($can_insert)
+                        <a class="btn btn-rounded btn-success" href="{{ route(h_prefix('add')) }}"
+                            data-bs-effect="effect-scale">
+                            <i class="bi bi-plus-lg"></i> Tambah Artikel
+                        </a>
+                    @endif
                 </div>
                 <div class="card-body">
                     <h5 class="h5">Filter Data</h5>
@@ -32,11 +39,12 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Lihat</th>
                                     <th>Slug</th>
                                     <th>Kilasan</th>
                                     <th>Tanggal</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -50,22 +58,19 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -84,7 +89,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.artikel.data') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -97,6 +102,15 @@
                     {
                         data: 'nama',
                         name: 'nama'
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('artikel') }}/${data}?preview=1"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
                     },
                     {
                         data: 'slug',
@@ -123,24 +137,24 @@
                             return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
-                                href="{{ url('admin/artikel/data/edit') }}/${data}" >
+                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                                href="{{ url(h_prefix_uri('edit')) }}/${data}" >
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </a>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                </a>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
-                    [4, 'desc']
+                    [5, 'desc']
                 ]
             });
 
@@ -170,7 +184,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/artikel/data') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

@@ -120,13 +120,33 @@ if (!function_exists('sidebar_menu_admin')) {
 }
 
 if (!function_exists('auth_can')) {
-    /**
-     * Helpers for build menu admin sidebar admin.
-     *
-     * @return array
-     */
     function auth_can(string $route)
     {
         return auth()->user()->can($route);
+    }
+}
+
+if (!function_exists('auth_has_role')) {
+    function auth_has_role($param)
+    {
+        return auth()->user()->hasRole($param);
+    }
+}
+
+if (!function_exists('h_prefix_uri')) {
+    function h_prefix_uri(?string $param = null, int $min = 0)
+    {
+        $prefix_uri = explode('/', trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/'));
+        for ($i = 0; $i < $min; $i++) unset($prefix_uri[count($prefix_uri) - 1]);
+        $prefix_uri = implode('/', $prefix_uri);
+        return $param ? "$prefix_uri/$param" : $prefix_uri;
+    }
+}
+
+if (!function_exists('h_prefix')) {
+    function h_prefix(?string $param = null, int $min = 0)
+    {
+        $prefix_uri = h_prefix_uri($param, $min);
+        return str_replace('/', '.', $prefix_uri);
     }
 }

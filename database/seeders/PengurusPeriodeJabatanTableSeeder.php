@@ -624,12 +624,14 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-ketua-umum',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visi</p>',
-                'misi' => '<p>misi</p>',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-25 13:30:58',
+                'updated_at' => '2022-08-06 21:38:54',
             ),
             36 => 
             array (
