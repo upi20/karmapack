@@ -188,8 +188,19 @@ class RoleController extends Controller
         }
     }
 
+    // get editor view for handphone or desktop
     private function get_editor()
     {
-        return request('v') == 1 ? 'admin.user_access.role.editor' : 'admin.user_access.role.editor2';
+        $ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
+        $isMob = is_numeric(strpos($ua, "mobile"));
+
+        // user interface
+        $ui = $isMob;
+
+        if (request('v')) {
+            $ui = request('v') == 1;
+        }
+
+        return $ui ? 'admin.user_access.role.editor' : 'admin.user_access.role.editor2';
     }
 }

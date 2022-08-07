@@ -1,7 +1,6 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <!-- Row -->
     <div class="row">
         <div class="col-lg-6">
             <div class="card" id="card-menu">
@@ -16,12 +15,15 @@
                             <i class="fe fe-align-justify"></i>&nbsp;Collapse
                         </button>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn me-1 btn-primary btn-sm save" data-action="save" title="Save" onclick="save()"
-                            style="border: 0; border-radius: 4px">
-                            <i class="fas fa-save"></i><span class="hidden-xs">&nbsp;Save</span>
-                        </button>
-                    </div>
+                    @if ($can_save)
+                        <div class="btn-group">
+                            <button class="btn me-1 btn-primary btn-sm save" data-action="save" title="Save"
+                                onclick="save()" style="border: 0; border-radius: 4px">
+                                <i class="fas fa-save"></i><span class="hidden-xs">&nbsp;Save</span>
+                            </button>
+                        </div>
+                    @endif
+
                     <div class="btn-group">
                         <button class="btn me-1 btn-warning btn-sm refresh" data-action="refresh" title="Refresh"
                             style="border: 0; border-radius: 4px" onclick="menu()">
@@ -34,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="form-container">
             <div class="row row-sm">
                 <div class="col-lg-12">
                     <div class="card">

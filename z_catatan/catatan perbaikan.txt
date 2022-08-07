@@ -1,7 +1,6 @@
 Menerapkan role sesuai dengan kapasitas masing masing jabatan
-Implementasi perijinan untuk curd;
-Dashboard hanya satu
-profile -> angkatan view nya ke config dan env
+Implementasi perijinan untuk curd[progress]
+profile -> input antkatang angkatan view nya ke config dan env USER_INPUT_ANGKATAN=true (default false)
 artikel -> belum ada author
 logo angkatan di periode
 pendaftaran dari google form
@@ -12,3 +11,5 @@ Dashboard
   statistik dari profile
 
 Ganti icon set menggunakan icon di frontend [done]
+
+tambah fitur absensi

@@ -201,5 +201,7 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ])->toArray(),
 
-    'super_admin_role' => env('SUPER_ADMIN_ROLE', 'Administrator')
+    // my config
+    'super_admin_role' => env('SUPER_ADMIN_ROLE', 'Administrator'),
+    'user_input_angkatan' => (bool)env('USER_INPUT_ANGKATAN', false)
 ];

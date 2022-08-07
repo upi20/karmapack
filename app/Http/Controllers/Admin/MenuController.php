@@ -41,7 +41,21 @@ class MenuController extends Controller
             ]
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri', 'routes', 'roles');
+        $can_insert = auth_can(h_prefix('insert'));
+        $can_update = auth_can(h_prefix('update'));
+        $can_delete = auth_can(h_prefix('delete'));
+        $can_save = auth_can(h_prefix('save'));
+        $data = compact(
+            'page_attr',
+            'prefix',
+            'prefix_uri',
+            'routes',
+            'roles',
+            'can_insert',
+            'can_update',
+            'can_delete',
+            'can_save',
+        );
         return view('admin.menu.menu',  array_merge($data, ['compact' => $data]));
     }
 

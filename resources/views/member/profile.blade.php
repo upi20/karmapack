@@ -20,7 +20,7 @@
                                     style="height: 80px; width: 80px; object-fit: cover; object-position: center; border-radius: 50%;">
 
                                 <label for="profile"><span class="badge rounded-pill avatar-icons bg-primary"><i
-                                            class="fe fe-edit fs-12"></i></span></label>
+                                            class="fas fa-edit fs-12"></i></span></label>
                             </div>
                             <div class="text-center">
                                 <h5 class="mb-1 text-dark fw-semibold">{{ $user->name }}</h5>
@@ -43,8 +43,14 @@
                         {{-- angkatan --}}
                         <div class="form-group  mt-3">
                             <label for="angkatan">Angkatan</label>
-                            <input type="number" min="2003" max="9999" class="form-control" id="angkatan"
-                                name="angkatan" placeholder="Tahun Masuk" value="{{ $user->angkatan }}" required>
+                            @if (config('app.user_input_angkatan'))
+                                <input type="number" min="2003" max="9999" class="form-control" id="angkatan"
+                                    name="angkatan" placeholder="Tahun Masuk" value="{{ $user->angkatan }}" required>
+                            @else
+                                <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ $user->angkatan }}</p>
+                                <input type="hidden" min="2003" max="9999" id="angkatan" name="angkatan"
+                                    value="{{ $user->angkatan }}" required>
+                            @endif
                         </div>
                         <hr>
 
@@ -524,8 +530,6 @@
 @endsection
 
 @section('stylesheet')
-    <link rel="stylesheet"
-        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
 @endsection
 
 @section('javascript')

@@ -2,8 +2,8 @@
 
 @section('content')
     @php
-    $can_add = auth_can("$prefix.create") && auth_can("$prefix.store");
-    $can_edit = auth_can("$prefix.edit") && auth_can("$prefix.update");
+    $can_insert = auth_can("$prefix.insert");
+    $can_update = auth_can("$prefix.update");
     $can_delete = auth_can("$prefix.delete");
     @endphp
     <!-- Row -->
@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Permission Table</h3>
-                    @if ($can_add)
+                    @if ($can_insert)
                         <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route($prefix . '.create') }}">
                             <i class="fas fa-plus"></i> Add
                         </a>
@@ -27,7 +27,7 @@
                                     <th>Name</th>
                                     <th>Guard</th>
                                     <th>Updated At</th>
-                                    @if ($can_edit || $can_delete)
+                                    @if ($can_update || $can_delete)
                                         <th>Action</th>
                                     @endif
                                 </tr>
@@ -56,7 +56,7 @@
     <script>
         const table_html = $('#tbl_main');
         let isUpdate = true;
-        const can_edit = {{ $can_edit ? 'true' : 'false' }};
+        const can_update = {{ $can_update ? 'true' : 'false' }};
         const can_delete = {{ $can_delete ? 'true' : 'false' }};
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -66,16 +66,16 @@
                 }
             });
             const column = [];
-            if (can_edit || can_delete) {
+            if (can_update || can_delete) {
                 column.push({
                     data: 'id',
                     name: 'id',
                     render(data, type, full, meta) {
-                        const btn_edit = can_edit ? `<a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data">
+                        const btn_edit = can_update ? `<a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data">
                                 <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
 
-                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>
                                 ` : '';

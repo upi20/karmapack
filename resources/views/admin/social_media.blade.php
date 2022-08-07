@@ -12,7 +12,7 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Status Social Media</h3>
                     @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
                             <i class="fas fa-plus"></i> Add
                         </button>
@@ -131,6 +131,8 @@
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -149,7 +151,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.social_media') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -191,11 +193,11 @@
                             return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-url="${full.url}"
@@ -205,14 +207,14 @@
                                 data-order="${full.order}"
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                </button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
-                                </button>
-                                `;
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
                     [4, 'asc']
@@ -241,8 +243,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 const route = ($('#id').val() == '') ?
-                    "{{ route('admin.social_media.insert') }}" :
-                    "{{ route('admin.social_media.update') }}";
+                    "{{ route(h_prefix('insert')) }}" :
+                    "{{ route(h_prefix('update')) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -324,7 +326,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/social_media') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

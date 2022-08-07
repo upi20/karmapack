@@ -8,6 +8,9 @@
 <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
 {{-- icon --}}
 <script>
+    const can_insert = {{ $can_insert ? 'true' : 'false' }};
+    const can_update = {{ $can_update ? 'true' : 'false' }};
+    const can_delete = {{ $can_delete ? 'true' : 'false' }};
     let isUpdate = false;
     let sequence_max = 0;
     $(document).ready(function() {
@@ -122,11 +125,18 @@
                     contentCallback: (item) => {
                         sequence_max = Number(item.sequence) > Number(sequence_max) ?
                             Number(item.sequence) : Number(sequence_max);
-                        return `<i class="${item.icon}"></i>&nbsp;<strong>${item.title}${item.type == 0 ? ' | <span class="text-danger">separator</span>' : ''}</strong> ${item.type == 0 || item.route == null ? '' : `<a href="${item.url}" class="dd-nodrag">${item.route}</a>`}
-                            <span class="float-end dd-nodrag">
-                                <button onclick="edit(${item.id})" class="btn btn-primary btn-sm"><span class="fe fe-edit"></span></button>
-                                <button onclick="deleteFun(${item.id})" class="btn btn-danger btn-sm"><span class="fa fa-fw fa-trash"></span></button>
-                            </span>`;
+
+                        const btn_update = can_update ?
+                            `<button onclick="edit(${item.id})" class="btn btn-primary btn-sm"><span class="fas fa-edit"></span></button>` :
+                            '';
+                        const btn_delete = can_delete ?
+                            `<button onclick="deleteFun(${item.id})" class="btn btn-danger btn-sm"><span class="fas fa-trash"></span></button>` :
+                            '';
+                        const btn = (can_update || can_delete) ? `<span class="float-end dd-nodrag">
+                                ${btn_update}
+                                ${btn_delete}
+                            </span>` : '';
+                        return `<i class="${item.icon}"></i>&nbsp;<strong>${item.title}${item.type == 0 ? ' | <span class="text-danger">separator</span>' : ''}</strong> ${item.type == 0 || item.route == null ? '' : `<a href="${item.url}" class="dd-nodrag">${item.route}</a>`} ${btn}`;
                     }
                 });
                 isEdit(false)
@@ -215,12 +225,18 @@
     function isEdit(edit) {
         const title = $('#menu-title');
         const btn_cancel = $('#menu-btn-cancel');
+        const setContainer = view => {
+            const container = $('#form-container');
+            if (view) container.show();
+            else container.fadeOut();
+        }
         if (edit) {
             isUpdate = true;
 
             // edit attribute
             title.html('Edit Menu');
             btn_cancel.fadeIn();
+            setContainer(can_update);
         } else {
             isUpdate = false;
             $('#id').val(menu.id);
@@ -237,6 +253,7 @@
             // edit attribute
             title.html('Add Menu');
             btn_cancel.fadeOut();
+            setContainer(can_insert);
         }
     }
 
