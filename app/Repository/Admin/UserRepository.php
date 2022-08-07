@@ -224,6 +224,27 @@ class UserRepository
             $model->whereRaw($search_query);
         }
 
+        // role
+        $tableNames = config('permission.table_names');
+        $columnNames = config('permission.column_names');
+        // roles
+
+        $t_has_roles = $tableNames['model_has_roles'];
+        $t_roles = $tableNames['roles'];
+        $t_user = User::tableName;
+
+        $c_model_id = $columnNames['model_morph_key'];
+
+        if ($request->role != '') {
+            $f = $request->role;
+            $where = <<<SQL
+                ((SELECT count(*) FROM $t_has_roles 
+                join $t_roles on $t_has_roles.role_id = $t_roles.id
+                where $t_has_roles.$c_model_id = $t_user.id and $t_roles.`name` = '$f') > 0)
+            SQL;
+            $model->whereRaw($where);
+        }
+
         // $model->orderBy('angkatan', 'desc');
         $model->orderBy('name');
         $details = $model->get();

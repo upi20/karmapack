@@ -13,3 +13,9 @@ Dashboard
 Ganti icon set menggunakan icon di frontend [done]
 
 tambah fitur absensi
+
+
+jabatan mempunyai relasi kepada role untuk nanti ketika di beri jabatan maka akan di ganti role nya sesuai dengan role jabatan jika jabatan periode itu aktif maka otomatis semua orang di dalam jabatan tersebut role nya akan diganti sesuai dengan role jabatan
+kemudian jika periode nya di nonaktifkan maka akan di ganti role nya menjadi Alumni
+
+ketika user baru di tambah kan maka akan ditambahkan sebagai role anggota
