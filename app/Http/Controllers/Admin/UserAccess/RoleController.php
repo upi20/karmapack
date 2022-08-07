@@ -21,9 +21,6 @@ class RoleController extends Controller
                 ->make(true);
         }
 
-        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-
         $page_attr = [
             'title' => 'Role',
             'breadcrumbs' => [
@@ -31,7 +28,7 @@ class RoleController extends Controller
             ]
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri');
+        $data = compact('page_attr');
         return view('admin.user_access.role.list',  array_merge($data, ['compact' => $data]));
     }
 
@@ -39,12 +36,6 @@ class RoleController extends Controller
     {
         $model = (object)['id' => '', 'name' => '', 'guard_name' => 'web'];
         $roles = [];
-        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-
-        $parrent = str_replace('/create', '', $_SERVER['REQUEST_URI']);
-        $prefix_uri_parent = trim(explode('?', $parrent)[0], '/');
-        $prefix_parent = str_replace('/', '.', $prefix_uri_parent);
 
         //get permission all
         $permissions = Permission::orderBy('name', 'asc')->get();
@@ -55,26 +46,18 @@ class RoleController extends Controller
             'title' => 'Create Role',
             'breadcrumbs' => [
                 ['name' => 'User Access'],
-                ['name' => 'Role', 'url' => $prefix_parent],
+                ['name' => 'Role', 'url' => h_prefix(null, 2)],
             ],
-            'navigation' => $prefix_parent,
+            'navigation' => h_prefix(null, 2),
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles', 'reload');
+        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload');
         return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }
 
     public function edit(Role $model)
     {
         $id = $model->id;
-
-        $trim = str_replace("/$id", '', $_SERVER['REQUEST_URI']);
-        $prefix_uri = trim(explode('?', $trim)[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-
-        $trim = str_replace("/edit/$id", '', $_SERVER['REQUEST_URI']);
-        $prefix_uri_parent = trim(explode('?', $trim)[0], '/');
-        $prefix_parent = str_replace('/', '.', $prefix_uri_parent);
 
         //get permission all
         $permissions = Permission::orderBy('name', 'asc')->get();
@@ -90,12 +73,12 @@ class RoleController extends Controller
             'title' => 'Edit Role',
             'breadcrumbs' => [
                 ['name' => 'User Access'],
-                ['name' => 'Role', 'url' => $prefix_parent],
+                ['name' => 'Role', 'url' => h_prefix(null, 2)],
             ],
-            'navigation' => $prefix_parent,
+            'navigation' => h_prefix(null, 2),
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri', 'prefix_parent', 'prefix_uri_parent', 'permissions', 'model', 'roles', 'reload');
+        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload');
 
         return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
     }

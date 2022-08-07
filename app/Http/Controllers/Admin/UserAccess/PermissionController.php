@@ -20,9 +20,6 @@ class PermissionController extends Controller
                 ->make(true);
         }
 
-        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-
         $page_attr = [
             'title' => 'Permission',
             'breadcrumbs' => [
@@ -30,7 +27,7 @@ class PermissionController extends Controller
             ]
         ];
 
-        $data = compact('page_attr', 'prefix', 'prefix_uri');
+        $data = compact('page_attr');
         return view('admin.user_access.permission',  array_merge($data, ['compact' => $data]));
     }
 

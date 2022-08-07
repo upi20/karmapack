@@ -32,7 +32,7 @@
 
         $('#parent_id').select2({
             ajax: {
-                url: `{{ route("$prefix.parent_list") }}`,
+                url: `{{ route(h_prefix('parent_list')) }}`,
                 type: "GET",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -63,7 +63,8 @@
             formData.append('sequence', sequence_max++);
             setBtnLoading('#btn-save', 'Save Changes');
             resetErrorAfterInput();
-            const route = isUpdate ? `{{ route("$prefix.update") }}` : `{{ route("$prefix.insert") }}`;
+            const route = isUpdate ? `{{ route(h_prefix('update')) }}` :
+                `{{ route(h_prefix('insert')) }}`;
             $.ajax({
                 type: 'POST',
                 url: route,
@@ -111,7 +112,7 @@
     function menu() {
         $('#card-menu').LoadingOverlay("show");
         $.ajax({
-            url: `{{ route($prefix . '.list') }}`,
+            url: `{{ route(h_prefix('list')) }}`,
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -155,7 +156,7 @@
         $.LoadingOverlay("hide");
         var serialize = $('#menu').nestable('toArray');
         $.ajax({
-            url: `{{ route($prefix . '.save') }}`,
+            url: `{{ route(h_prefix('save')) }}`,
             type: 'PUT',
             data: {
                 data: serialize
@@ -185,7 +186,7 @@
         $.LoadingOverlay("show");
         $.ajax({
             type: "GET",
-            url: `{{ route($prefix . '.find') }}`,
+            url: `{{ route(h_prefix('find')) }}`,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
@@ -267,7 +268,7 @@
         }).then(function(result) {
             if (result.value) {
                 $.ajax({
-                    url: `{{ url($prefix_uri) }}/${id}`,
+                    url: `{{ url(h_prefix_uri()) }}/${id}`,
                     type: 'DELETE',
                     dataType: 'json',
                     headers: {

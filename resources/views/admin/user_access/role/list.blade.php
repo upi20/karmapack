@@ -2,9 +2,9 @@
 
 @section('content')
     @php
-    $can_insert = auth_can("$prefix.insert");
-    $can_update = auth_can("$prefix.update");
-    $can_delete = auth_can("$prefix.delete");
+    $can_insert = auth_can('h_prefix().insert');
+    $can_update = auth_can('h_prefix().update');
+    $can_delete = auth_can('h_prefix().delete');
     @endphp
     <!-- Row -->
     <div class="row row-sm">
@@ -13,7 +13,7 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Permission Table</h3>
                     @if ($can_insert)
-                        <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route($prefix . '.create') }}">
+                        <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
                             <i class="fas fa-plus"></i> Add
                         </a>
                     @endif
@@ -71,7 +71,7 @@
                     data: 'id',
                     name: 'id',
                     render(data, type, full, meta) {
-                        const btn_edit = can_update ? `<a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data">
+                        const btn_edit = can_update ? `<a href="{{ url(h_prefix_uri('edit')) }}/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data">
                                 <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
 
@@ -94,7 +94,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route($prefix) }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         // d['filter[active]'] = $('#filter_active').val();
                         // d['filter[role]'] = $('#filter_role').val();
@@ -153,7 +153,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url($prefix_uri) }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

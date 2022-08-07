@@ -2,10 +2,11 @@
 
 @section('content')
     @php
-    $can_insert = auth_can("$prefix.insert");
-    $can_update = auth_can("$prefix.update");
-    $can_delete = auth_can("$prefix.delete");
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
     $can_save_another = auth_can('admin.profile.save_another');
+    $can_excel = auth_can(h_prefix('excel'));
     @endphp
     <!-- Row -->
     <div class="row row-sm">
@@ -14,7 +15,7 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">User Table</h3>
                     <div>
-                        @if (auth_can("$prefix.excel"))
+                        @if ($can_excel)
                             <button class="btn btn-success btn-sm" onclick="exportExcel()">
                                 <i class="fas fa-file-excel"></i> Excel
                             </button>
@@ -441,7 +442,7 @@
                 }
             });
         }
-        @if (auth_can("$prefix.excel"))
+        @if ($can_excel)
             function exportExcel() {
                 const base = "{{ route(h_prefix('excel')) }}";
                 const active = $('#filter_active').val();

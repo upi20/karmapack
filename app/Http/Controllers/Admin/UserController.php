@@ -30,9 +30,7 @@ class UserController extends Controller
             'navigation' => 'user.view',
         ];
         $user_role = Role::all();
-        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-        return view('admin.user', compact('page_attr', 'user_role', 'prefix_uri', 'prefix'));
+        return view('admin.user', compact('page_attr', 'user_role',));
     }
 
     public function store(Request $request)

@@ -109,7 +109,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route($prefix) }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         // d['filter[active]'] = $('#filter_active').val();
                         // d['filter[role]'] = $('#filter_role').val();
@@ -177,8 +177,8 @@
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
                 resetErrorAfterInput();
-                const route = isUpdate ? `{{ route("$prefix.update") }}` :
-                    `{{ route("$prefix.store") }}`;
+                const route = isUpdate ? `{{ route(h_prefix('update')) }}` :
+                    `{{ route(h_prefix('store')) }}`;
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -258,7 +258,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url($prefix_uri) }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

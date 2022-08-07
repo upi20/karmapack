@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header d-md-flex flex-row justify-content-between">
             <h3 class="card-title">{{ $page_attr['title'] }}</h3>
-            <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route($prefix_parent) }}">
+            <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix(null, 2)) }}">
                 <i class="fe fe-arrow-left"></i> Back
             </a>
         </div>
@@ -65,8 +65,8 @@
                 setBtnLoading('#btn-save', 'Save Changes');
                 $.ajax({
                     type: "POST",
-                    url: $('#id').val() == '' ? `{{ route("$prefix_parent.store") }}` :
-                        `{{ route("$prefix_parent.update") }}`,
+                    url: $('#id').val() == '' ? `{{ route(h_prefix('store', 2)) }}` :
+                        `{{ route(h_prefix('update', 2)) }}`,
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
@@ -85,7 +85,8 @@
 
                         if (reload) {
                             setTimeout(() => {
-                                window.location.href = `{{ route($prefix_parent) }}`;
+                                window.location.href =
+                                    `{{ route(h_prefix(null, 2)) }}`;
                             }, 1500);
                         }
                     },

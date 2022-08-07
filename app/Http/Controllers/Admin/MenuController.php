@@ -31,9 +31,6 @@ class MenuController extends Controller
 
         $roles = Role::all();
 
-        $prefix_uri = trim(explode('?', $_SERVER['REQUEST_URI'])[0], '/');
-        $prefix = str_replace('/', '.', $prefix_uri);
-
         $page_attr = [
             'title' => 'Menu Management',
             'breadcrumbs' => [
@@ -47,8 +44,6 @@ class MenuController extends Controller
         $can_save = auth_can(h_prefix('save'));
         $data = compact(
             'page_attr',
-            'prefix',
-            'prefix_uri',
             'routes',
             'roles',
             'can_insert',
