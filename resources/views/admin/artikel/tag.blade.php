@@ -12,9 +12,9 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Tag Table</h3>
                     @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="bi bi-plus-lg"></i> Add
+                            <i class="fas fa-plus"></i> Add
                         </button>
                     @endif
                 </div>
@@ -30,7 +30,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -85,10 +85,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -171,10 +171,10 @@
                                 data-status="${full.status}"
                                 data-slug="${full.slug}"
                                 onClick="editFunc(this)">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </button>` : '';
                             const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             return btn_update + btn_delete;
                         },
@@ -256,7 +256,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });

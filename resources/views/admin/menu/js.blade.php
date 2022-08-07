@@ -98,7 +98,7 @@
                 },
                 complete: function() {
                     setBtnLoading('#btn-save',
-                        '<li class="fa fa-save mr-1"></li> Save changes',
+                        '<li class="fas fa-save mr-1"></li> Save changes',
                         false);
                 }
             });

@@ -15,7 +15,7 @@
                             <h2 class="mb-0 number-font">{{ $total_anggota }}</h2>
                             <p class="text-white mb-0">Total Anggota </p>
                         </div>
-                        <div class="ms-auto"> <i class="fa fa-user-o text-white fs-30 me-2 mt-2"></i> </div>
+                        <div class="ms-auto"> <i class="fas fa-users text-white fs-30 me-2 mt-2"></i> </div>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             <div class="text-white">
                                 <h3 class="mb-0 number-font">Edit Profile</h3>
                             </div>
-                            <div class="ms-auto"> <i class="fe fe-user text-white fs-30 me-2 mt-2"></i> </div>
+                            <div class="ms-auto"> <i class="fas fa-user text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             <div class="text-white">
                                 <h3 class="mb-0 number-font">Ganti Password</h3>
                             </div>
-                            <div class="ms-auto"> <i class="fe fe-lock text-white fs-30 me-2 mt-2"></i> </div>
+                            <div class="ms-auto"> <i class="fas fa-key text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
                     </div>
                 </div>
@@ -183,6 +183,5 @@
         .card-main:hover {
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
-
     </style>
 @endsection

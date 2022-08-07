@@ -7,9 +7,9 @@
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Permission Table</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                    <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                         data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
+                        <i class="fas fa-plus"></i> Add
                     </button>
                 </div>
                 <div class="card-body">
@@ -58,10 +58,10 @@
 
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -133,10 +133,10 @@
                                 data-name="${full.name}"
                                 data-guard_name="${full.guard_name}"
                                 onClick="editFunc(this)">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </button>
                                 <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>
                                 `;
                         },
@@ -211,7 +211,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });

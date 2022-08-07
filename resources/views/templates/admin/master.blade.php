@@ -79,6 +79,8 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <!--- FONT-ICONS CSS -->
     <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all"
@@ -185,7 +187,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     </div>
 
     <!-- BACK-TO-TOP -->
-    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+    <a href="#top" id="back-to-top" class="d-flex align-items-center justify-content-center">
+        <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
+    </a>
 
     <!-- JQUERY JS -->
     <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
@@ -220,6 +224,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll-1.js') }}"></script>
     <script src="{{ url('loader/js/admin.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}"></script>
     @yield('javascript')
 </body>
 

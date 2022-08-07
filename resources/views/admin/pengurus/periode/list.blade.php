@@ -17,7 +17,7 @@
                     @if ($can_insert)
                         <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
                             data-bs-effect="effect-scale">
-                            <i class="bi bi-plus-lg"></i> Tambah Periode
+                            <i class="fas fa-plus"></i> Tambah Periode
                         </a>
                     @endif
                 </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -190,7 +190,7 @@
                             return data ? `
                             <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-member" onclick="viewMember('${data}')"
-                                        data-target="#modal-member"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                        data-target="#modal-member"><i class="fas fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     }] : []),
@@ -201,7 +201,7 @@
                             return data ? `
                             <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-detail" onclick="viewDetail('${data}')"
-                                        data-target="#modal-detail"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                        data-target="#modal-detail"><i class="fas fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     }] : []),
@@ -212,7 +212,7 @@
                             return data ? `
                             <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-icon" onclick="viewIcon('${data}')"
-                                        data-target="#modal-icon"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                        data-target="#modal-icon"><i class="fas fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     },
@@ -235,10 +235,10 @@
                         render(data, type, full, meta) {
                             const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
                                 href="{{ url(h_prefix_uri('edit')) }}/${data}" >
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
                             const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             const btn_bidang = can_bidang ? `<a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
                                 href="{{ url(h_prefix_uri('jabatan', 1)) }}/${data}" >
@@ -246,7 +246,7 @@
                                 </a>` : '';
                             return ` <a class="btn btn-rounded btn-primary btn-sm my-1" title="Lihat Periode"
                                 href="{{ url('periode') }}/${full.slug}" target="_blank">
-                                <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Lihat
+                                <i class="fas fa-paper-plane"></i> Lihat
                                 </a>
                                 ${btn_bidang}
                                 ${btn_update}

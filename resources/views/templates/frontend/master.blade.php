@@ -81,10 +81,12 @@ $footerInstagram_val = $master_helper->footerInstagram();
         media="all">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/all.min.css') }}" type="text/css"
         media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/slick.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/slick.css') }}" type="text/css"
+        media="all">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/simple-line-icons.css') }}" type="text/css"
         media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/style.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/style.css') }}" type="text/css"
+        media="all">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -158,7 +160,6 @@ $footerInstagram_val = $master_helper->footerInstagram();
                 transform: translate(24px, 0);
             }
         }
-
     </style>
 
     @yield('stylesheet')
@@ -193,7 +194,7 @@ $footerInstagram_val = $master_helper->footerInstagram();
 
                 <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                        class="fas fa-times" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
                         <path fill-rule="evenodd"
@@ -240,8 +241,8 @@ $footerInstagram_val = $master_helper->footerInstagram();
             </div>
             <!-- form -->
             <form class="d-flex search-form" action="{{ url('anggota') }}" method="GET">
-                <input class="form-control me-2" type="search" name="search" placeholder="Search and press enter ..."
-                    aria-label="Search" value="{{ $search_master_key }}">
+                <input class="form-control me-2" type="search" name="search"
+                    placeholder="Search and press enter ..." aria-label="Search" value="{{ $search_master_key }}">
                 <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
             </form>
         </div>

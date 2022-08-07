@@ -1,16 +1,22 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <!-- Row -->
+    @php
+    $can_insert = auth_can(h_prefix('insert'));
+    $can_update = auth_can(h_prefix('update'));
+    $can_delete = auth_can(h_prefix('delete'));
+    @endphp
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Galeri Table</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
-                    </button>
+                    @if ($can_insert)
+                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    @endif
                 </div>
                 <div class="card-body">
                     <h5 class="h5">Filter Data</h5>
@@ -24,7 +30,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -33,13 +39,11 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
+                                    <th>Lihat</th>
                                     <th>Slug</th>
-                                    {{-- <th>foto</th> --}}
-                                    {{-- <th>Id Icon</th> --}}
-                                    {{-- <th>Id Gdrive</th> --}}
                                     <th>keterangan</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -54,8 +58,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
@@ -63,13 +67,13 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama"
-                                required="" />
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Enter Nama" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="slug">Slug <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug"
-                                required="" />
+                            <input type="text" class="form-control" id="slug" name="slug"
+                                placeholder="Enter Slug" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="foto_id_gdrive">Icon From Foto Id Google Drive <span
@@ -90,7 +94,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
-                            <select class="form-control" style="width: 100%;" required="" id="status" name="status">
+                            <select class="form-control" style="width: 100%;" required="" id="status"
+                                name="status">
                                 <option value="1">Tampilkan</option>
                                 <option value="0">Tidak Tampilkan</option>
                             </select>
@@ -99,10 +104,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -113,22 +118,19 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script>
+        const can_update = {{ $can_update ? 'true' : 'false' }};
+        const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         $(document).ready(function() {
             // datatable ====================================================================================
@@ -147,7 +149,7 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.galeri') }}",
+                    url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                     }
@@ -163,20 +165,17 @@
                     },
                     {
                         data: 'slug',
+                        name: 'slug',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('galeri/detail') }}/${data}?preview=1"><i class="fas fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
+                    },
+                    {
+                        data: 'slug',
                         name: 'slug'
                     },
-                    // {
-                    //     data: 'foto',
-                    //     name: 'foto'
-                    // },
-                    // {
-                    //     data: 'foto_id_gdrive',
-                    //     name: 'foto_id_gdrive'
-                    // },
-                    // {
-                    //     data: 'id_gdrive',
-                    //     name: 'id_gdrive'
-                    // },
                     {
                         data: 'keterangan',
                         name: 'keterangan'
@@ -190,11 +189,11 @@
                             return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
@@ -203,15 +202,14 @@
                                 data-id_gdrive="${full.id_gdrive}"
                                 data-keterangan="${full.keterangan}"
                                 onClick="editFunc(this)">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
-                                </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                                </button>
-                                `;
+                                <i class="fas fa-edit"></i> Edit </button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i> Delete
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
                         orderable: false
-                    },
+                    }] : []),
                 ],
                 order: [
                     [1, 'asc']
@@ -246,8 +244,8 @@
                 resetErrorAfterInput();
                 var formData = new FormData(this);
                 setBtnLoading('#btn-save', 'Save Changes');
-                const route = ($('#id').val() == '') ? "{{ route('admin.galeri.insert') }}" :
-                    "{{ route('admin.galeri.update') }}";
+                const route = ($('#id').val() == '') ? "{{ route(h_prefix('insert')) }}" :
+                    "{{ route(h_prefix('update')) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -288,7 +286,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });
@@ -328,7 +326,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ url('admin/galeri') }}/${id}`,
+                        url: `{{ url(h_prefix_uri()) }}/${id}`,
                         type: 'DELETE',
                         dataType: 'json',
                         headers: {

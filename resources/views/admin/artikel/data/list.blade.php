@@ -12,9 +12,9 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">List Artikel</h3>
                     @if ($can_insert)
-                        <a class="btn btn-rounded btn-success" href="{{ route(h_prefix('add')) }}"
+                        <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
                             data-bs-effect="effect-scale">
-                            <i class="bi bi-plus-lg"></i> Tambah Artikel
+                            <i class="fas fa-plus"></i> Tambah Artikel
                         </a>
                     @endif
                 </div>
@@ -30,7 +30,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -108,7 +108,7 @@
                         name: 'slug',
                         render(data, type, full, meta) {
                             return data ? `
-                            <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('artikel') }}/${data}?preview=1"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                            <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('artikel') }}/${data}?preview=1"><i class="fas fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     },
@@ -143,10 +143,10 @@
                         render(data, type, full, meta) {
                             const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
                                 href="{{ url(h_prefix_uri('edit')) }}/${data}" >
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
                             const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             return btn_update + btn_delete;
                         },

@@ -7,7 +7,7 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Sensus Anggota</h3>
                     <div>
-                        <button class="btn btn-success" onclick="exportExcel()">
+                        <button class="btn btn-success btn-sm" onclick="exportExcel()">
                             <i class="fa fa-file-excel-o"></i> Excel
                         </button>
                     </div>
@@ -26,7 +26,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -77,10 +77,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>

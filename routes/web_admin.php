@@ -175,7 +175,7 @@ $prefix = 'galeri';
 Route::controller(GaleriController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.galeri
     Route::get('/', 'index')->name($name)->middleware("permission:$name");
-    Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name.select2");
+    Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
     Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
     Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");

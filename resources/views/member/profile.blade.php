@@ -76,7 +76,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <button type="submit" form="basic_profile" class="btn btn-success my-1">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <button type="submit" form="address_profile" class="btn btn-success my-1">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <button type="submit" form="detail_profile" class="btn btn-success my-1">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                 </div>
             </div>
@@ -281,7 +281,7 @@
                                 <h3 class="card-title">Hobi</h3>
                             </div>
                             <button type="submit" form="hobi_form" class="btn btn-info btn-sm">
-                                <li class="fa fa-save mr-1"></li> Save changes
+                                <li class="fas fa-save mr-1"></li> Save changes
                             </button>
                         </div>
                         <div class="card-body">
@@ -333,10 +333,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="kontak_form">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -404,10 +404,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="pendidikan_form">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -469,10 +469,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="pengalaman_organisasi_form">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -511,10 +511,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="pengalaman_lain_form">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>

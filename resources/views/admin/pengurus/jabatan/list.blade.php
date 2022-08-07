@@ -15,9 +15,9 @@
                     <h3 class="card-title">List Bidang Periode <span class="fw-bold">{{ $periode->nama }}</span>
                     </h3>
                     @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="bi bi-plus-lg"></i> Add
+                            <i class="fas fa-plus"></i> Add
                         </button>
                     @endif
                 </div>
@@ -33,7 +33,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -148,10 +148,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -170,7 +170,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -307,7 +307,7 @@
                             return data ? `
                             <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
                                         href="#modal-icon" onclick="viewIcon('${data}')"
-                                        data-target="#modal-icon"><i class="fa fa-eye" aria-hidden="true"></i> </a>
+                                        data-target="#modal-icon"><i class="fas fa-eye" aria-hidden="true"></i> </a>
                             ` : '';
                         },
                     },
@@ -326,7 +326,7 @@
                         render(data, type, full, meta) {
                             const btn_member = can_member ? `<a class="btn btn-rounded btn-info btn-sm my-1 me-1" title="Member"
                                 href="{{ url(h_prefix_uri('member', 1)) }}/${data}" >
-                                <i class="fa fa-user" aria-hidden="true"></i> Member
+                                <i class="fas fa-user"></i> Member
                                 </a>` : '';
                             const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Edit Data"
                                 data-id="${full.id}"
@@ -340,10 +340,10 @@
                                 data-slogan="${full.slogan ?? ''}"
                                 data-singkatan="${full.singkatan ?? ''}"
                                 onClick="editFunc(this)">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </button>` : '';
                             const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             return btn_member + btn_update + btn_delete;
                         },
@@ -427,7 +427,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });

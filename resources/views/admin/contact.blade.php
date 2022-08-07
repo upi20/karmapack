@@ -7,9 +7,9 @@
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Status Contact</h3>
-                    <button type="button" class="btn btn-rounded btn-success" data-bs-effect="effect-scale"
+                    <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                         data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="bi bi-plus-lg"></i> Add
+                        <i class="fas fa-plus"></i> Add
                     </button>
                 </div>
                 <div class="card-body">
@@ -24,7 +24,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="bi bi-arrow-repeat"></i> Refresh
+                            <i class="fas fa-sync"></i> Refresh
                         </button>
                     </form>
                     <div class="table-responsive table-striped">
@@ -53,8 +53,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
@@ -62,8 +62,8 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter Nama"
-                                required="" />
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Enter Nama" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="icon">Icon <span class="text-danger">*</span></label>
@@ -72,24 +72,23 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="url">Link <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="url" name="url" placeholder="Link Contact"
-                                required="" />
+                            <input type="text" class="form-control" id="url" name="url"
+                                placeholder="Link Contact" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="order">Nomor Urut <span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label" for="order">Nomor Urut <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="order" name="order" placeholder="Urutan"
                                 required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="keterangan">Keterangan <span
-                                    class="text-danger">*</span></label>
+                            <label class="form-label" for="keterangan">Keterangan <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="keterangan" name="keterangan"
                                 placeholder="Enter Keterangan" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
-                            <select class="form-control" style="width: 100%;" required="" id="status" name="status">
+                            <select class="form-control" style="width: 100%;" required="" id="status"
+                                name="status">
                                 <option value="1">Dipakai</option>
                                 <option value="0">Tidak Dipakai</option>
                             </select>
@@ -98,10 +97,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fa fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -112,16 +111,11 @@
 
 @section('javascript')
     <!-- DATA TABLE JS-->
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}">
-    </script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
 
 
     {{-- sweetalert --}}
@@ -198,10 +192,10 @@
                                 data-keterangan="${full.keterangan}"
                                 data-order="${full.order}"
                                 onClick="editFunc(this)">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </button>
                                 <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>
                                 `;
                         },
@@ -277,7 +271,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });

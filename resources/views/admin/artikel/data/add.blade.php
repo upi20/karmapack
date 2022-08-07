@@ -111,7 +111,7 @@ $tag = isset($tag) ? $tag : [];
         <div class="card-footer">
             <div class="form-group">
                 <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fa fa-save mr-1"></li> Save
+                    <li class="fas fa-save mr-1"></li> Save
                 </button>
             </div>
         </div>
@@ -267,7 +267,7 @@ $tag = isset($tag) ? $tag : [];
                     },
                     complete: function() {
                         setBtnLoading('button[type=submit]',
-                            '<li class="fa fa-save mr-1"></li> Save',
+                            '<li class="fas fa-save mr-1"></li> Save',
                             false);
                     }
                 });

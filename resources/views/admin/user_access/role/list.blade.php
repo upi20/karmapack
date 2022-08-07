@@ -13,8 +13,8 @@
                 <div class="card-header d-md-flex flex-row justify-content-between">
                     <h3 class="card-title">Permission Table</h3>
                     @if ($can_add)
-                        <a type="button" class="btn btn-rounded btn-success" href="{{ route($prefix . '.create') }}">
-                            <i class="bi bi-plus-lg"></i> Add
+                        <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route($prefix . '.create') }}">
+                            <i class="fas fa-plus"></i> Add
                         </a>
                     @endif
                 </div>
@@ -72,11 +72,11 @@
                     name: 'id',
                     render(data, type, full, meta) {
                         const btn_edit = can_edit ? `<a href="{{ url($prefix_uri) }}/edit/${data}" type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
 
                         const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                <i class="fas fa-trash"></i> Delete
                                 </button>
                                 ` : '';
                         return btn_edit + btn_delete;

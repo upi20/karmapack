@@ -21,7 +21,7 @@
         <div class="card-footer">
             <div class="form-group">
                 <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fa fa-save mr-1"></li> Save
+                    <li class="fas fa-save mr-1"></li> Save
                 </button>
             </div>
         </div>
@@ -95,7 +95,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fa fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
                             false);
                     }
                 });

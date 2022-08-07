@@ -19,7 +19,7 @@
                     <div class="btn-group">
                         <button class="btn me-1 btn-primary btn-sm save" data-action="save" title="Save" onclick="save()"
                             style="border: 0; border-radius: 4px">
-                            <i class="fa fa-save"></i><span class="hidden-xs">&nbsp;Save</span>
+                            <i class="fas fa-save"></i><span class="hidden-xs">&nbsp;Save</span>
                         </button>
                     </div>
                     <div class="btn-group">
@@ -125,7 +125,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <button type="submit" class="btn btn-primary" id="btn-save" form="menu-form">
-                                <li class="fa fa-save mr-1"></li> Save changes
+                                <li class="fas fa-save mr-1"></li> Save changes
                             </button>
                         </div>
                     </div>

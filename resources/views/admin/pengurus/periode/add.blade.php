@@ -114,7 +114,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
         <div class="card-footer">
             <div class="form-group">
                 <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fa fa-save mr-1"></li> Save
+                    <li class="fas fa-save mr-1"></li> Save
                 </button>
             </div>
         </div>
@@ -133,7 +133,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg"></i>
+                        <i class="fas fa-times"></i>
                         Close
                     </button>
                 </div>
@@ -256,7 +256,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                     },
                     complete: function() {
                         setBtnLoading('button[type=submit]',
-                            '<li class="fa fa-save mr-1"></li> Save',
+                            '<li class="fas fa-save mr-1"></li> Save',
                             false);
                     }
                 });
