@@ -18,7 +18,7 @@ class backup extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Backup database using iseed';
 
     /**
      * Execute the console command.
@@ -36,9 +36,45 @@ class backup extends Command
 
         shell_exec('cp -R ./database/seeders/* ./' . $folder_parent . '/' . $folder_backup);
         echo 'Berhasil backup data sebelumnya' . PHP_EOL;
-        $artisan_backup = "php artisan iseed users,artikel,artikel_tag,artikel_kategori,artikel_tag_item,artikel_kategori_item,galeri,galeri_tag_member,pengurus_periode,pengurus_periode_jabatan,pengurus_periode_jabatan_member,pengurus_periode_member,pengurus_profile_kontak,pengurus_profile_kontak_tipe,pengurus_profile_pendidikan,pengurus_profile_pendidikan_jenis,pengurus_profile_pengalaman_lain,pengurus_profile_pengalaman_organisasi,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member,pendaftarans,pend_sensus,p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu  --force";
-        $output = shell_exec('php ' . $artisan_backup);
-        echo $output;
+
+
+        $tables =  [
+            'users',
+            'artikel',
+            'artikel_tag',
+            'artikel_kategori',
+            'artikel_tag_item',
+            'artikel_kategori_item',
+            'galeri',
+            'galeri_tag_member',
+            'pengurus_periode',
+            'pengurus_periode_jabatan',
+            'pengurus_periode_jabatan_member',
+            'pengurus_periode_member',
+            'pengurus_profile_kontak',
+            'pengurus_profile_kontak_tipe',
+            'pengurus_profile_pendidikan',
+            'pengurus_profile_pendidikan_jenis',
+            'pengurus_profile_pengalaman_lain',
+            'pengurus_profile_pengalaman_organisasi',
+            'social_media',
+            'contacts',
+            'footer_instagrams',
+            'username_validations',
+            'galeri_tag_member',
+            'pendaftarans',
+            'pend_sensus',
+            'p_model_has_permissions',
+            'p_model_has_roles',
+            'p_permissions',
+            'p_roles',
+            'p_role_has_permissions',
+            'p_menu',
+            'p_role_has_menu',
+        ];
+        foreach ($tables as $table) {
+            echo shell_exec('php artisan iseed ' . $table . ' --force');
+        }
         return 1;
     }
 }
