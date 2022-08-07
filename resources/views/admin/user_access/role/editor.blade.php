@@ -27,13 +27,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-label">Permission</div>
+                <div class="form-label">Permission <span class="text-danger">*</span></div>
+                <label for="">Description:
+                    <i class="fas fa-square text-success"></i> = Page,
+                    <i class="fas fa-square"></i> = Feature
+                </label>
                 <div class="custom-controls-stacked">
-                    @foreach ($permissions as $p)
+                    @foreach ($permissions as $k => $p)
+                        @php
+                            $current = $p->name;
+                            $next = isset($permissions[$k + 1]) ? $permissions[$k + 1]->name : '';
+                            $color = count(explode('.', $current)) == count(explode('.', $next)) - 1 && str_contains($next, $current);
+                        @endphp
                         <label class="custom-control custom-checkbox-md float-start me-2" style="min-width: 320px">
                             <input type="checkbox" class="custom-control-input" name="permissions[]"
                                 value="{{ $p->name }}" {{ in_array($p->name, $roles) ? 'checked' : '' }}>
-                            <span class="custom-control-label">{{ $p->name }}</span>
+                            <span
+                                class="custom-control-label {{ $p->page || $color ? 'fw-bold text-success' : '' }}">{{ $p->name }}</span>
                         </label>
                     @endforeach
                 </div>
@@ -79,7 +89,8 @@
 
                         if (reload) {
                             setTimeout(() => {
-                                window.location.href = `{{ route(h_prefix(null, 2)) }}`;
+                                window.location.href =
+                                    `{{ route(h_prefix(null, 2)) }}`;
                             }, 1500);
                         }
                     },

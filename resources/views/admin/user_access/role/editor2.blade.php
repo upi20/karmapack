@@ -30,9 +30,14 @@
                 <div class="form-group">
                     <label class="form-label" for="guard_name">Permission <span class="text-danger">*</span></label>
                     <select name="permissions[]" id="permissions" multiple class="form-control">
-                        @foreach ($permissions as $p)
+                        @foreach ($permissions as $k => $p)
+                            @php
+                                $current = $p->name;
+                                $next = isset($permissions[$k + 1]) ? $permissions[$k + 1]->name : '';
+                                $color = count(explode('.', $current)) == count(explode('.', $next)) - 1 && str_contains($next, $current);
+                            @endphp
                             <option value="{{ $p->name }}" {{ in_array($p->name, $roles) ? 'selected' : '' }}>
-                                {{ $p->name }}
+                                {{ $p->name }} {{ $p->page || $color ? ' | Page' : '' }}
                             </option>
                         @endforeach
                     </select>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\UserAccess;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
@@ -38,7 +39,13 @@ class RoleController extends Controller
         $roles = [];
 
         //get permission all
-        $permissions = Permission::orderBy('name', 'asc')->get();
+        $tableNames = config('permission.table_names');
+        $t_permission = $tableNames['permissions'];
+        $t_menu = Menu::tableName;
+        $is_page = <<<SQL
+            (if(( select count(*) from $t_menu where $t_menu.`route` = $t_permission.`name`) > 0,1,0))
+        SQL;
+        $permissions = Permission::select([DB::raw("$t_permission.name"), DB::raw("$is_page as page")])->orderBy('name', 'asc')->get();
 
         $reload = true;
 
@@ -60,7 +67,13 @@ class RoleController extends Controller
         $id = $model->id;
 
         //get permission all
-        $permissions = Permission::orderBy('name', 'asc')->get();
+        $tableNames = config('permission.table_names');
+        $t_permission = $tableNames['permissions'];
+        $t_menu = Menu::tableName;
+        $is_page = <<<SQL
+            (if(( select count(*) from $t_menu where $t_menu.`route` = $t_permission.`name`) > 0,1,0))
+        SQL;
+        $permissions = Permission::select([DB::raw("$t_permission.name"), DB::raw("$is_page as page")])->orderBy('name', 'asc')->get();
 
         $reload = (request('r') == "1") ? false : true;
         // role
@@ -160,6 +173,7 @@ class RoleController extends Controller
 
     public function select2(Request $request)
     {
+
         try {
             $result = Role::where('name', 'like', "%$request->search%")
                 ->select(['id', DB::raw('name as text')])
@@ -175,10 +189,10 @@ class RoleController extends Controller
     private function get_editor()
     {
         $ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-        $isMob = is_numeric(strpos($ua, "mobile"));
+        $ui = is_numeric(strpos($ua, "mobile"));
 
         // user interface
-        $ui = $isMob;
+        // $ui = true;
 
         if (request('v')) {
             $ui = request('v') == 1;
