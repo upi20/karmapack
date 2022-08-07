@@ -28,35 +28,6 @@ class DatabaseSeeder extends Seeder
         AddressDistrictSeeders::run();
         AddressVillageSeeders::run();
 
-        // ============================================================================================================
-        // ============================================================================================================
-
-        // backup artikel
-        // php artisan iseed users,artikel,artikel_tag,artikel_kategori,artikel_tag_item,artikel_kategori_item --force
-
-        // backup galeri
-        // php artisan iseed users,galeri,galeri_tag_member --force
-
-        // backup pengurus
-        // php artisan iseed users,pengurus_periode,pengurus_periode_jabatan,pengurus_periode_jabatan_member,pengurus_periode_member --force
-
-        // backup profile
-        // php artisan iseed users,pengurus_profile_kontak,pengurus_profile_kontak_tipe,pengurus_profile_pendidikan,pengurus_profile_pendidikan_jenis,pengurus_profile_pengalaman_lain,pengurus_profile_pengalaman_organisasi --force
-
-        // backup lainnya
-        // php artisan iseed users,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member --force
-
-        // backup frontend
-        // php artisan iseed users,pendaftarans,pend_sensus --force
-
-        // backup user access
-        // php artisan iseed users,p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu --force
-
-        // backup all
-        // php artisan iseed users,artikel,artikel_tag,artikel_kategori,artikel_tag_item,artikel_kategori_item,galeri,galeri_tag_member,pengurus_periode,pengurus_periode_jabatan,pengurus_periode_jabatan_member,pengurus_periode_member,pengurus_profile_kontak,pengurus_profile_kontak_tipe,pengurus_profile_pendidikan,pengurus_profile_pendidikan_jenis,pengurus_profile_pengalaman_lain,pengurus_profile_pengalaman_organisasi,social_media,contacts,footer_instagrams,username_validations,galeri_tag_member,pendaftarans,pend_sensus,p_model_has_permissions,p_model_has_roles,p_permissions,p_roles,p_role_has_permissions,p_menu,p_role_has_menu  --force
-        // ============================================================================================================
-        // ============================================================================================================
-
         // master
         $this->call(UsersTableSeeder::class);
 
