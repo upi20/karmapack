@@ -43,6 +43,7 @@ use App\Http\Controllers\Admin\UserAccess\RoleController;
 
 // Menu ===============================================================================================================
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\Pendaftaran\GFormController;
 
 $name = 'admin';
 Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name("$name.dashboard")->middleware("permission:$name.dashboard");
@@ -257,6 +258,17 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
         Route::post('/status', 'status')->name("$name.status")->middleware("permission:$name.status");
+    });
+
+    $prefix = 'gform';
+    Route::controller(GFormController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.pendaftaran.gform
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/member', 'member_select2')->name("$name.member")->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     });
 });
 

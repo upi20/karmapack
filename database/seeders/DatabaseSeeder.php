@@ -87,5 +87,6 @@ class DatabaseSeeder extends Seeder
         // role menu
         $this->call(PMenuTableSeeder::class);
         $this->call(PRoleHasMenuTableSeeder::class);
+        $this->call(GFormsTableSeeder::class);
     }
 }

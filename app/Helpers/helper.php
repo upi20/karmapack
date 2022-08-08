@@ -150,3 +150,10 @@ if (!function_exists('h_prefix')) {
         return str_replace('/', '.', $prefix_uri);
     }
 }
+
+if (!function_exists('is_admin')) {
+    function is_admin()
+    {
+        return auth()->user()->hasRole(config('app.super_admin_role'));
+    }
+}

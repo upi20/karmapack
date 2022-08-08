@@ -75,8 +75,11 @@ class backup extends Command
                 'footer_instagrams',
                 'username_validations',
                 'galeri_tag_member',
+            ],
+            'pendaftaran' => [
                 'pendaftarans',
-                'pend_sensus'
+                'pend_sensus',
+                'g_forms'
             ],
             'permissions' => [
                 'p_model_has_permissions',

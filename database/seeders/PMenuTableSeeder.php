@@ -247,11 +247,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Menu',
                 'icon' => 'fas fa-stream',
                 'route' => 'admin.menu',
-                'sequence' => 26,
+                'sequence' => 27,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:56:42',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             18 => 
             array (
@@ -273,11 +273,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Sosial Media',
                 'icon' => 'fas fa-share-alt',
                 'route' => 'admin.social_media',
-                'sequence' => 22,
+                'sequence' => 23,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:57:51',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             20 => 
             array (
@@ -286,11 +286,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Kontak',
                 'icon' => 'fas fa-phone',
                 'route' => 'admin.contact',
-                'sequence' => 23,
+                'sequence' => 24,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:57:19',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             21 => 
             array (
@@ -299,11 +299,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Footer Instagram',
                 'icon' => 'fas fa-image',
                 'route' => 'admin.footer_instagram',
-                'sequence' => 24,
+                'sequence' => 25,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:57:09',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             22 => 
             array (
@@ -312,11 +312,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Username Role',
                 'icon' => 'fas fa-check',
                 'route' => 'admin.username_validation',
-                'sequence' => 25,
+                'sequence' => 26,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:56:58',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             23 => 
             array (
@@ -325,11 +325,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'User Access',
                 'icon' => 'fas fa-user-check',
                 'route' => NULL,
-                'sequence' => 27,
+                'sequence' => 28,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:56:08',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             24 => 
             array (
@@ -338,11 +338,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Permission',
                 'icon' => NULL,
                 'route' => 'admin.user_access.permission',
-                'sequence' => 28,
+                'sequence' => 29,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             25 => 
             array (
@@ -351,11 +351,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Role',
                 'icon' => NULL,
                 'route' => 'admin.user_access.role',
-                'sequence' => 29,
+                'sequence' => 30,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             26 => 
             array (
@@ -364,11 +364,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Anggota Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 31,
+                'sequence' => 32,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             27 => 
             array (
@@ -377,11 +377,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Profile',
                 'icon' => 'fas fa-user',
                 'route' => 'member.profile',
-                'sequence' => 32,
+                'sequence' => 33,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:58:11',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             28 => 
             array (
@@ -390,11 +390,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Ganti Password',
                 'icon' => 'fas fa-key',
                 'route' => 'member.password',
-                'sequence' => 33,
+                'sequence' => 34,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-07 12:58:20',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             29 => 
             array (
@@ -403,11 +403,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Logout',
                 'icon' => 'fas fa-sign-out-alt',
                 'route' => 'logout',
-                'sequence' => 34,
+                'sequence' => 35,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:54:09',
-                'updated_at' => '2022-08-07 12:58:41',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             30 => 
             array (
@@ -420,7 +420,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-06 00:05:47',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:16',
             ),
             31 => 
             array (
@@ -429,11 +429,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Sensus Anggota',
                 'icon' => NULL,
                 'route' => 'admin.pendaftaran.sensus',
-                'sequence' => 21,
+                'sequence' => 22,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-06 00:06:23',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             32 => 
             array (
@@ -442,11 +442,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Alumni Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 30,
+                'sequence' => 31,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-06 14:06:05',
-                'updated_at' => '2022-08-06 15:35:53',
+                'updated_at' => '2022-08-08 16:15:07',
             ),
             33 => 
             array (
@@ -460,6 +460,19 @@ class PMenuTableSeeder extends Seeder
                 'type' => 1,
                 'created_at' => '2022-08-06 15:16:19',
                 'updated_at' => '2022-08-07 12:52:03',
+            ),
+            34 => 
+            array (
+                'id' => 392,
+                'parent_id' => 362,
+                'title' => 'Google Forms',
+                'icon' => NULL,
+                'route' => 'admin.pendaftaran.gform',
+                'sequence' => 21,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-08 16:14:54',
+                'updated_at' => '2022-08-08 16:15:16',
             ),
         ));
         
