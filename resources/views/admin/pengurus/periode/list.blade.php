@@ -521,9 +521,9 @@
                     orderable: false,
                     targets: [0]
                 }],
-                "responsive": true,
-                "lengthChange": true,
-                "autoWidth": false,
+                // "responsive": true,
+                // "lengthChange": true,
+                // "autoWidth": false,
                 order: [
                     [0, 'asc']
                 ]
