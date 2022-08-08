@@ -90,6 +90,9 @@ class backup extends Command
                 'p_menu',
                 'p_role_has_menu'
             ],
+            'utility' => [
+                'notif_depan_atas',
+            ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
         foreach ($tables as $k => $t) {

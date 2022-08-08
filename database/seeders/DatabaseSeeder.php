@@ -88,5 +88,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PMenuTableSeeder::class);
         $this->call(PRoleHasMenuTableSeeder::class);
         $this->call(GFormsTableSeeder::class);
+        $this->call(NotifDepanAtasTableSeeder::class);
     }
 }

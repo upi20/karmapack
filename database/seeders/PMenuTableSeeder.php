@@ -364,11 +364,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Anggota Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 32,
+                'sequence' => 34,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
             27 => 
             array (
@@ -377,11 +377,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Profile',
                 'icon' => 'fas fa-user',
                 'route' => 'member.profile',
-                'sequence' => 33,
+                'sequence' => 35,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
             28 => 
             array (
@@ -390,11 +390,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Ganti Password',
                 'icon' => 'fas fa-key',
                 'route' => 'member.password',
-                'sequence' => 34,
+                'sequence' => 36,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
             29 => 
             array (
@@ -403,11 +403,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Logout',
                 'icon' => 'fas fa-sign-out-alt',
                 'route' => 'logout',
-                'sequence' => 35,
+                'sequence' => 37,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:54:09',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
             30 => 
             array (
@@ -442,11 +442,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Alumni Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 31,
+                'sequence' => 33,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-06 14:06:05',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
             33 => 
             array (
@@ -473,6 +473,32 @@ class PMenuTableSeeder extends Seeder
                 'type' => 1,
                 'created_at' => '2022-08-08 16:14:54',
                 'updated_at' => '2022-08-08 16:15:16',
+            ),
+            35 => 
+            array (
+                'id' => 393,
+                'parent_id' => NULL,
+                'title' => 'Utility',
+                'icon' => 'fas fa-tools',
+                'route' => NULL,
+                'sequence' => 31,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-08 22:41:26',
+                'updated_at' => '2022-08-08 22:42:10',
+            ),
+            36 => 
+            array (
+                'id' => 394,
+                'parent_id' => 393,
+                'title' => 'Notifikasi Depan Atas',
+                'icon' => NULL,
+                'route' => 'admin.utility.notif_depan_atas',
+                'sequence' => 32,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-08 22:41:53',
+                'updated_at' => '2022-08-08 22:42:10',
             ),
         ));
         

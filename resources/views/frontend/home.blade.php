@@ -24,7 +24,8 @@
     @if ($anggota->count())
         <section class="hero-carousel py-5 bg-light">
             <div class="container-xl">
-                <h4 class="section-title text-center mb-3">Kenali Kami Lebih Dekat</h4>
+                <h4 class="section-title text-center mb-3"><a class="text-dark"
+                        href="{{ route('about.kepengurusan.struktur') }}">Kenali Kami Lebih Dekat</a></h4>
             </div>
             <div class="row post-carousel-featured post-carousel w-100 px-0 mx-0">
                 @foreach ($anggota as $a)
@@ -221,8 +222,7 @@
                             <ul class="social-icons list-unstyled list-inline mb-0">
                                 @foreach ($list_sosmed as $sosmed)
                                     <li class="list-inline-item">
-                                        <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}"
-                                            target="_blank">
+                                        <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
                                             <i class="{{ $sosmed['icon'] }}"></i>
                                         </a>
                                     </li>

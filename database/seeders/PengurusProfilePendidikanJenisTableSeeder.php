@@ -73,15 +73,6 @@ class PengurusProfilePendidikanJenisTableSeeder extends Seeder
                 'created_at' => '2022-04-18 04:15:18',
                 'updated_at' => '2022-04-23 05:37:54',
             ),
-            6 => 
-            array (
-                'id' => 7,
-                'nama' => 'Tes ed',
-                'keterangan' => 'tes',
-                'status' => 1,
-                'created_at' => '2022-08-06 17:50:03',
-                'updated_at' => '2022-08-06 17:50:19',
-            ),
         ));
         
         

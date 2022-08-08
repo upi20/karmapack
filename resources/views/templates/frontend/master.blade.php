@@ -19,6 +19,7 @@ $master_helper = new \App\Helpers\Frontend\Template\Master($page_attr->periode_i
 $getSosmed_val = $master_helper->getSosmed();
 $menuBidang_val = $master_helper->menuBidang();
 $footerInstagram_val = $master_helper->footerInstagram();
+$notifikasi = notif_depan_atas();
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -186,23 +187,31 @@ $footerInstagram_val = $master_helper->footerInstagram();
     <div class="site-wrapper">
 
         <div class="main-overlay"></div>
-        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
-            <div class="container d-flex justify-content-between align-items-center">
-                <strong>
-                    Situs ini masih dalam masa pengembangan.
-                </strong>
+        @if ($notifikasi)
+            @foreach ($notifikasi as $v)
+                <div class="alert alert-secondary alert-dismissible fade show m-0" role="alert">
+                    <div class="container d-flex justify-content-between align-items-center">
+                        <strong>{{ $v->deskripsi }}
+                            @if ($v->link)
+                                <a href="{{ $v->link }}">{{ $v->link_nama }}</a>
+                            @endif
+                        </strong>
 
-                <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="fas fa-times" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-                        <path fill-rule="evenodd"
-                            d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
-                    </svg>
-                </button>
-            </div>
-        </div>
+                        <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="fas fa-times" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
+                                <path fill-rule="evenodd"
+                                    d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+        <br>
+
 
         {{-- header template --}}
         @include('templates.frontend.body.header', [

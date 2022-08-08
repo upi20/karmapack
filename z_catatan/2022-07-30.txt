@@ -9,13 +9,9 @@ Pedoman Administrasi (Administrasi)
 
 Hari Besar Nasional (Tracker)
 
-
 Notifikasi
 	Hari besar nasional 1 minggu kedepan
 	Hari Ulang tahun 1 minggu kedepan
-
-Sabilulungan
-Arah kita untuk bergotongroyrong
 
 Buku Administrasi
 Pedoman(Standarisasi Format Supaya Konsisten) Administrasi
@@ -25,27 +21,3 @@ Keterangan
 
 Cita cita website.
 Database
-
-
-
-Komunikasi yang keluar (Google form, Postingan[gambar, video]) harus lewat kominfo
-	- Di cek supaya Konsisten
-	- Supaya bisa terrekap
-	- Supaya bisa di revisi
-
-
-
-
-
-
-
-
-
-ADRIAN SYAMSYUL RAMLI
-ILHAM FAOZ
-SRI AYUNI WAHYUDIN
-SOFI TRI A
-RAGIL JR
-MUHAMMAD IMAN NURJAMAN
-MUHAMMAD INDRA SUKMARA
-MUHAMMAD RAIHAN

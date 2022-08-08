@@ -1,6 +1,7 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php $jml_table = 0; @endphp
     <div class="page-header">
         <h1 class="page-title">Dashboard</h1>
     </div>
@@ -52,6 +53,145 @@
         </div>
     </div>
     <hr>
+
+    <h1 class="page-title">Statistik Anggota</h1>
+
+    <br>
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Berdasarkan Angkatan</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive table-striped">
+                        <table class="table table-bordered table-hover  border-bottom" id="table{{ ++$jml_table }}">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($anggota_by_angkatan as $k => $v)
+                                    <tr>
+                                        <td>{{ $k + 1 }}</td>
+                                        <td>{{ $v->title }}</td>
+                                        <td>{{ $v->value }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Berdasarkan Kecamatan</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive table-striped">
+                        <table class="table table-bordered table-hover  border-bottom" id="table{{ ++$jml_table }}">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($anggota_by_address->kecamatan as $k => $v)
+                                    <tr>
+                                        <td>{{ $k + 1 }}</td>
+                                        <td>{{ $v->title }}</td>
+                                        <td>{{ $v->value }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- by Pendiidkan --}}
+        <div class="col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Berdasarkan Desa</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive table-striped">
+                        <table class="table table-bordered table-hover  border-bottom" id="table{{ ++$jml_table }}">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($anggota_by_address->desa as $k => $v)
+                                    <tr>
+                                        <td>{{ $k + 1 }}</td>
+                                        <td>{{ $v->title }}</td>
+                                        <td>{{ $v->value }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <h1 class="page-title">Statistik Anggota Berdasarkan Riwayat Pendidikan</h1>
+    <br>
+    <div class="row">
+        @foreach ($anggota_by_riwayat_pendidikan as $p)
+            @if (count($p['data']) == 0)
+                @continue
+            @endif
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ $p['nama'] }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table-striped">
+                            <table class="table table-bordered table-hover  border-bottom" id="table{{ ++$jml_table }}">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Jumlah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($p['data'] as $k => $v)
+                                        <tr>
+                                            <td>{{ $k + 1 }}</td>
+                                            <td>{{ $v->title }}</td>
+                                            <td>{{ $v->value }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
 
     <!-- ROW CLOSED -->
     <div class="card p-1">
@@ -108,8 +248,8 @@
                         <div class="card-header">
                             <h3 class="card-title">Publik | Umum (Halaman yang bisa di akses semua orang)</h3>
                             <div class="card-options">
-                                <a href="javascript:void(0)" class="card-options-collapse" data-bs-toggle="card-collapse"><i
-                                        class="fe fe-chevron-up"></i></a>
+                                <a href="javascript:void(0)" class="card-options-collapse"
+                                    data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                 <a href="javascript:void(0)" class="card-options-remove" data-bs-toggle="card-remove"><i
                                         class="fe fe-x"></i></a>
                             </div>
@@ -184,4 +324,35 @@
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
     </style>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
+    <script>
+        $(document).ready(() => {
+            @for ($i = 1; $i <= $jml_table; $i++)
+                const table_html_{{ $i }} = $('#table{{ $i }}');
+                const table_{{ $i }} = table_html_{{ $i }}.DataTable({
+                    // processing: true,
+                    // serverSide: false,
+                    // scrollX: true,
+                    // aAutoWidth: true,
+                    // bAutoWidth: true,
+                });
+
+                table_{{ $i }}.on('draw.dt', function() {
+                    var PageInfo = table_html_{{ $i }}.DataTable().page.info();
+                    table_{{ $i }}.column(0, {
+                        page: 'current'
+                    }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1 + PageInfo.start;
+                    });
+                });
+            @endfor
+        })
+    </script>
 @endsection

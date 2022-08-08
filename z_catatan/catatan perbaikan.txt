@@ -6,18 +6,5 @@ logo angkatan di periode
 Kata Alumni
 
 tambah fitur absensi
-
-
-
-// progress
-buat notifikasi seperti "Situs ini masih dalam masa pengembangan." tapi bisa di custom di menu 
-Utiliti -> Notif Depan Atas
-Utiliti -> Notif Admin Atas
-
-Dashboard
-  statistik anggota dari tahun ke tahun
-  statistik asal daerah
-  statistik dari profile
-
-
 buat crud hari besar nasional
+Absensi
