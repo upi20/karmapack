@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'active' => '1'
         // ]);
         // \App\Models\User::factory(150)->create();
-
+        DB::beginTransaction();
         // address seeders
         AddressProvinceSeeders::run();
         AddressRegenciesSeeder::run();
@@ -30,6 +31,13 @@ class DatabaseSeeder extends Seeder
 
         // master
         $this->call(UsersTableSeeder::class);
+
+        // user role
+        $this->call(PRolesTableSeeder::class);
+        $this->call(PPermissionsTableSeeder::class);
+        $this->call(PModelHasPermissionsTableSeeder::class);
+        $this->call(PModelHasRolesTableSeeder::class);
+        $this->call(PRoleHasPermissionsTableSeeder::class);
 
         // artikel
         $this->call(ArtikelTableSeeder::class);
@@ -77,17 +85,12 @@ class DatabaseSeeder extends Seeder
         $this->call(PendaftaransTableSeeder::class);
         $this->call(PendSensusTableSeeder::class);
 
-        // user role
-        $this->call(PRolesTableSeeder::class);
-        $this->call(PPermissionsTableSeeder::class);
-        $this->call(PModelHasPermissionsTableSeeder::class);
-        $this->call(PModelHasRolesTableSeeder::class);
-        $this->call(PRoleHasPermissionsTableSeeder::class);
-
         // role menu
         $this->call(PMenuTableSeeder::class);
         $this->call(PRoleHasMenuTableSeeder::class);
         $this->call(GFormsTableSeeder::class);
         $this->call(NotifDepanAtasTableSeeder::class);
+
+        DB::commit();
     }
 }
