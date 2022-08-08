@@ -315,7 +315,8 @@
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
                         d['filter[tampilkan]'] = $('#filter_tampilkan').val();
-                        d['filter[user_id]'] = $('#filter_user_id').val();
+                        d['filter[user_id]'] = is_admin ? '{{ auth()->user()->id }}' : $(
+                            '#filter_user_id').val();
                     }
                 },
                 columns: [{
