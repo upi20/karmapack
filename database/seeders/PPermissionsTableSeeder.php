@@ -819,6 +819,46 @@ class PPermissionsTableSeeder extends Seeder
                 'created_at' => '2022-08-06 14:48:58',
                 'updated_at' => '2022-08-06 14:48:58',
             ),
+            100 => 
+            array (
+                'id' => 146,
+                'name' => 'admin.pengurus.periode.set_role',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-08 21:06:58',
+                'updated_at' => '2022-08-08 21:06:58',
+            ),
+            101 => 
+            array (
+                'id' => 147,
+                'name' => 'admin.pendaftaran.gform',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-08 21:07:44',
+                'updated_at' => '2022-08-08 21:07:44',
+            ),
+            102 => 
+            array (
+                'id' => 148,
+                'name' => 'admin.pendaftaran.gform.insert',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-08 21:08:04',
+                'updated_at' => '2022-08-08 21:08:04',
+            ),
+            103 => 
+            array (
+                'id' => 149,
+                'name' => 'admin.pendaftaran.gform.update',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-08 21:08:12',
+                'updated_at' => '2022-08-08 21:08:12',
+            ),
+            104 => 
+            array (
+                'id' => 150,
+                'name' => 'admin.pendaftaran.gform.delete',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-08 21:08:18',
+                'updated_at' => '2022-08-08 21:08:18',
+            ),
         ));
         
         

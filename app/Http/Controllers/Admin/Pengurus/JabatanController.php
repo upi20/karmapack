@@ -11,6 +11,7 @@ use App\Models\Pengurus\Periode;
 use App\Helpers\Summernote;
 use Error;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class JabatanController extends Controller
 {
@@ -26,81 +27,98 @@ class JabatanController extends Controller
         // Rencana =============================================================================
         $periode = Periode::find($request->periode_id);
         if (request()->ajax()) {
+            $tableNames = config('permission.table_names');
+            $table = Jabatan::tableName;
+            $t_role = $tableNames['roles'];
             // extend_query
+
+            // cusotm query
+            // ========================================================================================================
             $get_parent_no_urut = "(select z.no_urut from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parent_id = z.id)";
-
-
-            $this->query['parent'] = <<<SQL
-                ( if(isnull(pengurus_periode_jabatan.parent_id),'', (select z.nama from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parent_id = z.id)) )
+            $c_parent = 'parent';
+            $this->query[$c_parent] = <<<SQL
+                    ( if(isnull(pengurus_periode_jabatan.parent_id),'', (select z.nama from pengurus_periode_jabatan as z where pengurus_periode_jabatan.parent_id = z.id)) )
             SQL;
-            $this->query['parent_alias'] = 'parent';
+            $this->query["{$c_parent}_alias"] = $c_parent;
 
-            $this->query['kode'] = <<<SQL
-                concat( if(isnull(pengurus_periode_jabatan.parent_id),'',
-                        concat($get_parent_no_urut, '.')
-                    ), pengurus_periode_jabatan.no_urut
-                )
+            $c_kode = 'kode';
+            $this->query[$c_kode] = <<<SQL
+                concat( if(isnull(pengurus_periode_jabatan.parent_id),'',concat($get_parent_no_urut, '.') ), pengurus_periode_jabatan.no_urut )
             SQL;
-            $this->query['kode_alias'] = 'kode';
+            $this->query["{$c_kode}_alias"] = $c_kode;
 
+            $c_parent_no_urut = 'parent_no_urut';
             $this->query['parent_no_urut'] = <<<SQL
-                (if(isnull(pengurus_periode_jabatan.parent_id), pengurus_periode_jabatan.no_urut,
-                    $get_parent_no_urut)
-                )
+                (if(isnull(pengurus_periode_jabatan.parent_id), pengurus_periode_jabatan.no_urut, $get_parent_no_urut))
             SQL;
-            $this->query['parent_no_urut_alias'] = 'parent_no_urut';
+            $this->query["{$c_parent_no_urut}_alias"] = $c_parent_no_urut;
 
+            $c_child_no_urut = 'child_no_urut';
             $this->query['child_no_urut'] = <<<SQL
                 (if(isnull(pengurus_periode_jabatan.parent_id), 0, pengurus_periode_jabatan.no_urut))
             SQL;
-            $this->query['child_no_urut_alias'] = 'child_no_urut';
+            $this->query["{$c_child_no_urut}_alias"] = $c_child_no_urut;
+            // ========================================================================================================
 
-            $model = Jabatan::select([
-                'pengurus_periode_jabatan.id',
-                'pengurus_periode_jabatan.parent_id',
-                'pengurus_periode_jabatan.nama',
-                'pengurus_periode_jabatan.slug',
-                'pengurus_periode_jabatan.status',
-                'pengurus_periode_jabatan.no_urut',
-                'pengurus_periode_jabatan.visi',
-                'pengurus_periode_jabatan.misi',
-                'pengurus_periode_jabatan.foto',
-                'pengurus_periode_jabatan.slogan',
-                'pengurus_periode_jabatan.singkatan',
-                DB::raw("{$this->query['parent']} as {$this->query['parent_alias']}"),
-                DB::raw("{$this->query['kode']} as {$this->query['kode_alias']}"),
-                DB::raw("{$this->query['parent_no_urut']} as {$this->query['parent_no_urut_alias']}"),
-                DB::raw("{$this->query['child_no_urut']} as {$this->query['child_no_urut_alias']}"),
-            ])
+
+            // ========================================================================================================
+            // select raw as alias
+            $sraa = function (string $col): string {
+                return $this->query[$col] . ' as ' . $this->query[$col . '_alias'];
+            };
+
+            $model_filter = [
+                $c_parent,
+                $c_kode,
+                $c_parent_no_urut,
+                $c_child_no_urut,
+            ];
+            // ========================================================================================================
+
+
+            $to_db_raw = array_map(function ($a) use ($sraa) {
+                return DB::raw($sraa($a));
+            }, $model_filter);
+
+            $model = Jabatan::select(array_merge([
+                DB::raw("$table.*"),
+                DB::raw("$t_role.name as role"),
+            ], $to_db_raw))
                 ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
-                ->where('periode_id', '=', $periode->id)
+                ->leftJoin($t_role, "$t_role.id", '=', "$table.role_id")
+                ->where("$table.periode_id", '=', $periode->id)
                 ->orderBy('parent_no_urut')
                 ->orderBy('child_no_urut');
 
-            // filter
-            if (isset($request->filter)) {
+
+            // Filter =====================================================================================================
+            // filter check
+            $f_c = function (string $param) use ($request): mixed {
                 $filter = $request->filter;
-                if ($filter['status'] != '') {
-                    $model->where('status', '=', $filter['status']);
+                return isset($filter[$param]) ? $filter[$param] : false;
+            };
+
+            // filter custom
+            $filters = ['status', 'role_id'];
+            foreach ($filters as  $f) {
+                if ($f_c($f) !== false) {
+                    $model->whereRaw("$table.$f='{$f_c($f)}'");
                 }
             }
 
-            return Datatables::of($model)
-                ->addIndexColumn()
-                ->filterColumn($this->query['parent_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['parent']} like '%$keyword%'");
-                })
-                ->filterColumn($this->query['kode_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['kode']} like '%$keyword%'");
-                })
-                ->filterColumn($this->query['parent_no_urut_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['parent_no_urut']} like '%$keyword%'");
-                })
-                ->filterColumn($this->query['child_no_urut_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['child_no_urut']} like '%$keyword%'");
-                })
-                ->make(true);
+            // ========================================================================================================
+            $datatable = Datatables::of($model)->addIndexColumn();
+            foreach ($model_filter as $v) {
+                // custom pencarian
+                $datatable->filterColumn($this->query["{$v}_alias"], function ($query, $keyword) use ($v) {
+                    $query->whereRaw("({$this->query[$v]} like '%$keyword%')");
+                });
+            }
+
+            // create datatable
+            return $datatable->make(true);
         }
+        $roles = Role::all();
         $navigation = h_prefix('periode', 2);
         $page_attr = [
             'title' => "Bidang Periode " . $periode->nama,
@@ -112,7 +130,7 @@ class JabatanController extends Controller
             'navigation' => $navigation,
         ];
         $image_folder = $this->image_folder;
-        return view('admin.pengurus.jabatan.list', compact('page_attr', 'periode', 'image_folder'));
+        return view('admin.pengurus.jabatan.list', compact('page_attr', 'periode', 'image_folder', 'roles'));
     }
 
     public function insert(Request $request)
@@ -147,21 +165,20 @@ class JabatanController extends Controller
                 $foto = 'icon' . substr($request->slug, 10, 40) . date('YmdHis') . "." . $image->getClientOriginalExtension();
                 $image->move(public_path($this->image_folder), $foto);
             }
-            Jabatan::create([
-                'parent_id' => $request->parent_id,
-                'nama' => $request->nama,
-                'slug' => $request->slug,
-                'status' => $request->status,
-                'no_urut' => $request->no_urut,
-                'visi' => (trim($visi->html) == '<p><br></p>') ? null : $visi->html,
-                'misi' => (trim($misi->html) == '<p><br></p>') ? null : $misi->html,
-                'slogan' => $request->slogan,
-                'singkatan' => $request->singkatan ?? null,
-                'foto' => $foto,
-                'periode_id' => $request->periode_id,
-                // 'created_by' => auth()->user()->id,
-            ]);
-
+            $model = new Jabatan();
+            $model->parent_id = $request->parent_id;
+            $model->nama = $request->nama;
+            $model->slug = $request->slug;
+            $model->status = $request->status;
+            $model->no_urut = $request->no_urut;
+            $model->visi = (trim($visi->html) == '<p><br></p>') ? null : $visi->html;
+            $model->misi = (trim($misi->html) == '<p><br></p>') ? null : $misi->html;
+            $model->slogan = $request->slogan;
+            $model->singkatan = $request->singkatan ?? null;
+            $model->foto = $foto;
+            $model->periode_id = $request->periode_id;
+            $model->role_id = $request->role_id;
+            $model->save();
             DB::commit();
 
             return response()->json();
@@ -224,6 +241,7 @@ class JabatanController extends Controller
             $model->visi = (trim($visi->html) == '<p><br></p>') ? null : $visi->html;
             $model->misi = (trim($misi->html) == '<p><br></p>') ? null : $misi->html;
             $model->slogan = $request->slogan;
+            $model->role_id = $request->role_id;
             $model->singkatan = $request->singkatan ?? null;
             // $model->updated_by = auth()->user()->id;
             $model->save();
@@ -302,6 +320,20 @@ class JabatanController extends Controller
             $result = $model->get()->toArray();
             $result = array_merge([['id' => '', 'text' => 'Pilih Bidang']], $result);
 
+            return response()->json(['results' => $result]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
+        }
+    }
+
+    public function role_select2(Request $request)
+    {
+
+        try {
+            $result = Role::select([DB::raw('name as id'), DB::raw('name as text')])
+                ->where('name', 'like', "%$request->search%")
+                ->orWhere('id', 'like', "%$request->search%")
+                ->limit(10)->get();
             return response()->json(['results' => $result]);
         } catch (\Exception $error) {
             return response()->json($error, 500);

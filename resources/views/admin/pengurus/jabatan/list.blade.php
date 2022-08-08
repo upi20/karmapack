@@ -25,6 +25,15 @@
                     <h5 class="h5">Filter Data</h5>
                     <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
                         <div class="form-group me-md-3">
+                            <label for="filter_role">Role Bidang</label>
+                            <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
+                                <option value="">Semua Role</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group me-md-3">
                             <label for="filter_status">Bidang Status</label>
                             <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
                                 <option value="">Semua Bidang</option>
@@ -41,6 +50,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Role</th>
                                     <th>Urutan</th>
                                     <th>Bidang</th>
                                     <th>Sub Bidang</th>
@@ -91,15 +101,30 @@
                                 <div class="form-group">
                                     <label for="slug">Slug</label>
                                     <input type="text" class="form-control" id="slug" name="slug"
-                                        placeholder="Alamat url untuk akses jabatan" required />
+                                        placeholder="Alamat url untuk akses Bidang" required />
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="no_urut">No Urut</label>
-                                    <input type="number" class="form-control" id="no_urut" name="no_urut"
-                                        placeholder="No Uurut" required />
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="no_urut">No Urut</label>
+                                            <input type="number" class="form-control" id="no_urut" name="no_urut"
+                                                placeholder="No Uurut" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="role_id">Role Bidang</label>
+                                            <select class="form-control" id="role_id" name="role_id" required>
+                                                @foreach ($roles as $role)
+                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
@@ -166,7 +191,7 @@
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon Jabatan">
+                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon Bidang">
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
@@ -274,15 +299,20 @@
                 bAutoWidth: false,
                 type: 'GET',
                 ajax: {
-                    url: "{{ route('admin.pengurus.jabatan', $periode->id) }}",
+                    url: "{{ route(h_prefix(null, 1), $periode->id) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
+                        d['filter[role_id]'] = $('#filter_role').val();
                     }
                 },
                 columns: [{
                         data: null,
                         name: 'id',
                         orderable: false,
+                    },
+                    {
+                        data: 'role',
+                        name: 'role_id'
                     },
                     {
                         data: 'kode',
@@ -339,6 +369,7 @@
                                 data-misi="${full.misi ?? ''}"
                                 data-slogan="${full.slogan ?? ''}"
                                 data-singkatan="${full.singkatan ?? ''}"
+                                data-role_id="${full.role_id ?? ''}"
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
                                 </button>` : '';
@@ -456,6 +487,7 @@
             $('#status').val(data.status);
             $('#slug').val(data.slug);
             $('#singkatan').val(data.singkatan);
+            $('#role_id').val(data.role_id);
             $('#no_urut').val(data.no_urut);
             $('#visi').summernote("code", data.visi);
             $('#misi').summernote("code", data.misi);

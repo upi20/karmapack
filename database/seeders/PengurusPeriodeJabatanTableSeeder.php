@@ -33,6 +33,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => 'Bersama Kominfo Karmapack Mengudara',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -50,6 +51,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>misi</p>',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-25 13:30:58',
             ),
@@ -67,6 +69,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -84,6 +87,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>misia</p>',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 03:35:06',
             ),
@@ -101,6 +105,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -118,6 +123,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -135,6 +141,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -152,6 +159,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -169,6 +177,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => 'misi',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -186,6 +195,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>Misi Indonesia raya merdeka</p>',
                 'slogan' => 'Hebat Tamat',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:30:58',
             ),
@@ -203,6 +213,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>Misi</p>',
                 'slogan' => 'Slogan',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:05:09',
             ),
@@ -220,6 +231,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -237,6 +249,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -254,6 +267,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>-</p>',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:07:30',
             ),
@@ -271,6 +285,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>-</p>',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:06:51',
             ),
@@ -288,6 +303,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>-</p>',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:07:55',
             ),
@@ -305,6 +321,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>-</p>',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:06:35',
             ),
@@ -322,6 +339,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -339,6 +357,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -356,6 +375,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -373,6 +393,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -390,6 +411,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -407,6 +429,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -424,6 +447,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -441,6 +465,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -458,6 +483,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -475,6 +501,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -492,6 +519,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -509,6 +537,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -526,6 +555,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -543,6 +573,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -560,6 +591,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -577,6 +609,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -594,6 +627,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '',
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
@@ -611,6 +645,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => '<p>-</p>',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-24 17:06:20',
             ),
@@ -630,8 +665,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 4,
                 'created_at' => NULL,
-                'updated_at' => '2022-08-06 21:38:54',
+                'updated_at' => '2022-08-08 20:31:25',
             ),
             36 => 
             array (
@@ -649,8 +685,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 5,
                 'created_at' => NULL,
-                'updated_at' => '2022-07-15 16:24:42',
+                'updated_at' => '2022-08-08 20:31:49',
             ),
             37 => 
             array (
@@ -668,8 +705,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 6,
                 'created_at' => NULL,
-                'updated_at' => '2022-07-15 17:00:25',
+                'updated_at' => '2022-08-08 20:33:21',
             ),
             38 => 
             array (
@@ -685,6 +723,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => 'Bersama Kominfo Karmapack Mengudara',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -698,12 +737,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-komunikasi-dan-informasi-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:33:54',
             ),
             40 => 
             array (
@@ -715,12 +757,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-komunikasi-dan-informasi-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:31:56',
             ),
             41 => 
             array (
@@ -732,12 +777,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-komunikasi-dan-informasi-anggota',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 21:04:21',
             ),
             42 => 
             array (
@@ -755,6 +803,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => '-',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 16:37:28',
             ),
@@ -774,8 +823,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-07-15 16:37:42',
+                'updated_at' => '2022-08-08 20:34:06',
             ),
             44 => 
             array (
@@ -793,8 +843,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => '2022-07-15 16:38:08',
+                'updated_at' => '2022-08-08 20:32:07',
             ),
             45 => 
             array (
@@ -810,6 +861,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -823,12 +875,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-minat-dan-bakat-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:34:11',
             ),
             47 => 
             array (
@@ -840,12 +895,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-minat-dan-bakat-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:32:18',
             ),
             48 => 
             array (
@@ -857,12 +915,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-minat-dan-bakat-anggota',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 21:04:40',
             ),
             49 => 
             array (
@@ -878,6 +939,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -891,12 +953,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-aparatur-organisasi-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:34:17',
             ),
             51 => 
             array (
@@ -908,12 +973,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-aparatur-organisasi-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:32:50',
             ),
             52 => 
             array (
@@ -925,12 +993,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-aparatur-organisasi-anggota',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 21:04:46',
             ),
             53 => 
             array (
@@ -946,6 +1017,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -959,12 +1031,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-kode-etik-dan-akhlakul-karimah-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:34:24',
             ),
             55 => 
             array (
@@ -976,12 +1051,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-kode-etik-dan-akhlakul-karimah-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:32:42',
             ),
             56 => 
             array (
@@ -993,12 +1071,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-pengembangan-kode-etik-dan-akhlakul-karimah-anggota',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 21:04:52',
             ),
             57 => 
             array (
@@ -1014,6 +1095,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -1027,12 +1109,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-sosial-masyarakat-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:34:30',
             ),
             59 => 
             array (
@@ -1044,12 +1129,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-sosial-masyarakat-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:32:35',
             ),
             60 => 
             array (
@@ -1065,6 +1153,7 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'misi' => NULL,
                 'slogan' => '',
                 'status' => 1,
+                'role_id' => NULL,
                 'created_at' => NULL,
                 'updated_at' => '2022-04-30 04:08:53',
             ),
@@ -1078,12 +1167,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-keperempuanan-ketua-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => '<p>visia</p>',
-                'misi' => '<p>misia</p>',
+                'visi' => '<p>visia</p>
+',
+                'misi' => '<p>misia</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 7,
                 'created_at' => NULL,
-                'updated_at' => '2022-04-30 03:35:06',
+                'updated_at' => '2022-08-08 20:34:35',
             ),
             62 => 
             array (
@@ -1095,12 +1187,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-keperempuanan-sekertaris-bidang',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 8,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 20:32:26',
             ),
             63 => 
             array (
@@ -1112,12 +1207,15 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
                 'slug' => '2022-2023-keperempuanan-anggota',
                 'foto' => '',
                 'singkatan' => NULL,
-                'visi' => 'visi',
-                'misi' => 'misi',
+                'visi' => '<p>visi</p>
+',
+                'misi' => '<p>misi</p>
+',
                 'slogan' => 'Hebat',
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => NULL,
-                'updated_at' => NULL,
+                'updated_at' => '2022-08-08 21:05:15',
             ),
             64 => 
             array (
@@ -1135,8 +1233,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => NULL,
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => '2022-07-15 16:38:31',
-                'updated_at' => '2022-07-15 16:38:31',
+                'updated_at' => '2022-08-08 21:04:25',
             ),
             65 => 
             array (
@@ -1154,8 +1253,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => NULL,
                 'status' => 1,
+                'role_id' => 3,
                 'created_at' => '2022-07-15 16:48:31',
-                'updated_at' => '2022-07-15 16:48:31',
+                'updated_at' => '2022-08-08 21:05:07',
             ),
         ));
         

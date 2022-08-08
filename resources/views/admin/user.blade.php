@@ -7,6 +7,9 @@
     $can_delete = auth_can(h_prefix('delete'));
     $can_save_another = auth_can('admin.profile.save_another');
     $can_excel = auth_can(h_prefix('excel'));
+    $is_admin = auth()
+        ->user()
+        ->hasRole(config('app.super_admin_role'));
     @endphp
     <!-- Row -->
     <div class="row row-sm">
@@ -59,16 +62,14 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Generation</th>
+                                    <th>Angkatan</th>
                                     <th>Name</th>
-                                    <th>Email</th>
+                                    {!! $is_admin ? '<th>Email</th>' : '' !!}
                                     <th>Role</th>
                                     <th>DOB</th>
                                     <th>BIRTHDAY</th>
                                     <th>Active</th>
-                                    @if ($can_delete || $can_update || $can_save_another)
-                                        <th>Action</th>
-                                    @endif
+                                    {!! $can_delete || $can_update || $can_save_another ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -91,9 +92,9 @@
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="form-label" for="angkatan">Generation <span class="text-danger">*</span></label>
+                            <label class="form-label" for="angkatan">Angkatan <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="angkatan" name="angkatan"
-                                placeholder="Enter Generation" required="" min="2003" max="2999" />
+                                placeholder="Enter Angkatan" required="" min="2003" max="2999" />
 
                         </div>
                         <div class="form-group">
@@ -172,6 +173,7 @@
         const can_update = {{ $can_update ? 'true' : 'false' }};
         const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const can_save_another = {{ $can_save_another ? 'true' : 'false' }};
+        const is_admin = {{ $is_admin ? 'true' : 'false' }};
         $(document).ready(function() {
             $('#roles').select2({
                 dropdownParent: $('#modal-default'),
@@ -206,6 +208,8 @@
                     orderable: false
                 });
             }
+            let order_column = 6;
+            if (!is_admin) order_column--;
             const new_table = table_html.DataTable({
                 searchDelay: 500,
                 processing: true,
@@ -232,13 +236,17 @@
                         name: 'angkatan'
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'id',
+                        name: 'name',
+                        render(data, type, full, meta) {
+                            return `<a class="text-dark" target="_blank" href="{{ url('anggota') }}/${data}">${full.name}</a>`;
+                        },
                     },
-                    {
+                    ...(is_admin ? [{
                         data: 'email',
-                        name: 'email'
-                    },
+                        name: 'email',
+                        orderable: false
+                    }] : []),
                     {
                         data: 'roles',
                         name: 'roles',
@@ -271,7 +279,7 @@
                     ...column
                 ],
                 order: [
-                    [6, 'asc']
+                    [order_column, 'asc']
                 ]
             });
 

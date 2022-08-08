@@ -7,6 +7,7 @@
     $can_active = auth_can(h_prefix('active'));
     $can_member = auth_can(h_prefix('member'));
     $can_detail = auth_can(h_prefix('detail'));
+    $can_set_role = auth_can(h_prefix('set_role'));
     $can_bidang = auth_can(h_prefix('jabatan', 1));
     @endphp
     <div class="row row-sm">
@@ -31,7 +32,8 @@
                                     <th>Dari</th>
                                     <th>Sampai</th>
                                     <th>Slug</th>
-                                    {!! $can_member ? '<th>Member</th>' : '' !!}
+                                    {!! $can_set_role ? '<th>Set Role</th>' : '' !!}
+                                    {!! $can_member ? '<th>Pengurus</th>' : '' !!}
                                     {!! $can_detail ? '<th>Detail</th>' : '' !!}
                                     <th>Foto</th>
                                     <th>Status</th>
@@ -65,6 +67,41 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modal-role">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-role-title">Set Role Pengurus Periode</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="roleForm">
+                        <div class="form-group">
+                            <input type="hidden" name="periode_id" id="periode_id">
+                            <label for="role_name">Role Bidang</label>
+                            <select class="form-control" id="role_name" name="role_name">
+                                <option value="">Sesuai Dengan Jabatan Masing-Masing</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btn-save" form="roleForm">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- End Row -->
     <div class="modal fade" id="modal-member">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -138,6 +175,7 @@
         const can_member = {{ $can_member ? 'true' : 'false' }};
         const can_detail = {{ $can_detail ? 'true' : 'false' }};
         const can_bidang = {{ $can_bidang ? 'true' : 'false' }};
+        const can_set_role = {{ $can_set_role ? 'true' : 'false' }};
 
         const table_html = $('#tbl_main');
         $(document).ready(function() {
@@ -183,6 +221,17 @@
                         data: 'slug',
                         name: 'slug'
                     },
+                    ...(can_set_role ? [{
+                        data: 'id',
+                        name: 'id',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                        href="#modal-role" onclick="setRole('${data}')"
+                                        data-target="#modal-role"><i class="fas fa-user-check" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
+                    }] : []),
                     ...(can_member ? [{
                         data: 'id',
                         name: 'id',
@@ -274,6 +323,55 @@
                 e.preventDefault();
                 var oTable = table_html.dataTable();
                 oTable.fnDraw(false);
+            });
+
+            $('#roleForm').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('#btn-save', 'Save Changes');
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route(h_prefix('set_role')) }}",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        $("#modal-role").modal('hide');
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('#btn-save',
+                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            false);
+                    }
+                });
             });
         });
 
@@ -481,6 +579,11 @@
                     timer: 3500
                 })
             })
+        }
+
+        function setRole(periode_id) {
+            $('#periode_id').val(periode_id);
+            $('#role_name').val('');
         }
     </script>
 @endsection

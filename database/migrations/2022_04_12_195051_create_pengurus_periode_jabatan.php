@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pengurus_periode_jabatan', function (Blueprint $table) {
+            $tableNames = config('permission.table_names');
             $table->integer('id', true, false);
             $table->integer('periode_id')->nullable();
             $table->integer('parent_id')->nullable()->default(null);
@@ -26,9 +27,14 @@ return new class extends Migration
             $table->text('misi')->nullable()->default(null);
             $table->text('slogan')->nullable()->default(null);
             $table->boolean('status')->default(0);
+            $table->bigInteger('role_id', false, true)->nullable()->default(null);
             $table->timestamps();
 
             // relationship
+            $table->foreign('role_id')
+                ->references('id')->on($tableNames['roles'])
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
             $table->foreign('periode_id')
                 ->references('id')->on('pengurus_periode')
                 ->nullOnDelete()
@@ -37,17 +43,6 @@ return new class extends Migration
                 ->references('id')->on('pengurus_periode_jabatan')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-
-            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
-            // $table->foreign('created_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
-            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
-            // $table->foreign('updated_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
         });
     }
 

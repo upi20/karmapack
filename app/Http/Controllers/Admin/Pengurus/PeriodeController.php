@@ -8,18 +8,18 @@ use App\Models\Pengurus\Periode;
 use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 use App\Helpers\Summernote;
+use App\Models\Pengurus\Jabatan;
+use App\Models\Pengurus\JabatanMember;
 use App\Models\Pengurus\PeriodeMember;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class PeriodeController extends Controller
 {
     private $image_folder = Periode::image_folder;
     public function index(Request $request) // page
     {
-        // Rencana =============================================================================
-        // tombol lihat yang di arahkan ke frontend
-        // Rencana =============================================================================
-
         if (request()->ajax()) {
             $model = Periode::select(['id', 'nama', 'foto', 'dari', 'sampai', 'slug', 'status'])
                 ->selectRaw('IF(status = 1, "Aktif", "Tidak Aktif") as status_str');
@@ -44,8 +44,9 @@ class PeriodeController extends Controller
             ]
         ];
 
+        $roles = Role::all();
         $image_folder = $this->image_folder;
-        return view('admin.pengurus.periode.list', compact('page_attr', 'image_folder'));
+        return view('admin.pengurus.periode.list', compact('page_attr', 'image_folder', 'roles'));
     }
 
     public function add(Request $request) // page
@@ -275,5 +276,32 @@ class PeriodeController extends Controller
     private function getCountActive()
     {
         return Periode::where('status', '=', 1)->count();
+    }
+
+
+    public function set_pengurus_role(Request $request)
+    {
+        DB::beginTransaction();
+        $t_jabatan_member = JabatanMember::tableName;
+        $t_jabatan = Jabatan::tableName;
+
+        $lists = JabatanMember::select(["$t_jabatan_member.user_id", "$t_jabatan.role_id",])
+            ->join($t_jabatan, "$t_jabatan.id", '=', "$t_jabatan_member.jabatan_id")
+            ->where("$t_jabatan.periode_id", '=', $request->periode_id)
+            ->get();
+
+        foreach ($lists as $v) {
+            $user = User::find($v->user_id);
+            if ($user->hasRole(config('app.super_admin_role'))) continue;
+            $get = Role::find($v->role_id);
+            $role_by_jabatan = is_null($get) ? null : Role::find($v->role_id)->name;
+            $role = $request->role_name ?? $role_by_jabatan;
+            if ($role) {
+                $user->syncRoles([$role]);
+            }
+        }
+
+        DB::commit();
+        return response()->json();
     }
 }

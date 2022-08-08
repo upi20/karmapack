@@ -144,6 +144,9 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::post('/insert', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+        // set role by jabatan
+        Route::post('/set_role', 'set_pengurus_role')->name("$name.set_role")->middleware("permission:$name.set_role");
     });
 
     $prefix = 'jabatan';
@@ -153,6 +156,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::controller(JabatanController::class)->group(function () use ($name) {
             Route::get('/get_parent', 'parent')->name("$name.parent")->middleware("permission:$name");
             Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
+            Route::get('/role_select2', 'role_select2')->name("$name.role_select2")->middleware("permission:$name");
             Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
 
             // base
