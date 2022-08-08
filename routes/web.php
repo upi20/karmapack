@@ -1,6 +1,8 @@
 <?php
 
 // ====================================================================================================================
+
+use App\Http\Controllers\Admin\Pendaftaran\GFormController;
 use App\Models\User;
 
 // ====================================================================================================================
@@ -32,6 +34,7 @@ use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranController
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
+use App\Models\Pendaftaran\GForm;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -178,3 +181,6 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
 
 // profile username ===================================================================================================
 Route::get('/{model:username}', [MemberController::class, 'member'])->name("anggota.username");
+
+// Gform
+Route::get('/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");

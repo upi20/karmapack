@@ -53,7 +53,7 @@
                                                 style="max-width: 200px">
                                                 <option value="">Semua</option>
                                                 <option value="1">Aktif</option>
-                                                <option value="0">Tidak Ada</option>
+                                                <option value="0">Tidak Aktif</option>
                                                 <option value="2">Ditutup</option>
                                             </select>
                                         </div>
@@ -142,11 +142,10 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="foto">Foto <span class="text-danger">*</span>
+                                    <label class="form-label" for="foto">Foto
                                         <span class="badge bg-success" id="lihat-foto">Lihat</span>
                                     </label>
-                                    <input type="file" class="form-control" id="foto" name="foto"
-                                        required="" />
+                                    <input type="file" class="form-control" id="foto" name="foto" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -173,7 +172,7 @@
                                         placeholder="Sampai Tanggal" required="" />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label" for="deskripsi">Deskripsi</label>
                                     <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
@@ -182,14 +181,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="pengumuman">Pengumuman (HTML)</label>
-                                    <textarea type="text" class="form-control" rows="3" id="pengumuman" name="pengumuman"
-                                        placeholder="Enter Pengumuman"> </textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="tampilkan">Tampilkan</label>
+                                    <label class="form-label" for="tampilkan">Tampilkan Di List Pendaftaran </label>
                                     <select class="form-control" style="width: 100%;" required="" id="tampilkan"
                                         name="tampilkan">
                                         <option value="1">Ya</option>
@@ -348,7 +340,7 @@
                         data: 'slug',
                         name: 'slug',
                         render(data, type, full, meta) {
-                            const link = `{{ url('f') }}/${data}`;
+                            const link = `{{ url('') }}/${data}`;
                             return data ? `
                             <button class="btn btn-primary btn-sm" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
                                 <i class="fas fa-clipboard" aria-hidden="true"></i> 
@@ -506,7 +498,6 @@
             $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
-            $('#foto').attr('required', true);
             $('#lihat-foto').hide();
             resetErrorAfterInput();
             isEdit = false;
@@ -535,12 +526,10 @@
                     $('#link').val(data.link);
                     $('#nama').val(data.nama);
                     $('#no_urut').val(data.no_urut);
-                    $('#pengumuman').val(data.pengumuman);
                     $('#sampai').val(data.sampai);
                     $('#slug').val(data.slug);
                     $('#status').val(data.status);
                     $('#tampilkan').val(data.tampilkan);
-                    $('#foto').removeAttr('required');
                     $('#lihat-foto').fadeIn();
                     $('#lihat-foto').attr('onclick', `viewIcon('${data.foto}')`);
                 },
@@ -629,12 +618,9 @@
                     $("#modal-detail-body").html(`
                     <h4>Deskripsi</h4>
                     <p>${data.deskripsi}</p>
-                    
-                    <h4>Pengumuman</h4>
-                    <p>${data.pengumuman}</p>
 
                     <h4>Slug</h4>
-                    <a href="{{ url('f') }}/${data.slug}">{{ url('f') }}/${data.slug}</a>
+                    <a href="{{ url('') }}/${data.slug}">{{ url('') }}/${data.slug}</a>
                     <br>
                     <br>
                     <h4>Link Google Form</h4>

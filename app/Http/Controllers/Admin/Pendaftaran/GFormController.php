@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin\Pendaftaran;
 
 use App\Helpers\Summernote;
 use App\Http\Controllers\Controller;
+use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\GForm;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
+use PhpParser\Node\Expr\AssignOp\Mod;
 use Yajra\Datatables\Datatables;
 
 class GFormController extends Controller
@@ -17,12 +19,12 @@ class GFormController extends Controller
         'nama' => ['required', 'string', 'max:255'],
         'link' => ['required', 'string', 'max:255'],
         'deskripsi' => ['required', 'string'],
-        'pengumuman' => ['required', 'string'],
         'no_urut' => ['required', 'int'],
         'dari' => ['required'],
         'sampai' => ['required'],
         'status' => ['required', 'int'],
         'tampilkan' => ['required', 'int'],
+        'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
     private $image_folder = GForm::image_folder;
@@ -48,7 +50,6 @@ class GFormController extends Controller
     {
         try {
             $request->validate(array_merge([
-                'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'slug' => ['required', 'string', 'max:255', ('unique:' . GForm::tableName . ',slug')],
             ], $this->validate_model));
 
@@ -64,7 +65,6 @@ class GFormController extends Controller
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->deskripsi = $request->deskripsi;
-            $model->pengumuman = $request->pengumuman;
             $model->no_urut = $request->no_urut;
             $model->dari = $request->dari;
             $model->sampai = $request->sampai;
@@ -109,7 +109,6 @@ class GFormController extends Controller
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->deskripsi = $request->deskripsi;
-            $model->pengumuman = $request->pengumuman;
             $model->no_urut = $request->no_urut;
             $model->dari = $request->dari;
             $model->sampai = $request->sampai;
@@ -305,5 +304,25 @@ class GFormController extends Controller
         } catch (\Exception $error) {
             return response()->json($error, 500);
         }
+    }
+
+    public function frontend_detail(GForm $model)
+    {
+        if ($model->status == 0) return abort(404);
+        $folder = GForm::image_folder;
+        $user = User::find($model->user_id);
+
+        $image = is_null($model->foto) ? Pendaftaran::image_default : url("$folder/$model->foto");
+        $page_attr = [
+            'title' => $model->nama,
+            'url' => url(h_prefix_uri()),
+            'description' => $model->deskripsi,
+            'author' => $user->name,
+            'image' => $image,
+        ];
+
+        $link = str_contains($model->link, '?') ? ($model->link . '&') : ($model->link . '?');
+        $link = $link . 'embedded=true';
+        return view('frontend.pendaftaran.gform', compact('page_attr', 'model', 'link'));
     }
 }

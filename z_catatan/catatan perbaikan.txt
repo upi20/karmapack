@@ -3,7 +3,6 @@ Implementasi perijinan untuk curd[progress]
 profile -> input antkatang angkatan view nya ke config dan env USER_INPUT_ANGKATAN=true (default false)
 artikel -> belum ada author
 logo angkatan di periode
-pendaftaran dari google form
 Kata Alumni
 Dashboard
   statistik anggota dari tahun ke tahun
@@ -19,3 +18,6 @@ jabatan mempunyai relasi kepada role untuk nanti ketika di beri jabatan maka aka
 kemudian jika periode nya di nonaktifkan maka akan di ganti role nya menjadi Alumni
 
 ketika user baru di tambah kan maka akan ditambahkan sebagai role anggota
+
+buat notifikasi seperti "Situs ini masih dalam masa pengembangan." tapi bisa di custom di menu 
+Utiliti -> Notif Depan Atas

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('nama');
             $table->string('slug');
             $table->text('deskripsi');
-            $table->text('pengumuman');
             $table->integer('no_urut');
             $table->date('dari')->nullable();
             $table->date('sampai')->nullable();
