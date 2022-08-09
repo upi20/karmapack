@@ -1,6 +1,3 @@
-Menerapkan role sesuai dengan kapasitas masing masing jabatan
-Implementasi perijinan untuk curd[progress]
-profile -> input antkatang angkatan view nya ke config dan env USER_INPUT_ANGKATAN=true (default false)
 artikel -> belum ada author
 logo angkatan di periode
 Kata Alumni
@@ -8,3 +5,26 @@ Kata Alumni
 tambah fitur absensi
 buat crud hari besar nasional
 Absensi
+Tracking Kelengkapan profile(anggota)
+Fitur aplikasi
+
+Pedoman Administrasi (Administrasi)
+	Buku Pendoman
+		Jenis(Table) [surat, abensi kegiatan, dan lain lain]
+		Aturan longtext
+		keterangan
+	Arsip
+
+Hari Besar Nasional (Tracker)
+
+Notifikasi
+	Hari besar nasional 1 minggu kedepan
+	Hari Ulang tahun 1 minggu kedepan
+
+Buku Administrasi
+Pedoman(Standarisasi Format Supaya Konsisten) Administrasi
+Keterangan
+	Huruf, kertas, font,
+
+
+Database
