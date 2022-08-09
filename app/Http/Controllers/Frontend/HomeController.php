@@ -12,6 +12,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repository\Frontend\HomeRepository;
 
+
 class HomeController extends Controller
 {
     public function index(Request $request)
