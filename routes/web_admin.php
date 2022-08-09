@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\KataAlumniController;
 
 // Address ============================================================================================================
 use App\Http\Controllers\Admin\Address\ProvinceController;
@@ -23,7 +24,6 @@ use App\Http\Controllers\Admin\Address\VillageController;
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
-
 // Pengurus ============================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
@@ -330,4 +330,17 @@ Route::controller(MenuController::class)->prefix($prefix)->group(function () use
     Route::get('/list', 'list')->name("$name.list")->middleware("permission:$name");
     Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
     Route::get('/parent_list', 'parent_list')->name("$name.parent_list")->middleware("permission:$name");
+});
+
+$prefix = 'kata_alumni';
+Route::controller(KataAlumniController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.kata_alumni
+    Route::get('/', 'index')->name($name)->middleware("permission:$name");
+    Route::get('/member', 'member_select2')->name("$name.member")->middleware("permission:$name");
+    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+    Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+    Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+    Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+    Route::get('/list', 'list')->name("$name.list")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
+    Route::get('/list_save', 'list_save')->name("$name.list_save")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
 });

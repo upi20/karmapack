@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Member\KataAlumniController;
 use App\Http\Controllers\Member\ProfileController;
 
 $name = 'member';
@@ -63,4 +64,13 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
     $name = "$name.$prefix"; // member.password
     Route::get('/', 'change_password')->name($name)->middleware("permission:$name");
     Route::post('/save', 'save_password')->name("$name.save")->middleware("permission:$name.save");
+});
+
+
+$prefix = 'kata_alumni';
+Route::controller(KataAlumniController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // member.kata_alumni
+    Route::get('/', 'index')->name($name)->middleware("permission:$name");
+    Route::post('/save', 'save')->name("$name.save")->middleware("permission:$name");
+    Route::post('/reset', 'reset')->name("$name.reset")->middleware("permission:$name");
 });

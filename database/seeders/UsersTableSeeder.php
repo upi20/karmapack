@@ -855,7 +855,7 @@ Gomawo',
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-08-08 23:33:54',
+                'updated_at' => '2022-08-09 14:21:14',
             ),
             27 => 
             array (

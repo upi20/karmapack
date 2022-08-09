@@ -859,6 +859,46 @@ class PPermissionsTableSeeder extends Seeder
                 'created_at' => '2022-08-08 21:08:18',
                 'updated_at' => '2022-08-08 21:08:18',
             ),
+            105 => 
+            array (
+                'id' => 151,
+                'name' => 'admin.kata_alumni',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-09 15:19:19',
+                'updated_at' => '2022-08-09 15:19:19',
+            ),
+            106 => 
+            array (
+                'id' => 152,
+                'name' => 'admin.kata_alumni.insert',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-09 15:19:25',
+                'updated_at' => '2022-08-09 15:19:25',
+            ),
+            107 => 
+            array (
+                'id' => 153,
+                'name' => 'admin.kata_alumni.update',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-09 15:19:30',
+                'updated_at' => '2022-08-09 15:19:30',
+            ),
+            108 => 
+            array (
+                'id' => 154,
+                'name' => 'admin.kata_alumni.delete',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-09 15:19:35',
+                'updated_at' => '2022-08-09 15:19:35',
+            ),
+            109 => 
+            array (
+                'id' => 155,
+                'name' => 'member.kata_alumni',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-09 15:22:56',
+                'updated_at' => '2022-08-09 15:22:56',
+            ),
         ));
         
         

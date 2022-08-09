@@ -368,7 +368,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 22:42:10',
+                'updated_at' => '2022-08-09 16:45:34',
             ),
             27 => 
             array (
@@ -381,7 +381,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 22:42:10',
+                'updated_at' => '2022-08-09 16:45:34',
             ),
             28 => 
             array (
@@ -390,11 +390,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Ganti Password',
                 'icon' => 'fas fa-key',
                 'route' => 'member.password',
-                'sequence' => 36,
+                'sequence' => 38,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 22:42:10',
+                'updated_at' => '2022-08-09 15:24:10',
             ),
             29 => 
             array (
@@ -403,11 +403,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Logout',
                 'icon' => 'fas fa-sign-out-alt',
                 'route' => 'logout',
-                'sequence' => 37,
+                'sequence' => 39,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:54:09',
-                'updated_at' => '2022-08-08 22:42:10',
+                'updated_at' => '2022-08-09 15:24:10',
             ),
             30 => 
             array (
@@ -442,11 +442,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Alumni Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 33,
+                'sequence' => 36,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-06 14:06:05',
-                'updated_at' => '2022-08-08 22:42:10',
+                'updated_at' => '2022-08-09 16:45:34',
             ),
             33 => 
             array (
@@ -499,6 +499,32 @@ class PMenuTableSeeder extends Seeder
                 'type' => 1,
                 'created_at' => '2022-08-08 22:41:53',
                 'updated_at' => '2022-08-08 22:42:10',
+            ),
+            37 => 
+            array (
+                'id' => 395,
+                'parent_id' => NULL,
+                'title' => 'List Kata Alumni',
+                'icon' => 'fas fa-user-edit',
+                'route' => 'admin.kata_alumni',
+                'sequence' => 33,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:23:18',
+            ),
+            38 => 
+            array (
+                'id' => 396,
+                'parent_id' => NULL,
+                'title' => 'Kata Alumni',
+                'icon' => 'fas fa-user-edit',
+                'route' => 'member.kata_alumni',
+                'sequence' => 37,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-09 15:23:52',
+                'updated_at' => '2022-08-09 16:45:34',
             ),
         ));
         

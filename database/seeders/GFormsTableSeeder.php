@@ -31,10 +31,10 @@ class GFormsTableSeeder extends Seeder
                 'sampai' => '2022-08-11',
                 'link' => 'https://docs.google.com/forms/d/e/1FAIpQLSdau6VwXEPJ_fiKm1SZAZf4tZ7UCZFGpejVbmfbHevdQcmA5Q/viewform',
                 'foto' => '20220808151008.png',
-                'tampilkan' => 0,
+                'tampilkan' => 1,
                 'status' => 1,
                 'created_at' => '2022-08-08 13:55:32',
-                'updated_at' => '2022-08-08 18:06:50',
+                'updated_at' => '2022-08-09 11:45:27',
             ),
             1 => 
             array (
@@ -48,10 +48,10 @@ class GFormsTableSeeder extends Seeder
                 'sampai' => '2022-09-03',
                 'link' => 'https://forms.gle/emJnUVmXYZN9hRsa7',
                 'foto' => '',
-                'tampilkan' => 1,
-                'status' => 1,
+                'tampilkan' => 0,
+                'status' => 0,
                 'created_at' => '2022-08-08 17:06:30',
-                'updated_at' => '2022-08-08 17:06:30',
+                'updated_at' => '2022-08-09 11:45:00',
             ),
             2 => 
             array (
@@ -65,10 +65,10 @@ class GFormsTableSeeder extends Seeder
                 'sampai' => '2022-08-25',
                 'link' => 'http://www.zondervan.com/the-reason-for-god-discussion-guide-with-dvd',
                 'foto' => '',
-                'tampilkan' => 1,
-                'status' => 1,
+                'tampilkan' => 0,
+                'status' => 0,
                 'created_at' => '2022-08-08 17:10:52',
-                'updated_at' => '2022-08-08 17:10:52',
+                'updated_at' => '2022-08-09 11:45:16',
             ),
         ));
         

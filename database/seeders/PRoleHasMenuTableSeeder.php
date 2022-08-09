@@ -1099,6 +1099,70 @@ class PRoleHasMenuTableSeeder extends Seeder
                 'created_at' => '2022-08-08 22:41:53',
                 'updated_at' => '2022-08-08 22:41:53',
             ),
+            135 => 
+            array (
+                'id' => 692,
+                'role_id' => 1,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            136 => 
+            array (
+                'id' => 693,
+                'role_id' => 3,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            137 => 
+            array (
+                'id' => 694,
+                'role_id' => 4,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            138 => 
+            array (
+                'id' => 695,
+                'role_id' => 5,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            139 => 
+            array (
+                'id' => 696,
+                'role_id' => 6,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            140 => 
+            array (
+                'id' => 697,
+                'role_id' => 7,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            141 => 
+            array (
+                'id' => 698,
+                'role_id' => 8,
+                'menu_id' => 395,
+                'created_at' => '2022-08-09 15:20:36',
+                'updated_at' => '2022-08-09 15:20:36',
+            ),
+            142 => 
+            array (
+                'id' => 699,
+                'role_id' => 9,
+                'menu_id' => 396,
+                'created_at' => '2022-08-09 15:23:52',
+                'updated_at' => '2022-08-09 15:23:52',
+            ),
         ));
         
         

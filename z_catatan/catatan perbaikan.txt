@@ -1,6 +1,6 @@
 artikel -> belum ada author
 logo angkatan di periode
-Kata Alumni
+
 
 tambah fitur absensi
 buat crud hari besar nasional
@@ -26,5 +26,5 @@ Pedoman(Standarisasi Format Supaya Konsisten) Administrasi
 Keterangan
 	Huruf, kertas, font,
 
-
-Database
+// progress
+Kata Alumni

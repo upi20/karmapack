@@ -579,7 +579,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Kategori  deleted successfully',
+                                title: '{{ $page_attr['title'] }} deleted successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
