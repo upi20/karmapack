@@ -67,7 +67,8 @@ class backup extends Command
                 'pengurus_profile_pendidikan',
                 'pengurus_profile_pendidikan_jenis',
                 'pengurus_profile_pengalaman_lain',
-                'pengurus_profile_pengalaman_organisasi'
+                'pengurus_profile_pengalaman_organisasi',
+                'kata_alumnis',
             ],
             'frontend' => [
                 'social_media',

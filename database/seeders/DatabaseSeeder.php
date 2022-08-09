@@ -91,6 +91,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GFormsTableSeeder::class);
         $this->call(NotifDepanAtasTableSeeder::class);
 
+        $this->call(KataAlumnisTableSeeder::class);
         DB::commit();
     }
 }
