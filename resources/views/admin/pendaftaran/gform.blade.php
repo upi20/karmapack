@@ -341,10 +341,10 @@
                         data: 'slug',
                         name: 'slug',
                         render(data, type, full, meta) {
-                            const link = `{{ url('') }}/${data}`;
+                            const link = `{{ url('f') }}/${data}`;
                             return data ? `
                             <button class="btn btn-primary btn-sm" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
-                                <i class="fas fa-clipboard" aria-hidden="true"></i> 
+                                <i class="fas fa-clipboard" aria-hidden="true"></i>
                                 </button>
                             ` : '';
                         },
@@ -621,7 +621,7 @@
                     <p>${data.deskripsi}</p>
 
                     <h4>Slug</h4>
-                    <a href="{{ url('') }}/${data.slug}">{{ url('') }}/${data.slug}</a>
+                    <a href="{{ url('f') }}/${data.slug}">{{ url('f') }}/${data.slug}</a>
                     <br>
                     <br>
                     <h4>Link Google Form</h4>

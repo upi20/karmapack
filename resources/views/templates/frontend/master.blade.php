@@ -86,8 +86,23 @@ $notifikasi = notif_depan_atas();
         media="all">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/simple-line-icons.css') }}" type="text/css"
         media="all">
+
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/style.css') }}" type="text/css"
         media="all">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/v2/css/vendors.css') }}" type="text/css"
+        media="all">
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/v2/css/main.css') }}" type="text/css"
+        media="all">
+
+
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -223,17 +238,17 @@ $notifikasi = notif_depan_atas();
         @yield('udnder_header')
 
         <!-- section main content -->
-        <div class="w-100 py-5 mb-5 mt-0">
+        <div class="w-100 py-50 mb-5 mt-0">
             <section class="main-content mt-0">
                 @yield('content', '')
             </section>
         </div>
 
-        @include('templates.frontend.body.instagram', [
+        {{-- @include('templates.frontend.body.instagram', [
             'footerInstagram' => $footerInstagram_val,
-        ])
+        ]) --}}
 
-        @include('templates.frontend.body.footer', [
+        @include('templates.frontend.body.footer2', [
             'list_sosmed' => $getSosmed_val,
         ])
 
@@ -271,6 +286,9 @@ $notifikasi = notif_depan_atas();
     <script src="{{ asset('assets/templates/frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend/v2/js/vendors.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend/v2/js/main.js') }}"></script>
+
     @yield('javascript')
 </body>
 

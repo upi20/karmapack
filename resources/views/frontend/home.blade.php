@@ -1,31 +1,63 @@
 @extends('templates.frontend.master')
 @section('udnder_header')
-    <section class="hero data-bg-image d-flex align-items-center py-5 my-0"
-        data-bg-image="{{ asset('assets/templates/frontend/images/other/hero.jpg') }}" style="height: auto;">
-        <div class="container-xl">
-            <div class="cta text-center p-0 m-0" style="max-width: none;">
-                <h6 class="section-title h6 mb-3 w-100 text-light">Visi dan Misi {{ $periode->nama }}</h6>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="section-title h6 mb-3 text-light">Visi</h4>
-                        <p>{!! $periode->visi !!}</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="section-title h6 mb-3 text-light">Misi</h4>
-                        <p> {!! $periode->misi !!}</p>
+    <section class="masthead -type-1 pt-60">
+        <div class="masthead__bg">
+            <img src="{{ asset('assets/templates/frontend/images/other/hero.png') }}" alt="image">
+        </div>
+        <div data-anim-wrap class="container">
+            <div class="row justify-center text-center">
+                <div class="col-auto">
+                    <div class="sectionTitle ">
+                        <h2 class="sectionTitle__title text-white ">Visi dan Misi {{ $periode->nama }}</h2>
                     </div>
                 </div>
-                <br>
-                <p><strong>Semboyan KARMAPACK:</strong> Manusia
-                    Yang memiliki pribadi yang kokoh ajeg atau seimbang dalam berifikir, merasa dan bertindak.</p>
             </div>
-        </div>
+
+            <div class="container">
+                <div data-anim-wrap class="row justify-between items-end">
+                    <div class="container-xl">
+                        <div class="cta text-center p-0 m-0" style="max-width: none;">
+                            <div class="row">
+                                <div class="col-md-6 mb-30">
+                                    <h4 class="section-title h6 mb-3 text-light">Visi</h4>
+                                    <p>{!! $periode->visi !!} </p>
+                                </div>
+                                <div class="col-md-6 mb-30">
+                                    <h4 class="section-title h6 mb-3 text-light">Misi</h4>
+                                    <p> {!! $periode->misi !!}</p>
+                                </div>
+                            </div>
+                            <br>
+                            <p class="text-light"><strong>Semboyan KARMAPACK:</strong> Manusia
+                                Yang memiliki pribadi yang kokoh ajeg atau seimbang dalam berifikir, merasa dan bertindak.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="svg-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="svg-waves__parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" />
+                </g>
+            </svg>
     </section>
     @if ($anggota->count())
-        <section class="hero-carousel py-5 bg-light">
-            <div class="container-xl">
-                <h4 class="section-title text-center mb-3"><a class="text-dark"
-                        href="{{ route('about.kepengurusan.struktur') }}">Kenali Kami Lebih Dekat</a></h4>
+        <section class="hero-carousel py-5">
+            <div class="container-xl d-lg-flex justify-content-between py-30 pt-60">
+                <h4 class="section-title text-center  my-20">
+                    <a class="text-dark" href="{{ route('about.kepengurusan.struktur') }}">Kenali Kami Lebih Dekat</a>
+                </h4>
+                <h6 class="text-center text-primary my-20">
+                    <a href="{{ route('about.kepengurusan.struktur') }}">Struktur Kepengurusan</a>
+                </h6>
             </div>
             <div class="row post-carousel-featured post-carousel w-100 px-0 mx-0">
                 @foreach ($anggota as $a)
@@ -60,9 +92,10 @@
         </section>
     @endif
 @endsection
+
 @section('content')
     <div class="container-xl">
-        <h4 class="section-title text-center mb-3">Daftar artikel terbaru</h4>
+        <h4 class="section-title text-center py-30">Daftar artikel terbaru</h4>
         @if ($tag_selected)
             <a href="{{ url('') }}" type="button" class="btn btn-default my-3">
                 Tag: {{ $tag_selected->nama }} <span><i class="fas fa-times ms-2"></i></span>
@@ -73,7 +106,7 @@
                 Kategori: {{ $kategori_selected->nama }} <span><i class="fas fa-times ms-2"></i></span>
             </a>
         @endif
-        <div class="row gy-4">
+        <div class="row pb-90">
             <div class="col-lg-8">
                 <div class="row gy-4">
                     @foreach ($articles as $a)
@@ -106,7 +139,8 @@
                                     <a href="{{ route('artikel', $a->slug) }}">
                                         <div class="inner">
 
-                                            <img src="{{ $foto }}" alt="{{ $a->nama }}" />
+                                            <img src="{{ $foto }}" alt="{{ $a->nama }}"
+                                                style="width: 100%; height: 300px; object-fit: cover;" />
 
                                         </div>
                                     </a>
@@ -201,7 +235,7 @@
                 </div>
 
                 @if ($pagination)
-                    <nav>
+                    <nav class="py-30">
                         <ul class="pagination justify-content-center">
                             {!! $pagination !!}
                         </ul>
@@ -209,8 +243,7 @@
                 @endif
 
             </div>
-            <div class="col-lg-4">
-
+            <div class="col-lg-4 pb-50">
                 <!-- sidebar -->
                 <div class="sidebar">
                     <!-- widget about -->

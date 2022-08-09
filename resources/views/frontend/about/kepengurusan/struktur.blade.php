@@ -13,81 +13,83 @@
         </div>
     </section>
 
-    <div class="container mt-5">
+    <div class="container mt-60">
         <img src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}" class="rounded mx-auto d-block">
         <h1 class="h5 text-center text-uppercase">STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA DAN PELAJAR CIANJUR
             KIDUL<br>PERIODE {{ $periode->dari }} - {{ $periode->sampai }}<br> {{ $periode->nama }}</h1>
+        <div class="d-flex justify-content-center">
+            <table class="table mt-60" style="width: auto">
+                @foreach ($member->utama as $utama)
+                    <tr>
+                        <td style="border: 0;  " class="py-10 px-3 h6" colspan="2">
+                            {{ $utama->jabatan->nama }}</td>
+                        <td style="border: 0; max-width: 5px; " class="py-10 px-3 h6">:</td>
+                        <td style="border: 0; " class="py-10 px-3 h6 text-primary">
+                            @php
+                                $url = $utama->pejabat->username ? url($utama->pejabat->username) : route('anggota.id', $utama->pejabat->id);
+                            @endphp
+                            <a href="{{ $url }}">{{ $utama->pejabat->name }}</a>
+                        </td>
+                    </tr>
+                @endforeach
 
-        <table class="table mt-3">
-            @foreach ($member->utama as $utama)
-                <tr>
-                    <td style="border: 0;" colspan="2">{{ $utama->jabatan->nama }}</td>
-                    <td style="border: 0; max-width: 5px;">:</td>
-                    <td style="border: 0;">
-                        @php
-                            $url = $utama->pejabat->username ? url($utama->pejabat->username) : route('anggota.id', $utama->pejabat->id);
-                        @endphp
-                        <a href="{{ $url }}">{{ $utama->pejabat->name }}</a>
-                    </td>
-                </tr>
-            @endforeach
+                @foreach ($member->bidang as $bidang)
+                    <tr>
+                        <td colspan="4" style="border: 0;" class="py-10 px-3 h6 text-primary">
+                            <a href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
+                                {{ $bidang->header->nama }}
+                            </a>
+                        </td>
+                    </tr>
 
-            @foreach ($member->bidang as $bidang)
-                <tr>
-                    <td colspan="4" style="border: 0;"><a
-                            href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
-                            {{ $bidang->header->nama }}
-                        </a>
-                    </td>
-                </tr>
-
-                @foreach ($bidang->body as $body)
-                    @if ($body->list)
-                        <tr>
-                            <td style="border: 0;"></td>
-                            <td style="border: 0;">{{ $body->jabatan->nama }}</td>
-                            <td style="border: 0;">:</td>
-                            <td style="border: 0;">
-                                @if (isset($body->pejabat[0]))
-                                    @php
-                                        $pejabat = $body->pejabat[0];
-                                        $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
-                                    @endphp
-                                    <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                                @endif
-                            </td>
-                        </tr>
-                        @foreach ($body->pejabat as $key => $pejabat)
-                            @if ($key != 0)
-                                <tr>
-                                    <td style="border: 0;"></td>
-                                    <td style="border: 0;"></td>
-                                    <td style="border: 0;">:</td>
-                                    <td style="border: 0;">
+                    @foreach ($bidang->body as $body)
+                        @if ($body->list)
+                            <tr>
+                                <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                <td style="border: 0;" class="py-10 px-3 h6">{{ $body->jabatan->nama }}</td>
+                                <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                                <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                    @if (isset($body->pejabat[0]))
                                         @php
+                                            $pejabat = $body->pejabat[0];
                                             $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                         @endphp
                                         <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                                    </td>
-                                </tr>
-                            @endif
-                        @endforeach
-                    @else
-                        <tr>
-                            <td style="border: 0;"></td>
-                            <td style="border: 0;">{{ $body->jabatan->nama }}</td>
-                            <td style="border: 0;">:</td>
-                            <td style="border: 0;">
-                                @php
-                                    $pejabat = $body->pejabat;
-                                    $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
-                                @endphp
-                                <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                            </td>
-                        </tr>
-                    @endif
+                                    @endif
+                                </td>
+                            </tr>
+                            @foreach ($body->pejabat as $key => $pejabat)
+                                @if ($key != 0)
+                                    <tr>
+                                        <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                        <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                        <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                                        <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                            @php
+                                                $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                            @endphp
+                                            <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        @else
+                            <tr>
+                                <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                <td style="border: 0;" class="py-10 px-3 h6">{{ $body->jabatan->nama }}</td>
+                                <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                                <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                    @php
+                                        $pejabat = $body->pejabat;
+                                        $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                    @endphp
+                                    <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
                 @endforeach
-            @endforeach
-        </table>
+            </table>
+        </div>
     </div>
 @endsection

@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <div class="container mt-5">
+    <div class="container mt-60">
         <img src="{{ $model->fotoUrl() }}" alt="{{ $periode->nama }}"
             onerror="this.src='{{ asset('assets/templates/frontend/images/logo/300x300.png') }}';this.onerror='';"
             class="rounded mx-auto d-block">
@@ -34,55 +34,56 @@
                 {{ $periode->nama }}
             </a>
         </h1>
-
-        <table class="table mt-3">
-            @foreach ($member_list as $body)
-                @if ($body->list)
-                    <tr>
-                        <td style="border: 0;"></td>
-                        <td style="border: 0;">{{ $body->jabatan->nama }}</td>
-                        <td style="border: 0;">:</td>
-                        <td style="border: 0;">
-                            @if (isset($body->pejabat[0]))
-                                @php
-                                    $pejabat = $body->pejabat[0];
-                                    $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
-                                @endphp
-                                <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    @foreach ($body->pejabat as $key => $pejabat)
-                        @if ($key != 0)
-                            <tr>
-                                <td style="border: 0;"></td>
-                                <td style="border: 0;"></td>
-                                <td style="border: 0;">:</td>
-                                <td style="border: 0;">
+        <div class="d-flex justify-content-center">
+            <table class="table mt-3">
+                @foreach ($member_list as $body)
+                    @if ($body->list)
+                        <tr>
+                            <td style="border: 0;" class="py-10 px-3 h6"></td>
+                            <td style="border: 0;" class="py-10 px-3 h6">{{ $body->jabatan->nama }}</td>
+                            <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                            <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                @if (isset($body->pejabat[0]))
                                     @php
+                                        $pejabat = $body->pejabat[0];
                                         $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                     @endphp
                                     <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                                </td>
-                            </tr>
-                        @endif
-                    @endforeach
-                @else
-                    <tr>
-                        <td style="border: 0;"></td>
-                        <td style="border: 0;">{{ $body->jabatan->nama }}</td>
-                        <td style="border: 0;">:</td>
-                        <td style="border: 0;">
-                            @php
-                                $pejabat = $body->pejabat;
-                                $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
-                            @endphp
-                            <a href="{{ $url }}">{{ $pejabat->name }}</a>
-                        </td>
-                    </tr>
-                @endif
-            @endforeach
-        </table>
+                                @endif
+                            </td>
+                        </tr>
+                        @foreach ($body->pejabat as $key => $pejabat)
+                            @if ($key != 0)
+                                <tr>
+                                    <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                    <td style="border: 0;" class="py-10 px-3 h6"></td>
+                                    <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                                    <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                        @php
+                                            $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                        @endphp
+                                        <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    @else
+                        <tr>
+                            <td style="border: 0;" class="py-10 px-3 h6"></td>
+                            <td style="border: 0;" class="py-10 px-3 h6">{{ $body->jabatan->nama }}</td>
+                            <td style="border: 0;" class="py-10 px-3 h6">:</td>
+                            <td style="border: 0;" class="py-10 px-3 h6 text-primary">
+                                @php
+                                    $pejabat = $body->pejabat;
+                                    $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                @endphp
+                                <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            </table>
+        </div>
         @if ($model->visi)
             <h3 class="h5 text-center text-uppercase text-dark">Visi</h3>
             {!! $model->visi !!}

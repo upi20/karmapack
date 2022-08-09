@@ -1,5 +1,5 @@
 <!-- instagram feed -->
-<div class="instagram  mt-5 mb-0 py-5 bg-light">
+<div class="instagram  mt-5 mb-0 py-40">
     <div class="container-xl">
         <!-- button -->
         <a href="https://instagram.com/orda_karmapack"

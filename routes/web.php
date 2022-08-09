@@ -183,4 +183,4 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
 Route::get('/{model:username}', [MemberController::class, 'member'])->name("anggota.username");
 
 // Gform
-Route::get('/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");
+Route::get('/f/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");

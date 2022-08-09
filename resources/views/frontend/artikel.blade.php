@@ -14,7 +14,7 @@
             </div>
         </div>
     </section>
-    <section class="main-content mt-3">
+    <section class="main-content mt-60">
         <div class="container-xl">
             <div class="row gy-4">
                 {{-- artikel --}}

@@ -12,7 +12,7 @@
             </div>
         </div>
     </section>
-    <section class="main-content mt-3">
+    <section class="main-content mt-60">
         <div class="container-xl">
             <form class="d-flex search-form pt-3" method="GET" action="{{ route('anggota') }}">
                 <input class="form-control me-2" type="search" name="search"
@@ -33,8 +33,8 @@
                                 <div class="text-center">
                                     <img alt="avatar"
                                         onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
-                                        src="{{ asset('assets/pengurus/profile/' . $model->foto) }}"
-                                        class="brround" id="img_profile"
+                                        src="{{ asset('assets/pengurus/profile/' . $model->foto) }}" class="brround"
+                                        id="img_profile"
                                         style="height: 120px; width: 120px; object-fit: cover; object-position: center; border-radius: 50%;">
                                     <h5 class="mb-1 h6 mt-2 mb-0 fw-bold">{{ $model->name }}</h5>
                                     @if ($model->username)
@@ -66,7 +66,11 @@
                                     </a>
                                 @endif
 
-                                @if ($model->alamat_lengkap || $model->province_id || $model->regency_id || $model->district_id || $model->village_id)
+                                @if ($model->alamat_lengkap ||
+                                    $model->province_id ||
+                                    $model->regency_id ||
+                                    $model->district_id ||
+                                    $model->village_id)
                                     <span class="fw-bold d-block mt-3">Alamat</span>
                                     <p class="small">{{ $model->alamat_lengkap }}
                                         @if ($village)
@@ -219,8 +223,7 @@
                                             {{ $item->jabatan }}
                                         @endif
                                         |
-                                        <a
-                                            href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                        <a href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
                                             {{ $item->periode }}
                                         </a>
                                     </p>
@@ -334,6 +337,5 @@
         .card-main:hover {
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.20);
         }
-
     </style>
 @endsection
