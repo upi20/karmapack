@@ -27,6 +27,12 @@ class backup extends Command
      */
     public function handle()
     {
+        $is_windows = strtolower(PHP_SHLIB_SUFFIX) === 'dll';
+
+        $win_parse = function ($str) use ($is_windows) {
+            return str_replace(['\\', '/'], ($is_windows ? '\\' : '/'), $str);
+        };
+
         $root = dirname(__FILE__);
         $root = "$root/../../..";
         $arg_type = $this->argument('type');
@@ -34,15 +40,18 @@ class backup extends Command
         // backup migrasi database sebelumnya
         if ($this->option('current') == 1) {
             // pindahkan folder dulu
-            $folder_parent = "$root/backup";
-            $folder_backup = "$folder_parent/". date('Y-m-d');
+            $folder_parent = $win_parse("$root/backup");
+            $folder_backup = $win_parse("$folder_parent/" . date('Y-m-d'));
 
             if (!file_exists("$folder_parent")) echo shell_exec("mkdir $folder_parent");
             if (!file_exists($folder_backup)) echo shell_exec("mkdir $folder_backup");
+            $copy = $is_windows ? 'copy' : 'cp -R';
+            shell_exec($win_parse("$copy $root/database/seeders/* $folder_backup"));
 
-            shell_exec("cp -R $root/database/seeders/* $folder_backup");
             echo 'Berhasil backup data sebelumnya' . PHP_EOL;
         }
+
+        die;
 
         $tables =  [
             'artikel' => [
