@@ -4,13 +4,20 @@
     <div class="app-sidebar">
         <div class="side-header">
             <a class="header-brand1" href="{{ url('/') }}">
-                <img src="{{ asset('assets/templates/admin/images/brand/logo.png') }}"
+                {{-- light landscape --}}
+                <img src="{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}"
                     class="header-brand-img desktop-logo" alt="logo">
-                <img src="{{ asset('assets/templates/admin/images/brand/logo-1.png') }}"
+
+                {{-- light --}}
+                <img src="{{ asset(settings()->get(set_admin('app.foto_light_mode'))) }}"
                     class="header-brand-img toggle-logo" alt="logo">
-                <img src="{{ asset('assets/templates/admin/images/brand/logo-2.png') }}"
+
+                {{-- dark --}}
+                <img src="{{ asset(settings()->get(set_admin('app.foto_dark_mode'))) }}"
                     class="header-brand-img light-logo" alt="logo">
-                <img src="{{ asset('assets/templates/admin/images/brand/logo-3.png') }}"
+
+                {{-- dark landscape --}}
+                <img src="{{ asset(settings()->get(set_admin('app.foto_dark_landscape_mode'))) }}"
                     class="header-brand-img light-logo1" alt="logo">
             </a>
             <!-- LOGO -->

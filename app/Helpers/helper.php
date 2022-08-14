@@ -165,3 +165,42 @@ if (!function_exists('notif_depan_atas')) {
         return NotifDepanAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
     }
 }
+
+if (!function_exists('set_admin')) {
+    // settings prefix
+    function set_admin(string $param = ''): string
+    {
+        $pre = 'setting.admin';
+        return $pre . ($param == '' ? '' : ".$param");
+    }
+}
+
+if (!function_exists('str_parse')) {
+    // settings prefix
+    function str_parse(?string $text = ''): string
+    {
+        $replace = [
+            ['search' => '__base_url__', 'replace' => url('')]
+        ];
+        $result = $text;
+
+        foreach ($replace as $r) {
+            $result = str_replace($r['search'], $r['replace'], $result);
+        }
+        return $result;
+    }
+}
+
+if (!function_exists('delete_file')) {
+    // delete file
+    function delete_file(string $file): bool
+    {
+        $res_foto = true;
+        if ($file != null && $file != '') {
+            if (file_exists($file)) {
+                $res_foto = unlink($file);
+            }
+        }
+        return $res_foto;
+    }
+}

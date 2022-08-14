@@ -44,6 +44,7 @@ use App\Http\Controllers\Admin\UserAccess\RoleController;
 // Menu ===============================================================================================================
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\Pendaftaran\GFormController;
+use App\Http\Controllers\Admin\SettingController;
 // Utility ============================================================================================================
 use App\Http\Controllers\Admin\Utility\NotifDepanAtasController;
 
@@ -343,4 +344,20 @@ Route::controller(KataAlumniController::class)->prefix($prefix)->group(function 
     Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     Route::get('/list', 'list')->name("$name.list")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
     Route::get('/list_save', 'list_save')->name("$name.list_save")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
+});
+
+
+$prefix = "setting";
+Route::controller(SettingController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.setting
+
+    // admin
+    Route::get('/admin', 'admin')->name("$name.admin")->middleware("permission:$name.admin");
+    Route::post('/admin/save/app', 'admin_save_app')->name("$name.admin_save_app")->middleware("permission:$name.admin");
+    Route::post('/admin/save/meta', 'admin_save_meta')->name("$name.admin_save_meta")->middleware("permission:$name.admin");
+
+    Route::get('/admin/meta', 'admin_meta_list')->name("$name.admin_meta_list")->middleware("permission:$name.admin");
+    Route::post('/admin/meta/insert', 'admin_meta_insert')->name("$name.admin_meta_insert")->middleware("permission:$name.admin");
+    Route::post('/admin/meta/update', 'admin_meta_update')->name("$name.admin_meta_update")->middleware("permission:$name.admin");
+    Route::delete('/admin/meta/delete', 'admin_meta_delete')->name("$name.admin_meta_delete")->middleware("permission:$name.admin");
 });

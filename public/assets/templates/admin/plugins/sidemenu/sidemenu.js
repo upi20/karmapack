@@ -597,5 +597,7 @@ $(document).on("click", ".rtl #slide-right", function () {
 
 });
 
-// FOOTER
-document.getElementById("year").innerHTML = new Date().getFullYear();
+if (document.getElementById("year")) {
+    // FOOTER
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+}
