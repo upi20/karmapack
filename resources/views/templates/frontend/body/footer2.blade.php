@@ -111,35 +111,9 @@
         </div>
 
         <div class="py-30 border-top-light-15">
-            <div class="row justify-between items-center y-gap-20">
-                <div class="col-auto">
-                    <div class="d-flex items-center h-100 text-white">
-                        © 2022 Karmapack. Persembahan Dari <a class="text-primary px-3"
-                            href="{{ url('iseplutpinur') }}">Isep
-                            Lutpi Nur</a> Bidang Kominfo.
-                    </div>
-                </div>
-
-                <div class="col-auto">
-                    <div class="d-flex x-gap-20 y-gap-20 items-center flex-wrap">
-                        <div>
-                            <div class="d-flex x-gap-15 text-white">
-                                <a href="help-center.html">Help</a>
-                                <a href="terms.html">Privacy Policy</a>
-                                <a href="terms.html">Cookie Notice</a>
-                                <a href="terms.html">Security</a>
-                                <a href="terms.html">Terms of Use</a>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="#" id="return-to-top"
-                                class="button px-30 h-50 -dark-6 rounded-200 text-white" style="border: 0">
-                                <i class="fas fa-arrow-up"></i>Back to Top
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-md-flex items-center h-100 text-white">
+                © 2022 Karmapack. Persembahan Dari <a class="text-primary px-3" href="{{ url('iseplutpinur') }}">Isep
+                    Lutpi Nur</a> Bidang Kominfo.
             </div>
         </div>
     </div>

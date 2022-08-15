@@ -71,6 +71,19 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2022-05-07 01:12:25',
                 'updated_at' => '2022-05-07 01:12:25',
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'nama' => 'PENGUMPULAN DATA PENGURUS KARMAPACK PERIODE 2022-2023',
+                'angkatan' => '2022',
+                'email' => 'asadf@gmail.com',
+                'whatsapp' => 'asdfasdf',
+                'telepon' => 'asfsdafsadf',
+                'keterangan' => NULL,
+                'status' => 0,
+                'created_at' => '2022-08-09 23:31:45',
+                'updated_at' => '2022-08-09 23:31:45',
+            ),
         ));
         
         

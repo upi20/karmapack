@@ -18,10 +18,10 @@
 
             <div class="col-md-4 col-sm-12 col-xs-12 text-center">
                 <!-- site logo -->
-                <a class="navbar-brand" href="{{ url('') }}"><img
-                        src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}"
-                        style="max-width: 80px;" alt="logo" /></a>
-                <a href="./" class="d-block text-logo">KARMAPACK</a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img
+                        src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}" style="max-width: 80px;"
+                        alt="logo" /></a>
+                <a href="{{ url('/') }}" class="d-block text-logo">KARMAPACK</a>
                 <span class="slogan d-block">Keluarga Mahasiswa dan Pelajar Cianjur Kidul</span>
             </div>
 

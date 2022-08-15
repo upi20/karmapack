@@ -51,8 +51,6 @@ class backup extends Command
             echo 'Berhasil backup data sebelumnya' . PHP_EOL;
         }
 
-        die;
-
         $tables =  [
             'artikel' => [
                 'artikel',

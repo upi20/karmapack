@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SettingController extends Controller
 {
     private $folder_admin_logo = '/assets/setting/admin/logo';
-    private $folder_meta_logo = '/assets/setting/meta';
+    private $folder_admin_meta_logo = '/assets/setting/admin/meta';
     public function admin()
     {
         $page_attr = [
@@ -127,7 +127,7 @@ class SettingController extends Controller
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
-            $folder = $this->folder_meta_logo;
+            $folder = $this->folder_admin_meta_logo;
             if ($current) {
                 $path = public_path("$folder/$current");
                 delete_file($path);
@@ -197,5 +197,199 @@ class SettingController extends Controller
             }
         }
         return $this->admin_meta_list_set($result);
+    }
+
+
+    // front
+    private $folder_front_logo = '/assets/setting/front/logo';
+    private $folder_front_meta_logo = '/assets/setting/front/meta';
+    public function front()
+    {
+        $page_attr = [
+            'title' => 'Front Setting',
+            'breadcrumbs' => [
+                ['name' => 'Setting'],
+            ]
+        ];
+        $data = compact(
+            'page_attr',
+        );
+        return view('admin.setting.front',  array_merge($data, ['compact' => $data]));
+    }
+
+    public function front_save_app(Request $request)
+    {
+        $result = [];
+        settings()->set(set_front('app.title'), $request->title)->save();
+        settings()->set(set_front('app.copyright'), $request->copyright)->save();
+        settings()->set(set_front('app.preloader'), !is_null($request->preloader))->save();
+
+        // logo
+        // dark mode
+        $foto = '';
+        $key = 'foto_dark_landscape_mode';
+        $current = settings()->get(set_front("app.$key"));
+        $result[] = [$key => $current];
+        if ($image = $request->file($key)) {
+            // delete foto
+            if ($current) {
+                $path = public_path("$this->folder_front_logo/$current");
+                delete_file($path);
+            }
+
+            $foto = $this->folder_front_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $image->move(public_path($this->folder_front_logo), $foto);
+
+            // save foto
+            settings()->set(set_front("app.$key"), $foto)->save();
+            $result[count($result) - 1] = [$key => $foto];
+        }
+
+        // light mode
+        $foto = '';
+        $key = 'foto_light_landscape_mode';
+        $current = settings()->get(set_front("app.$key"));
+        $result[] = [$key => $current];
+        if ($image = $request->file($key)) {
+            // delete foto
+            if ($current) {
+                $path = public_path("$this->folder_front_logo/$current");
+                delete_file($path);
+            }
+
+            $foto = $this->folder_front_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $image->move(public_path($this->folder_front_logo), $foto);
+
+            // save foto
+            settings()->set(set_front("app.$key"), $foto)->save();
+            $result[count($result) - 1] = [$key => $foto];
+        }
+
+        // logo
+        // dark mode
+        $foto = '';
+        $key = 'foto_dark_mode';
+        $current = settings()->get(set_front("app.$key"));
+        $result[] = [$key => $current];
+        if ($image = $request->file($key)) {
+            // delete foto
+            if ($current) {
+                $path = public_path("$this->folder_front_logo/$current");
+                delete_file($path);
+            }
+
+            $foto = $this->folder_front_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $image->move(public_path($this->folder_front_logo), $foto);
+
+            // save foto
+            settings()->set(set_front("app.$key"), $foto)->save();
+            $result[count($result) - 1] = [$key => $foto];
+        }
+
+        // light mode
+        $foto = '';
+        $key = 'foto_light_mode';
+        $current = settings()->get(set_front("app.$key"));
+        $result[] = [$key => $current];
+        if ($image = $request->file($key)) {
+            // delete foto
+            if ($current) {
+                $path = public_path("$this->folder_front_logo/$current");
+                delete_file($path);
+            }
+
+            $foto = $this->folder_front_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $image->move(public_path($this->folder_front_logo), $foto);
+
+            // save foto
+            settings()->set(set_front("app.$key"), $foto)->save();
+            $result[count($result) - 1] = [$key => $foto];
+        }
+        return response()->json($result);
+    }
+
+    public function front_save_meta(Request $request)
+    {
+        $result = [];
+        settings()->set(set_front('meta.author'), $request->author)->save();
+        settings()->set(set_front('meta.keyword'), $request->keyword)->save();
+        settings()->set(set_front('meta.description'), $request->description)->save();
+
+        // logo
+        $key = 'image';
+        $current = settings()->get(set_front("meta.$key"));
+        $result[] = [$key => $current];
+        if ($image = $request->file($key)) {
+            // delete foto
+            $folder = $this->folder_front_meta_logo;
+            if ($current) {
+                $path = public_path("$folder/$current");
+                delete_file($path);
+            }
+
+            $foto = $folder . '/' . $key . "." . $image->getClientOriginalExtension();
+            $image->move(public_path($folder), $foto);
+
+            // save foto
+            settings()->set(set_front("meta.$key"), $foto)->save();
+            $result[count($result) - 1] = [$key => $foto];
+        }
+
+        return response()->json($result);
+    }
+
+    private function front_meta_list_get()
+    {
+
+        $list = settings()->get(set_front("meta_list"), null);
+        return is_null($list) ? [] : json_decode($list);
+    }
+
+    private function front_meta_list_set($list)
+    {
+        $list = json_encode($list);
+        settings()->set(set_front("meta_list"), $list)->save();
+
+        return $this->front_meta_list_get();
+    }
+
+    public function front_meta_list(Request $request)
+    {
+        return $this->front_meta_list_get();
+    }
+
+    public function front_meta_insert(Request $request)
+    {
+        $list = $this->front_meta_list_get();
+        array_push($list, ['name' => $request->name, 'value' => $request->value]);
+        return $this->front_meta_list_set($list);
+    }
+
+    public function front_meta_update(Request $request)
+    {
+        $id = $request->id;
+        $list = $this->front_meta_list_get();
+        $result = [];
+        foreach ($list as $k => $v) {
+            if ($k == $id) {
+                $result[] = ['name' => $request->name, 'value' => $request->value];
+            } else {
+                $result[] = $v;
+            }
+        }
+        return $this->front_meta_list_set($result);
+    }
+
+    public function front_meta_delete(Request $request)
+    {
+        $id = $request->id;
+        $list = $this->front_meta_list_get();
+        $result = [];
+        foreach ($list as $k => $v) {
+            if ($k != $id) {
+                $result[] = $v;
+            }
+        }
+        return $this->front_meta_list_set($result);
     }
 }

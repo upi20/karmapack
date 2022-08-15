@@ -351,13 +351,31 @@ $prefix = "setting";
 Route::controller(SettingController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.setting
 
-    // admin
-    Route::get('/admin', 'admin')->name("$name.admin")->middleware("permission:$name.admin");
-    Route::post('/admin/save/app', 'admin_save_app')->name("$name.admin_save_app")->middleware("permission:$name.admin");
-    Route::post('/admin/save/meta', 'admin_save_meta')->name("$name.admin_save_meta")->middleware("permission:$name.admin");
 
-    Route::get('/admin/meta', 'admin_meta_list')->name("$name.admin_meta_list")->middleware("permission:$name.admin");
-    Route::post('/admin/meta/insert', 'admin_meta_insert')->name("$name.admin_meta_insert")->middleware("permission:$name.admin");
-    Route::post('/admin/meta/update', 'admin_meta_update')->name("$name.admin_meta_update")->middleware("permission:$name.admin");
-    Route::delete('/admin/meta/delete', 'admin_meta_delete')->name("$name.admin_meta_delete")->middleware("permission:$name.admin");
+    $prefix = 'admin'; // admin
+    Route::group(['prefix' => $prefix, 'middleware' => "permission:$name.$prefix"], function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.setting.admin
+        Route::get('/', 'admin')->name($name);
+        Route::post('/save/app', 'admin_save_app')->name("{$name}_save_app");
+        Route::post('/save/meta', 'admin_save_meta')->name("{$name}_save_meta");
+
+        Route::get('/meta', 'admin_meta_list')->name("{$name}_meta_list");
+        Route::post('/meta/insert', 'admin_meta_insert')->name("{$name}_meta_insert");
+        Route::post('/meta/update', 'admin_meta_update')->name("{$name}_meta_update");
+        Route::delete('/meta/delete', 'admin_meta_delete')->name("{$name}_meta_delete");
+    });
+
+
+    $prefix = 'front'; // front
+    Route::group(['prefix' => $prefix, 'middleware' => "permission:$name.$prefix"], function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.setting.front
+        Route::get('/', 'front')->name($name);
+        Route::post('/save/app', 'front_save_app')->name("{$name}_save_app");
+        Route::post('/save/meta', 'front_save_meta')->name("{$name}_save_meta");
+
+        Route::get('/meta', 'front_meta_list')->name("{$name}_meta_list");
+        Route::post('/meta/insert', 'front_meta_insert')->name("{$name}_meta_insert");
+        Route::post('/meta/update', 'front_meta_update')->name("{$name}_meta_update");
+        Route::delete('/meta/delete', 'front_meta_delete')->name("{$name}_meta_delete");
+    });
 });

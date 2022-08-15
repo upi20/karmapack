@@ -204,3 +204,12 @@ if (!function_exists('delete_file')) {
         return $res_foto;
     }
 }
+
+if (!function_exists('set_front')) {
+    // settings prefix
+    function set_front(string $param = ''): string
+    {
+        $pre = 'setting.front';
+        return $pre . ($param == '' ? '' : ".$param");
+    }
+}

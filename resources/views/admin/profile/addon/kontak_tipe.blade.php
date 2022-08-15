@@ -122,7 +122,6 @@
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}"></script>
 
     <script>
         const can_update = {{ $can_update ? 'true' : 'false' }};
