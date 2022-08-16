@@ -44,7 +44,12 @@ use App\Http\Controllers\Admin\UserAccess\RoleController;
 // Menu ===============================================================================================================
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\Pendaftaran\GFormController;
-use App\Http\Controllers\Admin\SettingController;
+
+// Setting ============================================================================================================
+use App\Http\Controllers\Admin\Setting\AdminController;
+use App\Http\Controllers\Admin\Setting\FrontController;
+use App\Http\Controllers\Admin\Setting\HomeController;
+
 // Utility ============================================================================================================
 use App\Http\Controllers\Admin\Utility\NotifDepanAtasController;
 
@@ -348,34 +353,75 @@ Route::controller(KataAlumniController::class)->prefix($prefix)->group(function 
 
 
 $prefix = "setting";
-Route::controller(SettingController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+Route::prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.setting
 
+    $prefix = 'admin';
+    $name_ = "$name.$prefix"; // admin.setting.admin
+    Route::group([
+        'controller' => AdminController::class,
+        'prefix' => $prefix,
+        'middleware' => "permission:$name_"
+    ], function () use ($name_) {
+        Route::get('/', 'index')->name($name_);
+        Route::post('/save/app', 'save_app')->name("$name_.save.app");
+        Route::post('/save/meta', 'save_meta')->name("$name_.save.meta");
 
-    $prefix = 'admin'; // admin
-    Route::group(['prefix' => $prefix, 'middleware' => "permission:$name.$prefix"], function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // admin.setting.admin
-        Route::get('/', 'admin')->name($name);
-        Route::post('/save/app', 'admin_save_app')->name("{$name}_save_app");
-        Route::post('/save/meta', 'admin_save_meta')->name("{$name}_save_meta");
-
-        Route::get('/meta', 'admin_meta_list')->name("{$name}_meta_list");
-        Route::post('/meta/insert', 'admin_meta_insert')->name("{$name}_meta_insert");
-        Route::post('/meta/update', 'admin_meta_update')->name("{$name}_meta_update");
-        Route::delete('/meta/delete', 'admin_meta_delete')->name("{$name}_meta_delete");
+        Route::get('/meta', 'meta_list')->name("$name_.meta");
+        Route::post('/meta/insert', 'meta_insert')->name("$name_.meta.insert");
+        Route::post('/meta/update', 'meta_update')->name("$name_.meta.update");
+        Route::delete('/meta/delete', 'meta_delete')->name("$name_.meta.delete");
     });
 
+    $prefix = 'front';
+    $name_ = "$name.$prefix"; // admin.setting.front
+    Route::group([
+        'controller' => FrontController::class,
+        'prefix' => $prefix,
+        'middleware' => "permission:$name_"
+    ], function () use ($name_) {
+        Route::get('/', 'index')->name($name_);
+        Route::post('/save/app', 'save_app')->name("$name_.save.app");
+        Route::post('/save/meta', 'save_meta')->name("$name_.save.meta");
 
-    $prefix = 'front'; // front
-    Route::group(['prefix' => $prefix, 'middleware' => "permission:$name.$prefix"], function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // admin.setting.front
-        Route::get('/', 'front')->name($name);
-        Route::post('/save/app', 'front_save_app')->name("{$name}_save_app");
-        Route::post('/save/meta', 'front_save_meta')->name("{$name}_save_meta");
+        Route::get('/meta', 'meta_list')->name("$name_.meta");
+        Route::post('/meta/insert', 'meta_insert')->name("$name_.meta.insert");
+        Route::post('/meta/update', 'meta_update')->name("$name_.meta.update");
+        Route::delete('/meta/delete', 'meta_delete')->name("$name_.meta.delete");
+    });
 
-        Route::get('/meta', 'front_meta_list')->name("{$name}_meta_list");
-        Route::post('/meta/insert', 'front_meta_insert')->name("{$name}_meta_insert");
-        Route::post('/meta/update', 'front_meta_update')->name("{$name}_meta_update");
-        Route::delete('/meta/delete', 'front_meta_delete')->name("{$name}_meta_delete");
+    $prefix = 'home';
+    $name_ = "$name.$prefix"; // admin.setting.home
+    Route::group([
+        'controller' => HomeController::class,
+        'prefix' => $prefix,
+        'middleware' => "permission:$name_"
+    ], function () use ($name_) {
+        Route::get('/', 'index')->name($name_);
+
+        // save
+        $method = 'hero';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'poesaka';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'visi_misi';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'struktur_anggota';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'kata_alumni';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'galeri_kegiatan';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'artikel';
+        Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'sensus';
+        Route::post("/$method", $method)->name("$name_.$method");
     });
 });

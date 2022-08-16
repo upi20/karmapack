@@ -66,7 +66,7 @@ class PeriodeController extends Controller
 
     public function edit(Periode $model) // page
     {
-        $navigation = h_prefix(null, 1);
+        $navigation = h_prefix(null, 2);
         $page_attr = [
             'title' => 'Edit Periode',
             'breadcrumbs' => [

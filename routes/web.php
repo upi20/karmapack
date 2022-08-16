@@ -141,7 +141,7 @@ Route::prefix($name)->group(function () use ($name) {
 // dashboard ==========================================================================================================
 Route::get('/dashboard', function () {
     $user = Auth::user();
-
+    if (!$user) return Redirect::route('login');
     if ($user->hasRole(config('app.super_admin_role'))) {
         return Redirect::route('admin.dashboard');
     } else {
@@ -177,6 +177,8 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
 // ====================================================================================================================
 
 
+// frontend2 ==========================================================================================================
+Route::get('/frontend2', [HomeController::class, 'fronted2'])->name('frontend2');
 
 
 // profile username ===================================================================================================

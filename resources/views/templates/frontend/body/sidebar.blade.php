@@ -10,7 +10,7 @@
 
     <!-- menu -->
     <nav>
-        {!! (new \App\Helpers\Frontend\Template\SidebarMenu(app('config')->get('menu_list')['frontend'], $page_attr_navigation, $menu_bidang))->generate() !!}
+        {!! navbar_menu_front(app('config')->get('menu_list')['frontend'], $page_attr_navigation, $menu_bidang) !!}
     </nav>
 
 

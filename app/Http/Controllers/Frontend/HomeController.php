@@ -68,8 +68,7 @@ class HomeController extends Controller
 
         $image_folder_user = User::image_folder;
         $image_default_user = User::image_default;
-
-        return view('frontend.home', compact(
+        $data = compact(
             'page_attr',
             'periode',
             'anggota',
@@ -83,7 +82,10 @@ class HomeController extends Controller
             'kategori_selected',
             'image_folder_user',
             'image_default_user',
-        ));
+        );
+        $data['compact'] = $data;
+
+        return view('frontend.home2', $data);
     }
 
     // artikel render
@@ -155,10 +157,18 @@ class HomeController extends Controller
             'loader' => false, 'navigation' => "bidang/$model->slug",
             'periode_id' => $model->periode_id,
         ];
-        // $periode = Periode::find($model->periode_id)->first();
-        // if (!$periode) abort(404);
-        // $anggota = $this->getPengurusList($model->periode_id);
+        $periode = Periode::find($model->periode_id)->first();
+        if (!$periode) abort(404);
+        $anggota = $this->getPengurusList($model->periode_id);
 
-        // return view('frontend.home', compact('page_attr', 'periode', 'anggota'));
+        return view('frontend.home', compact('page_attr', 'periode', 'anggota'));
+    }
+
+    public function fronted2(Request $request)
+    {
+        $page_attr = [];
+        $data = compact('page_attr');
+        $data['compact'] = $data;
+        return view('frontend.home2', $data);
     }
 }

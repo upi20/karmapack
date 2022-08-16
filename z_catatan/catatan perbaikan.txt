@@ -28,3 +28,59 @@ Keterangan
 
 // progress
 Kata Alumni
+
+
+// home
+Hero
+    visible
+    title
+    sub title
+    image
+
+Poesaka
+    visible
+    title
+    button text
+
+Visi dan misi
+    visible
+    title
+    sub title
+    visi
+    misi
+    semboyan
+    button text
+
+Struktur anggota
+    visible
+    title
+    sub title
+    button text
+
+Kata Alumni
+    visible
+    title
+    sub title
+
+Galeri kegiatan
+    visible
+    title
+    sub title
+    button text
+
+Artikel
+    visible
+    title
+    sub title
+    button text
+
+Sensus
+    visible
+    title
+    sub title
+    button text
+    image
+
+
+
+

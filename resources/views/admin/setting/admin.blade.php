@@ -243,7 +243,7 @@
                 load_el.LoadingOverlay("show");
                 $.ajax({
                     type: "POST",
-                    url: `{{ route(h_prefix('admin_save_app', 1)) }}`,
+                    url: `{{ route(h_prefix('save.app')) }}`,
                     data: formData,
                     cache: false,
                     contentType: false,
@@ -280,7 +280,7 @@
                 load_el.LoadingOverlay("show");
                 $.ajax({
                     type: "POST",
-                    url: `{{ route(h_prefix('admin_save_meta', 1)) }}`,
+                    url: `{{ route(h_prefix('save.meta')) }}`,
                     data: formData,
                     cache: false,
                     contentType: false,
@@ -318,8 +318,8 @@
                 const submit_element = $(this).parent().parent().find('button[type=submit]');
                 setBtnLoading(submit_element, 'Save Changes');
                 const route = ($('#meta_list_id').val() == '') ?
-                    "{{ route(h_prefix('admin_meta_insert', 1)) }}" :
-                    "{{ route(h_prefix('admin_meta_update', 1)) }}";
+                    "{{ route(h_prefix('meta.insert')) }}" :
+                    "{{ route(h_prefix('meta.update')) }}";
                 $.ajax({
                     type: "POST",
                     url: route,
@@ -428,7 +428,7 @@
             }).then(function(result) {
                 if (result.value) {
                     $.ajax({
-                        url: `{{ route(h_prefix('admin_meta_delete', 1)) }}`,
+                        url: `{{ route(h_prefix('meta.delete')) }}`,
                         type: 'DELETE',
                         data: {
                             id
@@ -470,7 +470,7 @@
         }
 
         function meta_list_init() {
-            $.get(`{{ route(h_prefix('admin_meta_list', 1)) }}`, (data) => {
+            $.get(`{{ route(h_prefix('meta')) }}`, (data) => {
                 meta_list_render(data);
                 meta_list_is_edit = true;
             });

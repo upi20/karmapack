@@ -120,6 +120,261 @@ if (!function_exists('sidebar_menu_admin')) {
     }
 }
 
+if (!function_exists('navbar_menu_front')) {
+    function navbar_menu_front(array $menus, $navigation = '', $extend = [])
+    {
+        $checkActive =  function ($route, $param) use ($navigation): bool {
+            if (is_array($navigation) && count($navigation) == 2) {
+                $route_nav = $navigation[0];
+                $param_nav = $navigation[1];
+                return request()->routeIs($route_nav) && $param ==  $param_nav;
+            } else {
+                return request()->routeIs($route) || $navigation == $route;
+            }
+        };
+
+        $route_build = function (string $route, $params = null) {
+            if (Route::has($route)) {
+                if ($params) return route($route, $params);
+                else return route($route);
+            } else return url('');
+        };
+
+        $generate_route = function ($route, $param = null, $metod = 'route') use ($route_build): string {
+            if ($metod == 'route') {
+                return $param ? $route_build($route, $param) : $route_build($route);
+            } elseif ($metod == 'url') {
+                return $param ? url("$route/$param") : url($route);
+            } else {
+                return $param ? $route_build($route, $param) : $route_build($route);
+            }
+        };
+
+        $getExtend = function (string $name) use ($extend): array {
+            $result = [];
+            foreach ($extend as $e) {
+                $name_e = isset($e['name']) ? $e['name'] : '';
+                if ($name_e == $name) {
+                    $result = $e;
+                }
+            }
+            return $result;
+        };
+
+
+        $filterMenu = function ($menu) use ($generate_route, $checkActive): object {
+            $title = isset($menu['title']) ? $menu['title'] : '';
+            $icon = isset($menu['icon']) ? $menu['icon'] : '';
+            $route = isset($menu['route']) ? $menu['route'] : '#';
+            $metod = isset($menu['route_type']) ? $menu['route_type'] : 'route';
+            $param = isset($menu['param']) ? $menu['param'] : null;
+            $active = $checkActive($route, $param);
+            $active_class = $active ? 'active' : '';
+            $route = $route == '#' ? '#' : $generate_route($route, $param, $metod);
+            return (object) [
+                'title' => $title,
+                'route' => $route,
+                'icon' => $icon,
+                'active' => $active,
+                'active_class' => $active_class,
+            ];
+        };
+
+
+        $menu_body = '';
+        foreach ($menus as $menu) {
+            // 3 check name
+            $name = isset($menu['name']) ? $menu['name'] : false;
+            $menu = $name ? $getExtend($name) : $menu;
+
+            // 1 check separator
+            $separator = isset($menu['separator']) ? $menu['separator'] : false;
+
+            // 2 check children
+            $children = isset($menu['children']) ? $menu['children'] : false;
+
+            if ($separator) {
+                // not use separator
+                // $menu_body .= "<li class=\"sub-category\"><h3>{$menu['title']}</h3></li> ";
+            } elseif (is_array($children)) {
+                $child_menu = '';
+                $active = false;
+                foreach ($children as $child) {
+                    $child_filter = $filterMenu($child);
+                    $active_1 = $child_filter->active ? ' text-primary' : '';
+                    $child_menu .= "<li><a class=\"$child_filter->active_class $active_1\" href=\"$child_filter->route\">$child_filter->title</a></li>";
+
+                    if ($child_filter->active) {
+                        $active = $child_filter->active;
+                    }
+                }
+
+                $menu = $filterMenu($menu);
+                $active_1 = $active ? ' class="openmenu active"' : '';
+                $active_2 = $active ? '<i class="icon-arrow-down switch"></i>' : '';
+                $active_3 = $active ? ' style="display: block;"' : '';
+                $menu_body .= "<li $active_1>
+                                <a href=\"#\">$menu->title</a>
+                                $active_2
+                                <ul class=\"submenu\" $active_3>
+                                    $child_menu
+                                </ul>
+                            </li>";
+            } else {
+                $menu = $filterMenu($menu);
+                $menu_body .= " <li class=\"$menu->active_class\"> <a href=\"$menu->route\">$menu->title</a> </li>";
+            }
+        }
+
+        // head element
+        $menu_head = '<ul class="vertical-menu">';
+
+        // Menu Extra =================================================================================
+        $dashboard = route('dashboard');
+        $dashboard = "<li><a href=\"$dashboard\">Dashboard</a></li>";
+        $login = route('login');
+        $login = "<li><a href=\"$login\">Login</a></li>";
+        $menu_extra = auth()->user() ? $dashboard : $login;
+        // Menu Extra =================================================================================
+
+        $menu_footer = $menu_extra . '</ul>';
+        return $menu_head . $menu_body . $menu_footer;
+    }
+}
+
+if (!function_exists('navbar_menu_front2')) {
+    function navbar_menu_front2(array $menus, $navigation = '', $extend = [])
+    {
+        $checkActive =  function ($route, $param) use ($navigation): bool {
+            if (is_array($navigation) && count($navigation) == 2) {
+                $route_nav = $navigation[0];
+                $param_nav = $navigation[1];
+                return request()->routeIs($route_nav) && $param ==  $param_nav;
+            } else {
+                return request()->routeIs($route) || $navigation == $route;
+            }
+        };
+
+        $route_build = function (string $route, $params = null) {
+            if (Route::has($route)) {
+                if ($params) return route($route, $params);
+                else return route($route);
+            } else return url('');
+        };
+
+        $generate_route = function ($route, $param = null, $metod = 'route') use ($route_build): string {
+            if ($metod == 'route') {
+                return $param ? $route_build($route, $param) : $route_build($route);
+            } elseif ($metod == 'url') {
+                return $param ? url("$route/$param") : url($route);
+            } else {
+                return $param ? $route_build($route, $param) : $route_build($route);
+            }
+        };
+
+        $getExtend = function (string $name) use ($extend): array {
+            $result = [];
+            foreach ($extend as $e) {
+                $name_e = isset($e['name']) ? $e['name'] : '';
+                if ($name_e == $name) {
+                    $result = $e;
+                }
+            }
+            return $result;
+        };
+
+
+        $filterMenu = function ($menu) use ($generate_route, $checkActive): object {
+            $title = isset($menu['title']) ? $menu['title'] : '';
+            $icon = isset($menu['icon']) ? $menu['icon'] : '';
+            $route = isset($menu['route']) ? $menu['route'] : '#';
+            $metod = isset($menu['route_type']) ? $menu['route_type'] : 'route';
+            $param = isset($menu['param']) ? $menu['param'] : null;
+            $active = $checkActive($route, $param);
+            $active_class = $active ? 'active' : '';
+            $route = $route == '#' ? '#' : $generate_route($route, $param, $metod);
+            return (object) [
+                'title' => $title,
+                'route' => $route,
+                'icon' => $icon,
+                'active' => $active,
+                'active_class' => $active_class,
+            ];
+        };
+
+
+        $menu_body = '';
+        foreach ($menus as $menu) {
+            // 3 check name
+            $name = isset($menu['name']) ? $menu['name'] : false;
+            $menu = $name ? $getExtend($name) : $menu;
+
+            // 1 check separator
+            $separator = isset($menu['separator']) ? $menu['separator'] : false;
+
+            // 2 check children
+            $children = isset($menu['children']) ? $menu['children'] : false;
+
+            // active class
+            $active_class = 'class="text-white bg-dark-1 -rounded px-20 mx-2" style="border-radius: 24px; border:1px solid #140342"';
+
+            if ($separator) {
+                // not use separator
+                // $menu_body .= "<li class=\"sub-category\"><h3>{$menu['title']}</h3></li> ";
+            } elseif (is_array($children)) {
+                $child_menu = '';
+                $active = false;
+                foreach ($children as $child) {
+                    $child_filter = $filterMenu($child);
+                    $menu_active = $child_filter->active ? $active_class : '';
+                    $child_menu .= "<li><a data-barba=\"\" href=\"$child_filter->route\" $menu_active>$child_filter->title</a></li>";
+
+                    if ($child_filter->active) {
+                        $active = $child_filter->active;
+                    }
+                }
+
+                $menu = $filterMenu($menu);
+                $menu_active = ($menu->active || $active) ? $active_class : '';
+                $menu_body .= <<<HTML
+                    <li class="menu-item-has-children">
+                        <a data-barba href="#" $menu_active>
+                            $menu->title <i class="icon-chevron-right text-13 ml-10"> </i>
+                        </a>
+
+                        <ul class="list-style-none subnav">
+                            <li class="menu__backButton js-nav-list-back">
+                                <a href="#">
+                                    <i class="icon-chevron-left text-13 mr-10"></i> $menu->title
+                                </a>
+                            </li>
+                            $child_menu
+                        </ul>
+                    </li>
+                HTML;
+            } else {
+                $menu = $filterMenu($menu);
+                $menu_active = $menu->active ? $active_class : '';
+                $menu_body .= "<li><a data-barba=\"\" href=\"$menu->route\" $menu_active>$menu->title</a></li>";
+            }
+        }
+
+        // head element
+        // $menu_head = '<ul class="vertical-menu">';
+
+        // Menu Extra =================================================================================
+        $dashboard = route('dashboard');
+        $dashboard = "<li><a href=\"$dashboard\">Dashboard</a></li>";
+        $login = route('login');
+        $login = "<li><a href=\"$login\">Login</a></li>";
+        $menu_extra = auth()->user() ? $dashboard : $login;
+        // Menu Extra =================================================================================
+
+        // $menu_footer = $menu_extra . '</ul>';
+        return $menu_body;
+    }
+}
+
 if (!function_exists('auth_can')) {
     function auth_can(string $route)
     {
