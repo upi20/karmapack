@@ -97,9 +97,9 @@ $notifikasi = notif_depan_atas();
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/v2/css/vendors.css') }}" type="text/css"
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/vendors.css') }}" type="text/css"
         media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/v2/css/main.css') }}" type="text/css"
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/main.css') }}" type="text/css"
         media="all">
 
 
@@ -286,8 +286,8 @@ $notifikasi = notif_depan_atas();
     <script src="{{ asset('assets/templates/frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/v2/js/vendors.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/v2/js/main.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend2/js/main.js') }}"></script>
 
     @yield('javascript')
 </body>
