@@ -111,8 +111,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     @if ($page_attr->loader)
         <!-- GLOBAL-LOADER -->
-        <div id="global-loader">
-            <img src="{{ asset('assets/templates/admin/images/loader.svg') }}" class="loader-img" alt="Loader">
+        <div id="global-loader" style="background-color: #1a1a3c">
+            <img src="{{ asset(settings()->get(set_admin('app.foto_light_mode'))) }}" class="loader-img"
+                alt="Loader">
         </div>
         <!-- /GLOBAL-LOADER -->
     @endif

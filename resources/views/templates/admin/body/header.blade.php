@@ -10,9 +10,9 @@
             <div>
 
                 <a class="logo-horizontal " href="{{ url('/') }}">
-                    <img src="{{ asset('assets/templates/admin/images/brand/logo.png') }}"
+                    <img src="{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}"
                         class="header-brand-img desktop-logo" alt="logo">
-                    <img src="{{ asset('assets/templates/admin/images/brand/logo-3.png') }}"
+                    <img src="{{ asset(settings()->get(set_admin('app.foto_dark_landscape_mode'))) }}"
                         class="header-brand-img light-logo1" alt="logo">
                 </a>
             </div>

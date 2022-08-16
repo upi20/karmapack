@@ -432,11 +432,12 @@ if (!function_exists('set_admin')) {
 
 if (!function_exists('str_parse')) {
     // settings prefix
-    function str_parse(?string $text = ''): string
+    function str_parse(?string $text = '', array $addon = []): string
     {
         $replace = [
             ['search' => '__base_url__', 'replace' => url('')]
         ];
+        $replace = array_merge($replace, $addon);
         $result = $text;
 
         foreach ($replace as $r) {

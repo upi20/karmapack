@@ -1,162 +1,451 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="grid">
+        <div class="grid-sizer col-md-6 col-lg-4"></div>
+
+        {{-- hero --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'hero';
+                $title = 'Hero';
+            @endphp
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Application</h3>
+                    <h3 class="card-title">{{ $title }} Setting</h3>
                     <label class="custom-switch form-switch">
-                        <input type="checkbox" name="preloader" form="app-form" class="custom-switch-input"
-                            {{ settings()->get(set_front('app.preloader')) ? 'checked' : '' }}>
+                        <input type="checkbox" name="visible" form="{{ $name }}-form" class="custom-switch-input"
+                            {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
                         <span class="custom-switch-indicator"></span>
-                        <span class="custom-switch-description">Preloader</span>
+                        <span class="custom-switch-description">Tampilkan</span>
                     </label>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" id="app-form">
+                    <form class="form-horizontal" id="{{ $name }}-form">
                         <div class="form-group">
-                            <label class="form-label" for="{{ set_front('app.title') }}">Title
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
                                 <span class="text-danger">*</span></label>
-                            <input type="text" id="{{ set_front('app.title') }}" name="title" class="form-control"
-                                placeholder="Application Title" value="{{ settings()->get(set_front('app.title')) }}"
-                                required />
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">
+                                Sub Judul <span class="text-danger">*</span>
+                            </label>
+                            <textarea id="{{ $s("$name.sub_title") }}" name="sub_title" class="form-control" required rows="3"
+                                placeholder="Sub Judul">{!! settings()->get($s("$name.sub_title")) !!}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Image
+                                <span class="badge bg-primary" id="preview_hero_image"
+                                    onclick='viewImage(`{{ settings()->get($s("$name.image")) }}`, `{{ $title }} Image View`)'>
+                                    view
+                                </span>
+                            </label>
+                            <input type="file" accept="image/*" id="{{ $s('hero.image') }}" name="image"
+                                class="form-control" />
+                        </div>
+                    </form>
+
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- poesaka --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'poesaka';
+                $title = 'Poesaka';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form" class="custom-switch-input"
+                            {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">
+                                Judul <span class="text-danger">*</span>
+                            </label>
+
+                            <textarea id="{{ $s("$name.title") }}" name="title" class="form-control" required rows="3" placeholder="Judul">{!! settings()->get($s("$name.title")) !!}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_link") }}">Link Tombol
+                                <span class="text-danger">*</span></label>
+                            <input type="url" id="{{ $s("$name.button_link") }}" name="button_link"
+                                class="form-control" placeholder="Link Tombol"
+                                value="{{ settings()->get($s("$name.button_link")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- visi_misi --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'visi_misi';
+                $title = 'Visi Misi';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
                         </div>
 
                         <div class="row">
                             <div class="col-lg-6">
-
                                 <div class="form-group">
-                                    <label class="form-label">Logo Light
-                                        <span class="badge bg-primary" id="preview_foto_light_mode"
-                                            onclick="viewImage('{{ settings()->get(set_front('app.foto_light_mode')) }}', 'Logo Light View')">
-                                            view</span>
-                                    </label>
-                                    <input type="file" id="{{ set_front('app.foto_light_mode') }}" name="foto_light_mode"
-                                        class="form-control" />
+                                    <label class="form-label" for="{{ $s("$name.visi") }}">Visi
+                                        <span class="text-danger">*</span></label>
+                                    <input type="text" id="{{ $s("$name.visi") }}" name="visi"
+                                        class="form-control" placeholder="Visi"
+                                        value="{{ settings()->get($s("$name.visi")) }}" required />
                                 </div>
                             </div>
                             <div class="col-lg-6">
-
                                 <div class="form-group">
-                                    <label class="form-label">Logo Dark
-                                        <span class="badge bg-primary" id="preview_foto_dark_mode"
-                                            onclick="viewImage('{{ settings()->get(set_front('app.foto_dark_mode')) }}', 'Logo Dark View')">
-                                            view</span>
-                                    </label>
-                                    <input type="file" id="{{ set_front('app.foto_dark_mode') }}" name="foto_dark_mode"
-                                        class="form-control" />
+                                    <label class="form-label" for="{{ $s("$name.misi") }}">Misi
+                                        <span class="text-danger">*</span></label>
+                                    <input type="text" id="{{ $s("$name.misi") }}" name="misi"
+                                        class="form-control" placeholder="Visi"
+                                        value="{{ settings()->get($s("$name.misi")) }}" required />
                                 </div>
                             </div>
 
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label">Logo Landscape Light
-                                        <span class="badge bg-primary" id="preview_foto_light_landscape_mode"
-                                            onclick="viewImage('{{ settings()->get(set_front('app.foto_light_landscape_mode')) }}', 'Logo Light View')">
-                                            view</span>
-                                    </label>
-                                    <input type="file" id="{{ set_front('app.foto_light_landscape_mode') }}"
-                                        name="foto_light_landscape_mode" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-
-                                <div class="form-group">
-                                    <label class="form-label">Logo Landscape Dark
-                                        <span class="badge bg-primary" id="preview_foto_dark_landscape_mode"
-                                            onclick="viewImage('{{ settings()->get(set_front('app.foto_dark_landscape_mode')) }}', 'Logo Dark View')">
-                                            view</span>
-                                    </label>
-                                    <input type="file" id="{{ set_front('app.foto_dark_landscape_mode') }}"
-                                        name="foto_dark_landscape_mode" class="form-control" />
-                                </div>
-                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="{{ set_front('app.copyright') }}">Copyright
+                            <label class="form-label" for="{{ $s("$name.semboyan") }}">
+                                Semboyan <span class="text-danger">*</span>
+                            </label>
+                            <textarea id="{{ $s("$name.semboyan") }}" name="semboyan" class="form-control" required rows="3"
+                                placeholder="Semboyan">{!! settings()->get($s("$name.semboyan")) !!}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
                                 <span class="text-danger">*</span></label>
-                            <textarea id="{{ set_front('app.copyright') }}" name="copyright" class="form-control" required rows="3"
-                                placeholder="Application Copyright">{!! settings()->get(set_front('app.copyright')) !!}</textarea>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
                         </div>
                     </form>
-
                 </div>
                 <div class="card-footer text-end">
-                    <button type="submit" class="btn btn-primary" form="app-form">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
                         <li class="fas fa-save mr-1"></li> Save changes
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-6">
+        {{-- struktur_anggota --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'struktur_anggota';
+                $title = 'Struktur Anggota';
+            @endphp
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Meta Data</h3>
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
                 </div>
                 <div class="card-body">
-                    <form class="form-horizontal" id="meta-form">
+                    <form class="form-horizontal" id="{{ $name }}-form">
                         <div class="form-group">
-                            <label class="form-label" for="{{ set_front('meta.author') }}">Author
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
                                 <span class="text-danger">*</span></label>
-                            <input type="text" id="{{ set_front('meta.author') }}" name="author" class="form-control"
-                                placeholder="Meta Author" value="{{ settings()->get(set_front('meta.author')) }}"
-                                required />
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="{{ set_front('meta.keyword') }}">Keyword
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
                                 <span class="text-danger">*</span></label>
-                            <input type="text" id="{{ set_front('meta.keyword') }}" name="keyword"
-                                class="form-control" placeholder="Meta Keyword"
-                                value="{{ settings()->get(set_front('meta.keyword')) }}" required />
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
                         </div>
 
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- kata_alumni --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'kata_alumni';
+                $title = 'Kata Alumni';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- galeri_kegiatan --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'galeri_kegiatan';
+                $title = 'Galeri Kegiatan';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- artikel --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'artikel';
+                $title = 'Artikel';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {{-- sensus --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'sensus';
+                $title = 'Sensus';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">
+                                Sub Judul <span class="text-danger">*</span>
+                            </label>
+                            <textarea id="{{ $s("$name.sub_title") }}" name="sub_title" class="form-control" required rows="3"
+                                placeholder="Sub Judul">{!! settings()->get($s("$name.sub_title")) !!}</textarea>
+                        </div>
 
                         <div class="form-group">
                             <label class="form-label">Image
-                                <span class="badge bg-primary" id="preview_meta_image"
-                                    onclick="viewImage('{{ settings()->get(set_front('meta.image')) }}', 'Meta Image View')">
-                                    view</span>
+                                <span class="badge bg-primary" id="preview_hero_image"
+                                    onclick='viewImage(`{{ settings()->get($s("$name.image")) }}`, `{{ $title }} Image View`)'>
+                                    view
+                                </span>
                             </label>
-                            <input type="file" id="{{ set_front('meta.image') }}" name="image"
+                            <input type="file" accept="image/*" id="{{ $s('hero.image') }}" name="image"
                                 class="form-control" />
                         </div>
 
+
                         <div class="form-group">
-                            <label class="form-label" for="{{ set_front('meta.description') }}">Description
+                            <label class="form-label" for="{{ $s("$name.button_text") }}">Teks Tombol
                                 <span class="text-danger">*</span></label>
-                            <textarea id="{{ set_front('meta.description') }}" name="description" class="form-control" required rows="3"
-                                placeholder="Meta Description Default">{!! settings()->get(set_front('meta.description')) !!}</textarea>
+                            <input type="text" id="{{ $s("$name.button_text") }}" name="button_text"
+                                class="form-control" placeholder="Teks Tombol"
+                                value="{{ settings()->get($s("$name.button_text")) }}" required />
                         </div>
                     </form>
 
                 </div>
                 <div class="card-footer text-end">
-                    <button type="submit" class="btn btn-primary" form="meta-form">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
                         <li class="fas fa-save mr-1"></li> Save changes
                     </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-header d-flex flex-row justify-content-between">
-                    <div class="card-title">Meta Header List</div>
-                    <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
-                        href="#modal-meta_list" onclick="meta_list_add()" data-target="#modal-meta_list"><i
-                            class="fa fa-plus me-2"></i>Add</button>
-                </div>
-                <div class="card-body p-0">
-                    <div class="list-group list-group-flush" id="meta_list-body"> </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     {{-- modal --}}
     <div class="modal fade" id="modal-image">
@@ -178,47 +467,6 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="modal-meta_list">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-content-demo">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="modal-meta_list-title"></h6><button aria-label="Close" class="btn-close"
-                        data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                </div>
-
-                <div class="modal-body">
-
-                    <form action="javascript:void(0)" id="meta_list_form" method="POST">
-                        <input type="hidden" name="id" id="meta_list_id">
-
-                        <div class="form-group">
-                            <label class="form-label" for="meta_list_name">Name
-                                <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="meta_list_name" name="name"
-                                placeholder="Name" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="meta_list_value">Value
-                                <span class="text-danger">*</span></label>
-                            <textarea class="form-control" rows="6" name="value" id="meta_list_value" placeholder="Value" required></textarea>
-                        </div>
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" form="meta_list_form">
-                        <li class="fas fa-save mr-1"></li> Save changes
-                    </button>
-                    <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('javascript')
@@ -230,20 +478,27 @@
     <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
     {{-- select2 --}}
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
-    {{-- icon --}}
+    {{-- mansory --}}
+    <script src="{{ asset('assets/templates/admin/plugins/mansory.min.js') }}"></script>
+
     <script>
         let meta_list_is_edit = true;
         const meta_list = new Map();
         $(document).ready(function() {
-            // insertForm ===================================================================================
-            $('#app-form').submit(function(e) {
+            var msnry = new Masonry(document.querySelector('.grid'), {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer'
+            });
+
+            // Hero ===================================================================================================
+            $('#hero-form').submit(function(e) {
                 const load_el = $(this).parent().parent();
                 e.preventDefault();
                 var formData = new FormData(this);
                 load_el.LoadingOverlay("show");
                 $.ajax({
                     type: "POST",
-                    url: ``,
+                    url: `{{ route(h_prefix('hero')) }}`,
                     data: formData,
                     cache: false,
                     contentType: false,
@@ -256,6 +511,282 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
+
+                        // set foto
+                        $('#preview_hero_image').attr('onclick',
+                            `viewImage('${data.foto}', 'Hero Image View')`);
+                        $(this).find('input[name=image]').val('');
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Hero ===================================================================================================
+            $('#poesaka-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('poesaka')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Visi Dan Misi ==========================================================================================
+            $('#visi_misi-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('visi_misi')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Struktur Anggota =======================================================================================
+            $('#struktur_anggota-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('struktur_anggota')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Kata Alumni ============================================================================================
+            $('#kata_alumni-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('kata_alumni')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Galeri Kegiatan ========================================================================================
+            $('#galeri_kegiatan-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('galeri_kegiatan')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Galeri Kegiatan ========================================================================================
+            $('#artikel-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('artikel')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Sensus =================================================================================================
+            $('#sensus-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('sensus')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+
+                        // set foto
+                        $('#preview_sensus_image').attr('onclick',
+                            `viewImage('${data.foto}', 'Sensus Image View')`);
+                        $(this).find('input[name=image]').val('');
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};

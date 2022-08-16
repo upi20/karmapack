@@ -558,12 +558,12 @@ class PMenuTableSeeder extends Seeder
                 'parent_id' => 397,
                 'title' => 'Front',
                 'icon' => NULL,
-                'route' => 'admin.setting.admin.front',
+                'route' => 'admin.setting.front',
                 'sequence' => 41,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-14 21:52:45',
-                'updated_at' => '2022-08-16 16:16:36',
+                'updated_at' => '2022-08-16 22:41:35',
             ),
             42 => 
             array (
