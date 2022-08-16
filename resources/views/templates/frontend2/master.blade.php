@@ -96,17 +96,30 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/vendors.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/main.css') }}">
 
-
+    <style>
+        #preloader {
+            background: #FFF;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1031;
+        }
+    </style>
     @yield('stylesheet')
 </head>
 
 <body>
 
-    {{-- <!-- preloader start -->
-            <div class="preloader js-preloader">
-                <div class="preloader__bg"></div>
+    <!-- preloader -->
+    @if ($page_attr->loader)
+        <div id="preloader">
+            <div class="d-flex justify-content-center align-items-center flex-column" style="height: 90vh;">
+                <img src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}" style="max-width: 80px;"
+                    alt="logo" />
             </div>
-        <!-- preloader end --> --}}
+        </div>
+    @endif
 
     <!-- barba container start -->
     <div class="barba-container" data-barba="container">
@@ -127,9 +140,17 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
 
     <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend2/js/main.js') }}"></script>
+    <script>
+        $(window).on('load', function() {
+            "use strict";
+            $("#preloader").delay(750).fadeOut('slow');
+        });
+    </script>
     @yield('javascript')
 </body>
 

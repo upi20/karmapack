@@ -9,7 +9,7 @@
                         <h1 data-anim-child="slide-up delay-3" class="masthead__title">
                             Karmapack<br></span>
                         </h1>
-                        <p data-anim-child="slide-up delay-4" class="masthead__text pt-15">
+                        <p data-anim-child="slide-right delay-3" class="masthead__text pt-15">
                             Keluarga mahasiswa dan pelajar cianjur kidul.
                             <br class="md:d-none">
                             Merupakan sebuah organisasi kekeluargaan untuk mewadahi semua mahasiswa dan
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-xl-6 col-lg-6" style="padding-bottom: 0;">
-                    <div data-anim-child="slide-up delay-6" class="masthead__image">
+                    <div data-anim-child="slide-left delay-3" class="masthead__image">
                         <img src="{{ asset('assets/templates/frontend2/img/education.svg') }}" alt="image"
                             style="position: relative; top: 1px;">
                     </div>
@@ -31,18 +31,18 @@
     </section>
 
     <!-- daftar poesaka -->
-    <section class="layout-pt-md layout-pb-md " style="background-color: #bfcae6;">
+    <section class="layout-pt-md layout-pb-md " style="background-color: #bfcae6;" data-anim-wrap>
         <div class="container">
             <div class="row y-gap-20 justify-between items-center">
                 <div class="col-xl-7 col-lg-8">
-                    <h2 class="text-30 lh-15 text-white">
+                    <h2 class="text-30 lh-15 text-white" data-anim-child="slide-right delay-3">
                         Bergabung dengan kami <span class="text-dark-1"> lebih dari ratusan alumni
                             mahasiswa dan pelajar
                         </span> dari cianjur kidul
                     </h2>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto" data-anim-child="slide-left delay-3">
                     <a href="#" class="button -md -outline-dark-1 -rounded text-dark-1">Daftar
                         Poesaka</a>
                 </div>
@@ -51,15 +51,15 @@
     </section>
 
     <!-- visi dan misi -->
-    <section class="layout-pt-lg layout-pb-lg">
+    <section class="layout-pt-lg layout-pb-lg" data-anim-wrap>
         <div class="container">
             <div class="row y-gap-30 justify-between items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-anim-child="slide-right delay-3">
                     <img class="w-1/1" src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
                         style="max-width: 500px;">
                 </div>
 
-                <div class="col-xl-5 col-lg-6 col-md-9">
+                <div class="col-xl-5 col-lg-6 col-md-9" data-anim-child="slide-left delay-3">
                     <h3 class="text-24 lh-15">Visi dan Misi</h3>
                     <p class="sectionTitle__text ">Kabinet {{ $periode->nama }} Periode
                         {{ $periode->dari }}-{{ $periode->sampai }}</p>
@@ -84,9 +84,9 @@
 
     @if ($anggota->count())
         <!-- struktur -->
-        <section class="layout-pt-lg layout-pb-lg bg-light-4">
+        <section class="layout-pt-lg layout-pb-lg bg-light-4" data-anim-wrap>
             <div class="container">
-                <div class="row y-gap-15 justify-between items-end">
+                <div class="row y-gap-15 justify-between items-end" data-anim-child="slide-up delay-3">
                     <div class="col-lg-6">
                         <div class="sectionTitle ">
                             <h2 class="sectionTitle__title ">Struktur Anggota Kepengurusan</h2>
@@ -107,7 +107,7 @@
 
                 <div class="pt-60 lg:pt-40 js-section-slider" data-gap="30" data-pagination="js-students-slider-pagination"
                     data-nav-prev="js-students-slider-prev" data-nav-next="js-students-slider-next"
-                    data-slider-cols="xl-4 lg-3 md-2">
+                    data-slider-cols="xl-4 lg-3 md-2" data-anim-child="slide-left delay-3">
                     <div class="swiper-wrapper">
 
                         {{-- anggota item --}}
@@ -170,9 +170,9 @@
     @endif
 
     <!-- kata alumni -->
-    <section class="layout-pt-lg layout-pb-lg bg-dark-5">
+    <section class="layout-pt-lg layout-pb-lg bg-dark-5" data-anim-wrap>
         <div class="container">
-            <div class="row justify-center text-center">
+            <div class="row justify-center text-center" data-anim-child="slide-up delay-3">
                 <div class="col-auto">
                     <div class="sectionTitle ">
                         <h2 class="sectionTitle__title text-white">Kata Alumni</h2>
@@ -183,12 +183,11 @@
                 </div>
             </div>
 
-            <div class="pt-60 lg:pt-50 js-section-slider" data-gap="30" data-pagination data-slider-cols="xl-2"
-                data-anim-wrap>
+            <div class="pt-60 lg:pt-50 js-section-slider" data-gap="30" data-pagination data-slider-cols="xl-2">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <div data-anim-child="slide-left delay-1" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                        <div data-anim-child="slide-left delay-3" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                             <div class="row y-gap-30 md:text-center md:justify-center">
                                 <div class="col-md-auto">
                                     <div class="testimonials__image">
@@ -212,7 +211,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-anim-child="slide-left delay-1" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                        <div data-anim-child="slide-left delay-3" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                             <div class="row y-gap-30 md:text-center md:justify-center">
                                 <div class="col-md-auto">
                                     <div class="testimonials__image">
@@ -236,7 +235,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-anim-child="slide-left delay-1" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                        <div data-anim-child="slide-left delay-3" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                             <div class="row y-gap-30 md:text-center md:justify-center">
                                 <div class="col-md-auto">
                                     <div class="testimonials__image">
@@ -260,7 +259,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-anim-child="slide-left delay-1" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                        <div data-anim-child="slide-left delay-3" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                             <div class="row y-gap-30 md:text-center md:justify-center">
                                 <div class="col-md-auto">
                                     <div class="testimonials__image">
@@ -284,7 +283,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div data-anim-child="slide-left delay-1" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                        <div data-anim-child="slide-left delay-3" class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                             <div class="row y-gap-30 md:text-center md:justify-center">
                                 <div class="col-md-auto">
                                     <div class="testimonials__image">
@@ -310,7 +309,7 @@
 
                 </div>
 
-                <div class="d-flex justify-center x-gap-15 items-center pt-60 lg:pt-40">
+                <div class="d-flex justify-center x-gap-15 items-center pt-60 lg:pt-40" data-anim="slide-up delay-3">
                     <div class="col-auto">
                         <button class="d-flex items-center text-24 arrow-left-hover js-prev">
                             <i class="icon text-white icon-arrow-left"></i>
@@ -329,19 +328,19 @@
         </div>
     </section>
 
-    <section class="layout-pt-md layout-pb-md bg-beige-1">
+    <section class="layout-pt-md layout-pb-md bg-beige-1" data-anim-wrap>
         <div class="container">
-            <div data-anim-wrap class="row y-gap-30">
+            <div class="row y-gap-30">
 
                 <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-1" class="counter -type-1">
+                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
                         <div class="counter__number text-dark-1">19+</div>
                         <div class="counter__title text-light-1">Tahun Lebih Berdiri</div>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-2" class="counter -type-1">
+                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
                         <div class="counter__number text-dark-1">1000+</div>
                         <div class="counter__title text-light-1">Anggota</div>
                     </div>
@@ -355,7 +354,7 @@
                 </div>
 
                 <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-4" class="counter -type-1">
+                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
                         <div class="counter__number text-dark-1">700+</div>
                         <div class="counter__title text-light-1">Kecamatan</div>
                     </div>
@@ -366,10 +365,10 @@
     </section>
 
     <!-- galeri kegiatan -->
-    <section class="layout-pt-lg layout-pb-lg bg-light-3">
+    <section class="layout-pt-lg layout-pb-lg bg-light-3" data-anim-wrap>
         <div class="container">
             <div class="row y-gap-15 justify-between items-end">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-anim="slide-right delay-3">
 
                     <div class="sectionTitle ">
 
@@ -381,7 +380,7 @@
 
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto" data-anim="slide-left delay-3">
                     <div class="d-flex justify-center x-gap-15 items-center">
                         <div class="col-auto">
                             <button class="d-flex items-center text-24 arrow-left-hover js-events-slider-prev">
@@ -405,7 +404,7 @@
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <div data-anim="slide-left delay-2" class="eventCard -type-1">
+                        <div data-anim="slide-left delay-3" class="eventCard -type-1">
                             <div class="eventCard__img">
                                 <img src="{{ asset('assets/templates/frontend2/img/home-2/events/1.png') }}"
                                     alt="image">
@@ -471,7 +470,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div data-anim="slide-left delay-4" class="eventCard -type-1">
+                        <div data-anim="slide-left delay-3" class="eventCard -type-1">
                             <div class="eventCard__img">
                                 <img src="{{ asset('assets/templates/frontend2/img/home-2/events/3.png') }}"
                                     alt="image">
@@ -504,7 +503,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div data-anim="slide-left delay-5" class="eventCard -type-1">
+                        <div data-anim="slide-left delay-3" class="eventCard -type-1">
                             <div class="eventCard__img">
                                 <img src="{{ asset('assets/templates/frontend2/img/home-2/events/4.png') }}"
                                     alt="image">
@@ -537,7 +536,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div data-anim="slide-left delay-6" class="eventCard -type-1">
+                        <div data-anim="slide-left delay-3" class="eventCard -type-1">
                             <div class="eventCard__img">
                                 <img src="{{ asset('assets/templates/frontend2/img/home-2/events/5.png') }}"
                                     alt="image">
@@ -570,7 +569,7 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div data-anim="slide-left delay-7" class="eventCard -type-1">
+                        <div data-anim="slide-left delay-3" class="eventCard -type-1">
                             <div class="eventCard__img">
                                 <img src="{{ asset('assets/templates/frontend2/img/home-2/events/6.png') }}"
                                     alt="image">
@@ -605,7 +604,7 @@
                 </div>
             </div>
 
-            <div class="row pt-60 lg:pt-40">
+            <div class="row pt-60 lg:pt-40" data-anim="slide-right delay-3">
                 <div class="col-auto">
                     <a href="#" class="button -icon -outline-purple-1 text-purple-1 fw-500">
                         View All Events
@@ -619,8 +618,8 @@
     <!-- blog dan artikel -->
     <section class="layout-pt-md layout-pb-lg">
         <div data-anim-wrap class="container">
-            <div data-anim-child="slide-left delay-1" class="row y-gap-20 justify-between items-center">
-                <div class="col-lg-6">
+            <div class="row y-gap-20 justify-between items-center">
+                <div class="col-lg-6"data-anim-child="slide-right delay-3">
 
                     <div class="sectionTitle ">
 
@@ -632,7 +631,7 @@
 
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto" data-anim-child="slide-left delay-3">
 
                     <a href="#" class="button -icon -purple-3 text-purple-1">
                         Browse Blog
@@ -645,7 +644,7 @@
             <div class="row y-gap-30 pt-50">
 
                 <div class="col-lg-4 col-md-6">
-                    <div data-anim-child="slide-left delay-2" class="blogCard -type-1">
+                    <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
                         <div class="blogCard__image">
                             <img src="{{ asset('assets/templates/frontend2/img/blog/1.png') }}" alt="image">
                         </div>
@@ -677,7 +676,7 @@
                     <div class="row y-gap-30">
 
                         <div class="col-lg-12 col-md-6">
-                            <a href="#" data-anim-child="slide-left delay-4" class="eventCard -type-4">
+                            <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
                                 <div class="eventCard__date bg-light-7 mr-20">
                                     <span class="text-30 lh-1 fw-700">15</span>
                                     <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
@@ -691,7 +690,7 @@
                         </div>
 
                         <div class="col-lg-12 col-md-6">
-                            <a href="#" data-anim-child="slide-left delay-5" class="eventCard -type-4">
+                            <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
                                 <div class="eventCard__date bg-light-7 mr-20">
                                     <span class="text-30 lh-1 fw-700">15</span>
                                     <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
@@ -705,7 +704,7 @@
                         </div>
 
                         <div class="col-lg-12 col-md-6">
-                            <a href="#" data-anim-child="slide-left delay-6" class="eventCard -type-4">
+                            <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
                                 <div class="eventCard__date bg-light-7 mr-20">
                                     <span class="text-30 lh-1 fw-700">15</span>
                                     <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
@@ -719,7 +718,7 @@
                         </div>
 
                         <div class="col-lg-12 col-md-6">
-                            <a href="#" data-anim-child="slide-left delay-7" class="eventCard -type-4">
+                            <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
                                 <div class="eventCard__date bg-light-7 mr-20">
                                     <span class="text-30 lh-1 fw-700">15</span>
                                     <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
@@ -739,12 +738,12 @@
     </section>
 
     <!-- Sensus anggota -->
-    <section class="layout-pt-lg layout-pb-lg bg-purple-1 relative">
-        <div class="side-image pr-25 lg:d-none">
+    <section class="layout-pt-lg layout-pb-lg bg-purple-1 relative" data-anim-wrap>
+        <div class="side-image pr-25 lg:d-none" data-anim-child="slide-left delay-3">
             <img src="{{ asset('assets/templates/frontend2/img/home-5/cta/img.png') }}" alt="image">
         </div>
 
-        <div data-anim-wrap class="container">
+        <div data-anim-wrap class="container" data-anim-child="slide-up delay-3">
             <div class="row">
                 <div class="col-xl-8 col-lg-6">
 

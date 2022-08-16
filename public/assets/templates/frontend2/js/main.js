@@ -1219,7 +1219,7 @@
                 const el = animationTarget[i];
 
                 new ScrollMagic.Scene({
-                    offset: '350px',
+                    offset: '10px',
                     triggerElement: el,
                     triggerHook: "onEnter",
                     reverse: false,
@@ -1243,7 +1243,7 @@
                 const el = animationContainer[i];
 
                 new ScrollMagic.Scene({
-                    offset: '350px',
+                    offset: '10px',
                     triggerElement: el,
                     triggerHook: "onEnter",
                     reverse: false,
