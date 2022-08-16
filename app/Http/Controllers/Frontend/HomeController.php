@@ -28,7 +28,6 @@ class HomeController extends Controller
     {
         $request = $request ? $request : request();
         $page_attr = [
-            'loader' => false,
             'periode_id' => $model->id,
             'navigation' => 'home',
         ];

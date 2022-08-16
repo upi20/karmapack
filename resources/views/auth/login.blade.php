@@ -111,7 +111,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                 <div class="container-login100">
                     <div class="wrap-login100 p-6" style="border-radius: 24px; box-shadow: none">
                         <div class="text-center">
-                            <img src="{{ asset('assets/templates/admin/images/brand/logo-white.png') }}"
+                            <img src="{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}"
                                 class="header-brand-img" alt="Logo Karmapack" id="logo">
                         </div>
                         <p class="text-center mt-5">Sistem Informasi Anggota (SIA)</p>
@@ -157,15 +157,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                 </div>
                 <!-- CONTAINER CLOSED -->
                 <div class="col col-login mx-auto">
-                    <div class="text-center d-md-flex  justify-content-center">
-                        <div>
-                            © <span id="year"></span> Karmapack.
-                        </div>
-                        <div>
-                            Persembahan Dari <a href="{{ url('iseplutpinur') }}" class="text-light">Isep Lutpi
-                                Nur</a> Bidang Kominfo.
-                        </div>
-                    </div>
+                    <div class="text-center d-md-flex  justify-content-center"> {!! str_parse(settings()->get(set_admin('app.copyright'))) !!}</div>
                 </div>
             </div>
         </div>

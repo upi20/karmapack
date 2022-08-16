@@ -4,7 +4,7 @@
             <div class="row y-gap-20 justify-between items-center">
                 <div class="col-auto">
                     <div class="footer-header__logo">
-                        <img src="{{ asset('assets/templates/admin/images/brand/logo-hd.png') }}" alt="logo"
+                        <img src="{{ asset(settings()->get(set_front('app.foto_light_landscape_mode'))) }}" alt="logo"
                             style="width: 230px">
                     </div>
                 </div>
@@ -95,8 +95,7 @@
 
         <div class="py-30 border-top-light-15">
             <div class="d-md-flex items-center h-100 text-white">
-                © 2022 Karmapack. Persembahan Dari <a class="text-purple-1 px-3" href="{{ url('iseplutpinur') }}">Isep
-                    Lutpi Nur</a> Bidang Kominfo.
+                {!! str_parse(settings()->get(set_front('app.copyright'))) !!}
             </div>
         </div>
     </div>

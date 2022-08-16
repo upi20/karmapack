@@ -90,11 +90,11 @@
     src: url("../fonts/font/GT-Walsheim-Pro-Medium.woff2") format("woff2");
 }
 
-@font-face {
+/* @font-face {
     font-family: 'GT Walsheim Pro';
     font-weight: 600;
     src: url("../fonts/font/GT-Walsheim-Pro-Semi-Bold.html") format("woff2");
-}
+} */
 
 @font-face {
     font-family: 'GT Walsheim Pro';

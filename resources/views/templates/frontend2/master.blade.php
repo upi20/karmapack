@@ -1,18 +1,18 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
+    'description' => isset($page_attr['description']) ? $page_attr['description'] : settings()->get(set_front('meta.description')),
+    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : settings()->get(set_front('meta.keyword')),
+    'author' => isset($page_attr['author']) ? $page_attr['author'] : settings()->get(set_front('meta.author')),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(settings()->get(set_front('meta.image'))),
+    'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_front('app.preloader')),
+    'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
     'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
     'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
-    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : true,
-    'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
-    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
-    'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
-    'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
-    'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
     'periode_id' => isset($page_attr['periode_id']) ? $page_attr['periode_id'] : false,
 ];
-$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
+$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_front('app.title'), env('APP_NAME'));
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 $master_helper = new \App\Helpers\Frontend\Template\Master($page_attr->periode_id);
 $getSosmed_val = $master_helper->getSosmed();
@@ -88,13 +88,13 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet"
-        href="{{ asset('assets/templates/frontend2/assets/font-awesome/5.15.4/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.css') }}" /> --}}
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/vendors.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/main.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/frontend2/assets/font-awesome/5.15.4/css/all.min.css') }}" />
 
     <style>
         #preloader {
@@ -107,6 +107,11 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         }
     </style>
     @yield('stylesheet')
+
+    @foreach (json_decode(settings()->get(set_front('meta_list'), '{}')) as $meta)
+        <!-- custom {{ $meta->name }} -->
+        {!! $meta->value !!}
+    @endforeach
 </head>
 
 <body>
@@ -114,7 +119,8 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <!-- preloader -->
     @if ($page_attr->loader)
         <div id="preloader">
-            <div class="d-flex justify-content-center align-items-center flex-column" style="height: 90vh;">
+            <div class="d-flex justify-content-center align-items-center flex-column bg-dark-1"
+                style="height: 100vh;">
                 <img src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}" style="max-width: 80px;"
                     alt="logo" />
             </div>
@@ -140,16 +146,26 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.js') }}"></script> --}}
     <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend2/js/main_v2.js') }}"></script>
     <script>
+        const preload_container = $("#preloader");
         $(window).on('load', function() {
             "use strict";
-            $("#preloader").delay(750).fadeOut('slow');
+            preload_container.delay(750).fadeOut('slow');
         });
+
+        (function pulse(back) {
+            const img_el = preload_container.find('img');
+            img_el.animate({
+                'font-size': (back) ? '100px' : '140px',
+                opacity: (back) ? 1 : 0.5
+            }, 700, function() {
+                pulse(!back)
+            });
+        })(false);
     </script>
     @yield('javascript')
 </body>

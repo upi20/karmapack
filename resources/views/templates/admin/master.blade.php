@@ -8,6 +8,8 @@ $page_attr = (object) [
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
     'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_admin('app.preloader')),
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
+    'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
+    'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_admin('app.title'), env('APP_NAME'));
 ?>
