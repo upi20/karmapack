@@ -144,7 +144,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend2/js/main.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend2/js/main_v2.js') }}"></script>
     <script>
         $(window).on('load', function() {
             "use strict";
