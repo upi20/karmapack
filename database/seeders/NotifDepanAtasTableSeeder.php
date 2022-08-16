@@ -25,11 +25,11 @@ class NotifDepanAtasTableSeeder extends Seeder
                 'nama' => 'Situs ini masih dalam masa pengembangan.',
                 'deskripsi' => 'Situs ini masih dalam masa pengembangan.',
                 'dari' => '2022-08-02',
-                'sampai' => '2022-08-07',
+                'sampai' => NULL,
                 'link' => NULL,
                 'link_nama' => NULL,
                 'created_at' => '2022-08-08 22:37:14',
-                'updated_at' => '2022-08-08 22:58:55',
+                'updated_at' => '2022-08-16 02:22:49',
             ),
             1 => 
             array (

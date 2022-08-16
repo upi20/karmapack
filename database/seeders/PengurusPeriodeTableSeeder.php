@@ -41,24 +41,24 @@ Cianjru Kidul
 ',
                 'status' => 0,
                 'created_at' => '2022-04-14 08:31:00',
-                'updated_at' => '2022-07-15 15:25:17',
+                'updated_at' => '2022-08-16 16:44:16',
             ),
             1 => 
             array (
                 'id' => 6,
                 'nama' => 'Kabinet Sauyunan',
-                'foto' => 'iconkabinet-sa20220715162230.png',
+                'foto' => 'iconkabinet-sa20220816164522.png',
                 'dari' => '2022',
                 'sampai' => '2023',
                 'slug' => 'kabinet-sauyunan',
                 'slogan' => '-',
-                'visi' => '<p>-</p>
+                'visi' => '<p>"Terwujudnya KARMAPACK dan masyarakat Cianjur Kidul yang menjungjung tinggi nilai, dan norma agama, sosial serta budaya lokal."<br></p>
 ',
-                'misi' => '<p>-</p>
+                'misi' => '<p>1. Meningkatkan pemahaman dan pengalaman keagamaan bagi anggota KARMAPACK dan masyarakat Cianjru Kidul<br>2. Melakukan pengabdian kepada masyarakat<br>3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan<br></p>
 ',
                 'status' => 1,
                 'created_at' => '2022-07-15 15:25:06',
-                'updated_at' => '2022-07-15 16:22:30',
+                'updated_at' => '2022-08-16 16:45:22',
             ),
         ));
         
