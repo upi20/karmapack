@@ -162,7 +162,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
                 @yield('content', '')
                 @include('templates.frontend2.body.footer', $compact)
             </div>
-            <div>
+            <div style="display: none">
                 <div id="back-to-top" class="span bg-dark-1 p-20">
                     <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
                 </div>

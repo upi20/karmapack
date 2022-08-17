@@ -86,23 +86,8 @@ $notifikasi = notif_depan_atas();
         media="all">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/simple-line-icons.css') }}" type="text/css"
         media="all">
-
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/style.css') }}" type="text/css"
         media="all">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/vendors.css') }}" type="text/css"
-        media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/main.css') }}" type="text/css"
-        media="all">
-
-
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -197,60 +182,31 @@ $notifikasi = notif_depan_atas();
             </div>
         </div>
     @endif
+    <br>
 
-    <!-- site wrapper -->
-    <div class="site-wrapper">
+    {{-- header template --}}
+    @include('templates.frontend.body.header', [
+        'list_sosmed' => $getSosmed_val,
+        'page_attr_navigation' => $page_attr->navigation,
+        'menu_bidang' => $menuBidang_val,
+    ])
 
-        <div class="main-overlay"></div>
-        @if ($notifikasi)
-            @foreach ($notifikasi as $v)
-                <div class="alert alert-secondary alert-dismissible fade show m-0" role="alert">
-                    <div class="container d-flex justify-content-between align-items-center">
-                        <strong>{{ $v->deskripsi }}
-                            @if ($v->link)
-                                <a href="{{ $v->link }}">{{ $v->link_nama }}</a>
-                            @endif
-                        </strong>
+    @yield('udnder_header')
 
-                        <button type="button" class="btn text-dark" data-bs-dismiss="alert" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="fas fa-times" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-                                <path fill-rule="evenodd"
-                                    d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            @endforeach
-        @endif
-        <br>
+    <!-- section main content -->
+    <div class="w-100 py-5 mb-5 mt-0">
+        <section class="main-content mt-0">
+            @yield('content', '')
+        </section>
+    </div>
 
+    @include('templates.frontend.body.instagram', [
+        'footerInstagram' => $footerInstagram_val,
+    ])
 
-        {{-- header template --}}
-        @include('templates.frontend.body.header', [
-            'list_sosmed' => $getSosmed_val,
-            'page_attr_navigation' => $page_attr->navigation,
-            'menu_bidang' => $menuBidang_val,
-        ])
-
-        @yield('udnder_header')
-
-        <!-- section main content -->
-        <div class="w-100 py-50 mb-5 mt-0">
-            <section class="main-content mt-0">
-                @yield('content', '')
-            </section>
-        </div>
-
-        {{-- @include('templates.frontend.body.instagram', [
-            'footerInstagram' => $footerInstagram_val,
-        ]) --}}
-
-        @include('templates.frontend.body.footer2', [
-            'list_sosmed' => $getSosmed_val,
-        ])
+    @include('templates.frontend.body.footer', [
+        'list_sosmed' => $getSosmed_val,
+    ])
 
     </div><!-- end site wrapper -->
 
