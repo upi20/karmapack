@@ -105,6 +105,28 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
             top: 0;
             z-index: 1031;
         }
+
+        #back-to-top {
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1030;
+            height: 50px;
+            width: 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-color .1s linear;
+            -moz-transition: background-color .1s linear;
+            -webkit-transition: background-color .1s linear;
+            -o-transition: background-color .1s linear;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: #FFF 3px solid;
+        }
     </style>
     @yield('stylesheet')
 
@@ -140,6 +162,12 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
                 @yield('content', '')
                 @include('templates.frontend2.body.footer', $compact)
             </div>
+            <div>
+                <div id="back-to-top" class="span bg-dark-1 p-20">
+                    <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
+                </div>
+            </div>
+
         </main>
     </div>
     <!-- barba container end -->
@@ -166,6 +194,25 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
                 pulse(!back)
             });
         })(false);
+
+        const btn_scroll = $('#back-to-top');
+
+        $(window).scroll(function() {
+            // position
+            const p = $(window).scrollTop();
+
+            if (p >= 100) btn_scroll.parent().fadeIn();
+            else btn_scroll.parent().fadeOut();
+
+            // document height
+            const d_height = $(document).height() - $(window).height();
+        });
+
+        btn_scroll.click(() => {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+        })
     </script>
     @yield('javascript')
 </body>
