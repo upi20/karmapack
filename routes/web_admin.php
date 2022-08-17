@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KataAlumniController;
 
 // Address ============================================================================================================
@@ -24,7 +24,8 @@ use App\Http\Controllers\Admin\Address\VillageController;
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
-// Pengurus ============================================================================================================
+
+// Pengurus ===========================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
 use App\Http\Controllers\Admin\Pengurus\JabatanMemberController;
@@ -35,7 +36,7 @@ use App\Http\Controllers\Admin\Profile\PendidikanJenisController;
 
 // Pendaftaran ========================================================================================================
 use App\Http\Controllers\Admin\PendaftaranController;
-use App\Http\Controllers\Admin\Pendaftaran\SensusController as SensusControllerAdmin;
+use App\Http\Controllers\Admin\Pendaftaran\SensusController;
 
 // User Access ========================================================================================================
 use App\Http\Controllers\Admin\UserAccess\PermissionController;
@@ -51,10 +52,25 @@ use App\Http\Controllers\Admin\Setting\FrontController;
 use App\Http\Controllers\Admin\Setting\HomeController;
 
 // Utility ============================================================================================================
+use App\Http\Controllers\Admin\Utility\HariBesarNasionalController;
 use App\Http\Controllers\Admin\Utility\NotifDepanAtasController;
 
+
 $name = 'admin';
-Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name("$name.dashboard")->middleware("permission:$name.dashboard");
+$prefix = 'dashboard';
+Route::group(
+    [
+        'prefix' => $prefix,
+        'middleware' => "permission:$name.$prefix",
+        'controller' => DashboardController::class
+    ],
+    function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.dashboard
+        Route::get('/', 'index')->name($name);
+        Route::get('/ulang_tahun', 'ulang_tahun')->name("$name.ulang_tahun");
+        Route::get('/hbn', 'hbn')->name("$name.hbn");
+    }
+);
 
 $prefix = 'user';
 Route::controller(UserController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
@@ -265,7 +281,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     });
 
     $prefix = 'sensus';
-    Route::controller(SensusControllerAdmin::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    Route::controller(SensusController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.pendaftaran.sensus
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
@@ -289,12 +305,23 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.utility
     $prefix = 'notif_depan_atas';
     Route::controller(NotifDepanAtasController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // admin.pendaftaran.notif_depan_atas
+        $name = "$name.$prefix"; // admin.utility.notif_depan_atas
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
         Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+    });
+
+    $prefix = 'hari_besar_nasional';
+    Route::controller(HariBesarNasionalController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.utility.hari_besar_nasional
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        Route::get('/list_error', 'list_error')->name("$name.list_error")->middleware("permission:$name");
     });
 });
 

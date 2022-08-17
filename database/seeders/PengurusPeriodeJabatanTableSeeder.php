@@ -743,9 +743,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
-                'role_id' => 7,
+                'role_id' => 1,
                 'created_at' => NULL,
-                'updated_at' => '2022-08-08 20:33:54',
+                'updated_at' => '2022-08-17 14:35:07',
             ),
             40 => 
             array (
@@ -763,9 +763,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
-                'role_id' => 8,
+                'role_id' => 1,
                 'created_at' => NULL,
-                'updated_at' => '2022-08-08 20:31:56',
+                'updated_at' => '2022-08-17 14:35:13',
             ),
             41 => 
             array (
@@ -783,9 +783,9 @@ class PengurusPeriodeJabatanTableSeeder extends Seeder
 ',
                 'slogan' => 'Hebat',
                 'status' => 1,
-                'role_id' => 3,
+                'role_id' => 1,
                 'created_at' => NULL,
-                'updated_at' => '2022-08-08 21:04:21',
+                'updated_at' => '2022-08-17 14:35:19',
             ),
             42 => 
             array (

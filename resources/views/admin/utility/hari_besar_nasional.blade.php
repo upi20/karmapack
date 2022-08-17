@@ -20,15 +20,76 @@
                     @endif
                 </div>
                 <div class="card-body">
+
+                    <div class="panel-group" id="error_list_container" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default active mb-2">
+                            <div class="panel-heading " role="tab" id="headingOne1">
+                                <h4 class="panel-title">
+                                    <a role="button" class="fw-bold text-danger" data-bs-toggle="collapse"
+                                        data-bs-parent="#error_list_container" href="#error_list" aria-expanded="true"
+                                        aria-controls="error_list">
+                                        Error (Tanggal untuk tahun ini belum di tentukan)
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="error_list" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne1">
+                                <div class="panel-body">
+                                    <div class="list-group list-group-flush" id="error_list_body">
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default active mb-2">
+                            <div class="panel-heading " role="tab" id="headingOne1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        Filter Data
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne1">
+                                <div class="panel-body">
+                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                        <div class="form-group float-start me-2">
+                                            <label for="filter_type">Type tanggal</label>
+                                            <select class="form-control" id="filter_type" name="filter_type"
+                                                style="max-width: 200px">
+                                                <option value="">Semua</option>
+                                                <option value="1">Tetap</option>
+                                                <option value="0">Tidak Tetap</option>
+                                            </select>
+                                        </div>
+
+                                    </form>
+                                    <div style="clear: both"></div>
+                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                        data-toggle="tooltip" title="Refresh Filter Table">
+                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="table-responsive table-striped">
                         <table class="table table-bordered  border-bottom" id="tbl_main">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Detail</th>
+                                    <th>Tanggal</th>
+                                    <th>Countdown</th>
+                                    <th>Type</th>
+                                    <th>Keterangan</th>
                                     {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
                             </thead>
@@ -51,53 +112,59 @@
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="nama" name="nama"
-                                        placeholder="Enter Nama" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="link">Link </label>
-                                    <input type="url" class="form-control" id="link" name="link"
-                                        placeholder="Enter Link" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="link_nama">Link Nama </label>
-                                    <input type="text" class="form-control" id="link_nama" name="link_nama"
-                                        placeholder="Enter Link nama" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="dari">Dari Tanggal
-                                        <span class="text-danger">*</span></label>
-                                    <input type="date" class="form-control" id="dari" name="dari"
-                                        placeholder="Dari Tanggal" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="sampai">Sampai Tanggal
-                                        <span class="text-danger">*</span> <span class="badge bg-success"
-                                            onclick="$('#sampai').val('')">Reset</span></label>
-                                    <input type="date" class="form-control" id="sampai" name="sampai"
-                                        placeholder="Sampai Tanggal" />
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="form-label" for="deskripsi">Deskripsi</label>
-                                    <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                        placeholder="Enter Deskripsi"> </textarea>
-                                </div>
-                            </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="type">Type Tanggal</label>
+                            <select class="form-control" style="width: 100%;" required="" id="type"
+                                name="type">
+                                <option value="1">Tetap</option>
+                                <option value="0">Tidak Tidak</option>
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Enter Nama" required="" />
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="hari">Tanggal
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" min="1" max="31" class="form-control"
+                                        id="hari" name="hari" placeholder="Tanggal" required />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="bulan">Bulan
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" min="1" max="12" class="form-control"
+                                        id="bulan" name="bulan" placeholder="Bulan" required />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-label" for="tahun">Tahun </label>
+                                    <input type="number" min="2020" max="9999" class="form-control"
+                                        id="tahun" name="tahun" placeholder="Tahun" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="keterangan">Keterangan</label>
+                            <textarea type="text" class="form-control" rows="3" id="keterangan" name="keterangan"
+                                placeholder="Enter Deskripsi"> </textarea>
+                        </div>
+
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -153,6 +220,9 @@
         const table_html = $('#tbl_main');
         let isEdit = true;
         $(document).ready(function() {
+            $('#type').change(() => {
+                refreshType();
+            });
 
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -171,7 +241,9 @@
                 type: 'GET',
                 ajax: {
                     url: "{{ route(h_prefix()) }}",
-                    data: function(d) {}
+                    data: function(d) {
+                        d['filter[type]'] = $('#filter_type').val();
+                    }
                 },
                 columns: [{
                         data: null,
@@ -183,22 +255,28 @@
                         name: 'nama'
                     },
                     {
-                        data: 'dari_str',
-                        name: 'dari'
+                        data: 'tanggal_str',
+                        name: 'tanggal'
                     },
                     {
-                        data: 'sampai_str',
-                        name: 'sampai'
+                        data: 'countdown',
+                        name: 'countdown',
+                        render(data, type, full, meta) {
+                            return data == 0 ? 'Hari ini' : `${data} Hari Lagi`;
+                        },
+                    },
+                    {
+                        data: 'type_str',
+                        name: 'type'
                     },
                     {
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
+                            return full.keterangan ? ` <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
-                                `;
+                                ` : '';
                         },
                     },
                     ...(can_update || can_delete ? [{
@@ -217,7 +295,7 @@
                     }] : []),
                 ],
                 order: [
-                    [3, 'desc']
+                    [3, 'asc']
                 ]
             });
 
@@ -266,6 +344,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
+                        list_error();
 
                     },
                     error: function(data) {
@@ -293,6 +372,7 @@
         });
 
         function add() {
+            refreshType();
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
             $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
@@ -320,13 +400,15 @@
                     $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
-                    $('#dari').val(data.dari);
-                    $('#sampai').val(data.sampai);
-                    $('#link').val(data.link);
-                    $('#link_nama').val(data.link_nama);
-                    $('#deskripsi').val(data.deskripsi);
-                    $('#link').val(data.link);
+
+                    $('#hari').val(data.hari);
+                    $('#bulan').val(data.bulan);
+                    $('#tahun').val(data.tahun);
+
+                    $('#type').val(data.type);
                     $('#nama').val(data.nama);
+                    $('#keterangan').val(data.keterangan);
+                    refreshType();
                 },
                 error: function(data) {
                     Swal.fire({
@@ -379,6 +461,7 @@
                             })
                             var oTable = table_html.dataTable();
                             oTable.fnDraw(false);
+                            list_error();
                         },
                         complete: function() {
                             swal.hideLoading();
@@ -406,13 +489,8 @@
                 success: (data) => {
                     $("#modal-detail").modal('show');
                     $("#modal-detail-body").html(`
-                    <h4>Deskripsi</h4>
-                    <p>${data.deskripsi}</p>
-
-                    <h4>Link</h4>
-                    <a href="${data.link}">${data.link}</a>
-                    <h4>Link Nama</h4>
-                    <p>${data.link_nama}</p>
+                    <h4>Keterangan</h4>
+                    <p>${data.keterangan}</p>
                     `);
                 },
                 error: function(data) {
@@ -440,5 +518,50 @@
                 timer: 1000
             });
         }
+
+
+        function refreshType() {
+            const type = $('#type').val();
+            const tahun = $('#tahun');
+            if (type == 1) {
+                tahun.removeAttr('required');
+            } else {
+                tahun.attr('required', true);
+            }
+        }
+
+        function list_error() {
+            $.get(`{{ route(h_prefix('list_error')) }}`, function(data) {
+                const body = $('#error_list_body');
+                const container = $('#error_list_container');
+                if (data.length > 0) {
+                    body.html('');
+                    container.fadeIn();
+
+                    data.forEach(e => {
+                        body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex w-100">
+                                            <h5 class="mb-1">${e.nama}</h5>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-primary btn-sm" onclick="editFunc('${e.id}')">
+                                            <i class="fas fa-edit"></i> Perbaiki</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteFunc('${e.id}')">
+                                            <i class="fa fa-trash"></i> Hapus</button>
+                                    </div>
+                                </div>`);
+                    });
+
+                } else {
+                    container.fadeOut();
+                }
+
+            });
+        };
+
+        list_error();
     </script>
 @endsection

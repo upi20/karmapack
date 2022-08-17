@@ -101,6 +101,7 @@ class backup extends Command
             ],
             'utility' => [
                 'notif_depan_atas',
+                'hari_besar_nasionals',
             ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');

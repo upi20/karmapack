@@ -52,6 +52,69 @@
         </div>
     </div>
     <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="javascript:void(0)" id="FilterForm" class="d-flex flex-row align-items-end">
+                <div class="form-group">
+                    <label for="limit">Maksimal Jumlah Hari</label>
+                    <input class="form-control" type="number" min="1" name="limit" id="limit" max="366"
+                        value="7">
+                </div>
+
+                <div class="ms-2 mb-4">
+                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info" data-toggle="tooltip"
+                        title="Refresh Filter">
+                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <!-- ROW CLOSED -->
+    <div class="row">
+
+        <div class="col-lg-6" id="hbn_container">
+            <div class="card m-lg-0">
+                <div class="card-status bg-blue br-te-7 br-ts-7"></div>
+                <div class="card-header">
+                    <h3 class="card-title">Hari Besar Nasional Terdekat</h3>
+                    <div class="card-options">
+                        <a href="javascript:void(0)" class="card-options-collapse" data-bs-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="javascript:void(0)" class="card-options-remove" data-bs-toggle="card-remove"><i
+                                class="fe fe-x"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-body" id="hbn_body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="ulang_tahun_container">
+            <div class="card m-lg-0">
+                <div class="card-status bg-blue br-te-7 br-ts-7"></div>
+                <div class="card-header">
+                    <h3 class="card-title">Ulang Tahun Anggota Terdekat</h3>
+                    <div class="card-options">
+                        <a href="javascript:void(0)" class="card-options-collapse" data-bs-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                        <a href="javascript:void(0)" class="card-options-remove" data-bs-toggle="card-remove"><i
+                                class="fe fe-x"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-body" id="ulang_tahun_body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
 
     <!-- ROW CLOSED -->
     <div class="card p-1">
@@ -108,8 +171,8 @@
                         <div class="card-header">
                             <h3 class="card-title">Publik | Umum (Halaman yang bisa di akses semua orang)</h3>
                             <div class="card-options">
-                                <a href="javascript:void(0)" class="card-options-collapse" data-bs-toggle="card-collapse"><i
-                                        class="fe fe-chevron-up"></i></a>
+                                <a href="javascript:void(0)" class="card-options-collapse"
+                                    data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                 <a href="javascript:void(0)" class="card-options-remove" data-bs-toggle="card-remove"><i
                                         class="fe fe-x"></i></a>
                             </div>
@@ -184,4 +247,77 @@
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
     </style>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
+    <script>
+        function ulang_tahun(limit = 7) {
+            const body = $('#ulang_tahun_body');
+            const container = $('#ulang_tahun_container');
+            container.LoadingOverlay("show");
+            $.get(`{{ route(h_prefix('ulang_tahun')) }}?limit=${limit}`, function(data) {
+                if (data.length > 0) {
+                    body.html('');
+                    container.fadeIn();
+                    data.forEach(e => {
+                        const hari = e.countdown == 0 ? 'Hari ini' : `${e.countdown} Hari Lagi`;
+                        body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex w-100">
+                                            <h5 class="mb-1">${e.name} | ${e.tanggal_str}</h5>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        ${hari}
+                                    </div>
+                                </div>`);
+                    });
+
+                } else {
+                    container.fadeOut();
+                }
+                container.LoadingOverlay("hide");
+            });
+        };
+
+        function hbn(limit = 7) {
+            const body = $('#hbn_body');
+            const container = $('#hbn_container');
+            container.LoadingOverlay("show");
+            $.get(`{{ route(h_prefix('hbn')) }}?limit=${limit}`, function(data) {
+                if (data.length > 0) {
+                    body.html('');
+                    container.fadeIn();
+                    data.forEach(e => {
+                        const hari = e.countdown == 0 ? 'Hari ini' : `${e.countdown} Hari Lagi`;
+                        body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex w-100">
+                                            <h5 class="mb-1">${e.name} | ${e.tanggal_str}</h5>
+                                        </div>
+                                    </div>
+
+                                    <div> ${hari} </div>
+                                </div>`);
+                    });
+
+                } else {
+                    container.fadeOut();
+                }
+                container.LoadingOverlay("hide");
+            });
+        };
+
+        hbn();
+        ulang_tahun();
+
+        $('#FilterForm').submit(function(e) {
+            e.preventDefault();
+            const limit = $('#limit').val();
+            hbn(limit);
+            ulang_tahun(limit);
+        });
+    </script>
 @endsection

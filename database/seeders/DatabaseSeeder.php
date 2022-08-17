@@ -39,6 +39,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PModelHasRolesTableSeeder::class);
         $this->call(PRoleHasPermissionsTableSeeder::class);
 
+        // role menu
+        $this->call(PMenuTableSeeder::class);
+        $this->call(PRoleHasMenuTableSeeder::class);
+
         // artikel
         $this->call(ArtikelTableSeeder::class);
 
@@ -84,14 +88,11 @@ class DatabaseSeeder extends Seeder
         $this->call(GaleriTagMemberTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
         $this->call(PendSensusTableSeeder::class);
-
-        // role menu
-        $this->call(PMenuTableSeeder::class);
-        $this->call(PRoleHasMenuTableSeeder::class);
+        $this->call(KataAlumnisTableSeeder::class);
+        $this->call(HariBesarNasionalsTableSeeder::class);
         $this->call(GFormsTableSeeder::class);
         $this->call(NotifDepanAtasTableSeeder::class);
 
-        $this->call(KataAlumnisTableSeeder::class);
         DB::commit();
     }
 }
