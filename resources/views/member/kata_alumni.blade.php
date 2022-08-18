@@ -79,7 +79,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan');
                 $.ajax({
                     type: "POST",
                     url: "{{ route(h_prefix('save')) }}",
