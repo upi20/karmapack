@@ -10,5 +10,3 @@ Pedoman Administrasi (Administrasi)
 
 Laporan
     Anggota (Full Semua Data) -> Export Excel
-
-Semua Asset javascript dan css di local

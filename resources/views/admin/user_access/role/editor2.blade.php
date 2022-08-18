@@ -54,8 +54,8 @@
 @section('javascript')
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js">
+    <script
+        src="{{ asset('assets/templates/admin/plugins/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js') }}">
     </script>
     <script>
         const reload = {{ $reload == 1 ? 'true' : 'false' }};
@@ -123,5 +123,5 @@
 
 @section('stylesheet')
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css">
+        href="{{ asset('assets/templates/admin/plugins/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css') }}">
 @endsection

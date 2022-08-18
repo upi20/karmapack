@@ -1,5 +1,3 @@
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/fontawesome-iconpicker@3.2.0/dist/css/fontawesome-iconpicker.min.css">
 <style>
     .dd {
         position: relative;
