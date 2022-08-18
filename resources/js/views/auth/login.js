@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#Loginform').submit(function (e) {
         e.preventDefault();
         var formData = new FormData(this);
-        setBtnLoading('button[type=submit]', 'Sign in');
+        setBtnLoading('button[type=submit]', 'Masuk');
         if (formData.get('email').length == "") {
             Swal.fire({
                 icon: 'warning',
@@ -59,7 +59,7 @@ $(document).ready(function () {
                     console.log(response);
                 },
                 complete: function (response) {
-                    setBtnLoading('button[type=submit]', 'Sign in', false);
+                    setBtnLoading('button[type=submit]', 'Masuk', false);
                 }
             });
         }
