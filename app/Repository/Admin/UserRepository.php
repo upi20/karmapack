@@ -47,7 +47,7 @@ class UserRepository
         $c_model_id = $columnNames['model_morph_key'];
 
         $this->query[$c_roles] = <<<SQL
-            (SELECT GROUP_CONCAT($t_roles.`name` SEPARATOR ', ') FROM $t_has_roles 
+            (SELECT GROUP_CONCAT($t_roles.`name` SEPARATOR ', ') FROM $t_has_roles
             join $t_roles on $t_has_roles.role_id = $t_roles.id
             where $t_has_roles.$c_model_id = $t_user.id)
         SQL;
@@ -67,7 +67,7 @@ class UserRepository
             if ($filter['role'] != '') {
                 $f = $filter['role'];
                 $where = <<<SQL
-                    ((SELECT count(*) FROM $t_has_roles 
+                    ((SELECT count(*) FROM $t_has_roles
                     join $t_roles on $t_has_roles.role_id = $t_roles.id
                     where $t_has_roles.$c_model_id = $t_user.id and $t_roles.`name` = '$f') > 0)
                 SQL;
@@ -238,7 +238,7 @@ class UserRepository
         if ($request->role != '') {
             $f = $request->role;
             $where = <<<SQL
-                ((SELECT count(*) FROM $t_has_roles 
+                ((SELECT count(*) FROM $t_has_roles
                 join $t_roles on $t_has_roles.role_id = $t_roles.id
                 where $t_has_roles.$c_model_id = $t_user.id and $t_roles.`name` = '$f') > 0)
             SQL;
@@ -373,7 +373,7 @@ class UserRepository
             $sheet->setCellValue(chr(65 + $c) . "$row", ($row - 5));
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $detail->name);
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $detail->email);
-            $sheet->setCellValue(chr(65 + ++$c) . "$row", "123456");
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", "12345678");
         }
         // format
         // nomor center
