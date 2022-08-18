@@ -15,7 +15,7 @@ class GaleriController extends Controller
     {
         if (request()->ajax()) {
             $this->query['artikel_alias'] = 'artikel';
-            $model = Galeri::select(['id', 'nama', 'slug', 'status', 'id_gdrive', 'foto_id_gdrive', 'keterangan'])
+            $model = Galeri::select(['id', 'nama', 'slug', 'status', 'id_gdrive', 'foto_id_gdrive', 'keterangan', 'tanggal', 'lokasi'])
                 ->selectRaw("IF(status = 1, 'Tampilkan', 'Tidak Tampilkan') as status_str");
 
             // filter
@@ -49,6 +49,8 @@ class GaleriController extends Controller
                 // 'foto' => ['nullable', 'string', 'max:255'],
                 'foto_id_gdrive' => ['required', 'string', 'max:255'],
                 'id_gdrive' => ['required', 'string', 'max:255'],
+                'tanggal' => ['required', 'date'],
+                'lokasi' => ['required', 'string', 'max:255'],
                 'keterangan' => ['string'],
             ]);
 
@@ -56,6 +58,8 @@ class GaleriController extends Controller
                 'nama' => $request->nama,
                 'slug' => $request->slug,
                 'status' => $request->status,
+                'tanggal' => $request->tanggal,
+                'lokasi' => $request->lokasi,
                 // 'foto' => $request->foto,
                 'foto_id_gdrive' => $request->foto_id_gdrive,
                 'id_gdrive' => $request->id_gdrive,
@@ -88,6 +92,8 @@ class GaleriController extends Controller
             $model->nama = $request->nama;
             $model->slug = $request->slug;
             $model->status = $request->status;
+            $model->tanggal = $request->tanggal;
+            $model->lokasi = $request->lokasi;
             // $model->foto = $request->foto;
             $model->foto_id_gdrive = $request->foto_id_gdrive;
             $model->id_gdrive = $request->id_gdrive;

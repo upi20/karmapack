@@ -202,136 +202,36 @@
                     </div>
                 </div>
 
-                {{-- items --}}
-                <div class="pt-60 lg:pt-50 js-section-slider" data-gap="30" data-pagination data-slider-cols="xl-2">
+                <div class="pt-60 lg:pt-50 js-section-slider" data-gap="30" data-pagination data-slider-cols="xl-1">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div data-anim-child="slide-left delay-3"
-                                class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
-                                <div class="row y-gap-30 md:text-center md:justify-center">
-                                    <div class="col-md-auto">
-                                        <div class="testimonials__image">
-                                            <img src="{{ asset('assets/templates/frontend2/img/home-4/testimonials/1.png') }}"
-                                                alt="image">
+                        {{-- items --}}
+                        @foreach ($kata_alumni_list as $item)
+                            <div class="swiper-slide">
+                                <div data-anim-child="slide-left delay-3"
+                                    class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                                    <div class="row y-gap-30 md:text-center md:justify-center">
+                                        <div class="col-md-auto">
+                                            <div class="testimonials__image">
+                                                <img src="{{ $item->user_foto }}" alt="{{ $item->user }}"
+                                                    style="height: 170px; width: 170px">
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-md">
-                                        <p class="testimonials__text text-16 lh-17 fw-500 mt-15">“I think
-                                            Educrat is the best theme I
-                                            ever seen this year. Amazing design, easy to customize and a
-                                            design.”</p>
-
-                                        <div class="mt-15">
-                                            <div class="text-15 lh-1 text-dark-1 fw-500">Joko Widodo</div>
-                                            <div class="text-13 lh-1 mt-10">Presiden Indonesia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div data-anim-child="slide-left delay-3"
-                                class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
-                                <div class="row y-gap-30 md:text-center md:justify-center">
-                                    <div class="col-md-auto">
-                                        <div class="testimonials__image">
-                                            <img src="{{ asset('assets/templates/frontend2/img/home-4/testimonials/1.png') }}"
-                                                alt="image">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md">
-                                        <p class="testimonials__text text-16 lh-17 fw-500 mt-15">“I think
-                                            Educrat is the best theme I
-                                            ever seen this year. Amazing design, easy to customize and a
-                                            design.”</p>
-
-                                        <div class="mt-15">
-                                            <div class="text-15 lh-1 text-dark-1 fw-500">Joko Widodo</div>
-                                            <div class="text-13 lh-1 mt-10">Presiden Indonesia</div>
+                                        <div class="col-md">
+                                            <p class="testimonials__text text-16 lh-17 fw-500 mt-15">
+                                                {{ $item->deskripsi }}</p>
+                                            <div class="mt-15">
+                                                <div class="text-15 lh-1 text-purple-1 fw-500">
+                                                    <a
+                                                        href="{{ $item->user_username ? url($item->user_username) : route('anggota.id', $item->user_id) }}">
+                                                        {{ $item->user }}</a>
+                                                </div>
+                                                <div class="text-13 lh-1 mt-10">{{ $item->profesi }}</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div data-anim-child="slide-left delay-3"
-                                class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
-                                <div class="row y-gap-30 md:text-center md:justify-center">
-                                    <div class="col-md-auto">
-                                        <div class="testimonials__image">
-                                            <img src="{{ asset('assets/templates/frontend2/img/home-4/testimonials/1.png') }}"
-                                                alt="image">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md">
-                                        <p class="testimonials__text text-16 lh-17 fw-500 mt-15">“I think
-                                            Educrat is the best theme I
-                                            ever seen this year. Amazing design, easy to customize and a
-                                            design.”</p>
-
-                                        <div class="mt-15">
-                                            <div class="text-15 lh-1 text-dark-1 fw-500">Joko Widodo</div>
-                                            <div class="text-13 lh-1 mt-10">Presiden Indonesia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div data-anim-child="slide-left delay-3"
-                                class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
-                                <div class="row y-gap-30 md:text-center md:justify-center">
-                                    <div class="col-md-auto">
-                                        <div class="testimonials__image">
-                                            <img src="{{ asset('assets/templates/frontend2/img/home-4/testimonials/1.png') }}"
-                                                alt="image">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md">
-                                        <p class="testimonials__text text-16 lh-17 fw-500 mt-15">“I think
-                                            Educrat is the best theme I
-                                            ever seen this year. Amazing design, easy to customize and a
-                                            design.”</p>
-
-                                        <div class="mt-15">
-                                            <div class="text-15 lh-1 text-dark-1 fw-500">Joko Widodo</div>
-                                            <div class="text-13 lh-1 mt-10">Presiden Indonesia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div data-anim-child="slide-left delay-3"
-                                class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
-                                <div class="row y-gap-30 md:text-center md:justify-center">
-                                    <div class="col-md-auto">
-                                        <div class="testimonials__image">
-                                            <img src="{{ asset('assets/templates/frontend2/img/home-4/testimonials/1.png') }}"
-                                                alt="image">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md">
-                                        <p class="testimonials__text text-16 lh-17 fw-500 mt-15">“I think
-                                            Educrat is the best theme I
-                                            ever seen this year. Amazing design, easy to customize and a
-                                            design.”</p>
-
-                                        <div class="mt-15">
-                                            <div class="text-15 lh-1 text-dark-1 fw-500">Joko Widodo</div>
-                                            <div class="text-13 lh-1 mt-10">Presiden Indonesia</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
 
                     <div class="d-flex justify-center x-gap-15 items-center pt-60 lg:pt-40" data-anim="slide-up delay-3">
@@ -432,217 +332,48 @@
                     data-pagination="js-events-slider-pagination" data-nav-prev="js-events-slider-prev"
                     data-nav-next="js-events-slider-next" data-slider-cols="xl-3 lg-2">
                     <div class="swiper-wrapper">
+                        @foreach ($galeri_list as $galery)
+                            <div class="swiper-slide">
+                                <div data-anim="slide-left delay-3" class="eventCard -type-1">
+                                    <div class="eventCard__img">
+                                        <img src="{{ "https://drive.google.com/uc?export=view&id={$galery->foto_id_gdrive}" }}"
+                                            alt="{{ $galery->nama }}"
+                                            style="width: 100%; height: 250px; object-fit: cover;">
+                                    </div>
 
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/1.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
+                                    <div class="eventCard__bg bg-white">
+                                        <div class="eventCard__content y-gap-10">
+                                            <div class="eventCard__inner">
+                                                <h4 class="eventCard__title text-17 fw-500">
+                                                    {{ $galery->nama }}
+                                                </h4>
+                                                <div class="d-flex x-gap-15 pt-10">
+                                                    <div class="d-flex items-center">
+                                                        <div class="icon-calendar-2 text-16 mr-8"></div>
+                                                        <div class="text-14">{{ $galery->tanggal_str }}</div>
+                                                    </div>
+                                                    <div class="d-flex items-center">
+                                                        <div class="icon-location text-16 mr-8"></div>
+                                                        <div class="text-14">{{ $galery->lokasi }}</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
+                                            <div class="eventCard__button">
+                                                <a href="{{ route('galeri.detail', $galery->slug) }}"
+                                                    class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/2.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/3.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/4.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/5.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div data-anim="slide-left delay-3" class="eventCard -type-1">
-                                <div class="eventCard__img">
-                                    <img src="{{ asset('assets/templates/frontend2/img/home-2/events/6.png') }}"
-                                        alt="image">
-                                </div>
-
-                                <div class="eventCard__bg bg-white">
-                                    <div class="eventCard__content y-gap-10">
-                                        <div class="eventCard__inner">
-                                            <h4 class="eventCard__title text-17 fw-500">
-                                                Summer School 2022
-                                            </h4>
-                                            <div class="d-flex x-gap-15 pt-10">
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-calendar-2 text-16 mr-8"></div>
-                                                    <div class="text-14">6 April, 2022</div>
-                                                </div>
-                                                <div class="d-flex items-center">
-                                                    <div class="icon-location text-16 mr-8"></div>
-                                                    <div class="text-14">London, UK</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="eventCard__button">
-                                            <a href="#"
-                                                class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
 
                 <div class="row pt-60 lg:pt-40" data-anim="slide-right delay-3">
                     <div class="col-auto">
-                        <a href="#" class="button -icon -outline-purple-1 text-purple-1 fw-500">
+                        <a href="{{ route('galeri') }}" class="button -icon -outline-purple-1 text-purple-1 fw-500">
                             {{ settings()->get("$k.button_text") }}
                             <span class="icon-arrow-top-right text-14 ml-10"></span>
                         </a>
@@ -676,95 +407,83 @@
                 </div>
 
                 <div class="row y-gap-30 pt-50">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
-                            <div class="blogCard__image">
-                                <img src="{{ asset('assets/templates/frontend2/img/blog/1.png') }}" alt="image">
-                            </div>
-                            <div class="blogCard__content">
-                                <a href="blog-single.html" class="blogCard__category">EDUCATION</a>
-                                <h4 class="blogCard__title">Eco-Education in Our Lives: We Can Change the
-                                    Future</h4>
-                                <div class="blogCard__date">December 16, 2022</div>
+                    @foreach ($articles as $k => $a)
+                        @if ($k > 1)
+                            @continue
+                        @endif
+                        <div class="col-lg-4 col-md-6">
+                            <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
+                                @php
+                                    $get_id_yt = \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail);
+                                    $youtube = $get_id_yt ? true : false;
+                                    $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
+                                @endphp
+                                <div class="blogCard__image">
+                                    <img src="{{ $foto }}" alt="{{ $a->nama }}"
+                                        style="width: 100%; height: 300px; object-fit: cover;">
+                                </div>
+                                <div class="blogCard__content">
+                                    @if ($a->kategori)
+                                        <a href="{{ url("?kategori=$a->kategori_slug") }}" class="blogCard__category"
+                                            title="Kategori {{ $a->kategori }}">
+                                            {{ $a->kategori }}
+                                        </a>
+                                    @elseif ($a->tag)
+                                        <a href="{{ url("?tag=$a->tag_slug") }}" class="blogCard__category"
+                                            title="tag {{ $a->tag }}">
+                                            {{ $a->tag }}
+                                        </a>
+                                    @endif
+                                    <h4 class="blogCard__title">
+                                        <a href="{{ route('artikel', $a->slug) }}">{{ $a->nama }}</a>
+                                    </h4>
+                                    <div class="blogCard__date">{{ $a->date_full }}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
-                            <div class="blogCard__image">
-                                <img src="{{ asset('assets/templates/frontend2/img/blog/2.png') }}" alt="image">
-                            </div>
-                            <div class="blogCard__content">
-                                <a href="blog-single.html" class="blogCard__category">DESIGN</a>
-                                <h4 class="blogCard__title">How to design a simple, yet unique and memorable
-                                    brand identity</h4>
-                                <div class="blogCard__date">December 16, 2022</div>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
 
                     <div class="col-lg-4">
                         <div class="row y-gap-30">
 
-                            <div class="col-lg-12 col-md-6">
-                                <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
-                                    <div class="eventCard__date bg-light-7 mr-20">
-                                        <span class="text-30 lh-1 fw-700">15</span>
-                                        <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
-                                    </div>
-                                    <div class="eventCard__content">
-                                        <div class="text-13 lh-1 fw-500 uppercase text-purple-1">Courses</div>
-                                        <h4 class="text-17 lh-15 fw-500 mt-10">Medical Chemistry: The Molecular
-                                            Basis</h4>
-                                    </div>
-                                </a>
-                            </div>
+                            @foreach ($articles as $k => $a)
+                                @if ($k < 2)
+                                    @continue
+                                @endif
+                                <div class="col-lg-12 col-md-6">
+                                    <a href="{{ route('artikel', $a->slug) }}" data-anim-child="slide-left delay-3"
+                                        class="eventCard -type-4">
+                                        <div class="eventCard__date bg-light-7 mr-20"
+                                            style="min-width: 100px; min-height: 100px">
+                                            <span class="text-30 lh-1 fw-700">{{ $a->date_str }}</span>
+                                            <span class="text-18 lh-1 fw-500 uppercase mt-10">{{ $a->month_str }}</span>
+                                        </div>
 
-                            <div class="col-lg-12 col-md-6">
-                                <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
-                                    <div class="eventCard__date bg-light-7 mr-20">
-                                        <span class="text-30 lh-1 fw-700">15</span>
-                                        <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
-                                    </div>
-                                    <div class="eventCard__content">
-                                        <div class="text-13 lh-1 fw-500 uppercase text-purple-1">Courses</div>
-                                        <h4 class="text-17 lh-15 fw-500 mt-10">Medical Chemistry: The Molecular
-                                            Basis</h4>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-12 col-md-6">
-                                <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
-                                    <div class="eventCard__date bg-light-7 mr-20">
-                                        <span class="text-30 lh-1 fw-700">15</span>
-                                        <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
-                                    </div>
-                                    <div class="eventCard__content">
-                                        <div class="text-13 lh-1 fw-500 uppercase text-purple-1">Courses</div>
-                                        <h4 class="text-17 lh-15 fw-500 mt-10">Medical Chemistry: The Molecular
-                                            Basis</h4>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-12 col-md-6">
-                                <a href="#" data-anim-child="slide-left delay-3" class="eventCard -type-4">
-                                    <div class="eventCard__date bg-light-7 mr-20">
-                                        <span class="text-30 lh-1 fw-700">15</span>
-                                        <span class="text-18 lh-1 fw-500 uppercase mt-10">JUNE</span>
-                                    </div>
-                                    <div class="eventCard__content">
-                                        <div class="text-13 lh-1 fw-500 uppercase text-purple-1">Courses</div>
-                                        <h4 class="text-17 lh-15 fw-500 mt-10">Medical Chemistry: The Molecular
-                                            Basis</h4>
-                                    </div>
-                                </a>
-                            </div>
-
+                                        <div class="eventCard__content">
+                                            @if ($a->kategori)
+                                                {{-- <a href="{{ url("?kategori=$a->kategori_slug") }}"
+                                                    class="text-13 lh-1 fw-500 uppercase text-purple-1"
+                                                    title="Kategori {{ $a->kategori }}">
+                                                    {{ $a->kategori }}
+                                                    </a> --}}
+                                                <div class="text-13 lh-1 fw-500 uppercase text-purple-1">
+                                                    {{ $a->kategori }}
+                                                </div>
+                                            @elseif ($a->tag)
+                                                {{-- <a href="{{ url("?tag=$a->tag_slug") }}"
+                                                    class="text-13 lh-1 fw-500 uppercase text-purple-1"
+                                                    title="tag {{ $a->tag }}">
+                                                    {{ $a->tag }}
+                                                    </a> --}}
+                                                <div class="text-13 lh-1 fw-500 uppercase text-purple-1">
+                                                    {{ $a->tag }}
+                                                </div>
+                                            @endif
+                                            <h4 class="text-17 lh-15 fw-500 mt-10"> {{ $a->nama }}</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

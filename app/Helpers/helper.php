@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Menu;
+use App\Models\Utility\NotifAdminAtas;
 use App\Models\Utility\NotifDepanAtas;
 use Illuminate\Support\Facades\Route;
 
@@ -418,6 +419,14 @@ if (!function_exists('notif_depan_atas')) {
     {
         $now = date('Y-m-d');
         return NotifDepanAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
+    }
+}
+
+if (!function_exists('notif_admin_atas')) {
+    function notif_admin_atas()
+    {
+        $now = date('Y-m-d');
+        return NotifAdminAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
     }
 }
 

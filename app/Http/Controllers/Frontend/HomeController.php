@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Artikel\Artikel;
-use App\Models\Artikel\Kategori;
-use App\Models\Artikel\Tag;
+use App\Models\Galeri;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\Periode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repository\Frontend\HomeRepository;
-
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -33,54 +32,53 @@ class HomeController extends Controller
         ];
 
         $periode = $model;
-        $anggota = HomeRepository::getPengurusList($model->id);
+
+        if ($this->checkVisible('struktur_anggota')) {
+            $anggota = HomeRepository::getPengurusList($model->id);
+        } else {
+            $anggota = collect([]);
+        }
+
 
         // frontend
         $fe = new \App\Helpers\Frontend\Template\Master($model->id);
         $list_sosmed = $fe->getSosmed();
 
 
-        // Popular Posts ==========================================================================
-        // buat column baru di artikel view counter
-        // query by view counter
-        // sementara buat dari post teratas terlebih dahulu wkwk
-        // ========================================================================================
-
-        // tag and kategori
-        $tags = HomeRepository::getTagsList();
-        $categories = HomeRepository::getKategoriList();
-
         // artikel
-        $params = HomeRepository::getParams($request);
-        $getArtikel = HomeRepository::getArtikel($request, 6, $params);
-        $articles = $getArtikel->model->data;
-        $pagination = $getArtikel->pagination;
+        if ($this->checkVisible('artikel')) {
+            $params = HomeRepository::getParams($request);
+            $getArtikel = HomeRepository::getArtikel($request, 6, $params);
+            $articles = $getArtikel->model->data;
+        } else {
+            $articles = [];
+        }
 
-        // artikel popular
-        $top_article = HomeRepository::topArticle(3);
 
-        // selected
-        $tag_selected = $request->tag ?
-            Tag::select(['nama', 'slug'])->where('slug', '=', $request->tag)->first() : null;
-        $kategori_selected = $request->kategori ?
-            Kategori::select(['nama', 'slug'])->where('slug', '=', $request->kategori)->first() : null;
+        if ($this->checkVisible('galeri_kegiatan')) {
+            $galeri_limit = settings()->get('setting.home.galeri_kegiatan.limit', 6);
+            $galeri_list = Galeri::where('status', '=', 1)->select([DB::raw('*'), DB::raw("date_format(tanggal, '%d %M %Y') as tanggal_str")])
+                ->orderBy('tanggal', 'desc')->limit($galeri_limit)->get();
+        } else {
+            $galeri_list = [];
+        }
 
-        $image_folder_user = User::image_folder;
-        $image_default_user = User::image_default;
+
+        if ($this->checkVisible('kata_alumni')) {
+            $kata_alumni_limit = settings()->get('setting.home.kata_alumni.limit', 6);
+            $kata_alumni_list = HomeRepository::kataAlumni($kata_alumni_limit);
+        } else {
+            $kata_alumni_list = [];
+        }
+
         $data = compact(
             'page_attr',
             'periode',
             'anggota',
             'list_sosmed',
-            'tags',
-            'categories',
             'articles',
-            'pagination',
-            'top_article',
-            'tag_selected',
-            'kategori_selected',
-            'image_folder_user',
-            'image_default_user',
+            'galeri_list',
+            'kata_alumni_list',
         );
         $data['compact'] = $data;
 
@@ -169,5 +167,10 @@ class HomeController extends Controller
         $data = compact('page_attr');
         $data['compact'] = $data;
         return view('frontend.home2', $data);
+    }
+
+    private function checkVisible(string $item): ?bool
+    {
+        return settings()->get("setting.home.$item.visible", false);
     }
 }

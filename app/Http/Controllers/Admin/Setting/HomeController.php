@@ -98,6 +98,7 @@ class HomeController extends Controller
         settings()->set($this->s('visible'), $request->visible != null)->save();
         settings()->set($this->s('title'), $request->title)->save();
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
+        settings()->set($this->s('limit'), $request->limit)->save();
         return response()->json();
     }
 
@@ -108,6 +109,7 @@ class HomeController extends Controller
         settings()->set($this->s('title'), $request->title)->save();
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
         settings()->set($this->s('button_text'), $request->button_text)->save();
+        settings()->set($this->s('limit'), $request->limit)->save();
         return response()->json();
     }
 

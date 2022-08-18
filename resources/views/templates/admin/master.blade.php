@@ -12,6 +12,7 @@ $page_attr = (object) [
     'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_admin('app.title'), env('APP_NAME'));
+$notifikasi = notif_admin_atas();
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
@@ -134,6 +135,27 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                 <div class="side-app">
                     <!-- CONTAINER -->
                     <div class="main-container container-fluid">
+
+                        @if ($notifikasi)
+                            <div class="pt-5">
+                                @foreach ($notifikasi as $v)
+                                    <div class="alert alert-default alert-dismissible fade show" role="alert">
+                                        <span class="alert-inner--text">
+                                            {{ $v->deskripsi }}
+                                            @if ($v->link)
+                                                <a href="{{ $v->link }}"
+                                                    class="text-purple-1">{{ $v->link_nama }}</a>
+                                            @endif
+                                        </span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+
                         @if ($page_attr->breadcrumbs)
                             <!-- PAGE-HEADER -->
                             <div class="page-header">

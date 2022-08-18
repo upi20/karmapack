@@ -94,5 +94,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NotifDepanAtasTableSeeder::class);
 
         DB::commit();
+        $this->call(NotifAdminAtasTableSeeder::class);
     }
 }

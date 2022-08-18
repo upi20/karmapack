@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('foto_id_gdrive')->nullable();
             $table->string('id_gdrive')->nullable();
             $table->text('slug');
+            $table->date('tanggal')->nullable()->default(null);
+            $table->string('lokasi')->nullable()->default(null);
             $table->text('keterangan')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();

@@ -66,16 +66,16 @@ $member  = [
 // set frontend menu
 $frontend  = [
     ['title' => 'Home', 'route' => 'home'],
-    // ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
-    [
-        'title' => 'Tentang Kami',
-        'children' => [
-            ['title' => 'Sejarah'],
-            ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
-            ['title' => 'Periode Kepengurusan'],
-            ['title' => 'Anggaran Dasar Anggaran Rumah Tangga'],
-        ]
-    ],
+    ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
+    // [
+    //     'title' => 'Tentang Kami',
+    //     'children' => [
+    //         ['title' => 'Sejarah'],
+    //         ['title' => 'Struktur Kepengurusan', 'route' => 'about.kepengurusan.struktur'],
+    //         ['title' => 'Periode Kepengurusan'],
+    //         ['title' => 'Anggaran Dasar Anggaran Rumah Tangga'],
+    //     ]
+    // ],
     [
         'name' => 'bidang',
     ],

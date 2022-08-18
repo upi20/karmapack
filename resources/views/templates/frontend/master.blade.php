@@ -182,6 +182,21 @@ $notifikasi = notif_depan_atas();
             </div>
         </div>
     @endif
+
+    @if ($notifikasi)
+        @foreach ($notifikasi as $v)
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                {{ $v->deskripsi }}
+                @if ($v->link)
+                    <a href="{{ $v->link }}" class="text-purple-1">{{ $v->link_nama }}</a>
+                @endif
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
+                </button>
+            </div>
+        @endforeach
+    @endif
+
     <br>
 
     {{-- header template --}}

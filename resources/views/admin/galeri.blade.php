@@ -42,6 +42,8 @@
                                     <th>Lihat</th>
                                     <th>Slug</th>
                                     <th>keterangan</th>
+                                    <th>Tanggal</th>
+                                    <th>Lokasi</th>
                                     <th>Status</th>
                                     {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
                                 </tr>
@@ -76,16 +78,28 @@
                                 placeholder="Enter Slug" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="foto_id_gdrive">Icon From Foto Id Google Drive <span
+                            <label class="form-label" for="foto_id_gdrive">Icon Foto Id Google Drive <span
                                     class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="foto_id_gdrive" name="foto_id_gdrive"
                                 placeholder="Icon From Foto Id Google Drive" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="id_gdrive">Icon From Folder Id Google Drive
+                            <label class="form-label" for="id_gdrive">Folder Id Google Drive
                                 <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="id_gdrive" name="id_gdrive"
                                 placeholder="Icon From Folder Id Google Drive" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="tanggal">Tanggal
+                                <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="tanggal" name="tanggal"
+                                placeholder="Tanggal" required />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="lokasi">Lokasi
+                                <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="lokasi" name="lokasi"
+                                placeholder="Lokasi" required />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="keterangan">Keterangan </label>
@@ -181,6 +195,14 @@
                         name: 'keterangan'
                     },
                     {
+                        data: 'tanggal',
+                        name: 'tanggal'
+                    },
+                    {
+                        data: 'lokasi',
+                        name: 'lokasi'
+                    },
+                    {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
@@ -198,6 +220,8 @@
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
                                 data-slug="${full.slug}"
+                                data-tanggal="${full.tanggal}"
+                                data-lokasi="${full.lokasi}"
                                 data-foto_id_gdrive="${full.foto_id_gdrive}"
                                 data-id_gdrive="${full.id_gdrive}"
                                 data-keterangan="${full.keterangan}"
@@ -310,6 +334,8 @@
             $('#id').val(data.id);
             $('#nama').val(data.nama);
             $('#status').val(data.status);
+            $('#tanggal').val(data.tanggal);
+            $('#lokasi').val(data.lokasi);
             $('#slug').val(data.slug);
             $('#foto_id_gdrive').val(data.foto_id_gdrive);
             $('#id_gdrive').val(data.id_gdrive);

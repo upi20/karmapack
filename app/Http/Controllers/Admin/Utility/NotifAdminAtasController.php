@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin\Utility;
 
 use App\Http\Controllers\Controller;
-use App\Models\Utility\HariBesarNasional;
+use App\Models\Utility\NotifAdminAtas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
 use Yajra\Datatables\Datatables;
 
-class HariBesarNasionalController extends Controller
+class NotifAdminAtasController extends Controller
 {
     private $validate_model = [
         'nama' => ['required', 'string', 'max:255'],
-        'keterangan' => ['nullable', 'string'],
-        'tahun' => ['nullable', 'int'],
-        'hari' => ['required', 'int', 'max:31'],
-        'bulan' => ['required', 'int', 'max:12'],
-        'type' => ['required', 'int', 'max:9'],
+        'link' => ['nullable', 'string', 'max:255'],
+        'link_nama' => ['nullable', 'string', 'max:255'],
+        'deskripsi' => ['required', 'string'],
+        'dari' => ['required', 'date'],
+        'sampai' => ['nullable', 'date'],
     ];
 
     private $query = [];
@@ -29,15 +29,12 @@ class HariBesarNasionalController extends Controller
         }
 
         $page_attr = [
-            'title' => 'Hari Besar Nasional',
+            'title' => 'Notifikasi Admin Atas',
             'breadcrumbs' => [
                 ['name' => 'Utility'],
             ]
         ];
-
-        $data = compact('page_attr');
-        $data['compact'] = $data;
-        return view('admin.utility.hari_besar_nasional', $data);
+        return view('admin.utility.notif_admin_atas', compact('page_attr'));
     }
 
     public function insert(Request $request): mixed
@@ -45,13 +42,13 @@ class HariBesarNasionalController extends Controller
         try {
             $request->validate($this->validate_model);
 
-            $model = new HariBesarNasional();
+            $model = new NotifAdminAtas();
             $model->nama = $request->nama;
-            $model->keterangan = $request->keterangan;
-            $model->tahun = $request->tahun;
-            $model->hari = $request->hari;
-            $model->bulan = $request->bulan;
-            $model->type = $request->type;
+            $model->deskripsi = $request->deskripsi;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->link = $request->link;
+            $model->link_nama = $request->link_nama;
 
             $model->save();
             return response()->json();
@@ -66,17 +63,17 @@ class HariBesarNasionalController extends Controller
     public function update(Request $request): mixed
     {
         try {
-            $model = HariBesarNasional::findOrFail($request->id);
+            $model = NotifAdminAtas::findOrFail($request->id);
             $request->validate(array_merge(['id' => [
                 'required', 'int',
             ]], $this->validate_model));
 
             $model->nama = $request->nama;
-            $model->keterangan = $request->keterangan;
-            $model->tahun = $request->tahun;
-            $model->hari = $request->hari;
-            $model->bulan = $request->bulan;
-            $model->type = $request->type;
+            $model->deskripsi = $request->deskripsi;
+            $model->dari = $request->dari;
+            $model->sampai = $request->sampai;
+            $model->link = $request->link;
+            $model->link_nama = $request->link_nama;
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {
@@ -87,7 +84,7 @@ class HariBesarNasionalController extends Controller
         }
     }
 
-    public function delete(HariBesarNasional $model): mixed
+    public function delete(NotifAdminAtas $model): mixed
     {
         try {
             $model->delete();
@@ -102,13 +99,13 @@ class HariBesarNasionalController extends Controller
 
     public function find(Request $request)
     {
-        return HariBesarNasional::findOrFail($request->id);
+        return NotifAdminAtas::findOrFail($request->id);
     }
 
     public function datatable(Request $request): mixed
     {
         // list table
-        $table = HariBesarNasional::tableName;
+        $table = NotifAdminAtas::tableName;
 
         // cusotm query
         // ========================================================================================================
@@ -129,39 +126,11 @@ class HariBesarNasionalController extends Controller
         $this->query = array_merge($this->query, $date_format_fun('updated_at', '%d-%b-%Y', $c_updated));
         $this->query = array_merge($this->query, $date_format_fun('updated_at', '%W, %d %M %Y %H:%i:%s', $c_updated_str));
 
-        // tanggal
-        $tanggal = <<<SQL
-                date( concat( (if($table.`type` = 1, year(now()), $table.tahun)), '-',
-                        $table.bulan,'-',
-                        $table.hari ) )
-        SQL;
-        $c_tanggal = 'tanggal';
-        $this->q_build($c_tanggal, $tanggal);
+        $c_dari_str = 'dari_str';
+        $c_sampai_str = 'sampai_str';
+        $this->query = array_merge($this->query, $date_format_fun('dari', '%W, %d %M %Y', $c_dari_str));
+        $this->query = array_merge($this->query, $date_format_fun('sampai', '%W, %d %M %Y', $c_sampai_str));
 
-        // countdown
-        $c_countdown = 'countdown';
-        $this->q_build($c_countdown, <<<SQL
-            (
-                ifnull(if(DATEDIFF($tanggal, CURDATE()) < 0,
-                    DATEDIFF(ADDDATE($tanggal, INTERVAL 1 YEAR), CURDATE()),
-                    DATEDIFF($tanggal, CURDATE())
-                ), 999)
-            )
-        SQL);
-
-        $c_tanggal_str = 'tanggal_str';
-        $this->q_build($c_tanggal_str, <<<SQL
-            (DATE_FORMAT(
-                $tanggal,
-                concat('%d %M', (if($table.`type` = 0, ' %Y', '')))
-                )
-            )
-        SQL);
-
-        $c_type_str = 'type_str';
-        $this->q_build($c_type_str, <<<SQL
-            (if($table.`type` = 1, 'Tetap', if($table.`type` = 0, 'Tidak Tetap', 'Tidak Diketahui')))
-        SQL);
         // ========================================================================================================
 
 
@@ -175,10 +144,8 @@ class HariBesarNasionalController extends Controller
             $c_created_str,
             $c_updated,
             $c_updated_str,
-            $c_tanggal_str,
-            $c_tanggal,
-            $c_type_str,
-            $c_countdown
+            $c_dari_str,
+            $c_sampai_str,
         ];
 
         $to_db_raw = array_map(function ($a) use ($sraa) {
@@ -188,23 +155,9 @@ class HariBesarNasionalController extends Controller
 
 
         // Select =====================================================================================================
-        $model = HariBesarNasional::select(array_merge([
+        $model = NotifAdminAtas::select(array_merge([
             DB::raw("$table.*"),
         ], $to_db_raw));
-        // Filter =====================================================================================================
-        // filter check
-        $f_c = function (string $param) use ($request): mixed {
-            $filter = $request->filter;
-            return isset($filter[$param]) ? $filter[$param] : false;
-        };
-
-        // filter custom
-        $filters = ['type'];
-        foreach ($filters as  $f) {
-            if ($f_c($f) !== false) {
-                $model->whereRaw("$table.$f='{$f_c($f)}'");
-            }
-        }
 
         // ========================================================================================================
         $datatable = Datatables::of($model)->addIndexColumn();
@@ -216,19 +169,5 @@ class HariBesarNasionalController extends Controller
         }
         // create datatable
         return $datatable->make(true);
-    }
-
-    public function list_error(Request $request): mixed
-    {
-        $list = HariBesarNasional::select([DB::raw("id,nama")])->whereRaw("(type = 0) and (tahun <> year(now()) or tahun is null)")->get();
-        return response()->json($list);
-    }
-
-    // query_builder
-    private function q_build($alias, $query)
-    {
-        $this->query[$alias] = $query;
-        $this->query["{$alias}_alias"] = $alias;
-        return 1;
     }
 }

@@ -271,6 +271,14 @@
                                 class="form-control" placeholder="Sub Judul"
                                 value="{{ settings()->get($s("$name.sub_title")) }}" required />
                         </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.limit") }}">Jumlah Data Yang Ditampilkan
+                                <span class="text-danger">*</span></label>
+                            <input type="number" min="3" id="{{ $s("$name.limit") }}" name="limit"
+                                class="form-control" placeholder="Jumlah Data Yang Ditampilkan"
+                                value="{{ settings()->get($s("$name.limit")) }}" required />
+                        </div>
                     </form>
                 </div>
                 <div class="card-footer text-end">
@@ -313,6 +321,14 @@
                             <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
                                 class="form-control" placeholder="Sub Judul"
                                 value="{{ settings()->get($s("$name.sub_title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.limit") }}">Jumlah Data Yang Ditampilkan
+                                <span class="text-danger">*</span></label>
+                            <input type="number" min="3" id="{{ $s("$name.limit") }}" name="limit"
+                                class="form-control" placeholder="Jumlah Data Yang Ditampilkan"
+                                value="{{ settings()->get($s("$name.limit")) }}" required />
                         </div>
 
                         <div class="form-group">

@@ -8,6 +8,7 @@ use App\Models\Artikel\Kategori;
 use App\Models\Artikel\KategoriArtikel;
 use App\Models\Artikel\Tag;
 use App\Models\Artikel\TagArtikel;
+use App\Models\KataAlumni;
 use App\Models\Pengurus\PeriodeMember;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
@@ -177,28 +178,44 @@ class HomeRepository
         // query
         $search_kategori = $request->kategori ? "and $c.slug = '$request->kategori'" : '';
         $kategori = <<<SQL
-            (
-                select $c.nama from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1
-            ) as kategori
+            ( select $c.nama from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1 ) as kategori
         SQL;
 
         $kategori_slug = <<<SQL
-            (
-                select $c.slug from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1
-            ) as kategori_slug
+            (select $c.slug from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1) as kategori_slug
         SQL;
 
         $search_tag = $request->tag ? "and $e.slug = '$request->tag'" : '';
         $tag = <<<SQL
-            (
-                select $e.nama from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1
-            ) as tag
+            (select $e.nama from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1) as tag
         SQL;
 
         $tag_slug = <<<SQL
-            (
-                select $e.slug from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1
-            ) as tag_slug
+            (select $e.slug from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1) as tag_slug
+        SQL;
+
+        $date_full = <<<SQL
+            date_format($a.date , '%d %M %Y') as date_full
+        SQL;
+
+        $day = <<<SQL
+            date_format($a.date , '%W') as `day`
+        SQL;
+
+        $date_str = <<<SQL
+            date_format($a.date , '%d') as date_str
+        SQL;
+
+        $month_str = <<<SQL
+            date_format($a.date , '%M') as month_str
+        SQL;
+
+        $month = <<<SQL
+            date_format($a.date , '%m') as `month`
+        SQL;
+
+        $year = <<<SQL
+            date_format($a.date , '%Y') as `year`
         SQL;
 
         $model = Artikel::select([
@@ -220,6 +237,12 @@ class HomeRepository
             DB::raw($kategori_slug),
             DB::raw($tag),
             DB::raw($tag_slug),
+            DB::raw($date_full),
+            DB::raw($day),
+            DB::raw($date_str),
+            DB::raw($month_str),
+            DB::raw($month),
+            DB::raw($year),
         ])
             ->leftJoin($b, "$b.id", '=', "$a.user_id")
             ->orderBy('date', 'desc');
@@ -228,35 +251,27 @@ class HomeRepository
         $kategori = '';
         if ($request->kategori) {
             $kategori = <<<SQL
-                and  (
-                    select count(*) from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id and $c.slug = '$request->kategori'
-                ) > 0
+                and  ( select count(*) from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id and $c.slug = '$request->kategori' ) > 0
             SQL;
         }
 
         $tag = '';
         if ($request->tag) {
             $tag = <<<SQL
-                and (
-                    select count(*) from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id and $e.slug = '$request->tag'
-                ) > 0
+                and ( select count(*) from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id and $e.slug = '$request->tag' ) > 0
             SQL;
         }
 
         // less than date now
         $date_now = date('Y-m-d');
         $date_less_than = <<<SQL
-                and (
-                    $a.date <= '$date_now'
-                )
+                and ( $a.date <= '$date_now' )
             SQL;
         $where = <<<SQL
-            (
-                ($a.status = 1)
+            ( ($a.status = 1)
                 $date_less_than
                 $kategori
-                $tag
-            )
+                $tag )
         SQL;
 
         $model->whereRaw($where);
@@ -274,6 +289,27 @@ class HomeRepository
             'model' => $model,
             'pagination' => $pagination,
         ];
+        // result ex:
+        // +"slug": "tes-youtube"
+        // +"excerpt": "Testing video youtube"
+        // +"nama": "Tes youtube"
+        // +"foto": ""
+        // +"detail": "<p><br><div class="embed-container"><br></div><div class="embed-container"><iframe src="https://www.youtube.com/embed/WH1SduDRL_Y?autoplay=1&amp;fs=1&amp;iv_loa ▶"
+        // +"date": "2022-04-27"
+        // +"user_id": 1
+        // +"user": "Isep Lutpi Nur, MTCNA"
+        // +"user_username": "iseplutpinur"
+        // +"user_foto": "iseplutpinur20220502090847.png"
+        // +"kategori": "Edukasi"
+        // +"kategori_slug": "edukasi"
+        // +"tag": null
+        // +"tag_slug": null
+        // +"date_full": "27 April 2022"
+        // +"day": "Rabu"
+        // +"date_str": "27"
+        // +"month_str": "April"
+        // +"month": "04"
+        // +"year": "2022"
     }
 
     public static function topArticle(int $limit = 6): ?Collection
@@ -335,5 +371,31 @@ class HomeRepository
             }
             return false;
         } else return false;
+    }
+
+    public static function kataAlumni(?int $limit = 6): mixed
+    {
+        DB::statement("SET SQL_MODE=''");
+        $table = KataAlumni::tableName;
+        $t_user = User::tableName;
+
+        $result = KataAlumni::select([
+            "$table.*",
+            DB::raw("$t_user.name as user"),
+            DB::raw("$t_user.foto as user_foto"),
+            DB::raw("$t_user.username as user_username"),
+            DB::raw("$t_user.id as user_id"),
+        ])
+            ->where("$table.status", '=', '1')
+            ->join($t_user, "$t_user.id", '=', "$table.user_id")
+            ->orderBy("$table.sequence")
+            ->limit($limit)
+            ->get();
+        $result->map(function ($item) {
+            $image_folder = User::image_folder;
+            $item->user_foto = $item->user_foto ? url("$image_folder/$item->user_foto") : asset('assets/image/anggota_default.png');
+            return $item;
+        });
+        return $result;
     }
 }

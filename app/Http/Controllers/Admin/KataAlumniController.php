@@ -253,5 +253,16 @@ class KataAlumniController extends Controller
 
     public function list_save(Request $request)
     {
+        DB::beginTransaction();
+        $sequence = 1;
+        foreach ($request->data ?? [] as $v) {
+            $menu = KataAlumni::find($v['id']);
+            $menu->sequence = $sequence;
+            $menu->save();
+            $sequence++;
+        }
+
+        DB::commit();
+        return response()->json();
     }
 }

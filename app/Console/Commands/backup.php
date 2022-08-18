@@ -100,6 +100,7 @@ class backup extends Command
                 'p_role_has_menu'
             ],
             'utility' => [
+                'notif_admin_atas',
                 'notif_depan_atas',
                 'hari_besar_nasionals',
             ],

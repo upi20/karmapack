@@ -53,6 +53,7 @@ use App\Http\Controllers\Admin\Setting\HomeController;
 
 // Utility ============================================================================================================
 use App\Http\Controllers\Admin\Utility\HariBesarNasionalController;
+use App\Http\Controllers\Admin\Utility\NotifAdminAtasController;
 use App\Http\Controllers\Admin\Utility\NotifDepanAtasController;
 
 
@@ -313,6 +314,16 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     });
 
+    $prefix = 'notif_admin_atas';
+    Route::controller(NotifAdminAtasController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.utility.notif_admin_atas
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+    });
+
     $prefix = 'hari_besar_nasional';
     Route::controller(HariBesarNasionalController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.utility.hari_besar_nasional
@@ -375,7 +386,7 @@ Route::controller(KataAlumniController::class)->prefix($prefix)->group(function 
     Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
     Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     Route::get('/list', 'list')->name("$name.list")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
-    Route::get('/list_save', 'list_save')->name("$name.list_save")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
+    Route::post('/list_save', 'list_save')->name("$name.list_save")->middleware("permission:$name.update|$name.insert|$name.update|$name.delete");
 });
 
 
