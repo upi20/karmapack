@@ -142,7 +142,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                         <div class="container-login100-form-btn">
                                             <button type="submit" class="login100-form-btn btn-primary"
                                                 style="border: 0; border-radius: 24px">
-                                                Sign in
+                                                Masuk
                                             </button>
                                             <div class="text-center pt-4">
                                                 <p class="mb-0">
