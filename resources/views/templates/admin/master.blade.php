@@ -139,7 +139,7 @@ $notifikasi = notif_admin_atas();
                         @if ($notifikasi)
                             <div class="pt-5">
                                 @foreach ($notifikasi as $v)
-                                    <div class="alert alert-default alert-dismissible fade show" role="alert">
+                                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
                                         <span class="alert-inner--text">
                                             {{ $v->deskripsi }}
                                             @if ($v->link)
@@ -217,9 +217,12 @@ $notifikasi = notif_admin_atas();
     </div>
 
     <!-- BACK-TO-TOP -->
-    <a href="#top" id="back-to-top" class="d-flex align-items-center justify-content-center">
-        <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
-    </a>
+    <div style="display: none">
+        <a href="#top" id="back-to-top" class="d-flex align-items-center justify-content-center">
+            <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
+        </a>
+    </div>
+
 
     <!-- JQUERY JS -->
     <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
@@ -261,6 +264,26 @@ $notifikasi = notif_admin_atas();
                 xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
             }
         });
+
+        // BACK TO TOP BUTTON
+        const btn_scroll = $('#back-to-top');
+        $(window).scroll(function() {
+            // position
+            const p = $(window).scrollTop();
+
+            if (p >= 100) btn_scroll.parent().fadeIn();
+            else btn_scroll.parent().fadeOut();
+
+            console.log(p);
+
+            // document height
+            const d_height = $(document).height() - $(window).height();
+        });
+        btn_scroll.click(() => {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+        })
     </script>
     @yield('javascript')
 </body>

@@ -39,22 +39,6 @@
         }
     })
 
-    // BACK TO TOP BUTTON
-    $(window).on("scroll", function (e) {
-        if ($(this).scrollTop() > 0) {
-            $('#back-to-top').fadeIn('slow');
-        } else {
-            $('#back-to-top').fadeOut('slow');
-        }
-    });
-    $(document).on("click", "#back-to-top", function (e) {
-        $("html, body").animate({
-            scrollTop: 0
-        }, 0);
-        return false;
-    });
-
-
     // COVER IMAGE
     $(".cover-image").each(function () {
         var attr = $(this).attr('data-bs-image-src');
@@ -125,7 +109,7 @@
         return new bootstrap.Popover(popoverTriggerEl)
     })
 
-    // BY DEFAULT, BOOTSTRAP DOESN'T AUTO CLOSE POPOVER AFTER APPEARING IN THE PAGE 
+    // BY DEFAULT, BOOTSTRAP DOESN'T AUTO CLOSE POPOVER AFTER APPEARING IN THE PAGE
     $(document).on('click', function (e) {
         $('[data-toggle="popover"],[data-original-title]').each(function () {
             //the 'is' for buttons that trigger popups
@@ -303,7 +287,7 @@
 
     /******* Menu Styles ********/
 
-    // $('body').addClass('light-menu');	
+    // $('body').addClass('light-menu');
     // $('body').addClass('color-menu');
     // $('body').addClass('dark-menu');
     // $('body').addClass('gradient-menu');
@@ -311,7 +295,7 @@
 
     /******* Full Width Layout Start ********/
 
-    // $('body').addClass('layout-boxed'); 
+    // $('body').addClass('layout-boxed');
 
 
     /******** *Header-Position Styles Start* ********/
@@ -506,19 +490,19 @@ $('.off-canvas').on('click', function () {
 function checkOptions() {
     "use strict";
 
-    // light header 
+    // light header
     if (document.querySelector('body').classList.contains('header-light')) {
         $('#myonoffswitch6').prop('checked', true);
     }
-    // color header 
+    // color header
     if (document.querySelector('body').classList.contains('color-header')) {
         $('#myonoffswitch7').prop('checked', true);
     }
-    // gradient header 
+    // gradient header
     if (document.querySelector('body').classList.contains('gradient-header')) {
         $('#myonoffswitch20').prop('checked', true);
     }
-    // dark header 
+    // dark header
     if (document.querySelector('body').classList.contains('dark-header')) {
         $('#myonoffswitch8').prop('checked', true);
     }
