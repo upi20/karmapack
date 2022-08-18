@@ -144,10 +144,12 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 style="border: 0; border-radius: 24px">
                                                 Sign in
                                             </button>
-                                            {{-- <div class="text-center pt-4">
-                                                <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot
-                                                        Password?</a></p>
-                                            </div> --}}
+                                            <div class="text-center pt-4">
+                                                <p class="mb-0">
+                                                    <a href="{{ url('/') }}" class="text-primary ms-1"> Kembali
+                                                    </a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
