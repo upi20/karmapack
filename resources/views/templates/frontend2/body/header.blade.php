@@ -101,54 +101,25 @@
                                 </button>
 
                                 <div class="toggle-element js-search-toggle">
-                                    <div class="header-search pt-90 bg-white shadow-4">
+                                    <div class="header-search pt-90 bg-white shadow-4" style="height: 300px">
                                         <div class="container">
                                             <div class="header-search__field">
-                                                <div class="icon icon-search text-dark-1"></div>
-                                                <input type="text" class="col-12 text-18 lh-12 text-dark-1 fw-500"
-                                                    placeholder="What do you want to learn?">
+                                                <form action="{{ route('anggota') }}" id="search-form">
+                                                    <div class="icon icon-search text-dark-1"
+                                                        onclick="document.getElementById('search-form').submit()"
+                                                        style="cursor: pointer"></div>
+                                                    <input type="search"
+                                                        class="col-12 text-18 lh-12 text-dark-1 fw-500"
+                                                        placeholder="Kata kunci pencarian anggota." name="search"
+                                                        value="{{ request()->query('search') }}">
 
-                                                <button
-                                                    class="d-flex items-center justify-center size-40 rounded-full bg-purple-3"
-                                                    data-el-toggle=".js-search-toggle">
-                                                    <img src="{{ asset('assets/templates/frontend2/img/menus/close.svg') }}"
-                                                        alt="icon">
-                                                </button>
-                                            </div>
-
-                                            <div class="header-search__content mt-30">
-                                                <div class="text-17 text-dark-1 fw-500">Popular Right Now
-                                                </div>
-
-                                                <div class="d-flex y-gap-5 flex-column mt-20">
-                                                    <a href="courses-single-1.html" class="text-dark-1">The Ultimate
-                                                        Drawing Course -
-                                                        Beginner
-                                                        to Advanced</a>
-                                                    <a href="courses-single-2.html" class="text-dark-1">Character Art
-                                                        School: Complete
-                                                        Character Drawing Course</a>
-                                                    <a href="courses-single-3.html" class="text-dark-1">Complete
-                                                        Blender Creator: Learn
-                                                        3D
-                                                        Modelling for Beginners</a>
-                                                    <a href="courses-single-4.html" class="text-dark-1">User
-                                                        Experience Design
-                                                        Essentials -
-                                                        Adobe XD UI UX Design</a>
-                                                    <a href="courses-single-5.html" class="text-dark-1">Graphic Design
-                                                        Masterclass -
-                                                        Learn
-                                                        GREAT Design</a>
-                                                    <a href="courses-single-6.html" class="text-dark-1">Adobe
-                                                        Photoshop CC – Essentials
-                                                        Training Course</a>
-                                                </div>
-
-                                                <div class="mt-30">
-                                                    <button class="uppercase underline">PRESS ENTER TO SEE
-                                                        ALL SEARCH RESULTS</button>
-                                                </div>
+                                                    <button
+                                                        class="d-flex items-center justify-center size-40 rounded-full bg-purple-3"
+                                                        data-el-toggle=".js-search-toggle">
+                                                        <img src="{{ asset('assets/templates/frontend2/img/menus/close.svg') }}"
+                                                            alt="icon">
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
