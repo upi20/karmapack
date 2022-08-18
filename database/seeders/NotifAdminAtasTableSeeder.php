@@ -23,13 +23,13 @@ class NotifAdminAtasTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'nama' => 'situs belum siap wkwk',
-                'deskripsi' => 'Situs ini masih dalam masa pengembangan.',
+                'deskripsi' => 'Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer',
                 'dari' => '2022-08-17',
                 'sampai' => NULL,
-                'link' => NULL,
-                'link_nama' => NULL,
+                'link' => 'https://wa.me/+6285798132505',
+                'link_nama' => 'Klik disini',
                 'created_at' => '2022-08-18 16:42:49',
-                'updated_at' => '2022-08-18 16:58:44',
+                'updated_at' => '2022-08-18 21:09:55',
             ),
         ));
         

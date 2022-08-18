@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\Address\VillageController;
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
-
+use App\Http\Controllers\Admin\Laporan\AnggotaController;
 // Pengurus ===========================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
@@ -461,5 +461,17 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
 
         $method = 'sensus';
         Route::post("/$method", $method)->name("$name_.$method");
+    });
+});
+
+$prefix = "lapooran";
+Route::prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.laporan
+
+    $prefix = 'anggota';
+    Route::controller(AnggotaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.laporan.anggota
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
     });
 });

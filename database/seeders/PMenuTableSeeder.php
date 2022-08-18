@@ -364,11 +364,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Anggota Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 40,
+                'sequence' => 41,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             27 => 
             array (
@@ -377,11 +377,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Profile',
                 'icon' => 'fas fa-user',
                 'route' => 'member.profile',
-                'sequence' => 41,
+                'sequence' => 42,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             28 => 
             array (
@@ -390,11 +390,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Ganti Password',
                 'icon' => 'fas fa-key',
                 'route' => 'member.password',
-                'sequence' => 44,
+                'sequence' => 45,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             29 => 
             array (
@@ -403,11 +403,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Logout',
                 'icon' => 'fas fa-sign-out-alt',
                 'route' => 'logout',
-                'sequence' => 45,
+                'sequence' => 46,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:54:09',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             30 => 
             array (
@@ -442,11 +442,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Alumni Menu',
                 'icon' => NULL,
                 'route' => NULL,
-                'sequence' => 42,
+                'sequence' => 43,
                 'active' => 1,
                 'type' => 0,
                 'created_at' => '2022-08-06 14:06:05',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             33 => 
             array (
@@ -520,11 +520,11 @@ class PMenuTableSeeder extends Seeder
                 'title' => 'Kata Alumni',
                 'icon' => 'fas fa-user-edit',
                 'route' => 'member.kata_alumni',
-                'sequence' => 43,
+                'sequence' => 44,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-09 15:23:52',
-                'updated_at' => '2022-08-18 16:42:10',
+                'updated_at' => '2022-08-18 18:54:24',
             ),
             39 => 
             array (
@@ -603,6 +603,32 @@ class PMenuTableSeeder extends Seeder
                 'type' => 1,
                 'created_at' => '2022-08-18 16:42:00',
                 'updated_at' => '2022-08-18 16:42:10',
+            ),
+            45 => 
+            array (
+                'id' => 403,
+                'parent_id' => NULL,
+                'title' => 'Laporan',
+                'icon' => 'fas fa-book',
+                'route' => NULL,
+                'sequence' => 40,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-18 18:54:07',
+                'updated_at' => '2022-08-18 18:54:24',
+            ),
+            46 => 
+            array (
+                'id' => 404,
+                'parent_id' => 403,
+                'title' => 'Anggota',
+                'icon' => NULL,
+                'route' => 'admin.lapooran.anggota',
+                'sequence' => 46,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-18 18:55:08',
+                'updated_at' => '2022-08-18 18:55:08',
             ),
         ));
         

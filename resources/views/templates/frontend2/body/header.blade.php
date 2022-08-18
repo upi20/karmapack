@@ -5,7 +5,7 @@
                 <div class="container">
                     <p class="text-white">{{ $v->deskripsi }}
                         @if ($v->link)
-                            <a href="{{ $v->link }}" class="text-purple-1">{{ $v->link_nama }}</a>
+                            <a href="{{ $v->link }}" class="text-purple-1 fw-bold">{{ $v->link_nama }}</a>
                         @endif
                     </p>
                 </div>

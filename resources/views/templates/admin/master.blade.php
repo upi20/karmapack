@@ -144,7 +144,7 @@ $notifikasi = notif_admin_atas();
                                             {{ $v->deskripsi }}
                                             @if ($v->link)
                                                 <a href="{{ $v->link }}"
-                                                    class="text-purple-1">{{ $v->link_nama }}</a>
+                                                    class="fw-bold">{{ $v->link_nama }}</a>
                                             @endif
                                         </span>
                                         <button type="button" class="btn-close" data-bs-dismiss="alert"
@@ -274,7 +274,6 @@ $notifikasi = notif_admin_atas();
             if (p >= 100) btn_scroll.parent().fadeIn();
             else btn_scroll.parent().fadeOut();
 
-            console.log(p);
 
             // document height
             const d_height = $(document).height() - $(window).height();

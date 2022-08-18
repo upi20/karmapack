@@ -14,13 +14,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('users')->delete();
-
-        \DB::table('users')->insert(array(
-            0 =>
-            array(
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'name' => 'Isep Lutpi Nur, MTCNA',
                 'whatsapp' => '85798132505',
@@ -50,8 +50,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-08-15 15:52:52',
             ),
-            1 =>
-            array(
+            1 => 
+            array (
                 'id' => 16,
                 'name' => 'HILAL MUHAMMAD FATURAHMAN',
                 'whatsapp' => NULL,
@@ -81,8 +81,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-05-02 09:05:03',
             ),
-            2 =>
-            array(
+            2 => 
+            array (
                 'id' => 17,
                 'name' => 'NITA HALIMATUSSA’DIYAH',
                 'whatsapp' => '85321186477',
@@ -113,8 +113,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 22:27:43',
             ),
-            3 =>
-            array(
+            3 => 
+            array (
                 'id' => 19,
                 'name' => 'ABDUL MUHLIS',
                 'whatsapp' => NULL,
@@ -144,8 +144,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:37:32',
             ),
-            4 =>
-            array(
+            4 => 
+            array (
                 'id' => 20,
                 'name' => 'ANDI TAUFIK PERMADI',
                 'whatsapp' => NULL,
@@ -175,8 +175,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 =>
-            array(
+            5 => 
+            array (
                 'id' => 21,
                 'name' => 'SUKIRMAN MAULANA',
                 'whatsapp' => '85724300377',
@@ -206,8 +206,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 22:33:18',
             ),
-            6 =>
-            array(
+            6 => 
+            array (
                 'id' => 22,
                 'name' => 'DEWI',
                 'whatsapp' => NULL,
@@ -237,8 +237,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:32:41',
             ),
-            7 =>
-            array(
+            7 => 
+            array (
                 'id' => 23,
                 'name' => 'WIWIT AWALIYAH',
                 'whatsapp' => NULL,
@@ -268,8 +268,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:33:52',
             ),
-            8 =>
-            array(
+            8 => 
+            array (
                 'id' => 24,
                 'name' => 'SAEPUL ROHMAN',
                 'whatsapp' => NULL,
@@ -299,8 +299,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:39:36',
             ),
-            9 =>
-            array(
+            9 => 
+            array (
                 'id' => 26,
                 'name' => 'HILMI FITRIANI FUAIADAH',
                 'whatsapp' => NULL,
@@ -330,8 +330,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 21:08:26',
             ),
-            10 =>
-            array(
+            10 => 
+            array (
                 'id' => 27,
                 'name' => 'SAMSUL MAARIP',
                 'whatsapp' => NULL,
@@ -361,8 +361,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:17:50',
             ),
-            11 =>
-            array(
+            11 => 
+            array (
                 'id' => 28,
                 'name' => 'MUHAMAD RAIHAN RAHMAN',
                 'whatsapp' => NULL,
@@ -392,8 +392,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 =>
-            array(
+            12 => 
+            array (
                 'id' => 29,
                 'name' => 'AKBAR MUHAMAD ASHONI',
                 'whatsapp' => NULL,
@@ -423,8 +423,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 =>
-            array(
+            13 => 
+            array (
                 'id' => 30,
                 'name' => 'WAHID NURSIDIK',
                 'whatsapp' => NULL,
@@ -454,8 +454,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:25:19',
             ),
-            14 =>
-            array(
+            14 => 
+            array (
                 'id' => 31,
                 'name' => 'M FAISAL L',
                 'whatsapp' => NULL,
@@ -485,8 +485,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 =>
-            array(
+            15 => 
+            array (
                 'id' => 32,
                 'name' => 'SALAFIA AL ZAHRA FAUZIA',
                 'whatsapp' => NULL,
@@ -516,8 +516,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 21:08:07',
             ),
-            16 =>
-            array(
+            16 => 
+            array (
                 'id' => 33,
                 'name' => 'YUSI YUSFITA',
                 'whatsapp' => NULL,
@@ -547,8 +547,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:22:18',
             ),
-            17 =>
-            array(
+            17 => 
+            array (
                 'id' => 34,
                 'name' => 'CUCU MARYAM NURFADILAH',
                 'whatsapp' => NULL,
@@ -578,8 +578,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:24:37',
             ),
-            18 =>
-            array(
+            18 => 
+            array (
                 'id' => 35,
                 'name' => 'RIFKI ALFAIZAR',
                 'whatsapp' => NULL,
@@ -609,8 +609,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:38:36',
             ),
-            19 =>
-            array(
+            19 => 
+            array (
                 'id' => 36,
                 'name' => 'M. RIDWAN ABDUL AZIZ',
                 'whatsapp' => NULL,
@@ -640,8 +640,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 =>
-            array(
+            20 => 
+            array (
                 'id' => 37,
                 'name' => 'NOVIANTI',
                 'whatsapp' => NULL,
@@ -671,8 +671,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 =>
-            array(
+            21 => 
+            array (
                 'id' => 38,
                 'name' => 'AYU PRATIWI ISMAN',
                 'whatsapp' => NULL,
@@ -702,8 +702,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 =>
-            array(
+            22 => 
+            array (
                 'id' => 39,
                 'name' => 'AI RAHMA ALIA',
                 'whatsapp' => NULL,
@@ -733,8 +733,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 =>
-            array(
+            23 => 
+            array (
                 'id' => 40,
                 'name' => 'ANDI AULIANSYAH',
                 'whatsapp' => NULL,
@@ -764,8 +764,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 =>
-            array(
+            24 => 
+            array (
                 'id' => 41,
                 'name' => 'KHORIDARUL ANISA',
                 'whatsapp' => NULL,
@@ -795,8 +795,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 =>
-            array(
+            25 => 
+            array (
                 'id' => 42,
                 'name' => 'ALWAN A F',
                 'whatsapp' => NULL,
@@ -826,8 +826,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 =>
-            array(
+            26 => 
+            array (
                 'id' => 43,
                 'name' => 'MUHAMMAD CAHYADI',
                 'whatsapp' => NULL,
@@ -857,8 +857,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-08-09 14:21:14',
             ),
-            27 =>
-            array(
+            27 => 
+            array (
                 'id' => 44,
                 'name' => 'AHMAD KAMIL',
                 'whatsapp' => NULL,
@@ -888,8 +888,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 =>
-            array(
+            28 => 
+            array (
                 'id' => 45,
                 'name' => 'SRI AYUNI WAHYUDIN',
                 'whatsapp' => NULL,
@@ -919,8 +919,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:29:33',
             ),
-            29 =>
-            array(
+            29 => 
+            array (
                 'id' => 46,
                 'name' => 'ENCEP ABDUL HAKIM',
                 'whatsapp' => NULL,
@@ -950,8 +950,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:18:08',
             ),
-            30 =>
-            array(
+            30 => 
+            array (
                 'id' => 47,
                 'name' => 'LINDAWATI RUSLIHA',
                 'whatsapp' => NULL,
@@ -981,8 +981,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 =>
-            array(
+            31 => 
+            array (
                 'id' => 49,
                 'name' => 'LINA HERLINA',
                 'whatsapp' => NULL,
@@ -1012,8 +1012,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 =>
-            array(
+            32 => 
+            array (
                 'id' => 50,
                 'name' => 'AGUSTIANI SRI RAHAYU',
                 'whatsapp' => NULL,
@@ -1043,8 +1043,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 =>
-            array(
+            33 => 
+            array (
                 'id' => 51,
                 'name' => 'RURI C. HETIAWATI',
                 'whatsapp' => NULL,
@@ -1074,8 +1074,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:33:17',
             ),
-            34 =>
-            array(
+            34 => 
+            array (
                 'id' => 52,
                 'name' => 'RINRIN IRMAYANI',
                 'whatsapp' => NULL,
@@ -1105,8 +1105,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 =>
-            array(
+            35 => 
+            array (
                 'id' => 53,
                 'name' => 'AI DIAN HAERANI',
                 'whatsapp' => NULL,
@@ -1136,8 +1136,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 =>
-            array(
+            36 => 
+            array (
                 'id' => 54,
                 'name' => 'APRILIA UTAMI HERDI',
                 'whatsapp' => NULL,
@@ -1167,8 +1167,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:39:02',
             ),
-            37 =>
-            array(
+            37 => 
+            array (
                 'id' => 55,
                 'name' => 'SITI BASIROH',
                 'whatsapp' => NULL,
@@ -1198,8 +1198,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 =>
-            array(
+            38 => 
+            array (
                 'id' => 57,
                 'name' => 'NU’MAN BASIR',
                 'whatsapp' => NULL,
@@ -1229,8 +1229,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 21:07:57',
             ),
-            39 =>
-            array(
+            39 => 
+            array (
                 'id' => 58,
                 'name' => 'MAULANA YUSUF',
                 'whatsapp' => NULL,
@@ -1260,8 +1260,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:38:14',
             ),
-            40 =>
-            array(
+            40 => 
+            array (
                 'id' => 59,
                 'name' => 'INDRA KURNIA',
                 'whatsapp' => NULL,
@@ -1291,8 +1291,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-05-02 09:06:17',
             ),
-            41 =>
-            array(
+            41 => 
+            array (
                 'id' => 60,
                 'name' => 'EGI',
                 'whatsapp' => NULL,
@@ -1322,8 +1322,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 =>
-            array(
+            42 => 
+            array (
                 'id' => 61,
                 'name' => 'M RIDWANAN',
                 'whatsapp' => NULL,
@@ -1353,8 +1353,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 =>
-            array(
+            43 => 
+            array (
                 'id' => 62,
                 'name' => 'WITA DEWI LESTARI',
                 'whatsapp' => NULL,
@@ -1384,8 +1384,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 =>
-            array(
+            44 => 
+            array (
                 'id' => 63,
                 'name' => 'M SYAHRUL RAMADHAN',
                 'whatsapp' => NULL,
@@ -1415,8 +1415,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:34:30',
             ),
-            45 =>
-            array(
+            45 => 
+            array (
                 'id' => 64,
                 'name' => 'ILHAM FAOZ',
                 'whatsapp' => NULL,
@@ -1446,8 +1446,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:16:06',
             ),
-            46 =>
-            array(
+            46 => 
+            array (
                 'id' => 65,
                 'name' => 'ADRIAN SYAMSYUL RAMLI',
                 'whatsapp' => NULL,
@@ -1477,8 +1477,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:27:34',
             ),
-            47 =>
-            array(
+            47 => 
+            array (
                 'id' => 67,
                 'name' => 'AGUNG SETIABUDI',
                 'whatsapp' => NULL,
@@ -1508,8 +1508,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 =>
-            array(
+            48 => 
+            array (
                 'id' => 68,
                 'name' => 'YUSUF MUGNI',
                 'whatsapp' => NULL,
@@ -1539,8 +1539,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:17:37',
             ),
-            49 =>
-            array(
+            49 => 
+            array (
                 'id' => 69,
                 'name' => 'SITI SUROH HOLISOH',
                 'whatsapp' => NULL,
@@ -1570,8 +1570,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-15 14:26:41',
             ),
-            50 =>
-            array(
+            50 => 
+            array (
                 'id' => 70,
                 'name' => 'SAEPUL FIKRI',
                 'whatsapp' => NULL,
@@ -1601,8 +1601,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 =>
-            array(
+            51 => 
+            array (
                 'id' => 71,
                 'name' => 'MUHAMMAD FIKI NUGRAHA',
                 'whatsapp' => NULL,
@@ -1632,8 +1632,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 =>
-            array(
+            52 => 
+            array (
                 'id' => 72,
                 'name' => 'SRI HASTUTI',
                 'whatsapp' => NULL,
@@ -1663,8 +1663,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 =>
-            array(
+            53 => 
+            array (
                 'id' => 73,
                 'name' => 'DERIS KUSNAEDI',
                 'whatsapp' => NULL,
@@ -1694,8 +1694,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            54 =>
-            array(
+            54 => 
+            array (
                 'id' => 74,
                 'name' => 'FERY FIRMANSYAH',
                 'whatsapp' => NULL,
@@ -1725,8 +1725,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            55 =>
-            array(
+            55 => 
+            array (
                 'id' => 75,
                 'name' => 'NISYARA SEPTIARANI SUKMA',
                 'whatsapp' => NULL,
@@ -1756,8 +1756,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            56 =>
-            array(
+            56 => 
+            array (
                 'id' => 76,
                 'name' => 'SITI NURJAMILAH',
                 'whatsapp' => NULL,
@@ -1787,8 +1787,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 =>
-            array(
+            57 => 
+            array (
                 'id' => 77,
                 'name' => 'PUPUNG RUSTIKA ',
                 'whatsapp' => NULL,
@@ -1818,8 +1818,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            58 =>
-            array(
+            58 => 
+            array (
                 'id' => 78,
                 'name' => 'HASBI ABDUL HUSAIN ',
                 'whatsapp' => NULL,
@@ -1849,8 +1849,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            59 =>
-            array(
+            59 => 
+            array (
                 'id' => 79,
                 'name' => 'NUR HASAN ',
                 'whatsapp' => NULL,
@@ -1880,8 +1880,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            60 =>
-            array(
+            60 => 
+            array (
                 'id' => 80,
                 'name' => 'ARSILA KHAIRUNNISA',
                 'whatsapp' => NULL,
@@ -1911,8 +1911,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            61 =>
-            array(
+            61 => 
+            array (
                 'id' => 81,
                 'name' => 'SOFI TRI A',
                 'whatsapp' => NULL,
@@ -1942,8 +1942,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            62 =>
-            array(
+            62 => 
+            array (
                 'id' => 82,
                 'name' => 'RAGIL JR',
                 'whatsapp' => NULL,
@@ -1973,8 +1973,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            63 =>
-            array(
+            63 => 
+            array (
                 'id' => 83,
                 'name' => 'MUHAMMAD IMAN NURJAMAN',
                 'whatsapp' => NULL,
@@ -2004,8 +2004,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            64 =>
-            array(
+            64 => 
+            array (
                 'id' => 84,
                 'name' => 'MUHAMMAD INDRA SUKMARA',
                 'whatsapp' => NULL,
@@ -2035,8 +2035,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            65 =>
-            array(
+            65 => 
+            array (
                 'id' => 85,
                 'name' => 'MUHAMMAD RAIHAN ',
                 'whatsapp' => NULL,
@@ -2066,8 +2066,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            66 =>
-            array(
+            66 => 
+            array (
                 'id' => 86,
                 'name' => 'IMAT ROHIMAT',
                 'whatsapp' => NULL,
@@ -2097,8 +2097,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            67 =>
-            array(
+            67 => 
+            array (
                 'id' => 87,
                 'name' => 'ALFIRDA DAMAYANTI ',
                 'whatsapp' => NULL,
@@ -2128,8 +2128,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            68 =>
-            array(
+            68 => 
+            array (
                 'id' => 89,
                 'name' => 'SILVIA ANGGRAENI',
                 'whatsapp' => NULL,
@@ -2159,8 +2159,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            69 =>
-            array(
+            69 => 
+            array (
                 'id' => 90,
                 'name' => 'AI YETI KOKOM KOMALASARI',
                 'whatsapp' => NULL,
@@ -2190,8 +2190,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            70 =>
-            array(
+            70 => 
+            array (
                 'id' => 91,
                 'name' => 'SIPA PUSPITASARI ',
                 'whatsapp' => NULL,
@@ -2221,8 +2221,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            71 =>
-            array(
+            71 => 
+            array (
                 'id' => 92,
                 'name' => 'ADE MUNAWAR',
                 'whatsapp' => NULL,
@@ -2252,8 +2252,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            72 =>
-            array(
+            72 => 
+            array (
                 'id' => 93,
                 'name' => 'ABDUL AZIZ ',
                 'whatsapp' => NULL,
@@ -2283,8 +2283,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            73 =>
-            array(
+            73 => 
+            array (
                 'id' => 94,
                 'name' => 'GUSAERI ',
                 'whatsapp' => NULL,
@@ -2314,8 +2314,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            74 =>
-            array(
+            74 => 
+            array (
                 'id' => 95,
                 'name' => 'M. FAISHAL ',
                 'whatsapp' => NULL,
@@ -2345,8 +2345,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            75 =>
-            array(
+            75 => 
+            array (
                 'id' => 96,
                 'name' => 'NASRIATUL HAMIDAH',
                 'whatsapp' => NULL,
@@ -2376,8 +2376,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            76 =>
-            array(
+            76 => 
+            array (
                 'id' => 97,
                 'name' => 'NENG NURHANAH ',
                 'whatsapp' => NULL,
@@ -2407,8 +2407,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            77 =>
-            array(
+            77 => 
+            array (
                 'id' => 98,
                 'name' => 'SOLEHUDIN',
                 'whatsapp' => NULL,
@@ -2438,8 +2438,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            78 =>
-            array(
+            78 => 
+            array (
                 'id' => 99,
                 'name' => 'AHMAD DIMYATI RIDWAN',
                 'whatsapp' => '81214648443',
@@ -2469,8 +2469,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-16 11:26:57',
             ),
-            79 =>
-            array(
+            79 => 
+            array (
                 'id' => 100,
                 'name' => 'ELISA PUTRI ANGGRAENI',
                 'whatsapp' => '085798104331',
@@ -2500,8 +2500,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-19 20:09:58',
             ),
-            80 =>
-            array(
+            80 => 
+            array (
                 'id' => 101,
                 'name' => 'WIDI AYUNI MAULIDIA',
                 'whatsapp' => '85722768183',
@@ -2531,8 +2531,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => '2022-07-16 11:38:42',
             ),
-            81 =>
-            array(
+            81 => 
+            array (
                 'id' => 106,
                 'name' => 'RAMLAN HIDAYAT',
                 'whatsapp' => NULL,
@@ -2562,8 +2562,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            82 =>
-            array(
+            82 => 
+            array (
                 'id' => 108,
                 'name' => 'AJENG KARTINI',
                 'whatsapp' => NULL,
@@ -2593,8 +2593,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            83 =>
-            array(
+            83 => 
+            array (
                 'id' => 109,
                 'name' => 'ILHAM FAISAL DEBO',
                 'whatsapp' => NULL,
@@ -2624,8 +2624,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            84 =>
-            array(
+            84 => 
+            array (
                 'id' => 110,
                 'name' => 'RISMAWATI',
                 'whatsapp' => NULL,
@@ -2655,8 +2655,8 @@ Gomawo',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            85 =>
-            array(
+            85 => 
+            array (
                 'id' => 111,
                 'name' => 'THIA RAMADHANI AMIN',
                 'whatsapp' => NULL,
@@ -2687,5 +2687,7 @@ Gomawo',
                 'updated_at' => NULL,
             ),
         ));
+        
+        
     }
 }

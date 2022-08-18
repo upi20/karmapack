@@ -1211,6 +1211,70 @@ class PRoleHasMenuTableSeeder extends Seeder
                 'created_at' => '2022-08-18 16:42:00',
                 'updated_at' => '2022-08-18 16:42:00',
             ),
+            149 => 
+            array (
+                'id' => 710,
+                'role_id' => 1,
+                'menu_id' => 403,
+                'created_at' => '2022-08-18 18:54:07',
+                'updated_at' => '2022-08-18 18:54:07',
+            ),
+            150 => 
+            array (
+                'id' => 711,
+                'role_id' => 4,
+                'menu_id' => 403,
+                'created_at' => '2022-08-18 18:54:07',
+                'updated_at' => '2022-08-18 18:54:07',
+            ),
+            151 => 
+            array (
+                'id' => 712,
+                'role_id' => 5,
+                'menu_id' => 403,
+                'created_at' => '2022-08-18 18:54:07',
+                'updated_at' => '2022-08-18 18:54:07',
+            ),
+            152 => 
+            array (
+                'id' => 713,
+                'role_id' => 6,
+                'menu_id' => 403,
+                'created_at' => '2022-08-18 18:54:07',
+                'updated_at' => '2022-08-18 18:54:07',
+            ),
+            153 => 
+            array (
+                'id' => 714,
+                'role_id' => 1,
+                'menu_id' => 404,
+                'created_at' => '2022-08-18 18:55:08',
+                'updated_at' => '2022-08-18 18:55:08',
+            ),
+            154 => 
+            array (
+                'id' => 715,
+                'role_id' => 4,
+                'menu_id' => 404,
+                'created_at' => '2022-08-18 18:55:08',
+                'updated_at' => '2022-08-18 18:55:08',
+            ),
+            155 => 
+            array (
+                'id' => 716,
+                'role_id' => 5,
+                'menu_id' => 404,
+                'created_at' => '2022-08-18 18:55:08',
+                'updated_at' => '2022-08-18 18:55:08',
+            ),
+            156 => 
+            array (
+                'id' => 717,
+                'role_id' => 6,
+                'menu_id' => 404,
+                'created_at' => '2022-08-18 18:55:08',
+                'updated_at' => '2022-08-18 18:55:08',
+            ),
         ));
         
         
