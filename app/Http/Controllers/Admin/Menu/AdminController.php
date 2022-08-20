@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Menu;
 
 use App\Http\Controllers\Controller;
-use App\Models\Menu;
+use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\RoleHasMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use League\Config\Exception\ValidationException;
 use Spatie\Permission\Models\Role;
 
-class MenuController extends Controller
+class AdminController extends Controller
 {
     private $validation_rule = [
         'title' => ['required', 'string', 'max:255'],
@@ -34,24 +34,15 @@ class MenuController extends Controller
         $page_attr = [
             'title' => 'Menu Management',
             'breadcrumbs' => [
-                ['name' => 'User Access'],
+                ['name' => 'Admin'],
             ]
         ];
-
-        $can_insert = auth_can(h_prefix('insert'));
-        $can_update = auth_can(h_prefix('update'));
-        $can_delete = auth_can(h_prefix('delete'));
-        $can_save = auth_can(h_prefix('save'));
         $data = compact(
             'page_attr',
             'routes',
             'roles',
-            'can_insert',
-            'can_update',
-            'can_delete',
-            'can_save',
         );
-        return view('admin.menu.menu',  array_merge($data, ['compact' => $data]));
+        return view('admin.menu.admin',  array_merge($data, ['compact' => $data]));
     }
 
 
@@ -62,7 +53,7 @@ class MenuController extends Controller
 
     public function parent_list(Request $request)
     {
-        $result = Menu::select([DB::raw("concat(title, if((route is null or route = ''), '', concat(' | ', route))) as text"), DB::raw('id')])
+        $result = MenuAdmin::select([DB::raw("concat(title, if((route is null or route = ''), '', concat(' | ', route))) as text"), DB::raw('id')])
             ->where('parent_id', '=', null)
             ->where('type', '=', 1)
             ->where('title', 'LIKE', '%' . $request->search . '%')
@@ -73,7 +64,7 @@ class MenuController extends Controller
 
     public function find(Request $request)
     {
-        $result = Menu::findEdit($request->id);
+        $result = MenuAdmin::findEdit($request->id);
 
         return response()->json(['data' => $result]);
     }
@@ -83,7 +74,7 @@ class MenuController extends Controller
         DB::beginTransaction();
         $sequence = 1;
         foreach ($request->data ?? [] as $v) {
-            $menu = Menu::find($v['id']);
+            $menu = MenuAdmin::find($v['id']);
             $menu->parent_id = isset($v['parent_id']) ? $v['parent_id'] : null;
             $menu->sequence = $sequence;
             $menu->save();
@@ -101,7 +92,7 @@ class MenuController extends Controller
             $request->validate($this->validation_rule);
             DB::beginTransaction();
             // insert menu
-            $model = new Menu();
+            $model = new MenuAdmin();
             $model->sequence = $request->sequence;
             $model->parent_id = $request->parent_id == 0 ? null : $request->parent_id;
             $model->active = $request->active;
@@ -138,7 +129,7 @@ class MenuController extends Controller
             ));
             DB::beginTransaction();
             // update menu
-            $model = Menu::find($request->id);
+            $model = MenuAdmin::find($request->id);
             $model->parent_id = $request->parent_id == 0 ? null : $request->parent_id;
             $model->active = $request->active;
             $model->title = $request->title;
@@ -168,11 +159,11 @@ class MenuController extends Controller
         }
     }
 
-    public function delete(Menu $model)
+    public function delete(MenuAdmin $model)
     {
         DB::beginTransaction();
         // set null child parent_id
-        Menu::where('parent_id', '=', $model->id)->update(['parent_id' => null]);
+        MenuAdmin::where('parent_id', '=', $model->id)->update(['parent_id' => null]);
         $model->delete();
         DB::commit();
         return response()->json();

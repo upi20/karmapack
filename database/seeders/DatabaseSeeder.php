@@ -91,9 +91,9 @@ class DatabaseSeeder extends Seeder
         $this->call(KataAlumnisTableSeeder::class);
         $this->call(HariBesarNasionalsTableSeeder::class);
         $this->call(GFormsTableSeeder::class);
-        $this->call(NotifDepanAtasTableSeeder::class);
-
-        DB::commit();
         $this->call(NotifAdminAtasTableSeeder::class);
+        $this->call(NotifDepanAtasTableSeeder::class);
+        $this->call(PMenuFrontendsTableSeeder::class);
+        DB::commit();
     }
 }

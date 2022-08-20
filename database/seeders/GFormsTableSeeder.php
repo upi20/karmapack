@@ -34,7 +34,7 @@ class GFormsTableSeeder extends Seeder
                 'tampilkan' => 1,
                 'status' => 1,
                 'created_at' => '2022-08-08 13:55:32',
-                'updated_at' => '2022-08-09 11:45:27',
+                'updated_at' => '2022-08-20 14:49:46',
             ),
             1 => 
             array (

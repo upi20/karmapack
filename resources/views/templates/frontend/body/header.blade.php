@@ -42,6 +42,5 @@
 
     @include('templates.frontend.body.topbar', [
         'page_attr_navigation' => $page_attr_navigation,
-        'menu_bidang' => $menu_bidang,
     ])
 </header>

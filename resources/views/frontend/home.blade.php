@@ -127,7 +127,7 @@
                                     @endif
 
                                     @php
-                                        $get_id_yt = \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail);
+                                        $get_id_yt = check_image_youtube($a->detail);
                                         $youtube = $get_id_yt ? true : false;
                                         $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
                                     @endphp
@@ -280,7 +280,7 @@
                                         <a href="{{ route('artikel', $a->slug) }}">
                                             <div class="inner">
                                                 @php
-                                                    $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail) . '/sddefault.jpg';
+                                                    $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . check_image_youtube($a->detail) . '/sddefault.jpg';
                                                 @endphp
                                                 <img src="{{ $foto }}" alt="{{ $a->nama }}"
                                                     style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;" />

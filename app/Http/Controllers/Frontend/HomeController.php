@@ -41,8 +41,7 @@ class HomeController extends Controller
 
 
         // frontend
-        $fe = new \App\Helpers\Frontend\Template\Master($model->id);
-        $list_sosmed = $fe->getSosmed();
+        $list_sosmed = get_sosmed();
 
 
         // artikel
@@ -96,7 +95,7 @@ class HomeController extends Controller
         $model->save();
 
         $user = User::find($model->user_id);
-        $get_id_yt = \App\Helpers\Frontend\Template\Master::checkImageYoutube($model->detail);
+        $get_id_yt = check_image_youtube($model->detail);
         $foto = $model->foto ? asset($model->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
 
         $keyword = HomeRepository::artikelTagKeyword($model->id);

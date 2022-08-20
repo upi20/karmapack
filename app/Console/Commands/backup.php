@@ -97,7 +97,8 @@ class backup extends Command
                 'p_roles',
                 'p_role_has_permissions',
                 'p_menu',
-                'p_role_has_menu'
+                'p_menu_frontends',
+                'p_role_has_menu',
             ],
             'utility' => [
                 'notif_admin_atas',

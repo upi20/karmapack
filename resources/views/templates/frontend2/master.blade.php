@@ -14,13 +14,11 @@ $page_attr = (object) [
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_front('app.title'), env('APP_NAME'));
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
-$master_helper = new \App\Helpers\Frontend\Template\Master($page_attr->periode_id);
-$getSosmed_val = $master_helper->getSosmed();
-$menuBidang_val = $master_helper->menuBidang();
-$footerInstagram_val = $master_helper->footerInstagram();
+$getSosmed_val = get_sosmed();
+$footerInstagram_val = footer_instagram();
 $notifikasi = notif_depan_atas();
 
-$compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'master_helper', 'getSosmed_val', 'menuBidang_val', 'footerInstagram_val', 'notifikasi', 'page_attr'));
+$compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'footerInstagram_val', 'notifikasi', 'page_attr'));
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +76,6 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <meta itemprop="name" content="{{ $page_attr_title }}">
     <meta itemprop="description" content="{{ $page_attr->description }}">
     <meta itemprop="image" content="{{ $page_attr->image }}">
-
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">

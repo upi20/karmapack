@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Menu;
 
+use App\Models\RoleHasMenu;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Menu extends Model
+class Admin extends Model
 {
     use HasFactory;
     protected $guarded = [];

@@ -50,3 +50,9 @@ backend
 
 Membuat Menu Pengumuman
     Ulang tahun H-3
+
+
+
+UntuK hari ini sabtu 20 agustus 2022
+    - buat menu untuk frontend dan implementasi nya
+    - buat template dari projek ini pisahkan saja yang penting

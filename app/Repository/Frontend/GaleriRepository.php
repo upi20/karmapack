@@ -2,7 +2,6 @@
 
 namespace App\Repository\Frontend;
 
-use App\Helpers\Pagination;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
 
@@ -27,7 +26,7 @@ class GaleriRepository
         $model = json_Decode($model);
 
         // pagination
-        $pagination = Pagination::generate($model, $params);
+        $pagination = pagination_generate($model, $params);
 
         // return
         return (object)[

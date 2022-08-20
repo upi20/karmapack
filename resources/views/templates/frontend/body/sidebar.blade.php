@@ -10,7 +10,7 @@
 
     <!-- menu -->
     <nav>
-        {!! navbar_menu_front(app('config')->get('menu_list')['frontend'], $page_attr_navigation, $menu_bidang) !!}
+        {!! navbar_menu_front($page_attr_navigation) !!}
     </nav>
 
 

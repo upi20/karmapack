@@ -2,7 +2,6 @@
 
 namespace App\Repository\Frontend;
 
-use App\Helpers\Pagination;
 use App\Models\Artikel\Artikel;
 use App\Models\Artikel\Kategori;
 use App\Models\Artikel\KategoriArtikel;
@@ -282,7 +281,7 @@ class HomeRepository
         $model = json_Decode($model);
 
         // pagination
-        $pagination = Pagination::generate($model, $params);
+        $pagination = pagination_generate($model, $params);
 
         // return
         return (object)[

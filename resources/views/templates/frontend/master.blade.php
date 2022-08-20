@@ -15,10 +15,8 @@ $page_attr = (object) [
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 
-$master_helper = new \App\Helpers\Frontend\Template\Master($page_attr->periode_id);
-$getSosmed_val = $master_helper->getSosmed();
-$menuBidang_val = $master_helper->menuBidang();
-$footerInstagram_val = $master_helper->footerInstagram();
+$getSosmed_val = get_sosmed();
+$footerInstagram_val = footer_instagram();
 $notifikasi = notif_depan_atas();
 ?>
 <!DOCTYPE html>
@@ -203,7 +201,6 @@ $notifikasi = notif_depan_atas();
     @include('templates.frontend.body.header', [
         'list_sosmed' => $getSosmed_val,
         'page_attr_navigation' => $page_attr->navigation,
-        'menu_bidang' => $menuBidang_val,
     ])
 
     @yield('udnder_header')
@@ -247,7 +244,6 @@ $notifikasi = notif_depan_atas();
     @include('templates.frontend.body.sidebar', [
         'list_sosmed' => $getSosmed_val,
         'page_attr_navigation' => $page_attr->navigation,
-        'menu_bidang' => $menuBidang_val,
     ])
 
     <!-- JAVA SCRIPTS -->

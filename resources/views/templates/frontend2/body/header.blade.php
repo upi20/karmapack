@@ -47,7 +47,7 @@
                             @endif
                             <div class="menu js-navList">
                                 <ul class="list-style-none menu__nav text-dark-1 -is-active">
-                                    {!! navbar_menu_front2(app('config')->get('menu_list')['frontend'], $page_attr->navigation, $menuBidang_val) !!}
+                                    {!! navbar_menu_front2($page_attr->navigation) !!}
                                 </ul>
                             </div>
 

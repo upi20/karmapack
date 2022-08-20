@@ -414,7 +414,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
                                 @php
-                                    $get_id_yt = \App\Helpers\Frontend\Template\Master::checkImageYoutube($a->detail);
+                                    $get_id_yt = check_image_youtube($a->detail);
                                     $youtube = $get_id_yt ? true : false;
                                     $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
                                 @endphp

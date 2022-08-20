@@ -2,8 +2,6 @@
 
 namespace App\Repository\Frontend;
 
-use App\Helpers\Pagination;
-use App\Http\Controllers\Controller;
 use App\Models\Address\District;
 use App\Models\Address\Province;
 use App\Models\Address\Regencie;
@@ -16,9 +14,6 @@ use App\Models\Profile\Pendidikan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use League\Config\Exception\ValidationException;
-use App\Helpers\Summernote;
-use App\Models\Profile\Hobby;
 use App\Models\Profile\Kontak;
 use App\Models\Profile\KontakTipe;
 use App\Models\Profile\PendidikanJenis;
@@ -199,7 +194,7 @@ class MemberRepository
         $model = json_Decode($model);
 
         // pagination
-        $pagination = Pagination::generate($model, $params);
+        $pagination = pagination_generate($model, $params);
 
         // return
         return (object)[

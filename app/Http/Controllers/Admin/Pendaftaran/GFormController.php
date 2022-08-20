@@ -321,6 +321,10 @@ class GFormController extends Controller
             'image' => $image,
         ];
 
+        if ($model->tampilkan == 1) {
+            $page_attr['navigation'] = 'pendaftaran';
+        }
+
         $link = str_contains($model->link, '?') ? ($model->link . '&') : ($model->link . '?');
         $link = $link . 'embedded=true';
         return view('frontend.pendaftaran.gform', compact('page_attr', 'model', 'link'));

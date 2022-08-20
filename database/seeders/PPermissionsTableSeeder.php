@@ -774,42 +774,42 @@ class PPermissionsTableSeeder extends Seeder
             94 => 
             array (
                 'id' => 137,
-                'name' => 'admin.menu',
+                'name' => 'admin.menu.admin',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-05 00:27:17',
-                'updated_at' => '2022-08-05 00:27:17',
+                'updated_at' => '2022-08-20 14:13:15',
             ),
             95 => 
             array (
                 'id' => 139,
-                'name' => 'admin.menu.update',
+                'name' => 'admin.menu.admin.update',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-05 19:03:54',
-                'updated_at' => '2022-08-05 19:03:54',
+                'updated_at' => '2022-08-20 14:13:37',
             ),
             96 => 
             array (
                 'id' => 140,
-                'name' => 'admin.menu.save',
+                'name' => 'admin.menu.admin.save',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-05 21:03:40',
-                'updated_at' => '2022-08-05 21:03:40',
+                'updated_at' => '2022-08-20 14:13:32',
             ),
             97 => 
             array (
                 'id' => 141,
-                'name' => 'admin.menu.insert',
+                'name' => 'admin.menu.admin.insert',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-05 21:03:46',
-                'updated_at' => '2022-08-05 21:03:46',
+                'updated_at' => '2022-08-20 14:13:26',
             ),
             98 => 
             array (
                 'id' => 143,
-                'name' => 'admin.menu.delete',
+                'name' => 'admin.menu.admin.delete',
                 'guard_name' => 'web',
                 'created_at' => '2022-08-05 23:07:03',
-                'updated_at' => '2022-08-05 23:07:03',
+                'updated_at' => '2022-08-20 14:13:21',
             ),
             99 => 
             array (

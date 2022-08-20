@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\UserAccess;
 
 use App\Http\Controllers\Controller;
-use App\Models\Menu;
+use App\Models\Menu\Admin as MenuAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
@@ -41,7 +41,7 @@ class RoleController extends Controller
         //get permission all
         $tableNames = config('permission.table_names');
         $t_permission = $tableNames['permissions'];
-        $t_menu = Menu::tableName;
+        $t_menu = MenuAdmin::tableName;
         $is_page = <<<SQL
             (if(( select count(*) from $t_menu where $t_menu.`route` = $t_permission.`name`) > 0,1,0))
         SQL;
@@ -69,7 +69,7 @@ class RoleController extends Controller
         //get permission all
         $tableNames = config('permission.table_names');
         $t_permission = $tableNames['permissions'];
-        $t_menu = Menu::tableName;
+        $t_menu = MenuAdmin::tableName;
         $is_page = <<<SQL
             (if(( select count(*) from $t_menu where $t_menu.`route` = $t_permission.`name`) > 0,1,0))
         SQL;
