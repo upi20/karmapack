@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <div class="row justify-center pt-60 lg:pt-40" data-anim="slide-up delay-5">
+    <div class="row justify-center pt-60 lg:pt-40" data-anim="slide-up delay-1">
         <div class="col-auto">
             <div class="pagination -buttons">
                 {{-- Previous Page Link --}}
