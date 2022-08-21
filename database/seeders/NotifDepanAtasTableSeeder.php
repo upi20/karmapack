@@ -25,11 +25,11 @@ class NotifDepanAtasTableSeeder extends Seeder
                 'nama' => 'Situs ini masih dalam masa pengembangan.',
                 'deskripsi' => 'Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer',
                 'dari' => '2022-08-02',
-                'sampai' => NULL,
+                'sampai' => '2022-08-21',
                 'link' => 'https://wa.me/+6285798132505',
                 'link_nama' => 'Klik disini',
                 'created_at' => '2022-08-08 22:37:14',
-                'updated_at' => '2022-08-18 21:09:50',
+                'updated_at' => '2022-08-22 02:43:16',
             ),
             1 => 
             array (

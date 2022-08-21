@@ -349,45 +349,13 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
             ),
             41 => 
             array (
-                'id' => 61,
-                'periode_id' => 2,
-                'user_id' => 17,
-                'created_at' => '2022-04-21 14:58:12',
-                'updated_at' => '2022-04-21 14:58:12',
-            ),
-            42 => 
-            array (
-                'id' => 62,
-                'periode_id' => 2,
-                'user_id' => 21,
-                'created_at' => '2022-04-21 14:58:12',
-                'updated_at' => '2022-04-21 14:58:12',
-            ),
-            43 => 
-            array (
-                'id' => 63,
-                'periode_id' => 2,
-                'user_id' => 59,
-                'created_at' => '2022-04-21 14:58:12',
-                'updated_at' => '2022-04-21 14:58:12',
-            ),
-            44 => 
-            array (
-                'id' => 64,
-                'periode_id' => 2,
-                'user_id' => 1,
-                'created_at' => '2022-04-21 14:58:12',
-                'updated_at' => '2022-04-21 14:58:12',
-            ),
-            45 => 
-            array (
                 'id' => 65,
                 'periode_id' => 2,
                 'user_id' => 37,
                 'created_at' => '2022-05-02 19:49:06',
                 'updated_at' => '2022-05-02 19:49:06',
             ),
-            46 => 
+            42 => 
             array (
                 'id' => 66,
                 'periode_id' => 2,
@@ -395,7 +363,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-05-02 19:49:20',
                 'updated_at' => '2022-05-02 19:49:20',
             ),
-            47 => 
+            43 => 
             array (
                 'id' => 67,
                 'periode_id' => 2,
@@ -403,7 +371,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-05-02 19:49:47',
                 'updated_at' => '2022-05-02 19:49:47',
             ),
-            48 => 
+            44 => 
             array (
                 'id' => 68,
                 'periode_id' => 2,
@@ -411,7 +379,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-05-02 19:49:47',
                 'updated_at' => '2022-05-02 19:49:47',
             ),
-            49 => 
+            45 => 
             array (
                 'id' => 69,
                 'periode_id' => 2,
@@ -419,7 +387,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-05-02 19:49:47',
                 'updated_at' => '2022-05-02 19:49:47',
             ),
-            50 => 
+            46 => 
             array (
                 'id' => 71,
                 'periode_id' => 6,
@@ -427,7 +395,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:23:27',
                 'updated_at' => '2022-07-15 16:23:27',
             ),
-            51 => 
+            47 => 
             array (
                 'id' => 72,
                 'periode_id' => 6,
@@ -435,7 +403,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:24:20',
                 'updated_at' => '2022-07-15 16:24:20',
             ),
-            52 => 
+            48 => 
             array (
                 'id' => 73,
                 'periode_id' => 6,
@@ -443,7 +411,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:26:07',
                 'updated_at' => '2022-07-15 16:26:07',
             ),
-            53 => 
+            49 => 
             array (
                 'id' => 74,
                 'periode_id' => 6,
@@ -451,7 +419,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:26:14',
                 'updated_at' => '2022-07-15 16:26:14',
             ),
-            54 => 
+            50 => 
             array (
                 'id' => 80,
                 'periode_id' => 6,
@@ -459,7 +427,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:30:05',
                 'updated_at' => '2022-07-15 16:30:05',
             ),
-            55 => 
+            51 => 
             array (
                 'id' => 81,
                 'periode_id' => 6,
@@ -467,7 +435,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:30:22',
                 'updated_at' => '2022-07-15 16:30:22',
             ),
-            56 => 
+            52 => 
             array (
                 'id' => 82,
                 'periode_id' => 6,
@@ -475,7 +443,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            57 => 
+            53 => 
             array (
                 'id' => 83,
                 'periode_id' => 6,
@@ -483,7 +451,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            58 => 
+            54 => 
             array (
                 'id' => 84,
                 'periode_id' => 6,
@@ -491,7 +459,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            59 => 
+            55 => 
             array (
                 'id' => 85,
                 'periode_id' => 6,
@@ -499,7 +467,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            60 => 
+            56 => 
             array (
                 'id' => 86,
                 'periode_id' => 6,
@@ -507,7 +475,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            61 => 
+            57 => 
             array (
                 'id' => 87,
                 'periode_id' => 6,
@@ -515,7 +483,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:31:01',
                 'updated_at' => '2022-07-15 16:31:01',
             ),
-            62 => 
+            58 => 
             array (
                 'id' => 88,
                 'periode_id' => 6,
@@ -523,7 +491,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:34:42',
                 'updated_at' => '2022-07-15 16:34:42',
             ),
-            63 => 
+            59 => 
             array (
                 'id' => 89,
                 'periode_id' => 6,
@@ -531,7 +499,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:34:50',
                 'updated_at' => '2022-07-15 16:34:50',
             ),
-            64 => 
+            60 => 
             array (
                 'id' => 96,
                 'periode_id' => 6,
@@ -539,7 +507,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            65 => 
+            61 => 
             array (
                 'id' => 97,
                 'periode_id' => 6,
@@ -547,7 +515,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            66 => 
+            62 => 
             array (
                 'id' => 98,
                 'periode_id' => 6,
@@ -555,7 +523,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            67 => 
+            63 => 
             array (
                 'id' => 99,
                 'periode_id' => 6,
@@ -563,7 +531,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            68 => 
+            64 => 
             array (
                 'id' => 100,
                 'periode_id' => 6,
@@ -571,7 +539,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            69 => 
+            65 => 
             array (
                 'id' => 101,
                 'periode_id' => 6,
@@ -579,7 +547,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:35:48',
                 'updated_at' => '2022-07-15 16:35:48',
             ),
-            70 => 
+            66 => 
             array (
                 'id' => 102,
                 'periode_id' => 6,
@@ -587,7 +555,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:39:16',
                 'updated_at' => '2022-07-15 16:39:16',
             ),
-            71 => 
+            67 => 
             array (
                 'id' => 103,
                 'periode_id' => 6,
@@ -595,7 +563,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:39:31',
                 'updated_at' => '2022-07-15 16:39:31',
             ),
-            72 => 
+            68 => 
             array (
                 'id' => 104,
                 'periode_id' => 6,
@@ -603,7 +571,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            73 => 
+            69 => 
             array (
                 'id' => 105,
                 'periode_id' => 6,
@@ -611,7 +579,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            74 => 
+            70 => 
             array (
                 'id' => 106,
                 'periode_id' => 6,
@@ -619,7 +587,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            75 => 
+            71 => 
             array (
                 'id' => 107,
                 'periode_id' => 6,
@@ -627,7 +595,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            76 => 
+            72 => 
             array (
                 'id' => 108,
                 'periode_id' => 6,
@@ -635,7 +603,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            77 => 
+            73 => 
             array (
                 'id' => 109,
                 'periode_id' => 6,
@@ -643,7 +611,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:41:00',
                 'updated_at' => '2022-07-15 16:41:00',
             ),
-            78 => 
+            74 => 
             array (
                 'id' => 110,
                 'periode_id' => 6,
@@ -651,7 +619,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            79 => 
+            75 => 
             array (
                 'id' => 111,
                 'periode_id' => 6,
@@ -659,7 +627,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            80 => 
+            76 => 
             array (
                 'id' => 112,
                 'periode_id' => 6,
@@ -667,7 +635,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            81 => 
+            77 => 
             array (
                 'id' => 113,
                 'periode_id' => 6,
@@ -675,7 +643,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            82 => 
+            78 => 
             array (
                 'id' => 114,
                 'periode_id' => 6,
@@ -683,7 +651,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            83 => 
+            79 => 
             array (
                 'id' => 115,
                 'periode_id' => 6,
@@ -691,7 +659,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:18',
                 'updated_at' => '2022-07-15 16:45:18',
             ),
-            84 => 
+            80 => 
             array (
                 'id' => 116,
                 'periode_id' => 6,
@@ -699,7 +667,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:20',
                 'updated_at' => '2022-07-15 16:45:20',
             ),
-            85 => 
+            81 => 
             array (
                 'id' => 117,
                 'periode_id' => 6,
@@ -707,7 +675,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:45:22',
                 'updated_at' => '2022-07-15 16:45:22',
             ),
-            86 => 
+            82 => 
             array (
                 'id' => 118,
                 'periode_id' => 6,
@@ -715,7 +683,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:46:05',
                 'updated_at' => '2022-07-15 16:46:05',
             ),
-            87 => 
+            83 => 
             array (
                 'id' => 119,
                 'periode_id' => 6,
@@ -723,7 +691,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:46:18',
                 'updated_at' => '2022-07-15 16:46:18',
             ),
-            88 => 
+            84 => 
             array (
                 'id' => 120,
                 'periode_id' => 6,
@@ -731,7 +699,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            89 => 
+            85 => 
             array (
                 'id' => 121,
                 'periode_id' => 6,
@@ -739,7 +707,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            90 => 
+            86 => 
             array (
                 'id' => 122,
                 'periode_id' => 6,
@@ -747,7 +715,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            91 => 
+            87 => 
             array (
                 'id' => 123,
                 'periode_id' => 6,
@@ -755,7 +723,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            92 => 
+            88 => 
             array (
                 'id' => 124,
                 'periode_id' => 6,
@@ -763,7 +731,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            93 => 
+            89 => 
             array (
                 'id' => 125,
                 'periode_id' => 6,
@@ -771,7 +739,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            94 => 
+            90 => 
             array (
                 'id' => 126,
                 'periode_id' => 6,
@@ -779,7 +747,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:47:38',
                 'updated_at' => '2022-07-15 16:47:38',
             ),
-            95 => 
+            91 => 
             array (
                 'id' => 127,
                 'periode_id' => 6,
@@ -787,7 +755,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:48:47',
                 'updated_at' => '2022-07-15 16:48:47',
             ),
-            96 => 
+            92 => 
             array (
                 'id' => 128,
                 'periode_id' => 6,
@@ -795,7 +763,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:48:54',
                 'updated_at' => '2022-07-15 16:48:54',
             ),
-            97 => 
+            93 => 
             array (
                 'id' => 129,
                 'periode_id' => 6,
@@ -803,7 +771,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:24',
                 'updated_at' => '2022-07-15 16:49:24',
             ),
-            98 => 
+            94 => 
             array (
                 'id' => 130,
                 'periode_id' => 6,
@@ -811,7 +779,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:24',
                 'updated_at' => '2022-07-15 16:49:24',
             ),
-            99 => 
+            95 => 
             array (
                 'id' => 131,
                 'periode_id' => 6,
@@ -819,7 +787,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:24',
                 'updated_at' => '2022-07-15 16:49:24',
             ),
-            100 => 
+            96 => 
             array (
                 'id' => 132,
                 'periode_id' => 6,
@@ -827,7 +795,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:24',
                 'updated_at' => '2022-07-15 16:49:24',
             ),
-            101 => 
+            97 => 
             array (
                 'id' => 133,
                 'periode_id' => 6,
@@ -835,7 +803,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:24',
                 'updated_at' => '2022-07-15 16:49:24',
             ),
-            102 => 
+            98 => 
             array (
                 'id' => 134,
                 'periode_id' => 6,
@@ -843,55 +811,7 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-07-15 16:49:25',
                 'updated_at' => '2022-07-15 16:49:25',
             ),
-            103 => 
-            array (
-                'id' => 135,
-                'periode_id' => 6,
-                'user_id' => 1,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            104 => 
-            array (
-                'id' => 136,
-                'periode_id' => 6,
-                'user_id' => 17,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            105 => 
-            array (
-                'id' => 137,
-                'periode_id' => 6,
-                'user_id' => 19,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            106 => 
-            array (
-                'id' => 138,
-                'periode_id' => 6,
-                'user_id' => 101,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            107 => 
-            array (
-                'id' => 139,
-                'periode_id' => 6,
-                'user_id' => 106,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            108 => 
-            array (
-                'id' => 140,
-                'periode_id' => 6,
-                'user_id' => 100,
-                'created_at' => '2022-07-15 17:11:24',
-                'updated_at' => '2022-07-15 17:11:24',
-            ),
-            109 => 
+            99 => 
             array (
                 'id' => 144,
                 'periode_id' => 2,
@@ -899,13 +819,93 @@ class PengurusPeriodeMemberTableSeeder extends Seeder
                 'created_at' => '2022-08-06 22:54:26',
                 'updated_at' => '2022-08-06 22:54:26',
             ),
-            110 => 
+            100 => 
             array (
                 'id' => 145,
                 'periode_id' => 6,
                 'user_id' => 57,
                 'created_at' => '2022-08-06 23:04:38',
                 'updated_at' => '2022-08-06 23:04:38',
+            ),
+            101 => 
+            array (
+                'id' => 146,
+                'periode_id' => 6,
+                'user_id' => 1,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            102 => 
+            array (
+                'id' => 147,
+                'periode_id' => 6,
+                'user_id' => 17,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            103 => 
+            array (
+                'id' => 148,
+                'periode_id' => 6,
+                'user_id' => 19,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            104 => 
+            array (
+                'id' => 149,
+                'periode_id' => 6,
+                'user_id' => 100,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            105 => 
+            array (
+                'id' => 150,
+                'periode_id' => 6,
+                'user_id' => 101,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            106 => 
+            array (
+                'id' => 151,
+                'periode_id' => 6,
+                'user_id' => 106,
+                'created_at' => '2022-08-22 02:15:45',
+                'updated_at' => '2022-08-22 02:15:45',
+            ),
+            107 => 
+            array (
+                'id' => 153,
+                'periode_id' => 2,
+                'user_id' => 1,
+                'created_at' => '2022-08-22 02:15:52',
+                'updated_at' => '2022-08-22 02:15:52',
+            ),
+            108 => 
+            array (
+                'id' => 154,
+                'periode_id' => 2,
+                'user_id' => 17,
+                'created_at' => '2022-08-22 02:15:52',
+                'updated_at' => '2022-08-22 02:15:52',
+            ),
+            109 => 
+            array (
+                'id' => 155,
+                'periode_id' => 2,
+                'user_id' => 21,
+                'created_at' => '2022-08-22 02:15:52',
+                'updated_at' => '2022-08-22 02:15:52',
+            ),
+            110 => 
+            array (
+                'id' => 156,
+                'periode_id' => 2,
+                'user_id' => 59,
+                'created_at' => '2022-08-22 02:15:52',
+                'updated_at' => '2022-08-22 02:15:52',
             ),
         ));
         

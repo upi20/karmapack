@@ -39,11 +39,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Tentang Kami',
                 'icon' => NULL,
                 'route' => '#',
-                'sequence' => 2,
-                'active' => 1,
+                'sequence' => 3,
+                'active' => 0,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:30:39',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2022-08-22 01:33:54',
             ),
             2 => 
             array (
@@ -52,24 +52,24 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Sejarah',
                 'icon' => NULL,
                 'route' => '#',
-                'sequence' => 3,
+                'sequence' => 4,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:30:59',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
             3 => 
             array (
                 'id' => 4,
-                'parent_id' => 2,
+                'parent_id' => NULL,
                 'title' => 'Struktur Kepengurusan',
                 'icon' => NULL,
                 'route' => 'about.kepengurusan.struktur',
-                'sequence' => 4,
+                'sequence' => 2,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:18',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
             4 => 
             array (
@@ -208,11 +208,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Anggota',
                 'icon' => NULL,
                 'route' => 'anggota',
-                'sequence' => 7,
+                'sequence' => 15,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:46:42',
-                'updated_at' => '2022-08-20 14:46:42',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
             15 => 
             array (
@@ -221,11 +221,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Galeri',
                 'icon' => NULL,
                 'route' => 'galeri',
-                'sequence' => 14,
+                'sequence' => 16,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:46:53',
-                'updated_at' => '2022-08-20 14:46:53',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
             16 => 
             array (
@@ -234,11 +234,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Pendaftaran',
                 'icon' => NULL,
                 'route' => 'pendaftaran',
-                'sequence' => 15,
+                'sequence' => 17,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:47:03',
-                'updated_at' => '2022-08-20 14:47:03',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
             17 => 
             array (
@@ -247,11 +247,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Kontak',
                 'icon' => NULL,
                 'route' => 'kontak',
-                'sequence' => 16,
+                'sequence' => 18,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:47:10',
-                'updated_at' => '2022-08-20 14:47:10',
+                'updated_at' => '2022-08-22 01:33:48',
             ),
         ));
         
