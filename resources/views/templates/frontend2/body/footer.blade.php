@@ -28,66 +28,62 @@
 
         <div class="footer-columns">
             <div class="row y-gap-30">
-                <div class="col-xl-2 col-lg-4 col-md-6">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">ABOUT</div>
-                    <div class="d-flex y-gap-10 flex-column">
-                        <a href="about-1.html">About Us</a>
-                        <a href="blog-list-1.html">Learner Stories</a>
-                        <a href="instructor-become.html">Careers</a>
-                        <a href="blog-list-1.html">Press</a>
-                        <a href="#">Leadership</a>
-                        <a href="contact-1.html">Contact Us</a>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-8">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">CATEGORIES</div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="text-17 fw-500 text-white uppercase mb-25">Tentang</div>
                     <div class="row justify-between y-gap-20">
                         <div class="col-md-6">
                             <div class="d-flex y-gap-10 flex-column">
-                                <a href="courses-single-1.html">Development</a>
-                                <a href="courses-single-2.html">Business</a>
-                                <a href="courses-single-3.html">Finance & Accounting</a>
-                                <a href="courses-single-4.html">IT & Software</a>
-                                <a href="courses-single-5.html">Office Productivity</a>
-                                <a href="courses-single-6.html">Design</a>
-                                <a href="courses-single-1.html">Marketing</a>
+                                <a href="">Sejarah</a>
+                                <a href="{{ route('about.kepengurusan.struktur') }}">Struktur Kepengurusan</a>
+                                <a href="">Perode Kepengurusan</a>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="d-flex y-gap-10 flex-column">
-                                <a href="courses-single-1.html">Lifiestyle</a>
-                                <a href="courses-single-2.html">Photography & Video</a>
-                                <a href="courses-single-3.html">Health & Fitness</a>
-                                <a href="courses-single-4.html">Music</a>
-                                <a href="courses-single-5.html">UX Design</a>
-                                <a href="courses-single-6.html">Seo</a>
+                                <a href="">AD/ART</a>
+                                <a href="{{ route('kontak') }}">Kontak</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-2 offset-xl-1 col-lg-4 col-md-6">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">SUPPORT</div>
-                    <div class="d-flex y-gap-10 flex-column">
-                        <a href="terms.html">Documentation</a>
-                        <a href="help-center.html">FAQS</a>
-                        <a href="dashboard.html">Dashboard</a>
-                        <a href="contact-1.html">Contact</a>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="text-17 fw-500 text-white uppercase mb-25">Dukungan</div>
+                    <div class="row justify-between y-gap-20">
+                        <div class="col-md-6">
+                            <div class="d-flex y-gap-10 flex-column">
+                                <a href="">Buku Panduan</a>
+                                <a href="{{ route('kontak.faq') }}">FAQS</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="d-flex y-gap-10 flex-column">
+                                <a href="{{ route('login') }}">Login Anggota</a>
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">GET IN TOUCH</div>
-                    <div class="footer-columns-form">
-                        <div>We don’t send spam so don’t worry.</div>
-                        <form action="https://creativelayers.net/themes/educrat-html/post">
-                            <div class="form-group">
-                                <input type="text" placeholder="Email...">
-                                <button type="submit">Submit</button>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="text-17 fw-500 text-white uppercase mb-25">Lainnya</div>
+                    <div class="row justify-between y-gap-20">
+                        <div class="col-md-6">
+                            <div class="d-flex y-gap-10 flex-column">
+                                <a href="{{ route('anggota') }}">List Anggota</a>
+                                <a href="{{ route('galeri') }}">Galeri</a>
+                                <a href="{{ route('pendaftaran') }}">Pendaftaran</a>
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="d-flex y-gap-10 flex-column">
+                                <a href="{{ route('login') }}">Login</a>
+                                <a href="">Blog Artikel</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

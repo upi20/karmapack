@@ -19,12 +19,29 @@ class KontakController extends Controller
 
     public function index(Request $request)
     {
+        $page_attr = [
+            'title' => 'Kontak',
+        ];
+
         $contacts = ListContact::where('status', '=', 1)->get();
         $faqs = FAQ::where('status', '=', 1)->get();
 
-        $data = compact('contacts', 'faqs');
+        $data = compact('page_attr', 'contacts', 'faqs');
         $data['compact'] = $data;
         return view('frontend.kontak', $data);
+    }
+
+    public function faq(Request $request)
+    {
+        $page_attr = [
+            'title' => 'FAQ',
+            'navigation' => 'kontak'
+        ];
+
+        $faqs = FAQ::where('status', '=', 1)->get();
+        $data = compact('page_attr', 'faqs');
+        $data['compact'] = $data;
+        return view('frontend.faq', $data);
     }
 
     public function insert(Request $request): mixed

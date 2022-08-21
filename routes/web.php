@@ -103,6 +103,7 @@ $name = 'kontak';
 Route::controller(KontakController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
     Route::post('/send', 'insert')->name("$name.send");
+    Route::get('/faq', 'faq')->name("$name.faq");
 });
 // ====================================================================================================================
 
