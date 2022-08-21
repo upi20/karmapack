@@ -49,10 +49,10 @@
                 </form>
             </div>
 
-            <div data-anim="slide-up delay-4" class="row y-gap-30 pt-30">
-                @foreach ($galeries as $galery)
+            <div class="row y-gap-30 pt-30">
+                @foreach ($galeries as $k => $galery)
                     <div class="col-lg-4 col-md-6">
-                        <div class="eventCard -type-1">
+                        <div class="eventCard -type-1" data-anim="slide-left delay-{{ $k + 5 }}">
                             <div class="eventCard__img">
                                 <img src="{{ "https://drive.google.com/uc?export=view&id={$galery->foto_id_gdrive}" }}"
                                     alt="{{ $galery->nama }}" style="width: 100%; height: 250px; object-fit: cover;">

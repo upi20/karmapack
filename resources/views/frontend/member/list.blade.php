@@ -57,7 +57,7 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                             <form action="" class="search_form">
                                 <div class="row x-gap-20 y-gap-20 items-center">
                                     <div class="col-auto">
-                                        <input type="text" class="text-light-1 py-15 rounded-8 px-15 input-light"
+                                        <input type="search" class="text-light-1 py-15 rounded-8 px-15 input-light"
                                             placeholder="Kata Kunci" name="search" id="search"
                                             value="{{ request()->query('search') }}">
                                     </div>
