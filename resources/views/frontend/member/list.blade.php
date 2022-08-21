@@ -94,7 +94,8 @@ $angkatan = 0;
 
                                             @if ($item->jabatan_nama)
                                                 <small class="text-muted d-block">
-                                                    <a href="{{ route('about.kepengurusan.bidang', $item->jabatan_slug) }}">
+                                                    <a
+                                                        href="{{ route('about.kepengurusan.bidang', $item->jabatan_slug) }}">
                                                         {{ $item->jabatan_nama }}
                                                     </a>
                                                 </small>
@@ -144,6 +145,5 @@ $angkatan = 0;
         .card-main:hover {
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
-
     </style>
 @endsection

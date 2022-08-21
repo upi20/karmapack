@@ -47,7 +47,7 @@ class MemberController extends Controller
             $params .= $filter ? "$key=$filter" : '';
         }
 
-        $getArtikel = MemberRepository::getList($request, 6, $params);
+        $getArtikel = MemberRepository::getList($request, 10, $params);
         $users = $getArtikel->model;
         $pagination = $getArtikel->pagination;
         return view('frontend.member.list', compact('page_attr', 'users', 'image', 'params', 'filters', 'pagination'));

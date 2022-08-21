@@ -1,116 +1,105 @@
-@extends('templates.frontend.master')
+@extends('templates.frontend2.master')
 @section('content')
-    <!-- page header -->
-    <section class="page-header">
-        <div class="container-xl">
-            <div class="text-center">
-                <h1 class="mt-0 mb-2">Galeri Kegiatan</h1>
-                <div class="d-flex justify-content-center align-items-center">
-                    <a href="{{ url('') }}" class="me-1">Home</a> > Galeri
+    <section data-anim="fade" class="breadcrumbs ">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="breadcrumbs__content">
+
+                        <div class="breadcrumbs__item ">
+                            <a href="{{ route('home') }}">Home</a>
+                        </div>
+
+                        <div class="breadcrumbs__item ">
+                            <a href="javascript:void(0)">Galeri</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="main-content mt-4">
-        <div class="container-xl">
-            <form class="d-flex search-form pt-3">
-                <input class="form-control me-2" type="search" name="search"
-                    placeholder="Masukan kata Kunci dan tekan enter ..." aria-label="Search"
-                    value="{{ $filters->search }}">
-                <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
-            </form>
+
+    <section class="page-header -type-1">
+        <div class="container">
+            <div class="page-header__content">
+                <div class="row justify-center text-center">
+                    <div class="col-auto">
+                        <div data-anim="slide-up delay-1">
+                            <h1 class="page-header__title">{{ settings()->get('setting.home.galeri_kegiatan.title') }}</h1>
+                        </div>
+                        <div data-anim="slide-up delay-2">
+                            <p class="page-header__text">{{ settings()->get('setting.home.galeri_kegiatan.sub_title') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="main-conten mt-2">
-        <div class="container-xl">
-            <div class="row">
+
+    <section class="layout-pt-md layout-pb-lg">
+        <div data-anim-wrap class="container">
+            <div class=" pb-30" data-anim="slide-up delay-4">
+                <form class="search-field h-50" action="">
+                    <input class="bg-light-3 pr-50" type="search" placeholder="Poesaka..." value="{{ $filters->search }}"
+                        name="search" id="search">
+                    <button class="" type="submit">
+                        <i class="icon-search text-20"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div data-anim="slide-up delay-4" class="row y-gap-30 pt-30">
                 @foreach ($galeries as $galery)
-                    <div class="col-md-6 col-lg-4">
-                        <a href="{{ route('galeri.detail', $galery->slug) }}">
-                            <div class="card m-2 card-main">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="eventCard -type-1">
+                            <div class="eventCard__img">
                                 <img src="{{ "https://drive.google.com/uc?export=view&id={$galery->foto_id_gdrive}" }}"
-                                    class="card-img-top" alt="{{ $galery->nama }}"
-                                    style="max-width: 100%; height: auto; max-height: 200px; object-fit: cover; object-position: center;">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $galery->nama }}</h5>
-                                    <p class="card-text text-dark">{{ $galery->keterangan }}</p>
-                                    <!-- social icons -->
-                                    <ul class="social-icons list-unstyled list-inline mb-0 float-md-end">
+                                    alt="{{ $galery->nama }}" style="width: 100%; height: 250px; object-fit: cover;">
+                            </div>
 
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://www.facebook.com/sharer.php?u={{ route('artikel', $galery->slug) }}"
-                                                title="Share To Facebook">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                        </li>
+                            <div class="eventCard__bg bg-white">
+                                <div class="eventCard__content y-gap-10">
+                                    <div class="eventCard__inner">
+                                        <h4 class="eventCard__title text-17 fw-500">
+                                            {{ $galery->nama }}
+                                        </h4>
+                                        <div class="d-flex x-gap-15 pt-10">
+                                            <div class="d-flex items-center">
+                                                <div class="icon-calendar-2 text-16 mr-8"></div>
+                                                <div class="text-14">{{ $galery->tanggal_str }}</div>
+                                            </div>
+                                            <div class="d-flex items-center">
+                                                <div class="icon-location text-16 mr-8"></div>
+                                                <div class="text-14">{{ $galery->lokasi }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://api.whatsapp.com/send?text={{ route('artikel', $galery->slug) }} {{ $galery->nama }}"
-                                                title="Share To Whatsapp">
-                                                <i class="fab fa-whatsapp"></i>
-                                            </a>
-                                        </li>
-
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://twitter.com/share?url={{ route('artikel', $galery->slug) }}&text={{ $galery->nama }}"
-                                                title="Share To Twitter">
-                                                <i class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('artikel', $galery->slug) }}&title={{ $galery->nama }}&summary={{ $galery->keterangan }}"
-                                                title="Share To Linkedin">
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </a>
-                                        </li>
-
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://pinterest.com/pin/create/button/?url={{ route('artikel', $galery->slug) }}&media={{ asset($galery->foto) }}&description={{ $galery->nama }}"
-                                                title="Share To Pinterest">
-                                                <i class="fab fa-pinterest"></i>
-                                            </a>
-                                        </li>
-
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="https://telegram.me/share/url?url={{ route('artikel', $galery->slug) }}&text={{ $galery->nama }}"
-                                                title="Share To Telegram">
-                                                <i class="fab fa-telegram-plane"></i>
-                                            </a>
-                                        </li>
-
-                                        <li class="list-inline-item">
-                                            <a target="_blank"
-                                                href="mailto:?subject={{ $galery->nama }}&body=Check out this site: {{ route('artikel', $galery->slug) }}"
-                                                title="Share by Email">
-                                                <i class="far fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="eventCard__button">
+                                        <a href="{{ route('galeri.detail', $galery->slug) }}"
+                                            class="button -sm -rounded -purple-1 text-white px-25">Lihat</a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 @endforeach
+                @if (!$galeries)
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h6>Data Tidak Tersedia</h6>
+                    </div>
+                @endif
             </div>
-            @if (!$galeries)
-                <div class="d-flex justify-content-center align-items-center">
-                    <h6>Data Tidak Tersedia</h6>
-                </div>
-            @endif
         </div>
     </section>
-    @if ($pagination)
+    {{-- @if ($pagination)
         <nav>
             <ul class="pagination justify-content-center">
                 {!! $pagination !!}
             </ul>
         </nav>
-    @endif
+    @endif --}}
 @endsection
 
 @section('stylesheet')
@@ -124,6 +113,5 @@
         .card-main:hover {
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
-
     </style>
 @endsection

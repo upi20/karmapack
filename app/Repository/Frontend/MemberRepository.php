@@ -33,7 +33,7 @@ class MemberRepository
     public static function getList(Request $request, int $paginate = 6, ?string $params = null): object
     {   // paginate setup
         $model = [];
-        $paginate = 10;
+        $paginate = $paginate;
 
         // table
         $a = User::tableName;
@@ -190,6 +190,7 @@ class MemberRepository
 
         // model->item get access
         $model = $model->paginate($paginate);
+        // dd($model->links());
         $model = json_encode($model);
         $model = json_Decode($model);
 

@@ -4,12 +4,14 @@ namespace App\Repository\Frontend;
 
 use App\Models\Galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GaleriRepository
 {
     public static function get(Request $request, int $paginate = 6, ?string $params = null): object
     {
-        $model = Galeri::where('status', '=', '1');
+        $model = Galeri::where('status', '=', 1)->select([DB::raw('*'), DB::raw("date_format(tanggal, '%d %M %Y') as tanggal_str")])
+            ->orderBy('tanggal', 'desc');
 
         if ($request->search) {
             $model->whereRaw("(

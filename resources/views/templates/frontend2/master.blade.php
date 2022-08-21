@@ -42,7 +42,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#fff">
-    <meta name="theme-color" content="#0191D7">
+    <meta name="theme-color" content="#140342">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- META DATA -->

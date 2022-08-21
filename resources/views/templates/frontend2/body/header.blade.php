@@ -26,7 +26,7 @@
 
                     {{-- logo white --}}
                     <div class="header__logo pr-30 xl:pr-20 md:pr-0">
-                        <a data-barba href="index.html">
+                        <a data-barba href="{{ url('') }}">
                             <img src="{{ asset(settings()->get(set_front('app.foto_dark_landscape_mode'))) }}"
                                 alt="logo" style="max-height: 50px;">
                         </a>
