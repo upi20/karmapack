@@ -23,18 +23,9 @@ class GaleriRepository
         }
 
         // model->item get access
-        $model = $model->paginate($paginate);
-        $model = json_encode($model);
-        $model = json_Decode($model);
-
-        // pagination
-        $pagination = pagination_generate($model, $params);
-
-        // return
-        return (object)[
-            'model' => $model,
-            'pagination' => $pagination,
-        ];
+        $model = $model->paginate($paginate)
+            ->appends(request()->query());
+        return $model;
     }
 
     public static function getParams(Request $request): string

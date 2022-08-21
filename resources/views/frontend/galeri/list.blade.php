@@ -90,16 +90,10 @@
                         <h6>Data Tidak Tersedia</h6>
                     </div>
                 @endif
+                {!! $galeries->links() !!}
             </div>
         </div>
     </section>
-    {{-- @if ($pagination)
-        <nav>
-            <ul class="pagination justify-content-center">
-                {!! $pagination !!}
-            </ul>
-        </nav>
-    @endif --}}
 @endsection
 
 @section('stylesheet')

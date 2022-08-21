@@ -278,7 +278,7 @@ class HomeRepository
         // model->item get access
         $model = $model->paginate($paginate);
         $model = json_encode($model);
-        $model = json_Decode($model);
+        $model = json_decode($model);
 
         // pagination
         $pagination = pagination_generate($model, $params);

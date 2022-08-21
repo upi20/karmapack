@@ -13,15 +13,12 @@ class GaleriController extends Controller
     {
 
         $params = GaleriRepository::getParams($request);
-        $model = GaleriRepository::get($request, 9, $params);
-        $galeries = $model->model->data;
-        $pagination = $model->pagination;
+        $galeries = GaleriRepository::get($request, 6, $params);
         $filters = (object)[
             'search' => $request->search
         ];
 
-        $foto = count($galeries) > 0 ? "https://drive.google.com/uc?export=view&id={$galeries[0]->foto_id_gdrive}" : false;
-        // dd($foto);
+        $foto = $galeries->count() > 0 ? "https://drive.google.com/uc?export=view&id={$galeries[0]->foto_id_gdrive}" : false;
         $page_attr = [
             'loader' => false,
             'title' => 'Galeri Kegiatan',
@@ -33,7 +30,6 @@ class GaleriController extends Controller
 
         return view('frontend.galeri.list', compact(
             'galeries',
-            'pagination',
             'filters',
             'page_attr',
         ));
