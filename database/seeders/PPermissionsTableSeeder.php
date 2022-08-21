@@ -899,6 +899,102 @@ class PPermissionsTableSeeder extends Seeder
                 'created_at' => '2022-08-09 15:22:56',
                 'updated_at' => '2022-08-09 15:22:56',
             ),
+            110 => 
+            array (
+                'id' => 156,
+                'name' => 'admin.kontak.faq',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            111 => 
+            array (
+                'id' => 157,
+                'name' => 'admin.kontak.faq.insert',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            112 => 
+            array (
+                'id' => 158,
+                'name' => 'admin.kontak.faq.update',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            113 => 
+            array (
+                'id' => 159,
+                'name' => 'admin.kontak.faq.delete',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            114 => 
+            array (
+                'id' => 160,
+                'name' => 'admin.kontak.faq.setting',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            115 => 
+            array (
+                'id' => 161,
+                'name' => 'admin.kontak.list',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            116 => 
+            array (
+                'id' => 162,
+                'name' => 'admin.kontak.list.insert',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            117 => 
+            array (
+                'id' => 163,
+                'name' => 'admin.kontak.list.update',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            118 => 
+            array (
+                'id' => 164,
+                'name' => 'admin.kontak.list.delete',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            119 => 
+            array (
+                'id' => 165,
+                'name' => 'admin.kontak.list.setting',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            120 => 
+            array (
+                'id' => 166,
+                'name' => 'admin.kontak.message',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
+            121 => 
+            array (
+                'id' => 167,
+                'name' => 'admin.kontak.message.setting',
+                'guard_name' => 'web',
+                'created_at' => '2022-08-04 16:05:41',
+                'updated_at' => '2022-08-04 16:05:41',
+            ),
         ));
         
         

@@ -25,6 +25,12 @@ use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
 use App\Http\Controllers\Admin\Artikel\TagController;
 use App\Http\Controllers\Admin\Laporan\AnggotaController;
+
+// Contact ============================================================================================================
+use App\Http\Controllers\Admin\Contact\FAQController;
+use App\Http\Controllers\Admin\Contact\ListContactController;
+use App\Http\Controllers\Admin\Contact\MessageController;
+
 // Pengurus ===========================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
@@ -58,7 +64,6 @@ use App\Http\Controllers\Admin\Setting\HomeController;
 use App\Http\Controllers\Admin\Utility\HariBesarNasionalController;
 use App\Http\Controllers\Admin\Utility\NotifAdminAtasController;
 use App\Http\Controllers\Admin\Utility\NotifDepanAtasController;
-
 
 $name = 'admin';
 $prefix = 'dashboard';
@@ -496,5 +501,39 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.laporan.anggota
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
+    });
+});
+
+
+$prefix = 'kontak';
+Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.kontak
+    $prefix = 'faq';
+    Route::controller(FAQController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.kontak.faq
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
+    });
+
+    $prefix = 'list';
+    Route::controller(ListContactController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.kontak.list
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
+    });
+
+    $prefix = 'message';
+    Route::controller(MessageController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.kontak.message
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
     });
 });

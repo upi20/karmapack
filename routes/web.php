@@ -102,6 +102,7 @@ Route::controller(MemberController::class)->prefix($name)->group(function () use
 $name = 'kontak';
 Route::controller(KontakController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
+    Route::post('/send', 'insert')->name("$name.send");
 });
 // ====================================================================================================================
 
@@ -140,9 +141,8 @@ Route::prefix($name)->group(function () use ($name) {
 
 // dashboard ==========================================================================================================
 Route::get('/dashboard', function () {
-    $user = Auth::user();
-    if (!$user) return Redirect::route('login');
-    if ($user->hasRole(config('app.super_admin_role'))) {
+    if (!auth()->user()) return Redirect::route('login');
+    if (auth_has_role(config('app.super_admin_role'))) {
         return Redirect::route('admin.dashboard');
     } else {
         return Redirect::route('member.dashboard');

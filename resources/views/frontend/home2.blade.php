@@ -6,7 +6,7 @@
     $filter = [['search' => '__periode_nama__', 'replace' => $periode->nama], ['search' => '__periode_dari__', 'replace' => $periode->dari], ['search' => '__periode_sampai__', 'replace' => $periode->sampai]];
     @endphp
     @if (settings()->get("$k.visible"))
-        <section data-anim-wrap class="masthead -type-4 bg-light-6  animated pt-30" style="margin-top: 70px;">
+        <section data-anim-wrap class="masthead -type-4 bg-light-6  animated pt-30">
             <div class="container pt-60">
                 <div class="row justify-center items-center">
                     <div class="col-xl-5 col-lg-6">

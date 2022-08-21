@@ -80,7 +80,6 @@ class backup extends Command
             ],
             'frontend' => [
                 'social_media',
-                'contacts',
                 'footer_instagrams',
                 'username_validations',
                 'galeri_tag_member',
@@ -104,6 +103,13 @@ class backup extends Command
                 'notif_admin_atas',
                 'notif_depan_atas',
                 'hari_besar_nasionals',
+            ],
+            'contact' => [
+                'contact_list',
+                'contact_messages',
+            ],
+            'other' => [
+                'faq',
             ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');

@@ -285,12 +285,12 @@ class PMenuTableSeeder extends Seeder
                 'parent_id' => NULL,
                 'title' => 'Kontak',
                 'icon' => 'fas fa-phone',
-                'route' => 'admin.contact',
+                'route' => NULL,
                 'sequence' => 24,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-05 23:50:28',
-                'updated_at' => '2022-08-08 16:15:07',
+                'updated_at' => '2022-08-21 08:37:52',
             ),
             21 => 
             array (
@@ -655,6 +655,45 @@ class PMenuTableSeeder extends Seeder
                 'type' => 1,
                 'created_at' => '2022-08-20 14:16:07',
                 'updated_at' => '2022-08-20 14:16:07',
+            ),
+            49 => 
+            array (
+                'id' => 407,
+                'parent_id' => 364,
+                'title' => 'Message',
+                'icon' => NULL,
+                'route' => 'admin.kontak.message',
+                'sequence' => 56,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-21 08:38:20',
+                'updated_at' => '2022-08-21 08:38:48',
+            ),
+            50 => 
+            array (
+                'id' => 408,
+                'parent_id' => 364,
+                'title' => 'FAQ',
+                'icon' => NULL,
+                'route' => 'admin.kontak.faq',
+                'sequence' => 58,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-21 08:39:18',
+                'updated_at' => '2022-08-21 08:39:18',
+            ),
+            51 => 
+            array (
+                'id' => 409,
+                'parent_id' => 364,
+                'title' => 'List',
+                'icon' => NULL,
+                'route' => 'admin.kontak.list',
+                'sequence' => 59,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2022-08-21 08:40:08',
+                'updated_at' => '2022-08-21 08:40:08',
             ),
         ));
         

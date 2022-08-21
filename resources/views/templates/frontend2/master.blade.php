@@ -17,7 +17,7 @@ $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 $getSosmed_val = get_sosmed();
 $footerInstagram_val = footer_instagram();
 $notifikasi = notif_depan_atas();
-
+$compact = isset($compact) ? $compact : [];
 $compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'footerInstagram_val', 'notifikasi', 'page_attr'));
 ?>
 
@@ -180,6 +180,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         $(window).on('load', function() {
             "use strict";
             preload_container.delay(750).fadeOut('slow');
+            refresh_margin_top();
         });
 
         (function pulse(back) {
@@ -203,6 +204,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
             // document height
             const d_height = $(document).height() - $(window).height();
+            refresh_margin_top();
         });
 
         btn_scroll.click(() => {
@@ -210,6 +212,10 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
                 scrollTop: 0
             }, "slow");
         })
+
+        function refresh_margin_top() {
+            $('.content-wrapper').css('margin-top', $('header').height() + 'px');
+        }
     </script>
     @yield('javascript')
 </body>

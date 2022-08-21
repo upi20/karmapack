@@ -1,13 +1,13 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <input type="text" id="clipboard" style="position: fixed; top:-50px">
     @php
     $can_insert = auth_can(h_prefix('insert'));
     $can_update = auth_can(h_prefix('update'));
     $can_delete = auth_can(h_prefix('delete'));
-    $is_admin = is_admin();
+    $can_setting = auth_can(h_prefix('setting'));
     @endphp
+    <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
@@ -21,6 +21,44 @@
                     @endif
                 </div>
                 <div class="card-body">
+                    @if ($can_setting)
+                        <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default active mb-2">
+                                <div class="panel-heading " role="tab" id="headingOne1">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2"
+                                            href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                            Setting
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingOne1">
+                                    <div class="panel-body">
+                                        <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="setting_form">
+                                            <div class="form-group float-start me-2">
+                                                <label for="setting_title">Judul</label>
+                                                <input type="text" class="form-control" id="setting_title" name="title"
+                                                    value="{{ $setting->title }}">
+                                            </div>
+                                            <div class="form-group float-start me-2">
+                                                <label for="setting_sub_title">Sub Judul</label>
+                                                <input type="text" class="form-control" id="setting_sub_title"
+                                                    name="sub_title" value="{{ $setting->sub_title }}">
+                                            </div>
+
+                                        </form>
+                                        <div style="clear: both"></div>
+                                        <button type="submit" form="setting_form" class="btn btn-rounded btn-md btn-info"
+                                            data-toggle="tooltip" title="Simpan Setting" id="setting_btn_submit">
+                                            <li class="fas fa-save mr-1"></li> Save Changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default active mb-2">
                             <div class="panel-heading " role="tab" id="headingOne1">
@@ -35,36 +73,23 @@
                                 aria-labelledby="headingOne1">
                                 <div class="panel-body">
                                     <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
-
-                                        @if ($is_admin)
-                                            <div class="form-group float-start me-2" style="min-width: 300px">
-                                                <label for="filter_user_id">Dibuat Oleh</label>
-                                                <br>
-                                                <select class="form-control" id="filter_user_id" name="filter_user_id"
-                                                    style="width: 100%;">
-                                                    <option value="" selected>Semua</option>
-                                                </select>
-                                            </div>
-                                        @endif
-
                                         <div class="form-group float-start me-2">
                                             <label for="filter_status">Status</label>
                                             <select class="form-control" id="filter_status" name="filter_status"
                                                 style="max-width: 200px">
                                                 <option value="">Semua</option>
-                                                <option value="1">Aktif</option>
-                                                <option value="0">Tidak Aktif</option>
-                                                <option value="2">Ditutup</option>
+                                                <option value="1">Digunakan</option>
+                                                <option value="0">Tidak Digunakan</option>
                                             </select>
                                         </div>
 
                                         <div class="form-group float-start me-2">
-                                            <label for="filter_tampilkan">Tampilkan</label>
-                                            <select class="form-control" id="filter_tampilkan" name="filter_tampilkan"
+                                            <label for="filter_type">Type</label>
+                                            <select class="form-control" id="filter_type" name="filter_type"
                                                 style="max-width: 200px">
                                                 <option value="">Semua</option>
-                                                <option value="1">Ya</option>
-                                                <option value="0">Tidak</option>
+                                                <option value="1">Teks</option>
+                                                <option value="2">Link</option>
                                             </select>
                                         </div>
 
@@ -78,22 +103,19 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="table-responsive table-striped">
-                        <table class="table table-bordered  border-bottom" id="tbl_main">
+                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    {!! $is_admin ? '<th>Dibuat Oleh</th>' : '' !!}
-                                    <th>No Urut</th>
                                     <th>Nama</th>
-                                    <th>Copy Link</th>
-                                    <th>Foto</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Detail</th>
-                                    <th>Tampilkan</th>
+                                    <th>Type</th>
                                     <th>Status</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    <th>Detail</th>
+                                    @if ($can_update || $can_delete)
+                                        <th>Action</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody> </tbody>
@@ -105,7 +127,7 @@
     </div>
     <!-- End Row -->
     <div class="modal fade" id="modal-default">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
                     <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
@@ -115,119 +137,44 @@
                     <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="nama">Nama <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="nama" name="nama"
-                                        placeholder="Enter Nama" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="slug">Slug <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="slug" name="slug"
-                                        placeholder="Enter Slug" required="" />
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="form-label" for="link">Google Form Link
-                                        <span class="text-danger">*</span></label>
-                                    <input type="url" class="form-control" id="link" name="link"
-                                        placeholder="Enter Google Form Link" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="foto">Foto
-                                        <span class="badge bg-success" id="lihat-foto">Lihat</span>
-                                    </label>
-                                    <input type="file" class="form-control" id="foto" name="foto" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="no_urut">Nomor Urut
-                                        <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" id="no_urut" name="no_urut"
-                                        placeholder="Urutan" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="dari">Dari Tanggal
-                                        <span class="text-danger">*</span></label>
-                                    <input type="date" class="form-control" id="dari" name="dari"
-                                        placeholder="Dari Tanggal" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="sampai">Sampai Tanggal
-                                        <span class="text-danger">*</span></label>
-                                    <input type="date" class="form-control" id="sampai" name="sampai"
-                                        placeholder="Sampai Tanggal" required="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="form-label" for="deskripsi">Deskripsi</label>
-                                    <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                        placeholder="Enter Deskripsi"> </textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="tampilkan">Tampilkan Di List Pendaftaran </label>
-                                    <select class="form-control" style="width: 100%;" required="" id="tampilkan"
-                                        name="tampilkan">
-                                        <option value="1">Ya</option>
-                                        <option value="0">Tidak</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="status">Status</label>
-                                    <select class="form-control" style="width: 100%;" required="" id="status"
-                                        name="status">
-                                        <option value="1">Aktif</option>
-                                        <option value="0">Tidak Aktif</option>
-                                        <option value="2">Ditutup</option>
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Enter Nama" required="" />
                         </div>
+                        <div class="form-group">
+                            <label class="form-label" for="link">Link <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control" id="link" name="link"
+                                placeholder="Enter Link" required="" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="jawaban">Jawaban <span class="text-danger">*</span></label>
+                            <textarea type="text" class="form-control" rows="3" id="jawaban" name="jawaban"
+                                placeholder="Enter Jawaban"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="type">Type</label>
+                            <select class="form-control" style="width: 100%;" required="" id="type"
+                                name="type">
+                                <option value="1">Teks</option>
+                                <option value="2">Link</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="status">Status</label>
+                            <select class="form-control" style="width: 100%;" required="" id="status"
+                                name="status">
+                                <option value="1">Digunakan</option>
+                                <option value="0">Tidak Digunakan</option>
+                            </select>
+                        </div>
+
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
                         <li class="fas fa-save mr-1"></li> Save changes
                     </button>
-                    <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                        Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="modal-icon">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-content-demo">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Foto</h6><button aria-label="Close"
-                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <img src="" class="img-fluid" id="icon-view-image" alt="Icon Pendaftaran">
-                </div>
-                <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
                         Close
@@ -258,6 +205,11 @@
     </div>
 @endsection
 
+@section('stylesheet')
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
+@endsection
+
 @section('javascript')
     <!-- DATA TABLE JS-->
     <script src="{{ asset('assets/templates/admin/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
@@ -265,36 +217,18 @@
     <script src="{{ asset('assets/templates/admin/plugins/datatable/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/datatable/responsive.bootstrap5.min.js') }}"></script>
-    {{-- loading --}}
-    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
 
     {{-- sweetalert --}}
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
+    {{-- loading --}}
+    <script src="{{ asset('assets/templates/admin/plugins/loading/loadingoverlay.min.js') }}"></script>
 
     <script>
         const can_update = {{ $can_update ? 'true' : 'false' }};
         const can_delete = {{ $can_delete ? 'true' : 'false' }};
-        const is_admin = {{ $is_admin ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
         let isEdit = true;
         $(document).ready(function() {
-            $('#filter_user_id').select2({
-                ajax: {
-                    url: "{{ route(h_prefix('member')) }}",
-                    type: "GET",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    data: function(params) {
-                        var query = {
-                            search: params.term,
-                        }
-                        return query;
-                    }
-                }
-            });
-
             // datatable ====================================================================================
             $.ajaxSetup({
                 headers: {
@@ -314,9 +248,7 @@
                     url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
-                        d['filter[tampilkan]'] = $('#filter_tampilkan').val();
-                        d['filter[user_id]'] = is_admin ? $('#filter_user_id').val() :
-                            '{{ auth()->user()->id }}';
+                        d['filter[type]'] = $('#filter_type').val();
                     }
                 },
                 columns: [{
@@ -324,47 +256,17 @@
                         name: 'id',
                         orderable: false,
                     },
-                    ...(is_admin ? [{
-                        data: 'user',
-                        name: 'user',
-                        orderable: false
-                    }] : []),
-                    {
-                        data: 'no_urut',
-                        name: 'no_urut'
-                    },
                     {
                         data: 'nama',
-                        name: 'nama'
+                        name: 'nama',
                     },
                     {
-                        data: 'slug',
-                        name: 'slug',
-                        render(data, type, full, meta) {
-                            const link = `{{ url('f') }}/${data}`;
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
-                                <i class="fas fa-clipboard" aria-hidden="true"></i>
-                                </button>
-                            ` : '';
-                        },
+                        data: 'type_str',
+                        name: 'type'
                     },
                     {
-                        data: 'foto',
-                        name: 'foto',
-                        render(data, type, full, meta) {
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" onclick="viewIcon('${data}')"><i class="fas fa-eye" aria-hidden="true"></i> </button>
-                            ` : '';
-                        },
-                    },
-                    {
-                        data: 'dari',
-                        name: 'dari'
-                    },
-                    {
-                        data: 'sampai',
-                        name: 'sampai'
+                        data: 'status_str',
+                        name: 'status'
                     },
                     {
                         data: 'id',
@@ -375,24 +277,6 @@
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
                                 `;
-                        },
-                    },
-                    {
-                        data: 'tampilkan_str',
-                        name: 'tampilkan',
-                        render(data, type, full, meta) {
-                            const class_el = full.tampilkan == 1 ? 'badge bg-success' :
-                                (full.tampilkan == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.tampilkan_str}</span>`;
-                        },
-                    },
-                    {
-                        data: 'status_str',
-                        name: 'status',
-                        render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                (full.status == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
                         },
                     },
                     ...(can_update || can_delete ? [{
@@ -430,13 +314,6 @@
                 oTable.fnDraw(false);
             });
 
-            $("#nama").keyup(function() {
-                var Text = $(this).val();
-                $("#slug").val(Text.toLowerCase()
-                    .replace(/[^\w ]+/g, '')
-                    .replace(/ +/g, '-'));
-            });
-
             // insertForm ===================================================================================
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
@@ -467,7 +344,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
-
+                        isEdit = true;
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
@@ -491,6 +368,60 @@
                     }
                 });
             });
+
+            @if ($can_setting)
+                // insertForm ===================================================================================
+                $('#setting_form').submit(function(e) {
+                    e.preventDefault();
+                    resetErrorAfterInput();
+                    var formData = new FormData(this);
+                    setBtnLoading('#setting_btn_submit', 'Save Changes');
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route(h_prefix('setting')) }}",
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: (data) => {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data saved successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        },
+                        error: function(data) {
+                            const res = data.responseJSON ?? {};
+                            errorAfterInput = [];
+                            for (const property in res.errors) {
+                                errorAfterInput.push(property);
+                                setErrorAfterInput(res.errors[property], `#${property}`);
+                            }
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: res.message ?? 'Something went wrong',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        },
+                        complete: function() {
+                            setBtnLoading('#setting_btn_submit',
+                                '<li class="fas fa-save mr-1"></li> Save changes',
+                                false);
+                        }
+                    });
+                });
+            @endif
+
+            $('#type').change(() => {
+                typeSwitch();
+            })
         });
 
         function add() {
@@ -502,6 +433,7 @@
             $('#lihat-foto').hide();
             resetErrorAfterInput();
             isEdit = false;
+            typeSwitch();
             return true;
         }
 
@@ -520,18 +452,13 @@
                     isEdit = true;
                     $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
-                    $('#dari').val(data.dari);
-                    $('#deskripsi').val(data.deskripsi);
                     $('#id').val(data.id);
-                    $('#link').val(data.link);
                     $('#nama').val(data.nama);
-                    $('#no_urut').val(data.no_urut);
-                    $('#sampai').val(data.sampai);
-                    $('#slug').val(data.slug);
+                    $('#link').val(data.link);
+                    $('#jawaban').val(data.jawaban);
+                    $('#type').val(data.type);
                     $('#status').val(data.status);
-                    $('#tampilkan').val(data.tampilkan);
-                    $('#lihat-foto').fadeIn();
-                    $('#lihat-foto').attr('onclick', `viewIcon('${data.foto}')`);
+                    typeSwitch();
                 },
                 error: function(data) {
                     Swal.fire({
@@ -597,12 +524,6 @@
             });
         }
 
-        function viewIcon(image) {
-            $('#modal-icon').modal('show');
-            $('#icon-view-image').attr('src', `{{ asset($image_folder) }}/${image}`);
-        }
-
-
         function detail(id) {
             $.ajax({
                 type: "GET",
@@ -616,14 +537,9 @@
                 success: (data) => {
                     $("#modal-detail").modal('show');
                     $("#modal-detail-body").html(`
-                    <h4>Deskripsi</h4>
-                    <p>${data.deskripsi}</p>
-
-                    <h4>Slug</h4>
-                    <a href="{{ url('f') }}/${data.slug}">{{ url('f') }}/${data.slug}</a>
-                    <br>
-                    <br>
-                    <h4>Link Google Form</h4>
+                    <h4>Jawaban</h4>
+                    <p>${data.jawaban}</p>
+                    <h4>Link</h4>
                     <a href="${data.link}">${data.link}</a>`);
                 },
                 error: function(data) {
@@ -639,17 +555,21 @@
             });
         }
 
-        function copyToClipboard(value) {
-            const copyText = document.getElementById('clipboard');
-            copyText.value = value;
-            copyText.select();
-            document.execCommand('copy');
-            Swal.fire({
-                icon: 'success',
-                title: 'Text copied to clipboard',
-                showConfirmButton: false,
-                timer: 1000
-            });
+        function typeSwitch() {
+            const type = $('#type');
+            const link = $('#link');
+            const jawaban = $('#jawaban');
+            if (type.val() == 1) {
+                link.parent().fadeOut();
+                link.removeAttr('required')
+                jawaban.attr('required', true)
+                jawaban.parent().show();
+            } else {
+                jawaban.parent().fadeOut();
+                jawaban.removeAttr('required')
+                link.attr('required', true)
+                link.parent().show();
+            }
         }
     </script>
 @endsection

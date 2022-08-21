@@ -80,9 +80,13 @@ class DatabaseSeeder extends Seeder
         // profiel hobbies
         $this->call(HobbiesTableSeeder::class);
 
+        // contact
+        $this->call(ContactListTableSeeder::class);
+        $this->call(ContactMessagesTableSeeder::class);
+        $this->call(FaqTableSeeder::class);
+
         // Lainnya
         $this->call(SocialMediaTableSeeder::class);
-        $this->call(ContactsTableSeeder::class);
         $this->call(FooterInstagramsTableSeeder::class);
         $this->call(UsernameValidationsTableSeeder::class);
         $this->call(GaleriTagMemberTableSeeder::class);

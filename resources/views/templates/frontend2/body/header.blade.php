@@ -1,4 +1,5 @@
-<header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
+<header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header"
+    style="box-shadow: 0px 0px 20px 0px #404f680d">
     @if ($notifikasi)
         @foreach ($notifikasi as $v)
             <div class="bg-dark-1 py-10 notification_top">
@@ -17,7 +18,7 @@
         @endforeach
     @endif
 
-    <div class="header__container border-bottom-light py-10">
+    <div class="header__container py-10">
         <div class="row justify-between items-center">
 
             <div class="col-auto">

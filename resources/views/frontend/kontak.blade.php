@@ -1,126 +1,172 @@
-@extends('templates.frontend.master')
+@extends('templates.frontend2.master')
 @section('content')
-    <!-- page header -->
-    <section class="page-header">
-        <div class="container-xl">
-            <div class="text-center">
-                <h1 class="mt-0 mb-2">Kontak</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="{{ url('') }}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Kontak</li>
-                    </ol>
-                </nav>
+    <section class="layout-pt-md layout-pb-lg">
+        <div data-anim-wrap class="container">
+            <div class="row y-gap-50 justify-between">
+                <div class="col-lg-4">
+                    <h3 class="text-24 fw-500">{{ settings()->get('setting.contact.list.title') }}</h3>
+                    <p class="mt-25">{{ settings()->get('setting.contact.list.sub_title') }}</p>
+
+                    <div class="y-gap-30 pt-60 lg:pt-40">
+                        {{-- contact list --}}
+                        @foreach ($contacts as $v)
+                            <div class="d-flex items-center">
+                                <div class="d-flex justify-center items-center size-60 rounded-full bg-light-7">
+                                    <i class="{{ $v->icon }} " style="font-size: 1.7em"></i>
+                                </div>
+                                <div class="ml-20"><a href="{!! $v->url !!}">{!! $v->keterangan !!}</a></div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <h3 class="text-24 fw-500">{{ settings()->get('setting.contact.message.title') }}</h3>
+                    <p class="mt-25">{{ settings()->get('setting.contact.message.sub_title') }}</p>
+
+                    <form class="contact-form row y-gap-30 pt-60 lg:pt-40" action="#" id="message_form">
+                        <div class="col-md-6">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                {{ settings()->get('setting.contact.message.name') }}
+                            </label>
+                            <input type="text" name="nama"
+                                placeholder="{{ settings()->get('setting.contact.message.name_placeholder') }}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                {{ settings()->get('setting.contact.message.email') }}
+                            </label>
+                            <input type="email" name="email"
+                                placeholder="{{ settings()->get('setting.contact.message.email_placeholder') }}" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">
+                                {{ settings()->get('setting.contact.message.message') }}
+                            </label>
+                            <textarea name="message"rows="8"
+                                placeholder="{{ settings()->get('setting.contact.message.message_placeholder') }}" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" name="submit" id="submit" class="button -md -purple-1 text-white">
+                                {{ settings()->get('setting.contact.message.button_text') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- section main content -->
-    <section class="main-content">
-        <div class="container-xl">
-
-            <div class="row">
-
-                <div class="col-md-4">
-                    <!-- contact info item -->
-                    <div class="contact-item bordered rounded d-flex align-items-center">
-                        <span class="icon icon-phone"></span>
-                        <div class="details">
-                            <h3 class="mb-0 mt-0">Phone</h3>
-                            <p class="mb-0">+6285798132505</p>
+    @if ($faqs->count())
+        <section class="layout-pt-lg layout-pb-lg bg-light-4">
+            <div class="container">
+                <div class="row justify-center text-center">
+                    <div class="col-xl-8 col-lg-9 col-md-11">
+                        <div class="sectionTitle ">
+                            <h2 class="sectionTitle__title ">{{ settings()->get('setting.contact.faq.title') }}</h2>
+                            <p class="sectionTitle__text ">{{ settings()->get('setting.contact.faq.sub_title') }}</p>
                         </div>
-                    </div>
-                    <div class="spacer d-md-none d-lg-none" data-height="30"></div>
-                </div>
+                        <div class="accordion -block text-left pt-60 lg:pt-40 js-accordion">
+                            @foreach ($faqs as $v)
+                                @if ($v->type == 2)
+                                    <a href="{{ $v->link }}">
+                                @endif
+                                <div class="accordion__item">
+                                    <div class="accordion__button">
+                                        <div class="accordion__icon">
+                                            @if ($v->type == 2)
+                                                <div class="icon" data-feather="send"></div>
+                                                <div class="icon" data-feather="send"></div>
+                                            @else
+                                                <div class="icon" data-feather="plus"></div>
+                                                <div class="icon" data-feather="minus"></div>
+                                            @endif
+                                        </div>
+                                        <span class="text-17 fw-500 text-dark-1">{{ $v->nama }}</span>
+                                    </div>
 
-                <div class="col-md-4">
-                    <!-- contact info item -->
-                    <div class="contact-item bordered rounded d-flex align-items-center">
-                        <span class="icon icon-envelope-open"></span>
-                        <div class="details">
-                            <h3 class="mb-0 mt-0">E-Mail</h3>
-                            <p class="mb-0">info@karmapack.id</p>
-                        </div>
-                    </div>
-                    <div class="spacer d-md-none d-lg-none" data-height="30"></div>
-                </div>
+                                    <div class="accordion__content">
+                                        <div class="accordion__content__inner">
+                                            <p>{{ $v->jawaban }}</p>
+                                        </div>
+                                    </div>
 
-                <div class="col-md-4">
-                    <!-- contact info item -->
-                    <div class="contact-item bordered rounded d-flex align-items-center">
-                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
-                                <path fill-rule="evenodd"
-                                    d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
-                            </svg></span>
-                        <div class="details">
-                            <h3 class="mb-0 mt-0">Location</h3>
-                            <p class="mb-0">Cianjur Selatan</p>
+
+
+                                </div>
+                                @if ($v->type == 2)
+                                    </a>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
-
             </div>
+        </section>
+    @endif
+@endsection
 
-            <div class="spacer" data-height="50"></div>
+@section('javascript')
+    {{-- sweetalert --}}
+    <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#message_form').submit(function(e) {
+                const form = this;
+                e.preventDefault();
+                var formData = new FormData(this);
+                setBtnLoading('button[type=submit]',
+                    `Sending...`);
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('kontak.send') }}",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Message send successfully',
+                            showConfirmButton: true,
+                            timer: 4500
+                        })
+                        $(form).trigger("reset");
+                    },
+                    error: function(data) {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('button[type=submit]',
+                            `{{ settings()->get('setting.contact.message.button_text') }}`,
+                            false);
+                    }
+                });
+            });
+        });
 
-            <!-- section header -->
-            <div class="section-header">
-                <h3 class="section-title">Send Message</h3>
-                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave" alt="wave" />
-            </div>
-
-            <!-- Contact Form -->
-            <form id="contact-form" class="contact-form" method="post">
-
-                <div class="messages"></div>
-
-                <div class="row">
-                    <div class="column col-md-6">
-                        <!-- Name input -->
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="InputName" id="InputName"
-                                placeholder="Your name" required="required" data-error="Name is required.">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-
-                    <div class="column col-md-6">
-                        <!-- Email input -->
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="InputEmail" name="InputEmail"
-                                placeholder="Email address" required="required" data-error="Email is required.">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-
-                    <div class="column col-md-12">
-                        <!-- Email input -->
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="InputSubject" name="InputSubject"
-                                placeholder="Subject" required="required" data-error="Subject is required.">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-
-                    <div class="column col-md-12">
-                        <!-- Message textarea -->
-                        <div class="form-group">
-                            <textarea name="InputMessage" id="InputMessage" class="form-control" rows="4" placeholder="Your message here..."
-                                required="required" data-error="Message is required."></textarea>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Submit
-                    Message</button>
-                <!-- Send Button -->
-
-            </form>
-            <!-- Contact Form end -->
-        </div>
-    </section>
+        function setBtnLoading(element, text, status = true) {
+            const el = $(element);
+            if (status) {
+                el.attr("disabled", "");
+                el.html(
+                    `<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true">
+                                </span> <span>${text}</span>`
+                );
+            } else {
+                el.removeAttr("disabled");
+                el.html(text);
+            }
+        }
+    </script>
 @endsection

@@ -359,7 +359,7 @@ if (!function_exists('navbar_menu_front2')) {
         $menu_body = '';
 
         // active class
-        $active_class = 'class="text-white bg-dark-1 -rounded px-20 mx-2" style="border-radius: 24px; border:1px solid #140342"';
+        $active_class_src = 'class="text-white bg-dark-1 -rounded px-20 mx-2" style="border-radius: 24px; border:1px solid #140342"';
         foreach ($menus as $m) {
             $menu = (object)$m;
 
@@ -370,8 +370,7 @@ if (!function_exists('navbar_menu_front2')) {
             $menu->url = $route_build($menu->route);
             // active
             $menu->active = $menu->active || ($menu->route === $navigation) || $menu->url == current_url();
-            $active_class = $menu->active ? $active_class : '';
-
+            $active_class = $menu->active ? $active_class_src : '';
             if ($separator) {
                 // separator
                 // $menu_body .= "<li class=\"sub-category\"><h3>{$menu->title}</h3></li> ";
@@ -382,12 +381,12 @@ if (!function_exists('navbar_menu_front2')) {
                     $child = (object)$c;
                     $child->url = $route_build($child->route);
                     $child->active = $child->active || ($child->route === $navigation) || $child->url == current_url();;
-                    $menu_active = $child->active ? $active_class : '';
+                    $menu_active = $child->active ? $active_class_src : '';
                     $child_menu .= "<li><a data-barba=\"\" href=\"$child->url\" $menu_active>$child->title</a></li>";
                     if ($child->active) $child_active = $child->active;
                 }
 
-                $menu_active = ($menu->active || $child_active) ? $active_class : '';
+                $menu_active = ($menu->active || $child_active) ? $active_class_src : '';
                 $menu_body .= <<<HTML
                     <li class="menu-item-has-children">
                         <a data-barba href="#" $menu_active>

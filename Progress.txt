@@ -53,6 +53,10 @@ Membuat Menu Pengumuman
 
 
 
-UntuK hari ini sabtu 20 agustus 2022
-    - buat menu untuk frontend dan implementasi nya
-    - buat template dari projek ini pisahkan saja yang penting
+UntuK hari ini sabtu minggu 21 agustus 2022
+    - sinkronkan contact List [progres]
+    - message table List
+    - setting Kontak
+    - implementasi menu di admin
+    - implementasi setting di frontedn
+    - implementasi kontak message di frontend
