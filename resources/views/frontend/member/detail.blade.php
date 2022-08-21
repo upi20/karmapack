@@ -111,9 +111,9 @@
         <div class="container bg-light-4 p-2 rounded-16" data-anim-wrap>
             <div class="grid">
 
-                <div class="grid-sizer col-xl-4 col-md-6 col-sm-12"></div>
+                <div class="grid-sizer col-xl-4 col-md-6 col-12"></div>
 
-                <div class="grid-item col-xl-4 col-md-6 col-sm-12 " data-anim-child="slide-left delay-{{ $anim++ }}">
+                <div class="grid-item col-xl-4 col-md-6 col-12 " data-anim-child="slide-left delay-{{ $anim++ }}">
                     <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                         <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
                             <h2 class="text-17 fw-500">Tentang</h2>
@@ -213,7 +213,7 @@
                 </div>
 
                 @if ($model->whatsapp || $model->telepon || $contacts->count() > 0)
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
@@ -282,7 +282,7 @@
                 @endif
 
                 @if ($kepengurusan->count())
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
@@ -333,7 +333,7 @@
                 @endif
 
                 @if ($pendidikan->count())
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
@@ -372,7 +372,7 @@
                 @endif
 
                 @if ($pengalaman_organisasi->count())
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
@@ -408,7 +408,7 @@
                 @endif
 
                 @if ($pengalaman_lain->count())
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
@@ -430,7 +430,7 @@
                 @endif
 
                 @if ($hobbies->count())
-                    <div class="grid-item col-xl-4 col-md-6 col-sm-12"
+                    <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
                             <div class="d-flex justify-between items-center py-20 px-30 border-bottom-light">
