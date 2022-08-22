@@ -140,7 +140,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         <div id="preloader">
             <div class="d-flex justify-content-center align-items-center flex-column bg-dark-1"
                 style="height: 100vh;">
-                <img src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}" style="max-width: 80px;"
+                <img src="{{ asset(settings()->get(set_front('app.foto_light_mode'))) }}" style="max-width: 80px;"
                     alt="logo" />
             </div>
         </div>

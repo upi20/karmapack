@@ -42,7 +42,7 @@
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                     class="nav-link leading-none d-flex">
-                                    <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
+                                    <img onerror="this.src='{{ asset('assets/templates/admin/profile.png') }}';this.onerror='';"
                                         src="{{ asset('assets/pengurus/profile/' . auth()->user()->foto) }}"
                                         alt="profile-user" class="avatar  profile-user brround cover-image"
                                         id="header_foto_profile">

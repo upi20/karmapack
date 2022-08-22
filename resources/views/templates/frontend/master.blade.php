@@ -1,15 +1,15 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
+    'description' => isset($page_attr['description']) ? $page_attr['description'] : settings()->get(set_front('meta.description')),
+    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : settings()->get(set_front('meta.keyword')),
+    'author' => isset($page_attr['author']) ? $page_attr['author'] : settings()->get(set_front('meta.author')),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(settings()->get(set_front('meta.image'))),
+    'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_front('app.preloader')),
+    'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
     'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
     'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
-    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : true,
-    'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
-    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
-    'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
-    'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
-    'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
     'periode_id' => isset($page_attr['periode_id']) ? $page_attr['periode_id'] : false,
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
@@ -169,7 +169,7 @@ $notifikasi = notif_depan_atas();
         <!-- preloader -->
         <div id="preloader">
             <div class="d-flex justify-content-center align-items-center flex-column" style="height: 90vh;">
-                <img src="{{ asset('assets/templates/frontend/images/logo/300x300.png') }}" style="max-width: 80px;"
+                <img src="{{ asset(settings()->get(set_front('app.foto_light_mode'))) }}" style="max-width: 80px;"
                     alt="logo" />
                 <div class="ms-2 lds-ellipsis">
                     <div></div>
@@ -253,9 +253,6 @@ $notifikasi = notif_depan_atas();
     <script src="{{ asset('assets/templates/frontend/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend2/js/main.js') }}"></script>
-
     @yield('javascript')
 </body>
 

@@ -159,7 +159,7 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Explore Topics</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                     alt="wave" />
                             </div>
                             <div class="widget-content">
@@ -180,7 +180,7 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Tag Clouds</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                     alt="wave" />
                             </div>
                             <div class="widget-content">
@@ -197,7 +197,7 @@
                         <div class="widget rounded">
                             <div class="widget-header text-center">
                                 <h3 class="widget-title">Popular Posts</h3>
-                                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                                <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                     alt="wave" />
                             </div>
                             <div class="widget-content">

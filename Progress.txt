@@ -60,3 +60,9 @@ UntuK hari ini sabtu minggu 21 agustus 2022
     - implementasi menu di admin
     - implementasi setting di frontedn
     - implementasi kontak message di frontend
+
+kuisioner
+Apa yang ingin di tambahkan
+error
+feeback
+revisi

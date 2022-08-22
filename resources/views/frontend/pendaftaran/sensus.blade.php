@@ -24,7 +24,7 @@
             <!-- section header -->
             <div class="section-header">
                 <h3 class="section-title">Masukan data diri</h3>
-                <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave" alt="wave" />
+                <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave" alt="wave" />
             </div>
 
             <!-- Contact Form -->

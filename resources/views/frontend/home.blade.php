@@ -2,7 +2,7 @@
 @section('udnder_header')
     <section class="masthead -type-1 pt-60">
         <div class="masthead__bg">
-            <img src="{{ asset('assets/templates/frontend/images/other/hero.png') }}" alt="image">
+            <img src="{{ asset('assets/templates/frontend/hero.png') }}" alt="image">
         </div>
         <div data-anim-wrap class="container">
             <div class="row justify-center text-center">
@@ -249,7 +249,7 @@
                     <!-- widget about -->
                     <div class="widget rounded bg-white shadow-sm">
                         <div class="widget-about data-bg-image text-center"
-                            data-bg-image="{{ asset('assets/templates/frontend/images/map-bg.png') }}">
+                            data-bg-image="{{ asset('assets/templates/frontend/map-bg.png') }}">
                             <h3 class="widget-title">{{ $periode->nama }}</h3>
                             <br>{{ $periode->slogan }}</p>
                             <ul class="social-icons list-unstyled list-inline mb-0">
@@ -268,7 +268,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">Popular Posts</h3>
-                            <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                            <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                 alt="wave" />
                         </div>
                         <div class="widget-content">
@@ -305,7 +305,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">Explore Topics</h3>
-                            <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                            <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                 alt="wave" />
                         </div>
                         <div class="widget-content">
@@ -326,7 +326,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">Tag Clouds</h3>
-                            <img src="{{ asset('assets/templates/frontend/images/wave.svg') }}" class="wave"
+                            <img src="{{ asset('assets/templates/frontend/wave.svg') }}" class="wave"
                                 alt="wave" />
                         </div>
                         <div class="widget-content">

@@ -33,7 +33,7 @@
                 <div class="col-xl-8 col-lg-9 col-md-11">
                     <div class="page-header__content">
                         <div class="page-header__img">
-                            <img onerror="this.src='{{ asset('assets/templates/admin/images/profile.png') }}';this.onerror='';"
+                            <img onerror="this.src='{{ asset('assets/templates/admin/profile.png') }}';this.onerror='';"
                                 src="{{ asset('assets/pengurus/profile/' . $model->foto) }}" alt="{{ $model->name }}"
                                 style="margin: auto;position: relative;margin: auto;width: 150px;height: 150px;max-height: 150px;border-radius: 150px;object-fit: cover; /* cover, contain, fill, scale-down */object-position: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
                         </div>

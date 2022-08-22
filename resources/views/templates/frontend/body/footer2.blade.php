@@ -21,7 +21,7 @@
             <div class="row y-gap-20 justify-between items-center">
                 <div class="col-auto">
                     <div class="footer-header__logo">
-                        <img src="{{ asset('assets/templates/admin/images/brand/logo-hd.png') }}" alt="logo"
+                        <img src="{{ asset('assets/templates/admin/logo-hd.png') }}" alt="logo"
                             style="width: 250px">
                     </div>
                 </div>

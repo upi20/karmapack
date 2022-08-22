@@ -20,7 +20,7 @@
 
     <div class="container mt-60">
         <img src="{{ $model->fotoUrl() }}" alt="{{ $periode->nama }}"
-            onerror="this.src='{{ asset('assets/templates/frontend/images/logo/300x300.png') }}';this.onerror='';"
+            onerror="this.src='{{ asset(settings()->get(set_front('app.foto_light_mode'))) }}';this.onerror='';"
             class="rounded mx-auto d-block">
         <h1 class="h5 text-center text-uppercase text-dark">
             BIDANG {{ $model->nama }}

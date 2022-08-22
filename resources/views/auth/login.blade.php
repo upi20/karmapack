@@ -191,7 +191,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <script>
         if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
-            $('#logo').attr('src', "{{ asset('assets/templates/admin/images/brand/logo-3.png') }}");
+            $('#logo').attr('src', "{{ asset(settings()->get(set_admin('app.foto_dark_landscape_mode'))) }}");
         }
     </script>
 

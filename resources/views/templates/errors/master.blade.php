@@ -1,14 +1,17 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
-    'description' => isset($page_attr['description']) ? $page_attr['description'] : 'Karmapack - Keluarga Mahasiswa dan Pelajar Cianjur Kidul',
-    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : 'karmapack,orda,cianjur kidul',
-    'author' => isset($page_attr['author']) ? $page_attr['author'] : 'Isep Lutpi Nur',
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset('assets/templates/admin/images/brand/logo-1.png'),
+    'description' => isset($page_attr['description']) ? $page_attr['description'] : settings()->get(set_admin('meta.description')),
+    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : settings()->get(set_admin('meta.keyword')),
+    'author' => isset($page_attr['author']) ? $page_attr['author'] : settings()->get(set_admin('meta.author')),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(settings()->get(set_admin('meta.image'))),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_admin('app.preloader')),
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
+    'url' => isset($page_attr['url']) ? $page_attr['url'] : url(''),
+    'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
 ];
-$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
+$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_admin('app.title'), env('APP_NAME'));
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
