@@ -27,17 +27,18 @@
                 <div class="row justify-center text-center">
                     <div class="col-auto">
                         <div data-anim="slide-up delay-1 " class="mb-30">
-                            <img src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}" class="rounded mx-auto d-block"
-                                style="max-width: 500px; width:100%">
+                            <img src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
+                                onerror="this.src='{{ asset('assets/image/logo_default.png') }}';this.onerror='';"
+                                class="rounded mx-auto d-block" style="max-width: 500px; width:100%">
                         </div>
                         <div data-anim="slide-up delay-2 ">
-                            <h1 class="page-header__title text-24">STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA
-                                DAN PELAJAR
-                                CIANJUR KIDUL</h1>
+                            <h1 class="page-header__title text-24">
+                                STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL
+                            </h1>
                         </div>
                         <div data-anim="slide-up delay-3">
-                            <p class="text-20 fw-500 mt-15">PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
-                                {{ $periode->nama }}</p>
+                            <p class="text-20 fw-500 mt-15 ">PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
+                                {{ strtoupper($periode->nama) }}</p>
                         </div>
                     </div>
                 </div>
@@ -54,13 +55,13 @@
                 @foreach ($member->utama as $utama)
                     <tr>
                         <td style="border: 0;  " class="py-10 px-3 text-18 fw-500" colspan="2">
-                            {{ $utama->jabatan->nama }}</td>
+                            {{ ucwords(strtolower($utama->jabatan->nama)) }}</td>
                         <td style="border: 0; max-width: 5px; " class="py-10 px-3 text-18 fw-500">:</td>
                         <td style="border: 0; " class="py-10 px-3 text-18 fw-500 text-purple-1">
                             @php
                                 $url = $utama->pejabat->username ? url($utama->pejabat->username) : route('anggota.id', $utama->pejabat->id);
                             @endphp
-                            <a href="{{ $url }}">{{ $utama->pejabat->name }}</a>
+                            <a href="{{ $url }}">{{ ucwords(strtolower($utama->pejabat->name)) }}</a>
                         </td>
                     </tr>
                 @endforeach
@@ -69,7 +70,7 @@
                     <tr>
                         <td colspan="4" style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                             <a href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
-                                {{ $bidang->header->nama }}
+                                {{ ucwords(strtolower($bidang->header->nama)) }}
                             </a>
                         </td>
                     </tr>
@@ -78,7 +79,9 @@
                         @if ($body->list)
                             <tr>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
-                                <td style="border: 0;" class="py-10 px-3 text-18 fw-500">{{ $body->jabatan->nama }}</td>
+                                <td style="border: 0;" class="py-10 px-3 text-18 fw-500">
+                                    {{ ucwords(strtolower($body->jabatan->nama)) }}
+                                </td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                                     @if (isset($body->pejabat[0]))
@@ -86,7 +89,7 @@
                                             $pejabat = $body->pejabat[0];
                                             $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                         @endphp
-                                        <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                        <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
                                     @endif
                                 </td>
                             </tr>
@@ -100,7 +103,7 @@
                                             @php
                                                 $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                             @endphp
-                                            <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                            <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
                                         </td>
                                     </tr>
                                 @endif
@@ -108,14 +111,16 @@
                         @else
                             <tr>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
-                                <td style="border: 0;" class="py-10 px-3 text-18 fw-500">{{ $body->jabatan->nama }}</td>
+                                <td style="border: 0;" class="py-10 px-3 text-18 fw-500">
+                                    {{ ucwords(strtolower($body->jabatan->nama)) }}
+                                </td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                                     @php
                                         $pejabat = $body->pejabat;
                                         $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
                                     @endphp
-                                    <a href="{{ $url }}">{{ $pejabat->name }}</a>
+                                    <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
                                 </td>
                             </tr>
                         @endif

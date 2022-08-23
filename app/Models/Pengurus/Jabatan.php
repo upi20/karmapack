@@ -16,6 +16,6 @@ class Jabatan extends Model
     public function fotoUrl()
     {
         $foto = $this->attributes['foto'];
-        return $foto ? url(self::image_folder . '/' . $foto) : asset(settings()->get(set_front("app.foto_light_mode")));
+        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/image/logo_default.png');
     }
 }
