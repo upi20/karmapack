@@ -28,14 +28,15 @@
                     <div class="col-auto">
                         <div data-anim="slide-up delay-1 " class="mb-30">
                             <img src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}" class="rounded mx-auto d-block"
-                                style="max-width: 500px;">
+                                style="max-width: 500px; width:100%">
                         </div>
-                        <div data-anim="slide-up delay-2">
-                            <h1 class="page-header__title">STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA DAN PELAJAR CIANJUR
-                                KIDUL</h1>
+                        <div data-anim="slide-up delay-2 ">
+                            <h1 class="page-header__title text-24">STRUKTUR KEPENGURUSAN<br>KELUARGA MAHASISWA
+                                DAN PELAJAR
+                                CIANJUR KIDUL</h1>
                         </div>
                         <div data-anim="slide-up delay-3">
-                            <p class="text-24 fw-500 mt-15">PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
+                            <p class="text-20 fw-500 mt-15">PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
                                 {{ $periode->nama }}</p>
                         </div>
                     </div>
@@ -49,9 +50,9 @@
             $anim_sequence = 2;
         @endphp
         <div class="d-flex justify-content-centers sm:pl-0 md:pl-20 xl:pl-40">
-            <table class="table" style="width:100%">
+            <table class="table" style="width:100%" data-anim="slide-up delay-{{ $anim_sequence++ }}">
                 @foreach ($member->utama as $utama)
-                    <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                    <tr>
                         <td style="border: 0;  " class="py-10 px-3 text-18 fw-500" colspan="2">
                             {{ $utama->jabatan->nama }}</td>
                         <td style="border: 0; max-width: 5px; " class="py-10 px-3 text-18 fw-500">:</td>
@@ -65,7 +66,7 @@
                 @endforeach
 
                 @foreach ($member->bidang as $bidang)
-                    <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                    <tr>
                         <td colspan="4" style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                             <a href="{{ route('about.kepengurusan.bidang', $bidang->header->slug) }}">
                                 {{ $bidang->header->nama }}
@@ -75,7 +76,7 @@
 
                     @foreach ($bidang->body as $body)
                         @if ($body->list)
-                            <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                            <tr>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">{{ $body->jabatan->nama }}</td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
@@ -91,7 +92,7 @@
                             </tr>
                             @foreach ($body->pejabat as $key => $pejabat)
                                 @if ($key != 0)
-                                    <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                                    <tr>
                                         <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                         <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                         <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
@@ -105,7 +106,7 @@
                                 @endif
                             @endforeach
                         @else
-                            <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                            <tr>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">{{ $body->jabatan->nama }}</td>
                                 <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>

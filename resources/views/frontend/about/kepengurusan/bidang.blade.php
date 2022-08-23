@@ -33,20 +33,20 @@
                         <div data-anim="slide-up delay-1 " class="mb-30">
                             <img src="{{ $model->fotoUrl() }}" alt="{{ $periode->nama }}"
                                 onerror="this.src='{{ asset(settings()->get(set_front('app.foto_light_mode'))) }}';this.onerror='';"
-                                style="max-width: 500px;">
+                                style="max-width: 500px; width:100%">
                         </div>
                         <div data-anim="slide-up delay-2 ">
-                            <h1 class="page-header__title uppercase text-30"> BIDANG {{ $model->nama }}
+                            <h1 class="page-header__title uppercase text-24"> BIDANG {{ $model->nama }}
                                 @if ($model->singkatan)
                                     ({{ $model->singkatan }})
                                 @endif
                             </h1>
                         </div>
                         <div data-anim="slide-up delay-3">
-                            <p class="text-24 fw-500 mt-15">KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL</p>
+                            <p class="text-20 fw-500 mt-15">KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL</p>
                         </div>
                         <div data-anim="slide-up delay-4">
-                            <p class="text-24 fw-500 mt-15">
+                            <p class="text-20 fw-500 mt-15">
                                 <a href="{{ route('about.kepengurusan.struktur.periode', $periode->slug) }}"
                                     class=" text-dark uppercase">
                                     PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
@@ -118,7 +118,7 @@
             <div class="col-auto">
                 @if ($model->visi)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
-                        <h1 class="page-header__title uppercase text-24">Visi</h1>
+                        <h1 class="page-header__title uppercase text-20">Visi</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
                         <p class="text-17 fw-500 mt-15"> {!! $model->visi !!}</p>
@@ -127,7 +127,7 @@
 
                 @if ($model->misi)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
-                        <h1 class="page-header__title uppercase text-24">Visi</h1>
+                        <h1 class="page-header__title uppercase text-20">Visi</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
                         <p class="text-17 fw-500 mt-15"> {!! $model->misi !!}</p>
@@ -136,7 +136,7 @@
 
                 @if ($model->slogan)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
-                        <h1 class="page-header__title uppercase text-24">Slogan</h1>
+                        <h1 class="page-header__title uppercase text-20">Slogan</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
                         <p class="text-17 fw-500 mt-15">{!! $model->slogan !!}</p>
