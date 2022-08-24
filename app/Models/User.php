@@ -6,7 +6,6 @@ use App\Models\Address\District;
 use App\Models\Address\Province;
 use App\Models\Address\Regencie;
 use App\Models\Address\Village;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,8 +18,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, HasProfilePhoto, Notifiable, TwoFactorAuthenticatable, HasRoles;
 
-    const ROLE_ADMIN = 'admin';
-    const ROLE_MEMBER = 'member';
     const tableName = 'users';
     const image_default = 'assets/image/anggota_default.png';
     const image_folder = '/assets/pengurus/profile';
@@ -66,14 +63,6 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public static function getAllRole(): array
-    {
-        return [
-            self::ROLE_MEMBER,
-            self::ROLE_ADMIN,
-        ];
-    }
 
     public function fotoUrl()
     {

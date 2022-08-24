@@ -124,7 +124,6 @@ class UserRepository
     public function update(Request $request)
     {
         try {
-            $user_role = implode(",", User::getAllRole());
             $user = User::find($request->id);
             $request->validate([
                 'id' => ['required', 'int'],

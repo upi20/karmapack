@@ -85,8 +85,10 @@ body {
     color: #282f53;
     text-align: left;
     background-color: #f0f0f5;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 body::-webkit-scrollbar {
@@ -550,7 +552,7 @@ pre code {
     }
 
     abbr[title]::after {
-        content: " ("attr(title) ")"
+        content: " (" attr(title) ")"
     }
 
     pre {
@@ -42545,7 +42547,7 @@ ul.inbox-pagination li {
 }
 
 .bg-recentorder {
-    background-image: url(../images/media/bg2.jpg);
+    background-image: url(../images/bg2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44946,7 +44948,7 @@ img {
 .img-card:before {
     content: "";
     position: absolute;
-    background: url(../images/svgs/circle.svg);
+    background: url(../svgs/circle.svg);
     background-position: right;
     background-repeat: no-repeat;
     width: 100%;

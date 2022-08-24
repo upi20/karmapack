@@ -91,7 +91,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     @endforeach
 </head>
 
-<body class="app sidebar-mini ltr">
+<body class="app sidebar-mini ltr dark-mode">
 
     <!-- BACKGROUND-IMAGE -->
     <div class="login-img">
@@ -190,9 +190,16 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <script src="{{ asset('assets/templates/admin/plugins/particle/particles.js') }}"></script>
 
     <script>
-        if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
-            $('#logo').attr('src', "{{ asset(settings()->get(set_admin('app.foto_dark_landscape_mode'))) }}");
-        }
+        {{-- if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
+            $('#logo').attr('src', "{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}");
+        } --}}
+
+        // auto darkmode
+        $(window).on("load", function(e) {
+            if (!(document.querySelector('body').classList.contains('dark-mode'))) {
+                $('body').addClass('dark-mode');
+            }
+        })
     </script>
 
     <script src="{{ url('loader/js/auth/login.js') }}"></script>

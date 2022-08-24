@@ -8589,7 +8589,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
 }
 
 .transparent-mode .bg-recentorder {
-    background: linear-gradient(to right, var(--transparent-body) 0%, tranparent 100%), url("../images/media/bg2.jpg");
+    background: linear-gradient(to right, var(--transparent-body) 0%, tranparent 100%), url("../images/bg2.jpg");
 }
 
 .transparent-mode .bg-recentorder:before {
@@ -8893,4 +8893,5 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
         box-shadow: none !important;
     }
 }
+
 /*# sourceMappingURL=transparent-style.css.map */

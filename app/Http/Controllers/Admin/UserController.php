@@ -56,8 +56,7 @@ class UserController extends Controller
                 ['name' => 'Dashboard'],
             ],
         ];
-        $user_role = User::getAllRole();
-        return view('admin.change_password', compact('page_attr', 'user_role'));
+        return view('admin.change_password', compact('page_attr'));
     }
 
     public function save_password(Request $request)

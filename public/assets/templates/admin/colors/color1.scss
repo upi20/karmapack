@@ -1,26 +1,30 @@
 @import "../scss/variables";
+
 a {
     color: $primary-1;
+
     &:hover {
         color: $primary-1;
     }
 }
 
 .bg-primary {
-    background: $primary-1 !important;
+    background: $primary-1  !important;
 }
 
 a.bg-primary {
+
     &:hover,
     &:focus {
-        background-color: $primary-1 !important;
+        background-color: $primary-1  !important;
     }
 }
 
 button.bg-primary {
+
     &:hover,
     &:focus {
-        background-color: $primary-1 !important;
+        background-color: $primary-1  !important;
     }
 }
 
@@ -28,41 +32,46 @@ button.bg-primary {
 /*--- gradient-backgrounds --*/
 
 .bg-primary-gradient {
-    background: $primary-gradient-1 !important;
+    background: $primary-gradient-1  !important;
 }
 
 a.bg-primary-gradient {
+
     &:hover,
     &:focus {
-        background: $primary-gradient-1 !important;
+        background: $primary-gradient-1  !important;
     }
 }
 
 button.bg-primary-gradient {
+
     &:hover,
     &:focus {
-        background: $primary-gradient-1 !important;
+        background: $primary-gradient-1  !important;
     }
 }
 
 .border-primary {
-    border-color: $primary-1 !important;
+    border-color: $primary-1  !important;
 }
 
 .text-primary {
-    color: $primary-1 !important;
+    color: $primary-1  !important;
 }
 
 a.text-primary {
+
     &:hover,
     &:focus {
-        color: $primary-1 !important;
+        color: $primary-1  !important;
     }
 }
 
 .table-primary {
     background-color: #d2cdf9;
+
     > {
+
         th,
         td {
             background-color: #d2cdf9;
@@ -72,7 +81,9 @@ a.text-primary {
 
 .table-hover .table-primary:hover {
     background-color: #b7cded;
+
     > {
+
         td,
         th {
             background-color: #b7cded;
@@ -84,33 +95,39 @@ a.text-primary {
     &.select2-container--focus .select2-selection--multiple {
         border-color: $primary-1;
     }
+
     .select2-selection--multiple .select2-selection__choice {
-        background-color: $primary-1 !important;
-        border: 1px solid $primary-1 !important;
+        background-color: $primary-1  !important;
+        border: 1px solid $primary-1  !important;
     }
 }
 
 .btn-primary {
-    color: $white!important;
-    background: $primary-1 !important;
-    border-color: $primary-1 !important;
+    color: $white !important;
+    background: $primary-1  !important;
+    border-color: $primary-1  !important;
+
     &:hover {
         color: #fff;
         background-color: $primary-1;
         border-color: $primary-1;
         opacity: 0.8;
     }
+
     &:focus,
     &.focus {
         opacity: 0.9;
     }
+
     &.disabled,
     &:disabled {
         color: #fff;
         background-color: $primary-1;
         border-color: $primary-1;
     }
+
     &:not(:disabled):not(.disabled) {
+
         &:active,
         &.active {
             color: #fff;
@@ -127,6 +144,7 @@ a.text-primary {
 }
 
 .btn-primary:not(:disabled):not(.disabled) {
+
     &:active:focus,
     &.active:focus {
         box-shadow: 0 0 0 2px $primary-09;
@@ -139,14 +157,16 @@ a.text-primary {
 
 .btn-primary-light {
     color: $primary-1;
-    background: $primary-02 !important;
-    border-color: $primary-02 !important;
+    background: $primary-02  !important;
+    border-color: $primary-02  !important;
+
     &:hover {
         color: #fff;
-        background-color: $primary-1 !important;
+        background-color: $primary-1  !important;
         border-color: $primary-1;
         opacity: 0.9;
     }
+
     &:focus,
     &.focus {
         box-shadow: 0 0 0 2px $primary-09;
@@ -156,24 +176,29 @@ a.text-primary {
 
 .btn-primary-gradient {
     color: #fff;
-    background: $primary-1 !important;
-    border-color: $primary-1 !important;
+    background: $primary-1  !important;
+    border-color: $primary-1  !important;
+
     &:hover {
         color: #fff;
         background-color: $primary-1;
         border-color: $primary-1;
     }
+
     &:focus,
     &.focus {
         box-shadow: 0 0 0 2px $primary-09;
     }
+
     &.disabled,
     &:disabled {
         color: #fff;
         background-color: $primary-1;
         border-color: $primary-1;
     }
+
     &:not(:disabled):not(.disabled) {
+
         &:active,
         &.active {
             color: #fff;
@@ -190,6 +215,7 @@ a.text-primary {
 }
 
 .btn-primary-gradient:not(:disabled):not(.disabled) {
+
     &:active:focus,
     &.active:focus {
         box-shadow: 0 0 0 2px $primary-09;
@@ -210,21 +236,26 @@ a.text-primary {
     background: transparent;
     background-image: none;
     border-color: $primary-1;
+
     &:hover {
         color: #fff;
         background: $primary-1;
         border-color: $primary-1;
     }
+
     &:focus,
     &.focus {
         box-shadow: 0 0 0 2px $primary-01;
     }
+
     &.disabled,
     &:disabled {
         color: $primary-1;
         background-color: transparent;
     }
+
     &:not(:disabled):not(.disabled) {
+
         &:active,
         &.active {
             color: #fff;
@@ -241,6 +272,7 @@ a.text-primary {
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled) {
+
     &:active:focus,
     &.active:focus {
         box-shadow: 0 0 0 2px $primary-01;
@@ -253,12 +285,14 @@ a.text-primary {
 
 .btn-link {
     color: $primary-1;
+
     &:hover {
         color: $primary-1;
     }
 }
 
 .dropdown-item {
+
     &:hover,
     &:focus,
     &.active,
@@ -278,6 +312,7 @@ a.text-primary {
 }
 
 .custom-checkbox .custom-control-input {
+
     &:checked~.custom-control-label::before,
     &:indeterminate~.custom-control-label::before,
     &:disabled:checked~.custom-control-label::before {
@@ -290,6 +325,7 @@ a.text-primary {
         background-color: $primary-1;
         border-color: $primary-1;
     }
+
     &:disabled:checked~.custom-control-label::before {
         background-color: $primary-1;
     }
@@ -305,6 +341,7 @@ a.text-primary {
 }
 
 .custom-range {
+
     &::-webkit-slider-thumb,
     &::-moz-range-thumb,
     &::-ms-thumb {
@@ -313,6 +350,7 @@ a.text-primary {
 }
 
 .nav-pills {
+
     .nav-link.active,
     .show>.nav-link {
         background-color: $primary-1;
@@ -331,14 +369,17 @@ a.text-primary {
 
 .range.range-primary {
     input[type="range"] {
+
         &::-webkit-slider-thumb,
         &::-moz-slider-thumb {
             background-color: $primary-1;
         }
     }
+
     output {
         background-color: $primary-1;
     }
+
     input[type="range"] {
         outline-color: $primary-1;
     }
@@ -349,6 +390,7 @@ a.text-primary {
 }
 
 .nav-tabs .nav-item1 .nav-link {
+
     &:hover:not(.disabled),
     &.active {
         background: $primary-1;
@@ -370,7 +412,7 @@ a.text-primary {
 }
 
 .panel-title1 a {
-    background: $primary-1 !important;
+    background: $primary-1  !important;
 }
 
 .btn.dropdown-toggle.btn-primary~.dropdown-menu .dropdown-plus-title {
@@ -381,9 +423,11 @@ a.text-primary {
     color: $primary-1;
     background-color: $primary-02;
     border-color: $primary-01;
+
     hr {
         border-top-color: $primary-1;
     }
+
     .alert-link {
         color: #1200d7;
     }
@@ -392,12 +436,15 @@ a.text-primary {
 .list-group-item-primary {
     color: $primary-1;
     background-color: #cbdbf2;
+
     &.list-group-item-action {
+
         &:hover,
         &:focus {
             color: $primary-1;
             background-color: #b7cded;
         }
+
         &.active {
             color: #fff;
             background-color: $primary-1;
@@ -408,8 +455,8 @@ a.text-primary {
 
 .header-bg {
     background: $primary-1;
-    background: -webkit-$primary-1 !important;
-    background: $primary-1 !important;
+    background: -webkit-$primary-1  !important;
+    background: $primary-1  !important;
 }
 
 .footer a:not(.btn) {
@@ -417,6 +464,7 @@ a.text-primary {
 }
 
 .nav-tabs .nav-link {
+
     &:hover:not(.disabled),
     &.active {
         background: $primary-1;
@@ -426,6 +474,7 @@ a.text-primary {
 @media (max-width: 992px) {
     .animated-arrow span {
         background: $primary-1;
+
         &:before,
         &:after {
             background: $primary-1;
@@ -434,14 +483,14 @@ a.text-primary {
 }
 
 .expanel-primary>.expanel-heading {
-    color: $white!important;
-    background-color: $primary-1 !important;
-    border-color: $primary-1 !important;
+    color: $white !important;
+    background-color: $primary-1  !important;
+    border-color: $primary-1  !important;
 }
 
 .login-img {
     position: relative;
-    background-image: url(../images/media/bg2.jpg);
+    background-image: url(../images/bg2.jpg);
 }
 
 .login-img::before {
@@ -467,6 +516,7 @@ a.text-primary {
 
 .lds-heart div {
     background: $primary-1;
+
     &:after,
     &:before {
         background: $primary-1;
@@ -490,6 +540,7 @@ a.text-primary {
         color: $primary-1;
         background: $primary-005;
     }
+
     &:focus+.selectgroup-button {
         border-color: $primary-1;
         z-index: 2;
@@ -507,13 +558,14 @@ a.text-primary {
 }
 
 .timeline--horizontal .timeline-divider {
-    background: $primary-1 !important;
+    background: $primary-1  !important;
 }
 
 #back-to-top {
     background: $primary-1;
+
     &:hover {
-        color: $primary-1 !important;
+        color: $primary-1  !important;
         border: 2px solid $primary-1;
     }
 }
@@ -534,6 +586,7 @@ a.text-primary {
 .message-feed:not(.right) .mf-content {
     background: $primary-1;
     color: #fff;
+
     &:before {
         border-right-color: $primary-1;
     }
@@ -554,26 +607,31 @@ a.text-primary {
 .cal1 .clndr {
     .clndr-table {
         tr .day {
+
             &.today.event,
             &.my-today.event {
                 background: $primary-1;
             }
         }
     }
+
     .clndr-controls .clndr-control-button {
         .clndr-previous-button {
             color: #fff;
             background: $primary-1;
             border-radius: 5px;
         }
+
         .clndr-next-button {
             color: #fff;
             background: $primary-1;
             border-radius: 5px;
+
             &:hover {
                 background: $primary-1;
             }
         }
+
         .clndr-previous-button:hover {
             background: $primary-1;
         }
@@ -585,7 +643,7 @@ a.text-primary {
 }
 
 .fc-event {
-    color: $primary-1 !important;
+    color: $primary-1  !important;
     background-color: $primary-01;
 }
 
@@ -603,11 +661,11 @@ a.text-primary {
 
 form.convFormDynamic button.submit {
     color: $primary-1;
-    border: 1px solid $primary-1 !important;
+    border: 1px solid $primary-1  !important;
 }
 
 form.convFormDynamic button.submit:hover {
-    background: $primary-1 !important;
+    background: $primary-1  !important;
     color: #fff;
 }
 
@@ -621,7 +679,7 @@ div.conv-form-wrapper div#messages div.message.from {
 
 .accordionjs .acc_section.acc_active>.acc_head {
     background: $primary-1;
-    color: $white!important;
+    color: $white !important;
 }
 
 .tab_wrapper {
@@ -629,17 +687,20 @@ div.conv-form-wrapper div#messages div.message.from {
         border-color: $primary-1;
         background: $primary-1;
     }
+
     &.right_side>ul li.active:after {
         background: $primary-1;
     }
 }
 
 .cal1 .clndr .clndr-table tr .day {
+
     &.today,
     &.my-today {
         background: $primary-1;
         color: $white;
     }
+
     &.today:hover,
     &.my-today:hover {
         background: $primary-1;
@@ -647,16 +708,18 @@ div.conv-form-wrapper div#messages div.message.from {
 }
 
 .primary .pricing-divider {
-    background: $white !important;
+    background: $white  !important;
 }
 
 .product-grid6 {
     .title a:hover {
         color: $primary-1;
     }
+
     .icons li a {
         color: #fff;
         background: $primary-1;
+
         &:hover {
             color: #fff;
         }
@@ -664,6 +727,7 @@ div.conv-form-wrapper div#messages div.message.from {
 }
 
 #user-profile .profile-details {
+
     a>i,
     i {
         color: $primary-1;
@@ -695,7 +759,9 @@ div.conv-form-wrapper div#messages div.message.from {
     p:hover {
         color: $primary-1;
     }
+
     a {
+
         address:hover,
         &:hover {
             color: $primary-1;
@@ -709,6 +775,7 @@ div.conv-form-wrapper div#messages div.message.from {
 
 .footer-social-list a {
     color: $primary-1;
+
     &:hover {
         color: $primary-1;
     }
@@ -741,6 +808,7 @@ div.conv-form-wrapper div#messages div.message.from {
 }
 
 .fc-toolbar {
+
     .fc-state-active,
     .ui-state-active {
         background: #6155e2;
@@ -754,8 +822,9 @@ div.conv-form-wrapper div#messages div.message.from {
     &.active {
         color: $primary-1;
     }
+
     &.active .side-menu__icon {
-        color: $primary-1 !important;
+        color: $primary-1  !important;
     }
 }
 
@@ -765,6 +834,7 @@ div.conv-form-wrapper div#messages div.message.from {
 .onoffswitch-checkbox:checked+.onoffswitch-label {
     background-color: $primary-1;
     border-color: $primary-1;
+
     &:before {
         border-color: $primary-1;
     }
@@ -774,6 +844,7 @@ div.conv-form-wrapper div#messages div.message.from {
     .onoffswitch2-label {
         background-color: $primary-1;
     }
+
     .onoffswitch-label2,
     .onoffswitch2-label:before {
         border-color: $primary-1;
@@ -792,38 +863,47 @@ div.conv-form-wrapper div#messages div.message.from {
 
 .dark-mode {
     .side-menu__item {
+
         &.active,
         &:hover,
         &:focus,
         &.active .side-menu__icon {
-            color: $primary-1 !important;
+            color: $primary-1  !important;
         }
     }
+
     .side-menu__item {
+
         &:hover,
         &:focus {
             color: $primary-1;
         }
     }
+
     &.dark-menu .side-menu__item {
+
         &.active .side-menu__icon,
         &:hover .side-menu__icon,
         &:focus .side-menu__icon {
             color: $primary-1;
         }
     }
+
     .footer a:not(.btn) {
         color: $primary-1;
     }
+
     .text-primary {
-        color: $primary-1 !important;
+        color: $primary-1  !important;
     }
+
     .panel-default>.panel-heading,
     .panel-tabs a {
         color: #dedefd;
     }
+
     .sidebar-icon {
-        color: $primary-1 !important;
+        color: $primary-1  !important;
     }
 }
 
@@ -831,6 +911,7 @@ div.conv-form-wrapper div#messages div.message.from {
     &.active {
         color: #ffffff;
     }
+
     &.active .side-menu__icon {
         color: #ffffff;
     }
@@ -838,6 +919,7 @@ div.conv-form-wrapper div#messages div.message.from {
 
 .light-menu {
     &.dark-mode .side-menu__item {
+
         &.active .side-menu__icon,
         &:hover .side-menu__icon,
         &:focus .side-menu__icon,
@@ -847,7 +929,9 @@ div.conv-form-wrapper div#messages div.message.from {
             color: #8061ce;
         }
     }
+
     .side-menu__item {
+
         &:hover .side-menu__icon,
         &:focus .side-menu__icon,
         &.active,
@@ -861,8 +945,9 @@ div.conv-form-wrapper div#messages div.message.from {
 .transparent-mode.light-menu {
     .side-menu__item {
         &.active .side-menu__icon {
-            color: $primary-1 !important;
+            color: $primary-1  !important;
         }
+
         &:hover .side-menu__icon,
         &:hover .side-menu__label,
         &:focus .side-menu__icon,
@@ -870,16 +955,17 @@ div.conv-form-wrapper div#messages div.message.from {
         &.active,
         &:hover,
         &:focus {
-            color: $primary-1 !important;
+            color: $primary-1  !important;
         }
     }
 }
 
 .default-body .app-sidebar {
-    background: $primary-1 !important;
+    background: $primary-1  !important;
 }
 
 .dark-menu .side-menu__item {
+
     &.active .side-menu__icon,
     &:hover .side-menu__icon,
     &:focus .side-menu__icon,
@@ -891,73 +977,91 @@ div.conv-form-wrapper div#messages div.message.from {
 
 .color-menu {
     .app-sidebar {
-        background: $primary-1 !important;
+        background: $primary-1  !important;
     }
+
     .side-header {
         background: $primary-1;
         border-bottom: 1px solid $white-1;
     }
+
     .side-menu__item {
+
         &.active .side-menu__icon,
         &:hover .side-menu__icon,
         &:focus .side-menu__icon,
         &.active,
         &:hover,
         &:focus {
-            color: $white !important;
+            color: $white  !important;
         }
+
         &.active {
             color: $white;
         }
     }
+
     .side-menu .side-menu__item.active::after {
         background: #fff;
     }
+
     .side-menu .side-menu__item:hover::after {
         background: #fff;
     }
+
     .side-menu h3 {
         color: rgba(255, 255, 255, 0.4) !important;
     }
+
     .side-menu .side-menu__icon,
     .side-menu .side-menu__item {
-        color: $white-7 !important;
+        color: $white-7  !important;
     }
+
     .side-menu__item:hover,
     .side-menu__item:focus {
-        color: $white!important;
+        color: $white !important;
     }
+
     .side-menu__item:hover .side-menu__icon,
     .side-menu__item:hover .side-menu__label,
     .side-menu__item:focus .side-menu__icon,
     .side-menu__item:focus .side-menu__label {
         color: #ffffff !important;
     }
+
     .slide.is-expanded a {
         color: #e7eefb;
     }
+
     .slide-item {
         color: #e7eefb;
     }
+
     .slide-item:hover,
     .slide-item:focus {
-        color: $white!important;
+        color: $white !important;
     }
+
     .slide-menu li .slide-item:before {
         color: #e7eefb;
     }
+
     .side-menu__item {
         color: #e7eefb;
     }
+
     .side-menu-label1 {
-        border-bottom-color: 1px solid $border-dark !important;
+        border-bottom-color: 1px solid $border-dark  !important;
+
         a {
-            color: $white !important;
+            color: $white  !important;
         }
     }
 }
 
 .gradient-menu .side-menu__item {
+
     &.active .side-menu__icon,
     &:hover .side-menu__icon,
     &:focus .side-menu__icon,
@@ -969,6 +1073,7 @@ div.conv-form-wrapper div#messages div.message.from {
 }
 
 .gradient-menu {
+
     .side-menu__item:hover .side-menu__icon,
     .side-menu__item:hover .side-menu__label,
     .side-menu__item:focus .side-menu__icon,
@@ -978,6 +1083,7 @@ div.conv-form-wrapper div#messages div.message.from {
 }
 
 .color-menu.sidemenu-bgimage {
+
     .side-header:before,
     .app-sidebar:before {
         background: $primary-09;
