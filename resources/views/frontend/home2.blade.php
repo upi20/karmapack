@@ -399,7 +399,7 @@
                     </div>
 
                     <div class="col-auto" data-anim-child="slide-left delay-3">
-                        <a href="#" class="button -icon -purple-3 text-purple-1">
+                        <a href="{{ route('artikel') }}" class="button -icon -purple-3 text-purple-1">
                             {{ settings()->get("$k.button_text") }}
                             <i class="icon-arrow-top-right text-13 ml-10"></i>
                         </a>
@@ -424,18 +424,18 @@
                                 </div>
                                 <div class="blogCard__content">
                                     @if ($a->kategori)
-                                        <a href="{{ url("?kategori=$a->kategori_slug") }}" class="blogCard__category"
-                                            title="Kategori {{ $a->kategori }}">
+                                        <a href="{{ url("artikel?kategori=$a->kategori_slug") }}"
+                                            class="blogCard__category" title="Kategori {{ $a->kategori }}">
                                             {{ $a->kategori }}
                                         </a>
                                     @elseif ($a->tag)
-                                        <a href="{{ url("?tag=$a->tag_slug") }}" class="blogCard__category"
+                                        <a href="{{ url("artikel?tag=$a->tag_slug") }}" class="blogCard__category"
                                             title="tag {{ $a->tag }}">
                                             {{ $a->tag }}
                                         </a>
                                     @endif
                                     <h4 class="blogCard__title">
-                                        <a href="{{ route('artikel', $a->slug) }}">{{ $a->nama }}</a>
+                                        <a href="{{ route('artikel.detail', $a->slug) }}">{{ $a->nama }}</a>
                                     </h4>
                                     <div class="blogCard__date">{{ $a->date_full }}</div>
                                 </div>
@@ -451,8 +451,8 @@
                                     @continue
                                 @endif
                                 <div class="col-lg-12 col-md-6">
-                                    <a href="{{ route('artikel', $a->slug) }}" data-anim-child="slide-left delay-3"
-                                        class="eventCard -type-4">
+                                    <a href="{{ route('artikel.detail', $a->slug) }}"
+                                        data-anim-child="slide-left delay-3" class="eventCard -type-4">
                                         <div class="eventCard__date bg-light-7 mr-20"
                                             style="min-width: 100px; min-height: 100px">
                                             <span class="text-30 lh-1 fw-700">{{ $a->date_str }}</span>

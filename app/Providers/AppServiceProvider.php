@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        setlocale(LC_ALL, 'IND');
         DB::statement("SET lc_time_names = 'id_ID'");
         Paginator::useBootstrapFive();
     }
