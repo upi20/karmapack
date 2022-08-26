@@ -420,7 +420,7 @@
                                 @endphp
                                 <div class="blogCard__image">
                                     <img src="{{ $foto }}" alt="{{ $a->nama }}"
-                                        style="width: 100%; height: 300px; object-fit: cover;">
+                                        style="width: 100%; height: 300px; object-fit: cover; border-radius:16px">
                                 </div>
                                 <div class="blogCard__content">
                                     @if ($a->kategori)
