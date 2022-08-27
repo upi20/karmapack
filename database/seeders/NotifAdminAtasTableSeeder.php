@@ -21,15 +21,15 @@ class NotifAdminAtasTableSeeder extends Seeder
         \DB::table('notif_admin_atas')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'nama' => 'situs belum siap wkwk',
                 'deskripsi' => 'Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer',
                 'dari' => '2022-08-17',
-                'sampai' => '2022-08-21',
+                'sampai' => NULL,
                 'link' => 'https://wa.me/+6285798132505',
                 'link_nama' => 'Klik disini',
                 'created_at' => '2022-08-18 16:42:49',
-                'updated_at' => '2022-08-22 02:43:00',
+                'updated_at' => '2022-08-24 14:21:03',
             ),
         ));
         

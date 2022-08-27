@@ -21,17 +21,17 @@ class PengurusProfilePengalamanLainTableSeeder extends Seeder
         \DB::table('pengurus_profile_pengalaman_lain')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'user_id' => 1,
-                'pengalaman' => 'Pengalaman lain',
-                'keterangan' => '1',
+                'id' => '1',
+                'user_id' => '1',
+            'pengalaman' => 'Terlibat dalam pembuatan aplikasi Rencana Anggaran Biaya (RAB) Untuk Sekolah Indonesia Kota Kinabalu (SIKK) Malaysia pada tahun 2021',
+                'keterangan' => NULL,
                 'created_at' => '2022-04-29 08:10:08',
-                'updated_at' => '2022-04-29 08:10:08',
+                'updated_at' => '2022-08-22 12:15:51',
             ),
             1 => 
             array (
-                'id' => 2,
-                'user_id' => 101,
+                'id' => '2',
+                'user_id' => '101',
                 'pengalaman' => 'Tutor inspiratif Gerakan Mengajar Desa Cianjur',
                 'keterangan' => NULL,
                 'created_at' => '2022-07-15 22:30:05',
@@ -39,8 +39,8 @@ class PengurusProfilePengalamanLainTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 3,
-                'user_id' => 21,
+                'id' => '3',
+                'user_id' => '21',
                 'pengalaman' => 'Guru pendamping Anak berkebutuhan khusus di SMP IT Ibnu Khaldun Lembang
 2018-2019',
                 'keterangan' => NULL,
@@ -49,19 +49,17 @@ class PengurusProfilePengalamanLainTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 4,
-                'user_id' => 99,
-                'pengalaman' => 'Ketua OSIS MAN 3 Cianjur 2018/2019
-Ketua Unit Kegiatan Santri Futsal dan Sepak Bola Al-Ihsan 2022/2023
-Penulis buku "Cinta adalah Luka"',
+                'id' => '4',
+                'user_id' => '99',
+                'pengalaman' => 'Penulis buku "Cinta adalah Luka"',
                 'keterangan' => NULL,
                 'created_at' => '2022-07-16 11:24:17',
-                'updated_at' => '2022-07-16 11:24:17',
+                'updated_at' => '2022-08-22 12:12:24',
             ),
             4 => 
             array (
-                'id' => 5,
-                'user_id' => 100,
+                'id' => '5',
+                'user_id' => '100',
                 'pengalaman' => 'Himpunan mahasiswa islam Komisariat Stisip Guna Nusantara 
 Gardu Literasi Pagelaran
 Komunitas Jarang Ulin
