@@ -379,7 +379,8 @@
             <div class="grid y-gap-30 pt-50">
                 <div class="grid-sizer col-lg-4 col-md-6"></div>
                 @foreach ($instagrams as $item)
-                    <div class="grid-item col-lg-4 col-md-6 px-8 py-8" data-anim="slide-left delay-{{ $anim++ }}">
+                    <div class="grid-item col-lg-4 col-md-6 px-8 py-8 col-12"
+                        data-anim="slide-left delay-{{ $anim++ }}">
                         {!! str_replace('<script async src="//www.instagram.com/embed.js"></script>', '', $item->keterangan) !!}
                     </div>
                 @endforeach
