@@ -183,6 +183,10 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
             refresh_margin_top();
         });
 
+        setTimeout(() => {
+            preload_container.delay(750).fadeOut('slow');
+        }, 1500);
+
         (function pulse(back) {
             const img_el = preload_container.find('img');
             img_el.animate({
