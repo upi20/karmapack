@@ -4,6 +4,7 @@
     $p = 'setting.home';
     $k = "$p.hero";
     $filter = [['search' => '__periode_nama__', 'replace' => $periode->nama], ['search' => '__periode_dari__', 'replace' => $periode->dari], ['search' => '__periode_sampai__', 'replace' => $periode->sampai]];
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section data-anim-wrap class="masthead -type-4 bg-light-6  animated pt-30" style="margin-top: 0">
@@ -11,18 +12,18 @@
                 <div class="row justify-center items-center">
                     <div class="col-xl-5 col-lg-6">
                         <div class="masthead__content pb-50">
-                            <h1 data-anim-child="slide-up delay-3" class="masthead__title">
+                            <h1 data-anim-child="slide-up delay-{{ $anim++ }}" class="masthead__title">
                                 {{ settings()->get("$k.title") }}<br>
                                 </span>
                             </h1>
-                            <p data-anim-child="slide-right delay-3" class="masthead__text pt-15">
+                            <p data-anim-child="slide-right delay-{{ $anim++ }}" class="masthead__text pt-15">
                                 {!! settings()->get("$k.sub_title") !!}
                             </p>
                         </div>
                     </div>
 
                     <div class="col-xl-6 col-lg-6" style="padding-bottom: 0;">
-                        <div data-anim-child="slide-left delay-3" class="masthead__image">
+                        <div data-anim-child="slide-left delay-{{ $anim++ }}" class="masthead__image">
                             <img src="{{ asset(settings()->get("$k.image")) }}" alt="image"
                                 style="position: relative; top: 1px;">
                         </div>
@@ -35,18 +36,19 @@
     <!-- daftar poesaka -->
     @php
     $k = "$p.poesaka";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-md layout-pb-md " style="background-color: #bfcae6;" data-anim-wrap>
             <div class="container">
                 <div class="row y-gap-20 justify-between items-center">
                     <div class="col-xl-7 col-lg-8">
-                        <h2 class="text-30 lh-15 text-white" data-anim-child="slide-right delay-3">
+                        <h2 class="text-30 lh-15 text-white" data-anim-child="slide-right delay-{{ $anim++ }}">
                             {!! settings()->get("$k.title") !!}
                         </h2>
                     </div>
 
-                    <div class="col-auto" data-anim-child="slide-left delay-3">
+                    <div class="col-auto" data-anim-child="slide-left delay-{{ $anim++ }}">
                         <a href="{{ settings()->get("$k.button_link") }}"
                             class="button -md -outline-dark-1 -rounded text-dark-1">
                             {{ settings()->get("$k.button_text") }}
@@ -60,17 +62,18 @@
     <!-- visi dan misi -->
     @php
     $k = "$p.visi_misi";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg" data-anim-wrap>
             <div class="container">
                 <div class="row y-gap-30 justify-between items-center">
-                    <div class="col-lg-6" data-anim-child="slide-right delay-3">
+                    <div class="col-lg-6" data-anim-child="slide-right delay-{{ $anim++ }}">
                         <img class="w-1/1" src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
                             style="max-width: 500px;">
                     </div>
 
-                    <div class="col-xl-5 col-lg-6 col-md-9" data-anim-child="slide-left delay-3">
+                    <div class="col-xl-5 col-lg-6 col-md-9" data-anim-child="slide-left delay-{{ $anim++ }}">
                         <h3 class="text-24 lh-15">{{ settings()->get("$k.title") }}</h3>
                         <p class="sectionTitle__text ">
                             {!! str_parse(settings()->get("$k.sub_title"), $filter) !!}
@@ -97,11 +100,12 @@
     <!-- struktur -->
     @php
     $k = "$p.struktur_anggota";
+    $anim = 1;
     @endphp
     @if ($anggota->count() && settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-light-4" data-anim-wrap>
             <div class="container">
-                <div class="row y-gap-15 justify-between items-end" data-anim-child="slide-up delay-3">
+                <div class="row y-gap-15 justify-between items-end" data-anim-child="slide-up delay-{{ $anim++ }}">
                     <div class="col-lg-6">
                         <div class="sectionTitle ">
                             <h2 class="sectionTitle__title ">{{ settings()->get("$k.title") }}</h2>
@@ -122,13 +126,13 @@
 
                 <div class="pt-60 lg:pt-40 js-section-slider" data-gap="30" data-pagination="js-students-slider-pagination"
                     data-nav-prev="js-students-slider-prev" data-nav-next="js-students-slider-next"
-                    data-slider-cols="xl-4 lg-3 md-2" data-anim-child="slide-left delay-3">
+                    data-slider-cols="xl-4 lg-3 md-2" data-anim-child="slide-left delay-{{ $anim++ }}">
                     <div class="swiper-wrapper">
 
                         {{-- anggota item --}}
                         @foreach ($anggota as $a)
-                            <div class="swiper-slide">
-                                <div class="teamCard -type-2 bg-white" style="min-height: 370px">
+                            <div class="swiper-slide" data-anim-child="slide-left delay-{{ $anim++ }}">
+                                <div class="teamCard -type-2 bg-white shadow-4" style="min-height: 370px; border: 0">
                                     <div class="teamCard__content">
                                         <img src="{{ $a->foto }}" alt="image"
                                             style="margin: auto;position: relative;margin: auto;width: 150px;height: 150px;max-height: 150px;border-radius: 150px;object-fit: cover; /* cover, contain, fill, scale-down */object-position: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
@@ -188,11 +192,12 @@
     <!-- kata alumni -->
     @php
     $k = "$p.kata_alumni";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-dark-5" data-anim-wrap>
             <div class="container">
-                <div class="row justify-center text-center" data-anim-child="slide-up delay-3">
+                <div class="row justify-center text-center" data-anim-child="slide-up delay-{{ $anim++ }}">
                     <div class="col-auto">
                         <div class="sectionTitle ">
                             <h2 class="sectionTitle__title text-white">{{ settings()->get("$k.title") }}</h2>
@@ -207,7 +212,7 @@
                         {{-- items --}}
                         @foreach ($kata_alumni_list as $item)
                             <div class="swiper-slide">
-                                <div data-anim-child="slide-left delay-3"
+                                <div data-anim-child="slide-left delay-{{ $anim++ }}"
                                     class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                                     <div class="row y-gap-30 md:text-center md:justify-center">
                                         <div class="col-md-auto">
@@ -256,51 +261,16 @@
         </section>
     @endif
 
-    {{-- <section class="layout-pt-md layout-pb-md bg-beige-1" data-anim-wrap>
-        <div class="container">
-            <div class="row y-gap-30">
-
-                <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
-                        <div class="counter__number text-dark-1">19+</div>
-                        <div class="counter__title text-light-1">Tahun Lebih Berdiri</div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
-                        <div class="counter__number text-dark-1">1000+</div>
-                        <div class="counter__title text-light-1">Anggota</div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
-                        <div class="counter__number text-dark-1">900+</div>
-                        <div class="counter__title text-light-1">Sekolah</div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div data-anim-child="slide-left delay-3" class="counter -type-1">
-                        <div class="counter__number text-dark-1">700+</div>
-                        <div class="counter__title text-light-1">Kecamatan</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
-
     <!-- galeri kegiatan -->
     @php
     $k = "$p.galeri_kegiatan";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-light-3" data-anim-wrap>
             <div class="container">
                 <div class="row y-gap-15 justify-between items-end">
-                    <div class="col-lg-6" data-anim="slide-right delay-3">
+                    <div class="col-lg-6" data-anim="slide-right delay-{{ $anim++ }}">
 
                         <div class="sectionTitle ">
                             <h2 class="sectionTitle__title ">{{ settings()->get("$k.title") }}</h2>
@@ -309,7 +279,7 @@
 
                     </div>
 
-                    <div class="col-auto" data-anim="slide-left delay-3">
+                    <div class="col-auto" data-anim="slide-left delay-{{ $anim++ }}">
                         <div class="d-flex justify-center x-gap-15 items-center">
                             <div class="col-auto">
                                 <button class="d-flex items-center text-24 arrow-left-hover js-events-slider-prev">
@@ -334,7 +304,7 @@
                     <div class="swiper-wrapper">
                         @foreach ($galeri_list as $galery)
                             <div class="swiper-slide">
-                                <div data-anim="slide-left delay-3" class="eventCard -type-1">
+                                <div data-anim="slide-left delay-{{ $anim++ }}" class="eventCard -type-1">
                                     <div class="eventCard__img">
                                         <img src="{{ "https://drive.google.com/uc?export=view&id={$galery->foto_id_gdrive}" }}"
                                             alt="{{ $galery->nama }}"
@@ -371,7 +341,7 @@
                     </div>
                 </div>
 
-                <div class="row pt-60 lg:pt-40" data-anim="slide-right delay-3">
+                <div class="row pt-60 lg:pt-40" data-anim="slide-right delay-{{ $anim++ }}">
                     <div class="col-auto">
                         <a href="{{ route('galeri') }}" class="button -icon -outline-purple-1 text-purple-1 fw-500">
                             {{ settings()->get("$k.button_text") }}
@@ -383,22 +353,60 @@
         </section>
     @endif
 
+    @php
+    $anim = 1;
+    @endphp
+    <section class="layout-pt-md layout-pb-lg bg-dark-5">
+        <div data-anim-wrap class="container">
+            <div class="page-header__content">
+                <div class="row justify-center text-center">
+                    <div class="col-auto">
+                        <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
+
+                            <h1 class="sectionTitle__title text-white">Instagram</h1>
+
+                        </div>
+
+                        <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
+
+                            <p class="sectionTitle__text text-white">List beberapa feed terbaru dari instagram
+                                &#64;karmapack</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid y-gap-30 pt-50">
+                <div class="grid-sizer col-lg-4 col-md-6"></div>
+                @foreach ($instagrams as $item)
+                    <div class="grid-item col-lg-4 col-md-6 px-8 py-8" data-anim="slide-left delay-{{ $anim++ }}">
+                        {!! str_replace('<script async src="//www.instagram.com/embed.js"></script>', '', $item->keterangan) !!}
+                    </div>
+                @endforeach
+            </div>
+            @if ($instagrams->count() > 0)
+                <script async src="//www.instagram.com/embed.js"></script>
+            @endif
+        </div>
+    </section>
+
     <!-- blog dan artikel -->
     @php
     $k = "$p.artikel";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-md layout-pb-lg">
             <div data-anim-wrap class="container">
                 <div class="row y-gap-20 justify-between items-center">
-                    <div class="col-lg-6"data-anim-child="slide-right delay-3">
+                    <div class="col-lg-6"data-anim-child="slide-right delay-{{ $anim++ }}">
                         <div class="sectionTitle ">
                             <h2 class="sectionTitle__title ">{{ settings()->get("$k.title") }}</h2>
                             <p class="sectionTitle__text ">{{ settings()->get("$k.sub_title") }}</p>
                         </div>
                     </div>
 
-                    <div class="col-auto" data-anim-child="slide-left delay-3">
+                    <div class="col-auto" data-anim-child="slide-left delay-{{ $anim++ }}">
                         <a href="{{ route('artikel') }}" class="button -icon -purple-3 text-purple-1">
                             {{ settings()->get("$k.button_text") }}
                             <i class="icon-arrow-top-right text-13 ml-10"></i>
@@ -412,7 +420,7 @@
                             @continue
                         @endif
                         <div class="col-lg-4 col-md-6">
-                            <div data-anim-child="slide-left delay-3" class="blogCard -type-1">
+                            <div data-anim-child="slide-left delay-{{ $anim++ }}" class="blogCard -type-1">
                                 @php
                                     $get_id_yt = check_image_youtube($a->detail);
                                     $youtube = $get_id_yt ? true : false;
@@ -452,7 +460,7 @@
                                 @endif
                                 <div class="col-lg-12 col-md-6">
                                     <a href="{{ route('artikel.detail', $a->slug) }}"
-                                        data-anim-child="slide-left delay-3" class="eventCard -type-4">
+                                        data-anim-child="slide-left delay-{{ $anim++ }}" class="eventCard -type-4">
                                         <div class="eventCard__date bg-light-7 mr-20"
                                             style="min-width: 100px; min-height: 100px">
                                             <span class="text-30 lh-1 fw-700">{{ $a->date_str }}</span>
@@ -494,14 +502,15 @@
     <!-- Sensus anggota -->
     @php
     $k = "$p.sensus";
+    $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-purple-1 relative" data-anim-wrap>
-            <div class="side-image pr-25 lg:d-none" data-anim-child="slide-left delay-3">
+            <div class="side-image pr-25 lg:d-none" data-anim-child="slide-left delay-{{ $anim++ }}">
                 <img src="{{ asset(settings()->get("$k.image")) }}" alt="image">
             </div>
 
-            <div data-anim-wrap class="container" data-anim-child="slide-up delay-3">
+            <div class="container" data-anim-child="slide-left delay-{{ $anim++ }}">
                 <div class="row">
                     <div class="col-xl-8 col-lg-6">
                         <div class="sectionTitle ">
@@ -513,8 +522,9 @@
                         <div class="row x-gap-20 y-gap-20 pt-60 lg:pt-40">
 
                             <div class="col-auto">
-                                <a href="{{ route('pendaftaran.sensus') }}" class="button -md -dark-1 text-purple-1">Isi
-                                    {{ settings()->get("$k.button_text") }}</a>
+                                <a href="{{ route('pendaftaran.sensus') }}" class="button -md -dark-1 text-purple-1">
+                                    {{ settings()->get("$k.button_text") }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -522,4 +532,30 @@
             </div>
         </section>
     @endif
+@endsection
+
+@section('stylesheet')
+    <style>
+        .instagram-media {
+            border-radius: 16px !important;
+            box-shadow: 0px 1px 4px 0px #14034212 !important;
+        }
+    </style>
+@endsection
+@section('javascript')
+    {{-- mansory --}}
+    <script src="{{ asset('assets/templates/admin/plugins/mansory.min.js') }}"></script>
+    <script>
+        let meta_list_is_edit = true;
+        const meta_list = new Map();
+
+        $(window).on('load', function() {
+            setTimeout(() => {
+                var msnry = new Masonry(document.querySelector('.grid'), {
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer'
+                });
+            }, 2000);
+        });
+    </script>
 @endsection

@@ -99,5 +99,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NotifDepanAtasTableSeeder::class);
         $this->call(PMenuFrontendsTableSeeder::class);
         DB::commit();
+        $this->call(InstagramTableSeeder::class);
     }
 }

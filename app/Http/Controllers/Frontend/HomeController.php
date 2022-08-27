@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Artikel\Artikel;
 use App\Models\Galeri;
+use App\Models\Instagram;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\Periode;
 use App\Models\User;
@@ -70,6 +71,9 @@ class HomeController extends Controller
             $kata_alumni_list = [];
         }
 
+        // instagrams
+        $instagrams = Instagram::limit(6)->orderBy('tanggal', 'desc')->get();
+
         $data = compact(
             'page_attr',
             'periode',
@@ -78,9 +82,9 @@ class HomeController extends Controller
             'articles',
             'galeri_list',
             'kata_alumni_list',
+            'instagrams',
         );
         $data['compact'] = $data;
-
         return view('frontend.home2', $data);
     }
 

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\FooterInstagramController;
 use App\Http\Controllers\Admin\UsernameValidateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KataAlumniController;
+use App\Http\Controllers\Admin\InstagramController;
 
 // Address ============================================================================================================
 use App\Http\Controllers\Admin\Address\ProvinceController;
@@ -418,6 +419,15 @@ Route::controller(KataAlumniController::class)->prefix($prefix)->group(function 
 });
 
 
+$prefix = 'instagram';
+Route::controller(InstagramController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.instagram
+    Route::get('/', 'index')->name($name)->middleware("permission:$name");
+    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+    Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+    Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+    Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+});
 $prefix = "setting";
 Route::prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.setting
