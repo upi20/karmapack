@@ -21,28 +21,28 @@ class UsernameValidationsTableSeeder extends Seeder
         \DB::table('username_validations')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'rule' => 'admin',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             1 => 
             array (
-                'id' => 2,
+                'id' => '2',
                 'rule' => 'member',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             2 => 
             array (
-                'id' => 3,
+                'id' => '3',
                 'rule' => 'profile',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             3 => 
             array (
-                'id' => 4,
+                'id' => '4',
                 'rule' => 'home',
                 'created_at' => NULL,
                 'updated_at' => NULL,
