@@ -61,6 +61,13 @@ if (!function_exists('delete_file')) {
     // delete file
     function delete_file(string $file): bool
     {
+        // parse match os
+        $is_windows = strtolower(PHP_SHLIB_SUFFIX) === 'dll';
+        $file = str_replace(['\\', '/'], ($is_windows ? '\\' : '/'), $file);
+
+        // delte double slash
+        $file = $is_windows ? str_replace('\\\\', '\\', $file) : str_replace('//', '/', $file);
+
         $res_foto = true;
         if ($file != null && $file != '') {
             if (file_exists($file)) {

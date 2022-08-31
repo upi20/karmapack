@@ -40,7 +40,7 @@ class AdminController extends Controller
         if ($image = $request->file($key)) {
             // delete foto
             if ($current) {
-                $path = public_path("$this->folder_logo/$current");
+                $path = public_path("$current");
                 delete_file($path);
             }
 
@@ -60,7 +60,7 @@ class AdminController extends Controller
         if ($image = $request->file($key)) {
             // delete foto
             if ($current) {
-                $path = public_path("$this->folder_logo/$current");
+                $path = public_path("$current");
                 delete_file($path);
             }
 
@@ -81,7 +81,7 @@ class AdminController extends Controller
         if ($image = $request->file($key)) {
             // delete foto
             if ($current) {
-                $path = public_path("$this->folder_logo/$current");
+                $path = public_path("$current");
                 delete_file($path);
             }
 
@@ -101,7 +101,7 @@ class AdminController extends Controller
         if ($image = $request->file($key)) {
             // delete foto
             if ($current) {
-                $path = public_path("$this->folder_logo/$current");
+                $path = public_path("$current");
                 delete_file($path);
             }
 
