@@ -44,7 +44,7 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
@@ -64,7 +64,7 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
@@ -85,7 +85,7 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
@@ -105,7 +105,7 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto

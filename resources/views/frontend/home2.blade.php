@@ -369,7 +369,7 @@
         <div data-anim-wrap class="container">
             <div class="page-header__content">
                 <div class="row justify-center text-center">
-                    <div class="col-auto">
+                    <div class="col-auto" data-anim="slide-left delay-{{ $anim++ }}">
                         <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
 
                             <h1 class="sectionTitle__title text-white">Instagram</h1>
