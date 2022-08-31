@@ -511,6 +511,66 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-08-31 18:40:29',
                 'updated_at' => '2022-08-31 18:45:22',
             ),
+            41 => 
+            array (
+                'id' => '42',
+                'user_id' => '89',
+                'nama' => 'OSIS SMPN 1 CIKADU',
+                'dari' => '2015',
+                'sampai' => '2017',
+                'jabatan' => 'Ketua Bidang',
+                'keterangan' => '2 priode',
+                'created_at' => '2022-09-01 01:08:33',
+                'updated_at' => '2022-09-01 01:08:33',
+            ),
+            42 => 
+            array (
+                'id' => '43',
+                'user_id' => '89',
+                'nama' => 'OSIS SMKN 1 CIKADU',
+                'dari' => '2019',
+                'sampai' => '2020',
+                'jabatan' => 'Sekertaris',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:09:37',
+                'updated_at' => '2022-09-01 01:09:37',
+            ),
+            43 => 
+            array (
+                'id' => '44',
+                'user_id' => '89',
+                'nama' => 'DKR KWARAN CIKADU',
+                'dari' => '2019',
+                'sampai' => '2022',
+                'jabatan' => 'Sekertaris',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:10:48',
+                'updated_at' => '2022-09-01 01:11:16',
+            ),
+            44 => 
+            array (
+                'id' => '45',
+                'user_id' => '89',
+                'nama' => 'Paskibra Kecamatan Cikadu',
+                'dari' => '2018',
+                'sampai' => '2019',
+                'jabatan' => 'Anggota',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:12:43',
+                'updated_at' => '2022-09-01 01:12:43',
+            ),
+            45 => 
+            array (
+                'id' => '46',
+                'user_id' => '89',
+            'nama' => 'Himpunan Mahasiswa Manajeman ( HIMAMAN )',
+                'dari' => '2022',
+                'sampai' => '2023',
+                'jabatan' => 'Divisi Social',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:15:24',
+                'updated_at' => '2022-09-01 01:16:05',
+            ),
         ));
         
         

@@ -496,7 +496,7 @@
                 <tr>
                     <td>${number++}</td>
                     <td>${e.angkatan}</td>
-                    <td>${e.name}</td>
+                    <td><a href="{{ route('member.profile') }}?id=${e.id}" target="_blank">${e.name}</a></td>
                     <td>${e.jabatan}</td>
                 </tr>
               `;

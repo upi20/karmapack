@@ -280,6 +280,42 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-08-31 18:09:00',
                 'updated_at' => '2022-08-31 18:09:00',
             ),
+            29 => 
+            array (
+                'id' => '36',
+                'kontak_tipe_id' => '1',
+                'user_id' => '89',
+                'value' => 'https://www.facebook.com/profile.php?id=100016292327014',
+                'created_at' => '2022-09-01 00:54:00',
+                'updated_at' => '2022-09-01 00:54:00',
+            ),
+            30 => 
+            array (
+                'id' => '37',
+                'kontak_tipe_id' => '5',
+                'user_id' => '89',
+                'value' => 'https://instagram.com/_silviaanggraeni_?igshid=YmMyMTA2M2Y=',
+                'created_at' => '2022-09-01 00:56:29',
+                'updated_at' => '2022-09-01 00:56:29',
+            ),
+            31 => 
+            array (
+                'id' => '38',
+                'kontak_tipe_id' => '2',
+                'user_id' => '89',
+                'value' => 'https://twitter.com/iainisisill?t=-V61OTpJhhkqo_qcE3dOvQ&s=09',
+                'created_at' => '2022-09-01 00:59:57',
+                'updated_at' => '2022-09-01 00:59:57',
+            ),
+            32 => 
+            array (
+                'id' => '39',
+                'kontak_tipe_id' => '1',
+                'user_id' => '90',
+                'value' => 'https://www.facebook.com/ai.yeti.3194',
+                'created_at' => '2022-09-01 01:05:56',
+                'updated_at' => '2022-09-01 01:05:56',
+            ),
         ));
         
         

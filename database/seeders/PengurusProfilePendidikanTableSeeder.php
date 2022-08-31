@@ -321,15 +321,15 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             23 => 
             array (
                 'id' => '29',
-                'pendidikan_jenis_id' => '6',
+                'pendidikan_jenis_id' => '5',
                 'user_id' => '85',
                 'dari' => '2022',
                 'sampai' => '2026',
-                'instansi' => 'universitas pakuan Bogor',
+                'instansi' => 'Universitas pakuan Bogor',
                 'jurusan' => 'Farmasi',
                 'keterangan' => NULL,
                 'created_at' => '2022-08-30 18:04:20',
-                'updated_at' => '2022-08-30 18:04:20',
+                'updated_at' => '2022-09-01 02:17:23',
             ),
             24 => 
             array (
@@ -642,6 +642,84 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'keterangan' => NULL,
                 'created_at' => '2022-08-31 17:52:57',
                 'updated_at' => '2022-08-31 18:25:31',
+            ),
+            48 => 
+            array (
+                'id' => '56',
+                'pendidikan_jenis_id' => '1',
+                'user_id' => '89',
+                'dari' => '2008',
+                'sampai' => '2009',
+                'instansi' => 'Paud Pepaya Cikadu',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:00:55',
+                'updated_at' => '2022-09-01 01:00:55',
+            ),
+            49 => 
+            array (
+                'id' => '57',
+                'pendidikan_jenis_id' => '2',
+                'user_id' => '89',
+                'dari' => '2009',
+                'sampai' => '2010',
+                'instansi' => 'SD NEGERI CIKADU 1',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:02:09',
+                'updated_at' => '2022-09-01 01:03:51',
+            ),
+            50 => 
+            array (
+                'id' => '58',
+                'pendidikan_jenis_id' => '2',
+                'user_id' => '89',
+                'dari' => '2010',
+                'sampai' => '2015',
+                'instansi' => 'SD CIDOMBA',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:02:26',
+                'updated_at' => '2022-09-01 01:04:37',
+            ),
+            51 => 
+            array (
+                'id' => '59',
+                'pendidikan_jenis_id' => '3',
+                'user_id' => '89',
+                'dari' => '2015',
+                'sampai' => '2018',
+                'instansi' => 'SMP NEGERI 1 CIKADU',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:03:23',
+                'updated_at' => '2022-09-01 01:05:26',
+            ),
+            52 => 
+            array (
+                'id' => '60',
+                'pendidikan_jenis_id' => '4',
+                'user_id' => '89',
+                'dari' => '2018',
+                'sampai' => '2021',
+                'instansi' => 'SMK NEGERI 1 CIKADU',
+                'jurusan' => 'Otomatisasi dan Tata Kelola Perkantoran',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 01:06:30',
+                'updated_at' => '2022-09-01 01:06:30',
+            ),
+            53 => 
+            array (
+                'id' => '61',
+                'pendidikan_jenis_id' => '5',
+                'user_id' => '89',
+                'dari' => '2021',
+                'sampai' => NULL,
+                'instansi' => 'Universitas Winaya Mukti',
+                'jurusan' => 'Manajemen',
+                'keterangan' => 'Fakultas Ekonomi dan Bisnis',
+                'created_at' => '2022-09-01 01:07:16',
+                'updated_at' => '2022-09-01 01:07:16',
             ),
         ));
         
