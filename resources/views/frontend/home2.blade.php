@@ -34,7 +34,7 @@
                     <div class="col-xl-6 col-lg-6" style="padding-bottom: 0;">
                         <div data-anim-child="slide-left delay-{{ $anim++ }}" class="masthead__image">
                             <img src="{{ asset(settings()->get("$k.image")) }}" alt="image"
-                                style="position: relative; top: 1px;">
+                                style="position: relative; max-width: 600px;">
                         </div>
                     </div>
                 </div>
