@@ -316,6 +316,15 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:05:56',
                 'updated_at' => '2022-09-01 01:05:56',
             ),
+            33 => 
+            array (
+                'id' => '40',
+                'kontak_tipe_id' => '5',
+                'user_id' => '110',
+                'value' => 'http://www.instagram.com/r.aws_',
+                'created_at' => '2022-09-01 06:10:22',
+                'updated_at' => '2022-09-01 06:10:22',
+            ),
         ));
         
         

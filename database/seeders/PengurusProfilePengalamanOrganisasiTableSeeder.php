@@ -571,6 +571,18 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:15:24',
                 'updated_at' => '2022-09-01 01:16:05',
             ),
+            46 => 
+            array (
+                'id' => '47',
+                'user_id' => '110',
+                'nama' => 'Palang Merah Remaja',
+                'dari' => '2019',
+                'sampai' => '2021',
+                'jabatan' => 'Wakil Ketua PMR',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 06:17:51',
+                'updated_at' => '2022-09-01 06:17:51',
+            ),
         ));
         
         

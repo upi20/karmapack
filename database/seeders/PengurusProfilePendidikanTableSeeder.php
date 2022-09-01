@@ -721,6 +721,19 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:07:16',
                 'updated_at' => '2022-09-01 01:07:16',
             ),
+            54 => 
+            array (
+                'id' => '62',
+                'pendidikan_jenis_id' => '4',
+                'user_id' => '110',
+                'dari' => '2019',
+                'sampai' => '2021',
+                'instansi' => 'SMA Negri 1 Pasirkuda',
+                'jurusan' => 'IPS',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-01 06:15:13',
+                'updated_at' => '2022-09-01 06:15:13',
+            ),
         ));
         
         
