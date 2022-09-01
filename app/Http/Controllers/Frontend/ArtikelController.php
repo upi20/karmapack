@@ -4,16 +4,48 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Artikel\Artikel;
-use App\Models\Galeri;
-use App\Models\Pengurus\Jabatan;
-use App\Models\Pengurus\Periode;
+use App\Models\Artikel\Kategori;
+use App\Models\Artikel\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repository\Frontend\HomeRepository;
-use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
 {
+    public function index(Request $request)
+    {
+        $page_attr = [
+            'title' => 'List Artikel',
+        ];
+        $articles = Artikel::getList($request);
+
+        // tag and kategori
+        $tags = Tag::getList(6);
+        $categories = Kategori::getList(6);
+
+        // selected
+        $tag_selected = $request->tag ?
+            Tag::select(['nama', 'slug'])->where('slug', '=', $request->tag)->first() : null;
+        $kategori_selected = $request->kategori ?
+            Kategori::select(['nama', 'slug'])->where('slug', '=', $request->kategori)->first() : null;
+
+        $image_folder_user = User::image_folder;
+        $image_default_user = User::image_default;
+
+        $data = compact(
+            'page_attr',
+            'articles',
+            'tags',
+            'categories',
+            'tag_selected',
+            'kategori_selected',
+            'image_folder_user',
+            'image_default_user',
+        );
+        $data['compact'] = $data;
+        return view('frontend.artikel.list', $data);
+    }
+
     // artikel render
     public function detail(Artikel $model)
     {
@@ -40,7 +72,7 @@ class ArtikelController extends Controller
             'description' => $model->excerpt,
             'keywords' =>  $keyword,
             'author' => $user->name,
-            'navigation' => 'home',
+            'navigation' => 'artikel',
             'image' => $foto,
         ];
 

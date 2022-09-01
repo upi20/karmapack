@@ -116,7 +116,7 @@ class MemberController extends Controller
     private function getList(Request $request)
     {
         $model = [];
-        $paginate = 12;
+        $paginate = is_numeric($request->limit) ? $request->limit : 9;
 
         // table
         $a = User::tableName;

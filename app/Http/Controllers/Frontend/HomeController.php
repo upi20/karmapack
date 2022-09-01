@@ -47,9 +47,8 @@ class HomeController extends Controller
 
         // artikel
         if ($this->checkVisible('artikel')) {
-            $params = HomeRepository::getParams($request);
-            $getArtikel = HomeRepository::getArtikel($request, 6, $params);
-            $articles = $getArtikel->model->data;
+            $request->limit = 6;
+            $articles = Artikel::getList($request);
         } else {
             $articles = [];
         }
