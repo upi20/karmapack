@@ -1,6 +1,6 @@
 @php
 $angkatan = 0;
-$is_filter = request()->query('search') || request()->query('category') || request()->query('sort');
+$is_filter = request()->query('search') || request()->query('category') || request()->query('sort') || request()->query('limit');
 @endphp
 @extends('templates.frontend2.master')
 @section('content')
@@ -80,7 +80,6 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                         <div class="form-select">
                                             <select class="text-light-1 py-15 rounded-8 px-15 input-light" id="sort"
                                                 name="sort">
-                                                <option data-display="Select" value="">Urutkan</option>
                                                 @foreach ([['id' => 'asc', 'text' => 'A-Z'], ['id' => 'desc', 'text' => 'Z-A']] as $item)
                                                     <option value="{{ $item['id'] }}"
                                                         {{ request()->query('sort') == $item['id'] ? 'selected' : '' }}>
@@ -89,6 +88,12 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                                 @endforeach
                                             </select>
                                         </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="number" min="1" max="999"
+                                            class="text-light-1 py-15 rounded-8 px-15 input-light" placeholder="Per Halaman"
+                                            name="limit" id="limit" value="{{ request()->query('limit') ?? 12 }}"
+                                            style="min-width: 150px">
                                     </div>
                                     <div class="col-auto">
                                         <button type="submit" class="button -icon -dark-1 text-white">
@@ -156,10 +161,10 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                 <p class="card-text my-1">
                                     <small class="text-muted">
                                         @php
-                                            $province = $item->province ? ', <a class="text-purple-1" href="' . url('anggota?prov=' . $item->province) . '">' . $item->province . '</a>' : '';
-                                            $regencie = $item->regencie ? ', <a class="text-purple-1" href="' . url('anggota?kab=' . $item->regencie) . '">' . $item->regencie . '</a>' : '';
-                                            $district = $item->district ? ', <a class="text-purple-1" href="' . url('anggota?kec=' . $item->district) . '">' . $item->district . '</a>' : '';
-                                            $village = $item->village ? ', <a class="text-purple-1" href="' . url('anggota?desa=' . $item->village) . '">' . $item->village . '</a>' : '';
+                                            $province = $item->province ? ', <a class="text-purple-1" href="' . url('anggota?category=alamat&search=' . $item->province) . '">' . $item->province . '</a>' : '';
+                                            $regencie = $item->regencie ? ', <a class="text-purple-1" href="' . url('anggota?category=alamat&search=' . $item->regencie) . '">' . $item->regencie . '</a>' : '';
+                                            $district = $item->district ? ', <a class="text-purple-1" href="' . url('anggota?category=alamat&search=' . $item->district) . '">' . $item->district . '</a>' : '';
+                                            $village = $item->village ? ', <a class="text-purple-1" href="' . url('anggota?category=alamat&search=' . $item->village) . '">' . $item->village . '</a>' : '';
                                         @endphp
                                     </small>
                                     <small class="text-muted">{!! $item->alamat_lengkap . $province . $regencie . $district . $village !!}</small>
@@ -190,7 +195,7 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                 @if ($item->pendidikan)
                                     <p class="card-text">
                                         <small class="text-muted text-purple-1">
-                                            <a href="/anggota?pendidikan={{ $item->pendidikan }}">
+                                            <a href="/anggota?category=pendidikan&search={{ $item->pendidikan }}">
                                                 {{ $item->pendidikan }}</a>
                                         </small>
                                     </p>
