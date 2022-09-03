@@ -10,6 +10,7 @@ $slogan = $is_edit ? $model->slogan : '';
 $slug = $is_edit ? $model->slug : '';
 $visi = $is_edit ? $model->visi : '';
 $misi = $is_edit ? $model->misi : '';
+$filosofi_logo = $is_edit ? $model->filosofi_logo : '';
 $foto = $is_edit ? $model->foto : '';
 $status = $is_edit ? $model->status : 1;
 $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
@@ -89,6 +90,13 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                             <label for="misi">Misi</label>
                             <textarea class="form-control mb-4 summernote" placeholder="Misi Periode" id="misi" name="misi" required
                                 rows="4">{{ $misi }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="filosofi_logo">Filosofi Logo</label>
+                            <textarea class="form-control mb-4 summernote" placeholder="Filosofi Logo" id="filosofi_logo" name="filosofi_logo"
+                                required rows="4">{{ $filosofi_logo }}</textarea>
                         </div>
                     </div>
                     {{-- <div class="col-md-6">

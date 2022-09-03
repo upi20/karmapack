@@ -44,7 +44,7 @@ $anim = 1;
 
                         <div class="col-md-6">
                             <div class="d-flex y-gap-10 flex-column">
-                                <a href="">AD/ART</a>
+                                <a href="{{ url('ad_art_dan_ghbo_karmapack.pdf') }}">AD/ART</a>
                                 <a href="{{ route('kontak') }}">Kontak</a>
                             </div>
                         </div>

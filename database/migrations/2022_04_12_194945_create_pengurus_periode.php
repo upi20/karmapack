@@ -21,8 +21,9 @@ return new class extends Migration
             $table->year('sampai');
             $table->string('slug')->unique();
             $table->text('slogan');
-            $table->text('visi');
-            $table->text('misi');
+            $table->text('visi')->nullable()->default(null);
+            $table->text('misi')->nullable()->default(null);
+            $table->text('filosofi_logo')->nullable()->default(null);
             $table->boolean('status')->default(0);
             $table->timestamps();
 

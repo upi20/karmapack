@@ -569,6 +569,7 @@
                     <h4 class="h4">Visi:</h4><p>${data.results.visi}</p>
                     <h4 class="h4">Misi:</h4><p>${data.results.misi}</p>
                     <h4 class="h4">Slogan:</h4><p>${data.results.slogan}</p>
+                    <h4 class="h4">Filosofi Logo:</h4><p>${data.results.filosofi_logo ?? ''}</p>
                 `);
             }).fail(($xhr) => {
                 Swal.fire({

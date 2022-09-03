@@ -21,7 +21,7 @@ class PeriodeController extends Controller
     public function index(Request $request) // page
     {
         if (request()->ajax()) {
-            $model = Periode::select(['id', 'nama', 'foto', 'dari', 'sampai', 'slug', 'status'])
+            $model = Periode::select(['id', 'nama', 'foto', 'dari', 'sampai', 'slug', 'status', 'filosofi_logo'])
                 ->selectRaw('IF(status = 1, "Aktif", "Tidak Aktif") as status_str');
 
             // filter
@@ -91,6 +91,7 @@ class PeriodeController extends Controller
                 'slogan' => ['required', 'string'],
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
+                'filosofi_logo' => ['nullable', 'string'],
                 // 'status' => ['required', 'int'],
                 'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -103,6 +104,7 @@ class PeriodeController extends Controller
             }
             $visi = Summernote::insert($request->visi, $this->image_folder, 'visi');
             $misi = Summernote::insert($request->misi, $this->image_folder, 'misi');
+            $filosofi_logo = Summernote::insert($request->filosofi_logo, $this->image_folder, 'filosofi_logo');
             $status = $this->getCountActive() <= 0 ? 1 : 0;
             Periode::create([
                 'nama' => $request->nama,
@@ -113,6 +115,7 @@ class PeriodeController extends Controller
                 'status' => $status,
                 'visi' => $visi->html,
                 'misi' => $misi->html,
+                'filosofi_logo' => $filosofi_logo->html,
                 'foto' => $foto,
                 // 'created_by' => auth()->user()->id,
             ]);
@@ -137,10 +140,12 @@ class PeriodeController extends Controller
                 'slogan' => ['required', 'string'],
                 'visi' => ['required', 'string'],
                 'misi' => ['required', 'string'],
+                'filosofi_logo' => ['nullable', 'string'],
             ]);
             $model = Periode::find($request->id);
             $visi = Summernote::update($request->visi, $this->image_folder, '', 'visi');
             $misi = Summernote::update($request->misi, $this->image_folder, '', 'misi');
+            $filosofi_logo = Summernote::update($request->filosofi_logo, $this->image_folder, '', 'filosofi_logo');
 
             // foto handle
             $foto = '';
@@ -167,6 +172,7 @@ class PeriodeController extends Controller
             // $model->status = $request->status;
             $model->visi = $visi->html;
             $model->misi = $misi->html;
+            $model->filosofi_logo = $filosofi_logo->html;
             // $model->updated_by = auth()->user()->id;
             $model->save();
 
@@ -185,6 +191,7 @@ class PeriodeController extends Controller
             // cek folder
             Summernote::delete($model->visi);
             Summernote::delete($model->misi);
+            Summernote::delete($model->filosofi_logo);
 
             // delete foto
             if ($model->foto) {

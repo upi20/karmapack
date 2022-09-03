@@ -19,7 +19,7 @@
                             <p data-anim-child="slide-right delay-{{ $anim++ }}" class="masthead__text pt-15">
                                 {!! settings()->get("$k.sub_title") !!}
                             <div class="col-auto mt-20" data-anim-child="slide-right delay-{{ $anim++ }}">
-                                <a href="https://www.youtube.com/watch?v=hUpnNhVijw0" class="d-flex items-center js-gallery"
+                                <a href="https://www.youtube.com/watch?v=8zYT2VKUpmI" class="d-flex items-center js-gallery"
                                     data-gallery="gallery1">
                                     <div class="d-flex justify-center items-center size-60 rounded-full border-dark-1-lg">
                                         <div class="icon-play text-20 text-dark-1 pl-5"></div>

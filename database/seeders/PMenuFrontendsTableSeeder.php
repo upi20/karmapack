@@ -221,11 +221,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Galeri',
                 'icon' => NULL,
                 'route' => 'galeri',
-                'sequence' => '16',
+                'sequence' => '17',
                 'active' => '1',
                 'type' => '1',
                 'created_at' => '2022-08-20 14:46:53',
-                'updated_at' => '2022-08-22 01:33:48',
+                'updated_at' => '2022-09-02 01:03:08',
             ),
             16 => 
             array (
@@ -234,11 +234,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Pendaftaran',
                 'icon' => NULL,
                 'route' => 'pendaftaran',
-                'sequence' => '17',
+                'sequence' => '18',
                 'active' => '1',
                 'type' => '1',
                 'created_at' => '2022-08-20 14:47:03',
-                'updated_at' => '2022-08-22 01:33:48',
+                'updated_at' => '2022-09-02 01:03:08',
             ),
             17 => 
             array (
@@ -247,11 +247,24 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Kontak',
                 'icon' => NULL,
                 'route' => 'kontak',
-                'sequence' => '18',
+                'sequence' => '19',
                 'active' => '1',
                 'type' => '1',
                 'created_at' => '2022-08-20 14:47:10',
-                'updated_at' => '2022-08-22 01:33:48',
+                'updated_at' => '2022-09-02 01:03:08',
+            ),
+            18 => 
+            array (
+                'id' => '19',
+                'parent_id' => NULL,
+                'title' => 'Artikel',
+                'icon' => NULL,
+                'route' => 'artikel',
+                'sequence' => '16',
+                'active' => '1',
+                'type' => '1',
+                'created_at' => '2022-09-02 01:03:02',
+                'updated_at' => '2022-09-02 01:03:08',
             ),
         ));
         

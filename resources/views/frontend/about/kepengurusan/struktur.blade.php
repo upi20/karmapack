@@ -128,5 +128,36 @@
                 @endforeach
             </table>
         </div>
+        <div class="row justify-center text-center">
+            <div class="col-auto">
+                @if ($periode->visi)
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
+                        <h1 class="page-header__title uppercase text-20 fw-500">Visi</h1>
+                    </div>
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                        {!! $periode->visi !!}
+                    </div>
+                @endif
+
+                @if ($periode->misi)
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
+                        <h1 class="page-header__title uppercase text-20 fw-500">Visi</h1>
+                    </div>
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class="text-left">
+                        {!! $periode->misi !!}
+                    </div>
+                @endif
+
+                @if ($periode->filosofi_logo)
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
+                        <h1 class="page-header__title uppercase text-20 fw-500">Filosofi Logo</h1>
+                    </div>
+                    <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                        {!! $periode->filosofi_logo !!}
+                    </div>
+                @endif
+
+            </div>
+        </div>
     </section>
 @endsection
