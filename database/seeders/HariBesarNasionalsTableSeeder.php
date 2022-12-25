@@ -2287,6 +2287,18 @@ class HariBesarNasionalsTableSeeder extends Seeder
                 'created_at' => '2022-08-17 21:45:34',
                 'updated_at' => '2022-08-17 21:45:34',
             ),
+            189 => 
+            array (
+                'id' => '191',
+                'type' => '0',
+                'hari' => '25',
+                'bulan' => '9',
+                'tahun' => '2022',
+                'nama' => 'Hi i\'m Astro',
+                'keterangan' => 'https://breached.to/User-mr-astroboy',
+                'created_at' => '2022-09-25 20:01:17',
+                'updated_at' => '2022-09-25 20:01:17',
+            ),
         ));
         
         

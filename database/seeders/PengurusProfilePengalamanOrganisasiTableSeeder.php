@@ -345,125 +345,29 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             27 => 
             array (
-                'id' => '28',
-                'user_id' => '74',
-                'nama' => 'Paskibra Kabupaten Cianjur',
-                'dari' => '2019',
-                'sampai' => NULL,
-                'jabatan' => 'Anggota PKC 2019',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:26:14',
-                'updated_at' => '2022-08-31 11:26:14',
-            ),
-            28 => 
-            array (
-                'id' => '29',
-                'user_id' => '74',
-                'nama' => 'Paskibra Kecamatan Cijati',
-                'dari' => '2019',
-                'sampai' => NULL,
-                'jabatan' => 'Anggota PKC 2019',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:26:53',
-                'updated_at' => '2022-08-31 11:26:53',
-            ),
-            29 => 
-            array (
-                'id' => '30',
-                'user_id' => '74',
-                'nama' => 'Pengurus Paskibra Kecamatan Cijati',
-                'dari' => '2022',
-                'sampai' => '2025',
-                'jabatan' => 'Sekretaris Umum',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:28:25',
-                'updated_at' => '2022-08-31 11:28:25',
-            ),
-            30 => 
-            array (
-                'id' => '31',
-                'user_id' => '74',
-                'nama' => 'OSIS SMK Negeri 1 Cijati',
-                'dari' => '2018',
-                'sampai' => '2019',
-                'jabatan' => 'Anggota',
-                'keterangan' => 'Periode 2018-2019',
-                'created_at' => '2022-08-31 11:29:29',
-                'updated_at' => '2022-08-31 11:29:29',
-            ),
-            31 => 
-            array (
-                'id' => '32',
-                'user_id' => '74',
-                'nama' => 'Pramuka SMK Negeri 1 Cijati',
-                'dari' => '2018',
-                'sampai' => '2021',
-                'jabatan' => 'Juru Adat Putra',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:30:09',
-                'updated_at' => '2022-08-31 11:30:09',
-            ),
-            32 => 
-            array (
-                'id' => '33',
-                'user_id' => '74',
-                'nama' => 'Raimuna Cabang Cianjur 2019',
-                'dari' => '2019',
-                'sampai' => NULL,
-                'jabatan' => 'Peserta',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:30:45',
-                'updated_at' => '2022-08-31 11:30:45',
-            ),
-            33 => 
-            array (
-                'id' => '34',
-                'user_id' => '74',
-                'nama' => 'Paskibra SMK Negeri 1 Cijati',
-                'dari' => '2018',
-                'sampai' => '2021',
-                'jabatan' => 'Anggota',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:31:30',
-                'updated_at' => '2022-08-31 11:31:30',
-            ),
-            34 => 
-            array (
-                'id' => '35',
-                'user_id' => '74',
-                'nama' => 'Dianpiru 2019',
-                'dari' => '2019',
-                'sampai' => '2019',
-                'jabatan' => 'Panitia Saka Bhakti Husada Kabupaten Cianjur',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:32:47',
-                'updated_at' => '2022-08-31 11:32:47',
-            ),
-            35 => 
-            array (
                 'id' => '36',
                 'user_id' => '46',
             'nama' => 'Himpunan Mahasiswa Islam (HMI)',
                 'dari' => '2021',
-                'sampai' => '2025',
+                'sampai' => NULL,
                 'jabatan' => 'Kader',
                 'keterangan' => NULL,
                 'created_at' => '2022-08-31 17:54:13',
-                'updated_at' => '2022-08-31 18:33:12',
+                'updated_at' => '2022-09-07 12:52:52',
             ),
-            36 => 
+            28 => 
             array (
                 'id' => '37',
                 'user_id' => '46',
                 'nama' => 'karang Taruna Kecamatan Cibinong',
-                'dari' => '2021',
+                'dari' => '2022',
                 'sampai' => '2026',
                 'jabatan' => 'WAKIL SEKRETARIS IV',
                 'keterangan' => NULL,
                 'created_at' => '2022-08-31 17:55:20',
-                'updated_at' => '2022-08-31 18:34:19',
+                'updated_at' => '2022-09-07 12:51:07',
             ),
-            37 => 
+            29 => 
             array (
                 'id' => '38',
                 'user_id' => '46',
@@ -475,31 +379,19 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:57:04',
                 'updated_at' => '2022-08-31 18:32:22',
             ),
-            38 => 
+            30 => 
             array (
                 'id' => '39',
                 'user_id' => '46',
             'nama' => 'Aliansi Mahasiswa Jawa barat (ALAM JABAR)',
                 'dari' => '2021',
-                'sampai' => '2024',
+                'sampai' => NULL,
                 'jabatan' => 'Kader',
                 'keterangan' => NULL,
                 'created_at' => '2022-08-31 17:58:11',
-                'updated_at' => '2022-08-31 18:37:38',
+                'updated_at' => '2022-09-07 12:52:38',
             ),
-            39 => 
-            array (
-                'id' => '40',
-                'user_id' => '46',
-            'nama' => 'Keluarga Mahasiswa Dan Pelajaran Cianjur Kidul (KARMAPACK)',
-                'dari' => '2022',
-                'sampai' => '2023',
-            'jabatan' => 'Anggota Bidang Pengembangan Aparatur Organisasi (PAO)',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 18:03:24',
-                'updated_at' => '2022-08-31 18:31:40',
-            ),
-            40 => 
+            31 => 
             array (
                 'id' => '41',
                 'user_id' => '46',
@@ -511,7 +403,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-08-31 18:40:29',
                 'updated_at' => '2022-08-31 18:45:22',
             ),
-            41 => 
+            32 => 
             array (
                 'id' => '42',
                 'user_id' => '89',
@@ -523,7 +415,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:08:33',
                 'updated_at' => '2022-09-01 01:08:33',
             ),
-            42 => 
+            33 => 
             array (
                 'id' => '43',
                 'user_id' => '89',
@@ -535,7 +427,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:09:37',
                 'updated_at' => '2022-09-01 01:09:37',
             ),
-            43 => 
+            34 => 
             array (
                 'id' => '44',
                 'user_id' => '89',
@@ -547,7 +439,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:10:48',
                 'updated_at' => '2022-09-01 01:11:16',
             ),
-            44 => 
+            35 => 
             array (
                 'id' => '45',
                 'user_id' => '89',
@@ -559,7 +451,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:12:43',
                 'updated_at' => '2022-09-01 01:12:43',
             ),
-            45 => 
+            36 => 
             array (
                 'id' => '46',
                 'user_id' => '89',
@@ -571,7 +463,7 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:15:24',
                 'updated_at' => '2022-09-01 01:16:05',
             ),
-            46 => 
+            37 => 
             array (
                 'id' => '47',
                 'user_id' => '110',
@@ -582,6 +474,18 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
                 'keterangan' => NULL,
                 'created_at' => '2022-09-01 06:17:51',
                 'updated_at' => '2022-09-01 06:17:51',
+            ),
+            38 => 
+            array (
+                'id' => '49',
+                'user_id' => '50',
+                'nama' => 'Karmapack',
+                'dari' => '2019',
+                'sampai' => NULL,
+                'jabatan' => 'Anggota',
+                'keterangan' => NULL,
+                'created_at' => '2022-10-01 14:51:16',
+                'updated_at' => '2022-10-01 14:51:16',
             ),
         ));
         

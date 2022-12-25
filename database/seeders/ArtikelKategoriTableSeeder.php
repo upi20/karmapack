@@ -69,6 +69,36 @@ class ArtikelKategoriTableSeeder extends Seeder
                 'created_at' => '2022-04-25 12:46:55',
                 'updated_at' => '2022-04-25 12:46:55',
             ),
+            5 => 
+            array (
+                'id' => '7',
+                'nama' => 'Artikel',
+                'slug' => 'artikel',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2022-09-06 13:06:02',
+                'updated_at' => '2022-09-06 13:06:02',
+            ),
+            6 => 
+            array (
+                'id' => '8',
+                'nama' => 'Tulisan',
+                'slug' => 'tulisan',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2022-09-06 13:06:02',
+                'updated_at' => '2022-09-06 13:06:02',
+            ),
+            7 => 
+            array (
+                'id' => '9',
+                'nama' => 'Pengurus',
+                'slug' => 'pengurus',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2022-09-06 13:22:24',
+                'updated_at' => '2022-09-06 13:22:24',
+            ),
         ));
         
         

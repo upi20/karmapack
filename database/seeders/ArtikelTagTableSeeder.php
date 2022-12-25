@@ -46,6 +46,24 @@ class ArtikelTagTableSeeder extends Seeder
                 'created_at' => '2022-04-17 15:13:33',
                 'updated_at' => '2022-04-17 15:13:33',
             ),
+            3 => 
+            array (
+                'id' => '5',
+                'nama' => 'Alumni',
+                'slug' => 'alumni',
+                'status' => '1',
+                'created_at' => '2022-09-06 13:06:02',
+                'updated_at' => '2022-09-06 13:06:02',
+            ),
+            4 => 
+            array (
+                'id' => '6',
+                'nama' => 'Pelantikan',
+                'slug' => 'pelantikan',
+                'status' => '1',
+                'created_at' => '2022-09-06 13:22:24',
+                'updated_at' => '2022-09-06 13:22:24',
+            ),
         ));
         
         

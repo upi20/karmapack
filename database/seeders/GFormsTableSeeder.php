@@ -87,6 +87,40 @@ class GFormsTableSeeder extends Seeder
                 'created_at' => '2022-08-30 11:11:21',
                 'updated_at' => '2022-08-30 11:13:36',
             ),
+            4 => 
+            array (
+                'id' => '6',
+                'user_id' => '1',
+                'nama' => 'Absensi POESAKA 2022',
+                'slug' => 'absensi-poesaka-2022',
+                'deskripsi' => 'Absensi Poesaka hari terakhir minggu.',
+                'no_urut' => '3',
+                'dari' => '2022-12-17',
+                'sampai' => '2022-12-23',
+                'link' => 'https://docs.google.com/forms/d/e/1FAIpQLSdjx3u0IiQxrbFQ35jasBmHUJ0f4Gb7s8aXr18gQ18Scr9j9g/viewform',
+                'foto' => '20221218223719.png',
+                'tampilkan' => '0',
+                'status' => '1',
+                'created_at' => '2022-12-17 17:43:57',
+                'updated_at' => '2022-12-21 19:24:34',
+            ),
+            5 => 
+            array (
+                'id' => '7',
+                'user_id' => '1',
+                'nama' => 'Sertifikat Panitia Poesaka 2022',
+                'slug' => 'sertifikat-panitia-poesaka-2022',
+                'deskripsi' => 'Sertifikat untuk panitia Poesaka 2022',
+                'no_urut' => '4',
+                'dari' => '2022-12-20',
+                'sampai' => '2022-12-31',
+                'link' => 'https://docs.google.com/forms/d/e/1FAIpQLSfh03U_l_X5NcecPQDBx01m2VyYmgvUqKiscnHS9svLX86Ccw/viewform',
+                'foto' => '20221221202643.png',
+                'tampilkan' => '0',
+                'status' => '1',
+                'created_at' => '2022-12-21 20:26:28',
+                'updated_at' => '2022-12-21 20:26:43',
+            ),
         ));
         
         

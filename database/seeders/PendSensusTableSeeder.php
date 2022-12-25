@@ -149,6 +149,19 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:33:56',
                 'updated_at' => '2022-08-31 17:33:56',
             ),
+            10 => 
+            array (
+                'id' => '11',
+                'nama' => 'Isep Lutpi Nur',
+                'angkatan' => '2019',
+                'email' => 'iseplutpinur7@gmail.com',
+                'whatsapp' => '5798132505',
+                'telepon' => '5798132505',
+                'keterangan' => NULL,
+                'status' => '0',
+                'created_at' => '2022-12-16 23:27:27',
+                'updated_at' => '2022-12-16 23:27:27',
+            ),
         ));
         
         

@@ -528,71 +528,6 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             39 => 
             array (
-                'id' => '46',
-                'pendidikan_jenis_id' => '1',
-                'user_id' => '74',
-                'dari' => '2006',
-                'sampai' => '2008',
-                'instansi' => 'Paud Melati Cijati',
-                'jurusan' => NULL,
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:21:17',
-                'updated_at' => '2022-08-31 11:21:17',
-            ),
-            40 => 
-            array (
-                'id' => '47',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '74',
-                'dari' => '2009',
-                'sampai' => '2015',
-                'instansi' => 'SD Negeri Jatimanggung',
-                'jurusan' => NULL,
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:22:26',
-                'updated_at' => '2022-08-31 11:22:26',
-            ),
-            41 => 
-            array (
-                'id' => '48',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '74',
-                'dari' => '2015',
-                'sampai' => '2018',
-                'instansi' => 'SMP Negeri 1 Cijati',
-                'jurusan' => NULL,
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:23:13',
-                'updated_at' => '2022-08-31 11:23:13',
-            ),
-            42 => 
-            array (
-                'id' => '49',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '74',
-                'dari' => '2018',
-                'sampai' => '2021',
-                'instansi' => 'SMK Negeri 1 Cijati',
-                'jurusan' => 'Rekayasa Perangkat Lunak',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:23:44',
-                'updated_at' => '2022-08-31 11:23:44',
-            ),
-            43 => 
-            array (
-                'id' => '50',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '74',
-                'dari' => '2021',
-                'sampai' => NULL,
-                'instansi' => 'Institut Manajemen Wiyata Indonesia',
-                'jurusan' => 'Manajemen',
-                'keterangan' => NULL,
-                'created_at' => '2022-08-31 11:24:45',
-                'updated_at' => '2022-08-31 11:45:07',
-            ),
-            44 => 
-            array (
                 'id' => '52',
                 'pendidikan_jenis_id' => '2',
                 'user_id' => '46',
@@ -604,7 +539,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:48:38',
                 'updated_at' => '2022-08-31 18:28:13',
             ),
-            45 => 
+            40 => 
             array (
                 'id' => '53',
                 'pendidikan_jenis_id' => '3',
@@ -617,7 +552,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:50:21',
                 'updated_at' => '2022-08-31 18:26:45',
             ),
-            46 => 
+            41 => 
             array (
                 'id' => '54',
                 'pendidikan_jenis_id' => '4',
@@ -630,7 +565,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:51:18',
                 'updated_at' => '2022-08-31 18:27:20',
             ),
-            47 => 
+            42 => 
             array (
                 'id' => '55',
                 'pendidikan_jenis_id' => '5',
@@ -643,7 +578,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:52:57',
                 'updated_at' => '2022-08-31 18:25:31',
             ),
-            48 => 
+            43 => 
             array (
                 'id' => '56',
                 'pendidikan_jenis_id' => '1',
@@ -656,7 +591,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:00:55',
                 'updated_at' => '2022-09-01 01:00:55',
             ),
-            49 => 
+            44 => 
             array (
                 'id' => '57',
                 'pendidikan_jenis_id' => '2',
@@ -669,7 +604,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:02:09',
                 'updated_at' => '2022-09-01 01:03:51',
             ),
-            50 => 
+            45 => 
             array (
                 'id' => '58',
                 'pendidikan_jenis_id' => '2',
@@ -682,7 +617,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:02:26',
                 'updated_at' => '2022-09-01 01:04:37',
             ),
-            51 => 
+            46 => 
             array (
                 'id' => '59',
                 'pendidikan_jenis_id' => '3',
@@ -695,7 +630,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:03:23',
                 'updated_at' => '2022-09-01 01:05:26',
             ),
-            52 => 
+            47 => 
             array (
                 'id' => '60',
                 'pendidikan_jenis_id' => '4',
@@ -708,7 +643,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:06:30',
                 'updated_at' => '2022-09-01 01:06:30',
             ),
-            53 => 
+            48 => 
             array (
                 'id' => '61',
                 'pendidikan_jenis_id' => '5',
@@ -721,7 +656,7 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:07:16',
                 'updated_at' => '2022-09-01 01:07:16',
             ),
-            54 => 
+            49 => 
             array (
                 'id' => '62',
                 'pendidikan_jenis_id' => '4',
@@ -733,6 +668,84 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
                 'keterangan' => NULL,
                 'created_at' => '2022-09-01 06:15:13',
                 'updated_at' => '2022-09-01 06:15:13',
+            ),
+            50 => 
+            array (
+                'id' => '63',
+                'pendidikan_jenis_id' => '2',
+                'user_id' => '91',
+                'dari' => '2008',
+                'sampai' => '2013',
+                'instansi' => 'SD Negeri Layung Sari',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-07 11:37:26',
+                'updated_at' => '2022-09-07 11:41:50',
+            ),
+            51 => 
+            array (
+                'id' => '64',
+                'pendidikan_jenis_id' => '3',
+                'user_id' => '91',
+                'dari' => '2013',
+                'sampai' => '2016',
+                'instansi' => 'MTsN 2 Cianjur',
+                'jurusan' => NULL,
+                'keterangan' => NULL,
+                'created_at' => '2022-09-07 11:39:11',
+                'updated_at' => '2022-09-07 11:39:11',
+            ),
+            52 => 
+            array (
+                'id' => '65',
+                'pendidikan_jenis_id' => '4',
+                'user_id' => '91',
+                'dari' => '2016',
+                'sampai' => '2019',
+                'instansi' => 'SMA Negeri 1 Cibinong',
+                'jurusan' => 'Ilmu Pendidikan Sosial',
+                'keterangan' => NULL,
+                'created_at' => '2022-09-07 11:40:38',
+                'updated_at' => '2022-09-07 11:40:38',
+            ),
+            53 => 
+            array (
+                'id' => '66',
+                'pendidikan_jenis_id' => '5',
+                'user_id' => '50',
+                'dari' => '2019',
+                'sampai' => '2023',
+                'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
+                'jurusan' => 'Pendidikan Agama Islam',
+                'keterangan' => NULL,
+                'created_at' => '2022-10-01 14:50:32',
+                'updated_at' => '2022-10-01 14:50:32',
+            ),
+            54 => 
+            array (
+                'id' => '67',
+                'pendidikan_jenis_id' => '5',
+                'user_id' => '33',
+                'dari' => '2019',
+                'sampai' => NULL,
+                'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
+                'jurusan' => 'Bahasa dan Sastra Arab',
+                'keterangan' => NULL,
+                'created_at' => '2022-10-01 14:56:14',
+                'updated_at' => '2022-10-01 14:56:14',
+            ),
+            55 => 
+            array (
+                'id' => '68',
+                'pendidikan_jenis_id' => '5',
+                'user_id' => '90',
+                'dari' => '2021',
+                'sampai' => NULL,
+                'instansi' => 'Stisip Guna Nusantara Cianjur',
+                'jurusan' => 'Ilmu pemerintahan',
+                'keterangan' => NULL,
+                'created_at' => '2022-12-17 14:31:10',
+                'updated_at' => '2022-12-17 14:31:10',
             ),
         ));
         

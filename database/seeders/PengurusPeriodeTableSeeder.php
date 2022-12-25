@@ -39,6 +39,7 @@ Cianjru Kidul
 2. Melakukan pengabdian kepada masyarakat<br>
 3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
+                'filosofi_logo' => NULL,
                 'status' => '0',
                 'created_at' => '2022-04-14 08:31:00',
                 'updated_at' => '2022-08-16 16:44:16',
@@ -56,6 +57,7 @@ Cianjru Kidul
 ',
                 'misi' => '<ol><li>Mewujudkan karmapack sebagai pribadi yang kompetitif dan cinta daerah.</li><li>Mampu membuat dan melaksanakan fungsi sosial dan kepemudaan serta ikut andil dalam pembangunan karakter kepemudaan.</li><li>Mampu merawat dan membangun koordinasi seluruh elemen karmapack</li></ol>
 ',
+                'filosofi_logo' => NULL,
                 'status' => '1',
                 'created_at' => '2022-07-15 15:25:06',
                 'updated_at' => '2022-08-30 21:46:39',

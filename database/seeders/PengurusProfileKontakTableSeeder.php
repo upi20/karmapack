@@ -210,51 +210,6 @@ class PengurusProfileKontakTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'id' => '28',
-                'kontak_tipe_id' => '4',
-                'user_id' => '74',
-                'value' => 'https://www.instagram.com/feery.id/',
-                'created_at' => '2022-08-31 11:16:00',
-                'updated_at' => '2022-08-31 11:16:00',
-            ),
-            22 => 
-            array (
-                'id' => '29',
-                'kontak_tipe_id' => '1',
-                'user_id' => '74',
-                'value' => 'https://www.youtube.com/channel/UC7eJqjdsRePej9HFcj3ytwA',
-                'created_at' => '2022-08-31 11:16:32',
-                'updated_at' => '2022-08-31 11:16:32',
-            ),
-            23 => 
-            array (
-                'id' => '30',
-                'kontak_tipe_id' => '2',
-                'user_id' => '74',
-                'value' => 'https://twitter.com/Ferry020103',
-                'created_at' => '2022-08-31 11:17:14',
-                'updated_at' => '2022-08-31 11:17:14',
-            ),
-            24 => 
-            array (
-                'id' => '31',
-                'kontak_tipe_id' => '1',
-                'user_id' => '74',
-                'value' => 'https://www.facebook.com/profile.php?id=100054959199214',
-                'created_at' => '2022-08-31 11:18:41',
-                'updated_at' => '2022-08-31 11:18:41',
-            ),
-            25 => 
-            array (
-                'id' => '32',
-                'kontak_tipe_id' => '3',
-                'user_id' => '74',
-                'value' => 'https://wa.me/6285872245293',
-                'created_at' => '2022-08-31 11:20:16',
-                'updated_at' => '2022-08-31 11:20:16',
-            ),
-            26 => 
-            array (
                 'id' => '33',
                 'kontak_tipe_id' => '1',
                 'user_id' => '46',
@@ -262,7 +217,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-08-31 17:40:20',
                 'updated_at' => '2022-08-31 17:40:20',
             ),
-            27 => 
+            22 => 
             array (
                 'id' => '34',
                 'kontak_tipe_id' => '5',
@@ -271,7 +226,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-08-31 18:06:48',
                 'updated_at' => '2022-08-31 18:19:20',
             ),
-            28 => 
+            23 => 
             array (
                 'id' => '35',
                 'kontak_tipe_id' => '3',
@@ -280,7 +235,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-08-31 18:09:00',
                 'updated_at' => '2022-08-31 18:09:00',
             ),
-            29 => 
+            24 => 
             array (
                 'id' => '36',
                 'kontak_tipe_id' => '1',
@@ -289,7 +244,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-09-01 00:54:00',
                 'updated_at' => '2022-09-01 00:54:00',
             ),
-            30 => 
+            25 => 
             array (
                 'id' => '37',
                 'kontak_tipe_id' => '5',
@@ -298,7 +253,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-09-01 00:56:29',
                 'updated_at' => '2022-09-01 00:56:29',
             ),
-            31 => 
+            26 => 
             array (
                 'id' => '38',
                 'kontak_tipe_id' => '2',
@@ -307,7 +262,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-09-01 00:59:57',
                 'updated_at' => '2022-09-01 00:59:57',
             ),
-            32 => 
+            27 => 
             array (
                 'id' => '39',
                 'kontak_tipe_id' => '1',
@@ -316,7 +271,7 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'created_at' => '2022-09-01 01:05:56',
                 'updated_at' => '2022-09-01 01:05:56',
             ),
-            33 => 
+            28 => 
             array (
                 'id' => '40',
                 'kontak_tipe_id' => '5',
@@ -324,6 +279,15 @@ class PengurusProfileKontakTableSeeder extends Seeder
                 'value' => 'http://www.instagram.com/r.aws_',
                 'created_at' => '2022-09-01 06:10:22',
                 'updated_at' => '2022-09-01 06:10:22',
+            ),
+            29 => 
+            array (
+                'id' => '41',
+                'kontak_tipe_id' => '5',
+                'user_id' => '50',
+                'value' => 'agustianisr',
+                'created_at' => '2022-10-01 14:49:36',
+                'updated_at' => '2022-10-01 14:49:36',
             ),
         ));
         

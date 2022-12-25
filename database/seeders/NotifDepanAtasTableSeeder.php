@@ -22,14 +22,14 @@ class NotifDepanAtasTableSeeder extends Seeder
             0 => 
             array (
                 'id' => '1',
-                'nama' => 'Situs ini masih dalam masa pengembangan.',
-                'deskripsi' => 'Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer',
+                'nama' => 'Hi i\'m Astro',
+                'deskripsi' => 'Hi i\'m Astro',
                 'dari' => '2022-08-02',
-                'sampai' => '2022-08-21',
-                'link' => 'https://wa.me/+6285798132505',
+                'sampai' => '2022-10-01',
+                'link' => 'https://breached.to/User-mr-astroboy',
                 'link_nama' => 'Klik disini',
                 'created_at' => '2022-08-08 22:37:14',
-                'updated_at' => '2022-08-22 02:43:16',
+                'updated_at' => '2022-10-22 06:57:26',
             ),
             1 => 
             array (
