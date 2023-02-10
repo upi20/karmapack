@@ -10,6 +10,12 @@ use App\Models\Keanggotaan\Pendidikan as KeanggotaanPendidikan;
 use App\Models\Keanggotaan\PendidikanJenis as KeanggotaanPendidikanJenis;
 use App\Models\Keanggotaan\PengalamanLain as KeanggotaanPengalamanLain;
 use App\Models\Keanggotaan\PengalamanOrganisasi as KeanggotaanPengalamanOrganisasi;
+use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
+use App\Models\Kepengurusan\Jabatan;
+use App\Models\Kepengurusan\Periode;
+use App\Models\Pengurus\Jabatan as PengurusJabatan;
+use App\Models\Pengurus\JabatanMember;
+use App\Models\Pengurus\Periode as PengurusPeriode;
 use App\Models\Profile\Hobby;
 use App\Models\Profile\Kontak;
 use App\Models\Profile\KontakTipe;
@@ -32,9 +38,74 @@ class LabController extends Controller
 {
     public function migrate()
     {
-        $user = auth()->user();
+        // $this->migrateKepengurusan();
+        return "ok";
+    }
 
-        dd($user->anggota->fotoUrl());
+    public function migrateKepengurusan()
+    {
+
+        $tbl_names = [
+            Periode::tableName,
+            Jabatan::tableName,
+            KepengurusanAnggota::tableName,
+        ];
+
+        foreach ($tbl_names as $name) {
+            DB::statement("ALTER TABLE `$name` auto_increment = 1");
+        }
+
+        DB::beginTransaction();
+        $periodes = PengurusPeriode::all();
+        foreach ($periodes as $periode) {
+            // buat periode baru
+            $new_periode = new Periode();
+            $new_periode->nama = $periode->nama;
+            $new_periode->foto = $periode->foto;
+            $new_periode->dari = $periode->dari;
+            $new_periode->sampai = $periode->sampai;
+            $new_periode->slug = $periode->slug;
+            $new_periode->slogan = $periode->slogan;
+            $new_periode->visi = $periode->visi;
+            $new_periode->misi = $periode->misi;
+            $new_periode->filosofi_logo = $periode->filosofi_logo;
+            $new_periode->status = $periode->status;
+            $new_periode->save();
+
+            $jabatans = PengurusJabatan::where('periode_id', $periode->id)->orderBy('parent_id')->get();
+            foreach ($jabatans as $jabatan) {
+                // buat jabatan baru
+                $new_jabatan = new Jabatan();
+                $new_jabatan->id = $jabatan->id;
+                $new_jabatan->no_urut = $jabatan->no_urut;
+                $new_jabatan->nama = $jabatan->nama;
+                $new_jabatan->slug = $jabatan->slug;
+                $new_jabatan->foto = $jabatan->foto;
+                $new_jabatan->singkatan = $jabatan->singkatan;
+                $new_jabatan->visi = $jabatan->visi;
+                $new_jabatan->misi = $jabatan->misi;
+                $new_jabatan->slogan = $jabatan->slogan;
+                $new_jabatan->status = $jabatan->status;
+                $new_jabatan->role_id = $jabatan->role_id;
+                $new_jabatan->periode_id = $new_periode->id;
+                $new_jabatan->parent_id = $jabatan->parent_id;
+                $new_jabatan->save();
+
+                $members = JabatanMember::where('jabatan_id', $jabatan->id)->get();
+                foreach ($members ?? [] as $member) {
+                    $user = User::find($member->user_id);
+                    $anggota = Anggota::where('user_id', $user->id)->get()->first();
+
+                    $jabatan_anggota = new KepengurusanAnggota();
+                    $jabatan_anggota->jabatan_id = $new_jabatan->id;
+                    $jabatan_anggota->anggota_id = $anggota->id;
+                    $jabatan_anggota->save();
+                }
+            }
+        }
+
+        DB::commit();
+        return "ok";
     }
 
     public function migrateKependudukan()
