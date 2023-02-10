@@ -1,0 +1,59 @@
+// Dashboard
+Dashboard
+Admin Dashboard
+
+// Artikel
+Artikel
+Kategori Artikel
+Tag Artikel
+
+// Input
+Google Form
+Sensus Anggota
+
+// Landing Page
+Instagram
+Galeri
+Sosial Media
+Kontak
+    Daftar Kontak
+    Pesan
+    FAQ
+
+// Kepengurusan
+Kepengurusan
+Jabatan
+Sub Jabatan
+Jabatan Anggota
+
+// Keanggotaan
+Profile Anggota
+Jenis Pendidikan Anggota
+Tipe Kontak Anggota
+
+// Lainnya
+Alamat
+    Provinsi
+    Kabupaten
+    Kecamatan
+    Desa/Kelurahan
+Hari Besar Nasional
+Notifikasi
+    Admin
+    Depan
+Ganti Password
+
+// Alumni
+Kata Alumni
+
+// Administrator
+Setting Halaman
+    Admin
+    Depan
+    Home
+User Access
+    Permission
+    Role
+Menu Management
+    Admin
+    Depan
