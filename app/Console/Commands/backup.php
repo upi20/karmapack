@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use mikehaertl\shellcommand\Command as shellcommand;
+
 use Illuminate\Console\Command;
 
 class backup extends Command
@@ -43,10 +45,12 @@ class backup extends Command
             $folder_parent = $win_parse("$root/backup");
             $folder_backup = $win_parse("$folder_parent/" . date('Y-m-d'));
 
-            if (!file_exists("$folder_parent")) echo shell_exec("mkdir $folder_parent");
-            if (!file_exists($folder_backup)) echo shell_exec("mkdir $folder_backup");
+            if (!file_exists("$folder_parent")) $this->command_exec("mkdir $folder_parent");
+            if (!file_exists($folder_backup)) $this->command_exec("mkdir $folder_backup");
             $copy = $is_windows ? 'copy' : 'cp -R';
-            shell_exec($win_parse("$copy $root/database/seeders/* $folder_backup"));
+            $this->command_exec($win_parse("$copy $root/database/seeders/* $folder_backup"));
+
+
 
             echo 'Berhasil backup data sebelumnya' . PHP_EOL;
         }
@@ -113,17 +117,28 @@ class backup extends Command
                 'faq',
             ],
         ];
-        if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
+        if ($opt_users == 1 || $arg_type == 'users') $this->command_exec('php artisan iseed users --force');
         foreach ($tables as $k => $t) {
             $type = $arg_type == 'all' ? $tables[$k] : ($k == $arg_type ? $t : []);
             foreach ($type as $table) {
-                echo shell_exec('php artisan iseed ' . $table . ' --force');
+                $this->command_exec('php artisan iseed ' . $table . ' --force');
             }
 
             if (in_array($arg_type, $t)) {
-                echo shell_exec('php artisan iseed ' . $arg_type . ' --force');
+                $this->command_exec('php artisan iseed ' . $arg_type . ' --force');
             }
         }
         return 1;
+    }
+
+    private function command_exec($command_str)
+    {
+        $command = new shellcommand($command_str);
+        if ($command->execute()) {
+            echo $command->getOutput() . PHP_EOL;
+        } else {
+            echo $command->getError() . PHP_EOL;
+            $exitCode = $command->getExitCode();
+        }
     }
 }
