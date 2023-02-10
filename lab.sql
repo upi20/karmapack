@@ -12,4 +12,4 @@ from pengurus_anggotas ppjm
 where
 	pp.id = 2
 	order by
-	(select ppj2.no_urut from pengurus_jabatans ppj2 where ppj2.id = ppj.parent_id), ppj.no_urut
+	(select ppj2.no_urut from peng  urus_jabatans ppj2 where ppj2.id = ppj.parent_id), ppj.no_urut

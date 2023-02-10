@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Member;
 
+use App\Http\Controllers\Controller;
 use App\Models\Address\District;
 use App\Models\Address\Village;
 use App\Models\Profile\Pendidikan;

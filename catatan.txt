@@ -2,3 +2,6 @@ delete username validation
 delete pendaftaran
 refactore gform
 sesuaikan artikel dengan yang di geb
+
+delete App/HTTP/Controllers/DashboardController
+delete route web_member
