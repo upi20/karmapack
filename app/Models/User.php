@@ -6,6 +6,7 @@ use App\Models\Address\District;
 use App\Models\Address\Province;
 use App\Models\Address\Regencie;
 use App\Models\Address\Village;
+use App\Models\Keanggotaan\Anggota;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\JabatanMember;
 use App\Models\Pengurus\Periode;
@@ -96,6 +97,11 @@ class User extends Authenticatable
     public function village()
     {
         return $this->belongsTo(Village::class, 'village_id');
+    }
+
+    public function anggota()
+    {
+        return $this->hasOne(Anggota::class, 'user_id', 'id');
     }
 
 

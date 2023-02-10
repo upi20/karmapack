@@ -1,0 +1,4 @@
+delete username validation
+delete pendaftaran
+refactore gform
+sesuaikan artikel dengan yang di geb
