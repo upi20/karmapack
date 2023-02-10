@@ -68,6 +68,6 @@ class Anggota extends Model
     public function fotoUrl()
     {
         $foto = $this->attributes['foto'];
-        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/image/anggota_default.png');
+        return $foto ? url(self::image_folder . '/' . $foto) : asset(self::image_default);
     }
 }
