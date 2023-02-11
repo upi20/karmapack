@@ -24,11 +24,11 @@ class Pendidikan extends Model
 
     public function anggota()
     {
-        $this->belongsTo(Anggota::class, 'anggota_id', 'id');
+        return $this->belongsTo(Anggota::class, 'anggota_id', 'id');
     }
 
     public function jenis()
     {
-        $this->belongsTo(PendidikanJenis::class, 'jenis_id', 'id');
+        return $this->belongsTo(PendidikanJenis::class, 'jenis_id', 'id');
     }
 }

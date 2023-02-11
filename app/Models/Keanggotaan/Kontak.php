@@ -10,7 +10,7 @@ class Kontak extends Model
     use HasFactory;
     protected $fillable = [
         'jenis_id',
-        'pengguna_id',
+        'anggota_id',
         'nilai',
     ];
 
@@ -20,11 +20,11 @@ class Kontak extends Model
 
     public function anggota()
     {
-        $this->belongsTo(Anggota::class, 'anggota_id', 'id');
+        return $this->belongsTo(Anggota::class, 'anggota_id', 'id');
     }
 
     public function jenis()
     {
-        $this->belongsTo(KontakJenis::class, 'jenis_id', 'id');
+        return $this->belongsTo(KontakJenis::class, 'jenis_id', 'id');
     }
 }

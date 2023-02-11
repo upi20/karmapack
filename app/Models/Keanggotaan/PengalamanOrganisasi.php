@@ -23,6 +23,6 @@ class PengalamanOrganisasi extends Model
 
     public function anggota()
     {
-        $this->belongsTo(Anggota::class, 'anggota_id', 'id');
+        return $this->belongsTo(Anggota::class, 'anggota_id', 'id');
     }
 }

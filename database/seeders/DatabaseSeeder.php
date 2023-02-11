@@ -15,13 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::create([
-        //     'name' => 'Isep Lutpi Nur',
-        //     'email' => 'iseplutpinur7@gmail.com',
-        //     'password' => bcrypt('123456'),
-        //     'active' => '1'
-        // ]);
-        // \App\Models\User::factory(150)->create();
         DB::beginTransaction();
         // address seeders
         AddressProvinceSeeders::run();
@@ -98,7 +91,17 @@ class DatabaseSeeder extends Seeder
         $this->call(NotifAdminAtasTableSeeder::class);
         $this->call(NotifDepanAtasTableSeeder::class);
         $this->call(PMenuFrontendsTableSeeder::class);
-        DB::commit();
         $this->call(InstagramTableSeeder::class);
+
+        // Keanggotaan
+        $this->call(AnggotaKontakJenisTableSeeder::class);
+        $this->call(AnggotaPendidikanJenisTableSeeder::class);
+        $this->call(AnggotasTableSeeder::class);
+        $this->call(AnggotaHobisTableSeeder::class);
+        $this->call(AnggotaKontaksTableSeeder::class);
+        $this->call(AnggotaPendidikansTableSeeder::class);
+        $this->call(AnggotaPengalamanLainsTableSeeder::class);
+        $this->call(AnggotaPengalamanOrganisasisTableSeeder::class);
+        DB::commit();
     }
 }

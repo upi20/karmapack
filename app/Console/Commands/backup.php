@@ -116,7 +116,18 @@ class backup extends Command
             'other' => [
                 'faq',
             ],
+            'keanggotaan' => [
+                'anggota_kontak_jenis',
+                'anggota_pendidikan_jenis',
+                'anggotas',
+                'anggota_hobis',
+                'anggota_kontaks',
+                'anggota_pendidikans',
+                'anggota_pengalaman_lains',
+                'anggota_pengalaman_organisasis',
+            ],
         ];
+
         if ($opt_users == 1 || $arg_type == 'users') $this->command_exec('php artisan iseed users --force');
         foreach ($tables as $k => $t) {
             $type = $arg_type == 'all' ? $tables[$k] : ($k == $arg_type ? $t : []);

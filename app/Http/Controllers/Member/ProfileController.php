@@ -7,61 +7,55 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
 use App\Helpers\Summernote;
-use App\Models\Address\District;
 use App\Models\Address\Province;
-use App\Models\Address\Regencie;
-use App\Models\Address\Village;
-use App\Models\Pengurus\Jabatan;
-use App\Models\Pengurus\JabatanMember;
-use App\Models\Pengurus\Periode;
-use App\Models\Profile\Hobby;
-use App\Models\Profile\Kontak;
-use App\Models\Profile\KontakTipe;
-use App\Models\Profile\Pendidikan;
-use App\Models\Profile\PendidikanJenis;
-use App\Models\Profile\PengalamanLain;
-use App\Models\Profile\PengalamanOrganisasi;
+use App\Models\Keanggotaan\Anggota;
+use App\Models\Keanggotaan\Hobi;
+use App\Models\Keanggotaan\Kontak;
+use App\Models\Keanggotaan\KontakJenis;
+use App\Models\Keanggotaan\PendidikanJenis;
+use App\Models\Keanggotaan\Pendidikan;
+use App\Models\Keanggotaan\PengalamanLain;
+use App\Models\Keanggotaan\PengalamanOrganisasi;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    private $image_folder = User::image_folder;
     public function index(Request $request)
     {
-        $user_id = $request->id ?? auth()->user()->id;
-        if (!$user_id) return abort(404);
+        if (is_null($request->id)) {
+            $anggota = auth()->user()->anggota;
+        } else {
+            $anggota = Anggota::findOrFail($request->id);
+        }
+        $user = $anggota->user;
 
-        $user = $this->getUser($user_id);
         if (!$user) return abort(404);
         $page_attr = [
-            'title' => 'Profile',
+            'title' => 'Profil',
             'breadcrumbs' => [
                 ['name' => 'Dashboard'],
             ]
         ];
-        $image_folder = $this->image_folder;
 
-        $kepengurusan = $this->getRiwayatKepengurusan($user->id);
         $provinces = Province::all();
-        $kontak_tipe = KontakTipe::where('status', '=', 1)->select(['id', 'nama'])->get();
+        $kontak_jenis = KontakJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
         $pendidikan_jenis = PendidikanJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
-        $hobbies = Hobby::where('user_id', '=', $user->id)->select(['name'])->get();
-        $javascript = render_js("member/profile.js", ['user' => $user]);
-        return view('member.profile', compact(
+
+        $data = compact(
             'page_attr',
+            'anggota',
             'user',
-            'image_folder',
-            'kepengurusan',
             'provinces',
-            'kontak_tipe',
+            'kontak_jenis',
             'pendidikan_jenis',
-            'hobbies',
-            'javascript'
-        ));
+        );
+
+        $data['compact'] = $data;
+        return view('member.profile', $data);
     }
 
     // tools =====================================================================================
-    private function savePermission(int $id): bool
+    private function savePermission(Anggota $anggota): bool
     {
         // periksa role
         $user = auth()->user();
@@ -69,40 +63,12 @@ class ProfileController extends Controller
         if (auth_can('admin.profile.save_another')) {
             return true;
         } else {
-            if ($user->id == $id) {
+            if ($user->id == $anggota->user->id) {
                 return true;
             } else {
                 return false;
             }
         }
-    }
-
-    private function getRiwayatKepengurusan(int $user_id): array
-    {
-        $a = JabatanMember::tableName;
-        $b = Jabatan::tableName;
-        $c = Periode::tableName;
-        $dari = <<<SQL
-            select dari from $c where $c.id = $b.periode_id limit 1
-        SQL;
-
-        $sampai = <<<SQL
-            select sampai from $c where $c.id = $b.periode_id limit 1
-        SQL;
-
-        $sub_bdang = <<<SQL
-            if($b.parent_id is null, '', concat(' -> ',(
-                select nama from $b as z where $b.parent_id = z.id limit 1
-            )))
-        SQL;
-
-        $user = JabatanMember::select([
-            DB::raw("concat(($dari), '-', ($sampai), ' | ',$b.nama, $sub_bdang) as jabatan")
-        ])->where('user_id', '=', $user_id)
-            ->join($b, "$a.jabatan_id", '=', "$b.id")
-            ->orderBy('jabatan', 'desc')
-            ->get();
-        return $user->toArray() ?? [];
     }
 
     // basic ======================================================================================
@@ -116,31 +82,32 @@ class ProfileController extends Controller
                 'bio' => ['nullable', 'string', 'max:255'],
                 'angkatan' => ['required', 'int', 'max:9999', 'min:2003'],
             ]);
-            $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
             // foto handle
             $foto = '';
             if ($image = $request->file('profile')) {
-                $foto =   ($model->username ?? strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $model->name))) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $foto = ($anggota->user->username ?? strtolower(preg_replace('/[^A-Za-z0-9-]+/', '-', $anggota->nama))) . date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image_folder = $anggota->fotoFolder();
 
-                $image->move(public_path($this->image_folder), $foto);
+                $image->move(public_path($image_folder), $foto);
 
                 // delete foto
-                if ($model->foto) {
-                    $path = public_path("$this->image_folder/$model->foto");
+                if ($anggota->foto) {
+                    $path = public_path("$image_folder/$anggota->foto");
                     Summernote::deleteFile($path);
                 }
 
                 // save foto
-                $model->foto = $foto;
+                $anggota->foto = $foto;
             }
 
-            $model->profesi = $request->profesi;
-            $model->gender = $request->jenis_kelamin;
-            $model->bio = $request->bio;
-            $model->angkatan = $request->angkatan;
-            $model->save();
+            $anggota->profesi = $request->profesi;
+            $anggota->jenis_kelamin = $request->jenis_kelamin;
+            $anggota->bio = $request->bio;
+            $anggota->angkatan = $request->angkatan;
+            $anggota->save();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -191,15 +158,16 @@ class ProfileController extends Controller
                 'village_id' => ['nullable', 'string', 'max:255'],
                 'alamat_lengkap' => ['nullable', 'string', 'max:255'],
             ]);
-            $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->province_id = $request->province_id;
-            $model->regency_id = $request->regency_id;
-            $model->district_id = $request->district_id;
-            $model->village_id = $request->village_id;
-            $model->alamat_lengkap = $request->alamat_lengkap;
-            $model->save();
+            $anggota = Anggota::findOrFail($request->id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+
+            $anggota->province_id = $request->province_id;
+            $anggota->regency_id = $request->regency_id;
+            $anggota->district_id = $request->district_id;
+            $anggota->village_id = $request->village_id;
+            $anggota->alamat_lengkap = $request->alamat_lengkap;
+            $anggota->save();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -212,25 +180,32 @@ class ProfileController extends Controller
     public function save_detail(Request $request)
     {
         try {
+            $anggota = Anggota::findOrFail($request->id);
+            $user = $anggota->user;
             $request->validate([
                 'id' => ['required', 'int'],
-                'name' => ['required', 'string', 'max:255'],
-                'date_of_birth' => ['required', 'date'],
-                'email' => ['required', 'string', 'max:255', 'unique:users,email,' . $request->id],
+                'nama' => ['required', 'string', 'max:255'],
+                'tanggal_lahir' => ['required', 'date'],
+                'email' => ['required', 'string', 'max:255', 'unique:users,email,' . $user->id],
                 'telepon' => ['nullable', 'string', 'max:255'],
                 'whatsapp' => ['nullable', 'string', 'max:255'],
-                'username' => ['nullable', 'string', 'max:255', 'unique:users,username,' . $request->id],
+                'username' => ['nullable', 'string', 'max:255', 'unique:users,username,' . $user->id],
             ]);
-            $model = User::find($request->id);
-            if (!$this->savePermission($request->id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->username = $request->username;
-            $model->name = $request->name;
-            $model->date_of_birth = $request->date_of_birth;
-            $model->email = $request->email;
-            $model->telepon = $request->telepon;
-            $model->whatsapp = $request->whatsapp;
-            $model->save();
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+
+            // simpan anggota
+            $anggota->nama = $request->nama;
+            $anggota->tanggal_lahir = $request->tanggal_lahir;
+            $anggota->telepon = $request->telepon;
+            $anggota->whatsapp = $request->whatsapp;
+            $anggota->save();
+
+            // simpan user
+            $user->username = $request->username;
+            $user->name = $request->nama;
+            $user->email = $request->email;
+            $user->save();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -239,43 +214,23 @@ class ProfileController extends Controller
         }
     }
 
-    private function getUser(int $id): mixed
-    {
-        $a = User::tableName;
-        $b = Province::tableName;
-        $c = Regencie::tableName;
-        $d = District::tableName;
-        $e = Village::tableName;
-
-        return User::selectRaw("$a.*,
-        $b.name as province,
-        $c.name as regencie,
-        $d.name as district,
-        $e.name as village
-        ")
-            ->leftJoin($b, "$b.id", '=', "$a.province_id")
-            ->leftJoin($c, "$c.id", '=', "$a.regency_id")
-            ->leftJoin($d, "$d.id", '=', "$a.district_id")
-            ->leftJoin($e, "$e.id", '=', "$a.village_id")
-            ->where("$a.id", '=', $id)->first();
-    }
-
     // Kontak crud =======================================================
     public function kontak_insert(Request $request)
     {
         try {
             $request->validate([
-                'user_id' => ['required', 'int'],
-                'tipe' => ['required', 'int'],
-                'kontak' => ['required', 'string'],
+                'anggota_id' => ['required', 'int'],
+                'jenis' => ['required', 'int'],
+                'nilai' => ['required', 'string'],
             ]);
-            $model = new Kontak();
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $kontak = new Kontak();
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
-            $model->kontak_tipe_id = $request->tipe;
-            $model->value = $request->kontak;
-            $model->save();
+            $kontak->anggota_id = $request->anggota_id;
+            $kontak->jenis_id = $request->jenis;
+            $kontak->nilai = $request->nilai;
+            $kontak->save();
 
             return response()->json([]);
         } catch (ValidationException $error) {
@@ -291,18 +246,18 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'user_id' => ['required', 'int'],
-                'tipe' => ['required', 'int'],
-                'kontak' => ['required', 'string'],
+                'anggota_id' => ['required', 'int'],
+                'jenis' => ['required', 'int'],
+                'nilai' => ['required', 'string'],
             ]);
-            $model = Kontak::find($request->id);
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $kontak = Kontak::findOrFail($request->id);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
-            $model->kontak_tipe_id = $request->tipe;
-            $model->value = $request->kontak;
-            $model->save();
-
+            $kontak->anggota_id = $request->anggota_id;
+            $kontak->jenis_id = $request->jenis;
+            $kontak->nilai = $request->nilai;
+            $kontak->save();
             return response()->json([]);
         } catch (ValidationException $error) {
             return response()->json([
@@ -314,33 +269,32 @@ class ProfileController extends Controller
 
     public function kontak(Request $request)
     {
-        return response()->json(['datas' => $this->getListKontak($request->user_id)]);
+        try {
+            $anggota_id = $request->anggota_id;
+            $a = Kontak::tableName;
+            $b = KontakJenis::tableName;
+            $kontak = Kontak::select([
+                DB::raw("$a.id"),
+                DB::raw("$a.nilai"),
+                DB::raw("$b.id as kontak_id"),
+                DB::raw("$b.nama as kontak"),
+                DB::raw("$b.icon as icon"),
+            ])
+                ->where("$a.anggota_id", '=', $anggota_id)
+                ->join($b, "$a.jenis_id", '=', "$b.id")
+                ->get();
+
+            return response()->json(['datas' => $kontak]);
+        } catch (\Exception $error) {
+            return response()->json($error, 500);
+        }
     }
 
-    private function getListKontak(?int $user_id): mixed
-    {
-        if (!$user_id) return [];
-        $a = Kontak::tableName;
-        $b = KontakTipe::tableName;
-        $kontak = Kontak::select([
-            DB::raw("$a.id"),
-            DB::raw("$a.value"),
-            DB::raw("$b.id as kontak_id"),
-            DB::raw("$b.nama as kontak"),
-            DB::raw("$b.icon as icon"),
-        ])
-            ->where("$a.user_id", '=', $user_id)
-            ->join($b, "$a.kontak_tipe_id", '=', "$b.id")
-            ->get();
-
-        return $kontak;
-    }
-
-    public function kontak_delete(Kontak $model)
+    public function kontak_delete(Kontak $kontak)
     {
         try {
-            $model->delete();
-            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            if (!$this->savePermission($kontak->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $kontak->delete();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -350,13 +304,14 @@ class ProfileController extends Controller
         }
     }
 
-    // Hobby crud =================================================================================
-    public function hobby_select2(Request $request)
+    // Hobi crud =================================================================================
+    public function hobi_select2(Request $request)
     {
         try {
-            $model = Hobby::selectRaw('name as text')
-                ->whereRaw("(`name` like '%$request->search%')")
+            $model = Hobi::selectRaw('nama as text')
+                ->whereRaw("(`nama` like '%$request->search%')")
                 ->distinct()
+                ->orderBy('nama')
                 ->limit(10);
 
             $results = $model->get()->toArray();
@@ -381,30 +336,32 @@ class ProfileController extends Controller
         }
     }
 
-    public function hobby_save(Request $request)
+    public function hobi_save(Request $request)
     {
         try {
             $request->validate([
-                'user_id' => ['required', 'int'],
-                'hobbies' => ['required'],
+                'anggota_id' => ['required', 'int'],
+                'hobis' => ['required'],
             ]);
             DB::beginTransaction();
 
             // cek hak akses
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            // delete hobbies
-            Hobby::where('user_id', '=', $request->user_id)->delete();
+            // delete hobis
+            Hobi::where('anggota_id', '=', $request->anggota_id)->delete();
 
-            // insert hobbies
-            $hobbies = [];
-            foreach ($request->hobbies as $hobby) {
-                $hobbies[] = ['name' => $hobby, 'user_id' => $request->user_id];
+            // insert hobis
+            $hobis = [];
+            foreach ($request->hobis as $hobby) {
+                $hobis[] = ['nama' => $hobby, 'anggota_id' => $request->anggota_id];
             }
 
-            Hobby::insert($hobbies);
+            Hobi::insert($hobis);
 
             DB::commit();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -418,25 +375,26 @@ class ProfileController extends Controller
     {
         try {
             $request->validate([
-                'user_id' => ['required', 'int'],
-                'jenis' => ['required', 'int'],
-                'pendidikan' => ['required', 'string'],
+                'anggota_id' => ['required', 'int'],
+                'jenis_id' => ['required', 'int'],
+                'instansi' => ['required', 'string'],
                 'dari' => ['required', 'int'],
                 'sampai' => ['nullable', 'int'],
                 'jurusan' => ['nullable', 'string'],
                 'keterangan' => ['nullable', 'string'],
             ]);
-            $model = new Pendidikan();
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $pendidikan = new Pendidikan();
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
-            $model->pendidikan_jenis_id = $request->jenis;
-            $model->instansi = $request->pendidikan;
-            $model->dari = $request->dari;
-            $model->sampai = $request->sampai;
-            $model->jurusan = $request->jurusan;
-            $model->keterangan = $request->keterangan;
-            $model->save();
+            $pendidikan->anggota_id = $request->anggota_id;
+            $pendidikan->jenis_id = $request->jenis_id;
+            $pendidikan->instansi = $request->instansi;
+            $pendidikan->dari = $request->dari;
+            $pendidikan->sampai = $request->sampai;
+            $pendidikan->jurusan = $request->jurusan;
+            $pendidikan->keterangan = $request->keterangan;
+            $pendidikan->save();
 
             return response()->json([]);
         } catch (ValidationException $error) {
@@ -452,25 +410,26 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'user_id' => ['required', 'int'],
-                'jenis' => ['required', 'int'],
-                'pendidikan' => ['required', 'string'],
+                'anggota_id' => ['required', 'int'],
+                'jenis_id' => ['required', 'int'],
+                'instansi' => ['required', 'string'],
                 'dari' => ['required', 'int'],
                 'sampai' => ['nullable', 'int'],
                 'jurusan' => ['nullable', 'string'],
                 'keterangan' => ['nullable', 'string'],
             ]);
-            $model = Pendidikan::find($request->id);
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $pendidikan = Pendidikan::find($request->id);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
-            $model->pendidikan_jenis_id = $request->jenis;
-            $model->instansi = $request->pendidikan;
-            $model->dari = $request->dari;
-            $model->sampai = $request->sampai;
-            $model->jurusan = $request->jurusan;
-            $model->keterangan = $request->keterangan;
-            $model->save();
+            $pendidikan->anggota_id = $request->anggota_id;
+            $pendidikan->jenis_id = $request->jenis_id;
+            $pendidikan->instansi = $request->instansi;
+            $pendidikan->dari = $request->dari;
+            $pendidikan->sampai = $request->sampai;
+            $pendidikan->jurusan = $request->jurusan;
+            $pendidikan->keterangan = $request->keterangan;
+            $pendidikan->save();
 
             return response()->json([]);
         } catch (ValidationException $error) {
@@ -483,12 +442,8 @@ class ProfileController extends Controller
 
     public function pendidikan(Request $request)
     {
-        return response()->json(['datas' => $this->getListPendidikan($request->user_id)]);
-    }
+        $anggota = Anggota::findOrFail($request->anggota_id);
 
-    private function getListPendidikan(?int $user_id): mixed
-    {
-        if (!$user_id) return [];
         $a = Pendidikan::tableName;
         $b = PendidikanJenis::tableName;
         $kontak = Pendidikan::select([
@@ -498,23 +453,22 @@ class ProfileController extends Controller
             DB::raw("$a.sampai"),
             DB::raw("$a.jurusan"),
             DB::raw("$a.keterangan"),
-
-            DB::raw("$b.id as pendidikan_id"),
-            DB::raw("$b.nama as pendidikan"),
+            DB::raw("$b.id as jenis_id"),
+            DB::raw("$b.nama as jenis_nama"),
         ])
-            ->where("$a.user_id", '=', $user_id)
-            ->join($b, "$a.pendidikan_jenis_id", '=', "$b.id")
+            ->where("$a.anggota_id", '=', $anggota->id)
+            ->join($b, "$a.jenis_id", '=', "$b.id")
             ->orderBy("$a.dari", 'desc')
             ->get();
 
-        return $kontak;
+        return response()->json(['datas' => $kontak]);
     }
 
-    public function pendidikan_delete(Pendidikan $model)
+    public function pendidikan_delete(Pendidikan $pendidikan)
     {
         try {
-            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
-            $model->delete();
+            if (!$this->savePermission($pendidikan->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $pendidikan->delete();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -530,10 +484,11 @@ class ProfileController extends Controller
             $model = Pendidikan::selectRaw('instansi as text')
                 ->whereRaw("(`instansi` like '%$request->search%')")
                 ->distinct()
+                ->orderBy('instansi')
                 ->limit(10);
 
-            if ($request->pendidikan_jenis_id) {
-                $model->where('pendidikan_jenis_id', '=', $request->pendidikan_jenis_id);
+            if ($request->jenis_id) {
+                $model->where('jenis_id', '=', $request->jenis_id);
             }
 
             $results = $model->get()->toArray();
@@ -563,7 +518,7 @@ class ProfileController extends Controller
     {
         try {
             $request->validate([
-                'user_id' => ['required', 'int'],
+                'anggota_id' => ['required', 'int'],
                 'nama' => ['required', 'string'],
                 'dari' => ['required', 'int'],
                 'sampai' => ['nullable', 'int'],
@@ -571,9 +526,10 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = new PengalamanOrganisasi();
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
+            $model->anggota_id = $request->anggota_id;
             $model->nama = $request->nama;
             $model->dari = $request->dari;
             $model->sampai = $request->sampai;
@@ -595,7 +551,7 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'user_id' => ['required', 'int'],
+                'anggota_id' => ['required', 'int'],
                 'nama' => ['required', 'string'],
                 'dari' => ['required', 'int'],
                 'sampai' => ['nullable', 'int'],
@@ -603,9 +559,10 @@ class ProfileController extends Controller
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = PengalamanOrganisasi::find($request->id);
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
+            $model->anggota_id = $request->anggota_id;
             $model->nama = $request->nama;
             $model->dari = $request->dari;
             $model->sampai = $request->sampai;
@@ -624,13 +581,8 @@ class ProfileController extends Controller
 
     public function pengalaman_organisasi(Request $request)
     {
-        return response()->json(['datas' => $this->getListPengalamanOrganisasi($request->user_id)]);
-    }
-
-    private function getListPengalamanOrganisasi(?int $user_id): mixed
-    {
-        if (!$user_id) return [];
-        $kontak = PengalamanOrganisasi::select([
+        $anggota = Anggota::findOrFail($request->anggota_id);
+        $datas = PengalamanOrganisasi::select([
             'id',
             'nama',
             'dari',
@@ -638,17 +590,17 @@ class ProfileController extends Controller
             'jabatan',
             'keterangan',
         ])
-            ->where("user_id", '=', $user_id)
+            ->where("anggota_id", '=', $anggota->id)
             ->orderBy("dari", 'desc')
             ->get();
-
-        return $kontak;
+        return response()->json(['datas' => $datas]);
     }
+
 
     public function pengalaman_organisasi_delete(PengalamanOrganisasi $model)
     {
         try {
-            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            if (!$this->savePermission($model->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
             return response()->json();
         } catch (ValidationException $error) {
@@ -665,6 +617,7 @@ class ProfileController extends Controller
             $model = PengalamanOrganisasi::selectRaw('nama as text')
                 ->whereRaw("(`nama` like '%$request->search%')")
                 ->distinct()
+                ->orderBy('nama')
                 ->limit(10);
 
             $results = $model->get()->toArray();
@@ -694,14 +647,15 @@ class ProfileController extends Controller
     {
         try {
             $request->validate([
-                'user_id' => ['required', 'int'],
+                'anggota_id' => ['required', 'int'],
                 'pengalaman' => ['required', 'string'],
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = new PengalamanLain();
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
+            $model->anggota_id = $request->anggota_id;
             $model->pengalaman = $request->pengalaman;
             $model->keterangan = $request->keterangan;
             $model->save();
@@ -720,14 +674,15 @@ class ProfileController extends Controller
         try {
             $request->validate([
                 'id' => ['required', 'int'],
-                'user_id' => ['required', 'int'],
+                'anggota_id' => ['required', 'int'],
                 'pengalaman' => ['required', 'string'],
                 'keterangan' => ['nullable', 'string'],
             ]);
             $model = PengalamanLain::find($request->id);
-            if (!$this->savePermission($request->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $anggota = Anggota::findOrFail($request->anggota_id);
+            if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
-            $model->user_id = $request->user_id;
+            $model->anggota_id = $request->anggota_id;
             $model->pengalaman = $request->pengalaman;
             $model->keterangan = $request->keterangan;
             $model->save();
@@ -743,14 +698,23 @@ class ProfileController extends Controller
 
     public function pengalaman_lain(Request $request)
     {
-        return response()->json(['datas' => $this->getListPengalamanLain($request->user_id)]);
+        $anggota = Anggota::findOrFail($request->anggota_id);
+        $datas = PengalamanLain::select([
+            'id',
+            'pengalaman',
+            'keterangan',
+        ])
+            ->where("anggota_id", '=', $anggota->id)
+            ->orderBy("created_at", 'desc')
+            ->get();
+        return response()->json(['datas' => $datas]);
     }
 
     public function pengalaman_lain_delete(PengalamanLain $model)
     {
         try {
+            if (!$this->savePermission($model->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
-            if (!$this->savePermission($model->user_id)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -758,20 +722,5 @@ class ProfileController extends Controller
                 'error' => $error,
             ], 500);
         }
-    }
-
-    private function getListPengalamanLain(?int $user_id): mixed
-    {
-        if (!$user_id) return [];
-        $kontak = PengalamanLain::select([
-            'id',
-            'pengalaman',
-            'keterangan',
-        ])
-            ->where("user_id", '=', $user_id)
-            ->orderBy("created_at", 'desc')
-            ->get();
-
-        return $kontak;
     }
 }
