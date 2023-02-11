@@ -137,6 +137,7 @@ class VillageController extends Controller
         try {
             $model = Village::select(['id', DB::raw('name as text')])
                 ->whereRaw("(`name` like '%$request->search%' or `id` like '%$request->search%')")
+                ->orderBy('name')
                 ->limit(10);
 
             if ($request->district_id) {
