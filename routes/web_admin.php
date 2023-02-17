@@ -20,7 +20,7 @@ use App\Http\Controllers\Admin\Address\ProvinceController;
 use App\Http\Controllers\Admin\Address\RegencieController;
 use App\Http\Controllers\Admin\Address\DistrictController;
 use App\Http\Controllers\Admin\Address\VillageController;
-
+use App\Http\Controllers\Admin\AnggotaController as AdminAnggotaController;
 // Artikel ============================================================================================================
 use App\Http\Controllers\Admin\Artikel\ArtikelController;
 use App\Http\Controllers\Admin\Artikel\KategoriController;
@@ -90,6 +90,19 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
 
     Route::post('/', 'store')->name("$name.store")->middleware("permission:$name.insert");
     Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+    Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+});
+
+$prefix = 'anggota';
+Route::controller(AdminAnggotaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.anggota
+    Route::get('/', 'index')->name($name)->middleware("permission:$name");
+    Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
+
+    Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+    Route::delete('/{anggota}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
 
     Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
     Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
