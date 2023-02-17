@@ -175,7 +175,7 @@
                                     <p class="text-muted d-block">
                                         <small class="text-muted text-purple-1">
                                             <a
-                                                href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                                href="{{ route('tentang.kepengurusan.struktur.periode', $item->periode_slug) }}">
                                                 {{ $item->periode_nama }}
                                             </a>
                                         </small>
@@ -185,7 +185,7 @@
                                 @if ($item->jabatan_nama)
                                     <p class="text-muted d-block">
                                         <small class="text-muted text-purple-1">
-                                            <a href="{{ route('about.kepengurusan.bidang', $item->jabatan_slug) }}">
+                                            <a href="{{ route('tentang.kepengurusan.bidang', $item->jabatan_slug) }}">
                                                 {{ $item->jabatan_nama }}
                                             </a>
                                         </small>

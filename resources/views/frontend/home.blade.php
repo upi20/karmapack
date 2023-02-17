@@ -53,10 +53,10 @@
         <section class="hero-carousel py-5">
             <div class="container-xl d-lg-flex justify-content-between py-30 pt-60">
                 <h4 class="section-title text-center  my-20">
-                    <a class="text-dark" href="{{ route('about.kepengurusan.struktur') }}">Kenali Kami Lebih Dekat</a>
+                    <a class="text-dark" href="{{ route('tentang.kepengurusan.struktur') }}">Kenali Kami Lebih Dekat</a>
                 </h4>
                 <h6 class="text-center text-primary my-20">
-                    <a href="{{ route('about.kepengurusan.struktur') }}">Struktur Kepengurusan</a>
+                    <a href="{{ route('tentang.kepengurusan.struktur') }}">Struktur Kepengurusan</a>
                 </h6>
             </div>
             <div class="row post-carousel-featured post-carousel w-100 px-0 mx-0">
@@ -72,7 +72,7 @@
                         <a href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}">
                             <div class="thumb rounded">
                                 @if ($a->utama == 0)
-                                    <a href="{{ route('about.kepengurusan.bidang', $a->parent_slug) }}"
+                                    <a href="{{ route('tentang.kepengurusan.bidang', $a->parent_slug) }}"
                                         class="category-badge position-absolute">
                                         @if ($a->singkatan)
                                             {{ $a->singkatan }}

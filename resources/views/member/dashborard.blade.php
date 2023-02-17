@@ -266,7 +266,7 @@
                             <ul class="list-style5">
                                 <li>Sejarah</li>
                                 <li>Struktur Kepengurusan (Detail Kepengurusan Saat Ini). [selesai] <a
-                                        href="{{ route('about.kepengurusan.struktur') }}">Kunjungi</a></li>
+                                        href="{{ route('tentang.kepengurusan.struktur') }}">Kunjungi</a></li>
                                 <li>Periode Kepengurusan (List Semua Periode Kepengurusan Karmapack)</li>
                                 <li>Anggaran Dasar Anggaran Rumah Tangga</li>
                             </ul>

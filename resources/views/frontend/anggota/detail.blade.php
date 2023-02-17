@@ -328,7 +328,7 @@
                                                         |
                                                         @if ($item->bidang)
                                                             <a class="text-purple-1"
-                                                                href="{{ route('about.kepengurusan.bidang', $item->slug_bidang) }}">
+                                                                href="{{ route('tentang.kepengurusan.bidang', $item->slug_bidang) }}">
                                                                 {{ $item->jabatan }}
                                                                 {{ $item->bidang ? '->' . ' ' . $item->bidang : '' }}
                                                             </a>
@@ -337,7 +337,7 @@
                                                         @endif
                                                         |
                                                         <a class="text-purple-1"
-                                                            href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                                            href="{{ route('tentang.kepengurusan.struktur.periode', $item->periode_slug) }}">
                                                             {{ $item->periode }}
                                                         </a>
                                                     </div>

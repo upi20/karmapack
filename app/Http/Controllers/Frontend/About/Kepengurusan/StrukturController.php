@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Frontend\About\Kepengurusan;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kepengurusan\Periode;
 use Illuminate\Http\Request;
-use App\Models\Pengurus\Periode;
 use App\Repository\Frontend\About\Kepengurusan\StrukturRepository;
 
 class StrukturController extends Controller
@@ -17,19 +17,17 @@ class StrukturController extends Controller
         return $this->periode($periode, $request);
     }
 
-    public function periode(Periode $model, Request $request = null)
+    public function periode(Periode $periode, Request $request = null)
     {
         $page_attr = [
             // 'loader' => false,
-            'title' => $model->nama,
-            'description' => "STRUKTUR KEPENGURUSAN KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL PERIODE $model->dari - $model->sampai $model->nama",
-            'periode_id' => $model->id,
-            'image' => $model->fotoUrl(),
-            'navigation' => 'about.kepengurusan.struktur',
+            'title' => $periode->nama,
+            'description' => "STRUKTUR KEPENGURUSAN KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL PERIODE $periode->dari - $periode->sampai $periode->nama",
+            'periode_id' => $periode->id,
+            'image' => $periode->fotoUrl(),
+            'navigation' => 'tentang.kepengurusan.struktur',
         ];
-        $member = StrukturRepository::member_list($model->id);
-        $periode = $model;
-        // dd($member);
-        return view('frontend.about.kepengurusan.struktur', compact('page_attr', 'periode', 'member'));
+
+        return view('frontend.tentang.kepengurusan.struktur', compact('page_attr', 'periode'));
     }
 }

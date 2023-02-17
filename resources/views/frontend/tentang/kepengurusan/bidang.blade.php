@@ -12,7 +12,7 @@
                         </div>
 
                         <div class="breadcrumbs__item ">
-                            <a href="{{ route('about.kepengurusan.struktur') }}">Struktur Kepengursan</a>
+                            <a href="{{ route('tentang.kepengurusan.struktur') }}">Struktur Kepengursan</a>
                         </div>
 
                         <div class="breadcrumbs__item ">
@@ -31,14 +31,14 @@
                 <div class="row justify-center text-center">
                     <div class="col-auto">
                         <div data-anim="slide-up delay-1 " class="mb-30">
-                            <img src="{{ $model->fotoUrl() }}" alt="{{ $periode->nama }}"
+                            <img src="{{ $jabatan->fotoUrl() }}" alt="{{ $jabatan->periode->nama }}"
                                 onerror="this.src='{{ asset('assets/image/logo_default.png') }}';this.onerror='';"
                                 style="max-width: 500px; width:100%">
                         </div>
                         <div data-anim="slide-up delay-2 ">
-                            <h1 class="page-header__title uppercase text-24"> BIDANG {{ strtoupper($model->nama) }}
-                                @if ($model->singkatan)
-                                    ({{ $model->singkatan }})
+                            <h1 class="page-header__title uppercase text-24"> BIDANG {{ strtoupper($jabatan->nama) }}
+                                @if ($jabatan->singkatan)
+                                    ({{ $jabatan->singkatan }})
                                 @endif
                             </h1>
                         </div>
@@ -47,10 +47,10 @@
                         </div>
                         <div data-anim="slide-up delay-4">
                             <p class="text-20 fw-500 mt-15">
-                                <a href="{{ route('about.kepengurusan.struktur.periode', $periode->slug) }}"
+                                <a href="{{ route('tentang.kepengurusan.struktur.periode', $jabatan->periode->slug) }}"
                                     class=" text-dark uppercase">
-                                    PERIODE {{ $periode->dari }} - {{ $periode->sampai }}
-                                    {{ strtoupper($periode->nama) }}
+                                    PERIODE {{ $jabatan->periode->dari }} - {{ $jabatan->periode->sampai }}
+                                    {{ strtoupper($jabatan->periode->nama) }}
                                 </a>
                             </p>
                         </div>
@@ -66,50 +66,56 @@
         @endphp
         <div class="d-flex justify-content-centers sm:pl-0 md:pl-20 xl:pl-40 pb-60">
             <table class="table" style="width:100%">
-                @foreach ($member_list as $body)
+                @foreach ($jabatan->pengurus() as $body)
                     @if ($body->list)
-                        <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                        <tr>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500">
-                                {{ ucwords(strtolower($body->jabatan->nama)) }}</td>
+                                {{ ucwords(strtolower($body->jabatan->nama)) }}
+                            </td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                                 @if (isset($body->pejabat[0]))
                                     @php
                                         $pejabat = $body->pejabat[0];
-                                        $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                        $url = $pejabat->anggota->user->username ? url($pejabat->anggota->user->username) : route('anggota.id', $pejabat->anggota->id);
                                     @endphp
-                                    <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
+                                    <a href="{{ $url }}">
+                                        {{ ucwords(strtolower($pejabat->anggota->nama)) }}
+                                    </a>
                                 @endif
                             </td>
                         </tr>
                         @foreach ($body->pejabat as $key => $pejabat)
                             @if ($key != 0)
-                                <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                                <tr>
                                     <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                     <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                                     <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
                                     <td style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                                         @php
-                                            $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                            $url = $pejabat->anggota->user->username ? url($pejabat->anggota->user->username) : route('anggota.id', $pejabat->anggota->id);
                                         @endphp
-                                        <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
+                                        <a href="{{ $url }}">
+                                            {{ ucwords(strtolower($pejabat->anggota->nama)) }}
+                                        </a>
                                     </td>
                                 </tr>
                             @endif
                         @endforeach
                     @else
-                        <tr data-anim="slide-up delay-{{ $anim_sequence++ }}">
+                        <tr>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500"></td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500">
-                                {{ ucwords(strtolower($body->jabatan->nama)) }}</td>
+                                {{ ucwords(strtolower($body->jabatan->nama)) }}
+                            </td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500">:</td>
                             <td style="border: 0;" class="py-10 px-3 text-18 fw-500 text-purple-1">
                                 @php
                                     $pejabat = $body->pejabat;
-                                    $url = $pejabat->username ? url($pejabat->username) : route('anggota.id', $pejabat->id);
+                                    $url = $pejabat->anggota->user->username ? url($pejabat->anggota->user->username) : route('anggota.id', $pejabat->anggota->id);
                                 @endphp
-                                <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->name)) }}</a>
+                                <a href="{{ $url }}">{{ ucwords(strtolower($pejabat->anggota->nama)) }}</a>
                             </td>
                         </tr>
                     @endif
@@ -118,30 +124,30 @@
         </div>
         <div class="row justify-center text-center">
             <div class="col-auto">
-                @if ($model->visi)
+                @if ($jabatan->visi)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
                         <h1 class="page-header__title uppercase text-20">Visi</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
-                        <p class="text-17 fw-500 mt-15"> {!! $model->visi !!}</p>
+                        <p class="text-17 fw-500 mt-15"> {!! $jabatan->visi !!}</p>
                     </div>
                 @endif
 
-                @if ($model->misi)
+                @if ($jabatan->misi)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
                         <h1 class="page-header__title uppercase text-20">Visi</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
-                        <p class="text-17 fw-500 mt-15"> {!! $model->misi !!}</p>
+                        <p class="text-17 fw-500 mt-15"> {!! $jabatan->misi !!}</p>
                     </div>
                 @endif
 
-                @if ($model->slogan)
+                @if ($jabatan->slogan)
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}" class=" pt-40">
                         <h1 class="page-header__title uppercase text-20">Slogan</h1>
                     </div>
                     <div data-anim="slide-up delay-{{ $anim_sequence++ }}">
-                        <p class="text-17 fw-500 mt-15">{!! $model->slogan !!}</p>
+                        <p class="text-17 fw-500 mt-15">{!! $jabatan->slogan !!}</p>
                     </div>
                 @endif
 

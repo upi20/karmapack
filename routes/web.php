@@ -70,21 +70,21 @@ Route::controller(ArtikelController::class)->prefix($prefix)->group(function () 
 
 
 // Periode Kepengurusan ===============================================================================================
-$name = 'about';
+$name = 'tentang';
 Route::group(['prefix' => $name], function () use ($name) {
     $prefix = 'kepengurusan';
     Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // about.kepengurusan
+        $name = "$name.$prefix"; // tentang.kepengurusan
 
         $prefix = 'struktur';
         Route::controller(StrukturController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
-            $name = "$name.$prefix"; // about.kepengurusan.struktur
+            $name = "$name.$prefix"; // tentang.kepengurusan.struktur
             Route::get('/', 'index')->name($name);
-            Route::get('/{model:slug}', 'periode')->name("$name.periode");
+            Route::get('/{periode:slug}', 'periode')->name("$name.periode");
         });
 
         // bidang
-        Route::get('/bidang/{model:slug}', [BidangController::class, 'index'])->name("$name.bidang");
+        Route::get('/bidang/{jabatan:slug}', [BidangController::class, 'index'])->name("$name.bidang");
     });
 
     // sejarah
