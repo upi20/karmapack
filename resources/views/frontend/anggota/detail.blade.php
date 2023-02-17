@@ -25,6 +25,7 @@
             </div>
         </div>
     </section>
+
     @php
         $anim = 1;
     @endphp
@@ -35,34 +36,34 @@
                 <div class="col-xl-8 col-lg-9 col-md-11">
                     <div class="page-header__content">
                         <div class="page-header__img" data-anim-child="slide-left delay-{{ $anim++ }}">
-                            <img onerror="this.src='{{ asset('assets/templates/admin/profile.png') }}';this.onerror='';"
-                                src="{{ asset('assets/pengurus/profile/' . $model->foto) }}" alt="{{ $model->name }}"
+                            <img onerror="this.src='{{ $anggota->fotoUrlDefault() }}';this.onerror='';"
+                                src="{{ $anggota->fotoUrl() }}" alt="{{ $anggota->nama }}"
                                 style="margin: auto;position: relative;margin: auto;width: 150px;height: 150px;max-height: 150px;border-radius: 150px;object-fit: cover; /* cover, contain, fill, scale-down */object-position: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
                         </div>
 
                         <div class="page-header__info pt-20" data-anim-child="slide-right delay-{{ $anim++ }}">
-                            <h1 class="text-30 lh-14 fw-700 text-white">{{ $model->name }}</h1>
-                            @if ($model->username)
-                                <div class="text-white">{{ '@' . $model->username }}</div>
+                            <h1 class="text-30 lh-14 fw-700 text-white">{{ $anggota->nama }}</h1>
+                            @if ($user->username)
+                                <div style="color: black">{{ '@' . $user->username }}</div>
                             @endif
-                            @if ($model->bio)
+                            @if ($anggota->bio)
                                 <div class="d-flex x-gap-20 pt-15">
                                     <div class="d-flex items-center text-white">
                                         <i class="fas fa-user-edit mr-10"></i>
-                                        <div class="text-13 lh-1">{{ $model->bio }}</div>
+                                        <div class="text-13 lh-1">{{ $anggota->bio }}</div>
                                     </div>
                                 </div>
                             @endif
                         </div>
 
                         <div class="d-md-flex items-center mt-30">
-                            @if ($model->whatsapp)
-                                <a href="https://wa.me/+62{{ $model->whatsapp }}" class="button -md -green-1 text-dark-1"
+                            @if ($anggota->whatsapp)
+                                <a href="https://wa.me/+62{{ $anggota->whatsapp }}" class="button -md -green-1 text-dark-1"
                                     data-anim-child="slide-left delay-{{ $anim++ }}">
                                     <i class="fab fa-whatsapp mr-10"></i>Whatsapp
                                 </a>
-                            @elseif ($model->telepon)
-                                <a href="tel:{{ $model->whatsapp }}" class="button -md -green-1 text-dark-1"
+                            @elseif ($anggota->telepon)
+                                <a href="tel:{{ $anggota->whatsapp }}" class="button -md -green-1 text-dark-1"
                                     data-anim-child="slide-left delay-{{ $anim++ }}">
                                     <i class="fas fa-phone mr-10"></i>Telepon
                                 </a>
@@ -73,38 +74,37 @@
 
                             <div class="d-flex items-center x-gap-15 text-white ml-25 social-media-container">
                                 @php
-                                    $user_link = $model->username ? url($model->username) : route('anggota.id', $model->id);
+                                    $user_link = $user->username ? url($user->username) : route('anggota.id', $user->id);
                                 @endphp
                                 <a target="_blank" href="https://www.facebook.com/sharer.php?u={{ $user_link }}"
                                     title="Share To Facebook" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i class="fab fa-facebook-f text-white"></i>
                                 </a>
                                 <a target="_blank"
-                                    href="https://api.whatsapp.com/send?text={{ $user_link }} {{ $model->name }}"
+                                    href="https://api.whatsapp.com/send?text={{ $user_link }} {{ $user->name }}"
                                     title="Share To Whatsapp" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="fab fa-whatsapp"></i>
+                                    <i class="fab fa-whatsapp text-white"></i>
                                 </a>
                                 <a target="_blank"
-                                    href="https://twitter.com/share?url={{ $user_link }}&text={{ $model->name }}"
+                                    href="https://twitter.com/share?url={{ $user_link }}&text={{ $user->name }}"
                                     title="Share To Twitter" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="fab fa-twitter"></i></a>
+                                    <i class="fab fa-twitter text-white"></i></a>
                                 <a target="_blank"
-                                    href="https://www.linkedin.com/shareArticle?mini=true&url={{ $user_link }}&title={{ $model->name }}&summary={{ $model->bio }}"
+                                    href="https://www.linkedin.com/shareArticle?mini=true&url={{ $user_link }}&title={{ $user->name }}&summary={{ $user->bio }}"
                                     title="Share To Linkedin" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="fab fa-linkedin-in"></i>
+                                    <i class="fab fa-linkedin-in text-white"></i>
                                 </a>
                                 <a target="_blank"
-                                    href="https://telegram.me/share/url?url={{ $user_link }}&text={{ $model->name }}"
+                                    href="https://telegram.me/share/url?url={{ $user_link }}&text={{ $user->name }}"
                                     title="Share To Telegram" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="fab fa-telegram-plane"></i>
+                                    <i class="fab fa-telegram-plane text-white"></i>
                                 </a>
                                 <a target="_blank"
-                                    href="mailto:?subject={{ $model->name }}&body=Check out this site: {{ $user_link }}"
+                                    href="mailto:?subject={{ $user->name }}&body=Check out this site: {{ $user_link }}"
                                     title="Share Via Email" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                    <i class="far fa-envelope"></i>
+                                    <i class="far fa-envelope text-white"></i>
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -129,15 +129,15 @@
                         <div class="py-30 px-30">
                             <div class="y-gap-40">
 
-                                @if ($model->angkatan)
+                                @if ($anggota->angkatan)
                                     <div class="ml-10 w-1/1" data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Angkatan (Masuk Tahun)</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                             <div class="d-flex items-center">
                                                 <div class="text-13 lh-1">
-                                                    <a href="{{ url('anggota?search=' . $model->angkatan) }}"
+                                                    <a href="{{ url('anggota?search=' . $anggota->angkatan) }}"
                                                         class="text-purple-1">
-                                                        {{ $model->angkatan }}
+                                                        {{ $anggota->angkatan }}
                                                     </a>
                                                 </div>
                                             </div>
@@ -145,16 +145,16 @@
                                     </div>
                                 @endif
 
-                                @if ($model->profesi)
+                                @if ($anggota->profesi)
                                     <div class="ml-10 w-1/1 border-top-light"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Profesi Sekarang</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                             <div class="d-flex items-center">
                                                 <div class="text-13 lh-1">
-                                                    <a href="{{ url('anggota?search=' . $model->profesi) }}"
+                                                    <a href="{{ url('anggota?search=' . $anggota->profesi) }}"
                                                         class="text-purple-1">
-                                                        {{ $model->profesi }}
+                                                        {{ $anggota->profesi }}
                                                     </a>
                                                 </div>
                                             </div>
@@ -162,16 +162,16 @@
                                     </div>
                                 @endif
 
-                                @if ($model->profesi)
+                                @if ($anggota->jenis_kelamin)
                                     <div class="ml-10 w-1/1 border-top-light"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Jenis Kelamin</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                             <div class="d-flex items-center">
                                                 <div class="text-13 lh-1">
-                                                    <a href="{{ url('anggota?search=' . $model->gender) }}"
+                                                    <a href="{{ url('anggota?search=' . $anggota->jenis_kelamin) }}"
                                                         class="text-purple-1">
-                                                        {{ $model->gender }}
+                                                        {{ $anggota->jenis_kelamin }}
                                                     </a>
                                                 </div>
                                             </div>
@@ -179,40 +179,45 @@
                                     </div>
                                 @endif
 
-                                @if ($model->alamat_lengkap || $model->province_id || $model->regency_id || $model->district_id || $model->village_id)
+                                @if (
+                                    $anggota->alamat_lengkap ||
+                                        $anggota->province_id ||
+                                        $anggota->regency_id ||
+                                        $anggota->district_id ||
+                                        $anggota->village_id)
                                     <div class="ml-10 w-1/1 border-top-light"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Alamat</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                             <div class="d-flex items-center">
                                                 <div class="text-13">
-                                                    {{ $model->alamat_lengkap }}
-                                                    @if ($village)
+                                                    {{ $anggota->alamat_lengkap }}
+                                                    @if ($anggota->village)
                                                         , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $village->name) }}"
+                                                            href="{{ url('anggota?search=' . $anggota->village->name) }}"
                                                             data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $village->name }}
+                                                            {{ $anggota->village->name }}
                                                         </a>
                                                     @endif
-                                                    @if ($district)
+                                                    @if ($anggota->district)
                                                         , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $district->name) }}"
+                                                            href="{{ url('anggota?search=' . $anggota->district->name) }}"
                                                             data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $district->name }}
+                                                            {{ $anggota->district->name }}
                                                         </a>
                                                     @endif
-                                                    @if ($regencie)
+                                                    @if ($anggota->regencie)
                                                         , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $regencie->name) }}"
+                                                            href="{{ url('anggota?search=' . $anggota->regencie->name) }}"
                                                             data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $regencie->name }}
+                                                            {{ $anggota->regencie->name }}
                                                         </a>
                                                     @endif
-                                                    @if ($province)
+                                                    @if ($anggota->province)
                                                         , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $province->name) }}"
+                                                            href="{{ url('anggota?search=' . $anggota->province->name) }}"
                                                             data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $province->name }}
+                                                            {{ $anggota->province->name }}
                                                         </a>
                                                     @endif
                                                 </div>
@@ -220,14 +225,12 @@
                                         </div>
                                     </div>
                                 @endif
-
-
                             </div>
                         </div>
                     </div>
                 </div>
 
-                @if ($model->whatsapp || $model->telepon || $contacts->count() > 0)
+                @if ($anggota->whatsapp || $anggota->telepon || $anggota->kontaks()->count() > 0)
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -237,15 +240,15 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @if ($model->telepon)
+                                    @if ($anggota->telepon)
                                         <div class="ml-10 w-1/1" data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500"><i class="fas fa-phone me-2"></i> Telepon</h4>
                                             <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                                 <div class="d-flex items-center">
                                                     <div class="text-13 lh-1">
-                                                        <a class="text-purple-1" href="tel:{{ $model->telepon }}"
+                                                        <a class="text-purple-1" href="tel:{{ $anggota->telepon }}"
                                                             target="_blank">
-                                                            {{ $model->telepon }}
+                                                            {{ $anggota->telepon }}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -253,7 +256,7 @@
                                         </div>
                                     @endif
 
-                                    @if ($model->whatsapp)
+                                    @if ($anggota->whatsapp)
                                         <div class="ml-10 w-1/1 border-top-light"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500"><i class="fab fa-whatsapp me-2"></i> Whatsapp
@@ -262,9 +265,9 @@
                                                 <div class="d-flex items-center">
                                                     <div class="text-13 lh-1">
                                                         <a class="text-purple-1"
-                                                            href="https://wa.me/+62{{ $model->whatsapp }}"
+                                                            href="https://wa.me/+62{{ $anggota->whatsapp }}"
                                                             target="_blank">
-                                                            +62{{ $model->whatsapp }}
+                                                            +62{{ $anggota->whatsapp }}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -272,33 +275,32 @@
                                         </div>
                                     @endif
 
-                                    @foreach ($contacts as $item)
+                                    @foreach ($anggota->kontaks()->with('jenis')->get() as $kontak)
                                         <div class="ml-10 w-1/1 border-top-light"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500">
-                                                <i class="{{ $item->icon }} me-2"></i>
-                                                {{ $item->kontak }}
+                                                <i class="{{ $kontak->jenis->icon }} me-2"></i>
+                                                {{ $kontak->jenis->nama }}
                                             </h4>
                                             <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                                 <div class="d-flex items-center">
                                                     <div class="text-13 lh-1">
-                                                        <a class="text-purple-1" href="{{ $item->value }}"
+                                                        <a class="text-purple-1" href="{{ $kontak->nilai }}"
                                                             target="_blank">
-                                                            {{ $item->value }}
+                                                            {{ $kontak->nilai }}
                                                         </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endif
 
-                @if ($kepengurusan->count())
+                @if ($anggota->anggotaKepengurusans()->count())
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -308,7 +310,7 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @foreach ($kepengurusan as $k => $item)
+                                    @foreach ($anggota->frontendDetailKepengurusans() as $k => $item)
                                         <div class="ml-10 w-1/1 {{ $k > 0 ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap">
@@ -343,14 +345,13 @@
                                             </div>
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endif
 
-                @if ($pendidikan->count())
+                @if ($anggota->pendidikans()->count())
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -360,25 +361,25 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @foreach ($pendidikan as $k => $item)
+                                    @foreach ($anggota->pendidikans()->orderBy('dari', 'desc')->get() as $k => $pendidikan)
                                         <div class="ml-10 w-1/1 {{ $k > 0 ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500">
                                                 <a class="text-purple-1"
-                                                    href="{{ url('anggota?search=') . $item->instansi }}">
-                                                    {{ $item->instansi }}
+                                                    href="{{ url('anggota?search=') . $pendidikan->instansi }}">
+                                                    {{ $pendidikan->instansi }}
                                                 </a>
                                             </h4>
                                             <div class="d-flex flex-column x-gap-20 y-gap-10 flex-wrap pt-10">
                                                 <div class="text-13">
-                                                    {{ $item->dari }} -
-                                                    {{ $item->sampai ? $item->sampai : 'sekarang' }}
+                                                    {{ $pendidikan->dari }} -
+                                                    {{ $pendidikan->sampai ? $pendidikan->sampai : 'sekarang' }}
                                                 </div>
-                                                @if ($item->jurusan)
-                                                    <div class="text-13">{{ $item->jurusan }}</div>
+                                                @if ($pendidikan->jurusan)
+                                                    <div class="text-13">{{ $pendidikan->jurusan }}</div>
                                                 @endif
-                                                @if ($item->keterangan)
-                                                    <div class="text-13">{{ $item->keterangan }}</div>
+                                                @if ($pendidikan->keterangan)
+                                                    <div class="text-13">{{ $pendidikan->keterangan }}</div>
                                                 @endif
                                             </div>
                                         </div>
@@ -390,7 +391,7 @@
                     </div>
                 @endif
 
-                @if ($pengalaman_organisasi->count())
+                @if ($anggota->pengalamanOrganisasis->count())
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -400,7 +401,7 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @foreach ($pengalaman_organisasi as $k => $item)
+                                    @foreach ($anggota->pengalamanOrganisasis as $k => $item)
                                         <div class="ml-10 w-1/1 {{ $k > 0 ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500">
@@ -427,7 +428,7 @@
                     </div>
                 @endif
 
-                @if ($pengalaman_lain->count())
+                @if ($anggota->pengalamanLains->count())
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -437,7 +438,7 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @foreach ($pengalaman_lain as $k => $item)
+                                    @foreach ($anggota->pengalamanLains as $k => $item)
                                         <div class="ml-10 w-1/1 {{ $k > 0 ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <div class="text-13">{{ $item->pengalaman }}</div>
@@ -450,7 +451,7 @@
                     </div>
                 @endif
 
-                @if ($hobbies->count())
+                @if ($anggota->hobis->count())
                     <div class="grid-item col-xl-4 col-md-6 col-12"
                         data-anim-child="slide-left delay-{{ $anim++ }}">
                         <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100 m-2">
@@ -460,9 +461,9 @@
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
 
-                                    @foreach ($hobbies as $k => $item)
+                                    @foreach ($anggota->hobis as $k => $item)
                                         <a class="button -dark-1 -rounded text-white"
-                                            href="{{ url('anggota?search=' . $item->name) }}"
+                                            href="{{ url('anggota?search=' . $item->nama) }}"
                                             style="
                                             border-radius: 16px;
                                             padding: 8px;
@@ -472,7 +473,7 @@
                                             margin-bottom: 8px;
                                             font-size: 0.8em;
                                         "
-                                            data-anim-child="slide-left delay-{{ $anim++ }}">{{ $item->name }}
+                                            data-anim-child="slide-left delay-{{ $anim++ }}">{{ $item->nama }}
                                         </a>
                                     @endforeach
 
@@ -503,6 +504,10 @@
                 margin-top: 16px;
                 margin-left: 0 !important;
             }
+        }
+
+        .sosmed:hover {
+            text: black !important;
         }
     </style>
 @endsection

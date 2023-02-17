@@ -33,6 +33,7 @@ use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranController
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
+use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
 use App\Models\Pendaftaran\GForm;
@@ -94,11 +95,11 @@ Route::group(['prefix' => $name], function () use ($name) {
 
 
 
-// Member =============================================================================================================
+// Anggota =============================================================================================================
 $name = 'anggota';
-Route::controller(MemberController::class)->prefix($name)->group(function () use ($name) {
+Route::controller(AnggotaController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
-    Route::get('/{model:id}', 'member')->name("$name.id");
+    Route::get('/{anggota:id}', 'anggota')->name("$name.id");
 });
 // ====================================================================================================================
 
@@ -191,7 +192,7 @@ Route::get('/frontend2', [HomeController::class, 'fronted2'])->name('frontend2')
 
 
 // profile username ===================================================================================================
-Route::get('/{model:username}', [MemberController::class, 'member'])->name("anggota.username");
+Route::get('/{user:username}', [AnggotaController::class, 'user'])->name("anggota.username");
 
 // Gform
 Route::get('/f/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");
