@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 // ====================================================================================================================
 // Admin ==============================================================================================================
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\SocialMediaController;
 use App\Http\Controllers\Admin\ContactController;
@@ -81,19 +80,6 @@ Route::group(
         Route::get('/hbn', 'hbn')->name("$name.hbn");
     }
 );
-
-$prefix = 'user';
-Route::controller(UserController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
-    $name = "$name.$prefix"; // admin.user
-    Route::get('/', 'index')->name($name)->middleware("permission:$name");
-    Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
-
-    Route::post('/', 'store')->name("$name.store")->middleware("permission:$name.insert");
-    Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
-
-    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
-    Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
-});
 
 $prefix = 'anggota';
 Route::controller(AdminAnggotaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
@@ -269,7 +255,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.profile.pendidikan_jenis
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
-        Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
     });
 
@@ -278,7 +264,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         $name = "$name.$prefix"; // admin.profile.kontak_tipe
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
-        Route::delete('/{id}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
     });
 });

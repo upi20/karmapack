@@ -85,7 +85,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <button type="submit" class="btn btn-primary" form="app-form">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="card-footer text-end">
                     <button type="submit" class="btn btn-primary" form="meta-form">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                 </div>
             </div>
@@ -163,7 +163,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-image-title">View Foto</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-image-title">View Foto</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -172,7 +172,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -183,7 +183,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-meta_list-title"></h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-meta_list-title"></h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
 
@@ -209,11 +209,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" form="meta_list_form">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -316,7 +316,7 @@
                 resetErrorAfterInput();
                 var formData = new FormData(this);
                 const submit_element = $(this).parent().parent().find('button[type=submit]');
-                setBtnLoading(submit_element, 'Save Changes');
+                setBtnLoading(submit_element, 'Simpan Perubahan');
                 const route = ($('#meta_list_id').val() == '') ?
                     "{{ route(h_prefix('meta.insert')) }}" :
                     "{{ route(h_prefix('meta.update')) }}";
@@ -357,7 +357,7 @@
                     },
                     complete: function() {
                         setBtnLoading(submit_element,
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -420,8 +420,8 @@
 
         function meta_list_delete(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'

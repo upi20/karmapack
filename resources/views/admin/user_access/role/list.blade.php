@@ -2,9 +2,9 @@
 
 @section('content')
     @php
-    $can_insert = auth_can('h_prefix().insert');
-    $can_update = auth_can('h_prefix().update');
-    $can_delete = auth_can('h_prefix().delete');
+        $can_insert = auth_can('h_prefix().insert');
+        $can_update = auth_can('h_prefix().update');
+        $can_delete = auth_can('h_prefix().delete');
     @endphp
     <!-- Row -->
     <div class="row row-sm">
@@ -127,6 +127,7 @@
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -145,8 +146,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'

@@ -2,7 +2,7 @@
 
 @section('content')
     @php
-    $can_setting = auth_can(h_prefix('setting'));
+        $can_setting = auth_can(h_prefix('setting'));
     @endphp
     <!-- Row -->
     <div class="row row-sm">
@@ -87,7 +87,7 @@
                                         <div style="clear: both"></div>
                                         <button type="submit" form="setting_form" class="btn btn-rounded btn-md btn-info"
                                             data-toggle="tooltip" title="Simpan Setting" id="setting_btn_submit">
-                                            <li class="fas fa-save mr-1"></li> Save Changes
+                                            <li class="fas fa-save mr-1"></li> Simpan Perubahan
                                         </button>
                                     </div>
                                 </div>
@@ -186,6 +186,7 @@
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -200,7 +201,7 @@
                     e.preventDefault();
                     resetErrorAfterInput();
                     var formData = new FormData(this);
-                    setBtnLoading('#setting_btn_submit', 'Save Changes');
+                    setBtnLoading('#setting_btn_submit', 'Simpan Perubahan');
                     $.ajax({
                         type: "POST",
                         url: "{{ route(h_prefix('setting')) }}",
@@ -237,7 +238,7 @@
                         },
                         complete: function() {
                             setBtnLoading('#setting_btn_submit',
-                                '<li class="fas fa-save mr-1"></li> Save changes',
+                                '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                                 false);
                         }
                     });

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\AnggotaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Member\DashboardController;
 use App\Http\Controllers\Member\KataAlumniController;
 use App\Http\Controllers\Member\ProfileController;

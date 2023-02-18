@@ -1,10 +1,10 @@
 @extends('templates.admin.master')
 @section('content')
     @php
-    $can_insert = auth_can(h_prefix('insert'));
-    $can_update = auth_can(h_prefix('update'));
-    $can_delete = auth_can(h_prefix('delete'));
-    $can_save = auth_can(h_prefix('save'));
+        $can_insert = auth_can(h_prefix('insert'));
+        $can_update = auth_can(h_prefix('update'));
+        $can_delete = auth_can(h_prefix('delete'));
+        $can_save = auth_can(h_prefix('save'));
     @endphp
     <div class="row">
         <div class="col-lg-6">
@@ -132,7 +132,7 @@
                         </div>
                         <div class="card-footer text-end">
                             <button type="submit" class="btn btn-primary" id="btn-save" form="menu-form">
-                                <li class="fas fa-save mr-1"></li> Save changes
+                                <li class="fas fa-save mr-1"></li> Simpan Perubahan
                             </button>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                 e.preventDefault();
                 var formData = new FormData(this);
                 formData.append('sequence', sequence_max++);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 resetErrorAfterInput();
                 const route = isUpdate ? `{{ route(h_prefix('update')) }}` :
                     `{{ route(h_prefix('insert')) }}`;
@@ -247,7 +247,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -405,8 +405,8 @@
 
         function deleteFun(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'

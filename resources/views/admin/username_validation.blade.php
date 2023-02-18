@@ -57,7 +57,7 @@
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: "{{ route('admin.username_validation.save') }}",
@@ -95,7 +95,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });

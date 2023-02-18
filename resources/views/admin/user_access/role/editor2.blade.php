@@ -46,7 +46,7 @@
         </div>
         <div class="card-footer text-end">
             <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                <li class="fas fa-save mr-1"></li> Save changes
+                <li class="fas fa-save mr-1"></li> Simpan Perubahan
             </button>
         </div>
     </div>
@@ -67,7 +67,7 @@
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: $('#id').val() == '' ? `{{ route(h_prefix('store', 2)) }}` :
@@ -112,7 +112,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });

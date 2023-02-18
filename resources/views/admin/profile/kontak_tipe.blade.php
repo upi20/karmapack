@@ -2,56 +2,73 @@
 
 @section('content')
     @php
-    $can_insert = auth_can(h_prefix('insert'));
-    $can_update = auth_can(h_prefix('update'));
-    $can_delete = auth_can(h_prefix('delete'));
+        $can_insert = auth_can(h_prefix('insert'));
+        $can_update = auth_can(h_prefix('update'));
+        $can_delete = auth_can(h_prefix('delete'));
     @endphp
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Status Tipe Kontak</h3>
+                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
                     @if ($can_insert)
                         <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Tambah
                         </button>
                     @endif
                 </div>
                 <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Tipe Kontak</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">All Tipe Kontak</option>
-                                <option value="1">Dipakai</option>
-                                <option value="0">Tidak Dipakai</option>
-                            </select>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default active mb-2">
+                            <div class="panel-heading " role="tab" id="headingOne1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        Filter Data
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne1">
+                                <div class="panel-body">
+                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                        <div class="form-group float-start me-2" style="width: 250px">
+                                            <label for="filter_status">Status</label>
+                                            <br>
+                                            <select class="form-control" id="filter_status" name="filter_status"
+                                                style="width: 250px">
+                                                <option value="">Semua</option>
+                                                <option value="1">Dipakai</option>
+                                                <option value="0">Tidak Dipakai</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                    <div style="clear: both"></div>
+                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                        data-toggle="tooltip" title="Refresh Filter Table">
+                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Icon</th>
-                                    <th>Keterangan</th>
-                                    <th>Kontak</th>
-                                    <th>Status</th>
-                                    @if ($can_update || $can_delete)
-                                        <th>Action</th>
-                                    @endif
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
                     </div>
+                    <table class="table table-striped" id="tbl_main">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Icon</th>
+                                <th>Keterangan</th>
+                                <th>Status</th>
+                                @if ($can_update || $can_delete)
+                                    <th>Aksi</th>
+                                @endif
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -61,7 +78,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -70,8 +87,8 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="icon">Icon <span class="text-danger">*</span></label>
@@ -79,13 +96,15 @@
                                 placeholder="Menggunakan fontawesome 5.5 versi gratis" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="keterangan">Keterangan <span class="text-danger">*</span></label>
+                            <label class="form-label" for="keterangan">Keterangan <span
+                                    class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="keterangan" name="keterangan"
-                                placeholder="Enter Keterangan" required="" />
+                                placeholder="Keterangan" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
-                            <select class="form-control" style="width: 100%;" required="" id="status" name="status">
+                            <select class="form-control" style="width: 100%;" required="" id="status"
+                                name="status">
                                 <option value="1">Dipakai</option>
                                 <option value="0">Tidak Dipakai</option>
                             </select>
@@ -94,11 +113,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -134,29 +153,6 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            const column = [];
-            if (can_update || can_delete) {
-                column.push({
-                    data: 'id',
-                    name: 'id',
-                    render(data, type, full, meta) {
-                        const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data"
-                        data-id="${full.id}"
-                                data-nama="${full.nama}"
-                                data-status="${full.status}"
-                                data-keterangan="${full.keterangan}"
-                                data-icon="${full.icon}"
-                                onClick="editFunc(this)">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
-                        return btn_update + btn_delete;
-                    },
-                    orderable: false
-                });
-            }
             const new_table = table_html.DataTable({
                 searchDelay: 500,
                 processing: true,
@@ -193,26 +189,45 @@
                         name: 'keterangan'
                     },
                     {
-                        data: 'kontak',
-                        name: 'kontak'
-                    },
-                    {
-                        data: 'status_str',
+                        data: 'status',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                'badge bg-danger';
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_el = full.status == 1 ? 'success' :
+                                'danger';
+                            const text = full.status == 1 ? 'Dipakai' :
+                                'Tidak Dipakai';
+                            return `<i class="fas fa-circle text-${class_el} ms-0 me-2"></i>${text}`;
                         },
                     },
-                    ...column
+                    ...(can_update || can_delete ? [{
+                        data: 'id',
+                        name: 'id',
+                        render(data, type, full, meta) {
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data"
+                                data-id="${full.id}"
+                                data-nama="${full.nama}"
+                                data-icon="${full.icon}"
+                                data-status="${full.status}"
+                                data-keterangan="${full.keterangan}"
+                                onClick="editFunc(this)">
+                                <i class="fas fa-edit"></i></button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>` : '';
+                            return btn_update + btn_delete;
+                        },
+                        orderable: false
+                    }] : []),
                 ],
                 order: [
                     [1, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -232,7 +247,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 const route = ($('#id').val() == '') ?
                     "{{ route(h_prefix('insert')) }}" :
                     "{{ route(h_prefix('update')) }}";
@@ -276,7 +291,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -285,7 +300,7 @@
 
         function add() {
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add Tipe Kontak");
+            $('#modal-default-title').html("Tambah Jenis Kontak");
             $('#modal-default').modal('show');
             $('#id').val('');
             resetErrorAfterInput();
@@ -294,7 +309,7 @@
 
         function editFunc(datas) {
             const data = datas.dataset;
-            $('#modal-default-title').html("Edit Tipe Kontak");
+            $('#modal-default-title').html("Ubah Jenis Kontak");
             $('#modal-default').modal('show');
             $('#MainForm').trigger("reset");
             $('#id').val(data.id);
@@ -306,8 +321,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -333,7 +348,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Tipe Kontak  deleted successfully',
+                                title: 'Data berhasil dihapus',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

@@ -1,21 +1,21 @@
 @extends('templates.admin.master')
 @php
-$is_edit = isset($edit);
-$id = $is_edit ? $model->id : '';
-$route = $is_edit ? route('admin.pengurus.periode.update') : route('admin.pengurus.periode.insert');
-$nama = $is_edit ? $model->nama : '';
-$dari = $is_edit ? $model->dari : '';
-$sampai = $is_edit ? $model->sampai : '';
-$slogan = $is_edit ? $model->slogan : '';
-$slug = $is_edit ? $model->slug : '';
-$visi = $is_edit ? $model->visi : '';
-$misi = $is_edit ? $model->misi : '';
-$filosofi_logo = $is_edit ? $model->filosofi_logo : '';
-$foto = $is_edit ? $model->foto : '';
-$status = $is_edit ? $model->status : 1;
-$status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
-$foto_required = $is_edit ? '' : 'required';
-$image_folder = isset($image_folder) ? $image_folder : false;
+    $is_edit = isset($edit);
+    $id = $is_edit ? $model->id : '';
+    $route = $is_edit ? route('admin.pengurus.periode.update') : route('admin.pengurus.periode.insert');
+    $nama = $is_edit ? $model->nama : '';
+    $dari = $is_edit ? $model->dari : '';
+    $sampai = $is_edit ? $model->sampai : '';
+    $slogan = $is_edit ? $model->slogan : '';
+    $slug = $is_edit ? $model->slug : '';
+    $visi = $is_edit ? $model->visi : '';
+    $misi = $is_edit ? $model->misi : '';
+    $filosofi_logo = $is_edit ? $model->filosofi_logo : '';
+    $foto = $is_edit ? $model->foto : '';
+    $status = $is_edit ? $model->status : 1;
+    $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
+    $foto_required = $is_edit ? '' : 'required';
+    $image_folder = isset($image_folder) ? $image_folder : false;
 @endphp
 @section('content')
     <div class="card">
@@ -133,7 +133,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -142,7 +142,7 @@ $image_folder = isset($image_folder) ? $image_folder : false;
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
