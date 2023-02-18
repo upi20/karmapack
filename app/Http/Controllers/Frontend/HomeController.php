@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Artikel\Artikel;
 use App\Models\Galeri;
 use App\Models\Instagram;
+use App\Models\Kepengurusan\Periode as KepengurusanPeriode;
 use App\Models\Pengurus\Jabatan;
 use App\Models\Pengurus\Periode;
 use App\Models\User;
@@ -17,29 +18,27 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $periode = Periode::where('status', '=', '1')
+        $periode = KepengurusanPeriode::where('status', '=', '1')
             ->first();
         if (!$periode) abort(404);
         return $this->periode($periode, $request);
     }
 
     // home render
-    public function periode(Periode $model, Request $request = null)
+    public function periode(KepengurusanPeriode $periode, Request $request)
     {
-        $request = $request ? $request : request();
+
+        $request = $request ? $request : request(); // intelephense nya error
         $page_attr = [
-            'periode_id' => $model->id,
+            'periode_id' => $periode->id,
             'navigation' => 'home',
         ];
 
-        $periode = $model;
-
         if ($this->checkVisible('struktur_anggota')) {
-            $anggota = HomeRepository::getPengurusList($model->id);
+            $pengurus = $periode->homePengurus();
         } else {
-            $anggota = collect([]);
+            $pengurus = collect([]);
         }
-
 
         // frontend
         $list_sosmed = get_sosmed();
@@ -76,12 +75,12 @@ class HomeController extends Controller
         $data = compact(
             'page_attr',
             'periode',
-            'anggota',
             'list_sosmed',
             'articles',
             'galeri_list',
             'kata_alumni_list',
             'instagrams',
+            'pengurus'
         );
         $data['compact'] = $data;
         return view('frontend.home2', $data);

@@ -111,7 +111,7 @@
         $k = "$p.struktur_anggota";
         $anim = 1;
     @endphp
-    @if ($anggota->count() && settings()->get("$k.visible"))
+    @if ($pengurus->count() && settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-light-4" data-anim-wrap>
             <div class="container">
                 <div class="row y-gap-15 justify-between items-end" data-anim-child="slide-up delay-{{ $anim++ }}">
@@ -138,31 +138,31 @@
                     data-slider-cols="xl-4 lg-3 md-2" data-anim-child="slide-left delay-{{ $anim++ }}">
                     <div class="swiper-wrapper">
 
-                        {{-- anggota item --}}
-                        @foreach ($anggota as $a)
+                        {{-- pengurus item --}}
+                        @foreach ($pengurus as $a)
                             <div class="swiper-slide" data-anim-child="slide-left delay-{{ $anim++ }}">
                                 <div class="teamCard -type-2 bg-white shadow-4" style="min-height: 370px; border: 0">
                                     <div class="teamCard__content">
-                                        <img src="{{ $a->foto }}" alt="image"
+                                        <img src="{{ $a->anggota->fotoUrl() }}" alt="image"
                                             style="margin: auto;position: relative;margin: auto;width: 150px;height: 150px;max-height: 150px;border-radius: 150px;object-fit: cover; /* cover, contain, fill, scale-down */object-position: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
                                         <h4 class="teamCard__title text-17 lh-15 fw-500 mt-12 text-center">
-                                            {{ $a->name }}</h4>
+                                            {{ $a->anggota->nama }}</h4>
                                         <div class="teamCard__subtitle text-14 lh-1 mt-5 text-center">
-                                            {{ $a->jabatan }}
-                                            @if ($a->utama == 0)
-                                                <a href="{{ route('tentang.kepengurusan.bidang', $a->parent_slug) }}"
+                                            {{ $a->jabatan->nama }}
+                                            @if ($a->jabatan->parent)
+                                                <a href="{{ route('tentang.kepengurusan.bidang', $a->jabatan->parent->slug) }}"
                                                     style="text-transform: capitalize;" class="text-purple-1">
-                                                    @if ($a->singkatan)
-                                                        {{ $a->singkatan }}
+                                                    @if ($a->jabatan->parent->singkatan)
+                                                        {{ $a->jabatan->parent->singkatan }}
                                                     @else
-                                                        {{ $a->parent }}
+                                                        {{ $a->jabatan->parent->nama }}
                                                     @endif
                                                 </a>
                                             @endif
                                         </div>
 
                                         <div class="teamCard__button mt-20">
-                                            <a href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}"
+                                            <a href="{{ $a->anggota->user->username ? url($a->anggota->user->username) : route('anggota.id', $a->anggota->id) }}"
                                                 class="button -icon -outline-purple-1 -rounded text-purple-1">
                                                 Lihat Profile
                                             </a>
@@ -171,7 +171,6 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
 

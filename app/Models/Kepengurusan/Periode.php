@@ -230,6 +230,29 @@ class Periode extends Model
         return $results;
     }
 
+    public function homePengurus()
+    {
+        $t_peng_anggota = Anggota::tableName;
+        $t_jabatan = Jabatan::tableName;
+        $periode_id = $this->attributes['id'];
+        $t_periode = self::tableName;
+
+        $results = Anggota::select([
+            DB::raw("$t_peng_anggota.id"),
+            DB::raw("$t_peng_anggota.anggota_id"),
+            DB::raw("$t_peng_anggota.jabatan_id"),
+        ])
+            ->join($t_jabatan, "$t_jabatan.id", "=", "$t_peng_anggota.jabatan_id")
+            ->join($t_periode, "$t_periode.id", "=", "$t_jabatan.periode_id")
+            ->leftJoin("$t_jabatan as j2", "j2.id", "=", "$t_jabatan.parent_id")
+            ->where("$t_periode.id", $periode_id)
+            ->orderByRaw("(select pj2.no_urut from $t_jabatan pj2 where pj2.id = $t_jabatan.parent_id), $t_jabatan.no_urut")
+            ->with(['anggota.user', 'jabatan.parent'])
+            ->get();
+
+        return $results;
+    }
+
     public function jabatanDatatable(Request $request): mixed
     {
         $query = [];
