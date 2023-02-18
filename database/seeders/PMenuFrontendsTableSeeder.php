@@ -14,13 +14,13 @@ class PMenuFrontendsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('p_menu_frontends')->delete();
-
-        \DB::table('p_menu_frontends')->insert(array(
-            0 =>
-            array(
+        
+        \DB::table('p_menu_frontends')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'parent_id' => NULL,
                 'title' => 'Home',
@@ -32,8 +32,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:26:10',
                 'updated_at' => '2022-08-25 21:41:05',
             ),
-            1 =>
-            array(
+            1 => 
+            array (
                 'id' => 2,
                 'parent_id' => NULL,
                 'title' => 'Tentang Kami',
@@ -45,8 +45,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:30:39',
                 'updated_at' => '2022-08-22 01:33:54',
             ),
-            2 =>
-            array(
+            2 => 
+            array (
                 'id' => 3,
                 'parent_id' => 2,
                 'title' => 'Sejarah',
@@ -58,8 +58,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:30:59',
                 'updated_at' => '2022-08-22 01:33:48',
             ),
-            3 =>
-            array(
+            3 => 
+            array (
                 'id' => 4,
                 'parent_id' => NULL,
                 'title' => 'Struktur Kepengurusan',
@@ -69,10 +69,10 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:18',
-                'updated_at' => '2022-08-25 21:41:05',
+                'updated_at' => '2023-02-18 04:24:50',
             ),
-            4 =>
-            array(
+            4 => 
+            array (
                 'id' => 5,
                 'parent_id' => 2,
                 'title' => 'Periode Kepengurusan',
@@ -84,8 +84,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:31:35',
                 'updated_at' => '2022-08-20 14:45:44',
             ),
-            5 =>
-            array(
+            5 => 
+            array (
                 'id' => 6,
                 'parent_id' => 2,
                 'title' => 'Anggaran Dasar Anggaran Rumah Tangga',
@@ -97,8 +97,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:31:46',
                 'updated_at' => '2022-08-20 14:45:44',
             ),
-            6 =>
-            array(
+            6 => 
+            array (
                 'id' => 7,
                 'parent_id' => NULL,
                 'title' => 'Bidang',
@@ -110,99 +110,99 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:32:07',
                 'updated_at' => '2022-08-20 14:45:44',
             ),
-            7 =>
-            array(
+            7 => 
+            array (
                 'id' => 8,
                 'parent_id' => 7,
                 'title' => 'Komunikasi dan Informasi',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-komunikasi-dan-informasi',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-komunikasi-dan-informasi',
                 'sequence' => 8,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:37:32',
             ),
-            8 =>
-            array(
+            8 => 
+            array (
                 'id' => 9,
                 'parent_id' => 7,
                 'title' => 'Pengembangan Nalar dan Intelektual',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-pengembangan-nalar-dan-intelektual',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-pengembangan-nalar-dan-intelektual',
                 'sequence' => 9,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:37:40',
             ),
-            9 =>
-            array(
+            9 => 
+            array (
                 'id' => 10,
                 'parent_id' => 7,
-                'title' => 'Minat dan Baka',
+                'title' => 'Minat dan Bakat',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-minat-dan-bakat',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-minat-dan-bakat',
                 'sequence' => 10,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:37:51',
             ),
-            10 =>
-            array(
+            10 => 
+            array (
                 'id' => 11,
                 'parent_id' => 7,
                 'title' => 'Pengembangan Aparatur Organisasi',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-pengembangan-aparatur-organisasi',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-pengembangan-aparatur-organisasi',
                 'sequence' => 11,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:37:57',
             ),
-            11 =>
-            array(
+            11 => 
+            array (
                 'id' => 12,
                 'parent_id' => 7,
                 'title' => 'Pengembangan Kode Etik dan Akhlakul Karimah',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-pengembangan-kode-etik-dan-akhlakul-karimah',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-pengembangan-kode-etik-dan-akhlakul-karimah',
                 'sequence' => 12,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:38:02',
             ),
-            12 =>
-            array(
+            12 => 
+            array (
                 'id' => 13,
                 'parent_id' => 7,
                 'title' => 'Sosial Masyarakat',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-sosial-masyarakat',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-sosial-masyarakat',
                 'sequence' => 13,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:38:08',
             ),
-            13 =>
-            array(
+            13 => 
+            array (
                 'id' => 14,
                 'parent_id' => 7,
                 'title' => 'Keperempuanan',
                 'icon' => NULL,
-                'route' => '__base_url__/about/kepengurusan/bidang/2022-2023-keperempuanan',
+                'route' => '__base_url__/tentang/kepengurusan/bidang/2022-2023-keperempuanan',
                 'sequence' => 14,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:34:52',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 06:38:14',
             ),
-            14 =>
-            array(
+            14 => 
+            array (
                 'id' => 15,
                 'parent_id' => NULL,
                 'title' => 'Anggota',
@@ -214,8 +214,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:46:42',
                 'updated_at' => '2022-08-22 01:33:48',
             ),
-            15 =>
-            array(
+            15 => 
+            array (
                 'id' => 16,
                 'parent_id' => NULL,
                 'title' => 'Galeri',
@@ -227,8 +227,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:46:53',
                 'updated_at' => '2022-09-02 01:03:08',
             ),
-            16 =>
-            array(
+            16 => 
+            array (
                 'id' => 17,
                 'parent_id' => NULL,
                 'title' => 'Pendaftaran',
@@ -240,8 +240,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:47:03',
                 'updated_at' => '2022-09-02 01:03:08',
             ),
-            17 =>
-            array(
+            17 => 
+            array (
                 'id' => 18,
                 'parent_id' => NULL,
                 'title' => 'Kontak',
@@ -253,8 +253,8 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'created_at' => '2022-08-20 14:47:10',
                 'updated_at' => '2022-09-02 01:03:08',
             ),
-            18 =>
-            array(
+            18 => 
+            array (
                 'id' => 19,
                 'parent_id' => NULL,
                 'title' => 'Artikel',
@@ -267,5 +267,7 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'updated_at' => '2022-09-02 01:03:08',
             ),
         ));
+        
+        
     }
 }
