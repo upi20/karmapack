@@ -82,7 +82,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })

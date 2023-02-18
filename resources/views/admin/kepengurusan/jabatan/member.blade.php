@@ -5,16 +5,16 @@
     @endphp
     <div class="card">
         <div class="card-header bg-info">
-            <h3 class="card-title text-light">Member bidang</h3>
+            <h3 class="card-title text-light">Form {{ $page_attr['title'] }}</h3>
         </div>
         <div class="card-body">
             <form id="MainForm">
                 <div class="form-group">
-                    <label for="members">Member/Anggota</label>
-                    <select class="form-control select2" id="members" multiple name="members[]" style="width: 100%">
-                        @foreach ($members as $member)
-                            <option value="{{ $member->id }}" selected>
-                                {{ $member->nama }}
+                    <label for="anggotas">Bidang Anggota</label>
+                    <select class="form-control select2" id="anggotas" multiple name="anggotas[]" style="width: 100%">
+                        @foreach ($anggotas as $anggota)
+                            <option value="{{ $anggota->anggota->id }}" selected>
+                                {{ $anggota->anggota->nama }}
                             </option>
                         @endforeach
                     </select>
@@ -25,7 +25,7 @@
             <div class="card-footer">
                 <div class="form-group">
                     <button type="submit" class="btn btn-success" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <script src="{{ asset('assets/templates/admin/plugins/select2/js/select2.full.min.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('#members').select2({
+            $('#anggotas').select2({
                 ajax: {
                     url: "{{ route(h_prefix('select2', 1)) }}",
                     type: "GET",
@@ -61,8 +61,8 @@
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
-                formData.append('periode_id', {{ $model->periode_id }});
-                formData.append('jabatan_id', {{ $model->id }});
+                formData.append('periode_id', {{ $jabatan->periode_id }});
+                formData.append('jabatan_id', {{ $jabatan->id }});
                 setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
@@ -78,7 +78,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })

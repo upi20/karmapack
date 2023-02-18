@@ -12,57 +12,74 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">List Bidang Periode <span class="fw-bold">{{ $periode->nama }}</span>
-                    </h3>
+                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
                     @if ($can_insert)
                         <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Tambah
                         </button>
                     @endif
                 </div>
                 <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_role">Role Bidang</label>
-                            <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
-                                <option value="">Semua Role</option>
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                @endforeach
-                            </select>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default active mb-2">
+                            <div class="panel-heading " role="tab" id="headingOne1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        Filter Data
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne1">
+                                <div class="panel-body">
+                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                        <div class="form-group float-start me-2" style="width: 250px">
+                                            <label for="filter_role">Sebagai</label>
+                                            <br>
+                                            <select class="form-control" id="filter_role" name="filter_role"
+                                                style="width: 250px">
+                                                <option value="">Semua</option>
+                                                @foreach ($roles as $role)
+                                                    <option value="{{ $role->name }}">
+                                                        {{ ucfirst(implode(' ', explode('_', $role->name))) }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group float-start me-2" style="width: 250px">
+                                            <label for="filter_status">Status</label>
+                                            <br>
+                                            <select class="form-control" id="filter_status" name="filter_status"
+                                                style="width: 250px">
+                                                <option value="">Semua</option>
+                                                <option value="1">Dipakai</option>
+                                                <option value="0">Tidak Dipakai</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                    <div style="clear: both"></div>
+                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                        data-toggle="tooltip" title="Refresh Filter Table">
+                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Bidang Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">Semua Bidang</option>
-                                <option value="1">Dipakai</option>
-                                <option value="0">Tidak Dipakai</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Role</th>
-                                    <th>Urutan</th>
-                                    <th>Bidang</th>
-                                    <th>Sub Bidang</th>
-                                    <th style="min-width: 150px;">Slug</th>
-                                    <th>Icon</th>
-                                    <th>Status</th>
-                                    {!! $can_member || $can_delete || $can_update ? '<th>Action</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
                     </div>
+                    <table class="table table-striped" id="tbl_main">
+                        <thead>
+                            <tr>
+                                <th>Urutan</th>
+                                <th>Bidang</th>
+                                <th>Akun Sebagai</th>
+                                <th>Status</th>
+                                {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -115,10 +132,12 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="role_id">Role Bidang</label>
+                                            <label for="role_id">Akun Sebagai</label>
                                             <select class="form-control" id="role_id" name="role_id" required>
                                                 @foreach ($roles as $role)
-                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                    @if ($role->name != config('app.super_admin_role'))
+                                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -302,63 +321,42 @@
                     url: "{{ route(h_prefix(null, 1), $periode->id) }}",
                     data: function(d) {
                         d['filter[status]'] = $('#filter_status').val();
-                        d['filter[role_id]'] = $('#filter_role').val();
+                        d['filter[role]'] = $('#filter_role').val();
                     }
                 },
                 columns: [{
-                        data: null,
-                        name: 'id',
-                        orderable: false,
-                    },
-                    {
-                        data: 'role',
-                        name: 'role_id'
-                    },
-                    {
-                        data: 'kode',
-                        name: 'kode'
+                        data: 'urutan',
+                        name: 'urutan'
                     },
                     {
                         data: 'nama',
-                        name: 'nama'
-                    },
-                    {
-                        data: 'parent',
-                        name: 'parent'
-                    },
-                    {
-                        data: 'slug',
-                        name: 'slug'
-                    },
-                    {
-                        data: 'foto',
-                        name: 'foto',
+                        name: 'nama',
                         render(data, type, full, meta) {
-                            return data ? `
-                            <a class="btn btn-primary btn-sm" data-bs-effect="effect-scale" data-bs-toggle="modal"
-                                        href="#modal-icon" onclick="viewIcon('${data}')"
-                                        data-target="#modal-icon"><i class="fas fa-eye" aria-hidden="true"></i> </a>
-                            ` : '';
+                            const parent = full.parent ? `<br><small>${full.parent}</small>` : '';
+                            return data + parent;
                         },
                     },
                     {
-                        data: 'status_str',
+                        data: 'role',
+                        name: 'role'
+                    },
+                    {
+                        data: 'status',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                'badge bg-danger';
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_ = data == 1 ? 'success' : 'danger';
+                            const text = data == 1 ? 'Dipakai' : 'Tidak Dipakai';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}`;
                         },
                     },
                     ...((can_member || can_update || can_delete) ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_member = can_member ? `<a class="btn btn-rounded btn-info btn-sm my-1 me-1" title="Member"
+                            const btn_member = can_member ? `<a class="btn btn-rounded btn-info btn-sm my-1 me-1" data-toggle="tooltip" title="Daftar Anggota"
                                 href="{{ url(h_prefix_uri('member', 1)) }}/${data}" >
-                                <i class="fas fa-user"></i> Member
-                                </a>` : '';
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Edit Data"
+                                <i class="fas fa-user"></i></a>` : '';
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" data-toggle="tooltip" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
@@ -371,29 +369,22 @@
                                 data-singkatan="${full.singkatan ?? ''}"
                                 data-role_id="${full.role_id ?? ''}"
                                 onClick="editFunc(this)">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
+                                <i class="fas fa-edit"></i></button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>` : '';
                             return btn_member + btn_update + btn_delete;
                         },
-                        orderable: false
                     }] : []),
                 ],
-                order: [
-                    [1, 'asc']
-                ]
+                "ordering": false,
+                "pageLength": 100,
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
                 tooltip_refresh();
-                var PageInfo = table_html.DataTable().page.info();
-                new_table.column(0, {
-                    page: 'current'
-                }).nodes().each(function(cell, i) {
-                    cell.innerHTML = i + 1 + PageInfo.start;
-                });
             });
 
             $('#FilterForm').submit(function(e) {
@@ -436,7 +427,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -468,19 +459,19 @@
 
         function add() {
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add Bidang");
+            $('#modal-default-title').html("Tambah Bidang");
             $('#modal-default').modal('show');
             $('#id').val('');
+            $('#status').val('1');
             $('#visi').summernote("code", '');
             $('#misi').summernote("code", '');
             resetErrorAfterInput();
             refresh_parent('{{ $periode->id }}', '', '#parent_id');
         }
 
-
         function editFunc(datas) {
             const data = datas.dataset;
-            $('#modal-default-title').html("Edit Bidang");
+            $('#modal-default-title').html("Ubah Bidang");
             $('#modal-default').modal('show');
             $('#MainForm').trigger("reset");
             $('#id').val(data.id);
@@ -525,7 +516,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Bidang  deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -626,10 +617,6 @@
                 .replace(/ +/g, '-');
 
             $("#slug").val(`{{ $periode->dari }}-{{ $periode->sampai }}-${bidang_utama + Text}`);
-        }
-
-        function viewIcon(image) {
-            $('#icon-view-image').attr('src', `{{ url($image_folder) }}/${image}`)
         }
     </script>
 @endsection

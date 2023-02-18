@@ -196,7 +196,7 @@
                         name: 'status',
                         render(data, type, full, meta) {
                             const class_ = data == 1 ? 'success' : 'danger';
-                            const text = data == 1 ? 'Aktif' : 'Tidak Aktf';
+                            const text = data == 1 ? 'Aktif' : 'Tidak Aktif';
 
                             const btn = can_active ? (full.status == 1 ? '' : `
                                 <br><button type="button" class="btn btn-rounded btn-secondary btn-sm my-1" data-toggle="tooltip" title="Aktifkan Periode" onClick="activeFunc('${full.id}')">
@@ -379,7 +379,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Data deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -458,7 +458,7 @@
                 url: `{{ url(h_prefix_uri('detail')) }}/${id}`
             }).done((data) => {
                 const class_ = data.detail.status == 1 ? 'success' : 'danger';
-                const text = data.detail.status == 1 ? 'Aktif' : 'Tidak Aktf';
+                const text = data.detail.status == 1 ? 'Aktif' : 'Tidak Aktif';
                 $('#modal-detail-body').html(`
                     <h4 class="h4">Nama:</h4><p>${data.detail.nama}</p>
                     <h4 class="h4">Periode:</h4><p>${data.detail.dari} - ${data.detail.sampai}</p>

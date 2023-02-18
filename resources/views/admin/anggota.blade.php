@@ -279,7 +279,7 @@
                         name: 'email',
                         render(data, type, full, meta) {
                             const class_ = full.active == 1 ? 'success' : 'danger';
-                            const text = full.active == 1 ? 'Aktif' : 'Tidak Aktf';
+                            const text = full.active == 1 ? 'Aktif' : 'Tidak Aktif';
                             return `${data}<br><small>
                                 <i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}</small>`;
                         },
@@ -345,7 +345,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -458,7 +458,7 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Data deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin\Kepengurusan;
 
 use App\Http\Controllers\Controller;
+use App\Models\Keanggotaan\Anggota;
+use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
+use App\Models\Kepengurusan\Jabatan as KepengurusanJabatan;
+use App\Models\Kepengurusan\Periode as KepengurusanPeriode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,58 +22,34 @@ use Error;
 
 class JabatanMemberController extends Controller
 {
-    public function index(Request $request)
+    public function index(KepengurusanJabatan $jabatan, Request $request)
     {
-        // model
-        $tbl_jabatan = Jabatan::tableName;
-        $parent = <<<SQL
-            concat(
-                (if(isnull($tbl_jabatan.parent_id),'', (select z.nama from $tbl_jabatan as z where $tbl_jabatan.parent_id = z.id))),
-                (if(isnull($tbl_jabatan.parent_id),'', ' ->')),
-                ' ',$tbl_jabatan.nama)
-        SQL;
-        $model = Jabatan::select([
-            "$tbl_jabatan.id",
-            "$tbl_jabatan.periode_id",
-            DB::raw("$parent as nama")
-        ])->where("$tbl_jabatan.id", '=', $request->id);
-        $model = $model->first();
 
-        if (!$model) abort(404);
+        $anggotas = $jabatan->anggotas()->with('anggota')->get();
 
-        // member
-        $tbl_name = JabatanMember::tableName;
-        $members = JabatanMember::select([
-            "$tbl_name.user_id as id",
-            DB::raw("(concat(users.angkatan,' | ', users.name)) as nama"),
-        ])->join('users', 'users.id', '=', "$tbl_name.user_id")
-            ->where('jabatan_id', '=', $model->id)
-            ->get();
         $navigation = h_prefix('periode', 3);
 
         // page atribut
         $page_attr = [
-            'title' => "Member " . $model->nama,
+            'title' => "Anggota Bidang " . $jabatan->nama,
             'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'dashboard'],
                 ['name' => 'Kepengurusan'],
                 ['name' => 'Periode', 'url' => $navigation],
-                ['name' => 'Bidang', 'url' => ['admin.pengurus.jabatan', $model->periode_id]],
+                ['name' => 'Bidang', 'url' => ['admin.kepengurusan.jabatan', $jabatan->periode_id]],
             ],
             'navigation' => $navigation,
         ];
-        return view('admin.pengurus.jabatan.member', compact('page_attr', 'model', 'members'));
+        return view('admin.kepengurusan.jabatan.member', compact('page_attr', 'jabatan', 'anggotas'));
     }
 
     public function select2(Request $request)
     {
         try {
-            $model = User::select(['id', DB::raw("concat(angkatan,' | ',name) as text")])
+            $model = Anggota::select(['id', DB::raw("concat(angkatan,' | ',nama) as text")])
                 ->whereRaw("(
-                    `name` like '%$request->search%' or
-                    `angkatan` like '%$request->search%' or
-                    `email` like '%$request->search%' or
-                    `id` like '%$request->search%'
+                    `nama` like '%$request->search%' or
+                    `alamat_lengkap` like '%$request->search%' or
+                    `angkatan` like '%$request->search%'
                     )")
                 ->limit(10);
 
@@ -84,46 +64,48 @@ class JabatanMemberController extends Controller
     {
         try {
             $request->validate([
-                'members' => ['required'],
+                'anggotas' => ['required'],
                 'periode_id' => ['required', 'int'],
                 'jabatan_id' => ['required', 'int'],
             ]);
+            $t_jabatan = KepengurusanJabatan::tableName;
+            $t_anggota = KepengurusanAnggota::tableName;
+
             DB::beginTransaction();
 
             // check
             if (!auth_has_role(config('app.super_admin_role'))) {
-                $periode = Periode::where('id', '=', $request->periode_id)->first();
+                $periode = KepengurusanPeriode::where('id', '=', $request->periode_id)->first();
                 if ($periode->status == 0) {
                     throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
                 }
             }
 
-            // get jabatan member terdahulu
-            $collection = JabatanMember::where('jabatan_id', '=', $request->jabatan_id)->get(['user_id']);
-            // delete di tabel pengurus_periode, pengurus_periode_jabatan
-            foreach ($collection as  $c) {
-                JabatanMember::where('jabatan_id', '=', $request->jabatan_id)
-                    ->where('user_id', '=', $c->user_id)
-                    ->delete();
-                PeriodeMember::where('periode_id', '=', $request->periode_id)
-                    ->where('user_id', '=', $c->user_id)
-                    ->delete();
-            }
-            foreach ($request->members as $member) {
-                $cek = $this->cekPeriodeMember($request->periode_id, $member);
-                if ($cek) {
-                    throw new Error($this->getNamaUsersById($member) . " Sudah terdaftar di jabatan lain");
-                } else {
-                    // insert $request->member tabel pengurus_periode, pengurus_periode_jabatan
-                    JabatanMember::create([
-                        'user_id' => $member,
-                        'jabatan_id' => $request->jabatan_id
-                    ]);
-                    PeriodeMember::create([
-                        'user_id' => $member,
-                        'periode_id' => $request->periode_id
-                    ]);
+
+            // delete anggota jabatan terlebih dahulu
+            $current = KepengurusanAnggota::where('jabatan_id', $request->jabatan_id)->delete();
+
+            // masukan ke jabatan
+            foreach ($request->anggotas as $anggota) {
+                // cek terlebih dahulu apakah anggota ini sudah ada jabatan di periode ini ?
+                $cek = KepengurusanAnggota::join($t_jabatan, "$t_jabatan.id", '=', "$t_anggota.jabatan_id")
+                    ->where("$t_jabatan.periode_id", $request->periode_id)
+                    ->where("$t_anggota.anggota_id", $anggota)
+                    ->first();
+
+                if ($cek != null) {
+                    $jabatan_text = $cek->jabatan->nama;
+                    if ($cek->jabatan->parent) {
+                        $jabatan_text .= (" -> " . $cek->jabatan->parent->nama);
+                    }
+                    throw new Error($cek->anggota->nama . " Sudah terdaftar sebagai $jabatan_text");
                 }
+
+                // jika sudah aman maka masukan ke database
+                $new_anggota = new KepengurusanAnggota();
+                $new_anggota->anggota_id = $anggota;
+                $new_anggota->jabatan_id = $request->jabatan_id;
+                $new_anggota->save();
             }
             DB::commit();
             return response()->json();

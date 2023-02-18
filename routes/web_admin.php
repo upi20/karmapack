@@ -30,6 +30,8 @@ use App\Http\Controllers\Admin\Laporan\AnggotaController;
 use App\Http\Controllers\Admin\Contact\FAQController;
 use App\Http\Controllers\Admin\Contact\ListContactController;
 use App\Http\Controllers\Admin\Contact\MessageController;
+use App\Http\Controllers\Admin\Kepengurusan\JabatanController as KepengurusanJabatanController;
+use App\Http\Controllers\Admin\Kepengurusan\JabatanMemberController as KepengurusanJabatanMemberController;
 use App\Http\Controllers\Admin\Kepengurusan\PeriodeController as KepengurusanPeriodeController;
 // Pengurus ===========================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
@@ -94,7 +96,7 @@ Route::controller(AdminAnggotaController::class)->prefix($prefix)->group(functio
     Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
 });
 
-$prefix = 'address';
+$prefix = 'address'; //
 Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.address
     $addreses = [
@@ -121,7 +123,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     }
 });
 
-$prefix = 'artikel';
+$prefix = 'artikel'; //
 Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.artikel
 
@@ -158,7 +160,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     });
 });
 
-$prefix = 'pengurus';
+$prefix = 'pengurus'; //
 Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.pengurus
 
@@ -222,9 +224,6 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::get('/edit/{model}', 'edit')->name("$name.edit")->middleware("permission:$name.update");
 
         Route::get('/active/{model}', 'setActive')->name("$name.active")->middleware("permission:$name.active");
-        Route::post('/member', 'member')->name("$name.member")->middleware("permission:$name.member");
-        Route::get('/member', 'member')->name("$name.member")->middleware("permission:$name.member");
-        Route::post('/detail/{model}', 'detail')->name("$name.detail")->middleware("permission:$name.detail");
         Route::get('/detail/{periode}', 'detail')->name("$name.detail")->middleware("permission:$name.detail");
 
         Route::post('/insert', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
@@ -233,6 +232,28 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
 
         // set role by jabatan
         Route::post('/set_role', 'set_pengurus_role')->name("$name.set_role")->middleware("permission:$name.set_role");
+    });
+
+    $prefix = 'jabatan';
+    Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.kepengurusan.jabatan
+
+        Route::controller(KepengurusanJabatanController::class)->group(function () use ($name) {
+            Route::get('/get_parent', 'parent')->name("$name.parent")->middleware("permission:$name");
+            Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+
+            Route::get('/{periode}', 'index')->name($name)->middleware("permission:$name");
+            Route::post('/{periode}', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+            Route::delete('/{jabatan}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        });
+
+        $prefix = 'member';
+        Route::controller(KepengurusanJabatanMemberController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.kepengurusan.jabatan.member
+            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
+            Route::post('/save', 'save')->name("$name.save")->middleware("permission:$name.save");
+            Route::get('/{jabatan:id}', 'index')->name($name)->middleware("permission:$name");
+        });
     });
 });
 $prefix = 'galeri';

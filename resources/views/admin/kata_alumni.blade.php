@@ -359,7 +359,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -473,7 +473,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: '{{ $page_attr['title'] }} deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -577,7 +577,7 @@
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Data saved successfully',
+                        title: 'Data berhasil disimpan',
                         showConfirmButton: false,
                         timer: 1500
                     })
