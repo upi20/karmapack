@@ -2,9 +2,12 @@
 
 namespace App\Models\Kepengurusan;
 
+use App\Models\Keanggotaan\Anggota as KeanggotaanAnggota;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\Datatables\Datatables;
 
 class Periode extends Model
 {
@@ -102,5 +105,127 @@ class Periode extends Model
         }
 
         return (object)$results;
+    }
+
+
+    public static function datatable(Request $request): mixed
+    {
+        $query = [];
+        // import
+        $table = self::tableName;
+        // ========================================================================================================
+        // select raw as alias
+        $sraa = function (string $col): string {
+            global $query;
+            return $query[$col] . ' as ' . $query[$col . '_alias'];
+        };
+        $model_filter = [];
+
+        $to_db_raw = array_map(function ($a) use ($sraa) {
+            return DB::raw($sraa($a));
+        }, $model_filter);
+        // ========================================================================================================
+
+
+        // Select =====================================================================================================
+        $model = self::select(array_merge([
+            DB::raw("$table.*"),
+        ], $to_db_raw));
+
+        // Filter =====================================================================================================
+        // filter check
+        $f_c = function (string $param) use ($request): mixed {
+            $filter = $request->filter;
+            return isset($filter[$param]) ? $filter[$param] : false;
+        };
+
+        // filter ini menurut data model filter
+        $f = [];
+        // loop filter
+        foreach ($f as $v) {
+            if ($f_c($v) !== false) {
+                $model->whereRaw("{$query[$v]}='{$f_c($v)}'");
+            }
+        }
+
+        // filter custom
+        $filters = ['status'];
+        foreach ($filters as  $f) {
+            if ($f_c($f) !== false) {
+                $model->whereRaw("$table.$f='{$f_c($f)}'");
+            }
+        }
+        // ========================================================================================================
+
+
+        // ========================================================================================================
+        $datatable = Datatables::of($model)->addIndexColumn();
+
+        // search
+        // ========================================================================================================
+        $query_filter = $query;
+        $datatable->filter(function ($query) use ($model_filter, $query_filter, $table) {
+            $search = request('search');
+            $search = isset($search['value']) ? $search['value'] : null;
+            if ((is_null($search) || $search == '') && count($model_filter) > 0) return false;
+
+            // tambah pencarian
+            $search_add = [
+                'nama',
+                'foto',
+                'dari',
+                'sampai',
+                'slug',
+                'slogan',
+                'visi',
+                'misi',
+                'filosofi_logo',
+                'status',
+            ];
+            $search_add = array_map(function ($v) use ($table) {
+                return "$table.$v";
+            }, $search_add);
+            $search_arr = array_merge($model_filter, $search_add);
+
+            // pake or where
+            $search_str = "(";
+            foreach ($search_arr as $k => $v) {
+                $or = (($k + 1) < count($search_arr)) ? 'or' : '';
+                $column = isset($query_filter[$v]) ? $query_filter[$v] : $v;
+                $search_str .= "$column like '%$search%' $or ";
+            }
+
+            $search_str .= ")";
+            $query->whereRaw($search_str);
+        });
+
+        // create datatable
+        return $datatable->make(true);
+    }
+
+    public function detailPengurus()
+    {
+        $t_peng_anggota = Anggota::tableName;
+        $t_anggota = KeanggotaanAnggota::tableName;
+        $t_jabatan = Jabatan::tableName;
+        $periode_id = $this->attributes['id'];
+        $t_periode = self::tableName;
+
+        $results = Anggota::select([
+            DB::raw("$t_anggota.id"),
+            DB::raw("$t_anggota.angkatan"),
+            DB::raw("$t_anggota.nama"),
+            DB::raw("if( $t_jabatan.parent_id is null, $t_jabatan.nama,
+            concat( $t_jabatan.nama, ' -> ', (select pp2.nama from $t_jabatan pp2 where pp2.id = $t_jabatan.parent_id))
+            ) as jabatan"),
+        ])
+            ->join($t_jabatan, "$t_jabatan.id", "=", "$t_peng_anggota.jabatan_id")
+            ->join($t_periode, "$t_periode.id", "=", "$t_jabatan.periode_id")
+            ->join($t_anggota, "$t_anggota.id", "=", "$t_peng_anggota.anggota_id")
+            ->where("$t_periode.id", $periode_id)
+            ->orderByRaw("(select pj2.no_urut from $t_jabatan pj2 where pj2.id = $t_jabatan.parent_id), $t_jabatan.no_urut")
+            ->get();
+
+        return $results;
     }
 }

@@ -30,7 +30,7 @@ use App\Http\Controllers\Admin\Laporan\AnggotaController;
 use App\Http\Controllers\Admin\Contact\FAQController;
 use App\Http\Controllers\Admin\Contact\ListContactController;
 use App\Http\Controllers\Admin\Contact\MessageController;
-
+use App\Http\Controllers\Admin\Kepengurusan\PeriodeController as KepengurusanPeriodeController;
 // Pengurus ===========================================================================================================
 use App\Http\Controllers\Admin\Pengurus\PeriodeController;
 use App\Http\Controllers\Admin\Pengurus\JabatanController;
@@ -209,6 +209,32 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
     });
 });
 
+$prefix = 'kepengurusan';
+Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.kepengurusan
+
+    $prefix = 'periode';
+    Route::controller(KepengurusanPeriodeController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.kepengurusan.periode
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+
+        Route::get('/add', 'add')->name("$name.add")->middleware("permission:$name.insert");
+        Route::get('/edit/{model}', 'edit')->name("$name.edit")->middleware("permission:$name.update");
+
+        Route::get('/active/{model}', 'setActive')->name("$name.active")->middleware("permission:$name.active");
+        Route::post('/member', 'member')->name("$name.member")->middleware("permission:$name.member");
+        Route::get('/member', 'member')->name("$name.member")->middleware("permission:$name.member");
+        Route::post('/detail/{model}', 'detail')->name("$name.detail")->middleware("permission:$name.detail");
+        Route::get('/detail/{periode}', 'detail')->name("$name.detail")->middleware("permission:$name.detail");
+
+        Route::post('/insert', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+        // set role by jabatan
+        Route::post('/set_role', 'set_pengurus_role')->name("$name.set_role")->middleware("permission:$name.set_role");
+    });
+});
 $prefix = 'galeri';
 Route::controller(GaleriController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // admin.galeri
