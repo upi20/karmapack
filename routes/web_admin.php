@@ -61,7 +61,7 @@ use App\Http\Controllers\Admin\Pendaftaran\GFormController;
 use App\Http\Controllers\Admin\Setting\AdminController;
 use App\Http\Controllers\Admin\Setting\FrontController;
 use App\Http\Controllers\Admin\Setting\HomeController;
-
+use App\Http\Controllers\Admin\Setting\SejarahController;
 // Utility ============================================================================================================
 use App\Http\Controllers\Admin\Utility\HariBesarNasionalController;
 use App\Http\Controllers\Admin\Utility\NotifAdminAtasController;
@@ -545,6 +545,17 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
 
         $method = 'sensus';
         Route::post("/$method", $method)->name("$name_.$method");
+    });
+
+    $prefix = 'sejarah';
+    $name_ = "$name.$prefix"; // admin.setting.sejarah
+    Route::group([
+        'controller' => SejarahController::class,
+        'prefix' => $prefix,
+        'middleware' => "permission:$name_"
+    ], function () use ($name_) {
+        Route::get('/', 'index')->name($name_);
+        Route::post('/save', 'save')->name("$name_.save");
     });
 });
 

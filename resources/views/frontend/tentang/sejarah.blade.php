@@ -31,11 +31,11 @@
                 <div class="row justify-center text-center">
                     <div class="col-auto">
                         <div data-anim="slide-up delay-1">
-                            <h1 class="page-header__title">Sejarah</h1>
+                            <h1 class="page-header__title">{{ settings()->get('sejarah.judul') }}</h1>
                         </div>
 
                         <div data-anim="slide-up delay-2">
-                            <p class="page-header__text">Sejarah berdirinya karmapack</p>
+                            <p class="page-header__text">{{ settings()->get('sejarah.sub_judul') }}</p>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
     </section>
     <section class="layout-pt-md layout-pb-lg">
         <div data-anim-wrap class="container">
-            {!! settings()->get('sejarah') !!}
+            {!! settings()->get('sejarah.html') !!}
         </div>
     </section>
 @endsection

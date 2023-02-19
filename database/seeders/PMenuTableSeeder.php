@@ -708,6 +708,19 @@ class PMenuTableSeeder extends Seeder
                 'created_at' => '2022-09-01 18:22:47',
                 'updated_at' => '2022-09-01 18:25:56',
             ),
+            53 => 
+            array (
+                'id' => 412,
+                'parent_id' => 397,
+                'title' => 'Sejarah',
+                'icon' => NULL,
+                'route' => NULL,
+                'sequence' => 53,
+                'active' => 1,
+                'type' => 1,
+                'created_at' => '2023-02-19 10:02:10',
+                'updated_at' => '2023-02-19 10:02:10',
+            ),
         ));
         
         
