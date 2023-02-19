@@ -69,7 +69,7 @@
                                     <th>DOB</th>
                                     <th>BIRTHDAY</th>
                                     <th>Active</th>
-                                    {!! $can_delete || $can_update || $can_save_another ? '<th>Action</th>' : '' !!}
+                                    {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>

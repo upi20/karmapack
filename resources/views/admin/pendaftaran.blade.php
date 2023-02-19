@@ -41,7 +41,7 @@
                                     <th>Route</th>
                                     <th>Detail</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody> </tbody>

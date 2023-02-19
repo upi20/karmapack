@@ -90,7 +90,7 @@
                                     <th>Countdown</th>
                                     <th>Type</th>
                                     <th>Keterangan</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>

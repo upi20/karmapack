@@ -29,7 +29,7 @@
                                     <th>Dari</th>
                                     <th>Sampai</th>
                                     <th>Detail</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>

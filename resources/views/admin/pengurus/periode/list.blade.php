@@ -37,7 +37,7 @@
                                     {!! $can_detail ? '<th>Detail</th>' : '' !!}
                                     <th>Foto</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody> </tbody>

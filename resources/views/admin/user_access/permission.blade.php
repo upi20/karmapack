@@ -27,7 +27,7 @@
                                     <th>Name</th>
                                     <th>Guard</th>
                                     <th>Updated At</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody></tbody>

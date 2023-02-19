@@ -45,7 +45,7 @@
                                     <th>Tanggal</th>
                                     <th>Lokasi</th>
                                     <th>Status</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>

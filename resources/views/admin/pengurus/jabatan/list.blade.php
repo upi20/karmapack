@@ -57,7 +57,7 @@
                                     <th style="min-width: 150px;">Slug</th>
                                     <th>Icon</th>
                                     <th>Status</th>
-                                    {!! $can_member || $can_delete || $can_update ? '<th>Action</th>' : '' !!}
+                                    {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                                 </tr>
                             </thead>
                             <tbody> </tbody>

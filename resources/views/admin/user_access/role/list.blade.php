@@ -28,7 +28,7 @@
                                     <th>Guard</th>
                                     <th>Updated At</th>
                                     @if ($can_update || $can_delete)
-                                        <th>Action</th>
+                                        <th>Aksi</th>
                                     @endif
                                 </tr>
                             </thead>
