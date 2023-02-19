@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Frontend\About\Kepengurusan;
 use App\Http\Controllers\Controller;
 use App\Models\Kepengurusan\Periode;
 use Illuminate\Http\Request;
-use App\Repository\Frontend\About\Kepengurusan\StrukturRepository;
 
 class StrukturController extends Controller
 {

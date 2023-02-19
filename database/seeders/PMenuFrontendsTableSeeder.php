@@ -23,14 +23,14 @@ class PMenuFrontendsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'parent_id' => NULL,
-                'title' => 'Home',
+                'title' => 'Utama',
                 'icon' => NULL,
                 'route' => '__base_url__',
                 'sequence' => 1,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:26:10',
-                'updated_at' => '2022-08-25 21:41:05',
+                'updated_at' => '2023-02-18 22:38:16',
             ),
             1 => 
             array (
@@ -39,11 +39,11 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Tentang Kami',
                 'icon' => NULL,
                 'route' => '#',
-                'sequence' => 3,
-                'active' => 0,
+                'sequence' => 2,
+                'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:30:39',
-                'updated_at' => '2022-08-22 01:33:54',
+                'updated_at' => '2023-02-18 22:39:37',
             ),
             2 => 
             array (
@@ -52,24 +52,24 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'title' => 'Sejarah',
                 'icon' => NULL,
                 'route' => '#',
-                'sequence' => 4,
+                'sequence' => 3,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:30:59',
-                'updated_at' => '2022-08-22 01:33:48',
+                'updated_at' => '2023-02-18 22:39:37',
             ),
             3 => 
             array (
                 'id' => 4,
-                'parent_id' => NULL,
+                'parent_id' => 2,
                 'title' => 'Struktur Kepengurusan',
                 'icon' => NULL,
                 'route' => 'tentang.kepengurusan.struktur',
-                'sequence' => 2,
+                'sequence' => 5,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:18',
-                'updated_at' => '2023-02-18 04:24:50',
+                'updated_at' => '2023-02-18 22:39:37',
             ),
             4 => 
             array (
@@ -77,12 +77,12 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'parent_id' => 2,
                 'title' => 'Periode Kepengurusan',
                 'icon' => NULL,
-                'route' => '#',
-                'sequence' => 5,
+                'route' => 'tentang.kepengurusan.periode',
+                'sequence' => 4,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:35',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-19 08:58:54',
             ),
             5 => 
             array (
@@ -90,12 +90,12 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'parent_id' => 2,
                 'title' => 'Anggaran Dasar Anggaran Rumah Tangga',
                 'icon' => NULL,
-                'route' => '#',
+                'route' => '__base_url__/ad_art_dan_ghbo_karmapack.pdf',
                 'sequence' => 6,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:46',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 22:44:05',
             ),
             6 => 
             array (
@@ -105,10 +105,10 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'icon' => NULL,
                 'route' => '#',
                 'sequence' => 7,
-                'active' => 1,
+                'active' => 0,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:32:07',
-                'updated_at' => '2022-08-20 14:45:44',
+                'updated_at' => '2023-02-18 22:39:21',
             ),
             7 => 
             array (

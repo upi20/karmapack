@@ -33,6 +33,7 @@ use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranController
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
+use App\Http\Controllers\Frontend\About\Kepengurusan\PeriodeController;
 use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
@@ -76,11 +77,19 @@ Route::group(['prefix' => $name], function () use ($name) {
     Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         $name = "$name.$prefix"; // tentang.kepengurusan
 
+        // struktur
         $prefix = 'struktur';
         Route::controller(StrukturController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
             $name = "$name.$prefix"; // tentang.kepengurusan.struktur
             Route::get('/', 'index')->name($name);
             Route::get('/{periode:slug}', 'periode')->name("$name.periode");
+        });
+
+        // periode
+        $prefix = 'periode';
+        Route::controller(PeriodeController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // tentang.kepengurusan.periode
+            Route::get('/', 'index')->name($name);
         });
 
         // bidang
