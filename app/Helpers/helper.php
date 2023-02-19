@@ -203,6 +203,9 @@ if (!function_exists('check_image_youtube')) {
     function check_image_youtube(string $src): ?string
     {
         $data = explode('src="', $src);
+        if (!isset($data[1])) {
+            return null;
+        }
         $matches = '';
         preg_match(
             "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",

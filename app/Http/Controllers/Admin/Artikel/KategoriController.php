@@ -41,7 +41,7 @@ class KategoriController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Kategori',
+            'title' => 'Kategori Kategori',
             'breadcrumbs' => [
                 ['name' => 'Kategori'],
             ]

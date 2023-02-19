@@ -1,20 +1,20 @@
 @extends('templates.admin.master')
 @php
-$is_edit = isset($edit);
-$min = $is_edit ? 2 : 1;
-$id = $is_edit ? $artikel->id : '';
-$route = $is_edit ? route(h_prefix('update', $min)) : route(h_prefix('insert', $min));
-$nama = $is_edit ? $artikel->nama : '';
-$date = $is_edit ? explode(' ', $artikel->date)[0] : '';
-$slug = $is_edit ? $artikel->slug : '';
-$excerpt = $is_edit ? $artikel->excerpt : '';
-$detail = $is_edit ? $artikel->detail : '';
-$detail = $is_edit ? $artikel->detail : '';
-$status = $is_edit ? $artikel->status : 1;
-$status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
-
-$kategori = isset($kategori) ? $kategori : [];
-$tag = isset($tag) ? $tag : [];
+    $is_edit = isset($edit);
+    $min = $is_edit ? 2 : 1;
+    $id = $is_edit ? $artikel->id : '';
+    $route = $is_edit ? route(h_prefix('update', $min)) : route(h_prefix('insert', $min));
+    $nama = $is_edit ? $artikel->nama : '';
+    $date = $is_edit ? explode(' ', $artikel->date)[0] : '';
+    $slug = $is_edit ? $artikel->slug : '';
+    $excerpt = $is_edit ? $artikel->excerpt : '';
+    $detail = $is_edit ? $artikel->detail : '';
+    $detail = $is_edit ? $artikel->detail : '';
+    $status = $is_edit ? $artikel->status : 1;
+    $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
+    
+    $kategori = isset($kategori) ? $kategori : [];
+    $tag = isset($tag) ? $tag : [];
 @endphp
 @section('content')
     <div class="card">
@@ -24,84 +24,89 @@ $tag = isset($tag) ? $tag : [];
         <div class="card-body">
             <form method="post" action="" enctype="multipart/form-data" id="MainForm">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-7">
                         <div class="form-group">
-                            <label for="nama">Nama Artikel</label>
-                            <input type="text" name="nama" id="nama" class="form-control" required
-                                placeholder="Nama Artikel" value="{{ $nama }}" />
-                            <input type="hidden" class="" name="id" id="id"
-                                value="{{ $id }}" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="slug">Slug</label>
-                            <input type="text" name="slug" id="slug" class="form-control" required
-                                placeholder="Untuk URL" value="{{ $slug }}" />
-                            <small>Slug digunakan untuk akses artikel lewat url atau alamt web, slug diatas tidak boleh sama
-                                dengan slug dari artikel yang lain</small>
-
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="excerpt">Kilasan/Cuplikan</label>
-                            <textarea class="form-control mb-4" placeholder="Kilasan/Cuplikan artikel" id="excerpt" name="excerpt" required
-                                rows="4">{{ $excerpt }}</textarea>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label><strong>Description :</strong></label>
+                            <label><strong>Deskripsi :</strong></label>
                             <textarea class="summernote" name="detail">{{ $detail }}</textarea>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="kategori">Kategori Artikel</label>
-                            <select class="form-control select2" id="kategori" multiple name="kategori[]"
-                                style="width: 100%">
-                                @foreach ($kategori as $k)
-                                    <option value="{{ $k->id }}" selected>
-                                        {{ $k->text }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="tag">Tag Artikel</label>
-                            <select class="form-control select2" id="tag" multiple name="tag[]" style="width: 100%">
-                                @foreach ($tag as $t)
-                                    <option value="{{ $t->id }}" selected>
-                                        {{ $t->text }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="date">Tanggal Artikel</label>
-                            <input type="date" name="date" id="date" class="form-control" required
-                                placeholder="Tanggal Artikel" value="{{ $date }}" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-label">Publikasikan Artikel:</div>
-                            <div class="custom-controls-stacked">
-                                <label class="custom-control custom-radio-md" style="display: unset">
-                                    <input type="radio" class="custom-control-input" name="status" value="0"
-                                        {{ $status[0] }}>
-                                    <span class="custom-control-label">Simpan</span>
-                                </label>
-                                <label class="custom-control custom-radio-md" style="display: unset">
-                                    <input type="radio" class="custom-control-input" name="status" value="1"
-                                        {{ $status[1] }}>
-                                    <span class="custom-control-label">Publish</span>
-                                </label>
+                    <div class="col-lg-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="nama">Nama Artikel</label>
+                                    <input type="text" name="nama" id="nama" class="form-control" required
+                                        placeholder="Nama Artikel" value="{{ $nama }}" />
+                                    <input type="hidden" class="" name="id" id="id"
+                                        value="{{ $id }}" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="slug">Slug</label>
+                                    <input type="text" name="slug" id="slug" class="form-control" required
+                                        placeholder="Untuk URL" value="{{ $slug }}" />
+                                    <small>Slug digunakan untuk akses artikel lewat url atau alamt web, slug diatas tidak
+                                        boleh sama
+                                        dengan slug dari artikel yang lain</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="excerpt">Kilasan/Cuplikan Artikel</label>
+                                    <textarea class="form-control mb-4" placeholder="Kilasan/Cuplikan artikel" id="excerpt" name="excerpt" required
+                                        rows="4">{{ $excerpt }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="kategori">Kategori Artikel</label>
+                                    <select class="form-control select2" id="kategori" multiple name="kategori[]"
+                                        style="width: 100%">
+                                        @foreach ($kategori as $k)
+                                            <option value="{{ $k->id }}" selected>
+                                                {{ $k->text }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="tag">Tag Artikel</label>
+                                    <select class="form-control select2" id="tag" multiple name="tag[]"
+                                        style="width: 100%">
+                                        @foreach ($tag as $t)
+                                            <option value="{{ $t->id }}" selected>
+                                                {{ $t->text }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="date">Tanggal Artikel</label>
+                                    <input type="date" name="date" id="date" class="form-control date-input-str"
+                                        required placeholder="Tanggal Artikel" value="{{ $date }}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-label">Publikasikan Artikel:</div>
+                                    <div class="custom-controls-stacked">
+                                        <label class="custom-control custom-radio-md" style="display: unset">
+                                            <input type="radio" class="custom-control-input" name="status" value="0"
+                                                {{ $status[0] }}>
+                                            <span class="custom-control-label">Simpan</span>
+                                        </label>
+                                        <label class="custom-control custom-radio-md" style="display: unset">
+                                            <input type="radio" class="custom-control-input" name="status" value="1"
+                                                {{ $status[1] }}>
+                                            <span class="custom-control-label">Publish</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,7 +116,7 @@ $tag = isset($tag) ? $tag : [];
         <div class="card-footer">
             <div class="form-group">
                 <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fas fa-save mr-1"></li> Save
+                    <li class="fas fa-save mr-1"></li> Simpan
                 </button>
             </div>
         </div>
@@ -226,7 +231,7 @@ $tag = isset($tag) ? $tag : [];
                 e.preventDefault();
                 var formData = new FormData(this);
                 resetErrorAfterInput();
-                setBtnLoading('button[type=submit]', 'Save');
+                setBtnLoading('button[type=submit]', 'Simpan');
                 const route = "{{ $route }}";
                 $.ajax({
                     type: "POST",
@@ -267,7 +272,7 @@ $tag = isset($tag) ? $tag : [];
                     },
                     complete: function() {
                         setBtnLoading('button[type=submit]',
-                            '<li class="fas fa-save mr-1"></li> Save',
+                            '<li class="fas fa-save mr-1"></li> Simpan',
                             false);
                     }
                 });
