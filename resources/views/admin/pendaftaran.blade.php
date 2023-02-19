@@ -9,7 +9,7 @@
                     <h3 class="card-title">Status Pendaftaran</h3>
                     <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                         data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="fas fa-plus"></i> Add
+                        <i class="fas fa-plus"></i> Tambah
                     </button>
                 </div>
                 <div class="card-body">

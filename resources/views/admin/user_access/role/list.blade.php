@@ -14,7 +14,7 @@
                     <h3 class="card-title">Permission Table</h3>
                     @if ($can_insert)
                         <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Tambah
                         </a>
                     @endif
                 </div>
