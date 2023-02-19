@@ -7,7 +7,7 @@
                     <div class="breadcrumbs__content">
 
                         <div class="breadcrumbs__item ">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">Utama</a>
                         </div>
 
                         <div class="breadcrumbs__item ">

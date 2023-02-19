@@ -10,7 +10,7 @@
                     <div class="breadcrumbs__content">
 
                         <div class="breadcrumbs__item " data-anim-child="slide-left delay-{{ $anim++ }}">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">Utama</a>
                         </div>
 
                         <div class="breadcrumbs__item " data-anim-child="slide-left delay-{{ $anim++ }}">
