@@ -11,6 +11,9 @@ Jabatan belum ada tombol detail
 data-toggle="tooltip"
 tooltip_refresh();
 
+const class_ = full.active == 1 ? 'success' : 'danger';
+return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}`;
+
 <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
 
 $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");

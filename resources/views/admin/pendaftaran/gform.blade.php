@@ -75,27 +75,21 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered  border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            {!! $is_admin ? '<th>Dibuat Oleh</th>' : '' !!}
-                            <th>No Urut</th>
-                            <th>Nama</th>
-                            <th>Copy Link</th>
-                            <th>Foto</th>
-                            <th>Dari</th>
-                            <th>Sampai</th>
-                            <th>Detail</th>
-                            <th>Tampilkan</th>
-                            <th>Status</th>
-                            {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>Urutan</th>
+                        {!! $is_admin ? '<th>Dibuat</th>' : '' !!}
+                        <th>Nama</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Tampilkan</th>
+                        <th>Status</th>
+                        {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -315,96 +309,80 @@
                     }
                 },
                 columns: [{
-                        data: null,
-                        name: 'id',
-                        orderable: false,
+                        data: 'no_urut',
+                        name: 'no_urut'
                     },
                     ...(is_admin ? [{
                         data: 'user',
                         name: 'user',
-                        orderable: false
+                        orderable: false,
+                        className: 'text-nowrap'
                     }] : []),
-                    {
-                        data: 'no_urut',
-                        name: 'no_urut'
-                    },
                     {
                         data: 'nama',
                         name: 'nama'
                     },
                     {
-                        data: 'slug',
-                        name: 'slug',
-                        render(data, type, full, meta) {
-                            const link = `{{ url('f') }}/${data}`;
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
-                                <i class="fas fa-clipboard" aria-hidden="true"></i>
-                                </button>
-                            ` : '';
-                        },
-                    },
-                    {
-                        data: 'foto',
-                        name: 'foto',
-                        render(data, type, full, meta) {
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" onclick="viewIcon('${data}')"><i class="fas fa-eye" aria-hidden="true"></i> </button>
-                            ` : '';
-                        },
-                    },
-                    {
                         data: 'dari',
-                        name: 'dari'
+                        name: 'dari',
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'sampai',
-                        name: 'sampai'
-                    },
-                    {
-                        data: 'id',
-                        name: 'id',
-                        render(data, type, full, meta) {
-                            return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
-                                <i class="fas fa-eye" aria-hidden="true"></i>
-                                </button>
-                                `;
-                        },
+                        name: 'sampai',
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'tampilkan_str',
                         name: 'tampilkan',
                         render(data, type, full, meta) {
-                            const class_el = full.tampilkan == 1 ? 'badge bg-success' :
-                                (full.tampilkan == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.tampilkan_str}</span>`;
+                            const class_ = full.tampilkan == 1 ? 'success' : 'danger';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${full.tampilkan_str}`;
                         },
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                (full.status == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_ = full.status == 1 ? 'success' : 'danger';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${full.status_str}`;
                         },
+                        className: 'text-nowrap'
                     },
-                    ...(can_update || can_delete ? [{
+                    {
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
-                                <i class="fas fa-edit"></i></button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i></button>` : '';
-                            return btn_update + btn_delete;
+                            // cek garis baru (new line)
+                            let counter = 1;
+                            const ceknl = (max, c) => ((c % max == 0) ? '<br>' : '');
+
+                            const btn_detail = `<button type="button" class="mt-1 btn btn-rounded btn-info btn-sm" data-toggle="tooltip" title="Detail Data" onClick="detail('${data}')">
+                                <i class="fas fa-eye" aria-hidden="true"></i></button>${ceknl(3, counter++)}`;
+
+                            const link = `{{ url('f') }}/${full.slug}`;
+                            const btn_copy = full.slug ? `
+                            <button class="mt-1 me-1 btn btn-warning btn-sm" data-toggle="tooltip" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
+                            <i class="fas fa-clipboard" aria-hidden="true"></i> </button>${ceknl(3, counter++)}` : '';
+
+                            const btn_foto = full.foto ? `
+                            <button class="mt-1 me-1 btn btn-success btn-sm" onclick="viewIcon('${full.foto}')" data-toggle="tooltip" title="Lihat Foto">
+                                <i class="fas fa-image" aria-hidden="true"></i> </button>${ceknl(3, counter++)}` : '';
+
+                            const btn_update = can_update ? `<button type="button" class="mt-1 me-1 btn btn-rounded btn-primary btn-sm" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
+                                <i class="fas fa-edit"></i></button>${ceknl(3, counter++)}` : '';
+
+                            const btn_delete = can_delete ? `<button type="button" class="mt-1 me-1 btn btn-rounded btn-danger btn-sm" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>${ceknl(3, counter++)}` : '';
+                            return btn_detail + btn_copy + btn_foto + btn_update + btn_delete;
                         },
-                        orderable: false
-                    }] : []),
+                        orderable: false,
+                        className: 'text-nowrap'
+                    }
                 ],
                 order: [
-                    [1, 'asc']
+                    [0, 'asc']
                 ],
                 language: {
                     url: datatable_indonesia_language_url
@@ -413,12 +391,6 @@
 
             new_table.on('draw.dt', function() {
                 tooltip_refresh();
-                var PageInfo = table_html.DataTable().page.info();
-                new_table.column(0, {
-                    page: 'current'
-                }).nodes().each(function(cell, i) {
-                    cell.innerHTML = i + 1 + PageInfo.start;
-                });
             });
 
             $('#FilterForm').submit(function(e) {
@@ -493,7 +465,7 @@
         function add() {
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             $('#lihat-foto').hide();
@@ -515,7 +487,7 @@
                 },
                 success: (data) => {
                     isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#dari').val(data.dari);
                     $('#deskripsi').val(data.deskripsi);
