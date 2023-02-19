@@ -137,18 +137,17 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="link">Link <span class="text-danger">*</span></label>
-                            <input type="url" class="form-control" id="link" name="link"
-                                placeholder="Enter Link" required="" />
+                            <input type="url" class="form-control" id="link" name="link" placeholder="Link"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="jawaban">Jawaban <span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control" rows="3" id="jawaban" name="jawaban"
-                                placeholder="Enter Jawaban"> </textarea>
+                            <textarea type="text" class="form-control" rows="3" id="jawaban" name="jawaban" placeholder="Jawaban"> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="type">Tipe</label>

@@ -68,7 +68,7 @@
                                 Keterangan Ditolak
                                 <span class="text-danger">*</span>
                             </label>
-                            <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Enter Keterangan Ditolak"
+                            <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan Ditolak"
                                 required=""></textarea>
                             <input type="hidden" id="id" name="id">
                             <input type="hidden" id="status" name="status">

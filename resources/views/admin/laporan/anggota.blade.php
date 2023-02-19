@@ -100,8 +100,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
 
                         <div class="row">
@@ -139,7 +139,7 @@
                         <div class="form-group">
                             <label class="form-label" for="keterangan">Keterangan</label>
                             <textarea type="text" class="form-control" rows="3" id="keterangan" name="keterangan"
-                                placeholder="Enter Deskripsi"> </textarea>
+                                placeholder="Deskripsi"> </textarea>
                         </div>
 
                     </form>

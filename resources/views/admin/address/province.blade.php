@@ -52,13 +52,13 @@
                         enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="form-label" for="id">ID <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="id" name="id" placeholder="Enter ID"
+                            <input type="number" class="form-control" id="id" name="id" placeholder="ID"
                                 required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter Name" required="" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                required="" />
                         </div>
                     </form>
                 </div>

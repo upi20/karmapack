@@ -144,7 +144,7 @@
                             <label class="form-label" for="deskripsi">Deskripsi
                                 <span class="text-danger">*</span></label>
                             <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                placeholder="Enter Deskripsi" required> </textarea>
+                                placeholder="Deskripsi" required> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>

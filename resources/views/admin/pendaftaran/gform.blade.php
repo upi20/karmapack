@@ -121,7 +121,7 @@
                                     <label class="form-label" for="nama">Nama <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="nama" name="nama"
-                                        placeholder="Enter Nama" required="" />
+                                        placeholder="Nama" required="" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -129,7 +129,7 @@
                                     <label class="form-label" for="slug">Slug <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="slug" name="slug"
-                                        placeholder="Enter Slug" required="" />
+                                        placeholder="Slug" required="" />
                                 </div>
                             </div>
                             <div class="col-12">
@@ -137,7 +137,7 @@
                                     <label class="form-label" for="link">Google Form Link
                                         <span class="text-danger">*</span></label>
                                     <input type="url" class="form-control" id="link" name="link"
-                                        placeholder="Enter Google Form Link" required="" />
+                                        placeholder="Google Form Link" required="" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -176,7 +176,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="deskripsi">Deskripsi</label>
                                     <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                        placeholder="Enter Deskripsi"> </textarea>
+                                        placeholder="Deskripsi"> </textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6">

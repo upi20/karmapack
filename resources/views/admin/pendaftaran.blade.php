@@ -65,8 +65,8 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="foto">Foto <span class="text-danger">*</span></label>
@@ -96,12 +96,12 @@
                         <div class="form-group">
                             <label class="form-label" for="deskripsi">Deskripsi</label>
                             <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                placeholder="Enter Deskripsi"> </textarea>
+                                placeholder="Deskripsi"> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="pengumuman">Pengumuman (HTML)</label>
                             <textarea type="text" class="form-control" rows="3" id="pengumuman" name="pengumuman"
-                                placeholder="Enter Pengumuman"> </textarea>
+                                placeholder="Pengumuman"> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>

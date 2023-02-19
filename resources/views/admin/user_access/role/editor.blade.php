@@ -14,16 +14,16 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter Name" required="" value="{{ $model->name }}" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                required="" value="{{ $model->name }}" />
                             <input type="hidden" id="id" name="id" value="{{ $model->id }}" />
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label" for="guard_name">Guard <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="guard_name" name="guard_name"
-                                placeholder="Enter Guard" required="" value="{{ $model->guard_name }}" />
+                            <input type="text" class="form-control" id="guard_name" name="guard_name" placeholder="Guard"
+                                required="" value="{{ $model->guard_name }}" />
                         </div>
                     </div>
                 </div>

@@ -56,21 +56,21 @@
                                 <div class="form-group">
                                     <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="nama" name="nama"
-                                        placeholder="Enter Nama" required="" />
+                                        placeholder="Nama" required="" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label" for="link">Link </label>
                                     <input type="url" class="form-control" id="link" name="link"
-                                        placeholder="Enter Link" />
+                                        placeholder="Link" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label" for="link_nama">Link Nama </label>
                                     <input type="text" class="form-control" id="link_nama" name="link_nama"
-                                        placeholder="Enter Link nama" />
+                                        placeholder="Link nama" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -94,7 +94,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="deskripsi">Deskripsi</label>
                                     <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                        placeholder="Enter Deskripsi"> </textarea>
+                                        placeholder="Deskripsi"> </textarea>
                                 </div>
                             </div>
                         </div>

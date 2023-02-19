@@ -69,13 +69,13 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="slug">Slug <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="slug" name="slug"
-                                placeholder="Enter Slug" required="" />
+                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="foto_id_gdrive">Icon Foto Id Google Drive <span

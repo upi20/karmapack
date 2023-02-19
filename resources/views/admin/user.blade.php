@@ -93,14 +93,14 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="angkatan">Angkatan <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="angkatan" name="angkatan"
-                                placeholder="Enter Angkatan" required="" min="2003" max="2999" />
+                            <input type="number" class="form-control" id="angkatan" name="angkatan" placeholder="Angkatan"
+                                required="" min="2003" max="2999" />
 
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter Name" required="" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                required="" />
 
                         </div>
                         <div class="form-group">
@@ -119,7 +119,7 @@
                         <div class="form-group ">
                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="password" name="password"
-                                placeholder="Enter Password" required="">
+                                placeholder="Password" required="">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="role">User Role</label>
