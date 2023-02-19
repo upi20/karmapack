@@ -310,7 +310,7 @@
 
         function add() {
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Tambah Sosial Media");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             resetErrorAfterInput();
@@ -318,10 +318,9 @@
 
         function editFunc(datas) {
             const data = datas.dataset;
-            $('#modal-default-title').html("Ubah Sosial Media");
+            $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#MainForm').trigger("reset");
-            console.log(data);
             $('#id').val(data.id);
             $('#nama').val(data.nama);
             $('#status').val(data.status);
