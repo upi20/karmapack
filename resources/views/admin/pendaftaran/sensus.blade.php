@@ -204,7 +204,10 @@
                 ],
                 order: [
                     [7, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
             table_html_global = table_html;
 

@@ -280,7 +280,10 @@
                 ],
                 order: [
                     [order_column, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
