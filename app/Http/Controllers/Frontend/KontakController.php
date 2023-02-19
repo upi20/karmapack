@@ -35,7 +35,6 @@ class KontakController extends Controller
     {
         $page_attr = [
             'title' => 'FAQ',
-            'navigation' => 'kontak'
         ];
 
         $faqs = FAQ::where('status', '=', 1)->get();
