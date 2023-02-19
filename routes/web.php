@@ -200,6 +200,9 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
 // frontend2 ==========================================================================================================
 Route::get('/frontend2', [HomeController::class, 'fronted2'])->name('frontend2');
 
+Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 // profile username ===================================================================================================
 Route::get('/{user:username}', [AnggotaController::class, 'user'])->name("anggota.username");

@@ -83,7 +83,8 @@ if (!function_exists('str_parse')) {
     function str_parse(?string $text = '', array $addon = []): string
     {
         $replace = [
-            ['search' => '__base_url__', 'replace' => url('')]
+            ['search' => '__base_url__', 'replace' => url('')],
+            ['search' => '__file_shared__', 'replace' => url('shared/files/shares')],
         ];
         $replace = array_merge($replace, $addon);
         $result = $text;
