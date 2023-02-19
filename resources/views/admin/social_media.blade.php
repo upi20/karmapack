@@ -10,46 +10,62 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Status Social Media</h3>
+                    <h3 class="card-title">Tabel {{ $page_attr['title'] }}</h3>
                     @if ($can_insert)
                         <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Tambah
                         </button>
                     @endif
                 </div>
                 <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Social Media</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">All Social Media</option>
-                                <option value="1">Dipakai</option>
-                                <option value="0">Tidak Dipakai</option>
-                            </select>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default active mb-2">
+                            <div class="panel-heading " role="tab" id="headingOne1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
+                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        Filter Data
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne1">
+                                <div class="panel-body">
+                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                        <div class="form-group float-start me-2">
+                                            <label for="filter_status">Status</label>
+                                            <select class="form-control" id="filter_status" name="filter_status"
+                                                style="max-width: 200px">
+                                                <option value="">Semua</option>
+                                                <option value="1">Dipakai</option>
+                                                <option value="0">Tidak Dipakai</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                    <div style="clear: both"></div>
+                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                        data-toggle="tooltip" title="Refresh Filter Table">
+                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Icon</th>
-                                    <th>Url</th>
-                                    <th>No Urut</th>
-                                    <th>Keterangan</th>
-                                    <th>Status</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
                     </div>
+
+                    <table class="table table-striped" id="tbl_main">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Sosial Media</th>
+                                <th>Url</th>
+                                <th>No Urut</th>
+                                <th>Status</th>
+                                {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -68,8 +84,8 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="icon">Icon <span class="text-danger">*</span></label>
@@ -79,17 +95,19 @@
                         <div class="form-group">
                             <label class="form-label" for="url">Link <span class="text-danger">*</span></label>
                             <input type="url" class="form-control" id="url" name="url"
-                                placeholder="Link Social Media" required="" />
+                                placeholder="Link Sosial Media" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="order">Nomor Urut <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="order" name="order" placeholder="Urutan"
-                                required="" />
+                            <label class="form-label" for="order">Nomor Urut <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="order" name="order"
+                                placeholder="Urutan" required="" />
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="keterangan">Keterangan <span class="text-danger">*</span></label>
+                            <label class="form-label" for="keterangan">Keterangan <span
+                                    class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="keterangan" name="keterangan"
-                                placeholder="Enter Keterangan" required="" />
+                                placeholder="Keterangan" required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
@@ -163,41 +181,37 @@
                     },
                     {
                         data: 'nama',
-                        name: 'nama'
-                    },
-                    {
-                        data: 'icon',
-                        name: 'icon',
+                        name: 'nama',
                         render(data, type, full, meta) {
-                            return `<i class="${data}"></i> <span>${data}</span>`;
+                            return `${data}<br><small>${full.keterangan}</small>`;
                         },
                     },
                     {
                         data: 'url',
-                        name: 'url'
+                        name: 'url',
+                        render(data, type, full, meta) {
+                            return `${data}<br><small><i class="${full.icon}"></i> <span>${full.icon}</span></small>`;
+                        },
                     },
                     {
                         data: 'order',
                         name: 'order'
                     },
                     {
-                        data: 'keterangan',
-                        name: 'keterangan'
-                    },
-                    {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                'badge bg-danger';
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_el = full.status == 1 ? 'text-success' :
+                                'text-danger';
+                            return `<i class="fas fa-circle me-2 ${class_el}"></i>${full.status_str}`;
                         },
+                        className: 'text-nowrap'
                     },
                     ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Ubah Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-url="${full.url}"
@@ -206,18 +220,16 @@
                                 data-keterangan="${full.keterangan}"
                                 data-order="${full.order}"
                                 onClick="editFunc(this)">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
+                                <i class="fas fa-edit"></i></button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>` : '';
                             return btn_update + btn_delete;
                         },
                         orderable: false
                     }] : []),
                 ],
                 order: [
-                    [4, 'asc']
+                    [3, 'asc']
                 ],
                 language: {
                     url: datatable_indonesia_language_url
@@ -298,16 +310,15 @@
 
         function add() {
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add Social Media");
+            $('#modal-default-title').html("Tambah Sosial Media");
             $('#modal-default').modal('show');
             $('#id').val('');
             resetErrorAfterInput();
         }
 
-
         function editFunc(datas) {
             const data = datas.dataset;
-            $('#modal-default-title').html("Edit Social Media");
+            $('#modal-default-title').html("Ubah Sosial Media");
             $('#modal-default').modal('show');
             $('#MainForm').trigger("reset");
             console.log(data);

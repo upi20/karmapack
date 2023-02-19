@@ -43,7 +43,7 @@ class SocialMediaController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Sosial Media',
+            'title' => 'Sosial Media',
             'breadcrumbs' => [
                 ['name' => 'Dashboard'],
             ]
