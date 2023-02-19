@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Sensus Anggota</h3>
+                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
                     <div>
                         <button class="btn btn-success btn-sm" onclick="exportExcel()">
                             <i class="fa fa-file-excel-o"></i> Excel

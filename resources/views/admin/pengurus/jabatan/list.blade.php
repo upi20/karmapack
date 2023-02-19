@@ -12,7 +12,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">List Bidang Periode <span class="fw-bold">{{ $periode->nama }}</span>
+                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
                     </h3>
                     @if ($can_insert)
                         <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
