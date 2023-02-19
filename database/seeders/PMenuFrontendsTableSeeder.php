@@ -51,12 +51,12 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'parent_id' => 2,
                 'title' => 'Sejarah',
                 'icon' => NULL,
-                'route' => '#',
+                'route' => 'tentang.sejarah',
                 'sequence' => 3,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:30:59',
-                'updated_at' => '2023-02-18 22:39:37',
+                'updated_at' => '2023-02-19 09:50:07',
             ),
             3 => 
             array (

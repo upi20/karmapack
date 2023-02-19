@@ -19,7 +19,6 @@ class StrukturController extends Controller
     public function periode(Periode $periode, Request $request = null)
     {
         $page_attr = [
-            // 'loader' => false,
             'title' => $periode->nama,
             'description' => "STRUKTUR KEPENGURUSAN KELUARGA MAHASISWA DAN PELAJAR CIANJUR KIDUL PERIODE $periode->dari - $periode->sampai $periode->nama",
             'periode_id' => $periode->id,

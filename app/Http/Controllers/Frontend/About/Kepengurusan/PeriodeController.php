@@ -12,7 +12,6 @@ class PeriodeController extends Controller
     {
         $paginate = is_numeric($request->limit) ? $request->limit : 10;
         $page_attr = [
-            'loader' => false,
             'title' => 'Periode Kepengurusan',
             'navigation' => 'tentang.kepengurusan.periode',
         ];

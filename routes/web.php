@@ -34,6 +34,7 @@ use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranController
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\PeriodeController;
+use App\Http\Controllers\Frontend\About\SejarahController;
 use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
@@ -97,7 +98,7 @@ Route::group(['prefix' => $name], function () use ($name) {
     });
 
     // sejarah
-
+    Route::get('/sejarah', [SejarahController::class, 'index'])->name("$name.sejarah");
 });
 // ====================================================================================================================
 

@@ -12,6 +12,10 @@
                         </div>
 
                         <div class="breadcrumbs__item ">
+                            <a href="javascript:void(0)">Tentang Kami</a>
+                        </div>
+
+                        <div class="breadcrumbs__item ">
                             <a href="{{ route('tentang.kepengurusan.struktur') }}">Struktur Kepengursan</a>
                         </div>
 
