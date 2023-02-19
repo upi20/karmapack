@@ -55,24 +55,22 @@
                     <i class="fas fa-sync"></i> Refresh
                 </button>
             </form>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Angkatan</th>
-                            <th>Name</th>
-                            {!! $is_admin ? '<th>Email</th>' : '' !!}
-                            <th>Role</th>
-                            <th>DOB</th>
-                            <th>BIRTHDAY</th>
-                            <th>Active</th>
-                            {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Angkatan</th>
+                        <th>Name</th>
+                        {!! $is_admin ? '<th>Email</th>' : '' !!}
+                        <th>Role</th>
+                        <th>DOB</th>
+                        <th>BIRTHDAY</th>
+                        <th>Active</th>
+                        {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -283,7 +281,7 @@
             });
 
             new_table.on('draw.dt', function() {
-                tooltip_refresh();
+                tinooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'

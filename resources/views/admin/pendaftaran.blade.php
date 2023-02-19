@@ -26,25 +26,23 @@
                     <i class="fas fa-sync"></i> Refresh
                 </button>
             </form>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>No Urut</th>
-                            <th>Nama</th>
-                            <th>Foto</th>
-                            <th>Dari</th>
-                            <th>Sampai</th>
-                            <th>Route</th>
-                            <th>Detail</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No Urut</th>
+                        <th>Nama</th>
+                        <th>Foto</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Route</th>
+                        <th>Detail</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->

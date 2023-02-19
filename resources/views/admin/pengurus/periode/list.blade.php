@@ -21,26 +21,24 @@
             @endif
         </div>
         <div class="card-body">
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Dari</th>
-                            <th>Sampai</th>
-                            <th>Slug</th>
-                            {!! $can_set_role ? '<th>Set Role</th>' : '' !!}
-                            {!! $can_member ? '<th>Pengurus</th>' : '' !!}
-                            {!! $can_detail ? '<th>Detail</th>' : '' !!}
-                            <th>Foto</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Slug</th>
+                        {!! $can_set_role ? '<th>Set Role</th>' : '' !!}
+                        {!! $can_member ? '<th>Pengurus</th>' : '' !!}
+                        {!! $can_detail ? '<th>Detail</th>' : '' !!}
+                        <th>Foto</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->

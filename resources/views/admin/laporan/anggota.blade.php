@@ -53,24 +53,22 @@
                 </div>
             </div>
 
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered  border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Angkatan</th>
-                            <th>Nama</th>
-                            <th>Tanggal Lahir</th>
-                            <th>Alamat</th>
-                            <th>Whatsap</th>
-                            <th>No Telepon</th>
-                            <th>Kepengurusan Terakhir</th>
-                            <th>Pendidikan Terakhir</th>
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Angkatan</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>Whatsap</th>
+                        <th>No Telepon</th>
+                        <th>Kepengurusan Terakhir</th>
+                        <th>Pendidikan Terakhir</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->

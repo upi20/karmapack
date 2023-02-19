@@ -43,24 +43,22 @@
                     <i class="fas fa-sync"></i> Refresh
                 </button>
             </form>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Role</th>
-                            <th>Urutan</th>
-                            <th>Bidang</th>
-                            <th>Sub Bidang</th>
-                            <th style="min-width: 150px;">Slug</th>
-                            <th>Icon</th>
-                            <th>Status</th>
-                            {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Role</th>
+                        <th>Urutan</th>
+                        <th>Bidang</th>
+                        <th>Sub Bidang</th>
+                        <th style="min-width: 150px;">Slug</th>
+                        <th>Icon</th>
+                        <th>Status</th>
+                        {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->

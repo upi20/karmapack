@@ -52,22 +52,20 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered  border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Sebagai</th>
-                            <th>Profesi</th>
-                            <th>Detail</th>
-                            <th>Status</th>
-                            {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Sebagai</th>
+                        <th>Profesi</th>
+                        <th>Detail</th>
+                        <th>Status</th>
+                        {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     @if ($can_list)

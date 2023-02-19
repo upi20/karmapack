@@ -27,23 +27,21 @@
                     <i class="fas fa-sync"></i> Refresh
                 </button>
             </form>
-            <div class="table-responsive table-striped">
-                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Angkatan</th>
-                            <th>Email</th>
-                            <th>Whatsapp</th>
-                            <th>Telepon</th>
-                            <th>Keterangan</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Angkatan</th>
+                        <th>Email</th>
+                        <th>Whatsapp</th>
+                        <th>Telepon</th>
+                        <th>Keterangan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
 
