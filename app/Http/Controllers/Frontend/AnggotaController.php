@@ -14,7 +14,7 @@ class AnggotaController extends Controller
     {
 
         $page_attr = [
-            'title' => 'List Anggota'
+            'title' => 'Daftar Anggota'
         ];
 
         // filter attribut
