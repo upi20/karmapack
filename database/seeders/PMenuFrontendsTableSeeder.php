@@ -90,12 +90,12 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'parent_id' => 2,
                 'title' => 'Anggaran Dasar Anggaran Rumah Tangga',
                 'icon' => NULL,
-                'route' => '__base_url__/ad_art_dan_ghbo_karmapack.pdf',
+                'route' => '__file_shared__/ad_art_dan_ghbo_karmapack.pdf',
                 'sequence' => 6,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2022-08-20 14:31:46',
-                'updated_at' => '2023-02-18 22:44:05',
+                'updated_at' => '2023-02-19 18:05:45',
             ),
             6 => 
             array (

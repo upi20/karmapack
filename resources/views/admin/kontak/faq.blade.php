@@ -12,11 +12,11 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">{{ $page_attr['title'] }} Table List</h3>
+                    <h3 class="card-title">Tabel {{ $page_attr['title'] }}</h3>
                     @if ($can_insert)
                         <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
                             data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
+                            <i class="fas fa-plus"></i> Tambah
                         </button>
                     @endif
                 </div>
@@ -28,7 +28,7 @@
                                     <h4 class="panel-title">
                                         <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2"
                                             href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                            Setting
+                                            Pengaturan
                                         </a>
                                     </h4>
                                 </div>
@@ -84,7 +84,7 @@
                                         </div>
 
                                         <div class="form-group float-start me-2">
-                                            <label for="filter_type">Type</label>
+                                            <label for="filter_type">Tipe</label>
                                             <select class="form-control" id="filter_type" name="filter_type"
                                                 style="max-width: 200px">
                                                 <option value="">Semua</option>
@@ -104,23 +104,21 @@
                         </div>
                     </div>
 
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Type</th>
-                                    <th>Status</th>
-                                    <th>Detail</th>
-                                    @if ($can_update || $can_delete)
-                                        <th>Action</th>
-                                    @endif
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
+                    <table class="table table-striped" id="tbl_main">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Tipe</th>
+                                <th>Status</th>
+                                <th>Detail</th>
+                                @if ($can_update || $can_delete)
+                                    <th>Aksi</th>
+                                @endif
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -153,7 +151,7 @@
                                 placeholder="Enter Jawaban"> </textarea>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="type">Type</label>
+                            <label class="form-label" for="type">Tipe</label>
                             <select class="form-control" style="width: 100%;" required="" id="type"
                                 name="type">
                                 <option value="1">Teks</option>
@@ -227,7 +225,7 @@
         const can_update = {{ $can_update ? 'true' : 'false' }};
         const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
-        let isEdit = true;
+        let isUbah = true;
         $(document).ready(function() {
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -266,14 +264,19 @@
                     },
                     {
                         data: 'status_str',
-                        name: 'status'
+                        name: 'status',
+                        render(data, type, full, meta) {
+                            const class_ = full.status == 1 ? 'success' : 'danger';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${data}`;
+                        },
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
                             return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
+                                <button type="button" class="btn btn-rounded btn-info btn-sm" data-toggle="tooltip" title="Detail Data" onClick="detail('${data}')">
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
                                 `;
@@ -283,12 +286,10 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data" onClick="editFunc('${data}')">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
+                                <i class="fas fa-edit"></i></button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>` : '';
                             return btn_update + btn_delete;
                         },
                         orderable: false
@@ -345,7 +346,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        isEdit = true;
+                        isUbah = true;
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
@@ -426,14 +427,14 @@
         });
 
         function add() {
-            if (!isEdit) return false;
+            if (!isUbah) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             $('#lihat-foto').hide();
             resetErrorAfterInput();
-            isEdit = false;
+            isUbah = false;
             typeSwitch();
             return true;
         }
@@ -450,8 +451,8 @@
                     id
                 },
                 success: (data) => {
-                    isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    isUbah = true;
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
                     $('#nama').val(data.nama);

@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">{{ $page_attr['title'] }} Table List</h3>
+                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
                 </div>
                 <div class="card-body">
                     @if ($can_setting)
@@ -19,7 +19,7 @@
                                     <h4 class="panel-title">
                                         <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2"
                                             href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                            Setting
+                                            Pengaturan
                                         </a>
                                     </h4>
                                 </div>
@@ -95,20 +95,18 @@
                         </div>
                     @endif
 
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Pesan</th>
-                                    <th>Tanggal</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
+                    <table class="table table-striped" id="tbl_main">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Pesan</th>
+                                <th>Tanggal</th>
+                            </tr>
+                        </thead>
+                        <tbody> </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -186,7 +184,6 @@
             });
 
             new_table.on('draw.dt', function() {
-                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -216,7 +213,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Data berhasil disimpan',
+                                title: 'Data saved successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

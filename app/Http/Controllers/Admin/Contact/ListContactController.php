@@ -28,8 +28,9 @@ class ListContactController extends Controller
             return $this->datatable($request);
         }
         $page_attr = [
-            'title' => 'List Kontak',
+            'title' => 'Daftar Kontak',
             'breadcrumbs' => [
+                ['name' => 'Halaman Utama', 'url' => 'admin.dashboard'],
                 ['name' => 'Kontak'],
             ]
         ];

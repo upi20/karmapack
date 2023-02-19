@@ -1035,6 +1035,14 @@ class PPermissionsTableSeeder extends Seeder
                 'created_at' => '2023-02-18 21:46:15',
                 'updated_at' => '2023-02-18 21:46:15',
             ),
+            127 => 
+            array (
+                'id' => 173,
+                'name' => 'admin.setting.sejarah',
+                'guard_name' => 'web',
+                'created_at' => '2023-02-19 16:41:50',
+                'updated_at' => '2023-02-19 16:41:50',
+            ),
         ));
         
         
