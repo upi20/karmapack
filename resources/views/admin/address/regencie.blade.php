@@ -6,53 +6,49 @@
         $can_update = auth_can(h_prefix('update'));
         $can_delete = auth_can(h_prefix('delete'));
     @endphp
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    @endif
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_province" class="me-md-2">Province</label>
+                    <select class="form-control" id="filter_province" name="filter_province">
+                        <option value="">All Province</option>
+                        @foreach ($provinces as $province)
+                            <option value="{{ $province->id }}">
+                                {{ $province->name }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_province" class="me-md-2">Province</label>
-                            <select class="form-control" id="filter_province" name="filter_province">
-                                <option value="">All Province</option>
-                                @foreach ($provinces as $province)
-                                    <option value="{{ $province->id }}">
-                                        {{ $province->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Province</th>
-                                    <th>District</th>
-                                    <th>Village</th>
-                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Province</th>
+                            <th>District</th>
+                            <th>Village</th>
+                            {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -7,35 +7,31 @@
         $can_delete = auth_can('h_prefix().delete');
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    @if ($can_insert)
-                        <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
-                            <i class="fas fa-plus"></i> Tambah
-                        </a>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Guard</th>
-                                    <th>Updated At</th>
-                                    @if ($can_update || $can_delete)
-                                        <th>Aksi</th>
-                                    @endif
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
+                    <i class="fas fa-plus"></i> Tambah
+                </a>
+            @endif
+        </div>
+        <div class="card-body">
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Guard</th>
+                            <th>Updated At</th>
+                            @if ($can_update || $can_delete)
+                                <th>Aksi</th>
+                            @endif
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>

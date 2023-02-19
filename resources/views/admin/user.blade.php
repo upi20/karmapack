@@ -12,70 +12,66 @@
             ->hasRole(config('app.super_admin_role'));
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    <div>
-                        @if ($can_excel)
-                            <button class="btn btn-success btn-sm" onclick="exportExcel()">
-                                <i class="fas fa-file-excel"></i> Excel
-                            </button>
-                        @endif
-                        @if ($can_insert)
-                            <button type="button" class="btn btn-rounded btn-primary btn-sm" data-bs-effect="effect-scale"
-                                data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                                <i class="fas fa-plus"></i> Tambah
-                            </button>
-                        @endif
-                    </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            <div>
+                @if ($can_excel)
+                    <button class="btn btn-success btn-sm" onclick="exportExcel()">
+                        <i class="fas fa-file-excel"></i> Excel
+                    </button>
+                @endif
+                @if ($can_insert)
+                    <button type="button" class="btn btn-rounded btn-primary btn-sm" data-bs-effect="effect-scale"
+                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                        <i class="fas fa-plus"></i> Tambah
+                    </button>
+                @endif
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_role">User Role</label>
+                    <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
+                        <option value="">All User Role</option>
+                        @foreach ($user_role as $role)
+                            <option value="{{ $role->name }}">
+                                {{ ucfirst(implode(' ', explode('_', $role->name))) }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_role">User Role</label>
-                            <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
-                                <option value="">All User Role</option>
-                                @foreach ($user_role as $role)
-                                    <option value="{{ $role->name }}">
-                                        {{ ucfirst(implode(' ', explode('_', $role->name))) }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group me-md-3">
-                            <label for="filter_active">User Active</label>
-                            <select class="form-control" id="filter_active" name="filter_active" style="max-width: 200px">
-                                <option value="">All User Active</option>
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Angkatan</th>
-                                    <th>Name</th>
-                                    {!! $is_admin ? '<th>Email</th>' : '' !!}
-                                    <th>Role</th>
-                                    <th>DOB</th>
-                                    <th>BIRTHDAY</th>
-                                    <th>Active</th>
-                                    {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
+                <div class="form-group me-md-3">
+                    <label for="filter_active">User Active</label>
+                    <select class="form-control" id="filter_active" name="filter_active" style="max-width: 200px">
+                        <option value="">All User Active</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Angkatan</th>
+                            <th>Name</th>
+                            {!! $is_admin ? '<th>Email</th>' : '' !!}
+                            <th>Role</th>
+                            <th>DOB</th>
+                            <th>BIRTHDAY</th>
+                            <th>Active</th>
+                            {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>

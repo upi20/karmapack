@@ -2,52 +2,48 @@
 
 @section('content')
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="fas fa-plus"></i> Tambah
-                    </button>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                <i class="fas fa-plus"></i> Tambah
+            </button>
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Status Pendaftaran</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">All Pendaftaran</option>
+                        <option value="0">Tidak Aktif</option>
+                        <option value="1">Aktif</option>
+                        <option value="2">Ditutup</option>
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Status Pendaftaran</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">All Pendaftaran</option>
-                                <option value="0">Tidak Aktif</option>
-                                <option value="1">Aktif</option>
-                                <option value="2">Ditutup</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>No Urut</th>
-                                    <th>Nama</th>
-                                    <th>Foto</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Route</th>
-                                    <th>Detail</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>No Urut</th>
+                            <th>Nama</th>
+                            <th>Foto</th>
+                            <th>Dari</th>
+                            <th>Sampai</th>
+                            <th>Route</th>
+                            <th>Detail</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>

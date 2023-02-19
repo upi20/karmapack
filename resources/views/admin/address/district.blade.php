@@ -6,76 +6,71 @@
         $can_update = auth_can(h_prefix('update'));
         $can_delete = auth_can(h_prefix('delete'));
     @endphp
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="h5">Filter Data</h5>
-                                </div>
-                                <div class="col-md-5 my-md-1">
-                                    <div class="form-group">
-                                        <label for="filter_province" class="me-md-2">Province</label>
-                                        <select class="form-control" id="filter_province" name="filter_province"
-                                            style="width: 100%">
-                                            <option value="">All Province</option>
-                                            @foreach ($provinces as $province)
-                                                <option value="{{ $province->id }}">
-                                                    {{ $province->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 my-md-1">
-                                    <div class="form-group">
-                                        <label for="filter_regencie" class="me-md-2">Regencie</label>
-                                        <select class="form-control" id="filter_regencie" name="filter_regencie"
-                                            style="width: 100%">
-                                            <option value="">All Regencie</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 d-flex align-items-end my-md-1">
-                                    <div>
-                                        <button type="submit" class="btn btn-rounded btn-md btn-info"
-                                            title="Refresh Filter Table">
-                                            <i class="fas fa-sync"></i> Refresh
-                                        </button>
-                                    </div>
-                                </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            <div class="container-fluid">
+                <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="h5">Filter Data</h5>
+                        </div>
+                        <div class="col-md-5 my-md-1">
+                            <div class="form-group">
+                                <label for="filter_province" class="me-md-2">Province</label>
+                                <select class="form-control" id="filter_province" name="filter_province"
+                                    style="width: 100%">
+                                    <option value="">All Province</option>
+                                    @foreach ($provinces as $province)
+                                        <option value="{{ $province->id }}">
+                                            {{ $province->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
-                        </form>
+                        </div>
+                        <div class="col-md-5 my-md-1">
+                            <div class="form-group">
+                                <label for="filter_regencie" class="me-md-2">Regencie</label>
+                                <select class="form-control" id="filter_regencie" name="filter_regencie"
+                                    style="width: 100%">
+                                    <option value="">All Regencie</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end my-md-1">
+                            <div>
+                                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                                    <i class="fas fa-sync"></i> Refresh
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Province</th>
-                                    <th>Regencie</th>
-                                    <th>Village</th>
-                                    {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
+                </form>
+            </div>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Province</th>
+                            <th>Regencie</th>
+                            <th>Village</th>
+                            {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -8,36 +8,32 @@
         $can_set_role = auth_can(h_prefix('set_role'));
         $can_bidang = auth_can(h_prefix('jabatan', 1));
     @endphp
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    @if ($can_insert)
-                        <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
-                            data-bs-effect="effect-scale">
-                            <i class="fas fa-plus"></i> Tambah Periode
-                        </a>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped" id="tbl_main">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Dari</th>
-                                <th>Sampai</th>
-                                {!! $can_set_role ? '<th>Set Sebagai</th>' : '' !!}
-                                <th>Detail</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody> </tbody>
-                    </table>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
+                    data-bs-effect="effect-scale">
+                    <i class="fas fa-plus"></i> Tambah Periode
+                </a>
+            @endif
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        {!! $can_set_role ? '<th>Set Sebagai</th>' : '' !!}
+                        <th>Detail</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
 

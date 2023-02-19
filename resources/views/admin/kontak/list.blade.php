@@ -8,108 +8,102 @@
         $can_setting = auth_can(h_prefix('setting'));
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    @endif
-                </div>
-                <div class="card-body">
-                    @if ($can_setting)
-                        <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default active mb-2">
-                                <div class="panel-heading " role="tab" id="headingOne1">
-                                    <h4 class="panel-title">
-                                        <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2"
-                                            href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                            Pengaturan
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapse2" class="panel-collapse collapse" role="tabpanel"
-                                    aria-labelledby="headingOne1">
-                                    <div class="panel-body">
-                                        <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="setting_form">
-                                            <div class="form-group float-start me-2">
-                                                <label for="setting_title">Judul</label>
-                                                <input type="text" class="form-control" id="setting_title" name="title"
-                                                    value="{{ $setting->title }}">
-                                            </div>
-                                            <div class="form-group float-start me-2">
-                                                <label for="setting_sub_title">Sub Judul</label>
-                                                <input type="text" class="form-control" id="setting_sub_title"
-                                                    name="sub_title" value="{{ $setting->sub_title }}">
-                                            </div>
-
-                                        </form>
-                                        <div style="clear: both"></div>
-                                        <button type="submit" form="setting_form" class="btn btn-rounded btn-md btn-info"
-                                            data-toggle="tooltip" title="Simpan Setting" id="setting_btn_submit">
-                                            <li class="fas fa-save mr-1"></li> Simpan Perubahan
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            @if ($can_setting)
+                <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default active mb-2">
+                        <div class="panel-heading " role="tab" id="headingOne1">
+                            <h4 class="panel-title">
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2" href="#collapse2"
+                                    aria-expanded="true" aria-controls="collapse2">
+                                    Pengaturan
+                                </a>
+                            </h4>
                         </div>
-                    @endif
+                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                            <div class="panel-body">
+                                <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="setting_form">
+                                    <div class="form-group float-start me-2">
+                                        <label for="setting_title">Judul</label>
+                                        <input type="text" class="form-control" id="setting_title" name="title"
+                                            value="{{ $setting->title }}">
+                                    </div>
+                                    <div class="form-group float-start me-2">
+                                        <label for="setting_sub_title">Sub Judul</label>
+                                        <input type="text" class="form-control" id="setting_sub_title" name="sub_title"
+                                            value="{{ $setting->sub_title }}">
+                                    </div>
 
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default active mb-2">
-                            <div class="panel-heading " role="tab" id="headingOne1">
-                                <h4 class="panel-title">
-                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
-                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                        Filter Data
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingOne1">
-                                <div class="panel-body">
-                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
-                                        <div class="form-group float-start me-2">
-                                            <label for="filter_status">Status</label>
-                                            <select class="form-control" id="filter_status" name="filter_status"
-                                                style="max-width: 200px">
-                                                <option value="">Semua</option>
-                                                <option value="1">Digunakan</option>
-                                                <option value="0">Tidak Digunakan</option>
-                                            </select>
-                                        </div>
-                                    </form>
-                                    <div style="clear: both"></div>
-                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
-                                        data-toggle="tooltip" title="Refresh Filter Table">
-                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
-                                    </button>
-                                </div>
+                                </form>
+                                <div style="clear: both"></div>
+                                <button type="submit" form="setting_form" class="btn btn-rounded btn-md btn-info"
+                                    data-toggle="tooltip" title="Simpan Setting" id="setting_btn_submit">
+                                    <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
+            @endif
 
-                    <table class="table table-striped" id="tbl_main">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Kontak</th>
-                                <th>Link</th>
-                                <th>Urutan</th>
-                                <th>Status</th>
-                                @if ($can_update || $can_delete)
-                                    <th>Aksi</th>
-                                @endif
-                            </tr>
-                        </thead>
-                        <tbody> </tbody>
-                    </table>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default active mb-2">
+                    <div class="panel-heading " role="tab" id="headingOne1">
+                        <h4 class="panel-title">
+                            <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse1"
+                                aria-expanded="true" aria-controls="collapse1">
+                                Filter Data
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                        <div class="panel-body">
+                            <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                <div class="form-group float-start me-2">
+                                    <label for="filter_status">Status</label>
+                                    <select class="form-control" id="filter_status" name="filter_status"
+                                        style="max-width: 200px">
+                                        <option value="">Semua</option>
+                                        <option value="1">Digunakan</option>
+                                        <option value="0">Tidak Digunakan</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <div style="clear: both"></div>
+                            <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                data-toggle="tooltip" title="Refresh Filter Table">
+                                <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kontak</th>
+                        <th>Link</th>
+                        <th>Urutan</th>
+                        <th>Status</th>
+                        @if ($can_update || $can_delete)
+                            <th>Aksi</th>
+                        @endif
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
 

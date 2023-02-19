@@ -8,62 +8,58 @@
         $can_member = auth_can(h_prefix('member', 1));
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    </h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    @endif
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            </h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_role">Role Bidang</label>
+                    <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
+                        <option value="">Semua Role</option>
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_role">Role Bidang</label>
-                            <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
-                                <option value="">Semua Role</option>
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Bidang Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">Semua Bidang</option>
-                                <option value="1">Dipakai</option>
-                                <option value="0">Tidak Dipakai</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Role</th>
-                                    <th>Urutan</th>
-                                    <th>Bidang</th>
-                                    <th>Sub Bidang</th>
-                                    <th style="min-width: 150px;">Slug</th>
-                                    <th>Icon</th>
-                                    <th>Status</th>
-                                    {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Bidang Status</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">Semua Bidang</option>
+                        <option value="1">Dipakai</option>
+                        <option value="0">Tidak Dipakai</option>
+                    </select>
                 </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Role</th>
+                            <th>Urutan</th>
+                            <th>Bidang</th>
+                            <th>Sub Bidang</th>
+                            <th style="min-width: 150px;">Slug</th>
+                            <th>Icon</th>
+                            <th>Status</th>
+                            {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>

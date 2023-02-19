@@ -1,52 +1,48 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
-                    <div>
-                        <button class="btn btn-success btn-sm" onclick="exportExcel()">
-                            <i class="fa fa-file-excel-o"></i> Excel
-                        </button>
-                    </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            <div>
+                <button class="btn btn-success btn-sm" onclick="exportExcel()">
+                    <i class="fa fa-file-excel-o"></i> Excel
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Status</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">Semua Status</option>
+                        <option value="0">Diterima</option>
+                        <option value="1">Diproses</option>
+                        <option value="2">Selesai</option>
+                        <option value="3">Ditolak</option>
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">Semua Status</option>
-                                <option value="0">Diterima</option>
-                                <option value="1">Diproses</option>
-                                <option value="2">Selesai</option>
-                                <option value="3">Ditolak</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Angkatan</th>
-                                    <th>Email</th>
-                                    <th>Whatsapp</th>
-                                    <th>Telepon</th>
-                                    <th>Keterangan</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <div class="table-responsive table-striped">
+                <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Angkatan</th>
+                            <th>Email</th>
+                            <th>Whatsapp</th>
+                            <th>Telepon</th>
+                            <th>Keterangan</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>
     </div>
