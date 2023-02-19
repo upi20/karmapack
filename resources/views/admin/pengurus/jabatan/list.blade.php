@@ -358,7 +358,7 @@
                                 href="{{ url(h_prefix_uri('member', 1)) }}/${data}" >
                                 <i class="fas fa-user"></i> Member
                                 </a>` : '';
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
@@ -373,7 +373,7 @@
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
                                 </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             return btn_member + btn_update + btn_delete;

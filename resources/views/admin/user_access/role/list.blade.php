@@ -71,11 +71,11 @@
                     data: 'id',
                     name: 'id',
                     render(data, type, full, meta) {
-                        const btn_edit = can_update ? `<a href="{{ url(h_prefix_uri('edit')) }}/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data">
+                        const btn_edit = can_update ? `<a href="{{ url(h_prefix_uri('edit')) }}/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Ubah Data">
                                 <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
 
-                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>
                                 ` : '';

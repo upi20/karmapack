@@ -244,7 +244,7 @@
                         name: 'id',
                         render(data, type, full, meta) {
                             return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Delete Data" onClick="detail('${data}')">
+                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Hapus Data" onClick="detail('${data}')">
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
                                 `;
@@ -263,7 +263,7 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-no_urut="${full.no_urut}"
                                 data-nama="${full.nama}"
@@ -276,7 +276,7 @@
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
                                 </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>
                                 `;
