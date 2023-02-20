@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $table = User::tableName;
         $value = "SELECT count(*) from $table as u2 where u2.angkatan = $table.angkatan";
         return User::select([DB::raw("($value) as value"), DB::raw("angkatan as title")])
-            ->orderBy('value', 'desc')
+            ->orderBy('title')
             ->groupBy("$table.angkatan")->get()->map(function ($v) {
                 return (object)['title' => $v['title'], 'value' => $v['value']];
             })->toArray();
@@ -52,7 +52,7 @@ class DashboardController extends Controller
         $value = "SELECT count(*) from $table as u2 where u2.district_id = $table.district_id";
         $kecamatan = User::select([DB::raw("($value) as value"), DB::raw("$t_kec.name as title")])
             ->join("$t_kec", "$t_kec.id", '=', "$table.district_id")
-            ->orderBy('value', 'desc')
+            ->orderBy('title')
             ->groupBy("$table.district_id")->orderBy("$t_kec.name")->get()->map(function ($v) {
                 return (object)['title' => $v['title'], 'value' => $v['value']];
             })->toArray();
@@ -64,7 +64,6 @@ class DashboardController extends Controller
             ->groupBy("$table.village_id")->orderBy("$t_des.name")->get()->map(function ($v) {
                 return (object)['title' => $v['title'], 'value' => $v['value']];
             })->toArray();
-
 
         return (object) [
             'kecamatan' => array_merge($kecamatan ?? [], $this->user_column_null('district_id', 'Belum Tercatat')),

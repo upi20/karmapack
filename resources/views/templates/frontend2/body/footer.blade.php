@@ -31,69 +31,6 @@
             </div>
         </div>
 
-        <div class="footer-columns">
-            <div class="row y-gap-30">
-                <div class="col-xl-4 col-lg-6 col-md-6" data-anim-child="slide-left delay-{{ $anim++ }}">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">Tentang</div>
-                    <div class="row justify-between y-gap-20">
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="">Sejarah</a>
-                                <a href="{{ route('tentang.kepengurusan.struktur') }}">Struktur Kepengurusan</a>
-                                <a href="">Perode Kepengurusan</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="{{ url('ad_art_dan_ghbo_karmapack.pdf') }}">AD/ART</a>
-                                <a href="{{ route('kontak') }}">Kontak</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6" data-anim-child="slide-left delay-{{ $anim++ }}">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">Dukungan</div>
-                    <div class="row justify-between y-gap-20">
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="">Buku Panduan</a>
-                                <a href="{{ route('kontak.faq') }}">FAQS</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="{{ route('login') }}">Login Anggota</a>
-                                <a href="{{ route('dashboard') }}">Dashboard</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6" data-anim-child="slide-left delay-{{ $anim++ }}">
-                    <div class="text-17 fw-500 text-white uppercase mb-25">Lainnya</div>
-                    <div class="row justify-between y-gap-20">
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="{{ route('anggota') }}">List Anggota</a>
-                                <a href="{{ route('galeri') }}">Galeri</a>
-                                <a href="{{ route('pendaftaran') }}">Pendaftaran</a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="d-flex y-gap-10 flex-column">
-                                <a href="{{ route('login') }}">Login</a>
-                                <a href="">Blog Artikel</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="py-30 border-top-light-15" data-anim-child="slide-left delay-{{ $anim++ }}">
             <div class="d-md-flex items-center h-100 text-white">
                 {!! str_parse(settings()->get(set_front('app.copyright'))) !!}
