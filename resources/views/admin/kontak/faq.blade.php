@@ -218,7 +218,7 @@
         const can_update = {{ $can_update ? 'true' : 'false' }};
         const can_delete = {{ $can_delete ? 'true' : 'false' }};
         const table_html = $('#tbl_main');
-        let isUbah = true;
+        let isEdit = true;
         $(document).ready(function() {
             // datatable ====================================================================================
             $.ajaxSetup({
@@ -342,7 +342,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        isUbah = true;
+                        isEdit = true;
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};
@@ -423,14 +423,14 @@
         });
 
         function add() {
-            if (!isUbah) return false;
+            if (!isEdit) return false;
             $('#MainForm').trigger("reset");
             $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             $('#lihat-foto').hide();
             resetErrorAfterInput();
-            isUbah = false;
+            isEdit = false;
             typeSwitch();
             return true;
         }
@@ -447,7 +447,7 @@
                     id
                 },
                 success: (data) => {
-                    isUbah = true;
+                    isEdit = true;
                     $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
