@@ -6,7 +6,7 @@
         $using_chart = 0;
     @endphp
     <div class="page-header">
-        <h1 class="page-title">Dashboard</h1>
+        <h1 class="page-title">Halaman Utama</h1>
     </div>
 
     <!-- ROW OPEN -->
@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="text-white">
-                                <h3 class="mb-0 number-font">Edit Profile</h3>
+                                <h3 class="mb-0 number-font">Ubah Profile</h3>
                             </div>
                             <div class="ms-auto"> <i class="fas fa-user text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
@@ -60,7 +60,6 @@
     <h1 class="page-title">Statistik Anggota</h1>
 
     <br>
-
     <div class="row">
         {{-- Angkatan --}}
         <div class="col-lg-6 col-md-12">
@@ -158,13 +157,21 @@
                         <thead>
                             <tr>
                                 <th>Nama</th>
+                                <th>KEC.</th>
                                 <th>Jumlah</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($anggota_by_address->desa as $k => $v)
                                 <tr>
-                                    <td>{{ $v->title }}</td>
+                                    <td>
+                                        {{ $v->title }}
+                                    </td>
+                                    <td>
+                                        @if (isset($v->sub_title) ? $v->sub_title : false)
+                                            {{ $v->sub_title }}
+                                        @endif
+                                    </td>
                                     <td>{{ $v->value }}</td>
                                 </tr>
                             @endforeach

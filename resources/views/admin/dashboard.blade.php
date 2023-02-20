@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="text-white">
-                                <h3 class="mb-0 number-font">Edit Profile</h3>
+                                <h3 class="mb-0 number-font">Ubah Profil</h3>
                             </div>
                             <div class="ms-auto"> <i class="fas fa-user text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
