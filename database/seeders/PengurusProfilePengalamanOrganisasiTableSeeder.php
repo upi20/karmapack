@@ -21,8 +21,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
         \DB::table('pengurus_profile_pengalaman_organisasi')->insert(array (
             0 => 
             array (
-                'id' => '1',
-                'user_id' => '1',
+                'id' => 1,
+                'user_id' => 1,
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2017',
                 'sampai' => '2018',
@@ -33,8 +33,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '2',
-                'user_id' => '1',
+                'id' => 2,
+                'user_id' => 1,
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -45,8 +45,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '3',
-                'user_id' => '1',
+                'id' => 3,
+                'user_id' => 1,
                 'nama' => 'Majelis Perwakilan Kelas',
                 'dari' => '2017',
                 'sampai' => '2018',
@@ -57,8 +57,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => '4',
-                'user_id' => '1',
+                'id' => 4,
+                'user_id' => 1,
                 'nama' => 'Majelis Perwakilan Kelas',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -69,8 +69,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => '5',
-                'user_id' => '1',
+                'id' => 5,
+                'user_id' => 1,
                 'nama' => 'DKM Ulil Albab USB YPKP',
                 'dari' => '2020',
                 'sampai' => '2021',
@@ -81,8 +81,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => '6',
-                'user_id' => '1',
+                'id' => 6,
+                'user_id' => 1,
                 'nama' => 'DKM Ulil Albab USB YPKP',
                 'dari' => '2021',
                 'sampai' => NULL,
@@ -93,8 +93,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => '7',
-                'user_id' => '1',
+                'id' => 7,
+                'user_id' => 1,
                 'nama' => 'Karmapack',
                 'dari' => '2021',
                 'sampai' => NULL,
@@ -105,8 +105,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => '8',
-                'user_id' => '101',
+                'id' => 8,
+                'user_id' => 101,
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2017',
                 'sampai' => '2020',
@@ -117,8 +117,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => '9',
-                'user_id' => '21',
+                'id' => 9,
+                'user_id' => 21,
                 'nama' => 'OSIS SMPN 2 Sindangbarang',
                 'dari' => '2012',
                 'sampai' => '2013',
@@ -129,8 +129,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             9 => 
             array (
-                'id' => '10',
-                'user_id' => '101',
+                'id' => 10,
+                'user_id' => 101,
                 'nama' => 'Gerakan Mengajar Desa',
                 'dari' => '2020',
                 'sampai' => '2022',
@@ -141,8 +141,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'id' => '11',
-                'user_id' => '99',
+                'id' => 11,
+                'user_id' => 99,
                 'nama' => 'Karmapack',
                 'dari' => '2020',
                 'sampai' => '2024',
@@ -153,8 +153,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => '12',
-                'user_id' => '100',
+                'id' => 12,
+                'user_id' => 100,
                 'nama' => 'Lembaga Dakwah kampus Stisip Guna Nusantara',
                 'dari' => '2022',
                 'sampai' => '2023',
@@ -165,8 +165,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             12 => 
             array (
-                'id' => '13',
-                'user_id' => '99',
+                'id' => 13,
+                'user_id' => 99,
                 'nama' => 'OSIS MAN 3 Cianjur',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -177,8 +177,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'id' => '14',
-                'user_id' => '99',
+                'id' => 14,
+                'user_id' => 99,
                 'nama' => 'Unit Kegiatan Santri Futsal dan Sepak Bola Al-Ihsan',
                 'dari' => '2022',
                 'sampai' => '2023',
@@ -189,8 +189,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'id' => '15',
-                'user_id' => '87',
+                'id' => 15,
+                'user_id' => 87,
                 'nama' => 'HMJ Ekonomi Syariah',
                 'dari' => '2020',
                 'sampai' => '2021',
@@ -201,8 +201,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => '16',
-                'user_id' => '87',
+                'id' => 16,
+                'user_id' => 87,
             'nama' => 'Ikatan Keluarga Alumni YASPIDA (IKMADA) Bandung',
                 'dari' => '2020',
                 'sampai' => '2022',
@@ -213,8 +213,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'id' => '17',
-                'user_id' => '87',
+                'id' => 17,
+                'user_id' => 87,
             'nama' => 'Forum Studi Ekonomi Islam (FORDES) UIN BANDUNG',
                 'dari' => '2021',
                 'sampai' => '2022',
@@ -225,8 +225,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'id' => '18',
-                'user_id' => '87',
+                'id' => 18,
+                'user_id' => 87,
                 'nama' => 'UPTQ UIN Bandung',
                 'dari' => '2020',
                 'sampai' => '2022',
@@ -237,8 +237,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'id' => '19',
-                'user_id' => '97',
+                'id' => 19,
+                'user_id' => 97,
                 'nama' => 'OSIS MTS AL-HUDA RAWAHANJA',
                 'dari' => '2015',
                 'sampai' => '2016',
@@ -249,8 +249,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             19 => 
             array (
-                'id' => '20',
-                'user_id' => '97',
+                'id' => 20,
+                'user_id' => 97,
                 'nama' => 'BES MAS AL-MANSHURIYAH',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -261,8 +261,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             20 => 
             array (
-                'id' => '21',
-                'user_id' => '97',
+                'id' => 21,
+                'user_id' => 97,
                 'nama' => 'DKR KWARRAN PAGELARAN',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -273,8 +273,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'id' => '22',
-                'user_id' => '97',
+                'id' => 22,
+                'user_id' => 97,
                 'nama' => 'HIMAPSI UNIVERSITAS MUHAMMADIYAH BANDUNG',
                 'dari' => '2021',
                 'sampai' => '2022',
@@ -285,8 +285,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             22 => 
             array (
-                'id' => '23',
-                'user_id' => '76',
+                'id' => 23,
+                'user_id' => 76,
                 'nama' => 'Paskibra Smkn 1 Tanggeung',
                 'dari' => '2019',
                 'sampai' => '2021',
@@ -297,8 +297,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             23 => 
             array (
-                'id' => '24',
-                'user_id' => '97',
+                'id' => 24,
+                'user_id' => 97,
                 'nama' => 'BEWARA PERS UNIVERSITAS MUHAMMADIYAH BANDUNG',
                 'dari' => '2021',
                 'sampai' => '2022',
@@ -309,8 +309,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             24 => 
             array (
-                'id' => '25',
-                'user_id' => '97',
+                'id' => 25,
+                'user_id' => 97,
                 'nama' => 'UKM FOTOGRAFI UNIVERSITAS MUHAMMADIYAH BANDUNG',
                 'dari' => '2021',
                 'sampai' => '2022',
@@ -321,8 +321,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             25 => 
             array (
-                'id' => '26',
-                'user_id' => '97',
+                'id' => 26,
+                'user_id' => 97,
                 'nama' => 'SANTRI MENDUNIA JAWA BARAT',
                 'dari' => '2020',
                 'sampai' => '2022',
@@ -333,8 +333,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             26 => 
             array (
-                'id' => '27',
-                'user_id' => '73',
+                'id' => 27,
+                'user_id' => 73,
                 'nama' => 'Himpunan Mahasiswa Ekonomi Syariah',
                 'dari' => '2022',
                 'sampai' => NULL,
@@ -345,8 +345,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             27 => 
             array (
-                'id' => '36',
-                'user_id' => '46',
+                'id' => 36,
+                'user_id' => 46,
             'nama' => 'Himpunan Mahasiswa Islam (HMI)',
                 'dari' => '2021',
                 'sampai' => NULL,
@@ -357,8 +357,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             28 => 
             array (
-                'id' => '37',
-                'user_id' => '46',
+                'id' => 37,
+                'user_id' => 46,
                 'nama' => 'karang Taruna Kecamatan Cibinong',
                 'dari' => '2022',
                 'sampai' => '2026',
@@ -369,8 +369,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             29 => 
             array (
-                'id' => '38',
-                'user_id' => '46',
+                'id' => 38,
+                'user_id' => 46,
                 'nama' => 'PGRI Ranting Saripudin',
                 'dari' => '2022',
                 'sampai' => '2026',
@@ -381,8 +381,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             30 => 
             array (
-                'id' => '39',
-                'user_id' => '46',
+                'id' => 39,
+                'user_id' => 46,
             'nama' => 'Aliansi Mahasiswa Jawa barat (ALAM JABAR)',
                 'dari' => '2021',
                 'sampai' => NULL,
@@ -393,8 +393,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             31 => 
             array (
-                'id' => '41',
-                'user_id' => '46',
+                'id' => 41,
+                'user_id' => 46,
             'nama' => 'Himpunan Mahasiswa Pendidikan Guru Sekolah Dasar (HIMASEDA) Invada',
                 'dari' => '2021',
                 'sampai' => '2022',
@@ -405,8 +405,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             32 => 
             array (
-                'id' => '42',
-                'user_id' => '89',
+                'id' => 42,
+                'user_id' => 89,
                 'nama' => 'OSIS SMPN 1 CIKADU',
                 'dari' => '2015',
                 'sampai' => '2017',
@@ -417,8 +417,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             33 => 
             array (
-                'id' => '43',
-                'user_id' => '89',
+                'id' => 43,
+                'user_id' => 89,
                 'nama' => 'OSIS SMKN 1 CIKADU',
                 'dari' => '2019',
                 'sampai' => '2020',
@@ -429,8 +429,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             34 => 
             array (
-                'id' => '44',
-                'user_id' => '89',
+                'id' => 44,
+                'user_id' => 89,
                 'nama' => 'DKR KWARAN CIKADU',
                 'dari' => '2019',
                 'sampai' => '2022',
@@ -441,8 +441,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             35 => 
             array (
-                'id' => '45',
-                'user_id' => '89',
+                'id' => 45,
+                'user_id' => 89,
                 'nama' => 'Paskibra Kecamatan Cikadu',
                 'dari' => '2018',
                 'sampai' => '2019',
@@ -453,8 +453,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             36 => 
             array (
-                'id' => '46',
-                'user_id' => '89',
+                'id' => 46,
+                'user_id' => 89,
             'nama' => 'Himpunan Mahasiswa Manajeman ( HIMAMAN )',
                 'dari' => '2022',
                 'sampai' => '2023',
@@ -465,8 +465,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             37 => 
             array (
-                'id' => '47',
-                'user_id' => '110',
+                'id' => 47,
+                'user_id' => 110,
                 'nama' => 'Palang Merah Remaja',
                 'dari' => '2019',
                 'sampai' => '2021',
@@ -477,8 +477,8 @@ class PengurusProfilePengalamanOrganisasiTableSeeder extends Seeder
             ),
             38 => 
             array (
-                'id' => '49',
-                'user_id' => '50',
+                'id' => 49,
+                'user_id' => 50,
                 'nama' => 'Karmapack',
                 'dari' => '2019',
                 'sampai' => NULL,
