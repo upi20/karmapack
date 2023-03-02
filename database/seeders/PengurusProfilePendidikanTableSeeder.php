@@ -21,9 +21,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
         \DB::table('pengurus_profile_pendidikan')->insert(array (
             0 => 
             array (
-                'id' => '5',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '1',
+                'id' => 5,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 1,
                 'dari' => '2007',
                 'sampai' => '2013',
                 'instansi' => 'SD Negeri 1 Tipar',
@@ -34,9 +34,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '6',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '1',
+                'id' => 6,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 1,
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'SMP PGRI 46 CIBINONG',
@@ -47,9 +47,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '7',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '1',
+                'id' => 7,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 1,
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMK Negeri 1 Tanggeung',
@@ -60,9 +60,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => '8',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '1',
+                'id' => 8,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 1,
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Sangga Buana YPKP Bandung',
@@ -73,9 +73,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => '9',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '17',
+                'id' => 9,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 17,
                 'dari' => '2008',
                 'sampai' => '2014',
                 'instansi' => 'SD NEGERI POGOR',
@@ -86,9 +86,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => '10',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '101',
+                'id' => 10,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 101,
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -99,9 +99,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => '11',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '21',
+                'id' => 11,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 21,
                 'dari' => '2005',
                 'sampai' => '2011',
                 'instansi' => 'SDN CIAKAR',
@@ -112,9 +112,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => '12',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '21',
+                'id' => 12,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 21,
                 'dari' => '2011',
                 'sampai' => '2014',
                 'instansi' => 'SMPN 2 SINDANGBARANG',
@@ -125,9 +125,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => '13',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '101',
+                'id' => 13,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 101,
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -138,9 +138,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             9 => 
             array (
-                'id' => '14',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '21',
+                'id' => 14,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 21,
                 'dari' => '2014',
                 'sampai' => '2015',
                 'instansi' => 'MA AR-ROCHMAH LEMBANG',
@@ -151,9 +151,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'id' => '15',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '21',
+                'id' => 15,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 21,
                 'dari' => '2015',
                 'sampai' => '2017',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -164,9 +164,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => '16',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '101',
+                'id' => 16,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 101,
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'SMP 1 CIBEBER',
@@ -177,9 +177,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             12 => 
             array (
-                'id' => '17',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '101',
+                'id' => 17,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 101,
                 'dari' => '2008',
                 'sampai' => '2013',
                 'instansi' => 'MI AL KHOERIYAH',
@@ -190,9 +190,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'id' => '18',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '99',
+                'id' => 18,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 99,
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -203,9 +203,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'id' => '19',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '99',
+                'id' => 19,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 99,
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -216,9 +216,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => '20',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '100',
+                'id' => 20,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 100,
                 'dari' => '2021',
                 'sampai' => '2025',
                 'instansi' => 'Stisip Guna Nusantara Cianjur',
@@ -229,9 +229,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'id' => '21',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '100',
+                'id' => 21,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 100,
                 'dari' => '2009',
                 'sampai' => '2015',
                 'instansi' => 'Mi Cijoho',
@@ -242,9 +242,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'id' => '22',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '100',
+                'id' => 22,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 100,
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'Mts Tanwirul Amin',
@@ -255,9 +255,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'id' => '23',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '100',
+                'id' => 23,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 100,
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'MA Tanwirul',
@@ -268,9 +268,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             19 => 
             array (
-                'id' => '25',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '87',
+                'id' => 25,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 87,
                 'dari' => '2006',
                 'sampai' => '2012',
                 'instansi' => 'SDN Sukaresmi',
@@ -281,9 +281,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             20 => 
             array (
-                'id' => '26',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '87',
+                'id' => 26,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 87,
                 'dari' => '2012',
                 'sampai' => '2015',
                 'instansi' => 'SMPN 3 TAKOKAK',
@@ -294,9 +294,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'id' => '27',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '87',
+                'id' => 27,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 87,
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMA plus YASPIDA Sukabumi',
@@ -307,9 +307,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             22 => 
             array (
-                'id' => '28',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '87',
+                'id' => 28,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 87,
                 'dari' => '2019',
                 'sampai' => '2023',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -320,9 +320,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             23 => 
             array (
-                'id' => '29',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '85',
+                'id' => 29,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 85,
                 'dari' => '2022',
                 'sampai' => '2026',
                 'instansi' => 'Universitas pakuan Bogor',
@@ -333,9 +333,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             24 => 
             array (
-                'id' => '30',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '86',
+                'id' => 30,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 86,
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -346,9 +346,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             25 => 
             array (
-                'id' => '31',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '97',
+                'id' => 31,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 97,
                 'dari' => '2007',
                 'sampai' => '2013',
                 'instansi' => 'MI AL-HUDA RAWAHANJA',
@@ -359,9 +359,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             26 => 
             array (
-                'id' => '32',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '97',
+                'id' => 32,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 97,
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'MTS AL-HUDA RAWAHANJA',
@@ -372,9 +372,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             27 => 
             array (
-                'id' => '33',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '97',
+                'id' => 33,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 97,
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'MAS AL-MANSHURIYAH',
@@ -385,9 +385,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             28 => 
             array (
-                'id' => '34',
-                'pendidikan_jenis_id' => '6',
-                'user_id' => '97',
+                'id' => 34,
+                'pendidikan_jenis_id' => 6,
+                'user_id' => 97,
                 'dari' => '2019',
                 'sampai' => '2020',
             'instansi' => 'AZHARY CENTER (DARUL AZHAR)',
@@ -398,9 +398,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             29 => 
             array (
-                'id' => '35',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '97',
+                'id' => 35,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 97,
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Muhammadiyah Bandung',
@@ -411,9 +411,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             30 => 
             array (
-                'id' => '36',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '57',
+                'id' => 36,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 57,
                 'dari' => '2006',
                 'sampai' => '2012',
                 'instansi' => 'SDN Sumberjaya',
@@ -424,9 +424,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             31 => 
             array (
-                'id' => '37',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '57',
+                'id' => 37,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 57,
                 'dari' => '2012',
                 'sampai' => '2015',
                 'instansi' => 'MTsN 1 Tanggeung',
@@ -437,9 +437,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             32 => 
             array (
-                'id' => '38',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '57',
+                'id' => 38,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 57,
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -450,9 +450,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             33 => 
             array (
-                'id' => '39',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '57',
+                'id' => 39,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 57,
                 'dari' => '2019',
                 'sampai' => NULL,
             'instansi' => 'Institut Keguruan Ilmu Pendidikan (IKIP) Siliwangi Cimahi',
@@ -463,9 +463,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             34 => 
             array (
-                'id' => '40',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '84',
+                'id' => 40,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 84,
                 'dari' => '2022',
                 'sampai' => '2026',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -476,9 +476,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             35 => 
             array (
-                'id' => '42',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '73',
+                'id' => 42,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 73,
                 'dari' => '2009',
                 'sampai' => '2014',
                 'instansi' => 'SDN KARANG ANYAR',
@@ -489,9 +489,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             36 => 
             array (
-                'id' => '43',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '73',
+                'id' => 43,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 73,
                 'dari' => '2015',
                 'sampai' => '2017',
                 'instansi' => 'SMPN 1 CIJATI',
@@ -502,9 +502,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             37 => 
             array (
-                'id' => '44',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '73',
+                'id' => 44,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 73,
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'SMKN 1 CIJATI',
@@ -515,9 +515,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             38 => 
             array (
-                'id' => '45',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '73',
+                'id' => 45,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 73,
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Suryakancana',
@@ -528,9 +528,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             39 => 
             array (
-                'id' => '52',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '46',
+                'id' => 52,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 46,
                 'dari' => '2009',
                 'sampai' => '2014',
                 'instansi' => 'SD Negeri Rawasari',
@@ -541,9 +541,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             40 => 
             array (
-                'id' => '53',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '46',
+                'id' => 53,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 46,
                 'dari' => '2014',
                 'sampai' => '2017',
                 'instansi' => 'SMP Negeri 1 Pagelaran',
@@ -554,9 +554,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             41 => 
             array (
-                'id' => '54',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '46',
+                'id' => 54,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 46,
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'SMK Negeri 1 Tanggeung',
@@ -567,9 +567,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             42 => 
             array (
-                'id' => '55',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '46',
+                'id' => 55,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 46,
                 'dari' => '2020',
                 'sampai' => '2024',
             'instansi' => 'Institut Pendidikan Dan Bahasa (IPB) INVADA Cirebon',
@@ -580,9 +580,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             43 => 
             array (
-                'id' => '56',
-                'pendidikan_jenis_id' => '1',
-                'user_id' => '89',
+                'id' => 56,
+                'pendidikan_jenis_id' => 1,
+                'user_id' => 89,
                 'dari' => '2008',
                 'sampai' => '2009',
                 'instansi' => 'Paud Pepaya Cikadu',
@@ -593,9 +593,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             44 => 
             array (
-                'id' => '57',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '89',
+                'id' => 57,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 89,
                 'dari' => '2009',
                 'sampai' => '2010',
                 'instansi' => 'SD NEGERI CIKADU 1',
@@ -606,9 +606,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             45 => 
             array (
-                'id' => '58',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '89',
+                'id' => 58,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 89,
                 'dari' => '2010',
                 'sampai' => '2015',
                 'instansi' => 'SD CIDOMBA',
@@ -619,9 +619,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             46 => 
             array (
-                'id' => '59',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '89',
+                'id' => 59,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 89,
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'SMP NEGERI 1 CIKADU',
@@ -632,9 +632,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             47 => 
             array (
-                'id' => '60',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '89',
+                'id' => 60,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 89,
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'SMK NEGERI 1 CIKADU',
@@ -645,9 +645,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             48 => 
             array (
-                'id' => '61',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '89',
+                'id' => 61,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 89,
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Winaya Mukti',
@@ -658,9 +658,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             49 => 
             array (
-                'id' => '62',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '110',
+                'id' => 62,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 110,
                 'dari' => '2019',
                 'sampai' => '2021',
                 'instansi' => 'SMA Negri 1 Pasirkuda',
@@ -671,9 +671,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             50 => 
             array (
-                'id' => '63',
-                'pendidikan_jenis_id' => '2',
-                'user_id' => '91',
+                'id' => 63,
+                'pendidikan_jenis_id' => 2,
+                'user_id' => 91,
                 'dari' => '2008',
                 'sampai' => '2013',
                 'instansi' => 'SD Negeri Layung Sari',
@@ -684,9 +684,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             51 => 
             array (
-                'id' => '64',
-                'pendidikan_jenis_id' => '3',
-                'user_id' => '91',
+                'id' => 64,
+                'pendidikan_jenis_id' => 3,
+                'user_id' => 91,
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'MTsN 2 Cianjur',
@@ -697,9 +697,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             52 => 
             array (
-                'id' => '65',
-                'pendidikan_jenis_id' => '4',
-                'user_id' => '91',
+                'id' => 65,
+                'pendidikan_jenis_id' => 4,
+                'user_id' => 91,
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMA Negeri 1 Cibinong',
@@ -710,9 +710,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             53 => 
             array (
-                'id' => '66',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '50',
+                'id' => 66,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 50,
                 'dari' => '2019',
                 'sampai' => '2023',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -723,9 +723,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             54 => 
             array (
-                'id' => '67',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '33',
+                'id' => 67,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 33,
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -736,9 +736,9 @@ class PengurusProfilePendidikanTableSeeder extends Seeder
             ),
             55 => 
             array (
-                'id' => '68',
-                'pendidikan_jenis_id' => '5',
-                'user_id' => '90',
+                'id' => 68,
+                'pendidikan_jenis_id' => 5,
+                'user_id' => 90,
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Stisip Guna Nusantara Cianjur',

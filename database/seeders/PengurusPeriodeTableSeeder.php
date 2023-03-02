@@ -21,7 +21,7 @@ class PengurusPeriodeTableSeeder extends Seeder
         \DB::table('pengurus_periode')->insert(array (
             0 => 
             array (
-                'id' => '2',
+                'id' => 2,
                 'nama' => 'Kabinet Masagi',
                 'foto' => 'iconkabinet-ma20220425164938.png',
                 'dari' => '2021',
@@ -40,13 +40,13 @@ Cianjru Kidul
 3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
                 'filosofi_logo' => NULL,
-                'status' => '0',
+                'status' => 0,
                 'created_at' => '2022-04-14 08:31:00',
                 'updated_at' => '2022-08-16 16:44:16',
             ),
             1 => 
             array (
-                'id' => '6',
+                'id' => 6,
                 'nama' => 'Kabinet Sabilulungan',
                 'foto' => 'iconkabinet-sa20220816164522.png',
                 'dari' => '2022',
@@ -58,9 +58,28 @@ Cianjru Kidul
                 'misi' => '<ol><li>Mewujudkan karmapack sebagai pribadi yang kompetitif dan cinta daerah.</li><li>Mampu membuat dan melaksanakan fungsi sosial dan kepemudaan serta ikut andil dalam pembangunan karakter kepemudaan.</li><li>Mampu merawat dan membangun koordinasi seluruh elemen karmapack</li></ol>
 ',
                 'filosofi_logo' => NULL,
-                'status' => '1',
+                'status' => 1,
                 'created_at' => '2022-07-15 15:25:06',
                 'updated_at' => '2022-08-30 21:46:39',
+            ),
+            2 => 
+            array (
+                'id' => 7,
+                'nama' => 'NICK WARD',
+                'foto' => 'iconnick-ward20230218163712.jpg',
+                'dari' => '2001',
+                'sampai' => '2001',
+                'slug' => 'nick-ward',
+                'slogan' => '1',
+                'visi' => '<p>1</p>
+',
+                'misi' => '<p>1</p>
+',
+                'filosofi_logo' => '<p>1</p>
+',
+                'status' => 0,
+                'created_at' => '2023-02-18 16:37:12',
+                'updated_at' => '2023-02-18 16:37:12',
             ),
         ));
         
