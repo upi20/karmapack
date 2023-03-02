@@ -14,16 +14,16 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter Name" required="" value="{{ $model->name }}" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                required="" value="{{ $model->name }}" />
                             <input type="hidden" id="id" name="id" value="{{ $model->id }}" />
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label" for="guard_name">Guard <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="guard_name" name="guard_name"
-                                placeholder="Enter Guard" required="" value="{{ $model->guard_name }}" />
+                            <input type="text" class="form-control" id="guard_name" name="guard_name" placeholder="Guard"
+                                required="" value="{{ $model->guard_name }}" />
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
         </div>
         <div class="card-footer text-end">
             <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                <li class="fas fa-save mr-1"></li> Save changes
+                <li class="fas fa-save mr-1"></li> Simpan Perubahan
             </button>
         </div>
     </div>
@@ -66,7 +66,7 @@
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: $('#id').val() == '' ? `{{ route(h_prefix('store', 2)) }}` :
@@ -82,7 +82,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -111,7 +111,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });

@@ -31,7 +31,7 @@ class GaleriController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Galeri',
+            'title' => 'Galeri',
             'breadcrumbs' => [
                 ['name' => 'Dashboard'],
             ]

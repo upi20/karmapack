@@ -1,7 +1,7 @@
 @extends('templates.frontend2.master')
 @section('content')
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section data-anim="fade" class="breadcrumbs " data-anim-wrap>
         <div class="container">
@@ -9,7 +9,7 @@
                 <div class="col-auto">
                     <div class="breadcrumbs__content">
                         <div class="breadcrumbs__item " data-anim-child="slide-right delay-{{ $anim++ }}">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">Utama</a>
                         </div>
                         <div class="breadcrumbs__item " data-anim-child="slide-right delay-{{ $anim++ }}">
                             <a href="javascript:void(0)">Artikel</a>
@@ -21,7 +21,7 @@
     </section>
 
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section class="page-header -type-1" data-anim-wrap>
         <div class="container">
@@ -41,7 +41,7 @@
     </section>
 
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section class="layout-pt-md layout-pb-lg" data-anim-wrap>
         <div class="container">

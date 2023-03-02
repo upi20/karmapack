@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Keanggotaan\Anggota;
 use App\Models\Utility\HariBesarNasional;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +13,7 @@ class DashboardController extends Controller
     private $query = [];
     public function index(Request $request)
     {
-        $total_anggota = User::count();
+        $total_anggota = Anggota::count();
         $page_attr = ['title' => 'Dashboard'];
 
         $data = compact(
@@ -32,9 +32,9 @@ class DashboardController extends Controller
         $year = (int)date('Y');
         $year_add_one = $year + 1;
         $this->query['countdown'] = <<<SQL
-            ( if( DATEDIFF(date(concat('{$year}-', month(date_of_birth), '-', day(date_of_birth))), CURDATE()) < 0,
-                DATEDIFF(date(concat('{$year_add_one}-', month(date_of_birth), '-', day(date_of_birth))), CURDATE()) ,
-                DATEDIFF(date(concat('{$year}-', month(date_of_birth), '-', day(date_of_birth))), CURDATE()) )
+            ( if( DATEDIFF(date(concat('{$year}-', month(tanggal_lahir), '-', day(tanggal_lahir))), CURDATE()) < 0,
+                DATEDIFF(date(concat('{$year_add_one}-', month(tanggal_lahir), '-', day(tanggal_lahir))), CURDATE()) ,
+                DATEDIFF(date(concat('{$year}-', month(tanggal_lahir), '-', day(tanggal_lahir))), CURDATE()) )
             )
         SQL;
         $this->query['countdown_alias'] = 'countdown';
@@ -42,14 +42,14 @@ class DashboardController extends Controller
         $c_tanggal_str = 'tanggal_str';
         $this->q_build($c_tanggal_str, <<<SQL
             (DATE_FORMAT(
-                date_of_birth,
+                tanggal_lahir,
                 concat('%d %M')
                 )
             )
         SQL);
 
-        $result = User::select([
-            'id', 'name',
+        $result = Anggota::select([
+            'id', 'nama',
             DB::raw("{$this->query['countdown']} as {$this->query['countdown_alias']}"),
             DB::raw("{$this->query['tanggal_str']} as {$this->query['tanggal_str_alias']}")
         ])
@@ -96,7 +96,7 @@ class DashboardController extends Controller
         SQL);
 
         $result = HariBesarNasional::select([
-            DB::raw('nama as name'), 'id',
+            DB::raw('nama'), 'id',
             DB::raw("{$this->query['countdown']} as {$this->query['countdown_alias']}"),
             DB::raw("{$this->query['tanggal_str']} as {$this->query['tanggal_str_alias']}")
         ])

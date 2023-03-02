@@ -3,104 +3,93 @@
 @section('content')
     <input type="text" id="clipboard" style="position: fixed; top:-50px">
     @php
-    $can_insert = auth_can(h_prefix('insert'));
-    $can_update = auth_can(h_prefix('update'));
-    $can_delete = auth_can(h_prefix('delete'));
-    $is_admin = is_admin();
+        $can_insert = auth_can(h_prefix('insert'));
+        $can_update = auth_can(h_prefix('update'));
+        $can_delete = auth_can(h_prefix('delete'));
+        $is_admin = is_admin();
     @endphp
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">{{ $page_attr['title'] }} Table List</h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
-                        </button>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default active mb-2">
-                            <div class="panel-heading " role="tab" id="headingOne1">
-                                <h4 class="panel-title">
-                                    <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion"
-                                        href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                        Filter Data
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingOne1">
-                                <div class="panel-body">
-                                    <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
-
-                                        @if ($is_admin)
-                                            <div class="form-group float-start me-2" style="min-width: 300px">
-                                                <label for="filter_user_id">Dibuat Oleh</label>
-                                                <br>
-                                                <select class="form-control" id="filter_user_id" name="filter_user_id"
-                                                    style="width: 100%;">
-                                                    <option value="" selected>Semua</option>
-                                                </select>
-                                            </div>
-                                        @endif
-
-                                        <div class="form-group float-start me-2">
-                                            <label for="filter_status">Status</label>
-                                            <select class="form-control" id="filter_status" name="filter_status"
-                                                style="max-width: 200px">
-                                                <option value="">Semua</option>
-                                                <option value="1">Aktif</option>
-                                                <option value="0">Tidak Aktif</option>
-                                                <option value="2">Ditutup</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group float-start me-2">
-                                            <label for="filter_tampilkan">Tampilkan</label>
-                                            <select class="form-control" id="filter_tampilkan" name="filter_tampilkan"
-                                                style="max-width: 200px">
-                                                <option value="">Semua</option>
-                                                <option value="1">Ya</option>
-                                                <option value="0">Tidak</option>
-                                            </select>
-                                        </div>
-
-                                    </form>
-                                    <div style="clear: both"></div>
-                                    <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
-                                        data-toggle="tooltip" title="Refresh Filter Table">
-                                        <i class="bi bi-arrow-repeat"></i> Terapkan filter
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default active mb-2">
+                    <div class="panel-heading " role="tab" id="headingOne1">
+                        <h4 class="panel-title">
+                            <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse1"
+                                aria-expanded="true" aria-controls="collapse1">
+                                Filter Data
+                            </a>
+                        </h4>
                     </div>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered  border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    {!! $is_admin ? '<th>Dibuat Oleh</th>' : '' !!}
-                                    <th>No Urut</th>
-                                    <th>Nama</th>
-                                    <th>Copy Link</th>
-                                    <th>Foto</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Detail</th>
-                                    <th>Tampilkan</th>
-                                    <th>Status</th>
-                                    {!! $can_delete || $can_update ? '<th>Action</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
+                    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                        <div class="panel-body">
+                            <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+
+                                @if ($is_admin)
+                                    <div class="form-group float-start me-2" style="min-width: 300px">
+                                        <label for="filter_user_id">Dibuat Oleh</label>
+                                        <br>
+                                        <select class="form-control" id="filter_user_id" name="filter_user_id"
+                                            style="width: 100%;">
+                                            <option value="" selected>Semua</option>
+                                        </select>
+                                    </div>
+                                @endif
+
+                                <div class="form-group float-start me-2">
+                                    <label for="filter_status">Status</label>
+                                    <select class="form-control" id="filter_status" name="filter_status"
+                                        style="max-width: 200px">
+                                        <option value="">Semua</option>
+                                        <option value="1">Aktif</option>
+                                        <option value="0">Tidak Aktif</option>
+                                        <option value="2">Ditutup</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group float-start me-2">
+                                    <label for="filter_tampilkan">Tampilkan</label>
+                                    <select class="form-control" id="filter_tampilkan" name="filter_tampilkan"
+                                        style="max-width: 200px">
+                                        <option value="">Semua</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+
+                            </form>
+                            <div style="clear: both"></div>
+                            <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                data-toggle="tooltip" title="Refresh Filter Table">
+                                <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>Urutan</th>
+                        {!! $is_admin ? '<th>Dibuat</th>' : '' !!}
+                        <th>Nama</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Tampilkan</th>
+                        <th>Status</th>
+                        {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -108,7 +97,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -121,7 +110,7 @@
                                     <label class="form-label" for="nama">Nama <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="nama" name="nama"
-                                        placeholder="Enter Nama" required="" />
+                                        placeholder="Nama" required="" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -129,7 +118,7 @@
                                     <label class="form-label" for="slug">Slug <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="slug" name="slug"
-                                        placeholder="Enter Slug" required="" />
+                                        placeholder="Slug" required="" />
                                 </div>
                             </div>
                             <div class="col-12">
@@ -137,7 +126,7 @@
                                     <label class="form-label" for="link">Google Form Link
                                         <span class="text-danger">*</span></label>
                                     <input type="url" class="form-control" id="link" name="link"
-                                        placeholder="Enter Google Form Link" required="" />
+                                        placeholder="Google Form Link" required="" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -176,7 +165,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="deskripsi">Deskripsi</label>
                                     <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                        placeholder="Enter Deskripsi"> </textarea>
+                                        placeholder="Deskripsi"> </textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -205,11 +194,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -221,7 +210,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Foto</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-icon-title">View Foto</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -230,7 +219,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -241,7 +230,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-detail-title">Detail</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-detail-title">Detail</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body" id="modal-detail-body">
@@ -250,7 +239,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -320,108 +309,88 @@
                     }
                 },
                 columns: [{
-                        data: null,
-                        name: 'id',
-                        orderable: false,
+                        data: 'no_urut',
+                        name: 'no_urut'
                     },
                     ...(is_admin ? [{
                         data: 'user',
                         name: 'user',
-                        orderable: false
+                        orderable: false,
+                        className: 'text-nowrap'
                     }] : []),
-                    {
-                        data: 'no_urut',
-                        name: 'no_urut'
-                    },
                     {
                         data: 'nama',
                         name: 'nama'
                     },
                     {
-                        data: 'slug',
-                        name: 'slug',
-                        render(data, type, full, meta) {
-                            const link = `{{ url('f') }}/${data}`;
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
-                                <i class="fas fa-clipboard" aria-hidden="true"></i>
-                                </button>
-                            ` : '';
-                        },
-                    },
-                    {
-                        data: 'foto',
-                        name: 'foto',
-                        render(data, type, full, meta) {
-                            return data ? `
-                            <button class="btn btn-primary btn-sm" onclick="viewIcon('${data}')"><i class="fas fa-eye" aria-hidden="true"></i> </button>
-                            ` : '';
-                        },
-                    },
-                    {
                         data: 'dari',
-                        name: 'dari'
+                        name: 'dari',
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'sampai',
-                        name: 'sampai'
-                    },
-                    {
-                        data: 'id',
-                        name: 'id',
-                        render(data, type, full, meta) {
-                            return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
-                                <i class="fas fa-eye" aria-hidden="true"></i>
-                                </button>
-                                `;
-                        },
+                        name: 'sampai',
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'tampilkan_str',
                         name: 'tampilkan',
                         render(data, type, full, meta) {
-                            const class_el = full.tampilkan == 1 ? 'badge bg-success' :
-                                (full.tampilkan == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.tampilkan_str}</span>`;
+                            const class_ = full.tampilkan == 1 ? 'success' : 'danger';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${full.tampilkan_str}`;
                         },
+                        className: 'text-nowrap'
                     },
                     {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 1 ? 'badge bg-success' :
-                                (full.status == 2 ? 'badge bg-warning' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_ = full.status == 1 ? 'success' : 'danger';
+                            return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${full.status_str}`;
                         },
+                        className: 'text-nowrap'
                     },
-                    ...(can_update || can_delete ? [{
+                    {
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data" onClick="editFunc('${data}')">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
-                            return btn_update + btn_delete;
+                            // cek garis baru (new line)
+                            let counter = 1;
+                            const ceknl = (max, c) => ((c % max == 0) ? '<br>' : '');
+
+                            const btn_detail = `<button type="button" class="mt-1 btn btn-rounded btn-info btn-sm" data-toggle="tooltip" title="Detail Data" onClick="detail('${data}')">
+                                <i class="fas fa-eye" aria-hidden="true"></i></button>${ceknl(3, counter++)}`;
+
+                            const link = `{{ url('f') }}/${full.slug}`;
+                            const btn_copy = full.slug ? `
+                            <button class="mt-1 me-1 btn btn-warning btn-sm" data-toggle="tooltip" title="Copy Link To Clipboard" onclick="copyToClipboard('${link}')">
+                            <i class="fas fa-clipboard" aria-hidden="true"></i> </button>${ceknl(3, counter++)}` : '';
+
+                            const btn_foto = full.foto ? `
+                            <button class="mt-1 me-1 btn btn-success btn-sm" onclick="viewIcon('${full.foto}')" data-toggle="tooltip" title="Lihat Foto">
+                                <i class="fas fa-image" aria-hidden="true"></i> </button>${ceknl(3, counter++)}` : '';
+
+                            const btn_update = can_update ? `<button type="button" class="mt-1 me-1 btn btn-rounded btn-primary btn-sm" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
+                                <i class="fas fa-edit"></i></button>${ceknl(3, counter++)}` : '';
+
+                            const btn_delete = can_delete ? `<button type="button" class="mt-1 me-1 btn btn-rounded btn-danger btn-sm" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>${ceknl(3, counter++)}` : '';
+                            return btn_detail + btn_copy + btn_foto + btn_update + btn_delete;
                         },
-                        orderable: false
-                    }] : []),
+                        orderable: false,
+                        className: 'text-nowrap'
+                    }
                 ],
                 order: [
-                    [1, 'asc']
-                ]
+                    [0, 'asc']
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
-                var PageInfo = table_html.DataTable().page.info();
-                new_table.column(0, {
-                    page: 'current'
-                }).nodes().each(function(cell, i) {
-                    cell.innerHTML = i + 1 + PageInfo.start;
-                });
+                tooltip_refresh();
             });
 
             $('#FilterForm').submit(function(e) {
@@ -442,7 +411,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 const route = ($('#id').val() == '') ?
                     "{{ route(h_prefix('insert')) }}" :
                     "{{ route(h_prefix('update')) }}";
@@ -463,7 +432,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -486,7 +455,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -496,7 +465,7 @@
         function add() {
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             $('#lihat-foto').hide();
@@ -518,7 +487,7 @@
                 },
                 success: (data) => {
                     isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#dari').val(data.dari);
                     $('#deskripsi').val(data.deskripsi);
@@ -551,8 +520,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -578,7 +547,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: '{{ $page_attr['title'] }} deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

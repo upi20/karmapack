@@ -1,5 +1,23 @@
 @extends('templates.frontend2.master')
 @section('content')
+    <section data-anim="fade" class="breadcrumbs ">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="breadcrumbs__content">
+
+                        <div class="breadcrumbs__item ">
+                            <a href="{{ route('home') }}">Utama</a>
+                        </div>
+
+                        <div class="breadcrumbs__item ">
+                            <a href="javascript:void(0)">Kontak</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="layout-pt-md layout-pb-lg">
         <div data-anim-wrap class="container">
             <div class="row y-gap-50 justify-between">

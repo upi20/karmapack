@@ -2,18 +2,237 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Keanggotaan\Anggota;
+use App\Models\Keanggotaan\Hobi;
+use App\Models\Keanggotaan\Kontak as KeanggotaanKontak;
+use App\Models\Keanggotaan\KontakJenis;
+use App\Models\Keanggotaan\Pendidikan as KeanggotaanPendidikan;
+use App\Models\Keanggotaan\PendidikanJenis as KeanggotaanPendidikanJenis;
+use App\Models\Keanggotaan\PengalamanLain as KeanggotaanPengalamanLain;
+use App\Models\Keanggotaan\PengalamanOrganisasi as KeanggotaanPengalamanOrganisasi;
+use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
+use App\Models\Kepengurusan\Jabatan;
+use App\Models\Kepengurusan\Periode;
+use App\Models\Pengurus\Jabatan as PengurusJabatan;
+use App\Models\Pengurus\JabatanMember;
+use App\Models\Pengurus\Periode as PengurusPeriode;
+use App\Models\Profile\Hobby;
+use App\Models\Profile\Kontak;
+use App\Models\Profile\KontakTipe;
+use App\Models\Profile\Pendidikan;
+use App\Models\Profile\PendidikanJenis;
+use App\Models\Profile\PengalamanLain;
+use App\Models\Profile\PengalamanOrganisasi;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 use MatthiasMullie\Minify\JS;
 
 class LabController extends Controller
 {
+    public function migrate()
+    {
+        // $this->migrateKepengurusan();
+        return "ok";
+    }
+
+    public function migrateKepengurusan()
+    {
+
+        $tbl_names = [
+            Periode::tableName,
+            Jabatan::tableName,
+            KepengurusanAnggota::tableName,
+        ];
+
+        foreach ($tbl_names as $name) {
+            DB::statement("ALTER TABLE `$name` auto_increment = 1");
+        }
+
+        DB::beginTransaction();
+        $periodes = PengurusPeriode::all();
+        foreach ($periodes as $periode) {
+            // buat periode baru
+            $new_periode = new Periode();
+            $new_periode->nama = $periode->nama;
+            $new_periode->foto = $periode->foto;
+            $new_periode->dari = $periode->dari;
+            $new_periode->sampai = $periode->sampai;
+            $new_periode->slug = $periode->slug;
+            $new_periode->slogan = $periode->slogan;
+            $new_periode->visi = $periode->visi;
+            $new_periode->misi = $periode->misi;
+            $new_periode->filosofi_logo = $periode->filosofi_logo;
+            $new_periode->status = $periode->status;
+            $new_periode->save();
+
+            $jabatans = PengurusJabatan::where('periode_id', $periode->id)->orderBy('parent_id')->get();
+            foreach ($jabatans as $jabatan) {
+                // buat jabatan baru
+                $new_jabatan = new Jabatan();
+                $new_jabatan->id = $jabatan->id;
+                $new_jabatan->no_urut = $jabatan->no_urut;
+                $new_jabatan->nama = $jabatan->nama;
+                $new_jabatan->slug = $jabatan->slug;
+                $new_jabatan->foto = $jabatan->foto;
+                $new_jabatan->singkatan = $jabatan->singkatan;
+                $new_jabatan->visi = $jabatan->visi;
+                $new_jabatan->misi = $jabatan->misi;
+                $new_jabatan->slogan = $jabatan->slogan;
+                $new_jabatan->status = $jabatan->status;
+                $new_jabatan->role_id = $jabatan->role_id;
+                $new_jabatan->periode_id = $new_periode->id;
+                $new_jabatan->parent_id = $jabatan->parent_id;
+                $new_jabatan->save();
+
+                $members = JabatanMember::where('jabatan_id', $jabatan->id)->get();
+                foreach ($members ?? [] as $member) {
+                    $user = User::find($member->user_id);
+                    $anggota = Anggota::where('user_id', $user->id)->get()->first();
+
+                    $jabatan_anggota = new KepengurusanAnggota();
+                    $jabatan_anggota->jabatan_id = $new_jabatan->id;
+                    $jabatan_anggota->anggota_id = $anggota->id;
+                    $jabatan_anggota->save();
+                }
+            }
+        }
+
+        DB::commit();
+        return "ok";
+    }
+
+    public function migrateKependudukan()
+    {
+        // get semua data anggota
+        // insert data jenis kontak dan pendidikan
+        $kontaks = KontakTipe::all();
+        $pendidikans = PendidikanJenis::all();
+
+        foreach ($kontaks as $kontak) {
+            $cek = KontakJenis::find($kontak->id);
+            if (is_null($cek)) {
+                $jenis = new KontakJenis();
+                $jenis->id = $kontak->id;
+                $jenis->nama = $kontak->nama;
+                $jenis->icon = $kontak->icon;
+                $jenis->keterangan = $kontak->keterangan;
+                $jenis->status = $kontak->status;
+                $jenis->save();
+            }
+        }
+
+        foreach ($pendidikans as $pendidikan) {
+            $cek = KeanggotaanPendidikanJenis::find($pendidikan->id);
+            if (is_null($cek)) {
+                $jenis = new KeanggotaanPendidikanJenis();
+                $jenis->id = $pendidikan->id;
+                $jenis->nama = $pendidikan->nama;
+                $jenis->keterangan = $pendidikan->keterangan;
+                $jenis->status = $pendidikan->status;
+                $jenis->save();
+            }
+        }
+        // set id mulai dari 1
+        $tbl_names = [
+            Hobi::tableName,
+            KeanggotaanKontak::tableName,
+            KeanggotaanPendidikan::tableName,
+            KeanggotaanPengalamanLain::tableName,
+            KeanggotaanPengalamanOrganisasi::tableName,
+            Anggota::tableName,
+        ];
+
+        foreach ($tbl_names as $name) {
+            DB::statement("ALTER TABLE `$name` auto_increment = 1");
+        }
+
+        $users = User::all();
+        DB::beginTransaction();
+        foreach ($users as $user) {
+            $cek = Anggota::where('user_id', $user->id)->get();
+            $anggota = new Anggota();
+            $anggota->nama = $user->name;
+            $anggota->tanggal_lahir = $user->date_of_birth;
+            $anggota->jenis_kelamin = $user->gender;
+            $anggota->angkatan = $user->angkatan;
+            $anggota->province_id = $user->province_id;
+            $anggota->regency_id = $user->regency_id;
+            $anggota->district_id = $user->district_id;
+            $anggota->village_id = $user->village_id;
+            $anggota->alamat_lengkap = $user->alamat_lengkap;
+            $anggota->bio = $user->bio;
+            $anggota->profesi = $user->profesi;
+            $anggota->foto = $user->foto;
+            $anggota->telepon = $user->telepon;
+            $anggota->whatsapp = $user->whatsapp;
+            $anggota->status = 'ANGGOTA BIASA';
+            $anggota->user_id = $user->id;
+            $anggota->save();
+
+            $hobis = Hobby::where('user_id', $user->id)->get();
+            foreach ($hobis as $item) {
+                $attr = new Hobi();
+                $attr->nama = $item->name;
+                $attr->anggota_id = $anggota->id;
+                $attr->save();
+            }
+
+            $kontaks = Kontak::where('user_id', $user->id)->get();
+            foreach ($kontaks as $item) {
+                $attr = new KeanggotaanKontak();
+                $attr->nilai = $item->value;
+                $attr->jenis_id = $item->kontak_tipe_id;
+                $attr->anggota_id = $anggota->id;
+                $attr->save();
+            }
+
+            $pendidikans = Pendidikan::where('user_id', $user->id)->get();
+            foreach ($pendidikans as $item) {
+                $attr = new KeanggotaanPendidikan();
+                $attr->dari = $item->dari;
+                $attr->sampai = $item->sampai;
+                $attr->instansi = $item->instansi;
+                $attr->jurusan = $item->jurusan;
+                $attr->keterangan = $item->keterangan;
+                $attr->jenis_id = $item->pendidikan_jenis_id;
+                $attr->anggota_id = $anggota->id;
+                $attr->save();
+            }
+
+            $pengalamanLains = PengalamanLain::where('user_id', $user->id)->get();
+            foreach ($pengalamanLains as $item) {
+                $attr = new KeanggotaanPengalamanLain();
+                $attr->pengalaman = $item->pengalaman;
+                $attr->keterangan = $item->keterangan;
+                $attr->anggota_id = $anggota->id;
+                $attr->save();
+            }
+
+            $pengalamanOrganisasis = PengalamanOrganisasi::where('user_id', $user->id)->get();
+            foreach ($pengalamanOrganisasis as $item) {
+                $attr = new KeanggotaanPengalamanOrganisasi();
+                $attr->nama = $item->nama;
+                $attr->dari = $item->dari;
+                $attr->sampai = $item->sampai;
+                $attr->jabatan = $item->jabatan;
+                $attr->keterangan = $item->keterangan;
+                $attr->anggota_id = $anggota->id;
+                $attr->save();
+            }
+        }
+
+        DB::commit();
+
+        return "ok";
+    }
+
     public function javascript(Request $request)
     {
         $minifier = new JS(resource_path('views/js/tes.js'));

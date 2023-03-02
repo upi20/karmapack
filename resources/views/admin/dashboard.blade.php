@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="text-white">
-                                <h3 class="mb-0 number-font">Edit Profile</h3>
+                                <h3 class="mb-0 number-font">Ubah Profil</h3>
                             </div>
                             <div class="ms-auto"> <i class="fas fa-user text-white fs-30 me-2 mt-2"></i> </div>
                         </div>
@@ -189,7 +189,7 @@
                             <ul class="list-style5">
                                 <li>Sejarah</li>
                                 <li>Struktur Kepengurusan (Detail Kepengurusan Saat Ini). [selesai] <a
-                                        href="{{ route('about.kepengurusan.struktur') }}">Kunjungi</a></li>
+                                        href="{{ route('tentang.kepengurusan.struktur') }}">Kunjungi</a></li>
                                 <li>Periode Kepengurusan (List Semua Periode Kepengurusan Karmapack)</li>
                                 <li>Anggaran Dasar Anggaran Rumah Tangga</li>
                             </ul>
@@ -265,7 +265,7 @@
                         body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
                                     <div>
                                         <div class="d-flex w-100">
-                                            <h5 class="mb-1">${e.name} | ${e.tanggal_str}</h5>
+                                            <h5 class="mb-1">${e.nama} | ${e.tanggal_str}</h5>
                                         </div>
                                     </div>
 
@@ -295,7 +295,7 @@
                         body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
                                     <div>
                                         <div class="d-flex w-100">
-                                            <h5 class="mb-1">${e.name} | ${e.tanggal_str}</h5>
+                                            <h5 class="mb-1">${e.nama} | ${e.tanggal_str}</h5>
                                         </div>
                                     </div>
 

@@ -167,6 +167,7 @@ class ProvinceController extends Controller
             $result = Province::where('name', 'like', "%$request->search%")
                 ->select(['id', DB::raw('name as text')])
                 ->orWhere('id', 'like', "%$request->search%")
+                ->orderBy('name')
                 ->limit(10)->get();
             return response()->json(['results' => $result]);
         } catch (\Exception $error) {

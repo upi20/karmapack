@@ -1,7 +1,7 @@
 @extends('templates.admin.master')
 @section('content')
     @php
-    $can_insert = auth_can(h_prefix('save', 1));
+        $can_insert = auth_can(h_prefix('save', 1));
     @endphp
     <div class="card">
         <div class="card-header bg-info">
@@ -63,7 +63,7 @@
                 var formData = new FormData(this);
                 formData.append('periode_id', {{ $model->periode_id }});
                 formData.append('jabatan_id', {{ $model->id }});
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: "{{ route(h_prefix('save', 1)) }}",
@@ -78,7 +78,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -101,7 +101,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });

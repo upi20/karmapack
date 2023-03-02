@@ -33,6 +33,9 @@ use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranController
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
 use App\Http\Controllers\Frontend\About\Kepengurusan\BidangController;
+use App\Http\Controllers\Frontend\About\Kepengurusan\PeriodeController;
+use App\Http\Controllers\Frontend\About\SejarahController;
+use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
 use App\Models\Pendaftaran\GForm;
@@ -69,36 +72,44 @@ Route::controller(ArtikelController::class)->prefix($prefix)->group(function () 
 
 
 // Periode Kepengurusan ===============================================================================================
-$name = 'about';
+$name = 'tentang';
 Route::group(['prefix' => $name], function () use ($name) {
     $prefix = 'kepengurusan';
     Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // about.kepengurusan
+        $name = "$name.$prefix"; // tentang.kepengurusan
 
+        // struktur
         $prefix = 'struktur';
         Route::controller(StrukturController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
-            $name = "$name.$prefix"; // about.kepengurusan.struktur
+            $name = "$name.$prefix"; // tentang.kepengurusan.struktur
             Route::get('/', 'index')->name($name);
-            Route::get('/{model:slug}', 'periode')->name("$name.periode");
+            Route::get('/{periode:slug}', 'periode')->name("$name.periode");
+        });
+
+        // periode
+        $prefix = 'periode';
+        Route::controller(PeriodeController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // tentang.kepengurusan.periode
+            Route::get('/', 'index')->name($name);
         });
 
         // bidang
-        Route::get('/bidang/{model:slug}', [BidangController::class, 'index'])->name("$name.bidang");
+        Route::get('/bidang/{jabatan:slug}', [BidangController::class, 'index'])->name("$name.bidang");
     });
 
     // sejarah
-
+    Route::get('/sejarah', [SejarahController::class, 'index'])->name("$name.sejarah");
 });
 // ====================================================================================================================
 
 
 
 
-// Member =============================================================================================================
+// Anggota =============================================================================================================
 $name = 'anggota';
-Route::controller(MemberController::class)->prefix($name)->group(function () use ($name) {
+Route::controller(AnggotaController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
-    Route::get('/{model:id}', 'member')->name("$name.id");
+    Route::get('/{anggota:id}', 'anggota')->name("$name.id");
 });
 // ====================================================================================================================
 
@@ -178,6 +189,7 @@ Route::controller(LoaderController::class)->prefix($prefix)->group(function () {
 // laboartorium =======================================================================================================
 $prefix = 'lab';
 Route::controller(LabController::class)->prefix($prefix)->group(function () {
+    Route::get('/migrate', 'migrate');
     Route::get('/phpspreadsheet', 'phpspreadsheet')->name("lab.phpspreadsheet");
     Route::get('/javascript', 'javascript')->name("lab.javascript");
     Route::get('/jstes', 'jstes')->name("lab.jstes");
@@ -188,9 +200,12 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
 // frontend2 ==========================================================================================================
 Route::get('/frontend2', [HomeController::class, 'fronted2'])->name('frontend2');
 
+Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 // profile username ===================================================================================================
-Route::get('/{model:username}', [MemberController::class, 'member'])->name("anggota.username");
+Route::get('/{user:username}', [AnggotaController::class, 'user'])->name("anggota.username");
 
 // Gform
 Route::get('/f/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");

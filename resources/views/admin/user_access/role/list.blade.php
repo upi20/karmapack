@@ -2,41 +2,35 @@
 
 @section('content')
     @php
-    $can_insert = auth_can('h_prefix().insert');
-    $can_update = auth_can('h_prefix().update');
-    $can_delete = auth_can('h_prefix().delete');
+        $can_insert = auth_can('h_prefix().insert');
+        $can_update = auth_can('h_prefix().update');
+        $can_delete = auth_can('h_prefix().delete');
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Permission Table</h3>
-                    @if ($can_insert)
-                        <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
-                            <i class="fas fa-plus"></i> Add
-                        </a>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Guard</th>
-                                    <th>Updated At</th>
-                                    @if ($can_update || $can_delete)
-                                        <th>Action</th>
-                                    @endif
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <a type="button" class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('create')) }}">
+                    <i class="fas fa-plus"></i> Tambah
+                </a>
+            @endif
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Guard</th>
+                        <th>Updated At</th>
+                        @if ($can_update || $can_delete)
+                            <th>Aksi</th>
+                        @endif
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 @endsection
@@ -71,11 +65,11 @@
                     data: 'id',
                     name: 'id',
                     render(data, type, full, meta) {
-                        const btn_edit = can_update ? `<a href="{{ url(h_prefix_uri('edit')) }}/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Edit Data">
+                        const btn_edit = can_update ? `<a href="{{ url(h_prefix_uri('edit')) }}/${data}" type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Ubah Data">
                                 <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
 
-                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                        const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>
                                 ` : '';
@@ -123,10 +117,14 @@
                 ],
                 order: [
                     [1, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -145,8 +143,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -172,7 +170,7 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Permission deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

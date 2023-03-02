@@ -138,6 +138,7 @@ class DistrictController extends Controller
         try {
             $model = District::select(['id', DB::raw('name as text')])
                 ->whereRaw("(`name` like '%$request->search%' or `id` like '%$request->search%')")
+                ->orderBy('name')
                 ->limit(10);
             if ($request->regency_id) {
                 $model->where('regency_id', '=', $request->regency_id);

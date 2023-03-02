@@ -1,6 +1,6 @@
 @php
-$angkatan = 0;
-$is_filter = request()->query('search') || request()->query('category') || request()->query('sort') || request()->query('limit');
+    $angkatan = 0;
+    $is_filter = request()->query('search') || request()->query('category') || request()->query('sort') || request()->query('limit');
 @endphp
 @extends('templates.frontend2.master')
 @section('content')
@@ -11,7 +11,7 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                     <div class="breadcrumbs__content">
 
                         <div class="breadcrumbs__item ">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">Utama</a>
                         </div>
 
                         <div class="breadcrumbs__item ">
@@ -175,7 +175,7 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                     <p class="text-muted d-block">
                                         <small class="text-muted text-purple-1">
                                             <a
-                                                href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                                href="{{ route('tentang.kepengurusan.struktur.periode', $item->periode_slug) }}">
                                                 {{ $item->periode_nama }}
                                             </a>
                                         </small>
@@ -185,7 +185,7 @@ $is_filter = request()->query('search') || request()->query('category') || reque
                                 @if ($item->jabatan_nama)
                                     <p class="text-muted d-block">
                                         <small class="text-muted text-purple-1">
-                                            <a href="{{ route('about.kepengurusan.bidang', $item->jabatan_slug) }}">
+                                            <a href="{{ route('tentang.kepengurusan.bidang', $item->jabatan_slug) }}">
                                                 {{ $item->jabatan_nama }}
                                             </a>
                                         </small>

@@ -41,7 +41,7 @@ class TagController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Tag',
+            'title' => 'Artikel Tag',
             'breadcrumbs' => [
                 ['name' => 'Tag'],
             ]

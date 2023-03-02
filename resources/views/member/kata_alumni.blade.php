@@ -35,8 +35,8 @@
                         <div class="form-group">
                             <label class="form-label" for="deskripsi">Deskripsi
                                 <span class="text-danger">*</span></label>
-                            <textarea type="text" class="form-control" rows="6" id="deskripsi" name="deskripsi"
-                                placeholder="Enter Deskripsi" required>{{ $data->deskripsi }}</textarea>
+                            <textarea type="text" class="form-control" rows="6" id="deskripsi" name="deskripsi" placeholder="Deskripsi"
+                                required>{{ $data->deskripsi }}</textarea>
                         </div>
                     </form>
                 </div>

@@ -135,6 +135,7 @@ class RegencieController extends Controller
         try {
             $model = Regencie::select(['id', DB::raw('name as text')])
                 ->whereRaw("(`name` like '%$request->search%' or `id` like '%$request->search%')")
+                ->orderBy('name')
                 ->limit(10);
             if ($request->province_id) {
                 $model->where('province_id', '=', $request->province_id);

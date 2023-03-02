@@ -116,7 +116,8 @@ if (!function_exists('sidebar_menu_admin')) {
      */
     function sidebar_menu_admin($navigation = null)
     {
-        $user_id = auth_has_role(config('app.super_admin_role')) ? null : auth()->user()->id;
+        // $user_id = auth_has_role(config('app.role_super_admin')) ? null : auth()->user()->id;
+        $user_id = auth()->user()->id;
         $menus = menu($user_id);
         $menu_body = '';
         foreach ($menus as $m) {

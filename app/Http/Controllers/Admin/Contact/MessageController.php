@@ -19,8 +19,9 @@ class MessageController extends Controller
             return $this->datatable($request);
         }
         $page_attr = [
-            'title' => 'Message',
+            'title' => 'Pesan Diterima',
             'breadcrumbs' => [
+                ['name' => 'Halaman Utama', 'url' => 'admin.dashboard'],
                 ['name' => 'Kontak'],
             ]
         ];

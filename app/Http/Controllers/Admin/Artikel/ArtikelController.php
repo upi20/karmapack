@@ -36,8 +36,9 @@ class ArtikelController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Artikel',
+            'title' => 'Daftar Artikel',
             'breadcrumbs' => [
+                ['name' => 'Halaman Utama', 'url' => 'admin.dashboard'],
                 ['name' => 'Artikel'],
             ]
         ];
@@ -51,7 +52,7 @@ class ArtikelController extends Controller
             'title' => 'Tambah Artikel',
             'breadcrumbs' => [
                 ['name' => 'Artikel'],
-                ['name' => 'Manage List Artikel', 'url' => $navigation],
+                ['name' => 'Daftar Artikel', 'url' => $navigation],
             ],
             'navigation' => $navigation
         ];
@@ -66,7 +67,7 @@ class ArtikelController extends Controller
             'title' => 'Edit Artikel',
             'breadcrumbs' => [
                 ['name' => 'Artikel'],
-                ['name' => 'Manage List Artikel', 'url' => $navigation],
+                ['name' => 'Daftar Artikel', 'url' => $navigation],
             ],
             'navigation' => $navigation
         ];
@@ -150,6 +151,7 @@ class ArtikelController extends Controller
             $model->excerpt = $request->excerpt;
             $model->date = $request->date;
             $model->status = $request->status;
+            $model->slug = $request->slug;
             // $model->updated_by = auth()->user()->id;
 
             $this->kategori_store($request->kategori, $model->id);

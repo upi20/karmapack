@@ -1,7 +1,7 @@
 @extends('templates.frontend2.master')
 @section('content')
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section data-anim-wrap class="breadcrumbs">
         <div class="container">
@@ -10,7 +10,7 @@
                     <div class="breadcrumbs__content">
 
                         <div class="breadcrumbs__item " data-anim-child="slide-left delay-{{ $anim++ }}">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">Utama</a>
                         </div>
 
                         <div class="breadcrumbs__item " data-anim-child="slide-left delay-{{ $anim++ }}">
@@ -26,7 +26,7 @@
         </div>
     </section>
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section data-anim-wrap class="page-header -type-3 ">
         <div class="page-header__bg bg-purple-1 "></div>
@@ -113,7 +113,7 @@
     </section>
 
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section data-anim-wrap class="layout-pt-md layout-pb-lg">
         <div class="container bg-light-4 p-2 rounded-16">
@@ -179,11 +179,7 @@
                                     </div>
                                 @endif
 
-                                @if ($model->alamat_lengkap ||
-                                    $model->province_id ||
-                                    $model->regency_id ||
-                                    $model->district_id ||
-                                    $model->village_id)
+                                @if ($model->alamat_lengkap || $model->province_id || $model->regency_id || $model->district_id || $model->village_id)
                                     <div class="ml-10 w-1/1 border-top-light"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Alamat</h4>
@@ -330,7 +326,7 @@
                                                         |
                                                         @if ($item->bidang)
                                                             <a class="text-purple-1"
-                                                                href="{{ route('about.kepengurusan.bidang', $item->slug_bidang) }}">
+                                                                href="{{ route('tentang.kepengurusan.bidang', $item->slug_bidang) }}">
                                                                 {{ $item->jabatan }}
                                                                 {{ $item->bidang ? '->' . ' ' . $item->bidang : '' }}
                                                             </a>
@@ -339,7 +335,7 @@
                                                         @endif
                                                         |
                                                         <a class="text-purple-1"
-                                                            href="{{ route('about.kepengurusan.struktur.periode', $item->periode_slug) }}">
+                                                            href="{{ route('tentang.kepengurusan.struktur.periode', $item->periode_slug) }}">
                                                             {{ $item->periode }}
                                                         </a>
                                                     </div>

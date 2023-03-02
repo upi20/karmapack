@@ -1,0 +1,24 @@
+delete username validation
+delete pendaftaran
+refactore gform
+sesuaikan artikel dengan yang di geb
+Tanggal di artikel detail masih berbahasa inggris
+
+Jabatan belum ada tombol detail
+       render(data, type, full, meta) {
+                            return `${data}<br><small>${full.icon}</small>`;
+                        },
+data-toggle="tooltip"
+tooltip_refresh();
+
+const class_ = full.active == 1 ? 'success' : 'danger';
+return `<i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}`;
+
+<h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+
+$('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
+$('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
+
+date-input-str
+
+<h3 class="card-title">Tabel {{ $page_attr['title'] }}</h3>

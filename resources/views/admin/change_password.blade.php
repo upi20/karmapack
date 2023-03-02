@@ -37,7 +37,7 @@
                 </div>
                 <div class="card-footer">
                     <button type="submit" form="form_password" class="btn btn-primary mt-4 mb-0">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     })
                     return;
                 }
-                setBtnLoading('button[type=submit][form=form_password]', 'Save Changes');
+                setBtnLoading('button[type=submit][form=form_password]', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: "{{ route('member.password.save') }}",
@@ -92,7 +92,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -112,7 +112,7 @@
                     },
                     complete: function() {
                         setBtnLoading('button[type=submit][form=form_password]',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });

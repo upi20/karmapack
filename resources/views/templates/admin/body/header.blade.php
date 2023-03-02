@@ -42,16 +42,16 @@
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                     class="nav-link leading-none d-flex">
-                                    <img onerror="this.src='{{ asset('assets/templates/admin/profile.png') }}';this.onerror='';"
-                                        src="{{ asset('assets/pengurus/profile/' . auth()->user()->foto) }}"
-                                        alt="profile-user" class="avatar  profile-user brround cover-image"
-                                        id="header_foto_profile">
+                                    <img onerror="this.src='{{ auth()->user()->anggota->fotoUrlDefault() }}';this.onerror='';"
+                                        src="{{ auth()->user()->anggota->fotoUrl() }}"
+                                        alt="{{ auth()->user()->anggota->nama }}"
+                                        class="avatar  profile-user brround cover-image" id="header_foto_profile">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
                                         <div class="text-center">
                                             <h5 class="text-dark mb-0 fs-14 fw-semibold">
-                                                {{ ucfirst(auth()->user()->name) }}
+                                                {{ ucfirst(auth()->user()->anggota->nama) }}
                                             </h5>
                                             <small
                                                 class="text-muted">{{ ucfirst(
@@ -66,13 +66,13 @@
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
                                     <a class="dropdown-item" href="{{ route('member.profile') }}">
-                                        <i class="dropdown-icon fe fe-user"></i> Profile
+                                        <i class="dropdown-icon fe fe-user"></i> Profil
                                     </a>
                                     <a class="dropdown-item" href="{{ route('member.password') }}">
                                         <i class="dropdown-icon fe fe-lock"></i> Ganti Password
                                     </a>
                                     <a class="dropdown-item" href="{{ route('login.logout') }}">
-                                        <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
+                                        <i class="dropdown-icon fe fe-alert-circle"></i> Keluar
                                     </a>
                                 </div>
                             </div>

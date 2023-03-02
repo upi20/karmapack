@@ -1,10 +1,10 @@
 @extends('templates.frontend2.master')
 @section('content')
     @php
-    $p = 'setting.home';
-    $k = "$p.hero";
-    $filter = [['search' => '__periode_nama__', 'replace' => $periode->nama], ['search' => '__periode_dari__', 'replace' => $periode->dari], ['search' => '__periode_sampai__', 'replace' => $periode->sampai]];
-    $anim = 1;
+        $p = 'setting.home';
+        $k = "$p.hero";
+        $filter = [['search' => '__periode_nama__', 'replace' => $periode->nama], ['search' => '__periode_dari__', 'replace' => $periode->dari], ['search' => '__periode_sampai__', 'replace' => $periode->sampai]];
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section data-anim-wrap class="masthead -type-4 bg-light-6  animated pt-30" style="margin-top: 0">
@@ -44,8 +44,8 @@
 
     <!-- daftar poesaka -->
     @php
-    $k = "$p.poesaka";
-    $anim = 1;
+        $k = "$p.poesaka";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-md layout-pb-md " style="background-color: #bfcae6;" data-anim-wrap>
@@ -70,8 +70,8 @@
 
     <!-- visi dan misi -->
     @php
-    $k = "$p.visi_misi";
-    $anim = 1;
+        $k = "$p.visi_misi";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg" data-anim-wrap>
@@ -95,7 +95,7 @@
                         <p class="sectionTitle__text ">{{ settings()->get("$k.semboyan") }}</p>
                         <div class="d-flex x-gap-15 y-gap-15 pt-30">
                             <div>
-                                <a href="{{ route('about.kepengurusan.struktur') }}"
+                                <a href="{{ route('tentang.kepengurusan.struktur') }}"
                                     class="button -md -purple-1 text-white">
                                     {{ settings()->get("$k.button_text") }}</a>
                             </div>
@@ -108,10 +108,10 @@
 
     <!-- struktur -->
     @php
-    $k = "$p.struktur_anggota";
-    $anim = 1;
+        $k = "$p.struktur_anggota";
+        $anim = 1;
     @endphp
-    @if ($anggota->count() && settings()->get("$k.visible"))
+    @if ($pengurus->count() && settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-light-4" data-anim-wrap>
             <div class="container">
                 <div class="row y-gap-15 justify-between items-end" data-anim-child="slide-up delay-{{ $anim++ }}">
@@ -124,7 +124,7 @@
 
                     <div class="col-auto">
                         <div class="col-auto">
-                            <a href="{{ route('about.kepengurusan.struktur') }}"
+                            <a href="{{ route('tentang.kepengurusan.struktur') }}"
                                 class="button -icon -outline-purple-1 text-purple-1 fw-500">
                                 {{ settings()->get("$k.button_text") }}
                                 <span class="icon-arrow-top-right text-14 ml-10"></span>
@@ -138,31 +138,31 @@
                     data-slider-cols="xl-4 lg-3 md-2" data-anim-child="slide-left delay-{{ $anim++ }}">
                     <div class="swiper-wrapper">
 
-                        {{-- anggota item --}}
-                        @foreach ($anggota as $a)
+                        {{-- pengurus item --}}
+                        @foreach ($pengurus as $a)
                             <div class="swiper-slide" data-anim-child="slide-left delay-{{ $anim++ }}">
                                 <div class="teamCard -type-2 bg-white shadow-4" style="min-height: 370px; border: 0">
                                     <div class="teamCard__content">
-                                        <img src="{{ $a->foto }}" alt="image"
+                                        <img src="{{ $a->anggota->fotoUrl() }}" alt="image"
                                             style="margin: auto;position: relative;margin: auto;width: 150px;height: 150px;max-height: 150px;border-radius: 150px;object-fit: cover; /* cover, contain, fill, scale-down */object-position: center;-webkit-border-radius: 150px;-moz-border-radius: 150px;">
                                         <h4 class="teamCard__title text-17 lh-15 fw-500 mt-12 text-center">
-                                            {{ $a->name }}</h4>
+                                            {{ $a->anggota->nama }}</h4>
                                         <div class="teamCard__subtitle text-14 lh-1 mt-5 text-center">
-                                            {{ $a->jabatan }}
-                                            @if ($a->utama == 0)
-                                                <a href="{{ route('about.kepengurusan.bidang', $a->parent_slug) }}"
+                                            {{ $a->jabatan->nama }}
+                                            @if ($a->jabatan->parent)
+                                                <a href="{{ route('tentang.kepengurusan.bidang', $a->jabatan->parent->slug) }}"
                                                     style="text-transform: capitalize;" class="text-purple-1">
-                                                    @if ($a->singkatan)
-                                                        {{ $a->singkatan }}
+                                                    @if ($a->jabatan->parent->singkatan)
+                                                        {{ $a->jabatan->parent->singkatan }}
                                                     @else
-                                                        {{ $a->parent }}
+                                                        {{ $a->jabatan->parent->nama }}
                                                     @endif
                                                 </a>
                                             @endif
                                         </div>
 
                                         <div class="teamCard__button mt-20">
-                                            <a href="{{ $a->username ? url($a->username) : route('anggota.id', $a->id) }}"
+                                            <a href="{{ $a->anggota->user->username ? url($a->anggota->user->username) : route('anggota.id', $a->anggota->id) }}"
                                                 class="button -icon -outline-purple-1 -rounded text-purple-1">
                                                 Lihat Profile
                                             </a>
@@ -171,7 +171,6 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                 </div>
 
@@ -200,8 +199,8 @@
 
     <!-- kata alumni -->
     @php
-    $k = "$p.kata_alumni";
-    $anim = 1;
+        $k = "$p.kata_alumni";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-dark-5" data-anim-wrap>
@@ -272,8 +271,8 @@
 
     <!-- galeri kegiatan -->
     @php
-    $k = "$p.galeri_kegiatan";
-    $anim = 1;
+        $k = "$p.galeri_kegiatan";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-light-3" data-anim-wrap>
@@ -363,7 +362,7 @@
     @endif
 
     @php
-    $anim = 1;
+        $anim = 1;
     @endphp
     <section class="layout-pt-md layout-pb-lg bg-dark-5">
         <div data-anim-wrap class="container">
@@ -402,8 +401,8 @@
 
     <!-- blog dan artikel -->
     @php
-    $k = "$p.artikel";
-    $anim = 1;
+        $k = "$p.artikel";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-md layout-pb-lg">
@@ -511,8 +510,8 @@
 
     <!-- Sensus anggota -->
     @php
-    $k = "$p.sensus";
-    $anim = 1;
+        $k = "$p.sensus";
+        $anim = 1;
     @endphp
     @if (settings()->get("$k.visible"))
         <section class="layout-pt-lg layout-pb-lg bg-purple-1 relative" data-anim-wrap>

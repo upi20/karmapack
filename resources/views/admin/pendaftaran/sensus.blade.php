@@ -1,53 +1,47 @@
 @extends('templates.admin.master')
 
 @section('content')
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Sensus Anggota</h3>
-                    <div>
-                        <button class="btn btn-success btn-sm" onclick="exportExcel()">
-                            <i class="fa fa-file-excel-o"></i> Excel
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">Semua Status</option>
-                                <option value="0">Diterima</option>
-                                <option value="1">Diproses</option>
-                                <option value="2">Selesai</option>
-                                <option value="3">Ditolak</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered text-nowrap border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Angkatan</th>
-                                    <th>Email</th>
-                                    <th>Whatsapp</th>
-                                    <th>Telepon</th>
-                                    <th>Keterangan</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            <div>
+                <button class="btn btn-success btn-sm" onclick="exportExcel()">
+                    <i class="fa fa-file-excel-o"></i> Excel
+                </button>
             </div>
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Status</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">Semua Status</option>
+                        <option value="0">Diterima</option>
+                        <option value="1">Diproses</option>
+                        <option value="2">Selesai</option>
+                        <option value="3">Ditolak</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Angkatan</th>
+                        <th>Email</th>
+                        <th>Whatsapp</th>
+                        <th>Telepon</th>
+                        <th>Keterangan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
 
@@ -56,7 +50,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title">Konfirmasi Ditolak</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-default-title">Konfirmasi Ditolak</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -68,7 +62,7 @@
                                 Keterangan Ditolak
                                 <span class="text-danger">*</span>
                             </label>
-                            <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Enter Keterangan Ditolak"
+                            <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan Ditolak"
                                 required=""></textarea>
                             <input type="hidden" id="id" name="id">
                             <input type="hidden" id="status" name="status">
@@ -77,11 +71,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -204,11 +198,15 @@
                 ],
                 order: [
                     [7, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
             table_html_global = table_html;
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -258,7 +256,7 @@
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Data saved successfully',
+                        title: 'Data berhasil disimpan',
                         showConfirmButton: false,
                         timer: 1500
                     })

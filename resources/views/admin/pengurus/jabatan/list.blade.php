@@ -2,69 +2,63 @@
 
 @section('content')
     @php
-    $can_insert = auth_can(h_prefix('insert', 1));
-    $can_update = auth_can(h_prefix('update', 1));
-    $can_delete = auth_can(h_prefix('delete', 1));
-    $can_member = auth_can(h_prefix('member', 1));
+        $can_insert = auth_can(h_prefix('insert', 1));
+        $can_update = auth_can(h_prefix('update', 1));
+        $can_delete = auth_can(h_prefix('delete', 1));
+        $can_member = auth_can(h_prefix('member', 1));
     @endphp
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">List Bidang Periode <span class="fw-bold">{{ $periode->nama }}</span>
-                    </h3>
-                    @if ($can_insert)
-                        <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Add
-                        </button>
-                    @endif
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            </h3>
+            @if ($can_insert)
+                <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                    data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            @endif
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_role">Role Bidang</label>
+                    <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
+                        <option value="">Semua Role</option>
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_role">Role Bidang</label>
-                            <select class="form-control" id="filter_role" name="filter_role" style="max-width: 200px">
-                                <option value="">Semua Role</option>
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Bidang Status</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">Semua Bidang</option>
-                                <option value="1">Dipakai</option>
-                                <option value="0">Tidak Dipakai</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Role</th>
-                                    <th>Urutan</th>
-                                    <th>Bidang</th>
-                                    <th>Sub Bidang</th>
-                                    <th style="min-width: 150px;">Slug</th>
-                                    <th>Icon</th>
-                                    <th>Status</th>
-                                    {!! $can_member || $can_delete || $can_update ? '<th>Action</th>' : '' !!}
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Bidang Status</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">Semua Bidang</option>
+                        <option value="1">Dipakai</option>
+                        <option value="0">Tidak Dipakai</option>
+                    </select>
                 </div>
-            </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Role</th>
+                        <th>Urutan</th>
+                        <th>Bidang</th>
+                        <th>Sub Bidang</th>
+                        <th style="min-width: 150px;">Slug</th>
+                        <th>Icon</th>
+                        <th>Status</th>
+                        {!! $can_member || $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -72,7 +66,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -173,11 +167,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -187,7 +181,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -196,7 +190,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -358,7 +352,7 @@
                                 href="{{ url(h_prefix_uri('member', 1)) }}/${data}" >
                                 <i class="fas fa-user"></i> Member
                                 </a>` : '';
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Edit Data"
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm my-1 me-1" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-nama="${full.nama}"
                                 data-status="${full.status}"
@@ -373,7 +367,7 @@
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
                                 </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm  my-1 me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             return btn_member + btn_update + btn_delete;
@@ -383,10 +377,14 @@
                 ],
                 order: [
                     [1, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -414,7 +412,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 const route = ($('#id').val() == '') ?
                     "{{ route(h_prefix('insert', 1), $periode->id) }}" :
                     "{{ route(h_prefix('update', 1), $periode->id) }}";
@@ -435,7 +433,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -458,7 +456,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -497,8 +495,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -524,7 +522,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Bidang  deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

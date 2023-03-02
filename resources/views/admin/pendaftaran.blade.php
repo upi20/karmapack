@@ -2,53 +2,47 @@
 
 @section('content')
     <!-- Row -->
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">Status Pendaftaran</h3>
-                    <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
-                        data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
-                        <i class="fas fa-plus"></i> Add
-                    </button>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            <button type="button" class="btn btn-rounded btn-success btn-sm" data-bs-effect="effect-scale"
+                data-bs-toggle="modal" href="#modal-default" onclick="add()" data-target="#modal-default">
+                <i class="fas fa-plus"></i> Tambah
+            </button>
+        </div>
+        <div class="card-body">
+            <h5 class="h5">Filter Data</h5>
+            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
+                <div class="form-group me-md-3">
+                    <label for="filter_status">Status Pendaftaran</label>
+                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
+                        <option value="">All Pendaftaran</option>
+                        <option value="0">Tidak Aktif</option>
+                        <option value="1">Aktif</option>
+                        <option value="2">Ditutup</option>
+                    </select>
                 </div>
-                <div class="card-body">
-                    <h5 class="h5">Filter Data</h5>
-                    <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                        <div class="form-group me-md-3">
-                            <label for="filter_status">Status Pendaftaran</label>
-                            <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                                <option value="">All Pendaftaran</option>
-                                <option value="0">Tidak Aktif</option>
-                                <option value="1">Aktif</option>
-                                <option value="2">Ditutup</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                            <i class="fas fa-sync"></i> Refresh
-                        </button>
-                    </form>
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>No Urut</th>
-                                    <th>Nama</th>
-                                    <th>Foto</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Route</th>
-                                    <th>Detail</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </form>
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No Urut</th>
+                        <th>Nama</th>
+                        <th>Foto</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Route</th>
+                        <th>Detail</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -56,7 +50,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-default-title"></h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -65,8 +59,8 @@
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Enter Nama" required="" />
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
+                                required="" />
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="foto">Foto <span class="text-danger">*</span></label>
@@ -96,12 +90,12 @@
                         <div class="form-group">
                             <label class="form-label" for="deskripsi">Deskripsi</label>
                             <textarea type="text" class="form-control" rows="3" id="deskripsi" name="deskripsi"
-                                placeholder="Enter Deskripsi"> </textarea>
+                                placeholder="Deskripsi"> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="pengumuman">Pengumuman (HTML)</label>
                             <textarea type="text" class="form-control" rows="3" id="pengumuman" name="pengumuman"
-                                placeholder="Enter Pengumuman"> </textarea>
+                                placeholder="Pengumuman"> </textarea>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="status">Status</label>
@@ -116,11 +110,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -130,7 +124,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Foto</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-icon-title">View Foto</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -139,7 +133,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -150,7 +144,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-detail-title">Detail</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-detail-title">Detail</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body" id="modal-detail-body">
@@ -159,7 +153,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -244,7 +238,7 @@
                         name: 'id',
                         render(data, type, full, meta) {
                             return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Delete Data" onClick="detail('${data}')">
+                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Hapus Data" onClick="detail('${data}')">
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
                                 `;
@@ -263,7 +257,7 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Edit Data"
+                            return ` <button type="button" class="btn btn-rounded btn-primary btn-sm" title="Ubah Data"
                                 data-id="${full.id}"
                                 data-no_urut="${full.no_urut}"
                                 data-nama="${full.nama}"
@@ -276,7 +270,7 @@
                                 onClick="editFunc(this)">
                                 <i class="fas fa-edit"></i> Edit
                                 </button>
-                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Delete Data" onClick="deleteFunc('${data}')">
+                                <button type="button" class="btn btn-rounded btn-danger btn-sm" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>
                                 `;
@@ -286,10 +280,14 @@
                 ],
                 order: [
                     [4, 'asc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -309,7 +307,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 const route = ($('#id').val() == '') ?
                     "{{ route('admin.pendaftaran.insert') }}" :
                     "{{ route('admin.pendaftaran.update') }}";
@@ -330,7 +328,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -353,7 +351,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -391,8 +389,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -418,7 +416,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Pendaftaran  deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

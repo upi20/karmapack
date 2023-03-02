@@ -31,7 +31,7 @@ class InstagramController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Manage List Instagram',
+            'title' => 'Instagram',
             'breadcrumbs' => [
                 ['name' => 'Dashboard'],
             ]

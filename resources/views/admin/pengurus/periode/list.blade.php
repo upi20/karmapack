@@ -1,50 +1,44 @@
 @extends('templates.admin.master')
 @section('content')
     @php
-    $can_insert = auth_can(h_prefix('insert'));
-    $can_update = auth_can(h_prefix('update'));
-    $can_delete = auth_can(h_prefix('delete'));
-    $can_active = auth_can(h_prefix('active'));
-    $can_member = auth_can(h_prefix('member'));
-    $can_detail = auth_can(h_prefix('detail'));
-    $can_set_role = auth_can(h_prefix('set_role'));
-    $can_bidang = auth_can(h_prefix('jabatan', 1));
+        $can_insert = auth_can(h_prefix('insert'));
+        $can_update = auth_can(h_prefix('update'));
+        $can_delete = auth_can(h_prefix('delete'));
+        $can_active = auth_can(h_prefix('active'));
+        $can_member = auth_can(h_prefix('member'));
+        $can_detail = auth_can(h_prefix('detail'));
+        $can_set_role = auth_can(h_prefix('set_role'));
+        $can_bidang = auth_can(h_prefix('jabatan', 1));
     @endphp
-    <div class="row row-sm">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-md-flex flex-row justify-content-between">
-                    <h3 class="card-title">List Periode</h3>
-                    @if ($can_insert)
-                        <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
-                            data-bs-effect="effect-scale">
-                            <i class="fas fa-plus"></i> Tambah Periode
-                        </a>
-                    @endif
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive table-striped">
-                        <table class="table table-bordered border-bottom" id="tbl_main">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Dari</th>
-                                    <th>Sampai</th>
-                                    <th>Slug</th>
-                                    {!! $can_set_role ? '<th>Set Role</th>' : '' !!}
-                                    {!! $can_member ? '<th>Pengurus</th>' : '' !!}
-                                    {!! $can_detail ? '<th>Detail</th>' : '' !!}
-                                    <th>Foto</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody> </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-header d-md-flex flex-row justify-content-between">
+            <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
+            @if ($can_insert)
+                <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
+                    data-bs-effect="effect-scale">
+                    <i class="fas fa-plus"></i> Tambah Periode
+                </a>
+            @endif
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="tbl_main">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Dari</th>
+                        <th>Sampai</th>
+                        <th>Slug</th>
+                        {!! $can_set_role ? '<th>Set Role</th>' : '' !!}
+                        {!! $can_member ? '<th>Pengurus</th>' : '' !!}
+                        {!! $can_detail ? '<th>Detail</th>' : '' !!}
+                        <th>Foto</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
         </div>
     </div>
     <!-- End Row -->
@@ -52,7 +46,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title" id="modal-icon-title">View Icon</h6><button aria-label="Tutup" class="btn-close"
                         data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -61,7 +55,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -72,7 +66,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-role-title">Set Role Pengurus Periode</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-role-title">Set Role Pengurus Periode</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -91,11 +85,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary" id="btn-save" form="roleForm">
-                        <li class="fas fa-save mr-1"></li> Save changes
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
                     </button>
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -107,7 +101,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-member-title">View Member</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-member-title">View Member</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -128,7 +122,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -139,7 +133,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content modal-content-demo">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="modal-detail-title">Detail Periode</h6><button aria-label="Close"
+                    <h6 class="modal-title" id="modal-detail-title">Detail Periode</h6><button aria-label="Tutup"
                         class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body" id="modal-detail-body">
@@ -148,7 +142,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
-                        Close
+                        Tutup
                     </button>
                 </div>
             </div>
@@ -282,11 +276,11 @@
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Edit Data"
+                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Ubah Data"
                                 href="{{ url(h_prefix_uri('edit')) }}/${data}" >
                                 <i class="fas fa-edit"></i> Edit
                                 </a>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Delete Data" onClick="deleteFunc('${data}')">
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Hapus Data" onClick="deleteFunc('${data}')">
                                 <i class="fas fa-trash"></i> Delete
                                 </button>` : '';
                             const btn_bidang = can_bidang ? `<a class="btn btn-rounded btn-secondary btn-sm my-1" title="Edit Bidang"
@@ -307,10 +301,14 @@
                 ],
                 order: [
                     [7, 'desc']
-                ]
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
             });
 
             new_table.on('draw.dt', function() {
+                tooltip_refresh();
                 var PageInfo = table_html.DataTable().page.info();
                 new_table.column(0, {
                     page: 'current'
@@ -329,7 +327,7 @@
                 e.preventDefault();
                 resetErrorAfterInput();
                 var formData = new FormData(this);
-                setBtnLoading('#btn-save', 'Save Changes');
+                setBtnLoading('#btn-save', 'Simpan Perubahan');
                 $.ajax({
                     type: "POST",
                     url: "{{ route(h_prefix('set_role')) }}",
@@ -345,7 +343,7 @@
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Data saved successfully',
+                            title: 'Data berhasil disimpan',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -368,7 +366,7 @@
                     },
                     complete: function() {
                         setBtnLoading('#btn-save',
-                            '<li class="fas fa-save mr-1"></li> Save changes',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
                             false);
                     }
                 });
@@ -377,8 +375,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -425,8 +423,8 @@
 
         function activeFunc(id) {
             swal.fire({
-                title: 'Are you sure?',
-                text: "Are you sure you want to proceed ?",
+                title: 'Apakah anda yakin?',
+                text: "Apakah anda yakin akan menghapus data ini ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -452,7 +450,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Data deleted successfully',
+                                title: 'Berhasil Menghapus Data',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

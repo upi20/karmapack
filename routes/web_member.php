@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AnggotaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Member\DashboardController;
 use App\Http\Controllers\Member\KataAlumniController;
 use App\Http\Controllers\Member\ProfileController;
 
@@ -23,10 +23,10 @@ Route::controller(ProfileController::class)->prefix($prefix)->middleware("permis
     Route::get("/{$n}", "{$n}")->name($name_c);
     Route::post("/{$n}_insert", "{$n}_insert")->name("{$name_c}_insert");
     Route::post("/{$n}_update", "{$n}_update")->name("{$name_c}_update");
-    Route::delete("/{$n}_delete/{model}", "{$n}_delete")->name("{$name_c}_delete");
+    Route::delete("/{$n}_delete/{kontak}", "{$n}_delete")->name("{$name_c}_delete");
 
-    $n = 'hobby';
-    $name_c = "$name.$n"; // member.profile.hobby
+    $n = 'hobi';
+    $name_c = "$name.$n"; // member.profile.hobi
     Route::get("/{$n}_select2", "{$n}_select2")->name("{$name_c}_select2");
     Route::post("/{$n}_save", "{$n}_save")->name("{$name_c}_save");
 
@@ -40,7 +40,7 @@ Route::controller(ProfileController::class)->prefix($prefix)->middleware("permis
     Route::get("/{$n}_select2", "{$n}_select2")->name("{$name_c}_select2");
     Route::post("/{$n}_insert", "{$n}_insert")->name("{$name_c}_insert");
     Route::post("/{$n}_update", "{$n}_update")->name("{$name_c}_update");
-    Route::delete("/{$n}_delete/{model}", "{$n}_delete")->name("{$name_c}_delete");
+    Route::delete("/{$n}_delete/{pendidikan}", "{$n}_delete")->name("{$name_c}_delete");
 
     $n = 'pengalaman_organisasi';
     $name_c = "$name.$n"; // member.profile.pengalaman_organisasi
@@ -60,7 +60,7 @@ Route::controller(ProfileController::class)->prefix($prefix)->middleware("permis
 });
 
 $prefix = "password";
-Route::controller(UserController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+Route::controller(AnggotaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // member.password
     Route::get('/', 'change_password')->name($name)->middleware("permission:$name");
     Route::post('/save', 'save_password')->name("$name.save")->middleware("permission:$name.save");

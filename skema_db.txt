@@ -1,0 +1,131 @@
+Table users {
+  id int
+  name varchar
+  email varchar
+  password varchar
+  username varchar
+}
+
+// Keanggotaan ==========================================
+Table anggota_kontak_jenis{
+  id int
+  nama varchar
+  icon varchar
+  keterangan varchar
+  status boolean
+}
+
+Table anggota_pendidikan_jenis{
+  id int
+  nama varchar
+  keterangan varchar
+  status boolean
+}
+
+Table anggota {
+  id int
+  // informasi dasar
+  nama varchar
+  tanggal_lahir date
+  angkatan year
+
+  // alamat
+  province_id char(2)
+  regency_id char(4)
+  district_id char(7)
+  village_id char(10)
+  alamat_lengkap text
+
+  // informasi lainnya
+  bio text
+  profesi varchar
+  foto varchar
+  telepon varchar
+  whatsapp varchar
+  status varchar // Anggota Muda | Anggota Biasa | Anggota Kehormatan
+
+  // relasi
+  user_id int [ref: - users.id]
+}
+
+Table anggota_kontak{
+  id int
+  nilai text
+
+  // relasi
+  anggota_id int [ref: > anggota.id]
+  jenis_id int [ref: - anggota_kontak_jenis.id]
+
+}
+
+Table anggota_pendidikan{
+  id int
+  dari year
+  sampai year [null]
+  instansi varchar
+  jurusan varchar
+  keterangan text
+
+  // relasi
+  anggota_id int [ref: > anggota.id]
+  pendidikan_id int [ref: - anggota_pendidikan_jenis.id]
+}
+
+Table anggota_pengalaman_organisasi{
+  id int
+  nama text
+  dari year
+  sampai year [null]
+  jabatan varchar
+  keterangan text
+
+  // relasi
+  anggota_id int [ref: > anggota.id]
+}
+
+Table anggota_pengalaman_lain{
+  id int
+  pengalaman text
+  keterangan text
+
+  // relasi
+  anggota_id int [ref: > anggota.id]
+}
+
+// Kepengurusan ==========================================
+Table kepengurusan{
+  id int
+  nama varchar
+  foto varchar
+  dari year
+  sampai year
+  slug varchar
+  slogan text
+  visi text
+  misi text
+  filosofi_logo text
+  status boolean
+}
+
+Table kepengurusan_jabatan{
+  id int
+  periode_id int
+  parent_id int
+  no_urut int
+  nama varchar
+  slug varchar
+  foto varchar
+  singkatan varchar
+  visi text
+  misi text
+  slogan text
+  status boolean
+  role_id int
+  kepengurusan_id int [ref: > kepengurusan.id]
+}
+
+Table kepengurusan_anggota{
+  id int
+  anggota_id int [ref: > anggota.id]
+  kepengurusan_id int [ref: > kepengurusan_jabatan.id]
+}
