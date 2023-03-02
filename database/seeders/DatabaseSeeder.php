@@ -102,6 +102,11 @@ class DatabaseSeeder extends Seeder
         $this->call(AnggotaPendidikansTableSeeder::class);
         $this->call(AnggotaPengalamanLainsTableSeeder::class);
         $this->call(AnggotaPengalamanOrganisasisTableSeeder::class);
+
+        // Kepengurusan
+        $this->call(PengurusPeriodesTableSeeder::class);
+        $this->call(PengurusJabatansTableSeeder::class);
+        $this->call(PengurusAnggotasTableSeeder::class);
         DB::commit();
     }
 }

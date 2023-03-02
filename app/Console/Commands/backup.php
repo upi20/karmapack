@@ -126,6 +126,11 @@ class backup extends Command
                 'anggota_pengalaman_lains',
                 'anggota_pengalaman_organisasis',
             ],
+            'kepengurusan' => [
+                'pengurus_periodes',
+                'pengurus_jabatans',
+                'pengurus_anggotas',
+            ],
         ];
 
         if ($opt_users == 1 || $arg_type == 'users') $this->command_exec('php artisan iseed users --force');
