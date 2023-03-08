@@ -25,6 +25,10 @@ class SocialiteController extends Controller
         // find or create user and send params user get from socialite and provider
         $authUser = $this->findOrCreateUser($user, $provider);
 
+        if (is_null($authUser)) {
+            return redirect()->back()->with('message', 'Akun google yang anda pilih tidak terdaftar');
+        }
+
         // login user
         Auth()->login($authUser, true);
 
@@ -52,7 +56,7 @@ class SocialiteController extends Controller
 
             // Jika Tidak ada user
             if (is_null($user)) {
-                return redirect()->back();
+                return null;
             }
 
             // Buat Social Account baru
