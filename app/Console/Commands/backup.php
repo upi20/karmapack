@@ -56,6 +56,9 @@ class backup extends Command
         }
 
         $tables =  [
+            'user' => [
+                'social_accounts'
+            ],
             'artikel' => [
                 'artikel',
                 'artikel_tag',

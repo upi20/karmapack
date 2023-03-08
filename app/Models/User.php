@@ -65,4 +65,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Anggota::class, 'user_id', 'id');
     }
+
+    public function socialAccounts()
+    {
+        return $this->hasMany(SocialAccount::class);
+    }
 }

@@ -85,6 +85,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
         href="{{ asset('assets/templates/admin/colors/color1.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
+
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
     @foreach (json_decode(settings()->get(set_admin('meta_list'), '{}')) as $meta)
         <!-- custom {{ $meta->name }} -->
         {!! $meta->value !!}
@@ -139,11 +142,22 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 type="password" placeholder="Password" id="password" required=""
                                                 name="password" style="border-radius: 0 24px 24px 0;">
                                         </div>
+                                        <div class="text-end pt-1">
+                                            <a href="{{ url('forgot-password') }}" class="text-primary">
+                                                Lupa Password
+                                            </a>
+                                        </div>
                                         <div class="container-login100-form-btn">
-                                            <button type="submit" class="login100-form-btn btn-primary"
+                                            <button type="submit" class="login100-form-btn btn-primary p-0"
                                                 style="border: 0; border-radius: 24px">
                                                 Masuk
                                             </button>
+
+                                            <a href="{{ url('auth/google') }}"
+                                                class="login100-form-btn btn-danger mt-2 p-0"
+                                                style="border: 0; border-radius: 24px">
+                                                <i class="fab fa-google me-2"></i> | Masuk Dengan Google
+                                            </a>
                                             <div class="text-center pt-4">
                                                 <p class="mb-0">
                                                     <a href="{{ url('/') }}" class="text-primary ms-1"> Kembali
@@ -151,6 +165,24 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 </p>
                                             </div>
                                         </div>
+                                        {{-- <label class="login-social-icon"><span>Masuk Dengan Media Sosial</span></label>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="javascript:void(0)">
+                                                <div class="social-login me-4 text-center">
+                                                    <i class="fab fa-google"></i>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:void(0)">
+                                                <div class="social-login me-4 text-center">
+                                                    <i class="fab fa-facebook"></i>
+                                                </div>
+                                            </a>
+                                            <a href="javascript:void(0)">
+                                                <div class="social-login text-center">
+                                                    <i class="fab fa-twitter"></i>
+                                                </div>
+                                            </a>
+                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
@@ -188,6 +220,8 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
 
     <script src="{{ asset('assets/templates/admin/plugins/particle/particles.js') }}"></script>
+
+    <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}"></script>
 
     <script>
         {{-- if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
