@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="col-auto" data-anim-child="slide-left delay-{{ $anim++ }}">
-                        <a href="{{ settings()->get("$k.button_link") }}"
+                        <a href="{{ str_parse(settings()->get("$k.button_link")) }}"
                             class="button -md -outline-dark-1 -rounded text-dark-1">
                             {{ settings()->get("$k.button_text") }}
                         </a>

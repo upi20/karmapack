@@ -39,11 +39,11 @@
 
                             @if (auth()->user())
                                 <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-                                    <a href="{{ route('dashboard') }}" class="text-dark-1 ml-30">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}" class="text-dark-1 ml-30">Halaman Utama</a>
                                 </div>
                             @else
                                 <div class="d-none xl:d-flex items-center px-20 py-20 border-bottom-light">
-                                    <a href="{{ route('login') }}" class="text-dark-1 ml-30">Login</a>
+                                    <a href="{{ route('login') }}" class="text-dark-1 ml-30">Masuk</a>
                                 </div>
                             @endif
                             <div class="menu js-navList">
@@ -66,7 +66,7 @@
                                         <br> Jawa barat 43272, Indonesia.
                                     </div>
                                     <div>
-                                        <a href="mailto:admin@karmapack.my.id">admin@karmapack.my.id</a>
+                                        <a href="mailto:help@karmapack.id">help@karmapack.id</a>
                                     </div>
                                 </div>
 
@@ -144,12 +144,12 @@
                     @if (auth()->user())
                         <div class="header-right__buttons d-flex items-center lg:d-none">
                             <a href="{{ route('dashboard') }}"
-                                class="button h-50 px-30 -dark-1 -rounded text-white ml-20">Dashboard</a>
+                                class="button h-50 px-30 -dark-1 -rounded text-white ml-20">Halaman Utama</a>
                         </div>
                     @else
                         <div class="header-right__buttons d-flex items-center lg:d-none">
                             <a href="{{ route('login') }}"
-                                class="button h-50 px-30 -dark-1 -rounded text-white ml-20">Login</a>
+                                class="button h-50 px-30 -dark-1 -rounded text-white ml-20">Masuk</a>
                         </div>
                     @endif
 

@@ -16,7 +16,7 @@ class LoginController extends Controller
         if (Auth::check()) {
             return Redirect::route('dashboard');
         }
-        $page_attr = ['title' => 'Login'];
+        $page_attr = ['title' => 'Masuk'];
         return view('auth.login', compact('page_attr'));
     }
 

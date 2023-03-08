@@ -244,9 +244,9 @@ if (!function_exists('navbar_menu_front')) {
 
         // Menu Extra =================================================================================
         $dashboard = route('dashboard');
-        $dashboard = "<li><a href=\"$dashboard\">Dashboard</a></li>";
+        $dashboard = "<li><a href=\"$dashboard\">Halaman Utama</a></li>";
         $login = route('login');
-        $login = "<li><a href=\"$login\">Login</a></li>";
+        $login = "<li><a href=\"$login\">Masuk</a></li>";
         $menu_extra = auth()->user() ? $dashboard : $login;
         // Menu Extra =================================================================================
 
@@ -326,11 +326,11 @@ if (!function_exists('navbar_menu_front_topbar')) {
         // Menu Extra =================================================================================
         $dashboard = route('dashboard');
         $dashboard = "<li class=\"nav-item \">
-                        <a class=\"nav-link\" href=\"$dashboard\">Dashboard</a>
+                        <a class=\"nav-link\" href=\"$dashboard\">Halaman Utama</a>
                     </li>";
         $login = route('login');
         $login = "<li class=\"nav-item \">
-                        <a class=\"nav-link\" href=\"$login\">Login</a>
+                        <a class=\"nav-link\" href=\"$login\">Masuk</a>
                     </li>";
         $menu_extra = auth()->user() ? $dashboard : $login;
         // Menu Extra =================================================================================

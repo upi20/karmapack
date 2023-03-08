@@ -95,7 +95,7 @@
                         <div class="form-group">
                             <label class="form-label" for="{{ $s("$name.button_link") }}">Link Tombol
                                 <span class="text-danger">*</span></label>
-                            <input type="url" id="{{ $s("$name.button_link") }}" name="button_link"
+                            <input type="text" id="{{ $s("$name.button_link") }}" name="button_link"
                                 class="form-control" placeholder="Link Tombol"
                                 value="{{ settings()->get($s("$name.button_link")) }}" required />
                         </div>
