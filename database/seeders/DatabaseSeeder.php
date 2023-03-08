@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialMediaTableSeeder::class);
         $this->call(FooterInstagramsTableSeeder::class);
         $this->call(UsernameValidationsTableSeeder::class);
-        $this->call(GaleriTagMemberTableSeeder::class);
+        // $this->call(GaleriTagMemberTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
         $this->call(PendSensusTableSeeder::class);
         $this->call(KataAlumnisTableSeeder::class);

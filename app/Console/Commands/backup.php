@@ -65,7 +65,7 @@ class backup extends Command
             ],
             'galeri' => [
                 'galeri',
-                'galeri_tag_member'
+                // 'galeri_tag_member'
             ],
             'pengurus' => [
                 'pengurus_periode',
