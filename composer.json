@@ -27,6 +27,7 @@
         "orangehill/iseed": "^3.0",
         "phpoffice/phpspreadsheet": "^1.22",
         "spatie/laravel-permission": "^5.5",
+        "spatie/laravel-sitemap": "^6.2",
         "unisharp/laravel-filemanager": "^2.5",
         "yajra/laravel-datatables-oracle": "^9.19"
     },

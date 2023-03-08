@@ -38,6 +38,7 @@ use App\Http\Controllers\Frontend\About\SejarahController;
 use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
+use App\Http\Controllers\SitemapController;
 use App\Models\Pendaftaran\GForm;
 
 // ====================================================================================================================
@@ -194,6 +195,8 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
     Route::get('/javascript', 'javascript')->name("lab.javascript");
     Route::get('/jstes', 'jstes')->name("lab.jstes");
 });
+
+Route::get('/sitemap', [SitemapController::class, 'index']);
 // ====================================================================================================================
 
 
