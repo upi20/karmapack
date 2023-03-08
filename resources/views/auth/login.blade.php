@@ -118,6 +118,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                 class="header-brand-img" alt="Logo Karmapack" id="logo">
                         </div>
                         <p class="text-center mt-5">Sistem Informasi Anggota (SIA)</p>
+                        @if (session()->has('message'))
+                            <p class="text-center mt-2 text-danger">{{ session()->get('message') }}</p>
+                        @endif
                         <div class="panel panel-primary">
                             <div class="panel-body tabs-menu-body p-0">
                                 <div class="tab-content">
