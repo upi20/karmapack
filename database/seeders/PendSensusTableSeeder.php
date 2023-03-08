@@ -160,7 +160,7 @@ class PendSensusTableSeeder extends Seeder
                 'keterangan' => NULL,
                 'status' => 0,
                 'created_at' => '2022-12-16 23:27:27',
-                'updated_at' => '2022-12-16 23:27:27',
+                'updated_at' => '2023-03-08 14:21:09',
             ),
         ));
         

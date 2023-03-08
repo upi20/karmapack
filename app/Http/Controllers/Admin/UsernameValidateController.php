@@ -13,9 +13,9 @@ class UsernameValidateController extends Controller
     {
         $rules = UsernameValidation::all();
         $page_attr = [
-            'title' => 'Manage Username Validation',
+            'title' => 'Pengaturan Nama Profil',
             'breadcrumbs' => [
-                ['name' => 'Dashboard'],
+                ['name' => 'Halaman Utama'],
             ]
         ];
         return view('admin.username_validation', compact('page_attr', 'rules'));

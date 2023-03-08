@@ -1,4 +1,3 @@
-delete username validation
 delete pendaftaran
 refactore gform
 sesuaikan artikel dengan yang di geb
@@ -22,3 +21,9 @@ $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
 date-input-str
 
 <h3 class="card-title">Tabel {{ $page_attr['title'] }}</h3>
+
+
+// PR
+Email validation
+reset password
+Login Via Google

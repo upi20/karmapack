@@ -1,13 +1,13 @@
 @extends('templates.admin.master')
 @section('content')
     <div class="card">
-        <div class="card-header bg-info">
-            <h3 class="card-title text-light">Username Validation Rule</h3>
+        <div class="card-header bg-danger">
+            <h3 class="card-title text-light">Data {{ $page_attr['title'] }}</h3>
         </div>
         <div class="card-body">
             <form id="MainForm">
                 <div class="form-group">
-                    <label for="rules">Rules</label>
+                    <label for="rules">Nama profil yang tidak boleh digunakan</label>
                     <select class="form-control select2" id="rules" multiple name="rules[]" style="width: 100%">
                         @foreach ($rules as $rule)
                             <option value="{{ $rule->rule }}" selected>
@@ -18,13 +18,15 @@
                 </div>
             </form>
         </div>
-        <div class="card-footer">
-            <div class="form-group">
-                <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fas fa-save mr-1"></li> Save
-                </button>
+        @if (auth_can(h_prefix('save')))
+            <div class="card-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" form="MainForm">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
 @section('stylesheet')

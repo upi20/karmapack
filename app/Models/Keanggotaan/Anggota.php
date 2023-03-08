@@ -275,7 +275,7 @@ class Anggota extends Model
             "$table.whatsapp",
             "$table.telepon",
             "$t_user.username",
-            "$t_user.alamat_lengkap",
+            "$table.alamat_lengkap",
 
             // lain
             DB::raw("$foto as foto"),
@@ -308,7 +308,7 @@ class Anggota extends Model
                     $table.whatsapp like '%$request->search%' or
                     $table.telepon like '%$request->search%' or
                     $t_user.username like '%$request->search%' or
-                    $t_user.alamat_lengkap like '%$request->search%' or
+                    $table.alamat_lengkap like '%$request->search%' or
 
                     $t_prov.name like '%$request->search%' or
                     $t_kab.name like '%$request->search%' or

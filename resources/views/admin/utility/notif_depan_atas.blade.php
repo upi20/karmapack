@@ -292,7 +292,7 @@
         function add() {
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             resetErrorAfterInput();
@@ -314,7 +314,7 @@
                 },
                 success: (data) => {
                     isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
                     $('#dari').val(data.dari);

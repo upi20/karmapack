@@ -371,7 +371,7 @@
             refreshType();
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             resetErrorAfterInput();
@@ -393,7 +393,7 @@
                 },
                 success: (data) => {
                     isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
 
@@ -543,10 +543,10 @@
                                     </div>
 
                                     <div>
-                                        <button class="btn btn-primary btn-sm" onclick="editFunc('${e.id}')">
-                                            <i class="fas fa-edit"></i> Perbaiki</button>
-                                        <button class="btn btn-danger btn-sm" onclick="deleteFunc('${e.id}')">
-                                            <i class="fa fa-trash"></i> Hapus</button>
+                                        ${can_update ? `<button class="btn btn-primary btn-sm" onclick="editFunc('${e.id}')">
+                                                <i class="fas fa-edit"></i> Perbaiki</button>` : ''}
+                                        ${can_update ? `<button class="btn btn-danger btn-sm" onclick="deleteFunc('${e.id}')">
+                                                <i class="fa fa-trash"></i> Hapus</button>` : ''}
                                     </div>
                                 </div>`);
                     });
