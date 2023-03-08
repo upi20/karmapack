@@ -17,7 +17,8 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('username')->after('email')->unique()->nullable()->default(null);
-            $table->boolean('active')->after('password')->default(Hash::make(('12345678')));
+            $table->boolean('active')->after('password')->default(0);
+            $table->string('foto')->after('email')->default(null)->nullable();
         });
     }
 

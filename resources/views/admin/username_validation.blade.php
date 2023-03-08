@@ -18,13 +18,15 @@
                 </div>
             </form>
         </div>
-        <div class="card-footer">
-            <div class="form-group">
-                <button type="submit" class="btn btn-success" form="MainForm">
-                    <li class="fas fa-save mr-1"></li> Simpan Perubahan
-                </button>
+        @if (auth_can(h_prefix('save')))
+            <div class="card-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" form="MainForm">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection
 @section('stylesheet')

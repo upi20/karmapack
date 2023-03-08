@@ -225,7 +225,7 @@
                     },
                 ],
                 order: [
-                    [6, 'desc']
+                    [5 + (can_set_role ? 1 : 0), 'desc']
                 ],
                 language: {
                     url: datatable_indonesia_language_url

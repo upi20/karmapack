@@ -1067,6 +1067,22 @@ class PPermissionsTableSeeder extends Seeder
                 'created_at' => '2023-02-19 22:20:30',
                 'updated_at' => '2023-02-19 22:20:30',
             ),
+            131 => 
+            array (
+                'id' => 177,
+                'name' => 'admin.kepengurusan.periode.detail',
+                'guard_name' => 'web',
+                'created_at' => '2023-03-08 13:04:42',
+                'updated_at' => '2023-03-08 13:04:42',
+            ),
+            132 => 
+            array (
+                'id' => 178,
+                'name' => 'admin.utility.hari_besar_nasional',
+                'guard_name' => 'web',
+                'created_at' => '2023-03-08 14:03:27',
+                'updated_at' => '2023-03-08 14:03:27',
+            ),
         ));
         
         

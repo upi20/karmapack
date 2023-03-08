@@ -57,7 +57,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Sebagai</th>
                         <th>Profesi</th>
                         <th>Detail</th>
                         <th>Status</th>
@@ -253,11 +252,10 @@
                     },
                     {
                         data: 'user',
-                        name: 'user'
-                    },
-                    {
-                        data: 'sebagai',
-                        name: 'sebagai'
+                        name: 'user',
+                        render(data, type, full, meta) {
+                            return `${data}<br><small>${full.sebagai}</small>`;
+                        },
                     },
                     {
                         data: 'profesi',
@@ -268,31 +266,28 @@
                         name: 'id',
                         render(data, type, full, meta) {
                             return `
-                                <button type="button" class="btn btn-rounded btn-info btn-sm" title="Detail Data" onClick="detail('${data}')">
-                                <i class="fas fa-eye" aria-hidden="true"></i>
-                                </button>
-                                `;
+                                <button type="button" class="btn btn-rounded btn-info btn-sm" data-toggle="tooltip" title="Detail Data" onClick="detail('${data}')">
+                                <i class="fas fa-eye" aria-hidden="true"></i></button>`;
                         },
                     },
                     {
                         data: 'status_str',
                         name: 'status',
                         render(data, type, full, meta) {
-                            const class_el = full.status == 0 ? 'badge bg-warning' :
-                                (full.status == 1 ? 'badge bg-success' : 'badge bg-danger');
-                            return `<span class="${class_el} p-2">${full.status_str}</span>`;
+                            const class_el = full.status == 0 ? 'warning' :
+                                (full.status == 1 ? 'success' : 'danger');
+                            return `<i class="fas fa-circle text-${class_el} ms-0 me-2"></i>${full.status_str}</small>`;
                         },
+                        className: "text-nowrap"
                     },
                     ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" title="Ubah Data" onClick="editFunc('${data}')">
-                                <i class="fas fa-edit"></i> Edit
-                                </button>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" title="Hapus Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i> Delete
-                                </button>` : '';
+                            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
+                                <i class="fas fa-edit"></i></button>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i></button>` : '';
                             return btn_update + btn_delete;
                         },
                         orderable: false
@@ -388,7 +383,7 @@
         function add() {
             if (!isEdit) return false;
             $('#MainForm').trigger("reset");
-            $('#modal-default-title').html("Add {{ $page_attr['title'] }}");
+            $('#modal-default-title').html("Tambah {{ $page_attr['title'] }}");
             $('#modal-default').modal('show');
             $('#id').val('');
             $('#user_id')
@@ -413,7 +408,7 @@
                 },
                 success: (data) => {
                     isEdit = true;
-                    $('#modal-default-title').html("Edit {{ $page_attr['title'] }}");
+                    $('#modal-default-title').html("Ubah {{ $page_attr['title'] }}");
                     $('#modal-default').modal('show');
                     $('#id').val(data.id);
                     $('#deskripsi').val(data.deskripsi);

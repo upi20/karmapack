@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\Summernote;
 use App\Http\Controllers\Controller;
 use App\Models\KataAlumni;
+use App\Models\Keanggotaan\Anggota;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -101,10 +101,13 @@ class KataAlumniController extends Controller
     {
         $table = KataAlumni::tableName;
         $t_user = User::tableName;
+        $t_anggota = Anggota::tableName;
         return KataAlumni::select([
             DB::raw("$table.*"),
-            DB::raw("concat($t_user.angkatan,' | ',$t_user.name) as user")
-        ])->join("$t_user", "$t_user.id", "=", "$table.user_id")
+            DB::raw("concat($t_anggota.angkatan,' | ',$t_user.name) as user")
+        ])
+            ->join("$t_user", "$t_user.id", "=", "$table.user_id")
+            ->join("$t_anggota", "$t_user.id", "=", "$t_anggota.user_id")
             ->where("$table.id", '=', $request->id)->first();
     }
 
@@ -224,14 +227,15 @@ class KataAlumniController extends Controller
     public function member_select2(Request $request)
     {
         try {
-            $model = User::select(['id', DB::raw("concat(angkatan,' | ',name) as text")])
+            $model = Anggota::select([DB::raw("user_id as id"), DB::raw("concat(angkatan,' | ',nama) as text")])
                 ->whereRaw("(
-                    `name` like '%$request->search%' or
+                    `nama` like '%$request->search%' or
                     `angkatan` like '%$request->search%' or
-                    `email` like '%$request->search%' or
-                    `id` like '%$request->search%'
+                    `alamat_lengkap` like '%$request->search%' or
+                    `user_id` like '%$request->search%'
                     )")
-                ->limit(10);
+                ->orderBy('nama')
+                ->limit(50);
 
             $result = $model->get()->toArray();
             return response()->json(['results' => $result]);
@@ -245,9 +249,13 @@ class KataAlumniController extends Controller
         DB::statement("SET SQL_MODE=''");
         $table = KataAlumni::tableName;
         $t_user = User::tableName;
+        $t_anggota = Anggota::tableName;
 
-        $result = KataAlumni::select(["$table.*", DB::raw("concat($t_user.angkatan,' | ',$t_user.name) as user")])
-            ->where("$table.status", '=', '1')->join($t_user, "$t_user.id", '=', "$table.user_id")->orderBy("$table.sequence")->get();
+        $result = KataAlumni::select(["$table.*", DB::raw("concat($t_anggota.angkatan,' | ',$t_user.name) as user")])
+            ->where("$table.status", '=', '1')
+            ->join($t_user, "$t_user.id", '=', "$table.user_id")
+            ->join("$t_anggota", "$t_user.id", "=", "$t_anggota.user_id")
+            ->orderBy("$table.sequence")->get();
         return response()->json(['data' => $result]);
     }
 
