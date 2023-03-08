@@ -16,6 +16,7 @@ use App\Models\Keanggotaan\PendidikanJenis;
 use App\Models\Keanggotaan\Pendidikan;
 use App\Models\Keanggotaan\PengalamanLain;
 use App\Models\Keanggotaan\PengalamanOrganisasi;
+use App\Models\UsernameValidation;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
@@ -193,6 +194,18 @@ class ProfileController extends Controller
             ]);
 
             if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+
+            $username = $request->username;
+            $check = UsernameValidation::where('rule', $username)->count();
+            if ($check > 0) {
+                // check username
+                return response()->json([
+                    'errors' => [
+                        'username' => ["Nama Profil $username Tidak boldeh digunakan"]
+                    ],
+                    'message' => "Nama Profil $username Tidak boldeh digunakan, Ada yang salah, Mohon periksa kembali !",
+                ], 422);
+            }
 
             // simpan anggota
             $anggota->nama = $request->nama;

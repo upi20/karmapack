@@ -2,12 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Address\District;
-use App\Models\Address\Province;
-use App\Models\Address\Regencie;
-use App\Models\Address\Village;
 use App\Models\Keanggotaan\Anggota;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -65,32 +60,6 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function fotoUrl()
-    {
-        $foto = $this->attributes['foto'];
-        return $foto ? url(self::image_folder . '/' . $foto) : asset('assets/image/anggota_default.png');
-    }
-
-    public function province()
-    {
-        return $this->belongsTo(Province::class, 'province_id');
-    }
-
-    public function regencie()
-    {
-        return $this->belongsTo(Regencie::class, 'regency_id');
-    }
-
-    public function district()
-    {
-        return $this->belongsTo(District::class, 'district_id');
-    }
-
-    public function village()
-    {
-        return $this->belongsTo(Village::class, 'village_id');
-    }
 
     public function anggota()
     {
