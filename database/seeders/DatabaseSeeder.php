@@ -50,28 +50,28 @@ class DatabaseSeeder extends Seeder
         // galeri
         $this->call(GaleriTableSeeder::class);
 
-        // Pengurus
-        $this->call(PengurusPeriodeTableSeeder::class);
-        $this->call(PengurusPeriodeMemberTableSeeder::class);
+        // // Pengurus
+        // $this->call(PengurusPeriodeTableSeeder::class);
+        // $this->call(PengurusPeriodeMemberTableSeeder::class);
 
-        // pengurus jabatan
-        $this->call(PengurusPeriodeJabatanTableSeeder::class);
-        $this->call(PengurusPeriodeJabatanMemberTableSeeder::class);
+        // // pengurus jabatan
+        // $this->call(PengurusPeriodeJabatanTableSeeder::class);
+        // $this->call(PengurusPeriodeJabatanMemberTableSeeder::class);
 
-        // profile kontak
-        $this->call(PengurusProfileKontakTipeTableSeeder::class);
-        $this->call(PengurusProfileKontakTableSeeder::class);
+        // // profile kontak
+        // $this->call(PengurusProfileKontakTipeTableSeeder::class);
+        // $this->call(PengurusProfileKontakTableSeeder::class);
 
-        // profile pendidikan
-        $this->call(PengurusProfilePendidikanJenisTableSeeder::class);
-        $this->call(PengurusProfilePendidikanTableSeeder::class);
+        // // profile pendidikan
+        // $this->call(PengurusProfilePendidikanJenisTableSeeder::class);
+        // $this->call(PengurusProfilePendidikanTableSeeder::class);
 
-        // profile pengalaman
-        $this->call(PengurusProfilePengalamanLainTableSeeder::class);
-        $this->call(PengurusProfilePengalamanOrganisasiTableSeeder::class);
+        // // profile pengalaman
+        // $this->call(PengurusProfilePengalamanLainTableSeeder::class);
+        // $this->call(PengurusProfilePengalamanOrganisasiTableSeeder::class);
 
-        // profiel hobbies
-        $this->call(HobbiesTableSeeder::class);
+        // // profiel hobbies
+        // $this->call(HobbiesTableSeeder::class);
 
         // contact
         $this->call(ContactListTableSeeder::class);
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SocialMediaTableSeeder::class);
         $this->call(FooterInstagramsTableSeeder::class);
         $this->call(UsernameValidationsTableSeeder::class);
-        $this->call(GaleriTagMemberTableSeeder::class);
+        // $this->call(GaleriTagMemberTableSeeder::class);
         $this->call(PendaftaransTableSeeder::class);
         $this->call(PendSensusTableSeeder::class);
         $this->call(KataAlumnisTableSeeder::class);
