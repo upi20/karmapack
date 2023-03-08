@@ -136,6 +136,11 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 type="email" placeholder="Email" id="email" required=""
                                                 name="email" style="border-radius: 0 24px 24px 0;">
                                         </div>
+                                        <div class="text-end">
+                                            <a href="{{ url('forgot-password') }}" class="text-primary">
+                                                Lupa Password
+                                            </a>
+                                        </div>
                                         <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                                             <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
                                                 style="border-radius: 24px 0 0 24px;">
@@ -144,11 +149,6 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                             <input class="input100 border-start-0 form-control ms-0 bg-white"
                                                 type="password" placeholder="Password" id="password" required=""
                                                 name="password" style="border-radius: 0 24px 24px 0;">
-                                        </div>
-                                        <div class="text-end pt-1">
-                                            <a href="{{ url('forgot-password') }}" class="text-primary">
-                                                Lupa Password
-                                            </a>
                                         </div>
                                         <div class="container-login100-form-btn">
                                             <button type="submit" class="login100-form-btn btn-primary p-0"
