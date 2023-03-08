@@ -65,21 +65,8 @@ class backup extends Command
             ],
             'galeri' => [
                 'galeri',
-                // 'galeri_tag_member'
-            ],
-            'pengurus' => [
-                'pengurus_periode',
-                'pengurus_periode_jabatan',
-                'pengurus_periode_jabatan_member',
-                'pengurus_periode_member',
             ],
             'profile' => [
-                'pengurus_profile_kontak',
-                'pengurus_profile_kontak_tipe',
-                'pengurus_profile_pendidikan',
-                'pengurus_profile_pendidikan_jenis',
-                'pengurus_profile_pengalaman_lain',
-                'pengurus_profile_pengalaman_organisasi',
                 'kata_alumnis',
             ],
             'frontend' => [

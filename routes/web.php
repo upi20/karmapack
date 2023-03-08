@@ -3,11 +3,8 @@
 // ====================================================================================================================
 
 use App\Http\Controllers\Admin\Pendaftaran\GFormController;
-use App\Models\User;
-
 // ====================================================================================================================
 // utility ============================================================================================================
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -17,18 +14,11 @@ use App\Http\Controllers\LabController;
 use App\Http\Controllers\LoaderController;
 
 // ====================================================================================================================
-// Member =============================================================================================================
-use App\Http\Controllers\Member\ProfileController;
-use App\Http\Controllers\Member\DashboardController as MemberDashboardController;
-
-
-// ====================================================================================================================
 // Frontend ===========================================================================================================
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\KontakController;
-use App\Http\Controllers\Frontend\MemberController;
-use App\Http\Controllers\Frontend\GaleriController as GaleriControllerFrontend;
-use App\Http\Controllers\Frontend\PendaftaranController as PendaftaranControllerFrontend;
+use App\Http\Controllers\Frontend\GaleriController;
+use App\Http\Controllers\Frontend\PendaftaranController;
 
 // Tentang Kami =======================================================================================================
 use App\Http\Controllers\Frontend\About\Kepengurusan\StrukturController;
@@ -39,7 +29,6 @@ use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController as SensusControllerFrontend;
 use App\Http\Controllers\SitemapController;
-use App\Models\Pendaftaran\GForm;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -131,7 +120,7 @@ Route::controller(KontakController::class)->prefix($name)->group(function () use
 
 // Galeri =============================================================================================================
 $name = 'galeri';
-Route::controller(GaleriControllerFrontend::class)->prefix($name)->group(function () use ($name) {
+Route::controller(GaleriController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
     Route::get('/detail/{model:slug}', 'detail')->name("$name.detail");
 });
@@ -143,7 +132,7 @@ Route::controller(GaleriControllerFrontend::class)->prefix($name)->group(functio
 // Pendaftaran ========================================================================================================
 $name = 'pendaftaran';
 Route::prefix($name)->group(function () use ($name) {
-    Route::controller(PendaftaranControllerFrontend::class)->group(function () use ($name) {
+    Route::controller(PendaftaranController::class)->group(function () use ($name) {
         Route::get('/', 'index')->name($name);
     });
 
