@@ -22,7 +22,7 @@ class SocialiteController extends Controller
         } catch (Exception $e) {
             return redirect()->back();
         }
-        dd($user);
+        
         // find or create user and send params user get from socialite and provider
         $authUser = $this->findOrCreateUser($user, $provider);
 
