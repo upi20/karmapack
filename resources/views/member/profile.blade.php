@@ -1774,7 +1774,7 @@
                             Swal.fire({
                                 position: 'center',
                                 icon: 'success',
-                                title: 'Data Pengalaman Lain berhasil dihapus',
+                                title: 'Data Akun google berhasil dihapus',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
