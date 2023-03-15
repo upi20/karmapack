@@ -16,6 +16,7 @@ use App\Models\Keanggotaan\PendidikanJenis;
 use App\Models\Keanggotaan\Pendidikan;
 use App\Models\Keanggotaan\PengalamanLain;
 use App\Models\Keanggotaan\PengalamanOrganisasi;
+use App\Models\SocialAccount;
 use App\Models\UsernameValidation;
 use Illuminate\Support\Facades\DB;
 
@@ -41,7 +42,8 @@ class ProfileController extends Controller
         $provinces = Province::all();
         $kontak_jenis = KontakJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
         $pendidikan_jenis = PendidikanJenis::where('status', '=', 1)->select(['id', 'nama'])->get();
-
+        $google_accounts = $user->socialAccounts()->where('provider_name', 'google')->get();
+        $socials = $user->socialAccounts()->where('provider_name', 'google')->get();
         $data = compact(
             'page_attr',
             'anggota',
@@ -49,6 +51,7 @@ class ProfileController extends Controller
             'provinces',
             'kontak_jenis',
             'pendidikan_jenis',
+            'google_accounts',
         );
 
         $data['compact'] = $data;
@@ -729,6 +732,27 @@ class ProfileController extends Controller
             if (!$this->savePermission($model->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
             return response()->json();
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
+        }
+    }
+
+    public function google_delete(SocialAccount $account)
+    {
+        try {
+            $user = $account->user;
+            if (!$this->savePermission($user->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
+            $account->delete();
+            $socials = $user->socialAccounts()->where('provider_name', 'google')->get();
+            $results = [];
+            foreach ($socials ?? [] as $s) {
+                $s->detail = $s->getProviderData();
+                $results[] = $s;
+            }
+            return response()->json($results);
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',

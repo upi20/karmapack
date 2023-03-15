@@ -224,6 +224,54 @@
 
             {{-- Other information --}}
             <div class="row">
+                @if ($google_accounts->count())
+                    {{-- google akun --}}
+                    <div class="col-12" id="google_account_container">
+                        <div class="card panel-theme">
+                            <div class="card-header  d-flex flex-row justify-content-between">
+                                <div class="float-start">
+                                    <h3 class="card-title">Akun Google</h3>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush" id="akun-google-body">
+                                    @foreach ($google_accounts as $akun)
+                                        @php
+                                            $detail = $akun->getProviderData();
+                                        @endphp
+
+                                        <div
+                                            class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                            <div>
+                                                @if ($detail != null)
+                                                    <div class="d-flex flex-row">
+                                                        <img src="{{ $detail->avatar }}" alt="{{ $detail->name }}"
+                                                            style="width: 45px; height: 45px; object-fit: cover; border-radius: 50%;">
+                                                        <div class="ms-3">
+                                                            <h5 class="mb-1">{{ $detail->name }}</h5>
+                                                            <a href="mailto:{{ $detail->email }}"
+                                                                class="link-primary">{{ $detail->email }}</a>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    {{ $akun->provider_id }}
+                                                @endif
+                                            </div>
+
+                                            <div>
+                                                <button class="btn btn-danger btn-sm"
+                                                    onclick="googleHapus({{ $akun->id }})" data-toggle="tooltip"
+                                                    title="Hapus Data">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 {{-- kontak --}}
                 <div class="col-12">
                     <div class="card panel-theme">
@@ -1696,6 +1744,100 @@
             });
         }
 
+        function googleHapus(id) {
+            swal.fire({
+                title: 'Apakah anda yakin?',
+                text: "Untuk menghapus data akun google ini ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes'
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajax({
+                        url: `{{ url('member/profile/google_delete') }}/${id}`,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        beforeSend: function() {
+                            swal.fire({
+                                title: 'Please Wait..!',
+                                text: 'Is working..',
+                                onOpen: function() {
+                                    Swal.showLoading()
+                                }
+                            })
+                        },
+                        success: function(data) {
+                            renderGoogle(data);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Data Pengalaman Lain berhasil dihapus',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            pengalaman_lainRender();
+                        },
+                        complete: function() {
+                            swal.hideLoading();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            swal.hideLoading();
+                            swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                        }
+                    });
+                }
+            });
+        }
+
+        function renderGoogle(datas) {
+            const body = $('#akun-google-body');
+            body.html('');
+            datas.forEach(e => {
+                if (e.detail != null) {
+                    const detail = e.detail;
+                    body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        <div class="d-flex flex-row">
+                                            <img src="${detail.avatar}" alt="${ detail.name }"
+                                                style="width: 45px; height: 45px; object-fit: cover; border-radius: 50%;">
+                                            <div class="ms-3">
+                                                <h5 class="mb-1">${ detail.name }</h5>
+                                                <a href="mailto:${ detail.email }"
+                                                    class="link-primary">${ detail.email }</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-danger btn-sm"
+                                            onclick="googleHapus(${ e.id })" data-toggle="tooltip"
+                                            title="Hapus Data">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>`);
+
+                } else {
+                    body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
+                                    <div>
+                                        ${ e.provider_id }
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-danger btn-sm"
+                                            onclick="googleHapus(${ e.id })" data-toggle="tooltip"
+                                            title="Hapus Data">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div`);
+                }
+            });
+        }
+
         // initial function
         kontakRender();
         pendidikanRender();
@@ -1703,3 +1845,5 @@
         pengalaman_lainRender();
     </script>
 @endsection
+
+{{-- INSERT INTO `social_accounts` (`id`, `user_id`, `provider_id`, `provider_name`, `provider_data`, `created_at`, `updated_at`) VALUES (NULL, '1', '111291161449881637624', 'google', '{\"id\":\"111291161449881637624\",\"nickname\":null,\"name\":\"Isep Lutpi Nur (upi)\",\"email\":\"iseplutpinur7@gmail.com\",\"avatar\":\"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\",\"user\":{\"sub\":\"111291161449881637624\",\"name\":\"Isep Lutpi Nur (upi)\",\"given_name\":\"Isep\",\"family_name\":\"Lutpi Nur\",\"picture\":\"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\",\"email\":\"iseplutpinur7@gmail.com\",\"email_verified\":true,\"locale\":\"id\",\"id\":\"111291161449881637624\",\"verified_email\":true,\"link\":null},\"attributes\":{\"id\":\"111291161449881637624\",\"nickname\":null,\"name\":\"Isep Lutpi Nur (upi)\",\"email\":\"iseplutpinur7@gmail.com\",\"avatar\":\"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\",\"avatar_original\":\"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\"},\"token\":\"ya29.a0AVvZVsqEs_Jb8m7mGikJZVIoAbCVHI9YwX1iPanxlRrz0kmeBYhidWNPTyyVQNEdO_3IvlfEUoUGeK97GkEUXI789nPix7sbnrQRfUf2AexzX5akjYKcRN3Q8wZtqSP3l1RtWwtDyLFVLKeK2Ayjkb8hi833zQaCgYKAegSARMSFQGbdwaIIDz7C0laJXfrF3AOr-LAEw0165\",\"refreshToken\":null,\"expiresIn\":3599,\"approvedScopes\":[\"openid\",\"https:\\/\\/www.googleapis.com\\/auth\\/userinfo.email\",\"https:\\/\\/www.googleapis.com\\/auth\\/userinfo.profile\"]}', '2023-03-16 02:13:21', '2023-03-16 02:13:21') --}}

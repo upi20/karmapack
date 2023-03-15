@@ -57,6 +57,10 @@ Route::controller(ProfileController::class)->prefix($prefix)->middleware("permis
     Route::post("/{$n}_insert", "{$n}_insert")->name("{$name_c}_insert");
     Route::post("/{$n}_update", "{$n}_update")->name("{$name_c}_update");
     Route::delete("/{$n}_delete/{model}", "{$n}_delete")->name("{$name_c}_delete");
+
+    $n = 'google';
+    $name_c = "$name.$n"; // member.profile.google
+    Route::delete("/{$n}_delete/{account}", "{$n}_delete")->name("{$name_c}_delete");
 });
 
 $prefix = "password";

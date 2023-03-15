@@ -256,7 +256,7 @@ $notifikasi = notif_admin_atas();
     <script src="{{ asset('assets/templates/admin/plugins/p-scroll/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/p-scroll/pscroll-1.js') }}"></script>
-    <script src="{{ asset('assets/admin.js') }}"></script>
+    <script src="{{ asset('assets/admin_panel.js') }}"></script>
     <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}"></script>
     <script>
         $.ajaxSetup({
