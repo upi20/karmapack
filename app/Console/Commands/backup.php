@@ -76,7 +76,6 @@ class backup extends Command
                 'social_media',
                 'footer_instagrams',
                 'username_validations',
-                'galeri_tag_member',
                 'instagram',
             ],
             'pendaftaran' => [

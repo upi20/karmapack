@@ -108,5 +108,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PengurusJabatansTableSeeder::class);
         $this->call(PengurusAnggotasTableSeeder::class);
         DB::commit();
+        $this->call(SocialAccountsTableSeeder::class);
     }
 }

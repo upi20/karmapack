@@ -13,6 +13,7 @@ class SocialAccount extends Model
         'user_id',
         'provider_id',
         'provider_name',
+        'provider_data',
     ];
 
     public function user()

@@ -63,7 +63,8 @@ class SocialiteController extends Controller
             // Buat Social Account baru
             $user->socialAccounts()->create([
                 'provider_id'   => $socialUser->getId(),
-                'provider_name' => $provider
+                'provider_name' => $provider,
+                'provider_data' => json_encode($socialUser),
             ]);
 
             // return user
