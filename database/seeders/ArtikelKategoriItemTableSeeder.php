@@ -157,15 +157,23 @@ class ArtikelKategoriItemTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'id' => '42',
-                'artikel_id' => '39',
-                'kategori_id' => '2',
+                'id' => '44',
+                'artikel_id' => '40',
+                'kategori_id' => '7',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             18 => 
             array (
-                'id' => '43',
+                'id' => '45',
+                'artikel_id' => '39',
+                'kategori_id' => '2',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'id' => '46',
                 'artikel_id' => '39',
                 'kategori_id' => '10',
                 'created_at' => NULL,

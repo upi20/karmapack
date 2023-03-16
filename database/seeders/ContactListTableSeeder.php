@@ -48,12 +48,12 @@ class ContactListTableSeeder extends Seeder
                 'id' => '3',
                 'nama' => 'Email',
                 'icon' => 'fas fa-envelope',
-                'url' => 'mailto:admin@karmapack.my.id',
+                'url' => 'mailto:help@karmapack.id',
                 'order' => '3',
-                'keterangan' => 'admin@karmapack.my.id',
+                'keterangan' => 'help@karmapack.id',
                 'status' => '1',
                 'created_at' => '2022-08-21 08:35:47',
-                'updated_at' => '2022-08-21 08:35:47',
+                'updated_at' => '2023-03-16 17:52:14',
             ),
         ));
         

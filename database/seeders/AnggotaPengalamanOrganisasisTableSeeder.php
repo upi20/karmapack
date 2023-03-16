@@ -487,6 +487,18 @@ class AnggotaPengalamanOrganisasisTableSeeder extends Seeder
                 'created_at' => '2023-02-11 00:40:13',
                 'updated_at' => '2023-02-11 00:40:13',
             ),
+            39 => 
+            array (
+                'id' => '40',
+            'nama' => 'pecinta alam (PA) Kota Pagaralam',
+                'dari' => '2019',
+                'sampai' => '2021',
+                'jabatan' => 'Wakil ketua',
+                'keterangan' => NULL,
+                'anggota_id' => '89',
+                'created_at' => '2023-03-16 16:45:38',
+                'updated_at' => '2023-03-16 16:46:16',
+            ),
         ));
         
         

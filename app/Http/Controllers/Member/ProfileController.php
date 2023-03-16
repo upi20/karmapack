@@ -123,7 +123,7 @@ class ProfileController extends Controller
     public function profesi_select2(Request $request)
     {
         try {
-            $model = User::selectRaw('profesi as text')
+            $model = Anggota::selectRaw('profesi as text')
                 ->whereRaw("(`profesi` like '%$request->search%')")
                 ->distinct()
                 ->limit(10);

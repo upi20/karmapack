@@ -82,6 +82,15 @@ class ArtikelTagTableSeeder extends Seeder
                 'created_at' => '2023-02-19 22:14:06',
                 'updated_at' => '2023-02-19 22:14:06',
             ),
+            7 => 
+            array (
+                'id' => '9',
+                'nama' => 'Harlah',
+                'slug' => 'harlah',
+                'status' => '1',
+                'created_at' => '2023-03-16 17:06:57',
+                'updated_at' => '2023-03-16 17:06:57',
+            ),
         ));
         
         

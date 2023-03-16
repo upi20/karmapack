@@ -39,6 +39,16 @@ class ContactMessagesTableSeeder extends Seeder
                 'created_at' => '2023-02-19 21:41:39',
                 'updated_at' => '2023-02-19 21:41:39',
             ),
+            2 => 
+            array (
+                'id' => '3',
+                'nama' => 'ISEP LUTPI NUR',
+                'email' => 'iseplutpinur7@gmail.com',
+                'message' => '123',
+                'status' => NULL,
+                'created_at' => '2023-03-16 15:00:18',
+                'updated_at' => '2023-03-16 15:00:18',
+            ),
         ));
         
         

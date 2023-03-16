@@ -62,44 +62,6 @@ Cianjru Kidul
                 'created_at' => '2023-02-11 02:06:14',
                 'updated_at' => '2023-02-18 17:39:38',
             ),
-            2 => 
-            array (
-                'id' => '4',
-                'nama' => 'd',
-                'foto' => 'icond20230218164402.jpg',
-                'dari' => '2003',
-                'sampai' => '2003',
-                'slug' => 'd',
-                'slogan' => '3',
-                'visi' => '<p>3</p>
-',
-                'misi' => '<p>3</p>
-',
-                'filosofi_logo' => '<p>3</p>
-',
-                'status' => '0',
-                'created_at' => '2023-02-18 16:44:02',
-                'updated_at' => '2023-02-18 17:39:38',
-            ),
-            3 => 
-            array (
-                'id' => '6',
-                'nama' => 'ds',
-                'foto' => 'iconds20230218164643.jpg',
-                'dari' => '2003',
-                'sampai' => '2003',
-                'slug' => 'ds',
-                'slogan' => '3',
-                'visi' => '<p>3</p>
-',
-                'misi' => '<p>3</p>
-',
-                'filosofi_logo' => '<p>3</p>
-',
-                'status' => '0',
-                'created_at' => '2023-02-18 16:46:43',
-                'updated_at' => '2023-02-18 20:37:50',
-            ),
         ));
         
         

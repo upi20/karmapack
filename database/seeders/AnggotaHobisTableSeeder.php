@@ -59,6 +59,38 @@ class AnggotaHobisTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
+            5 => 
+            array (
+                'id' => '8',
+                'nama' => 'coding, Mendaki gunung, bermain sepak bola, bermain perempuan',
+                'anggota_id' => '89',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => '9',
+                'nama' => 'Sepakbola',
+                'anggota_id' => '88',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => '10',
+                'nama' => 'Volly',
+                'anggota_id' => '88',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => '11',
+                'nama' => 'Coding',
+                'anggota_id' => '88',
+                'created_at' => NULL,
+                'updated_at' => NULL,
+            ),
         ));
         
         
