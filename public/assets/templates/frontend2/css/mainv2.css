@@ -2787,6 +2787,7 @@ button:focus {
 
 select,
 input[type="text"],
+input[type="number"],
 input[type="search"],
 textarea,
 input[type="email"] {
@@ -2795,6 +2796,7 @@ input[type="email"] {
 
 .-dark-mode form.contact-form select,
 .-dark-mode form.contact-form input[type="text"],
+.-dark-mode form.contact-form input[type="number"],
 .-dark-mode form.contact-form input[type="password"],
 .-dark-mode form.contact-form input[type="search"],
 .-dark-mode form.contact-form textarea,
@@ -2805,6 +2807,7 @@ input[type="email"] {
 
 form.contact-form select,
 form.contact-form input[type="text"],
+form.contact-form input[type="number"],
 form.contact-form input[type="password"],
 form.contact-form input[type="search"],
 form.contact-form textarea,
@@ -2823,6 +2826,7 @@ form.contact-form input[type="email"] {
 
 form.contact-form select:focus,
 form.contact-form input[type="text"]:focus,
+form.contact-form input[type="number"]:focus,
 form.contact-form input[type="password"]:focus,
 form.contact-form input[type="search"]:focus,
 form.contact-form textarea:focus,
@@ -2832,6 +2836,7 @@ form.contact-form input[type="email"]:focus {
 
 form.contact-form select.-border-dark,
 form.contact-form input[type="text"].-border-dark,
+form.contact-form input[type="number"].-border-dark,
 form.contact-form input[type="password"].-border-dark,
 form.contact-form input[type="search"].-border-dark,
 form.contact-form textarea.-border-dark,
@@ -2858,6 +2863,7 @@ form.contact-form.-light p {
 
 form.contact-form.-light select,
 form.contact-form.-light input[type="text"],
+form.contact-form.-light input[type="number"],
 form.contact-form.-light input[type="search"],
 form.contact-form.-light textarea,
 form.contact-form.-light input[type="email"] {

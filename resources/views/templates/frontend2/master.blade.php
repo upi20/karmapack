@@ -89,7 +89,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/vendors.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend2/css/mainv2.css') }}">
     <link rel="stylesheet"
         href="{{ asset('assets/templates/frontend2/assets/font-awesome/5.15.4/css/all.min.css') }}" />
 

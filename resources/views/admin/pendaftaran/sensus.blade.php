@@ -211,8 +211,9 @@
                         data: 'whatsapp',
                         name: 'whatsapp',
                         render(data, type, full, meta) {
-                            return `<small><i class="fas fa-phone-alt me-2"></i>${data}<br>
-                                <i class="fab fa-whatsapp me-2"></i>${full.telepon}</small>`;
+                            return `<small>
+                                <span class="text-nowrap"><i class="fas fa-phone-alt me-2"></i>${data}</span><br>
+                                <span class="text-nowrap"><i class="fab fa-whatsapp me-2"></i>${full.telepon}</span></small>`;
                         },
                     },
                     {
