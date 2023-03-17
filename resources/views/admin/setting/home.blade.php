@@ -399,6 +399,56 @@
             </div>
         </div>
 
+        {{-- artikel --}}
+        <div class="grid-item col-md-6 col-lg-4">
+            @php
+                $name = 'instagram';
+                $title = 'Instagram';
+            @endphp
+            <div class="card">
+                <div class="card-header d-md-flex flex-row justify-content-between">
+                    <h3 class="card-title">{{ $title }} Setting</h3>
+                    <label class="custom-switch form-switch">
+                        <input type="checkbox" name="visible" form="{{ $name }}-form"
+                            class="custom-switch-input" {{ settings()->get($s("$name.visible")) ? 'checked' : '' }}>
+                        <span class="custom-switch-indicator"></span>
+                        <span class="custom-switch-description">Tampilkan</span>
+                    </label>
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" id="{{ $name }}-form">
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.title") }}">Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.title") }}" name="title" class="form-control"
+                                placeholder="Judul" value="{{ settings()->get($s("$name.title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.sub_title") }}">Sub Judul
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.sub_title") }}" name="sub_title"
+                                class="form-control" placeholder="Sub Judul"
+                                value="{{ settings()->get($s("$name.sub_title")) }}" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.jml_konten") }}">Jumlah Konten
+                                <span class="text-danger">*</span></label>
+                            <input type="number" id="{{ $s("$name.jml_konten") }}" name="jml_konten"
+                                class="form-control" placeholder="Jumlah Konten"
+                                value="{{ settings()->get($s("$name.jml_konten")) }}" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary" form="{{ $name }}-form">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
+                </div>
+            </div>
+        </div>
+
         {{-- sensus --}}
         <div class="grid-item col-md-6 col-lg-4">
             @php
@@ -803,6 +853,44 @@
                         $('#preview_sensus_image').attr('onclick',
                             `viewImage('${data.foto}', 'Sensus Image View')`);
                         $(this).find('input[name=image]').val('');
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        load_el.LoadingOverlay("hide");
+                    }
+                });
+            });
+
+            // Instagram ==============================================================================================
+            $('#instagram-form').submit(function(e) {
+                const load_el = $(this).parent().parent();
+                e.preventDefault();
+                var formData = new FormData(this);
+                load_el.LoadingOverlay("show");
+                $.ajax({
+                    type: "POST",
+                    url: `{{ route(h_prefix('instagram')) }}`,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data berhasil disimpan',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     },
                     error: function(data) {
                         const res = data.responseJSON ?? {};

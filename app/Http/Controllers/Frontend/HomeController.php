@@ -7,8 +7,6 @@ use App\Models\Artikel\Artikel;
 use App\Models\Galeri;
 use App\Models\Instagram;
 use App\Models\Kepengurusan\Periode as KepengurusanPeriode;
-use App\Models\Pengurus\Jabatan;
-use App\Models\Pengurus\Periode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repository\Frontend\HomeRepository;
@@ -70,7 +68,12 @@ class HomeController extends Controller
         }
 
         // instagrams
-        $instagrams = Instagram::limit(6)->orderBy('tanggal', 'desc')->get();
+        if ($this->checkVisible('instagram')) {
+            $instagrams_limit = settings()->get('setting.home.instagram.jml_konten', 6);
+            $instagrams = Instagram::limit($instagrams_limit)->where('status', 1)->orderBy('tanggal', 'desc')->get();
+        } else {
+            $instagrams = [];
+        }
 
         $data = compact(
             'page_attr',
@@ -146,20 +149,6 @@ class HomeController extends Controller
             'tags',
             'categories',
         ));
-    }
-
-    // harus di pindah beda url
-    public function bidang(Jabatan $model)
-    {
-        $page_attr = [
-            'loader' => false, 'navigation' => "bidang/$model->slug",
-            'periode_id' => $model->periode_id,
-        ];
-        $periode = Periode::find($model->periode_id)->first();
-        if (!$periode) abort(404);
-        $anggota = $this->getPengurusList($model->periode_id);
-
-        return view('frontend.home', compact('page_attr', 'periode', 'anggota'));
     }
 
     public function fronted2(Request $request)

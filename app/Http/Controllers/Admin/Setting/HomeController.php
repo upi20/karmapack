@@ -123,6 +123,16 @@ class HomeController extends Controller
         return response()->json();
     }
 
+    public function instagram(Request $request)
+    {
+        $this->pre = 'instagram';
+        settings()->set($this->s('visible'), $request->visible != null)->save();
+        settings()->set($this->s('title'), $request->title)->save();
+        settings()->set($this->s('sub_title'), $request->sub_title)->save();
+        settings()->set($this->s('jml_konten'), $request->jml_konten)->save();
+        return response()->json();
+    }
+
     public function sensus(Request $request)
     {
         $this->pre = 'sensus';

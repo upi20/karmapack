@@ -494,6 +494,9 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
 
         $method = 'sensus';
         Route::post("/$method", $method)->name("$name_.$method");
+
+        $method = 'instagram';
+        Route::post("/$method", $method)->name("$name_.$method");
     });
 
     $prefix = 'sejarah';

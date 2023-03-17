@@ -33,7 +33,7 @@
 
                     <div class="col-xl-6 col-lg-6" style="padding-bottom: 0;">
                         <div data-anim-child="slide-left delay-{{ $anim++ }}" class="masthead__image">
-                            <img class="lazy" data-src="{{ asset(settings()->get("$k.image")) }}" alt="image"
+                            <img src="{{ asset(settings()->get("$k.image")) }}" alt="image"
                                 style="position: relative; max-width: 600px;">
                         </div>
                     </div>
@@ -78,7 +78,7 @@
             <div class="container">
                 <div class="row y-gap-30 justify-between items-center">
                     <div class="col-lg-6" data-anim-child="slide-right delay-{{ $anim++ }}">
-                        <img class="lazy" class="w-1/1" data-src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
+                        <img class="w-1/1" src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
                             style="max-width: 500px;">
                     </div>
 
@@ -224,7 +224,7 @@
                                     class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
                                     <div class="row y-gap-30 md:text-center md:justify-center">
                                         <div class="col-md-auto">
-                                            <div class="testimonials__image">
+                                            <div class="testimonials__image" style="height: 170px; object-fit: cover;">
                                                 <img class="lazy" data-src="{{ $item->user_foto }}"
                                                     alt="{{ $item->user }}" style="height: 170px; width: 170px">
                                             </div>
@@ -363,42 +363,42 @@
     @endif
 
     @php
+        $k = "$p.instagram";
         $anim = 1;
     @endphp
-    <section class="layout-pt-md layout-pb-lg bg-dark-5">
-        <div data-anim-wrap class="container">
-            <div class="page-header__content">
-                <div class="row justify-center text-center">
-                    <div class="col-auto" data-anim="slide-left delay-{{ $anim++ }}">
-                        <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
+    @if (settings()->get("$k.visible"))
+        <section class="layout-pt-md layout-pb-lg bg-dark-5">
+            <div data-anim-wrap class="container">
+                <div class="page-header__content">
+                    <div class="row justify-center text-center">
+                        <div class="col-auto" data-anim="slide-left delay-{{ $anim++ }}">
+                            <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
+                                <h1 class="sectionTitle__title text-white">{{ settings()->get("$k.title") }}</h1>
+                            </div>
 
-                            <h1 class="sectionTitle__title text-white">Instagram</h1>
-
-                        </div>
-
-                        <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
-
-                            <p class="sectionTitle__text text-white">List beberapa feed terbaru dari instagram
-                                &#64;karmapack</p>
-
+                            <div data-anim="slide-up delay-{{ $anim++ }}" class="is-in-view">
+                                <p class="sectionTitle__text text-white">
+                                    {{ settings()->get("$k.sub_title") }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="grid y-gap-30 pt-50">
+                    <div class="grid-sizer col-lg-4 col-md-6"></div>
+                    @foreach ($instagrams as $item)
+                        <div class="grid-item col-lg-4 col-md-6 px-8 py-8 col-12"
+                            data-anim="slide-left delay-{{ $anim++ }}">
+                            {!! str_replace('<script async src="//www.instagram.com/embed.js"></script>', '', $item->keterangan) !!}
+                        </div>
+                    @endforeach
+                </div>
+                @if ($instagrams->count() > 0)
+                    <script async src="//www.instagram.com/embed.js"></script>
+                @endif
             </div>
-            <div class="grid y-gap-30 pt-50">
-                <div class="grid-sizer col-lg-4 col-md-6"></div>
-                @foreach ($instagrams as $item)
-                    <div class="grid-item col-lg-4 col-md-6 px-8 py-8 col-12"
-                        data-anim="slide-left delay-{{ $anim++ }}">
-                        {!! str_replace('<script async src="//www.instagram.com/embed.js"></script>', '', $item->keterangan) !!}
-                    </div>
-                @endforeach
-            </div>
-            @if ($instagrams->count() > 0)
-                <script async src="//www.instagram.com/embed.js"></script>
-            @endif
-        </div>
-    </section>
+        </section>
+    @endif
 
     <!-- blog dan artikel -->
     @php
