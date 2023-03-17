@@ -56,18 +56,21 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group float-start me-2" style="width: 250px">
-                                    <label for="filter_role">Sebagai</label>
-                                    <br>
-                                    <select class="form-control" id="filter_role" name="filter_role" style="width: 250px">
-                                        <option value="">Semua</option>
-                                        @foreach ($user_role as $role)
-                                            <option value="{{ $role->name }}">
-                                                {{ ucfirst(implode(' ', explode('_', $role->name))) }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                @if ($is_admin)
+                                    <div class="form-group float-start me-2" style="width: 250px">
+                                        <label for="filter_role">Sebagai</label>
+                                        <br>
+                                        <select class="form-control" id="filter_role" name="filter_role"
+                                            style="width: 250px">
+                                            <option value="">Semua</option>
+                                            @foreach ($user_role as $role)
+                                                <option value="{{ $role->name }}">
+                                                    {{ ucfirst(implode(' ', explode('_', $role->name))) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                @endif
                                 <div class="form-group float-start me-2" style="width: 250px">
                                     <label for="filter_active">Status Akun</label>
                                     <br>
@@ -248,7 +251,9 @@
                     url: "{{ route(h_prefix()) }}",
                     data: function(d) {
                         d['filter[active]'] = $('#filter_active').val();
-                        d['filter[role]'] = $('#filter_role').val();
+                        if (is_admin) {
+                            d['filter[role]'] = $('#filter_role').val();
+                        }
                         d['filter[angkatan]'] = $('#filter_angkatan').val();
                     }
                 },
