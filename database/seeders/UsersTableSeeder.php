@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'mEfw3hwEh44AMzyLMmHBfDB3LR9qQSApVAkbjGsVxX84mK92UrqKiQt8X2Sa',
+                'remember_token' => 'VTCZ154h0uV90bDbMyIreQ1h9h5UJwT599BcHAmrrd2gHoI70sv3DSpT0e4i',
                 'created_at' => NULL,
                 'updated_at' => '2023-03-16 15:02:39',
             ),
@@ -1526,7 +1526,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'ELISA PUTRI ANGGRAENI',
                 'email' => 'elisa_putri_anggraeni@mail.com',
                 'foto' => NULL,
-                'username' => NULL,
+                'username' => 'elisot',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA/oIKwHD4AIGzIHmHZO',
                 'active' => '1',
@@ -1537,7 +1537,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 01:54:44',
+                'updated_at' => '2023-03-17 20:21:34',
             ),
             80 => 
             array (
