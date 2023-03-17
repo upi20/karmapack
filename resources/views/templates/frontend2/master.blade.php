@@ -175,12 +175,16 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     {{-- <script src="{{ asset('assets/templates/frontend2/assets/leaflet1.7.1/dist/leaflet.js') }}"></script> --}}
     <script src="{{ asset('assets/templates/frontend2/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend2/js/main_v2.js') }}"></script>
+    <script src="{{ asset('js/jquery.lazy-master/jquery.lazy.min.js') }}"></script>
     <script>
         const preload_container = $("#preloader");
         $(window).on('load', function() {
             "use strict";
             preload_container.delay(750).fadeOut('slow');
             refresh_margin_top();
+            $('.lazy').Lazy({
+                scrollDirection: 'vertical',
+            });
         });
 
         setTimeout(() => {

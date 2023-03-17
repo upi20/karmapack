@@ -27,11 +27,10 @@
                     {{-- logo white --}}
                     <div class="header__logo pr-30 xl:pr-20 md:pr-0">
                         <a data-barba href="{{ url('') }}">
-                            <img src="{{ asset(settings()->get(set_front('app.foto_dark_landscape_mode'))) }}"
-                                alt="logo" style="max-height: 50px;">
+                            <img data-src="{{ asset(settings()->get(set_front('app.foto_dark_landscape_mode'))) }}"
+                                class="lazy" alt="logo" style="max-height: 50px;">
                         </a>
                     </div>
-
 
                     <div class="header-menu js-mobile-menu-toggle pl-30 xl:pl-20">
                         <div class="header-menu__content">

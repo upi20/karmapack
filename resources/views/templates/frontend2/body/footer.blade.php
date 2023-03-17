@@ -7,8 +7,8 @@
             <div class="row y-gap-20 justify-between items-center">
                 <div class="col-auto">
                     <div class="footer-header__logo" data-anim-child="slide-left delay-{{ $anim++ }}">
-                        <img src="{{ asset(settings()->get(set_front('app.foto_light_landscape_mode'))) }}" alt="logo"
-                            style="width: 230px">
+                        <img class="lazy" alt="logo" style="width: 230px"
+                            data-src="{{ asset(settings()->get(set_front('app.foto_light_landscape_mode'))) }}">
                     </div>
                 </div>
                 <div class="col-auto">
