@@ -253,6 +253,8 @@
                         d['filter[active]'] = $('#filter_active').val();
                         if (is_admin) {
                             d['filter[role]'] = $('#filter_role').val();
+                        } else {
+                            d['filter[role]'] = '';
                         }
                         d['filter[angkatan]'] = $('#filter_angkatan').val();
                     }
