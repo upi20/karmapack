@@ -34,7 +34,7 @@
                             <div class="col-auto">
                                 <a class="d-flex page-header__text"
                                     href="{{ $user->username ? url($user->username) : route('anggota.id', $user->id) }}">
-                                    <img src="{{ asset("$image_folder_user/$user->foto") }}"
+                                    <img src="{{ $user->anggota->fotoUrl() }}"
                                         onerror="this.src='{{ asset($image_default_user) }}';this.onerror='';"
                                         class="author"
                                         style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
