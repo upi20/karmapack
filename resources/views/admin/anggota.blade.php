@@ -261,11 +261,13 @@
                         data: 'nama',
                         name: 'nama',
                         render(data, type, full, meta) {
+                            const anggatan = full.angkatan != null ?
+                                `<small>${full.angkatan}</small> | ` : '';
                             const sebagai = String(full.roles).split(', ').reduce((r, v) => {
                                 return r + `<span class="badge bg-primary me-2">${v}</span>`;
                             }, "");
                             return `<a class="text-dark" target="_blank" href="{{ url('anggota') }}/${full.id}">${full.nama}</a>
-                            <br> <small>${full.angkatan}</small> | ${sebagai}`;
+                            <br>${anggatan} ${sebagai}`;
                         },
                     },
                     ...(is_admin ? [{
@@ -284,7 +286,7 @@
                         render(data, type, full, meta) {
                             const ulang_tahun = full.ulang_tahun == 0 ? 'Hari ini' :
                                 `${full.ulang_tahun} Hari Lagi`;;
-                            return `${full.tanggal_lahir}<br>
+                            return `${(full.tanggal_lahir == null) ? '' : `${full.tanggal_lahir} <br>`}
                             <small>${ulang_tahun}</small>`;
                         },
                     },

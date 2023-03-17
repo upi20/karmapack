@@ -128,7 +128,7 @@
                         </div>
                         <div class="py-30 px-30">
                             <div class="y-gap-40">
-
+                                @php $border_top = false; @endphp
                                 @if ($anggota->angkatan)
                                     <div class="ml-10 w-1/1" data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Angkatan (Masuk Tahun)</h4>
@@ -143,10 +143,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @php $border_top = true; @endphp
                                 @endif
 
                                 @if ($anggota->profesi)
-                                    <div class="ml-10 w-1/1 border-top-light"
+                                    <div class="ml-10 w-1/1  {{ $border_top ? 'border-top-light' : '' }}"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Profesi Sekarang</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
@@ -160,10 +161,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @php $border_top = true; @endphp
                                 @endif
 
                                 @if ($anggota->jenis_kelamin)
-                                    <div class="ml-10 w-1/1 border-top-light"
+                                    <div class="ml-10 w-1/1  {{ $border_top ? 'border-top-light' : '' }}"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Jenis Kelamin</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
@@ -177,6 +179,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @php $border_top = true; @endphp
                                 @endif
 
                                 @if (
@@ -185,41 +188,26 @@
                                         $anggota->regency_id ||
                                         $anggota->district_id ||
                                         $anggota->village_id)
-                                    <div class="ml-10 w-1/1 border-top-light"
+                                    <div class="ml-10 w-1/1  {{ $border_top ? 'border-top-light' : '' }}"
                                         data-anim-child="slide-left delay-{{ $anim++ }}">
                                         <h4 class="text-15 lh-1 fw-500">Alamat</h4>
                                         <div class="d-flex items-center x-gap-20 y-gap-10 flex-wrap pt-10">
                                             <div class="d-flex items-center">
                                                 <div class="text-13">
-                                                    {{ $anggota->alamat_lengkap }}
-                                                    @if ($anggota->village)
-                                                        , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $anggota->village->name) }}"
-                                                            data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $anggota->village->name }}
-                                                        </a>
-                                                    @endif
-                                                    @if ($anggota->district)
-                                                        , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $anggota->district->name) }}"
-                                                            data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $anggota->district->name }}
-                                                        </a>
-                                                    @endif
-                                                    @if ($anggota->regencie)
-                                                        , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $anggota->regencie->name) }}"
-                                                            data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $anggota->regencie->name }}
-                                                        </a>
-                                                    @endif
-                                                    @if ($anggota->province)
-                                                        , <a class="text-purple-1"
-                                                            href="{{ url('anggota?search=' . $anggota->province->name) }}"
-                                                            data-anim-child="slide-left delay-{{ $anim++ }}">
-                                                            {{ $anggota->province->name }}
-                                                        </a>
-                                                    @endif
+                                                    @php
+                                                        $province = $anggota->province ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->province->name) . '">' . $anggota->province->name . '</a>' : '';
+                                                        $regencie = $anggota->regencie ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->regencie->name) . '">' . $anggota->regencie->name . '</a>' : '';
+                                                        $district = $anggota->district ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->district->name) . '">' . $anggota->district->name . '</a>' : '';
+                                                        $village = $anggota->village ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->village->name) . '">' . $anggota->village->name . '</a>' : '';
+                                                        
+                                                        $alamat_lengkap = '';
+                                                        $alamat_lengkap .= $alamat_lengkap == '' ? $anggota->alamat_lengkap : '';
+                                                        $alamat_lengkap .= $alamat_lengkap == '' ? $province : ($province == '' ? '' : ", $province");
+                                                        $alamat_lengkap .= $alamat_lengkap == '' ? $regencie : ($regencie == '' ? '' : ", $regencie");
+                                                        $alamat_lengkap .= $alamat_lengkap == '' ? $district : ($district == '' ? '' : ", $district");
+                                                        $alamat_lengkap .= $alamat_lengkap == '' ? $village : ($village == '' ? '' : ", $village");
+                                                    @endphp
+                                                    {!! $alamat_lengkap !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -239,6 +227,7 @@
                             </div>
                             <div class="py-30 px-30">
                                 <div class="y-gap-40">
+                                    @php $border_top = false; @endphp
 
                                     @if ($anggota->telepon)
                                         <div class="ml-10 w-1/1" data-anim-child="slide-left delay-{{ $anim++ }}">
@@ -254,10 +243,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @php $border_top = true; @endphp
                                     @endif
 
                                     @if ($anggota->whatsapp)
-                                        <div class="ml-10 w-1/1 border-top-light"
+                                        <div class="ml-10 w-1/1 {{ $border_top ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500"><i class="fab fa-whatsapp me-2"></i> Whatsapp
                                             </h4>
@@ -273,10 +263,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @php $border_top = true; @endphp
                                     @endif
 
                                     @foreach ($anggota->kontaks()->with('jenis')->get() as $kontak)
-                                        <div class="ml-10 w-1/1 border-top-light"
+                                        <div class="ml-10 w-1/1  {{ $border_top ? 'border-top-light' : '' }}"
                                             data-anim-child="slide-left delay-{{ $anim++ }}">
                                             <h4 class="text-15 lh-1 fw-500">
                                                 <i class="{{ $kontak->jenis->icon }} me-2"></i>

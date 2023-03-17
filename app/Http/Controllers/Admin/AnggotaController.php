@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Keanggotaan\Anggota;
 use App\Models\User;
-use App\Repository\Admin\UserRepository;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,13 +26,7 @@ use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 
 class AnggotaController extends Controller
 {
-    private $repository;
     private $query = [];
-
-    public function __construct(UserRepository $repository)
-    {
-        $this->repository = $repository;
-    }
 
     public function index(Request $request)
     {
@@ -75,10 +68,10 @@ class AnggotaController extends Controller
         $year_add_one = $year + 1;
         $c_ulang_tahun = 'ulang_tahun';
         $this->query[$c_ulang_tahun] = <<<SQL
-            ( if( DATEDIFF(date(concat('{$year}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) < 0,
+            ifnull((if(DATEDIFF(date(concat('{$year}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) < 0,
                 DATEDIFF(date(concat('{$year_add_one}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) ,
                 DATEDIFF(date(concat('{$year}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) )
-            )
+            ), 999)
         SQL;
         $this->query["{$c_ulang_tahun}_alias"] = $c_ulang_tahun;
 

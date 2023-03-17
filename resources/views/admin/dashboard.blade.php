@@ -264,14 +264,13 @@
                         const hari = e.countdown == 0 ? 'Hari ini' : `${e.countdown} Hari Lagi`;
                         body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
                                     <div>
-                                        <div class="d-flex w-100">
-                                            <h5 class="mb-1">${e.nama} | ${e.tanggal_str}</h5>
+                                        <div class="w-100">
+                                            <h5 class="m-0">${e.nama}</h5>
+                                            <small>${e.tanggal_str}</small>
                                         </div>
                                     </div>
 
-                                    <div>
-                                        ${hari}
-                                    </div>
+                                    <div class="text-nowrap fw-bold ms-2"> ${hari} </div>
                                 </div>`);
                     });
 
@@ -294,12 +293,13 @@
                         const hari = e.countdown == 0 ? 'Hari ini' : `${e.countdown} Hari Lagi`;
                         body.append(`<div class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
                                     <div>
-                                        <div class="d-flex w-100">
-                                            <h5 class="mb-1">${e.nama} | ${e.tanggal_str}</h5>
+                                        <div class="w-100">
+                                            <h5 class="m-0">${e.nama}</h5>
+                                            <small>${e.tanggal_str}</small>
                                         </div>
                                     </div>
 
-                                    <div> ${hari} </div>
+                                    <div class="text-nowrap fw-bold ms-2"> ${hari} </div>
                                 </div>`);
                     });
 

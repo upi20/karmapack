@@ -184,6 +184,7 @@ Route::controller(LoaderController::class)->prefix($prefix)->group(function () {
 $prefix = 'lab';
 Route::controller(LabController::class)->prefix($prefix)->group(function () {
     Route::get('/migrate', 'migrate');
+    Route::get('/updb', 'updb');
     Route::get('/phpspreadsheet', 'phpspreadsheet')->name("lab.phpspreadsheet");
     Route::get('/javascript', 'javascript')->name("lab.javascript");
     Route::get('/jstes', 'jstes')->name("lab.jstes");

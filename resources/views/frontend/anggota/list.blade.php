@@ -139,7 +139,9 @@
                             </div>
                             <div class="teamCard__content p-3 pt-0">
                                 <h4 class="teamCard__title">
-                                    <a href="{{ $link_profile }}">{{ $item->angkatan }} | {{ $item->nama }}</a>
+                                    <a href="{{ $link_profile }}">
+                                        {{ $item->angkatan ? $item->angkatan . ' | ' : '' }} {{ $item->nama }}
+                                    </a>
                                 </h4>
 
                                 @if ($item->whatsapp)
@@ -161,13 +163,22 @@
                                 <p class="card-text my-1">
                                     <small class="text-muted">
                                         @php
-                                            $province = $item->province ? ', <a class="text-purple-1" href="' . url('anggota?search=' . $item->province) . '">' . $item->province . '</a>' : '';
-                                            $regencie = $item->regencie ? ', <a class="text-purple-1" href="' . url('anggota?search=' . $item->regencie) . '">' . $item->regencie . '</a>' : '';
-                                            $district = $item->district ? ', <a class="text-purple-1" href="' . url('anggota?search=' . $item->district) . '">' . $item->district . '</a>' : '';
-                                            $village = $item->village ? ', <a class="text-purple-1" href="' . url('anggota?search=' . $item->village) . '">' . $item->village . '</a>' : '';
+                                            $province = $item->province ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->province) . '">' . $item->province . '</a>' : '';
+                                            $regencie = $item->regencie ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->regencie) . '">' . $item->regencie . '</a>' : '';
+                                            $district = $item->district ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->district) . '">' . $item->district . '</a>' : '';
+                                            $village = $item->village ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->village) . '">' . $item->village . '</a>' : '';
+                                            
+                                            $alamat_lengkap = '';
+                                            $alamat_lengkap .= $alamat_lengkap == '' ? $item->alamat_lengkap : '';
+                                            $alamat_lengkap .= $alamat_lengkap == '' ? $province : ($province == '' ? '' : ", $province");
+                                            $alamat_lengkap .= $alamat_lengkap == '' ? $regencie : ($regencie == '' ? '' : ", $regencie");
+                                            $alamat_lengkap .= $alamat_lengkap == '' ? $district : ($district == '' ? '' : ", $district");
+                                            $alamat_lengkap .= $alamat_lengkap == '' ? $village : ($village == '' ? '' : ", $village");
                                         @endphp
                                     </small>
-                                    <small class="text-muted">{!! $item->alamat_lengkap . $province . $regencie . $district . $village !!}</small>
+                                    <small class="text-muted">
+                                        {!! $alamat_lengkap !!}
+                                    </small>
                                 </p>
 
                                 <hr>

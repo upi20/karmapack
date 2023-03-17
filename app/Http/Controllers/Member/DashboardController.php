@@ -36,11 +36,14 @@ class DashboardController extends Controller
     {
         $table = Anggota::tableName;
         $value = "SELECT count(*) from $table as u2 where u2.angkatan = $table.angkatan";
-        return Anggota::select([DB::raw("($value) as value"), DB::raw("angkatan as title")])
-            ->orderBy('title')
-            ->groupBy("$table.angkatan")->get()->map(function ($v) {
+        $angkatan_null = Anggota::whereNull('angkatan')->count();
+        $anggotas =  Anggota::select([DB::raw("($value) as value"), DB::raw("angkatan as title")])
+            ->orderBy('title')->groupBy("$table.angkatan")
+            ->whereNotNull("$table.angkatan")->get()->map(function ($v) {
                 return (object)['title' => $v['title'], 'value' => $v['value']];
             })->toArray();
+
+        return array_merge($anggotas, [(object)['title' => 'Belum tercatat', 'value' => $angkatan_null]]);
     }
 
     private function anggota_by_address()
