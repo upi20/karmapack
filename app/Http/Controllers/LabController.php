@@ -35,17 +35,30 @@ class LabController extends Controller
 {
     public function belumisi()
     {
-        $users = User::with('anggota')->where('email', 'like', '%@karmapack.id%')->orderBy('name')->get();
+        $users = User::with([
+            'anggota.district',
+            'anggota.village',
+            'anggota.regencie',
+            'anggota.province',
+            'anggota.kontaks.jenis',
+            'anggota.pendidikans.jenis',
+        ])->where('email', 'like', '%@karmapack.id%')->orderBy('name')->get();
+        // return $users;
+        // return 'a';
         $date = date_format(date_create(date('Y-m-d H:i:s')), 'd F Y ');
         $column = $users[0]->anggota->getFillable();
         unset($column[16]);
         unset($column[15]);
         unset($column[12]);
+        unset($column[5]);
+        unset($column[6]);
+        unset($column[7]);
+        unset($column[8]);
         unset($column[0]);
         unset($column[1]);
-        $addon = ['no', 'name', 'email', 'password'];
+        $addon = ['no', 'name', 'email', 'password', 'kontak', 'alamat', 'pendidikan'];
 
-
+        // dd($column);
         // laporan baru
         $row = 1;
         $col_start = "A";
@@ -137,10 +150,27 @@ class LabController extends Controller
         foreach ($users as $user) {
             $c = 0;
             $row++;
+            $anggota = $user->anggota;
             $sheet->setCellValue(chr(65 + $c) . "$row", ($row - 5));
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->name);
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->email);
             $sheet->setCellValue(chr(65 + ++$c) . "$row", "12345678");
+
+            // kontak
+            if ($anggota->kontaks) {
+                $kontak_str = '';
+                foreach ($anggota->kontaks as $kontak) {
+                    $new_kontak = $kontak->jenis->nama . " : " . $kontak->nilai;
+                    $kontak_str .= ($kontak_str == "") ? $new_kontak : "\n$new_kontak";
+                }
+                $sheet->setCellValue(chr(65 + ++$c) . "$row", $kontak_str);
+            } else {
+                $sheet->setCellValue(chr(65 + ++$c) . "$row", "");
+            }
+
+            // alamat
+            $alamat_str = '';
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $alamat_str);
 
             foreach ($column as $col) {
                 $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->anggota->{$col});
