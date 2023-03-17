@@ -50,7 +50,7 @@ class SitemapController extends Controller
             return route($route);
         } else {
             if ($route == '' || $route == '#') {
-                return '#';
+                return url('');
             } else {
                 return str_parse($route);
             }
