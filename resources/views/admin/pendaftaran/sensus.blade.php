@@ -1,6 +1,9 @@
 @extends('templates.admin.master')
 
 @section('content')
+    @php
+        $can_setting = auth_can(h_prefix('setting'));
+    @endphp
     <div class="card">
         <div class="card-header d-md-flex flex-row justify-content-between">
             <h3 class="card-title">Data {{ $page_attr['title'] }}</h3>
@@ -11,31 +14,100 @@
             </div>
         </div>
         <div class="card-body">
-            <h5 class="h5">Filter Data</h5>
-            <form action="javascript:void(0)" class="form-inline ml-md-3 mb-md-3" id="FilterForm">
-                <div class="form-group me-md-3">
-                    <label for="filter_status">Status</label>
-                    <select class="form-control" id="filter_status" name="filter_status" style="max-width: 200px">
-                        <option value="">Semua Status</option>
-                        <option value="0">Diterima</option>
-                        <option value="1">Diproses</option>
-                        <option value="2">Selesai</option>
-                        <option value="3">Ditolak</option>
-                    </select>
+            @if ($can_setting)
+                <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default active mb-2">
+                        <div class="panel-heading " role="tab" id="headingOne1">
+                            <h4 class="panel-title">
+                                <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion2" href="#collapse2"
+                                    aria-expanded="true" aria-controls="collapse2">
+                                    Pengaturan
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                            <div class="panel-body">
+                                <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="setting_form">
+
+                                    <div class="form-group float-start me-2">
+                                        <label for="setting_jadikan_pengguna">Langsung Jadikan Pengguna</label>
+                                        <select class="form-control" id="setting_jadikan_pengguna" name="jadikan_pengguna">
+                                            <option value="1"{{ $setting->jadikan_pengguna ? 'selected' : '' }}>
+                                                Ya
+                                            </option>
+                                            <option value="0"{{ $setting->jadikan_pengguna ? '' : 'selected' }}>
+                                                Tidak
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group float-start me-2">
+                                        <label for="setting_sebagai">Sebagai</label>
+                                        <select class="form-control" id="setting_sebagai" name="sebagai">
+                                            @foreach ($user_role as $role)
+                                                <option value="{{ $role->name }}"
+                                                    {{ $setting->sebagai == $role->name ? 'selected' : '' }}>
+                                                    {{ ucfirst(implode(' ', explode('_', $role->name))) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </form>
+                                <div style="clear: both"></div>
+                                <button type="submit" form="setting_form" class="btn btn-rounded btn-md btn-info"
+                                    data-toggle="tooltip" title="Simpan Setting" id="setting_btn_submit">
+                                    <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-rounded btn-md btn-info" title="Refresh Filter Table">
-                    <i class="fas fa-sync"></i> Refresh
-                </button>
-            </form>
+            @endif
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default active mb-2">
+                    <div class="panel-heading " role="tab" id="headingOne1">
+                        <h4 class="panel-title">
+                            <a role="button" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapse1"
+                                aria-expanded="true" aria-controls="collapse1">
+                                Filter Data
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                        <div class="panel-body">
+                            <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="FilterForm">
+                                <div class="form-group float-start me-2">
+                                    <label for="filter_status">Status</label>
+                                    <select class="form-control" id="filter_status" name="filter_status"
+                                        style="max-width: 200px">
+                                        <option value="">Semua Status</option>
+                                        <option value="0">Diterima</option>
+                                        <option value="1">Diproses</option>
+                                        <option value="2">Selesai</option>
+                                        <option value="3">Ditolak</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <div style="clear: both"></div>
+                            <button type="submit" form="FilterForm" class="btn btn-rounded btn-md btn-info"
+                                data-toggle="tooltip" title="Refresh Filter Table">
+                                <i class="bi bi-arrow-repeat"></i> Terapkan filter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <table class="table table-striped" id="tbl_main">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
                         <th>Angkatan</th>
-                        <th>Email</th>
-                        <th>Whatsapp</th>
-                        <th>Telepon</th>
+                        <th>Kontak</th>
+                        <th>Tanggal</th>
                         <th>Keterangan</th>
                         <th>Status</th>
                     </tr>
@@ -125,23 +197,30 @@
                     },
                     {
                         data: 'nama',
-                        name: 'nama'
+                        name: 'nama',
+                        render(data, type, full, meta) {
+                            return `${data}<br>
+                            <small><i class="far fa-envelope me-2"></i>${full.email}</small>`;
+                        },
                     },
                     {
                         data: 'angkatan',
                         name: 'angkatan'
                     },
                     {
-                        data: 'email',
-                        name: 'email'
-                    },
-                    {
                         data: 'whatsapp',
-                        name: 'whatsapp'
+                        name: 'whatsapp',
+                        render(data, type, full, meta) {
+                            return `<small><i class="fas fa-phone-alt me-2"></i>${data}<br>
+                                <i class="fab fa-whatsapp me-2"></i>${full.telepon}</small>`;
+                        },
                     },
                     {
-                        data: 'telepon',
-                        name: 'telepon'
+                        data: 'created',
+                        name: 'created_at',
+                        render(data, type, full, meta) {
+                            return data;
+                        }
                     },
                     {
                         data: 'keterangan',
@@ -197,7 +276,7 @@
                     },
                 ],
                 order: [
-                    [7, 'asc']
+                    [4, 'desc']
                 ],
                 language: {
                     url: datatable_indonesia_language_url
@@ -225,6 +304,53 @@
             $('#MainForm').submit(function(e) {
                 e.preventDefault();
                 setStatus($('#id').val(), $('#status').val(), $('#keterangan').val());
+            });
+
+            $('#setting_form').submit(function(e) {
+                e.preventDefault();
+                resetErrorAfterInput();
+                var formData = new FormData(this);
+                setBtnLoading('#setting_btn_submit', 'Simpan Perubahan');
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route(h_prefix('setting')) }}",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (data) => {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Data saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function(data) {
+                        const res = data.responseJSON ?? {};
+                        errorAfterInput = [];
+                        for (const property in res.errors) {
+                            errorAfterInput.push(property);
+                            setErrorAfterInput(res.errors[property], `#${property}`);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: res.message ?? 'Something went wrong',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    complete: function() {
+                        setBtnLoading('#setting_btn_submit',
+                            '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
+                            false);
+                    }
+                });
             });
         });
 

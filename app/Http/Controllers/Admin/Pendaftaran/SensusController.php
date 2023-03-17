@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Pendaftaran;
 use App\Http\Controllers\Controller;
 use App\Models\Pendaftaran\Sensus;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 use App\Repository\Admin\Pendaftaran\SensusRepository;
 
@@ -28,7 +29,13 @@ class SensusController extends Controller
                 ['name' => 'Dashboard'],
             ]
         ];
-        return view('admin.pendaftaran.sensus', compact('page_attr'));
+        $user_role = Role::all();
+        $setting = (object)[
+            'jadikan_pengguna' => settings()->get('setting.sensus.jadikan_pengguna', false),
+            'sebagai' => settings()->get('setting.sensus.sebagai', ''),
+        ];
+
+        return view('admin.pendaftaran.sensus', compact('page_attr', 'setting', 'user_role'));
     }
 
     public function excel(Request $request)
@@ -47,5 +54,12 @@ class SensusController extends Controller
         }
         $model->save();
         return response()->json($model);
+    }
+
+    public function setting(Request $request)
+    {
+        settings()->set('setting.sensus.jadikan_pengguna', $request->jadikan_pengguna)->save();
+        settings()->set('setting.sensus.sebagai', $request->sebagai)->save();
+        return response()->json();
     }
 }

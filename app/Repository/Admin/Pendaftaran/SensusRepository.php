@@ -29,7 +29,7 @@ class SensusRepository
                             'Tidak Diketahui')
                         )
                 )
-            ) as status_str
+            ) as status_str, DATE_FORMAT($a.created_at, '%d-%b-%Y %H:%i:%s') as created
         SQL;
 
         $model = Sensus::selectRaw("$a.*")

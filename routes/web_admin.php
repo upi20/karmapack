@@ -291,6 +291,7 @@ Route::group(['prefix' => $prefix], function () use ($name, $prefix) {
         Route::get('/', 'index')->name($name)->middleware("permission:$name");
         Route::get('/excel', 'excel')->name("$name.excel")->middleware("permission:$name.excel");
         Route::post('/status', 'status')->name("$name.status")->middleware("permission:$name.status");
+        Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
     });
 
     $prefix = 'gform';

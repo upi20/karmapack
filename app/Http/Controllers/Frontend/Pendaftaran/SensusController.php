@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\Sensus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
 
 class SensusController extends Controller
@@ -37,6 +38,7 @@ class SensusController extends Controller
                 'telepon' => ['nullable', 'string', 'max:255'],
             ]);
 
+            DB::beginTransaction();
             $model = new Sensus();
             $model->nama = $request->nama;
             $model->angkatan = $request->angkatan;
@@ -44,6 +46,7 @@ class SensusController extends Controller
             $model->whatsapp = $request->whatsapp;
             $model->telepon = $request->telepon;
 
+            DB::commit();
             return response()->json($model->save());
         } catch (ValidationException $error) {
             return response()->json([
