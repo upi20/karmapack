@@ -109,5 +109,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PengurusAnggotasTableSeeder::class);
         DB::commit();
         $this->call(SocialAccountsTableSeeder::class);
+        $this->call(LogsTableSeeder::class);
     }
 }

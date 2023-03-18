@@ -21,7 +21,7 @@ class NotifDepanAtasTableSeeder extends Seeder
         \DB::table('notif_depan_atas')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'nama' => 'Hi i\'m Astro',
                 'deskripsi' => 'Hi i\'m Astro',
                 'dari' => '2022-08-02',
@@ -33,7 +33,7 @@ class NotifDepanAtasTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
+                'id' => '2',
                 'nama' => 'Testing',
                 'deskripsi' => 'Testing wkwk',
                 'dari' => '2022-08-01',

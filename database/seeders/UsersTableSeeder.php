@@ -14,40 +14,40 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('users')->delete();
-
-        \DB::table('users')->insert(array(
-            0 =>
-            array(
-                'id' => 1,
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
+                'id' => '1',
                 'name' => 'Isep Lutpi Nur',
                 'email' => 'iseplutpinur7@gmail.com',
                 'foto' => NULL,
                 'username' => 'iseplutpinur',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'VTCZ154h0uV90bDbMyIreQ1h9h5UJwT599BcHAmrrd2gHoI70sv3DSpT0e4i',
+                'remember_token' => '9SuJqGVrgZGtA1kcZ0hcynLhK2EWVTeuI8auCBXvoICNNVqFHWqT2riMNs51',
                 'created_at' => NULL,
                 'updated_at' => '2023-03-16 15:02:39',
             ),
-            1 =>
-            array(
-                'id' => 16,
+            1 => 
+            array (
+                'id' => '16',
                 'name' => 'HILAL MUHAMMAD FATURAHMAN',
                 'email' => 'hilal@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -57,16 +57,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-05-02 09:05:03',
             ),
-            2 =>
-            array(
-                'id' => 17,
+            2 => 
+            array (
+                'id' => '17',
                 'name' => 'NITA HALIMATUSSA’DIYAH',
                 'email' => 'nita_halimatus_syadiah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nita-hasa',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -76,16 +76,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:44:47',
             ),
-            3 =>
-            array(
-                'id' => 19,
+            3 => 
+            array (
+                'id' => '19',
                 'name' => 'ABDUL MUHLIS',
                 'email' => 'abdul_muhlis@karmapack.id',
                 'foto' => NULL,
                 'username' => 'abdul_muhlis',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -95,16 +95,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:46:56',
             ),
-            4 =>
-            array(
-                'id' => 20,
+            4 => 
+            array (
+                'id' => '20',
                 'name' => 'ANDI TAUFIK PERMADI',
                 'email' => 'andi_taufik_permadi@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -114,16 +114,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 =>
-            array(
-                'id' => 21,
+            5 => 
+            array (
+                'id' => '21',
                 'name' => 'SUKIRMAN MAULANA',
                 'email' => 'sukirman_maulana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ukir',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -133,16 +133,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:43:22',
             ),
-            6 =>
-            array(
-                'id' => 22,
+            6 => 
+            array (
+                'id' => '22',
                 'name' => 'DEWI',
                 'email' => 'dewi@karmapack.id',
                 'foto' => NULL,
                 'username' => '2019dewi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -152,16 +152,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:29:15',
             ),
-            7 =>
-            array(
-                'id' => 23,
+            7 => 
+            array (
+                'id' => '23',
                 'name' => 'WIWIT AWALIYAH',
                 'email' => 'wiwit_awaliyah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'wiwit_awaliyah',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -171,16 +171,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:35:32',
             ),
-            8 =>
-            array(
-                'id' => 24,
+            8 => 
+            array (
+                'id' => '24',
                 'name' => 'SAEPUL ROHMAN',
                 'email' => 'saepul_rohman@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -190,35 +190,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:05:22',
             ),
-            9 =>
-            array(
-                'id' => 26,
-                'name' => 'HILMI FITRIANI FUAIADAH',
-                'email' => 'hilmi_fitriani_fuaiadah@karmapack.id',
+            9 => 
+            array (
+                'id' => '26',
+                'name' => 'HILMI FITRIANI',
+                'email' => 'hilmifuaidah0201@gmail.com',
                 'foto' => NULL,
                 'username' => 'hilmiff',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => 'jx1NL0GzRJMyD6YcurTcVCjY2ZQmaSbqt9FvDBjpi4m0SCpZTLr6MlkqvTCg',
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 01:12:55',
+                'updated_at' => '2023-03-18 19:56:40',
             ),
-            10 =>
-            array(
-                'id' => 27,
+            10 => 
+            array (
+                'id' => '27',
                 'name' => 'SAMSUL MA\'ARIP',
                 'email' => 'samsul_maarip@karmapack.id',
                 'foto' => NULL,
                 'username' => 'samsul_m',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -228,16 +228,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:22:57',
             ),
-            11 =>
-            array(
-                'id' => 28,
+            11 => 
+            array (
+                'id' => '28',
                 'name' => 'MUHAMAD RAIHAN RAHMAN',
                 'email' => 'muhamad_raihan_rahman@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -247,16 +247,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 =>
-            array(
-                'id' => 29,
+            12 => 
+            array (
+                'id' => '29',
                 'name' => 'AKBAR MUHAMAD ASHONI',
                 'email' => 'akbar_muhamad_ashoni@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -266,16 +266,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 =>
-            array(
-                'id' => 30,
+            13 => 
+            array (
+                'id' => '30',
                 'name' => 'WAHID NURSIDIK',
                 'email' => 'wahid_nursidik@karmapack.id',
                 'foto' => NULL,
                 'username' => 'wahid_nursidik',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -285,16 +285,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:25:14',
             ),
-            14 =>
-            array(
-                'id' => 31,
+            14 => 
+            array (
+                'id' => '31',
                 'name' => 'M FAISAL L',
                 'email' => 'm_faisal_l@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -304,16 +304,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 =>
-            array(
-                'id' => 32,
+            15 => 
+            array (
+                'id' => '32',
                 'name' => 'SALAFIA AL ZAHRA FAUZIA',
                 'email' => 'salafia_al_zahra_fauzia@karmapack.id',
                 'foto' => NULL,
                 'username' => 'salafiaazf',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -323,16 +323,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:12:23',
             ),
-            16 =>
-            array(
-                'id' => 33,
+            16 => 
+            array (
+                'id' => '33',
                 'name' => 'YUSI YUSFITA',
                 'email' => 'yusi_yusfita@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -342,16 +342,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-10-01 14:54:52',
             ),
-            17 =>
-            array(
-                'id' => 34,
+            17 => 
+            array (
+                'id' => '34',
                 'name' => 'CUCU MARYAM NURPADILAH',
                 'email' => 'cucu_maryam_nurfadilah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cucumaryamnurpadilah',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -361,16 +361,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-29 18:27:48',
             ),
-            18 =>
-            array(
-                'id' => 35,
+            18 => 
+            array (
+                'id' => '35',
                 'name' => 'RIFKI ALFAIZAR',
                 'email' => 'rifki_alfaizar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rifki_alfaizar',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -380,16 +380,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:02:11',
             ),
-            19 =>
-            array(
-                'id' => 36,
+            19 => 
+            array (
+                'id' => '36',
                 'name' => 'M. RIDWAN ABDUL AZIZ',
                 'email' => 'm._ridwan_abdul_aziz@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -399,16 +399,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 =>
-            array(
-                'id' => 37,
+            20 => 
+            array (
+                'id' => '37',
                 'name' => 'NOVIANTI',
                 'email' => 'novianti@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -418,16 +418,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 =>
-            array(
-                'id' => 38,
+            21 => 
+            array (
+                'id' => '38',
                 'name' => 'AYU PRATIWI ISMAN',
                 'email' => 'ayu_pratiwi_isman@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -437,16 +437,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 =>
-            array(
-                'id' => 39,
+            22 => 
+            array (
+                'id' => '39',
                 'name' => 'AI RAHMA ALIA',
                 'email' => 'ai_rahma_alia@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -456,16 +456,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 =>
-            array(
-                'id' => 40,
+            23 => 
+            array (
+                'id' => '40',
                 'name' => 'ANDI AULIANSYAH',
                 'email' => 'andi_auliansyah@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -475,16 +475,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 =>
-            array(
-                'id' => 41,
+            24 => 
+            array (
+                'id' => '41',
                 'name' => 'KHORIDARUL ANISA',
                 'email' => 'khoridarul_anisa@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -494,16 +494,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 =>
-            array(
-                'id' => 42,
+            25 => 
+            array (
+                'id' => '42',
                 'name' => 'ALWAN A F',
                 'email' => 'alwan_a_f@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -513,16 +513,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 =>
-            array(
-                'id' => 43,
+            26 => 
+            array (
+                'id' => '43',
                 'name' => 'MUHAMMAD CAHYADI',
                 'email' => 'muhammad_cahyadi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'muhammad_cahyadi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -532,16 +532,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:52:06',
             ),
-            27 =>
-            array(
-                'id' => 44,
+            27 => 
+            array (
+                'id' => '44',
                 'name' => 'AHMAD KAMIL',
                 'email' => 'ahmad_kamil@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -551,16 +551,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 =>
-            array(
-                'id' => 45,
+            28 => 
+            array (
+                'id' => '45',
                 'name' => 'SRI AYUNI WAHYUDIN',
                 'email' => 'sri_ayuni_wahyudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sri_ayuni_wahyudin',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -570,16 +570,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:13:43',
             ),
-            29 =>
-            array(
-                'id' => 46,
+            29 => 
+            array (
+                'id' => '46',
                 'name' => 'ENCEP ABDUL HAKIM',
                 'email' => 'encep_abdul_hakim@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ncepkazama27',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -589,16 +589,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:02:44',
             ),
-            30 =>
-            array(
-                'id' => 47,
+            30 => 
+            array (
+                'id' => '47',
                 'name' => 'LINDAWATI RUSLIHA',
                 'email' => 'lindawati_rusliha@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -608,16 +608,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 =>
-            array(
-                'id' => 49,
+            31 => 
+            array (
+                'id' => '49',
                 'name' => 'LINA HERLINA',
                 'email' => 'lina_herlina@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -627,16 +627,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 =>
-            array(
-                'id' => 50,
+            32 => 
+            array (
+                'id' => '50',
                 'name' => 'AGUSTIANI SRI RAHAYU',
                 'email' => 'agustiani_sri_rahayu@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -646,16 +646,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-10-01 14:49:01',
             ),
-            33 =>
-            array(
-                'id' => 51,
+            33 => 
+            array (
+                'id' => '51',
                 'name' => 'RURI C. HETIAWATI',
                 'email' => 'ruri_c_hetiawati@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ruri_c_hetiawati',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -665,16 +665,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:32:42',
             ),
-            34 =>
-            array(
-                'id' => 52,
+            34 => 
+            array (
+                'id' => '52',
                 'name' => 'RINRIN IRMAYANI',
                 'email' => 'rinrin_irmayani@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -684,16 +684,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 =>
-            array(
-                'id' => 53,
+            35 => 
+            array (
+                'id' => '53',
                 'name' => 'AI DIAN HAERANI',
                 'email' => 'ai_dian_haerani@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -703,16 +703,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 =>
-            array(
-                'id' => 54,
+            36 => 
+            array (
+                'id' => '54',
                 'name' => 'APRILIA UTAMI HERDI',
                 'email' => 'aprilia_utami_herdi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'aprilia_utami_herdi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -722,16 +722,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:03:07',
             ),
-            37 =>
-            array(
-                'id' => 55,
+            37 => 
+            array (
+                'id' => '55',
                 'name' => 'SITI BASIROH',
                 'email' => 'siti_basiroh@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -741,35 +741,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 =>
-            array(
-                'id' => 57,
+            38 => 
+            array (
+                'id' => '57',
                 'name' => 'NU’MAN BASIR',
-                'email' => 'numan_basir@karmapack.id',
+                'email' => 'numanbasir253@gmail.com',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => 'VgOwnDhIfLMQyAHJhxPluRaGMbLdaykhNP43F1VMWkTPpYx4WfpfSBiYsgbS',
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 01:11:59',
+                'updated_at' => '2023-03-18 16:45:36',
             ),
-            39 =>
-            array(
-                'id' => 58,
+            39 => 
+            array (
+                'id' => '58',
                 'name' => 'MAULANA YUSUF',
-                'email' => 'maulana_yusuf@karmapack.id',
+                'email' => 'maulyusuf246@gmail.com',
                 'foto' => NULL,
                 'username' => 'maulana_yusuf',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -777,18 +777,18 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 02:00:46',
+                'updated_at' => '2023-03-18 19:27:30',
             ),
-            40 =>
-            array(
-                'id' => 59,
+            40 => 
+            array (
+                'id' => '59',
                 'name' => 'INDRA KURNIA',
                 'email' => 'indra.kurnia@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -798,16 +798,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-05-02 09:06:17',
             ),
-            41 =>
-            array(
-                'id' => 60,
+            41 => 
+            array (
+                'id' => '60',
                 'name' => 'EGI',
                 'email' => 'egi@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -817,16 +817,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 =>
-            array(
-                'id' => 61,
+            42 => 
+            array (
+                'id' => '61',
                 'name' => 'M RIDWANAN',
                 'email' => 'm.ridwanan@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -836,16 +836,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 =>
-            array(
-                'id' => 62,
+            43 => 
+            array (
+                'id' => '62',
                 'name' => 'WITA DEWI LESTARI',
                 'email' => 'wita.dewi.lestari@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -855,16 +855,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 =>
-            array(
-                'id' => 63,
+            44 => 
+            array (
+                'id' => '63',
                 'name' => 'M SYAHRUL RAMADHAN',
                 'email' => 'm_syahrul_ramdan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm_syahrul_ramadhan',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -874,16 +874,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:51:21',
             ),
-            45 =>
-            array(
-                'id' => 64,
+            45 => 
+            array (
+                'id' => '64',
                 'name' => 'ILHAM FAOZ',
                 'email' => 'ilham_faoz@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ilham_faoz',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -893,16 +893,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:12:42',
             ),
-            46 =>
-            array(
-                'id' => 65,
+            46 => 
+            array (
+                'id' => '65',
                 'name' => 'ADRIAN SYAMSYUL RAMLI',
                 'email' => 'adrian_samsul_ramli@karmapack.id',
                 'foto' => NULL,
                 'username' => 'adrian_syamsyul_ramli',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -912,16 +912,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:30:41',
             ),
-            47 =>
-            array(
-                'id' => 67,
+            47 => 
+            array (
+                'id' => '67',
                 'name' => 'AGUNG SETIABUDI',
                 'email' => 'agung.setiabudi@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -931,16 +931,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 =>
-            array(
-                'id' => 68,
+            48 => 
+            array (
+                'id' => '68',
                 'name' => 'YUSUF MUGHNI',
                 'email' => 'yusuf_mughni@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yusuf_mugni',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -950,16 +950,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:22:14',
             ),
-            49 =>
-            array(
-                'id' => 69,
+            49 => 
+            array (
+                'id' => '69',
                 'name' => 'SITI SUROH HOLISOH',
                 'email' => 'siti_suroh_holisoh@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti_suroh_holisoh',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -969,16 +969,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:28:05',
             ),
-            50 =>
-            array(
-                'id' => 70,
+            50 => 
+            array (
+                'id' => '70',
                 'name' => 'SAEPUL FIKRI',
                 'email' => 'saepul.fikri@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -988,16 +988,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 =>
-            array(
-                'id' => 71,
+            51 => 
+            array (
+                'id' => '71',
                 'name' => 'MUHAMMAD FIKI NUGRAHA',
                 'email' => 'm.fiki.nugraha@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1007,16 +1007,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 =>
-            array(
-                'id' => 72,
+            52 => 
+            array (
+                'id' => '72',
                 'name' => 'SRI HASTUTI',
                 'email' => 'sri_hastuti@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sri_hastuti',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1026,16 +1026,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:26:36',
             ),
-            53 =>
-            array(
-                'id' => 73,
+            53 => 
+            array (
+                'id' => '73',
                 'name' => 'DERIS KUSNAEDI',
                 'email' => 'deris_kusnaedi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'deris_kusnaedi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1045,16 +1045,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:27:40',
             ),
-            54 =>
-            array(
-                'id' => 74,
+            54 => 
+            array (
+                'id' => '74',
                 'name' => 'Feri Firmansyah',
                 'email' => 'feryfirmansyah280@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1064,16 +1064,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-10-24 10:22:51',
             ),
-            55 =>
-            array(
-                'id' => 75,
+            55 => 
+            array (
+                'id' => '75',
                 'name' => 'NISYARA SEPTIARANI SUKMA',
                 'email' => 'nisyara_septiarani_sukma@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nisyara',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1083,16 +1083,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:25:16',
             ),
-            56 =>
-            array(
-                'id' => 76,
+            56 => 
+            array (
+                'id' => '76',
                 'name' => 'SITI NURJAMILAH',
                 'email' => 'siti_nurjamilah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'jemi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1102,16 +1102,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:09:19',
             ),
-            57 =>
-            array(
-                'id' => 77,
+            57 => 
+            array (
+                'id' => '77',
                 'name' => 'PUPUNG RUSTIKA',
                 'email' => 'pupung_rustika@karmapack.id',
                 'foto' => NULL,
                 'username' => 'pupung_rustika',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1121,16 +1121,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:25:56',
             ),
-            58 =>
-            array(
-                'id' => 78,
+            58 => 
+            array (
+                'id' => '78',
                 'name' => 'HASBI ABDUL HUSAIN',
                 'email' => 'hasbi_abdul_husain@karmapack.id',
                 'foto' => NULL,
                 'username' => 'hasbi_abdul_husain',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1140,35 +1140,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:22:52',
             ),
-            59 =>
-            array(
-                'id' => 79,
+            59 => 
+            array (
+                'id' => '79',
                 'name' => 'NUR HASAN',
-                'email' => 'nur_hasan@karmapack.id',
+                'email' => 'hnur60443@gmail.com',
                 'foto' => NULL,
                 'username' => 'nurhasan',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => 'fSxtf2rPwLQQbxz0899Amo0M1ErOYweKMtdkN79SUb7CPl9VV9zAiaGgmB3n',
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 02:28:42',
+                'updated_at' => '2023-03-18 20:33:38',
             ),
-            60 =>
-            array(
-                'id' => 80,
+            60 => 
+            array (
+                'id' => '80',
                 'name' => 'ARSILA KHAIRUNNISA',
                 'email' => 'arsila_khairunnisa@karmapack.id',
                 'foto' => NULL,
                 'username' => 'arsila_khairunnisa',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1178,16 +1178,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:29:24',
             ),
-            61 =>
-            array(
-                'id' => 81,
+            61 => 
+            array (
+                'id' => '81',
                 'name' => 'Sofy Tri Alfiani',
                 'email' => 'trifyalfiani@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sofy',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1197,16 +1197,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:15:49',
             ),
-            62 =>
-            array(
-                'id' => 82,
+            62 => 
+            array (
+                'id' => '82',
                 'name' => 'Ragil JS Munster',
                 'email' => 'ragilsaputra211998@gmail.com',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA/oIKwHD4AIGzIHmHZO',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1216,16 +1216,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:18:37',
             ),
-            63 =>
-            array(
-                'id' => 83,
+            63 => 
+            array (
+                'id' => '83',
                 'name' => 'MUHAMMAD IMAN NURJAMAN',
                 'email' => 'muhammad_iman_nurjaman@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm_iman_nurjaman',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1235,16 +1235,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:19:36',
             ),
-            64 =>
-            array(
-                'id' => 84,
+            64 => 
+            array (
+                'id' => '84',
                 'name' => 'Moh Indra Sukmara Esma',
                 'email' => 'Mohindra.Sukmaraesma29@gmail.com',
                 'foto' => NULL,
                 'username' => 'moh_indra_sukmara_esma',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$VDWYFdw4u68s9nvOp7G8A.HunvtPJWsi0eIWD6VFnn8lT7U5vEQzq',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1254,16 +1254,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:15:39',
             ),
-            65 =>
-            array(
-                'id' => 85,
+            65 => 
+            array (
+                'id' => '85',
                 'name' => 'MUHAMMAD RAIHAN RAHMAN',
                 'email' => 'muhammad_raihan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm_raihan_rahman',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1273,16 +1273,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:16:47',
             ),
-            66 =>
-            array(
-                'id' => 86,
+            66 => 
+            array (
+                'id' => '86',
                 'name' => 'IMAT ROHIMAT',
                 'email' => 'imat_rohimat@karmapack.id',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1292,16 +1292,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-12-04 14:07:45',
             ),
-            67 =>
-            array(
-                'id' => 87,
+            67 => 
+            array (
+                'id' => '87',
                 'name' => 'Alvirda Damayanti Anwari',
                 'email' => 'alfirda_damayanti@karmapack.id',
                 'foto' => NULL,
                 'username' => 'alvirdada',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1311,16 +1311,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:37:09',
             ),
-            68 =>
-            array(
-                'id' => 89,
+            68 => 
+            array (
+                'id' => '89',
                 'name' => 'SILVIA ANGGRAENI',
                 'email' => 'silvia_anggraeni@karmapack.id',
                 'foto' => NULL,
                 'username' => 'silviaanggrnii',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1330,16 +1330,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:35:23',
             ),
-            69 =>
-            array(
-                'id' => 90,
+            69 => 
+            array (
+                'id' => '90',
                 'name' => 'AI YETI KOKOM KOMALASARI',
                 'email' => 'ai_yeti_kokom_komalasari@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ai_yeti',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1349,16 +1349,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:38:45',
             ),
-            70 =>
-            array(
-                'id' => 91,
+            70 => 
+            array (
+                'id' => '91',
                 'name' => 'SIPA PUSPITA SARI',
                 'email' => 'sipapuspita620@gmail.com',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA/oIKwHD4AIGzIHmHZO',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1368,16 +1368,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-07 11:43:35',
             ),
-            71 =>
-            array(
-                'id' => 92,
+            71 => 
+            array (
+                'id' => '92',
                 'name' => 'ADE MUNAWAR',
                 'email' => 'ade_munawar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ade_munawar',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1387,16 +1387,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:50:36',
             ),
-            72 =>
-            array(
-                'id' => 93,
+            72 => 
+            array (
+                'id' => '93',
                 'name' => 'ABDUL AZIZ',
                 'email' => 'abdul_aziz@karmapack.id',
                 'foto' => NULL,
                 'username' => 'abdul_aziz',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1406,16 +1406,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:57:53',
             ),
-            73 =>
-            array(
-                'id' => 94,
+            73 => 
+            array (
+                'id' => '94',
                 'name' => 'GUSAERI',
                 'email' => 'gusaeri@karmapack.id',
                 'foto' => NULL,
                 'username' => 'gusaeri',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1425,16 +1425,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:56:04',
             ),
-            74 =>
-            array(
-                'id' => 95,
+            74 => 
+            array (
+                'id' => '95',
                 'name' => 'M. FAISHAL',
                 'email' => 'm_faishal@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm_faishal',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1444,16 +1444,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:58:08',
             ),
-            75 =>
-            array(
-                'id' => 96,
+            75 => 
+            array (
+                'id' => '96',
                 'name' => 'NASRIATUL HAMIDAH',
                 'email' => 'nasriatulhamidah12@gmail.com',
                 'foto' => NULL,
                 'username' => 'nasiratul_hamidah',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DHRAQsNhXq6LEcSKHlr.2ejnw04g9NS39HT2gpsNa0TXWDv1ge37m',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1463,16 +1463,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:58:51',
             ),
-            76 =>
-            array(
-                'id' => 97,
+            76 => 
+            array (
+                'id' => '97',
                 'name' => 'NENG NURHASANAH',
                 'email' => 'neng_nurhasanah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nengnurhasanah',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1482,16 +1482,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:56:39',
             ),
-            77 =>
-            array(
-                'id' => 98,
+            77 => 
+            array (
+                'id' => '98',
                 'name' => 'SOLEHUDIN',
                 'email' => 'solehudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'solehudin',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1501,16 +1501,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:59:34',
             ),
-            78 =>
-            array(
-                'id' => 99,
+            78 => 
+            array (
+                'id' => '99',
                 'name' => 'AHMAD DIMYATI RIDWAN',
                 'email' => 'dimyatiridwanahmad@gmail.com',
                 'foto' => NULL,
                 'username' => 'ahmaddimyatiridwan16',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA/oIKwHD4AIGzIHmHZO',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1520,16 +1520,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:44:12',
             ),
-            79 =>
-            array(
-                'id' => 100,
+            79 => 
+            array (
+                'id' => '100',
                 'name' => 'ELISA PUTRI ANGGRAENI',
                 'email' => 'elisa_putri_anggraeni@karmapack.id',
                 'foto' => NULL,
                 'username' => 'elisot',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1539,16 +1539,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2023-03-17 20:21:34',
             ),
-            80 =>
-            array(
-                'id' => 101,
+            80 => 
+            array (
+                'id' => '101',
                 'name' => 'WIDI AYUNI MAULIDIA',
                 'email' => 'widi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'widimailcom',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1558,16 +1558,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:47:51',
             ),
-            81 =>
-            array(
-                'id' => 106,
+            81 => 
+            array (
+                'id' => '106',
                 'name' => 'RAMLAN HIDAYAT',
                 'email' => 'ramlan_hidayat@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ramlan_hidayat',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1577,16 +1577,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 01:49:15',
             ),
-            82 =>
-            array(
-                'id' => 108,
+            82 => 
+            array (
+                'id' => '108',
                 'name' => 'AJENG KARTINI',
                 'email' => 'ajeng_kartini@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ajeng_kartini_pcy',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1596,16 +1596,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:08:49',
             ),
-            83 =>
-            array(
-                'id' => 109,
+            83 => 
+            array (
+                'id' => '109',
                 'name' => 'M. ILHAM FAISAL',
                 'email' => 'ilham_faisal_debo@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm_ilham_faisal',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1615,35 +1615,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:06:30',
             ),
-            84 =>
-            array(
-                'id' => 110,
+            84 => 
+            array (
+                'id' => '110',
                 'name' => 'RISMAWANTI AWALIAH S',
-                'email' => 'rismawati@karmapack.id',
+                'email' => 'rismawas1073@gmail.com',
                 'foto' => NULL,
-                'username' => NULL,
+                'username' => 'rismawannti',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => '7ZKL26mR4eWPIfRSAOMa9zPaUCD51bORjbFqCP78NONGlUnRCUicgIQjV3Sx',
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 06:18:21',
+                'updated_at' => '2023-03-18 20:44:26',
             ),
-            85 =>
-            array(
-                'id' => 111,
+            85 => 
+            array (
+                'id' => '111',
                 'name' => 'THIA RAMADHANI AMIN',
                 'email' => 'thia_ramadhani_amin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'thia_ramadhani_amin',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1653,16 +1653,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => '2022-09-01 02:04:45',
             ),
-            86 =>
-            array(
-                'id' => 113,
+            86 => 
+            array (
+                'id' => '113',
                 'name' => 'Faisal Akbar',
                 'email' => 'faisal7794akbar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'faisalakbar',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1672,16 +1672,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-16 16:19:35',
                 'updated_at' => '2023-03-16 17:43:52',
             ),
-            87 =>
-            array(
-                'id' => 114,
+            87 => 
+            array (
+                'id' => '114',
                 'name' => 'Engkon Abdul Gani',
                 'email' => 'ukonag04@gmail.com',
                 'foto' => NULL,
                 'username' => 'engkon-abdul-gani20230316162922',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$Lz80zGpWXp5XtuH9kmCMDO6FH1lKzO8v6EMgzxC6L/5Vz0udA.smi',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1691,16 +1691,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-16 16:29:23',
                 'updated_at' => '2023-03-16 16:29:23',
             ),
-            88 =>
-            array(
-                'id' => 115,
+            88 => 
+            array (
+                'id' => '115',
                 'name' => 'Khoerusalam',
                 'email' => 'khoerusalam@karmapack.id',
                 'foto' => NULL,
                 'username' => 'khoerusalam202303172345477',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1710,16 +1710,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:47',
                 'updated_at' => '2023-03-17 23:45:47',
             ),
-            89 =>
-            array(
-                'id' => 116,
+            89 => 
+            array (
+                'id' => '116',
                 'name' => 'Abdul Rohman',
                 'email' => 'abdul.rohman@karmapack.id',
                 'foto' => NULL,
                 'username' => 'abdul-rohman2023031723454710',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1729,16 +1729,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:47',
                 'updated_at' => '2023-03-17 23:45:47',
             ),
-            90 =>
-            array(
-                'id' => 117,
+            90 => 
+            array (
+                'id' => '117',
                 'name' => 'Dindin Saepudin',
                 'email' => 'dindin.saepudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dindin-saepudin202303172345473',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1748,16 +1748,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:47',
                 'updated_at' => '2023-03-17 23:45:47',
             ),
-            91 =>
-            array(
-                'id' => 118,
+            91 => 
+            array (
+                'id' => '118',
                 'name' => 'Suud',
                 'email' => 'suud@karmapack.id',
                 'foto' => NULL,
                 'username' => 'suud202303172345473',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1767,16 +1767,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:47',
                 'updated_at' => '2023-03-17 23:45:47',
             ),
-            92 =>
-            array(
-                'id' => 119,
+            92 => 
+            array (
+                'id' => '119',
                 'name' => 'Risal Maulana',
                 'email' => 'risal.maulana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'risal-maulana202303172345486',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1786,16 +1786,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            93 =>
-            array(
-                'id' => 120,
+            93 => 
+            array (
+                'id' => '120',
                 'name' => 'Cep Ahmad Mustaba',
                 'email' => 'cep.ahmad.mustaba@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cep-ahmad-mustaba202303172345482',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1805,16 +1805,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            94 =>
-            array(
-                'id' => 121,
+            94 => 
+            array (
+                'id' => '121',
                 'name' => 'Sufriatna',
                 'email' => 'sufriatna@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sufriatna202303172345486',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1824,16 +1824,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            95 =>
-            array(
-                'id' => 122,
+            95 => 
+            array (
+                'id' => '122',
                 'name' => 'Erdin',
                 'email' => 'erdin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'erdin202303172345489',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1843,16 +1843,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            96 =>
-            array(
-                'id' => 123,
+            96 => 
+            array (
+                'id' => '123',
                 'name' => 'Reva Nudiana',
                 'email' => 'reva.nudiana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'reva-nudiana202303172345483',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1862,16 +1862,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            97 =>
-            array(
-                'id' => 124,
+            97 => 
+            array (
+                'id' => '124',
                 'name' => 'Siti Ulfah',
                 'email' => 'siti.ulfah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-ulfah202303172345487',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1881,16 +1881,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            98 =>
-            array(
-                'id' => 125,
+            98 => 
+            array (
+                'id' => '125',
                 'name' => 'Ai Risna',
                 'email' => 'ai.risna@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ai-risna202303172345487',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1900,16 +1900,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            99 =>
-            array(
-                'id' => 126,
+            99 => 
+            array (
+                'id' => '126',
                 'name' => 'Lisna',
                 'email' => 'lisna@karmapack.id',
                 'foto' => NULL,
                 'username' => 'lisna202303172345486',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1919,16 +1919,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            100 =>
-            array(
-                'id' => 127,
+            100 => 
+            array (
+                'id' => '127',
                 'name' => 'Ade Irma Widia',
                 'email' => 'ade.irma.widia@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ade-irma-widia202303172345482',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1938,16 +1938,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            101 =>
-            array(
-                'id' => 128,
+            101 => 
+            array (
+                'id' => '128',
                 'name' => 'Resti Susilawati',
                 'email' => 'resti.susilawati@karmapack.id',
                 'foto' => NULL,
                 'username' => 'resti-susilawati202303172345485',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1957,16 +1957,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:48',
                 'updated_at' => '2023-03-17 23:45:48',
             ),
-            102 =>
-            array(
-                'id' => 129,
+            102 => 
+            array (
+                'id' => '129',
                 'name' => 'Nani Kartini',
                 'email' => 'nani.kartini@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nani-kartini202303172345497',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1976,16 +1976,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            103 =>
-            array(
-                'id' => 130,
+            103 => 
+            array (
+                'id' => '130',
                 'name' => 'Resna',
                 'email' => 'resna@karmapack.id',
                 'foto' => NULL,
                 'username' => 'resna202303172345497',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -1995,16 +1995,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            104 =>
-            array(
-                'id' => 131,
+            104 => 
+            array (
+                'id' => '131',
                 'name' => 'Euis',
                 'email' => 'euis@karmapack.id',
                 'foto' => NULL,
                 'username' => 'euis202303172345493',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2014,16 +2014,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            105 =>
-            array(
-                'id' => 132,
+            105 => 
+            array (
+                'id' => '132',
                 'name' => 'Atik',
                 'email' => 'atik@karmapack.id',
                 'foto' => NULL,
                 'username' => 'atik202303172345494',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2033,16 +2033,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            106 =>
-            array(
-                'id' => 133,
+            106 => 
+            array (
+                'id' => '133',
                 'name' => 'Lely',
                 'email' => 'lely@karmapack.id',
                 'foto' => NULL,
                 'username' => 'lely202303172345499',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2052,16 +2052,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            107 =>
-            array(
-                'id' => 134,
+            107 => 
+            array (
+                'id' => '134',
                 'name' => 'Risma',
                 'email' => 'risma@karmapack.id',
                 'foto' => NULL,
                 'username' => 'risma202303172345493',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2071,16 +2071,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            108 =>
-            array(
-                'id' => 135,
+            108 => 
+            array (
+                'id' => '135',
                 'name' => 'Agus Endang',
                 'email' => 'agus.endang@karmapack.id',
                 'foto' => NULL,
                 'username' => 'agus-endang202303172345497',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2090,16 +2090,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            109 =>
-            array(
-                'id' => 136,
+            109 => 
+            array (
+                'id' => '136',
                 'name' => 'Ratra Sri Fauziah',
                 'email' => 'ratra.sri.fauziah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ratra-sri-fauziah202303172345492',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2109,16 +2109,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:49',
                 'updated_at' => '2023-03-17 23:45:49',
             ),
-            110 =>
-            array(
-                'id' => 137,
+            110 => 
+            array (
+                'id' => '137',
                 'name' => 'cucu Aisah',
                 'email' => 'cucu.aisah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cucu-aisah202303172345497',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2128,16 +2128,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            111 =>
-            array(
-                'id' => 138,
+            111 => 
+            array (
+                'id' => '138',
                 'name' => 'Elis Sapitri',
                 'email' => 'elis.sapitri@karmapack.id',
                 'foto' => NULL,
                 'username' => 'elis-sapitri202303172345509',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2147,16 +2147,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            112 =>
-            array(
-                'id' => 139,
+            112 => 
+            array (
+                'id' => '139',
                 'name' => 'Irma Mariana',
                 'email' => 'irma.mariana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'irma-mariana202303172345508',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2166,16 +2166,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            113 =>
-            array(
-                'id' => 140,
+            113 => 
+            array (
+                'id' => '140',
                 'name' => 'Ahmad Supyandi',
                 'email' => 'ahmad.supyandi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ahmad-supyandi202303172345504',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2185,16 +2185,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            114 =>
-            array(
-                'id' => 141,
+            114 => 
+            array (
+                'id' => '141',
                 'name' => 'Irvan Mubarok',
                 'email' => 'irvan.mubarok@karmapack.id',
                 'foto' => NULL,
                 'username' => 'irvan-mubarok202303172345505',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2204,16 +2204,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            115 =>
-            array(
-                'id' => 142,
+            115 => 
+            array (
+                'id' => '142',
                 'name' => 'Nurzian Muharom',
                 'email' => 'nurzian.muharom@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nurzian-muharom202303172345501',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2223,16 +2223,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            116 =>
-            array(
-                'id' => 143,
+            116 => 
+            array (
+                'id' => '143',
                 'name' => 'Nursal Pathoni',
                 'email' => 'nursal.pathoni@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nursal-pathoni2023031723455010',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2242,16 +2242,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            117 =>
-            array(
-                'id' => 144,
+            117 => 
+            array (
+                'id' => '144',
                 'name' => 'M Fathur Aripin',
                 'email' => 'm.fathur.aripin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-fathur-aripin202303172345501',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2261,16 +2261,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            118 =>
-            array(
-                'id' => 145,
+            118 => 
+            array (
+                'id' => '145',
                 'name' => 'Bayu Bambang Nurfauzi',
                 'email' => 'bayu.bambang.nurfauzi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'bayu-bambang-nurfauzi202303172345503',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2280,16 +2280,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:50',
                 'updated_at' => '2023-03-17 23:45:50',
             ),
-            119 =>
-            array(
-                'id' => 146,
+            119 => 
+            array (
+                'id' => '146',
                 'name' => 'Syarip Firmansah',
                 'email' => 'syarip.firmansah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'syarip-firmansah202303172345509',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2299,16 +2299,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            120 =>
-            array(
-                'id' => 147,
+            120 => 
+            array (
+                'id' => '147',
                 'name' => 'Ujang Supyandi',
                 'email' => 'ujang.supyandi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ujang-supyandi2023031723455110',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2318,16 +2318,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            121 =>
-            array(
-                'id' => 148,
+            121 => 
+            array (
+                'id' => '148',
                 'name' => 'Agung Purnama',
                 'email' => 'agung.purnama@karmapack.id',
                 'foto' => NULL,
                 'username' => 'agung-purnama202303172345514',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2337,16 +2337,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            122 =>
-            array(
-                'id' => 149,
+            122 => 
+            array (
+                'id' => '149',
                 'name' => 'Nurhikmat',
                 'email' => 'nurhikmat@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nurhikmat202303172345512',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2356,16 +2356,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            123 =>
-            array(
-                'id' => 150,
+            123 => 
+            array (
+                'id' => '150',
                 'name' => 'M Selpan M Sidik',
                 'email' => 'm.selpan.m.sidik@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-selpan-m-sidik202303172345519',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2375,16 +2375,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            124 =>
-            array(
-                'id' => 151,
+            124 => 
+            array (
+                'id' => '151',
                 'name' => 'Isep Sahroni',
                 'email' => 'isep.sahroni@karmapack.id',
                 'foto' => NULL,
                 'username' => 'isep-sahroni202303172345511',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2394,16 +2394,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            125 =>
-            array(
-                'id' => 152,
+            125 => 
+            array (
+                'id' => '152',
                 'name' => 'Dicki Firmansyah',
                 'email' => 'dicki.firmansyah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dicki-firmansyah202303172345515',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2413,16 +2413,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            126 =>
-            array(
-                'id' => 153,
+            126 => 
+            array (
+                'id' => '153',
                 'name' => 'Ahmad Saepudin',
                 'email' => 'ahmad.saepudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ahmad-saepudin202303172345514',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2432,16 +2432,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            127 =>
-            array(
-                'id' => 154,
+            127 => 
+            array (
+                'id' => '154',
                 'name' => 'Cici Muftihatu Zahra',
                 'email' => 'cici.muftihatu.zahra@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cici-muftihatu-zahra202303172345518',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2451,16 +2451,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            128 =>
-            array(
-                'id' => 155,
+            128 => 
+            array (
+                'id' => '155',
                 'name' => 'Dede Komalasari',
                 'email' => 'dede.komalasari@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dede-komalasari202303172345511',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2470,16 +2470,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:51',
                 'updated_at' => '2023-03-17 23:45:51',
             ),
-            129 =>
-            array(
-                'id' => 156,
+            129 => 
+            array (
+                'id' => '156',
                 'name' => 'Ratna Ningsih',
                 'email' => 'ratna.ningsih@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ratna-ningsih202303172345527',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2489,16 +2489,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            130 =>
-            array(
-                'id' => 157,
+            130 => 
+            array (
+                'id' => '157',
                 'name' => 'Siti Nurfauziah',
                 'email' => 'siti.nurfauziah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-nurfauziah202303172345527',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2508,16 +2508,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            131 =>
-            array(
-                'id' => 158,
+            131 => 
+            array (
+                'id' => '158',
                 'name' => 'Fuzi Siti Nufauziah',
                 'email' => 'fuzi.siti.nufauziah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'fuzi-siti-nufauziah2023031723455210',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2527,16 +2527,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            132 =>
-            array(
-                'id' => 159,
+            132 => 
+            array (
+                'id' => '159',
                 'name' => 'Lea Agustin',
                 'email' => 'lea.agustin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'lea-agustin202303172345522',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2546,16 +2546,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            133 =>
-            array(
-                'id' => 160,
+            133 => 
+            array (
+                'id' => '160',
                 'name' => 'Rispi',
                 'email' => 'rispi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rispi202303172345521',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2565,16 +2565,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            134 =>
-            array(
-                'id' => 161,
+            134 => 
+            array (
+                'id' => '161',
                 'name' => 'Sinta agustin',
                 'email' => 'sinta.agustin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sinta-agustin202303172345525',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2584,16 +2584,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            135 =>
-            array(
-                'id' => 162,
+            135 => 
+            array (
+                'id' => '162',
                 'name' => 'Nuriah Jamilah',
                 'email' => 'nuriah.jamilah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nuriah-jamilah202303172345525',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2603,16 +2603,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            136 =>
-            array(
-                'id' => 163,
+            136 => 
+            array (
+                'id' => '163',
                 'name' => 'Ulfah Kusuma Dewi',
                 'email' => 'ulfah.kusuma.dewi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ulfah-kusuma-dewi202303172345526',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2622,16 +2622,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            137 =>
-            array(
-                'id' => 164,
+            137 => 
+            array (
+                'id' => '164',
                 'name' => 'Ulfah Safitri',
                 'email' => 'ulfah.safitri@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ulfah-safitri202303172345528',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2641,16 +2641,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:52',
                 'updated_at' => '2023-03-17 23:45:52',
             ),
-            138 =>
-            array(
-                'id' => 165,
+            138 => 
+            array (
+                'id' => '165',
                 'name' => 'Siti Solihat',
                 'email' => 'siti.solihat@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-solihat202303172345525',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2660,16 +2660,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            139 =>
-            array(
-                'id' => 166,
+            139 => 
+            array (
+                'id' => '166',
                 'name' => 'Siti rohmah',
                 'email' => 'siti.rohmah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-rohmah202303172345531',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2679,16 +2679,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            140 =>
-            array(
-                'id' => 167,
+            140 => 
+            array (
+                'id' => '167',
                 'name' => 'Sari Ningsih',
                 'email' => 'sari.ningsih@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sari-ningsih202303172345539',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2698,16 +2698,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            141 =>
-            array(
-                'id' => 168,
+            141 => 
+            array (
+                'id' => '168',
                 'name' => 'Sri Mulyani',
                 'email' => 'sri.mulyani@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sri-mulyani202303172345536',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2717,16 +2717,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            142 =>
-            array(
-                'id' => 169,
+            142 => 
+            array (
+                'id' => '169',
                 'name' => 'Sifa Vaujiah',
                 'email' => 'sifa.vaujiah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sifa-vaujiah202303172345535',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2736,16 +2736,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            143 =>
-            array(
-                'id' => 170,
+            143 => 
+            array (
+                'id' => '170',
                 'name' => 'Ridwan Setiawan',
                 'email' => 'ridwan.setiawan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ridwan-setiawan202303172345531',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2755,16 +2755,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            144 =>
-            array(
-                'id' => 171,
+            144 => 
+            array (
+                'id' => '171',
                 'name' => 'Agung Taupik Yusup',
                 'email' => 'agung.taupik.yusup@karmapack.id',
                 'foto' => NULL,
                 'username' => 'agung-taupik-yusup202303172345538',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2774,16 +2774,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            145 =>
-            array(
-                'id' => 172,
+            145 => 
+            array (
+                'id' => '172',
                 'name' => 'Depi Pramana',
                 'email' => 'depi.pramana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'depi-pramana202303172345532',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2793,16 +2793,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            146 =>
-            array(
-                'id' => 173,
+            146 => 
+            array (
+                'id' => '173',
                 'name' => 'Rivan Nugraha',
                 'email' => 'rivan.nugraha@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rivan-nugraha202303172345538',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2812,16 +2812,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            147 =>
-            array(
-                'id' => 174,
+            147 => 
+            array (
+                'id' => '174',
                 'name' => 'Adi Permana',
                 'email' => 'adi.permana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'adi-permana2023031723455310',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2831,16 +2831,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            148 =>
-            array(
-                'id' => 175,
+            148 => 
+            array (
+                'id' => '175',
                 'name' => 'Nandito',
                 'email' => 'nandito@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nandito202303172345534',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2850,16 +2850,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:53',
                 'updated_at' => '2023-03-17 23:45:53',
             ),
-            149 =>
-            array(
-                'id' => 176,
+            149 => 
+            array (
+                'id' => '176',
                 'name' => 'Rijal Fauzi',
                 'email' => 'rijal.fauzi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rijal-fauzi202303172345545',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2869,16 +2869,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            150 =>
-            array(
-                'id' => 177,
+            150 => 
+            array (
+                'id' => '177',
                 'name' => 'Raiman',
                 'email' => 'raiman@karmapack.id',
                 'foto' => NULL,
                 'username' => 'raiman202303172345548',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2888,16 +2888,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            151 =>
-            array(
-                'id' => 178,
+            151 => 
+            array (
+                'id' => '178',
                 'name' => 'Rahmi Rizkia',
                 'email' => 'rahmi.rizkia@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rahmi-rizkia2023031723455410',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2907,16 +2907,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            152 =>
-            array(
-                'id' => 179,
+            152 => 
+            array (
+                'id' => '179',
                 'name' => 'Sally Aisyah Amini',
                 'email' => 'sally.aisyah.amini@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sally-aisyah-amini202303172345545',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2926,16 +2926,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            153 =>
-            array(
-                'id' => 180,
+            153 => 
+            array (
+                'id' => '180',
                 'name' => 'Siti Rahmawati',
                 'email' => 'siti.rahmawati@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-rahmawati202303172345543',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2945,16 +2945,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            154 =>
-            array(
-                'id' => 181,
+            154 => 
+            array (
+                'id' => '181',
                 'name' => 'Siti Nurhasanah',
                 'email' => 'siti.nurhasanah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-nurhasanah202303172345547',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2964,16 +2964,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            155 =>
-            array(
-                'id' => 182,
+            155 => 
+            array (
+                'id' => '182',
                 'name' => 'Cucu Nurohmah',
                 'email' => 'cucu.nurohmah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cucu-nurohmah202303172345547',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -2983,16 +2983,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            156 =>
-            array(
-                'id' => 183,
+            156 => 
+            array (
+                'id' => '183',
                 'name' => 'Nurcahya',
                 'email' => 'nurcahya@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nurcahya202303172345544',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3002,16 +3002,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            157 =>
-            array(
-                'id' => 184,
+            157 => 
+            array (
+                'id' => '184',
                 'name' => 'Ahmad Rusmana',
                 'email' => 'ahmad.rusmana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ahmad-rusmana202303172345547',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3021,35 +3021,35 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:54',
                 'updated_at' => '2023-03-17 23:45:54',
             ),
-            158 =>
-            array(
-                'id' => 185,
-                'name' => 'Dian Noviandi',
-                'email' => 'dian.noviandi@karmapack.id',
+            158 => 
+            array (
+                'id' => '185',
+                'name' => 'Dian Nopiandi',
+                'email' => 'diannopiandi150995@gmail.com',
                 'foto' => NULL,
-                'username' => 'dian-noviandi2023031723455410',
+                'username' => 'diannopiandi',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => 'kTq4Otx1xhLpNz1Ap8g9wrBCnzszTL92u8gh8rL6h0JaDeDD6o90UKbdGqQs',
                 'created_at' => '2023-03-17 23:45:54',
-                'updated_at' => '2023-03-17 23:45:54',
+                'updated_at' => '2023-03-18 18:56:09',
             ),
-            159 =>
-            array(
-                'id' => 186,
+            159 => 
+            array (
+                'id' => '186',
                 'name' => 'Tohir Marzuki',
                 'email' => 'tohir.marzuki@karmapack.id',
                 'foto' => NULL,
                 'username' => 'tohir-marzuki202303172345548',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3059,16 +3059,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            160 =>
-            array(
-                'id' => 187,
+            160 => 
+            array (
+                'id' => '187',
                 'name' => 'Evsha Maria Azkia',
                 'email' => 'evsha.maria.azkia@karmapack.id',
                 'foto' => NULL,
                 'username' => 'evsha-maria-azkia202303172345555',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3078,16 +3078,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            161 =>
-            array(
-                'id' => 188,
+            161 => 
+            array (
+                'id' => '188',
                 'name' => 'Sugina Hikmawan',
                 'email' => 'sugina.hikmawan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sugina-hikmawan202303172345553',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3097,16 +3097,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            162 =>
-            array(
-                'id' => 189,
+            162 => 
+            array (
+                'id' => '189',
                 'name' => 'Nenden TS',
                 'email' => 'nenden.ts@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nenden-ts2023031723455510',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3116,16 +3116,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            163 =>
-            array(
-                'id' => 190,
+            163 => 
+            array (
+                'id' => '190',
                 'name' => 'Solihin Nurodin',
                 'email' => 'solihin.nurodin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'solihin-nurodin202303172345556',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3135,16 +3135,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            164 =>
-            array(
-                'id' => 191,
+            164 => 
+            array (
+                'id' => '191',
                 'name' => 'Aludin',
                 'email' => 'aludin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'aludin2023031723455510',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3154,16 +3154,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            165 =>
-            array(
-                'id' => 192,
+            165 => 
+            array (
+                'id' => '192',
                 'name' => 'Disaf',
                 'email' => 'disaf@karmapack.id',
                 'foto' => NULL,
                 'username' => 'disaf2023031723455510',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3173,16 +3173,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            166 =>
-            array(
-                'id' => 193,
+            166 => 
+            array (
+                'id' => '193',
                 'name' => 'Ilin Solihudin',
                 'email' => 'ilin.solihudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ilin-solihudin202303172345557',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3192,16 +3192,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            167 =>
-            array(
-                'id' => 194,
+            167 => 
+            array (
+                'id' => '194',
                 'name' => 'Asep Sahrudin',
                 'email' => 'asep.sahrudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'asep-sahrudin202303172345559',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3211,16 +3211,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:55',
                 'updated_at' => '2023-03-17 23:45:55',
             ),
-            168 =>
-            array(
-                'id' => 195,
+            168 => 
+            array (
+                'id' => '195',
                 'name' => 'Karnawan Sugianto',
                 'email' => 'karnawan.sugianto@karmapack.id',
                 'foto' => NULL,
                 'username' => 'karnawan-sugianto2023031723455510',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3230,16 +3230,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            169 =>
-            array(
-                'id' => 196,
+            169 => 
+            array (
+                'id' => '196',
                 'name' => 'Sutiawan',
                 'email' => 'sutiawan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sutiawan202303172345564',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3249,16 +3249,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            170 =>
-            array(
-                'id' => 197,
+            170 => 
+            array (
+                'id' => '197',
                 'name' => 'Saepurohman Sidik',
                 'email' => 'saepurohman.sidik@karmapack.id',
                 'foto' => NULL,
                 'username' => 'saepurohman-sidik202303172345567',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3268,16 +3268,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            171 =>
-            array(
-                'id' => 198,
+            171 => 
+            array (
+                'id' => '198',
                 'name' => 'Dahi Sugianto',
                 'email' => 'dahi.sugianto@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dahi-sugianto202303172345563',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3287,16 +3287,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            172 =>
-            array(
-                'id' => 199,
+            172 => 
+            array (
+                'id' => '199',
                 'name' => 'Asep Sumardani',
                 'email' => 'asep.sumardani@karmapack.id',
                 'foto' => NULL,
                 'username' => 'asep-sumardani202303172345564',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3306,16 +3306,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            173 =>
-            array(
-                'id' => 200,
+            173 => 
+            array (
+                'id' => '200',
                 'name' => 'Samsul Kamil',
                 'email' => 'samsul.kamil@karmapack.id',
                 'foto' => NULL,
                 'username' => 'samsul-kamil202303172345567',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3325,16 +3325,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            174 =>
-            array(
-                'id' => 201,
+            174 => 
+            array (
+                'id' => '201',
                 'name' => 'M Lutfi K.N',
                 'email' => 'm.lutfi.k.n@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-lutfi-k-n202303172345567',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3344,16 +3344,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            175 =>
-            array(
-                'id' => 202,
+            175 => 
+            array (
+                'id' => '202',
                 'name' => 'Bais',
                 'email' => 'bais@karmapack.id',
                 'foto' => NULL,
                 'username' => 'bais2023031723455610',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3363,16 +3363,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            176 =>
-            array(
-                'id' => 203,
+            176 => 
+            array (
+                'id' => '203',
                 'name' => 'Erpi Nurapriani',
                 'email' => 'erpi.nurapriani@karmapack.id',
                 'foto' => NULL,
                 'username' => 'erpi-nurapriani202303172345569',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3382,16 +3382,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:56',
                 'updated_at' => '2023-03-17 23:45:56',
             ),
-            177 =>
-            array(
-                'id' => 204,
+            177 => 
+            array (
+                'id' => '204',
                 'name' => 'Ankri Andria',
                 'email' => 'ankri.andria@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ankri-andria202303172345566',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3401,16 +3401,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            178 =>
-            array(
-                'id' => 205,
+            178 => 
+            array (
+                'id' => '205',
                 'name' => 'Maulana Yusuf',
                 'email' => 'maulana.yusuf@karmapack.id',
                 'foto' => NULL,
                 'username' => 'maulana-yusuf202303172345575',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3420,16 +3420,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            179 =>
-            array(
-                'id' => 206,
+            179 => 
+            array (
+                'id' => '206',
                 'name' => 'Rini Shofinazah',
                 'email' => 'rini.shofinazah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rini-shofinazah202303172345573',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3439,16 +3439,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            180 =>
-            array(
-                'id' => 207,
+            180 => 
+            array (
+                'id' => '207',
                 'name' => 'Silpi Amelia',
                 'email' => 'silpi.amelia@karmapack.id',
                 'foto' => NULL,
                 'username' => 'silpi-amelia202303172345576',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3458,16 +3458,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            181 =>
-            array(
-                'id' => 208,
+            181 => 
+            array (
+                'id' => '208',
                 'name' => 'M Ichasn Sukmana',
                 'email' => 'm.ichasn.sukmana@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-ichasn-sukmana202303172345576',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3477,16 +3477,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            182 =>
-            array(
-                'id' => 209,
+            182 => 
+            array (
+                'id' => '209',
                 'name' => 'Andan Hasim',
                 'email' => 'andan.hasim@karmapack.id',
                 'foto' => NULL,
                 'username' => 'andan-hasim202303172345575',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3496,16 +3496,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            183 =>
-            array(
-                'id' => 210,
+            183 => 
+            array (
+                'id' => '210',
                 'name' => 'Ramdan',
                 'email' => 'ramdan.uin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ramdan202303172345572',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3515,16 +3515,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            184 =>
-            array(
-                'id' => 211,
+            184 => 
+            array (
+                'id' => '211',
                 'name' => 'Ripdar',
                 'email' => 'ripdar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ripdar202303172345578',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3534,16 +3534,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            185 =>
-            array(
-                'id' => 212,
+            185 => 
+            array (
+                'id' => '212',
                 'name' => 'Abdul Pawaj',
                 'email' => 'abdul.pawaj@karmapack.id',
                 'foto' => NULL,
                 'username' => 'abdul-pawaj2023031723455710',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3553,16 +3553,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:57',
                 'updated_at' => '2023-03-17 23:45:57',
             ),
-            186 =>
-            array(
-                'id' => 213,
+            186 => 
+            array (
+                'id' => '213',
                 'name' => 'Asep Diden',
                 'email' => 'asep.diden@karmapack.id',
                 'foto' => NULL,
                 'username' => 'asep-diden202303172345577',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3572,16 +3572,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            187 =>
-            array(
-                'id' => 214,
+            187 => 
+            array (
+                'id' => '214',
                 'name' => 'Maulana Akbar',
                 'email' => 'maulana.akbar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'maulana-akbar202303172345589',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3591,16 +3591,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            188 =>
-            array(
-                'id' => 215,
+            188 => 
+            array (
+                'id' => '215',
                 'name' => 'Maya Syifa Kamila',
                 'email' => 'maya.syifa.kamila@karmapack.id',
                 'foto' => NULL,
                 'username' => 'maya-syifa-kamila202303172345587',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3610,16 +3610,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            189 =>
-            array(
-                'id' => 216,
+            189 => 
+            array (
+                'id' => '216',
                 'name' => 'ika Santika',
                 'email' => 'ika.santika@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ika-santika202303172345583',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3629,16 +3629,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            190 =>
-            array(
-                'id' => 217,
+            190 => 
+            array (
+                'id' => '217',
                 'name' => 'Rina Melati',
                 'email' => 'rina.melati@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rina-melati202303172345585',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3648,16 +3648,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            191 =>
-            array(
-                'id' => 218,
+            191 => 
+            array (
+                'id' => '218',
                 'name' => 'Siti Yani',
                 'email' => 'siti.yani@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-yani202303172345587',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3667,16 +3667,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            192 =>
-            array(
-                'id' => 219,
+            192 => 
+            array (
+                'id' => '219',
                 'name' => 'Rudi Habibi',
                 'email' => 'rudi.habibi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rudi-habibi202303172345581',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3686,16 +3686,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            193 =>
-            array(
-                'id' => 220,
+            193 => 
+            array (
+                'id' => '220',
                 'name' => 'Deni Nurhidayat',
                 'email' => 'deni.nurhidayat@karmapack.id',
                 'foto' => NULL,
                 'username' => 'deni-nurhidayat202303172345587',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3705,16 +3705,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            194 =>
-            array(
-                'id' => 221,
+            194 => 
+            array (
+                'id' => '221',
                 'name' => 'Ilham Rahmanto',
                 'email' => 'ilham.rahmanto@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ilham-rahmanto202303172345583',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3724,16 +3724,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:58',
                 'updated_at' => '2023-03-17 23:45:58',
             ),
-            195 =>
-            array(
-                'id' => 222,
+            195 => 
+            array (
+                'id' => '222',
                 'name' => 'M Iqbal Fauzi',
                 'email' => 'm.iqbal.fauzi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-iqbal-fauzi202303172345582',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3743,16 +3743,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            196 =>
-            array(
-                'id' => 223,
+            196 => 
+            array (
+                'id' => '223',
                 'name' => 'Anas Bayan',
                 'email' => 'anas.bayan@karmapack.id',
                 'foto' => NULL,
                 'username' => 'anas-bayan202303172345594',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3762,16 +3762,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            197 =>
-            array(
-                'id' => 224,
+            197 => 
+            array (
+                'id' => '224',
                 'name' => 'Cep Ilyas Amirulloh',
                 'email' => 'cep.ilyas.amirulloh@karmapack.id',
                 'foto' => NULL,
                 'username' => 'cep-ilyas-amirulloh202303172345598',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3781,16 +3781,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            198 =>
-            array(
-                'id' => 225,
+            198 => 
+            array (
+                'id' => '225',
                 'name' => 'Dede Munasiroh',
                 'email' => 'dede.munasiroh@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dede-munasiroh202303172345593',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3800,16 +3800,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            199 =>
-            array(
-                'id' => 226,
+            199 => 
+            array (
+                'id' => '226',
                 'name' => 'Harkat Syam Meiriza',
                 'email' => 'harkat.syam.meiriza@karmapack.id',
                 'foto' => NULL,
                 'username' => 'harkat-syam-meiriza202303172345595',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3819,16 +3819,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            200 =>
-            array(
-                'id' => 227,
+            200 => 
+            array (
+                'id' => '227',
                 'name' => 'M Burhanudin',
                 'email' => 'm.burhanudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-burhanudin202303172345594',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3838,16 +3838,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            201 =>
-            array(
-                'id' => 228,
+            201 => 
+            array (
+                'id' => '228',
                 'name' => 'Ridwan Asyari',
                 'email' => 'ridwan.asyari@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ridwan-asyari202303172345592',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3857,16 +3857,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            202 =>
-            array(
-                'id' => 229,
+            202 => 
+            array (
+                'id' => '229',
                 'name' => 'Hasan Munadi',
                 'email' => 'hasan.munadi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'hasan-munadi202303172345599',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3876,16 +3876,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            203 =>
-            array(
-                'id' => 230,
+            203 => 
+            array (
+                'id' => '230',
                 'name' => 'M Syifa A.M',
                 'email' => 'm.syifa.a.m@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-syifa-a-m202303172345597',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3895,16 +3895,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            204 =>
-            array(
-                'id' => 231,
+            204 => 
+            array (
+                'id' => '231',
                 'name' => 'Hikmat Saepul',
                 'email' => 'hikmat.saepul@karmapack.id',
                 'foto' => NULL,
                 'username' => 'hikmat-saepul202303172345593',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3914,16 +3914,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:45:59',
                 'updated_at' => '2023-03-17 23:45:59',
             ),
-            205 =>
-            array(
-                'id' => 232,
+            205 => 
+            array (
+                'id' => '232',
                 'name' => 'Robi Naufal Julian',
                 'email' => 'robi.naufal.julian@karmapack.id',
                 'foto' => NULL,
                 'username' => 'robi-naufal-julian202303172345597',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3933,16 +3933,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            206 =>
-            array(
-                'id' => 233,
+            206 => 
+            array (
+                'id' => '233',
                 'name' => 'M Ali Idrus',
                 'email' => 'm.ali.idrus@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-ali-idrus202303172346009',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3952,16 +3952,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            207 =>
-            array(
-                'id' => 234,
+            207 => 
+            array (
+                'id' => '234',
                 'name' => 'M Rohman',
                 'email' => 'm.rohman@karmapack.id',
                 'foto' => NULL,
                 'username' => 'm-rohman202303172346001',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3971,16 +3971,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            208 =>
-            array(
-                'id' => 235,
+            208 => 
+            array (
+                'id' => '235',
                 'name' => 'Agung',
                 'email' => 'agung@karmapack.id',
                 'foto' => NULL,
                 'username' => 'agung202303172346006',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -3990,16 +3990,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            209 =>
-            array(
-                'id' => 236,
+            209 => 
+            array (
+                'id' => '236',
                 'name' => 'Sintia J S',
                 'email' => 'sintia.j.s@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sintia-j-s202303172346007',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4009,16 +4009,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            210 =>
-            array(
-                'id' => 237,
+            210 => 
+            array (
+                'id' => '237',
                 'name' => 'Bahrul Ulum',
                 'email' => 'bahrul.ulum@karmapack.id',
                 'foto' => NULL,
                 'username' => 'bahrul-ulum202303172346001',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4028,16 +4028,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            211 =>
-            array(
-                'id' => 238,
+            211 => 
+            array (
+                'id' => '238',
                 'name' => 'Puad Rijan Pauzi',
                 'email' => 'puad.rijan.pauzi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'puad-rijan-pauzi202303172346003',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4047,16 +4047,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            212 =>
-            array(
-                'id' => 239,
+            212 => 
+            array (
+                'id' => '239',
                 'name' => 'Desanti',
                 'email' => 'desanti@karmapack.id',
                 'foto' => NULL,
                 'username' => 'desanti202303172346006',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4066,16 +4066,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            213 =>
-            array(
-                'id' => 240,
+            213 => 
+            array (
+                'id' => '240',
                 'name' => 'Yeti Setiawati',
                 'email' => 'yeti.setiawati@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yeti-setiawati202303172346001',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4085,16 +4085,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            214 =>
-            array(
-                'id' => 241,
+            214 => 
+            array (
+                'id' => '241',
                 'name' => 'Sipa Saripah',
                 'email' => 'sipa.saripah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sipa-saripah202303172346001',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4104,16 +4104,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:00',
                 'updated_at' => '2023-03-17 23:46:00',
             ),
-            215 =>
-            array(
-                'id' => 242,
+            215 => 
+            array (
+                'id' => '242',
                 'name' => 'Akmal',
                 'email' => 'akmal@karmapack.id',
                 'foto' => NULL,
                 'username' => 'akmal202303172346004',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4123,16 +4123,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            216 =>
-            array(
-                'id' => 243,
+            216 => 
+            array (
+                'id' => '243',
                 'name' => 'Yamiluki',
                 'email' => 'yamiluki@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yamiluki2023031723460110',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4142,16 +4142,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            217 =>
-            array(
-                'id' => 244,
+            217 => 
+            array (
+                'id' => '244',
                 'name' => 'Riska',
                 'email' => 'riska@karmapack.id',
                 'foto' => NULL,
                 'username' => 'riska2023031723460110',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4161,16 +4161,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            218 =>
-            array(
-                'id' => 245,
+            218 => 
+            array (
+                'id' => '245',
                 'name' => 'Yunus',
                 'email' => 'yunus@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yunus2023031723460110',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4180,16 +4180,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            219 =>
-            array(
-                'id' => 246,
+            219 => 
+            array (
+                'id' => '246',
                 'name' => 'Arip',
                 'email' => 'arip@karmapack.id',
                 'foto' => NULL,
                 'username' => 'arip2023031723460110',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4199,16 +4199,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            220 =>
-            array(
-                'id' => 247,
+            220 => 
+            array (
+                'id' => '247',
                 'name' => 'Yeli',
                 'email' => 'yeli@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yeli202303172346015',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4218,16 +4218,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            221 =>
-            array(
-                'id' => 248,
+            221 => 
+            array (
+                'id' => '248',
                 'name' => 'Siti Robiah Adawiah',
                 'email' => 'siti.robiah.adawiah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'siti-robiah-adawiah202303172346018',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4237,16 +4237,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            222 =>
-            array(
-                'id' => 249,
+            222 => 
+            array (
+                'id' => '249',
                 'name' => 'Hanita',
                 'email' => 'hanita@karmapack.id',
                 'foto' => NULL,
                 'username' => 'hanita202303172346015',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4256,16 +4256,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            223 =>
-            array(
-                'id' => 250,
+            223 => 
+            array (
+                'id' => '250',
                 'name' => 'Supiyandi',
                 'email' => 'supiyandi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'supiyandi202303172346017',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4275,16 +4275,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            224 =>
-            array(
-                'id' => 251,
+            224 => 
+            array (
+                'id' => '251',
                 'name' => 'Ramdan UNINUS',
                 'email' => 'ramdan.uninus@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ramdan-uninus202303172346018',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4294,16 +4294,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:01',
                 'updated_at' => '2023-03-17 23:46:01',
             ),
-            225 =>
-            array(
-                'id' => 252,
+            225 => 
+            array (
+                'id' => '252',
                 'name' => 'Rina Pujianti',
                 'email' => 'rina.pujianti@karmapack.id',
                 'foto' => NULL,
                 'username' => 'rina-pujianti202303172346013',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4313,16 +4313,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            226 =>
-            array(
-                'id' => 253,
+            226 => 
+            array (
+                'id' => '253',
                 'name' => 'Dera',
                 'email' => 'dera@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dera202303172346025',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4332,16 +4332,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            227 =>
-            array(
-                'id' => 254,
+            227 => 
+            array (
+                'id' => '254',
                 'name' => 'Arip Padillah',
                 'email' => 'arip.padillah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'arip-padillah202303172346028',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4351,16 +4351,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            228 =>
-            array(
-                'id' => 255,
+            228 => 
+            array (
+                'id' => '255',
                 'name' => 'Deuis Suci Wulansari',
                 'email' => 'deuis.suci.wulansari@karmapack.id',
                 'foto' => NULL,
                 'username' => 'deuis-suci-wulansari202303172346024',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4370,16 +4370,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            229 =>
-            array(
-                'id' => 256,
+            229 => 
+            array (
+                'id' => '256',
                 'name' => 'Eva Puspita',
                 'email' => 'eva.puspita@karmapack.id',
                 'foto' => NULL,
                 'username' => 'eva-puspita202303172346025',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4389,16 +4389,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            230 =>
-            array(
-                'id' => 257,
+            230 => 
+            array (
+                'id' => '257',
                 'name' => 'Masud',
                 'email' => 'masud@karmapack.id',
                 'foto' => NULL,
                 'username' => 'masud2023031723460210',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4408,16 +4408,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            231 =>
-            array(
-                'id' => 258,
+            231 => 
+            array (
+                'id' => '258',
                 'name' => 'Aris Munandar',
                 'email' => 'aris.munandar@karmapack.id',
                 'foto' => NULL,
                 'username' => 'aris-munandar2023031723460210',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4427,16 +4427,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            232 =>
-            array(
-                'id' => 259,
+            232 => 
+            array (
+                'id' => '259',
                 'name' => 'Neng Maria Ulfa',
                 'email' => 'neng.maria.ulfa@karmapack.id',
                 'foto' => NULL,
                 'username' => 'neng-maria-ulfa202303172346025',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4446,16 +4446,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            233 =>
-            array(
-                'id' => 260,
+            233 => 
+            array (
+                'id' => '260',
                 'name' => 'Riyana Abdul Rijak',
                 'email' => 'riyana.abdul.rijak@karmapack.id',
                 'foto' => NULL,
                 'username' => 'riyana-abdul-rijak202303172346025',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4465,16 +4465,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            234 =>
-            array(
-                'id' => 261,
+            234 => 
+            array (
+                'id' => '261',
                 'name' => 'Tita Khoerunisa',
                 'email' => 'tita.khoerunisa@karmapack.id',
                 'foto' => NULL,
                 'username' => 'tita-khoerunisa202303172346029',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4484,16 +4484,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:02',
                 'updated_at' => '2023-03-17 23:46:02',
             ),
-            235 =>
-            array(
-                'id' => 262,
+            235 => 
+            array (
+                'id' => '262',
                 'name' => 'Ikang',
                 'email' => 'ikang@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ikang202303172346022',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4503,16 +4503,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            236 =>
-            array(
-                'id' => 263,
+            236 => 
+            array (
+                'id' => '263',
                 'name' => 'Acep akid',
                 'email' => 'acep.akid@karmapack.id',
                 'foto' => NULL,
                 'username' => 'acep-akid202303172346036',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4522,16 +4522,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            237 =>
-            array(
-                'id' => 264,
+            237 => 
+            array (
+                'id' => '264',
                 'name' => 'bambang',
                 'email' => 'bambang@karmapack.id',
                 'foto' => NULL,
                 'username' => 'bambang202303172346031',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4541,16 +4541,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            238 =>
-            array(
-                'id' => 265,
+            238 => 
+            array (
+                'id' => '265',
                 'name' => 'Bagja',
                 'email' => 'bagja@karmapack.id',
                 'foto' => NULL,
                 'username' => 'bagja202303172346035',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4560,16 +4560,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            239 =>
-            array(
-                'id' => 266,
+            239 => 
+            array (
+                'id' => '266',
                 'name' => 'Igun',
                 'email' => 'igun@karmapack.id',
                 'foto' => NULL,
                 'username' => 'igun202303172346037',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4579,16 +4579,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            240 =>
-            array(
-                'id' => 267,
+            240 => 
+            array (
+                'id' => '267',
                 'name' => 'nadmudin',
                 'email' => 'nadmudin@karmapack.id',
                 'foto' => NULL,
                 'username' => 'nadmudin202303172346031',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4598,16 +4598,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            241 =>
-            array(
-                'id' => 268,
+            241 => 
+            array (
+                'id' => '268',
                 'name' => 'Midah',
                 'email' => 'midah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'midah202303172346032',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4617,16 +4617,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            242 =>
-            array(
-                'id' => 269,
+            242 => 
+            array (
+                'id' => '269',
                 'name' => 'Lesti',
                 'email' => 'lesti@karmapack.id',
                 'foto' => NULL,
                 'username' => 'lesti202303172346031',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4636,16 +4636,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            243 =>
-            array(
-                'id' => 270,
+            243 => 
+            array (
+                'id' => '270',
                 'name' => 'Desi',
                 'email' => 'desi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'desi202303172346037',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4655,16 +4655,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            244 =>
-            array(
-                'id' => 271,
+            244 => 
+            array (
+                'id' => '271',
                 'name' => 'Dahi',
                 'email' => 'dahi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'dahi202303172346032',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4674,16 +4674,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            245 =>
-            array(
-                'id' => 272,
+            245 => 
+            array (
+                'id' => '272',
                 'name' => 'Asep',
                 'email' => 'asep@karmapack.id',
                 'foto' => NULL,
                 'username' => 'asep202303172346034',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4693,16 +4693,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:03',
                 'updated_at' => '2023-03-17 23:46:03',
             ),
-            246 =>
-            array(
-                'id' => 273,
+            246 => 
+            array (
+                'id' => '273',
                 'name' => 'Heri L',
                 'email' => 'heri.l@karmapack.id',
                 'foto' => NULL,
                 'username' => 'heri-l202303172346048',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4712,16 +4712,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            247 =>
-            array(
-                'id' => 274,
+            247 => 
+            array (
+                'id' => '274',
                 'name' => 'Andri',
                 'email' => 'andri@karmapack.id',
                 'foto' => NULL,
                 'username' => 'andri202303172346046',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4731,16 +4731,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            248 =>
-            array(
-                'id' => 275,
+            248 => 
+            array (
+                'id' => '275',
                 'name' => 'Ajeng',
                 'email' => 'ajeng@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ajeng202303172346041',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4750,16 +4750,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            249 =>
-            array(
-                'id' => 276,
+            249 => 
+            array (
+                'id' => '276',
                 'name' => 'Apip',
                 'email' => 'apip@karmapack.id',
                 'foto' => NULL,
                 'username' => 'apip202303172346049',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4769,16 +4769,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            250 =>
-            array(
-                'id' => 277,
+            250 => 
+            array (
+                'id' => '277',
                 'name' => 'Arul',
                 'email' => 'arul@karmapack.id',
                 'foto' => NULL,
                 'username' => 'arul202303172346041',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4788,16 +4788,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            251 =>
-            array(
-                'id' => 278,
+            251 => 
+            array (
+                'id' => '278',
                 'name' => 'Juju',
                 'email' => 'juju@karmapack.id',
                 'foto' => NULL,
                 'username' => 'juju202303172346043',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4807,16 +4807,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            252 =>
-            array(
-                'id' => 279,
+            252 => 
+            array (
+                'id' => '279',
                 'name' => 'Miftah',
                 'email' => 'miftah@karmapack.id',
                 'foto' => NULL,
                 'username' => 'miftah2023031723460410',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4826,16 +4826,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            253 =>
-            array(
-                'id' => 280,
+            253 => 
+            array (
+                'id' => '280',
                 'name' => 'Sesep',
                 'email' => 'sesep@karmapack.id',
                 'foto' => NULL,
                 'username' => 'sesep202303172346044',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4845,16 +4845,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            254 =>
-            array(
-                'id' => 281,
+            254 => 
+            array (
+                'id' => '281',
                 'name' => 'Adisaf',
                 'email' => 'adisaf@karmapack.id',
                 'foto' => NULL,
                 'username' => 'adisaf202303172346046',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4864,16 +4864,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            255 =>
-            array(
-                'id' => 282,
+            255 => 
+            array (
+                'id' => '282',
                 'name' => 'Ridwan Effendi',
                 'email' => 'ridwan.effendi@karmapack.id',
                 'foto' => NULL,
                 'username' => 'ridwan-effendi202303172346047',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4883,16 +4883,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:04',
                 'updated_at' => '2023-03-17 23:46:04',
             ),
-            256 =>
-            array(
-                'id' => 283,
+            256 => 
+            array (
+                'id' => '283',
                 'name' => 'Heri Koeswanto',
                 'email' => 'heri.koeswanto@karmapack.id',
                 'foto' => NULL,
                 'username' => 'heri-koeswanto202303172346052',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4902,16 +4902,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:05',
                 'updated_at' => '2023-03-17 23:46:05',
             ),
-            257 =>
-            array(
-                'id' => 284,
+            257 => 
+            array (
+                'id' => '284',
                 'name' => 'Tabah Nurohman',
                 'email' => 'tabah.nurohman@karmapack.id',
                 'foto' => NULL,
                 'username' => 'tabah-nurohman202303172346059',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4921,16 +4921,16 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:05',
                 'updated_at' => '2023-03-17 23:46:05',
             ),
-            258 =>
-            array(
-                'id' => 285,
+            258 => 
+            array (
+                'id' => '285',
                 'name' => 'Yopi Ahmad Alpatih',
                 'email' => 'yopi.ahmad.alpatih@karmapack.id',
                 'foto' => NULL,
                 'username' => 'yopi-ahmad-alpatih202303172346059',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
-                'active' => 1,
+                'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'two_factor_confirmed_at' => NULL,
@@ -4940,6 +4940,46 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-17 23:46:05',
                 'updated_at' => '2023-03-17 23:46:05',
             ),
+            259 => 
+            array (
+                'id' => '286',
+                'name' => 'Tes sensus',
+                'email' => 'DavinKoss@mail.com',
+                'foto' => NULL,
+                'username' => 'tes-sensus20230318052108',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$iZyAQtqdehtBckKKHMUFfOeizdE8dePTn/fX1SVcmtv.PBSAwcuFi',
+                'active' => '1',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2023-03-18 05:21:08',
+                'updated_at' => '2023-03-18 05:21:08',
+            ),
+            260 => 
+            array (
+                'id' => '287',
+                'name' => 'M Dendi Syahril Sidik',
+                'email' => 'syahrildendi5@gmail.com',
+                'foto' => NULL,
+                'username' => 'm-dendi-syahril-sidik20230318230724',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$zfVpeQAcs9G4OoOQmz7voeXFITj5oYIMWpayca84WthdMK9Y1NpM2',
+                'active' => '1',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'remember_token' => 'XZ7JfqCpTAmscLjUx6Fd8xFkP9ew3n80OiBf11fJepT8G0aapYkdQsj5Ddf4',
+                'created_at' => '2023-03-18 23:07:24',
+                'updated_at' => '2023-03-18 23:07:24',
+            ),
         ));
+        
+        
     }
 }
