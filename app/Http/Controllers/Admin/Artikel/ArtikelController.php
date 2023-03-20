@@ -38,7 +38,7 @@ class ArtikelController extends Controller
         $page_attr = [
             'title' => 'Daftar Artikel',
             'breadcrumbs' => [
-                ['name' => 'Halaman Utama', 'url' => 'admin.dashboard'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'Artikel'],
             ]
         ];
@@ -56,6 +56,8 @@ class ArtikelController extends Controller
             ],
             'navigation' => $navigation
         ];
+
+        Artikel::homeClearCache();
 
         return view('admin.artikel.data.add', compact('page_attr'));
     }
@@ -120,6 +122,9 @@ class ArtikelController extends Controller
             $this->kategori_store($request->kategori, $model->id);
             $this->tag_store($request->tag, $model->id);
             DB::commit();
+
+            Artikel::homeClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -158,6 +163,9 @@ class ArtikelController extends Controller
             $this->tag_store($request->tag, $model->id);
             $model->save();
             DB::commit();
+
+            Artikel::homeClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -172,6 +180,9 @@ class ArtikelController extends Controller
         try {
             Summernote::delete($artikel->detail);
             $artikel->delete();
+
+            Artikel::homeClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -205,12 +216,10 @@ class ArtikelController extends Controller
 
     private function insert_kategori(string $nama): int
     {
-
-        $kategori = Kategori::create([
-            'nama' => $nama,
-            'slug' => $this->createSlug($nama),
-            'status' => 1,
-        ]);
+        $kategori = new Kategori();
+        $kategori->nama = $nama;
+        $kategori->status = 1;
+        $kategori->save();
         return $kategori->id;
     }
 
@@ -238,17 +247,11 @@ class ArtikelController extends Controller
 
     private function insert_tag(string $nama): int
     {
-        $tag = Tag::create([
-            'nama' => $nama,
-            'slug' => $this->createSlug($nama),
-            'status' => 1,
-        ]);
-        return $tag->id;
-    }
+        $tag = new Tag();
+        $tag->nama = $nama;
+        $tag->status = 1;
+        $tag->save();
 
-    private function createSlug($str, $delimiter = '-')
-    {
-        $slug = strtolower(trim(preg_replace('/[\s-]+/', $delimiter, preg_replace('/[^A-Za-z0-9-]+/', $delimiter, preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $str))))), $delimiter));
-        return $slug;
+        return $tag->id;
     }
 }

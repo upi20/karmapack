@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Galeri;
-use App\Repository\Frontend\GaleriRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GaleriController extends Controller
 {
     public function index(Request $request)
     {
 
-        $params = GaleriRepository::getParams($request);
-        $galeries = GaleriRepository::get($request, 6, $params);
+        $params = $this->getParams($request);
+        $galeries = $this->get($request, 6, $params);
         $filters = (object)[
             'search' => $request->search
         ];
@@ -48,5 +48,41 @@ class GaleriController extends Controller
         ];
 
         return view('frontend.galeri.detail', compact('page_attr', 'model'));
+    }
+
+    public function getParams(Request $request): string
+    {
+        $filters = (object)[
+            'search' => $request->search,
+        ];
+
+        // filter to url
+        $params = "";
+        foreach ($filters as $key => $filter) {
+            $params .= $params ? ($filter ? "&" : '') : '';
+            $params .= $filter ? "$key=$filter" : '';
+        }
+
+        return $params;
+    }
+
+    public function get(Request $request, int $paginate = 6, ?string $params = null): object
+    {
+        $model = Galeri::where('status', '=', 1)->select([DB::raw('*'), DB::raw("date_format(tanggal, '%d %M %Y') as tanggal_str")])
+            ->orderBy('tanggal', 'desc');
+
+        if ($request->search) {
+            $model->whereRaw("(
+                nama like '%$request->search%' or
+                foto like '%$request->search%' or
+                slug like '%$request->search%' or
+                keterangan like '%$request->search%'
+            )");
+        }
+
+        // model->item get access
+        $model = $model->paginate($paginate)
+            ->appends(request()->query());
+        return $model;
     }
 }

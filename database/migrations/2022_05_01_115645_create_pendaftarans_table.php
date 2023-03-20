@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pendaftaran;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pendaftarans', function (Blueprint $table) {
+        Schema::create(Pendaftaran::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->text('deskripsi');
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pendaftarans');
+        Schema::dropIfExists(Pendaftaran::tableName);
     }
 };

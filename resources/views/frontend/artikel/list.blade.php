@@ -49,15 +49,10 @@
                 <div class="col-lg-9">
                     <div class="row y-gap-30">
                         @foreach ($articles as $a)
-                            @php
-                                $get_id_yt = check_image_youtube($a->detail);
-                                $youtube = $get_id_yt ? true : false;
-                                $foto = $a->foto ? asset($a->foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
-                            @endphp
                             <div class="col-lg-4 col-md-6" data-anim-child="slide-left delay-{{ $anim++ }}">
                                 <a href="blog-single.html" class="blogCard -type-1">
                                     <div class="blogCard__image">
-                                        <img class="w-1/1 rounded-8" src="{{ $foto }}" alt="{{ $a->nama }}"
+                                        <img class="w-1/1 rounded-8" src="{{ $a->fotoUrl() }}" alt="{{ $a->nama }}"
                                             style="width: 100%; height: 250px; object-fit: cover; border-radius:16px">
                                     </div>
                                     <div class="blogCard__content mt-20">
@@ -91,12 +86,15 @@
 
                     <div data-anim="slide-up delay-3" class="sidebar -blog">
                         <div class="sidebar__item">
-                            <h5 class="sidebar__title">Categories</h5>
-
+                            <h5 class="sidebar__title">Kategori</h5>
                             <div class="sidebar-content -list">
                                 @foreach ($categories as $kategori)
-                                    <a class="{{ $kategori_selected ? ($kategori_selected->slug == $kategori->slug ? 'text-purple-1' : 'text-dark-1') : 'text-dark-1' }}"
-                                        href="{{ $kategori_selected ? ($kategori_selected->slug == $kategori->slug ? route('artikel') : url("artikel?kategori=$kategori->slug")) : url("artikel?kategori=$kategori->slug") }}">
+                                    @php
+                                        $is_active = $kategori_selected ? $kategori_selected->slug == $kategori->slug : false;
+                                        $rQuery = unsetByKey($request->query(), ['kategori']);
+                                    @endphp
+                                    <a class="{{ $is_active ? 'text-purple-1' : 'text-dark-1' }}"
+                                        href="{{ route('artikel', $is_active ? $rQuery : array_merge($rQuery, ['kategori' => $kategori->slug])) }}">
                                         {{ $kategori->nama }} <span class="fw-800">({{ $kategori->artikel }})</span>
                                     </a>
                                 @endforeach
@@ -104,13 +102,16 @@
                         </div>
 
                         <div class="sidebar__item">
-                            <h5 class="sidebar__title">Tags</h5>
-
+                            <h5 class="sidebar__title">Tag</h5>
                             <div class="sidebar-content -tags">
                                 @foreach ($tags as $tag)
+                                    @php
+                                        $is_active = $tag_selected ? $tag_selected->slug == $tag->slug : false;
+                                        $rQuery = unsetByKey($request->query(), ['tag']);
+                                    @endphp
                                     <div class="sidebar-tag">
-                                        <a class="text-11 fw-500 {{ $tag_selected ? ($tag_selected->slug == $tag->slug ? 'text-purple-1' : 'text-dark-1') : 'text-dark-1' }}"
-                                            href="{{ $tag_selected ? ($tag_selected->slug == $tag->slug ? route('artikel') : url("artikel?tag=$tag->slug")) : url("artikel?tag=$tag->slug") }}">
+                                        <a class="text-11 fw-500 {{ $is_active ? 'text-purple-1' : 'text-dark-1' }}"
+                                            href="{{ route('artikel', $is_active ? $rQuery : array_merge($rQuery, ['tag' => $tag->slug])) }}">
                                             {{ $tag->nama }}
                                         </a>
                                     </div>

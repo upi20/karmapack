@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artikel\Artikel;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artikel', function (Blueprint $table) {
+        Schema::create(Artikel::tableName, function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
             $table->string('slug')->unique();
@@ -29,17 +30,6 @@ return new class extends Migration
                 ->references('id')->on('users')
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
-
-            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
-            // $table->foreign('created_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
-            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
-            // $table->foreign('updated_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
         });
     }
 
@@ -50,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artikel');
+        Schema::dropIfExists(Artikel::tableName);
     }
 };

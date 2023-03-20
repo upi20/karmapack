@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\KataAlumni;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kata_alumnis', function (Blueprint $table) {
+        Schema::create(KataAlumni::tableName, function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id', false, true)->nullable()->default(null);
             $table->string('sebagai');
@@ -37,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kata_alumnis');
+        Schema::dropIfExists(KataAlumni::tableName);
     }
 };

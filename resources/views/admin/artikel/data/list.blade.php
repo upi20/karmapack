@@ -12,7 +12,7 @@
             @if ($can_insert)
                 <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
                     data-bs-effect="effect-scale">
-                    <i class="fas fa-plus"></i> Tambah
+                    <i class="fas fa-plus"></i> Tambah Artikel
                 </a>
             @endif
         </div>
@@ -49,11 +49,14 @@
                     </div>
                 </div>
             </div>
+
             <table class="table table-striped" id="tbl_main">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Lihat</th>
+                        <th>Slug</th>
                         <th>Kilasan</th>
                         <th>Tanggal</th>
                         <th>Status</th>
@@ -114,6 +117,19 @@
                         name: 'nama'
                     },
                     {
+                        data: 'slug',
+                        name: 'slug',
+                        render(data, type, full, meta) {
+                            return data ? `
+                            <a class="btn btn-primary btn-sm" target="_blank" href="{{ url('artikel') }}/${data}?preview=1"><i class="fas fa-eye" aria-hidden="true"></i> </a>
+                            ` : '';
+                        },
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug'
+                    },
+                    {
                         data: 'excerpt',
                         name: 'excerpt'
                     },
@@ -135,26 +151,24 @@
                         },
                         className: 'text-nowrap'
                     },
-                    {
+                    ...(can_update || can_delete ? [{
                         data: 'id',
                         name: 'id',
                         render(data, type, full, meta) {
-                            const btn_lihat =
-                                `<a class="btn btn-success btn-sm mx-1" target="_blank" href="{{ url('artikel') }}/${full.slug??''}?preview=1" data-toggle="tooltip" title="Lihat Artikel">
-                                    <i class="fas fa-eye" aria-hidden="true"></i> </a>`;
-                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm mx-1" data-toggle="tooltip" title="Ubah Data"
+                            const btn_update = can_update ? `<a class="btn btn-rounded btn-primary btn-sm my-1" title="Ubah Data"
                                 href="{{ url(h_prefix_uri('edit')) }}/${data}" >
-                                <i class="fas fa-edit"></i></a>` : '';
-                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm mx-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
-                                <i class="fas fa-trash"></i></button>` : '';
-                            return btn_lihat + btn_update + btn_delete;
+                                <i class="fas fa-edit"></i> Ubah
+                                </a>` : '';
+                            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm my-1" title="Hapus Data" onClick="deleteFunc('${data}')">
+                                <i class="fas fa-trash"></i> Hapus
+                                </button>` : '';
+                            return btn_update + btn_delete;
                         },
-                        orderable: false,
-                        className: 'text-nowrap'
-                    },
+                        orderable: false
+                    }] : []),
                 ],
                 order: [
-                    [3, 'desc']
+                    [5, 'desc']
                 ],
                 language: {
                     url: datatable_indonesia_language_url
@@ -180,8 +194,8 @@
 
         function deleteFunc(id) {
             swal.fire({
-                title: 'Apakah anda yakin?',
-                text: "Apakah anda yakin akan menghapus data ini ?",
+                title: 'Are you sure?',
+                text: "Are you sure you want to proceed ?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes'
@@ -207,7 +221,7 @@
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Berhasil Menghapus Data',
+                                title: 'Data deleted successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })

@@ -43,7 +43,8 @@ class TagController extends Controller
         $page_attr = [
             'title' => 'Artikel Tag',
             'breadcrumbs' => [
-                ['name' => 'Tag'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Artikel'],
             ]
         ];
         return view('admin.artikel.tag', compact('page_attr'));

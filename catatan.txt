@@ -24,6 +24,6 @@ date-input-str
 
 
 // PR
-Email validation
-reset password
-Login Via Google
+[x] Email validation
+[x] reset password
+[x] Login Via Google

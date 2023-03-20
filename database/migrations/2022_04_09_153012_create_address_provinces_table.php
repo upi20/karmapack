@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Address\Province;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('address_provinces', function (Blueprint $table) {
+        Schema::create(Province::tableName, function (Blueprint $table) {
             $table->char('id', 2)->primary();
             $table->string('name');
             $table->timestamps();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address_provinces');
+        Schema::dropIfExists(Province::tableName);
     }
 };

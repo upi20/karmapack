@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artikel\TagArtikel;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artikel_tag_item', function (Blueprint $table) {
+        Schema::create(TagArtikel::tableName, function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->integer('artikel_id');
             $table->integer('tag_id');
             $table->timestamps();
-
 
             $table->foreign('artikel_id')
                 ->references('id')->on('artikel')
@@ -28,17 +28,6 @@ return new class extends Migration
                 ->references('id')->on('artikel_tag')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-
-            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
-            // $table->foreign('created_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
-            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
-            // $table->foreign('updated_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
         });
     }
 
@@ -49,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artikel_tag_detail');
+        Schema::dropIfExists(TagArtikel::tableName);
     }
 };

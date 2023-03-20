@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Galeri;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galeri', function (Blueprint $table) {
+        Schema::create(Galeri::tableName, function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
             $table->string('foto')->nullable();
@@ -25,17 +26,6 @@ return new class extends Migration
             $table->text('keterangan')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
-
-            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
-            // $table->foreign('created_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
-            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
-            // $table->foreign('updated_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
         });
     }
 
@@ -46,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeri');
+        Schema::dropIfExists(Galeri::tableName);
     }
 };

@@ -4,25 +4,126 @@ namespace App\Models\Artikel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 use App\Models\Artikel\Kategori;
 use App\Models\Artikel\KategoriArtikel;
 use App\Models\Artikel\Tag;
 use App\Models\Artikel\TagArtikel;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class Artikel extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'slug',
+        'foto',
+        'detail',
+        'excerpt',
+        'counter',
+        'date',
+        'status',
+        'user_id',
+    ];
+
     protected $primaryKey = 'id';
     protected $table = 'artikel';
     const tableName = 'artikel';
     const image_folder = '/assets/artikel';
+    const homeCacheKey = 'homeArtikel';
 
-    public static function topArticle(int $limit = 6)
+    // eloquent
+    public function tags()
+    {
+        return $this->belongsToMany(
+            related: Tag::class,
+            table: TagArtikel::tableName,
+            foreignPivotKey: 'artikel_id',
+            relatedPivotKey: 'tag_id',
+        );
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(
+            related: Kategori::class,
+            table: KategoriArtikel::tableName,
+            foreignPivotKey: 'artikel_id',
+            relatedPivotKey: 'kategori_id',
+        );
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    // inner function
+    public function fotoUrl()
+    {
+        $foto = $this->attributes['foto'];
+        $detail = $this->attributes['detail'];
+
+        $get_id_yt = check_image_youtube($detail);
+        $youtube = $get_id_yt ? true : false;
+        $foto = $youtube ? 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg' : asset($foto);
+
+        return $foto;
+    }
+
+    public function dateFormat()
+    {
+        return date_format(date_create($this->attributes['date']), 'd F Y');
+    }
+
+    public function tagKeyword()
+    {
+        $artikel_id = $this->attributes['id'];
+        $a = TagArtikel::tableName;
+        $b = Tag::tableName;
+        $result = TagArtikel::selectRaw("GROUP_CONCAT($b.nama) as text")
+            ->where("$a.artikel_id", '=', $artikel_id)->join($b, "$b.id", '=', "$a.tag_id")
+            ->first();
+        return $result ? $result->text : '';
+    }
+
+    public function kategoriKeyword()
+    {
+        $artikel_id = $this->attributes['id'];
+        $a = KategoriArtikel::tableName;
+        $b = Kategori::tableName;
+        $result = KategoriArtikel::selectRaw("GROUP_CONCAT($b.nama) as text")
+            ->where("$a.artikel_id", '=', $artikel_id)->join($b, "$b.id", '=', "$a.kategori_id")
+            ->first();
+        return $result ? $result->text : '';
+    }
+
+    public function getArticleByCategory($categories)
+    {
+        if (is_null($categories) || count($categories) < 1) {
+            return [];
+        }
+
+        $list_category = $this->parseId($categories);
+
+        $artikel_id = $this->attributes['id'];
+        return self::getByCategory(kategori_id: $list_category, except_id: $artikel_id);
+    }
+
+    public function parseId($collect)
+    {
+        if (is_null($collect) || count($collect) < 1) {
+            return [];
+        }
+
+        return $collect->map(function ($d) {
+            return $d->id;
+        })->toArray();
+    }
+
+    // static function
+    public static function getTopList(int $limit = 6)
     {
         $model = self::select(['slug', 'foto', 'date', 'detail', 'nama'])
             ->where('status', '=', 1)
@@ -37,117 +138,77 @@ class Artikel extends Model
     {
         $paginate = is_numeric($request->limit) ? $request->limit : 9;
         $a = self::tableName;
-        $b = User::tableName;
 
-        // filter table
-        $c = Kategori::tableName;
-        $d = KategoriArtikel::tableName;
-        $e = Tag::tableName;
-        $f = TagArtikel::tableName;
+        $kat = Kategori::tableName;
+        $kat_item = KategoriArtikel::tableName;
+        $tag = Tag::tableName;
+        $tag_item = TagArtikel::tableName;
 
-        // query
-        $search_kategori = $request->kategori ? "and $c.slug = '$request->kategori'" : '';
-        $kategori = <<<SQL
-            ( select $c.nama from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1 ) as kategori
-        SQL;
+        $model = self::selectRaw("$a.*")->where("$a.status", '=', 1)
+            ->orderBy("$a.date", 'desc')
+            ->orderBy("$a.id", 'desc');
 
-        $kategori_slug = <<<SQL
-            (select $c.slug from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id $search_kategori order by $d.id limit 1) as kategori_slug
-        SQL;
-
-        $search_tag = $request->tag ? "and $e.slug = '$request->tag'" : '';
-        $tag = <<<SQL
-            (select $e.nama from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1) as tag
-        SQL;
-
-        $tag_slug = <<<SQL
-            (select $e.slug from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id $search_tag order by $f.id limit 1) as tag_slug
-        SQL;
-
-        $date_full = <<<SQL
-            date_format($a.date , '%d %M %Y') as date_full
-        SQL;
-
-        $day = <<<SQL
-            date_format($a.date , '%W') as `day`
-        SQL;
-
-        $date_str = <<<SQL
-            date_format($a.date , '%d') as date_str
-        SQL;
-
-        $month_str = <<<SQL
-            date_format($a.date , '%M') as month_str
-        SQL;
-
-        $month = <<<SQL
-            date_format($a.date , '%m') as `month`
-        SQL;
-
-        $year = <<<SQL
-            date_format($a.date , '%Y') as `year`
-        SQL;
-
-        $model = Artikel::select([
-            "$a.slug",
-            "$a.excerpt",
-            "$a.nama",
-            "$a.foto",
-            "$a.detail",
-            "$a.date",
-            "$a.user_id",
-
-            // user
-            DB::raw("$b.name as user"),
-            DB::raw("$b.username as user_username"),
-            DB::raw("$b.foto as user_foto"),
-
-            // slug and categori
-            DB::raw($kategori),
-            DB::raw($kategori_slug),
-            DB::raw($tag),
-            DB::raw($tag_slug),
-            DB::raw($date_full),
-            DB::raw($day),
-            DB::raw($date_str),
-            DB::raw($month_str),
-            DB::raw($month),
-            DB::raw($year),
-        ])
-            ->leftJoin($b, "$b.id", '=', "$a.user_id")
-            ->orderBy('date', 'desc');
-
-        // filter
-        $kategori = '';
         if ($request->kategori) {
-            $kategori = <<<SQL
-                and  ( select count(*) from $c join $d on $d.kategori_id = $c.id where $d.artikel_id = $a.id and $c.slug = '$request->kategori' ) > 0
-            SQL;
+            $model->join($kat_item, "$kat_item.artikel_id", '=', "$a.id")
+                ->join($kat, "$kat_item.kategori_id", '=', "$kat.id")
+                ->where("$kat.slug", $request->kategori);
         }
 
-        $tag = '';
         if ($request->tag) {
-            $tag = <<<SQL
-                and ( select count(*) from $e join $f on $f.tag_id = $e.id where $f.artikel_id = $a.id and $e.slug = '$request->tag' ) > 0
-            SQL;
+            $model->join($tag_item, "$tag_item.artikel_id", '=', "$a.id")
+                ->join($tag, "$tag_item.tag_id", '=', "$tag.id")
+                ->where("$tag.slug", $request->tag);
         }
 
-        // less than date now
-        $date_now = date('Y-m-d');
-        $date_less_than = <<<SQL
-                and ( $a.date <= '$date_now' )
-            SQL;
-        $where = <<<SQL
-            ( ($a.status = 1)
-                $date_less_than
-                $kategori
-                $tag )
-        SQL;
-
-        $model->whereRaw($where);
-
-        // model->item get access
+        if ($request->search) {
+            $search = $request->search;
+            $model->whereRaw("(
+                $a.nama like '%$search%' or
+                $a.slug like '%$search%' or
+                $a.foto like '%$search%' or
+                $a.detail like '%$search%' or
+                $a.excerpt like '%$search%' or
+                $a.counter like '%$search%' or
+                $a.date like '%$search%' or
+                $a.status like '%$search%'
+            )");
+        }
         return $model->paginate($paginate)
             ->appends(request()->query());
+    }
+
+    public static function getByCategory(int|array $kategori_id, int $limit = 6, $except_id = null)
+    {
+        $a = self::tableName;
+        $b = KategoriArtikel::tableName;
+
+        $result = self::selectRaw("$a.*")
+            ->join($b, "$b.artikel_id", '=', "$a.id")
+            ->orderBy("$a.date", 'desc')
+            ->limit($limit);
+
+        if ($except_id !== null) {
+            $result->whereNot("$a.id", $except_id);
+        }
+        if (is_array($kategori_id)) {
+            $result->whereIn("$b.kategori_id", $kategori_id);
+        } else {
+            $result->where("$b.kategori_id", $kategori_id);
+        }
+
+        return $result->get();
+    }
+
+    public static function getHomeViewData()
+    {
+        return Cache::rememberForever(self::homeCacheKey, function () {
+            $get = static::with('user')->orderBy('date', 'desc')->orderBy('id', 'desc')->limit(3)->get();
+            return $get ? $get : [];
+        });
+    }
+
+    public static function homeClearCache()
+    {
+        return Cache::pull(self::homeCacheKey);
     }
 }

@@ -241,3 +241,22 @@ if (!function_exists('get_sosmed')) {
         return $get ? $get->toArray() : [];
     }
 }
+
+
+if (!function_exists('unsetByKey')) {
+    function unsetByKey($array, $key)
+    {
+        if (is_array($key)) {
+            foreach ($key as $k) {
+                if (isset($array[$k])) {
+                    unset($array[$k]);
+                }
+            }
+        } else {
+            if (isset($array[$key])) {
+                unset($array[$key]);
+            }
+        }
+        return $array;
+    }
+}

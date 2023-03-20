@@ -8,7 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Pendaftaran extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'deskripsi',
+        'pengumuman',
+        'no_urut',
+        'dari',
+        'sampai',
+        'route',
+        'foto',
+        'status',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'pendaftarans';
     const tableName = 'pendaftarans';

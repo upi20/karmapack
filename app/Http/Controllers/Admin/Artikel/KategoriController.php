@@ -41,9 +41,10 @@ class KategoriController extends Controller
                 ->make(true);
         }
         $page_attr = [
-            'title' => 'Kategori Kategori',
+            'title' => 'Artikel Kategori',
             'breadcrumbs' => [
-                ['name' => 'Kategori'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Artikel'],
             ]
         ];
         return view('admin.artikel.kategori', compact('page_attr'));

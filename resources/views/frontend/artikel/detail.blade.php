@@ -30,12 +30,15 @@
                 <div class="col-auto">
                     <div data-anim="slide-up delay-1">
                         <h1 class="page-header__title lh-14">{{ $model->nama }}</h1>
+                        @php
+                            $user = $model->user;
+                        @endphp
                         <div class="row">
                             <div class="col-auto">
                                 <a class="d-flex page-header__text"
                                     href="{{ $user->username ? url($user->username) : route('anggota.id', $user->id) }}">
                                     <img src="{{ $user->anggota->fotoUrl() }}"
-                                        onerror="this.src='{{ asset($image_default_user) }}';this.onerror='';"
+                                        onerror="this.src='{{ $user->anggota->fotoUrlDefault() }}';this.onerror='';"
                                         class="author"
                                         style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;"
                                         alt="{{ $user->name }}" />
@@ -115,7 +118,7 @@
 
                             <div class="col-auto">
                                 <div class="row x-gap-10 y-gap-10">
-                                    @foreach ($artikel_tag as $tag)
+                                    @foreach ($model->tags as $tag)
                                         <div class="col-auto">
                                             <a href="{{ url("artikel?tag=$tag->slug") }}"
                                                 class="badge -sm -light-3 text-11 text-dark-1">
@@ -123,7 +126,7 @@
                                             </a>
                                         </div>
                                     @endforeach
-                                    @foreach ($artikel_kategori as $kategori)
+                                    @foreach ($model->categories as $kategori)
                                         <div class="col-auto">
                                             <a href="{{ url("artikel?kategori=$kategori->slug") }}"
                                                 class="badge -sm -light-3 text-11 text-dark-1">

@@ -15,6 +15,7 @@
     "require": {
         "php": "^8.0.2",
         "arcanedev/laravel-settings": "^9.0",
+        "cviebrock/eloquent-sluggable": "^9.0",
         "doctrine/dbal": "^3.3",
         "guzzlehttp/guzzle": "^7.2",
         "haruncpi/laravel-user-activity": "dev-hotfix",

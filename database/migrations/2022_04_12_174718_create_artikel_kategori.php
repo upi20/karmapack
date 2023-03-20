@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artikel\Kategori;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,24 +14,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('artikel_kategori', function (Blueprint $table) {
+        Schema::create(Kategori::tableName, function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
             $table->string('slug')->unique();
             $table->string('foto')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
-
-            // $table->bigInteger('created_by', false, true)->nullable()->default(null);
-            // $table->foreign('created_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
-            // $table->bigInteger('updated_by', false, true)->nullable()->default(null);
-            // $table->foreign('updated_at')
-            //     ->references('id')->on('users')
-            //     ->nullOnDelete()
-            //     ->cascadeOnUpdate();
         });
     }
 
@@ -41,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artikel_kategori');
+        Schema::dropIfExists(Kategori::tableName);
     }
 };
