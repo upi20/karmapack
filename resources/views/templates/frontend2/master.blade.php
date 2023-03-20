@@ -226,6 +226,19 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         }
     </script>
     @yield('javascript')
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHJNB91XME"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FHJNB91XME');
+    </script>
 </body>
 
 </html>

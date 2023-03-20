@@ -254,6 +254,19 @@ $notifikasi = notif_depan_atas();
     <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
     @yield('javascript')
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHJNB91XME"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FHJNB91XME');
+    </script>
 </body>
 
 </html>
