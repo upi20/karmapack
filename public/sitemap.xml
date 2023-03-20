@@ -194,12 +194,12 @@
 </url>
     <url>
         <loc>https://karmapack.id/hilmiff</loc>
-        <lastmod>2023-03-17T20:11:02+07:00</lastmod>
+        <lastmod>2023-03-18T19:56:40+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
     <image:loc>https://karmapack.id/assets/anggota/hilmiff20220901011255.png</image:loc>
-    <image:caption>HILMI FITRIANI FUAIADAH</image:caption>
+    <image:caption>HILMI FITRIANI</image:caption>
 </image:image>
 </url>
     <url>
@@ -494,7 +494,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/maulana_yusuf</loc>
-        <lastmod>2023-03-17T20:02:03+07:00</lastmod>
+        <lastmod>2023-03-18T19:27:30+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -694,7 +694,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/nurhasan</loc>
-        <lastmod>2023-03-17T20:04:18+07:00</lastmod>
+        <lastmod>2023-03-18T20:33:38+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -824,7 +824,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/abdul_aziz</loc>
-        <lastmod>2023-02-11T00:40:12+07:00</lastmod>
+        <lastmod>2023-03-19T10:44:48+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -943,7 +943,7 @@
 </image:image>
 </url>
     <url>
-        <loc>https://karmapack.id/anggota/85</loc>
+        <loc>https://karmapack.id/rismawannti</loc>
         <lastmod>2023-02-11T00:40:13+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -974,7 +974,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/engkon-abdul-gani20230316162922</loc>
-        <lastmod>2023-03-18T00:20:33+07:00</lastmod>
+        <lastmod>2023-03-19T08:26:41+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1683,13 +1683,13 @@
 </image:image>
 </url>
     <url>
-        <loc>https://karmapack.id/dian-noviandi2023031723455410</loc>
-        <lastmod>2023-03-17T23:45:54+07:00</lastmod>
+        <loc>https://karmapack.id/diannopiandi</loc>
+        <lastmod>2023-03-18T18:56:09+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
-    <image:caption>Dian Noviandi</image:caption>
+    <image:loc>https://karmapack.id/assets/anggota/dian-noviandi202303172345541020230318185413.jpg</image:loc>
+    <image:caption>Dian Nopiandi</image:caption>
 </image:image>
 </url>
     <url>
@@ -2690,6 +2690,26 @@
         <image:image>
     <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
     <image:caption>Yopi Ahmad Alpatih</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/tes-sensus20230318052108</loc>
+        <lastmod>2023-03-18T05:21:08+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>Tes sensus</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/m-dendi-syahril-sidik20230318230724</loc>
+        <lastmod>2023-03-18T23:08:46+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>M Dendi Syahril Sidik</image:caption>
 </image:image>
 </url>
 </urlset>

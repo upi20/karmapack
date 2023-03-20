@@ -3100,6 +3100,19 @@ class AnggotaPendidikansTableSeeder extends Seeder
                 'created_at' => '2023-03-18 23:09:18',
                 'updated_at' => '2023-03-18 23:09:18',
             ),
+            237 => 
+            array (
+                'id' => '238',
+                'jenis_id' => '5',
+                'anggota_id' => '73',
+                'dari' => '2020',
+                'sampai' => NULL,
+                'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
+                'jurusan' => 'TASAWUF DAN PSIKOTERAPI',
+                'keterangan' => NULL,
+                'created_at' => '2023-03-19 10:47:12',
+                'updated_at' => '2023-03-19 10:47:12',
+            ),
         ));
         
         

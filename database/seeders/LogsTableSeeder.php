@@ -244,6 +244,105 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"114.124.242.82","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
             ),
+            25 => 
+            array (
+                'id' => '26',
+                'user_id' => '185',
+                'log_date' => '2023-03-19 06:25:01',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.74.168","user_agent":"Mozilla\\/5.0 (Linux; Android 11; V2026) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/106.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            26 => 
+            array (
+                'id' => '27',
+                'user_id' => '114',
+                'log_date' => '2023-03-19 08:24:28',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Linux; U; Android 10; id-id; Redmi 9C Build\\/QP1A.190711.020) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.22.1-gn"}',
+            ),
+            27 => 
+            array (
+                'id' => '28',
+                'user_id' => '1',
+                'log_date' => '2023-03-19 10:40:35',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.243.98","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            28 => 
+            array (
+                'id' => '29',
+                'user_id' => '93',
+                'log_date' => '2023-03-19 10:41:32',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.248.18","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            29 => 
+            array (
+                'id' => '30',
+                'user_id' => '93',
+                'log_date' => '2023-03-19 10:42:30',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.248.18","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            30 => 
+            array (
+                'id' => '31',
+                'user_id' => '93',
+                'log_date' => '2023-03-19 10:45:11',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.248.18","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            31 => 
+            array (
+                'id' => '32',
+                'user_id' => '93',
+                'log_date' => '2023-03-19 10:45:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.248.18","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            32 => 
+            array (
+                'id' => '33',
+                'user_id' => '1',
+                'log_date' => '2023-03-20 10:09:06',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            33 => 
+            array (
+                'id' => '34',
+                'user_id' => '1',
+                'log_date' => '2023-03-20 10:21:51',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            34 => 
+            array (
+                'id' => '35',
+                'user_id' => '1',
+                'log_date' => '2023-03-20 20:03:39',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            35 => 
+            array (
+                'id' => '36',
+                'user_id' => '1',
+                'log_date' => '2023-03-20 22:34:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
         ));
         
         

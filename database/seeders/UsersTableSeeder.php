@@ -1391,7 +1391,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => '93',
                 'name' => 'ABDUL AZIZ',
-                'email' => 'abdul_aziz@karmapack.id',
+                'email' => 'azizalhazkil24@gmail.com',
                 'foto' => NULL,
                 'username' => 'abdul_aziz',
                 'email_verified_at' => NULL,
@@ -1402,9 +1402,9 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => NULL,
+                'remember_token' => 'GJn4SEMcEYrKSjFByQB6A66lwjozGNjd4RYrmgesb2dRxP8OTopLhEV8MAg1',
                 'created_at' => NULL,
-                'updated_at' => '2022-09-01 01:57:53',
+                'updated_at' => '2023-03-19 10:42:11',
             ),
             73 => 
             array (
@@ -1687,7 +1687,7 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'ffSrS41EKVmPFqCce59AxAd5PorDfrp1exjR1U9JKgHycY5vU6V4kYwvTzWe',
+                'remember_token' => 'DEoeCQOlOFCCaxMVqmJidEJAzWWUQ9cewGhUDAigAkh0b4AkBEGdY78VKD7l',
                 'created_at' => '2023-03-16 16:29:23',
                 'updated_at' => '2023-03-16 16:29:23',
             ),

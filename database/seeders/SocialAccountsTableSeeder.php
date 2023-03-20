@@ -109,6 +109,16 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 23:07:41',
                 'updated_at' => '2023-03-18 23:07:41',
             ),
+            9 => 
+            array (
+                'id' => '11',
+                'user_id' => '93',
+                'provider_id' => '100783118953728710810',
+                'provider_name' => 'google',
+                'provider_data' => '{"id":"100783118953728710810","nickname":null,"name":"Abdul Aziz","email":"azizalhazkil24@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxbkSlx8bsZiEFBvI2oCVbWDAbRSAeLwUlIFq5S8_g=s96-c","user":{"sub":"100783118953728710810","name":"Abdul Aziz","given_name":"Abdul","family_name":"Aziz","picture":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxbkSlx8bsZiEFBvI2oCVbWDAbRSAeLwUlIFq5S8_g=s96-c","email":"azizalhazkil24@gmail.com","email_verified":true,"locale":"id","id":"100783118953728710810","verified_email":true,"link":null},"attributes":{"id":"100783118953728710810","nickname":null,"name":"Abdul Aziz","email":"azizalhazkil24@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxbkSlx8bsZiEFBvI2oCVbWDAbRSAeLwUlIFq5S8_g=s96-c","avatar_original":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxbkSlx8bsZiEFBvI2oCVbWDAbRSAeLwUlIFq5S8_g=s96-c"},"token":"ya29.a0AVvZVsq-VNB1vWdKxTN7Beie4cvGwUQ5jRxTpiiDpzrDbXgT3z4vsrCVxs1wCoBJ0ao0CJ-ANrLJ16Np5XZTKdY2Tg1tGIHOoVBqH2fra8UbxCXwsbw7RaCECyGhMClhRVd-WjB929ghn4KnPGH8XQnh0yxkaCgYKATMSARISFQGbdwaItu5wUDSlTc12wMQeDOp_bg0163","refreshToken":null,"expiresIn":3599,"approvedScopes":["openid","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.profile","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.email"]}',
+                'created_at' => '2023-03-19 10:42:30',
+                'updated_at' => '2023-03-19 10:42:30',
+            ),
         ));
         
         
