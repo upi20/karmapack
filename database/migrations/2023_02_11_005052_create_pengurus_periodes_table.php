@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kepengurusan\Periode;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengurus_periodes', function (Blueprint $table) {
+        Schema::create(Periode::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nama')->nullable()->default(null);
             $table->string('foto')->nullable()->default(null);
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('periodes');
+        Schema::dropIfExists(Periode::tableName);
     }
 };

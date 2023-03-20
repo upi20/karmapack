@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Address\Village;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,14 +14,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('address_villages', function (Blueprint $table) {
+        Schema::create(Village::tableName, function (Blueprint $table) {
             $table->char('id', 10)->primary();
             $table->char('district_id', 7)->nullable();
             $table->string('name');
             $table->timestamps();
             $table->foreign('district_id')
                 ->references('id')->on('address_districts')
-                // ->nullOnDelete()
                 ->cascadeOnUpdate();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address_villages');
+        Schema::dropIfExists(Village::tableName);
     }
 };

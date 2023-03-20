@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'email',
+        'message',
+        'status',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'contact_messages';
     const tableName = 'contact_messages';

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Keanggotaan\Pendidikan;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('anggota_pendidikans', function (Blueprint $table) {
+        Schema::create(Pendidikan::tableName, function (Blueprint $table) {
             $table->id();
             $table->bigInteger('jenis_id', false, true)->nullable()->default(null);
             $table->bigInteger('anggota_id', false, true)->nullable()->default(null);
@@ -43,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anggota_pendidikans');
+        Schema::dropIfExists(Pendidikan::tableName);
     }
 };

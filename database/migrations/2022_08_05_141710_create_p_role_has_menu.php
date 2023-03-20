@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\RoleHasMenu;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('p_role_has_menu', function (Blueprint $table) {
+        Schema::create(RoleHasMenu::tableName, function (Blueprint $table) {
             $tableNames = config('permission.table_names');
             $table->id();
             $table->bigInteger('role_id', false, true);
@@ -39,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_role_has_menu');
+        Schema::dropIfExists(RoleHasMenu::tableName);
     }
 };

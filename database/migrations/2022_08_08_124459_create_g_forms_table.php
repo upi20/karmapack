@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pendaftaran\GForm;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('g_forms', function (Blueprint $table) {
+        Schema::create(GForm::tableName, function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id', false, true)->nullable()->default(null);
             $table->string('nama');
@@ -42,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_fromas');
+        Schema::dropIfExists(GForm::tableName);
     }
 };

@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class FAQ extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'link',
+        'jawaban',
+        'type',
+        'status',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'faq';
     const tableName = 'faq';

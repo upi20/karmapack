@@ -10,6 +10,7 @@ class SocialAccount extends Model
 {
     use HasFactory;
     protected $table = 'social_accounts';
+    const tableName = 'social_accounts';
     protected $fillable = [
         'user_id',
         'provider_id',

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Utility\HariBesarNasional;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hari_besar_nasionals', function (Blueprint $table) {
+        Schema::create(HariBesarNasional::tableName, function (Blueprint $table) {
             $table->id();
             $table->boolean('type')->nullable()->default(null)->comment('1 tetap, 0 tidak tetap');
             $table->smallInteger('hari')->nullable()->default(null);
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hari_besar_nasionals');
+        Schema::dropIfExists(HariBesarNasional::tableName);
     }
 };

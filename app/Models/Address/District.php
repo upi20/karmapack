@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'id',
+        'regency_id',
+        'name'
+    ];
     protected $primaryKey = 'id';
     protected $table = 'address_districts';
     const tableName = 'address_districts';

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UsernameValidation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('username_validations', function (Blueprint $table) {
+        Schema::create(UsernameValidation::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('rule')->unique();
             $table->timestamps();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('username_validations');
+        Schema::dropIfExists(UsernameValidation::tableName);
     }
 };

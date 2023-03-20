@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Keanggotaan\PengalamanOrganisasi;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('anggota_pengalaman_organisasis', function (Blueprint $table) {
+        Schema::create(PengalamanOrganisasi::tableName, function (Blueprint $table) {
             $table->id();
             $table->text('nama')->nullable()->default(null);
             $table->year('dari')->nullable()->default(null);
@@ -37,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anggota_pengalaman_organisasis');
+        Schema::dropIfExists(PengalamanOrganisasi::tableName);
     }
 };

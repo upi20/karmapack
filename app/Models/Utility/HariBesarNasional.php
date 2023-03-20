@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class HariBesarNasional extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'type',
+        'hari',
+        'bulan',
+        'tahun',
+        'nama',
+        'keterangan',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'hari_besar_nasionals';
     const tableName = 'hari_besar_nasionals';

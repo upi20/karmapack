@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Utility\NotifAdminAtas;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notif_admin_atas', function (Blueprint $table) {
+        Schema::create(NotifAdminAtas::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->text('deskripsi');
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notif_admin_atas');
+        Schema::dropIfExists(NotifAdminAtas::tableName);
     }
 };

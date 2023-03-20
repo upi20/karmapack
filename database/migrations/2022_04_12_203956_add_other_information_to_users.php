@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 return new class extends Migration
@@ -15,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table(User::tableName, function (Blueprint $table) {
             $table->string('username')->after('email')->unique()->nullable()->default(null);
             $table->boolean('active')->after('password')->default(0);
             $table->string('foto')->after('email')->default(null)->nullable();
@@ -29,7 +28,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table(User::tableName, function (Blueprint $table) {
             $table->dropColumn('username');
             $table->dropColumn('active');
         });

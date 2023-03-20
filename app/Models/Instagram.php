@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Instagram extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'id',
+        'nama',
+        'tanggal',
+        'keterangan',
+        'status'
+    ];
     protected $primaryKey = 'id';
     protected $table = 'instagram';
+    const tableName = 'instagram';
 }

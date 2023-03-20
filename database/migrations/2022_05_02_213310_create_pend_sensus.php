@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pendaftaran\Sensus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pend_sensus', function (Blueprint $table) {
+        Schema::create(Sensus::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->year('angkatan');
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pend_sensus');
+        Schema::dropIfExists(Sensus::tableName);
     }
 };

@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class FooterInstagram extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'url',
+        'foto',
+        'order',
+        'keterangan',
+        'status',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'footer_instagrams';
     const tableName = 'footer_instagrams';

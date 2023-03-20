@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class NotifDepanAtas extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'nama',
+        'deskripsi',
+        'dari',
+        'sampai',
+        'link',
+        'link_nama',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'notif_depan_atas';
     const tableName = 'notif_depan_atas';

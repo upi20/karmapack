@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Menu\Admin;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('p_menu', function (Blueprint $table) {
+        Schema::create(Admin::tableName, function (Blueprint $table) {
             $table->id();
             $table->integer('parent_id')->nullable()->default(null);
             $table->string('title')->nullable()->default(null);
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_menu');
+        Schema::dropIfExists(Admin::tableName);
     }
 };

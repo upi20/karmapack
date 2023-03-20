@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kepengurusan\Jabatan;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengurus_jabatans', function (Blueprint $table) {
+        Schema::create(Jabatan::tableName, function (Blueprint $table) {
             $tableNames = config('permission.table_names');
 
             $table->id();
@@ -40,7 +41,7 @@ return new class extends Migration
                 ->nullOnDelete()
                 ->cascadeOnUpdate();
             $table->foreign('parent_id')
-                ->references('id')->on('pengurus_jabatans')
+                ->references('id')->on(Jabatan::tableName)
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
         });

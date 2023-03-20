@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Instagram;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('instagram', function (Blueprint $table) {
+        Schema::create(Instagram::tableName, function (Blueprint $table) {
             $table->integer('id', true, false);
             $table->string('nama');
             $table->date('tanggal');
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instagram');
+        Schema::dropIfExists(Instagram::tableName);
     }
 };

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Keanggotaan\Anggota;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('anggotas', function (Blueprint $table) {
+        Schema::create(Anggota::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nomor_anggota')->unique()->nullable()->default(null);
             $table->string('nama')->nullable()->default(null);
@@ -68,6 +69,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anggotas');
+        Schema::dropIfExists(Anggota::tableName);
     }
 };

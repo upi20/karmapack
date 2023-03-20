@@ -6,9 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Keanggotaan\KontakJenis;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
-use Yajra\Datatables\Datatables;
-use App\Models\Profile\KontakTipe;
-use Illuminate\Support\Facades\DB;
 
 class KontakTipeController extends Controller
 {

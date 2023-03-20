@@ -9,7 +9,9 @@ use Haruncpi\LaravelUserActivity\Traits\Loggable;
 class UsernameValidation extends Model
 {
     use HasFactory, Loggable;
-    protected $guarded = [];
+    protected $fillable = [
+        'rule'
+    ];
     protected $primaryKey = 'id';
     protected $table = 'username_validations';
     const tableName = 'username_validations';

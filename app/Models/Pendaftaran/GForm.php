@@ -8,7 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class GForm extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id',
+        'nama',
+        'slug',
+        'deskripsi',
+        'no_urut',
+        'dari',
+        'sampai',
+        'link',
+        'foto',
+        'tampilkan',
+        'status',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'g_forms';
     const tableName = 'g_forms';

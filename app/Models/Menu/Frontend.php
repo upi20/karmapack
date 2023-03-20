@@ -9,7 +9,15 @@ use Illuminate\Support\Facades\DB;
 class Frontend extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = [
+        'parent_id',
+        'title',
+        'icon',
+        'route',
+        'sequence',
+        'active',
+        'type',
+    ];
     protected $primaryKey = 'id';
     protected $table = 'p_menu_frontends';
     const tableName = 'p_menu_frontends';

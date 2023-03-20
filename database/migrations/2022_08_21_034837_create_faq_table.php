@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Contact\FAQ;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('faq', function (Blueprint $table) {
+        Schema::create(FAQ::tableName, function (Blueprint $table) {
             $table->id();
             $table->string('nama')->nullable()->default(null);
             $table->string('link')->nullable()->default(null);
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faq');
+        Schema::dropIfExists(FAQ::tableName);
     }
 };
