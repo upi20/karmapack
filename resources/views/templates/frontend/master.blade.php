@@ -12,13 +12,15 @@ $page_attr = (object) [
     'type' => isset($page_attr['type']) ? $page_attr['type'] : 'website',
     'periode_id' => isset($page_attr['periode_id']) ? $page_attr['periode_id'] : false,
 ];
-$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . (env('APP_NAME') ?? '');
+$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_front('app.title'), env('APP_NAME'));
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
-
 $getSosmed_val = get_sosmed();
 $footerInstagram_val = footer_instagram();
 $notifikasi = notif_depan_atas();
+$compact = isset($compact) ? $compact : [];
+$compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'footerInstagram_val', 'notifikasi', 'page_attr'));
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -40,7 +42,7 @@ $notifikasi = notif_depan_atas();
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#fff">
-    <meta name="theme-color" content="#0191D7">
+    <meta name="theme-color" content="#140342">
     <meta name="msapplication-TileImage" content="{{ asset('favicon/icon-144x144.png') }}">
 
     <!-- META DATA -->
@@ -75,184 +77,154 @@ $notifikasi = notif_depan_atas();
     <meta itemprop="description" content="{{ $page_attr->description }}">
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
-    <!-- STYLES -->
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/bootstrap.min.css') }}" type="text/css"
-        media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/all.min.css') }}" type="text/css"
-        media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/slick.css') }}" type="text/css"
-        media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/simple-line-icons.css') }}" type="text/css"
-        media="all">
-    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/style.css') }}" type="text/css"
-        media="all">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/templates/frontend/assets/leaflet1.7.1/dist/leaflet.css') }}" /> --}}
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/vendors.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/mainv2.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/templates/frontend/assets/font-awesome/5.15.4/css/all.min.css') }}" />
 
     <style>
-        .lds-ellipsis {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
+        #preloader {
+            background: #FFF;
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1031;
         }
 
-        .lds-ellipsis div {
-            position: absolute;
-            top: 33px;
-            width: 13px;
-            height: 13px;
+        #back-to-top {
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1030;
+            height: 50px;
+            width: 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-color .1s linear;
+            -moz-transition: background-color .1s linear;
+            -webkit-transition: background-color .1s linear;
+            -o-transition: background-color .1s linear;
             border-radius: 50%;
-            background: #0092DF;
-            animation-timing-function: cubic-bezier(0, 1, 1, 0);
-        }
-
-        .lds-ellipsis div:nth-child(1) {
-            left: 8px;
-            animation: lds-ellipsis1 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(2) {
-            left: 8px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(3) {
-            left: 32px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(4) {
-            left: 56px;
-            animation: lds-ellipsis3 0.6s infinite;
-        }
-
-        @keyframes lds-ellipsis1 {
-            0% {
-                transform: scale(0);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes lds-ellipsis3 {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(0);
-            }
-        }
-
-        @keyframes lds-ellipsis2 {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(24px, 0);
-            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: #FFF 3px solid;
         }
     </style>
-
     @yield('stylesheet')
+
+    @foreach (json_decode(settings()->get(set_front('meta_list'), '{}')) as $meta)
+        <!-- custom {{ $meta->name }} -->
+        {!! $meta->value !!}
+    @endforeach
 </head>
 
 <body>
+
+    <!-- preloader -->
     @if ($page_attr->loader)
-        <!-- preloader -->
         <div id="preloader">
-            <div class="d-flex justify-content-center align-items-center flex-column" style="height: 90vh;">
+            <div class="d-flex justify-content-center align-items-center flex-column bg-dark-1"
+                style="height: 100vh;">
                 <img src="{{ asset(settings()->get(set_front('app.foto_light_mode'))) }}" style="max-width: 80px;"
                     alt="logo" />
-                <div class="ms-2 lds-ellipsis">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            </div>
+        </div>
+    @endif
+
+    <!-- barba container start -->
+    <div class="barba-container" data-barba="container">
+
+
+        <main class="main-content ">
+
+            @include('templates.frontend.body.header', $compact)
+
+
+            <div class="content-wrapper  js-content-wrapper">
+                @yield('content', '')
+                @include('templates.frontend.body.footer', $compact)
+            </div>
+            <div style="display: none">
+                <div id="back-to-top" class="span bg-dark-1 p-20">
+                    <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
                 </div>
             </div>
-        </div>
-    @endif
 
-    @if ($notifikasi)
-        @foreach ($notifikasi as $v)
-            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
-                {{ $v->deskripsi }}
-                @if ($v->link)
-                    <a href="{{ $v->link }}" class="text-purple-1 fw-bold">{{ $v->link_nama }}</a>
-                @endif
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-
-                </button>
-            </div>
-        @endforeach
-    @endif
-
-    <br>
-
-    {{-- header template --}}
-    @include('templates.frontend.body.header', [
-        'list_sosmed' => $getSosmed_val,
-        'page_attr_navigation' => $page_attr->navigation,
-    ])
-
-    @yield('udnder_header')
-
-    <!-- section main content -->
-    <div class="w-100 py-5 mb-5 mt-0">
-        <section class="main-content mt-0">
-            @yield('content', '')
-        </section>
+        </main>
     </div>
+    <!-- barba container end -->
 
-    @include('templates.frontend.body.instagram', [
-        'footerInstagram' => $footerInstagram_val,
-    ])
 
-    @include('templates.frontend.body.footer', [
-        'list_sosmed' => $getSosmed_val,
-    ])
+    <!-- JavaScript -->
+    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/templates/frontend/assets/leaflet1.7.1/dist/leaflet.js') }}"></script> --}}
+    <script src="{{ asset('assets/templates/frontend/js/vendors.js') }}"></script>
+    <script src="{{ asset('assets/templates/frontend/js/main_v2.js') }}"></script>
+    <script src="{{ asset('js/jquery.lazy-master/jquery.lazy.min.js') }}"></script>
+    <script>
+        const preload_container = $("#preloader");
+        $(window).on('load', function() {
+            "use strict";
+            preload_container.delay(750).fadeOut('slow');
+            refresh_margin_top();
+            $('.lazy').Lazy({
+                scrollDirection: 'vertical',
+            });
+        });
 
-    </div><!-- end site wrapper -->
+        setTimeout(() => {
+            preload_container.delay(750).fadeOut('slow');
+        }, 1500);
 
-    <!-- search popup area -->
-    <div class="search-popup">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
-        <!-- content -->
-        <div class="search-content">
-            <div class="text-center">
-                <h3 class="mb-4 mt-0">Press ESC to close</h3>
-            </div>
-            <!-- form -->
-            <form class="d-flex search-form" action="{{ url('anggota') }}" method="GET">
-                <input class="form-control me-2" type="search" name="search"
-                    placeholder="Search and press enter ..." aria-label="Search" value="{{ $search_master_key }}">
-                <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
-            </form>
-        </div>
-    </div>
+        (function pulse(back) {
+            const img_el = preload_container.find('img');
+            img_el.animate({
+                'font-size': (back) ? '100px' : '140px',
+                opacity: (back) ? 1 : 0.5
+            }, 700, function() {
+                pulse(!back)
+            });
+        })(false);
 
-    {{-- menu sidebar --}}
-    @include('templates.frontend.body.sidebar', [
-        'list_sosmed' => $getSosmed_val,
-        'page_attr_navigation' => $page_attr->navigation,
-    ])
+        const btn_scroll = $('#back-to-top');
 
-    <!-- JAVA SCRIPTS -->
-    <script src="{{ asset('assets/templates/frontend/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/js/jquery.sticky-sidebar.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/frontend/js/custom.js') }}"></script>
+        $(window).scroll(function() {
+            // position
+            const p = $(window).scrollTop();
+
+            if (p >= 100) btn_scroll.parent().fadeIn();
+            else btn_scroll.parent().fadeOut();
+
+            // document height
+            const d_height = $(document).height() - $(window).height();
+            refresh_margin_top();
+        });
+
+        btn_scroll.click(() => {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+        })
+
+        function refresh_margin_top() {
+            $('.content-wrapper').css('margin-top', $('header').height() + 'px');
+        }
+    </script>
     @yield('javascript')
 
     <!-- Google tag (gtag.js) -->

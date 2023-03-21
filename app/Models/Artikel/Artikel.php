@@ -72,9 +72,9 @@ class Artikel extends Model
         return $foto;
     }
 
-    public function dateFormat()
+    public function dateFormat($format = 'd F Y')
     {
-        return date_format(date_create($this->attributes['date']), 'd F Y');
+        return date_format(date_create($this->attributes['date']), $format);
     }
 
     public function tagKeyword()

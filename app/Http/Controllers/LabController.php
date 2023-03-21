@@ -2,24 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Address\District;
 use App\Models\Keanggotaan\Anggota;
-use App\Models\Keanggotaan\Hobi;
 use App\Models\Keanggotaan\Kontak as KeanggotaanKontak;
-use App\Models\Keanggotaan\KontakJenis;
 use App\Models\Keanggotaan\Pendidikan as KeanggotaanPendidikan;
-use App\Models\Keanggotaan\PendidikanJenis as KeanggotaanPendidikanJenis;
-use App\Models\Keanggotaan\PengalamanLain as KeanggotaanPengalamanLain;
-use App\Models\Keanggotaan\PengalamanOrganisasi as KeanggotaanPengalamanOrganisasi;
-use App\Models\Profile\Hobby;
-use App\Models\Profile\Kontak;
-use App\Models\Profile\KontakTipe;
-use App\Models\Profile\Pendidikan;
-use App\Models\Profile\PendidikanJenis;
-use App\Models\Profile\PengalamanLain;
-use App\Models\Profile\PengalamanOrganisasi;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -42,7 +28,7 @@ class LabController extends Controller
             'anggota.province',
             'anggota.kontaks.jenis',
             'anggota.pendidikans.jenis',
-        ])->where('email', 'like', '%@karmapack.id%')->orderBy('name')->get();
+        ])->orderBy('name')->get();
         // return $users;
         // return 'a';
         $date = date_format(date_create(date('Y-m-d H:i:s')), 'd F Y ');
@@ -56,7 +42,7 @@ class LabController extends Controller
         unset($column[8]);
         unset($column[0]);
         unset($column[1]);
-        $addon = ['no', 'name', 'email', 'password', 'kontak', 'alamat', 'pendidikan'];
+        $addon = ['no', 'name', 'email', 'password', 'kontak', 'pendidikan'];
 
         // dd($column);
         // laporan baru

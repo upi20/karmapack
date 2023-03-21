@@ -1,35 +1,39 @@
-<!-- footer -->
-<footer class="mt-0">
-    <div class="container-xl">
-        <div class="footer-inner">
-            <div class="row d-flex align-items-center gy-4">
-                <!-- copyright text -->
-                <div class="col-md-4">
-                    <span class="copyright">© 2021 Karmapack.
-                        <br>Persembahan Dari
-                        <a href="{{ url('iseplutpinur') }}">Isep Lutpi Nur</a>
-                        Bidang Kominfo.</span>
+@php
+    $anim = 1;
+@endphp
+<footer class="footer -type-1 bg-dark-1 -green-links mt-0" data-anim-wrap>
+    <div class="container">
+        <div class="footer-header">
+            <div class="row y-gap-20 justify-between items-center">
+                <div class="col-auto">
+                    <div class="footer-header__logo" data-anim-child="slide-left delay-{{ $anim++ }}">
+                        <img class="lazy" alt="logo" style="width: 230px"
+                            data-src="{{ asset(settings()->get(set_front('app.foto_light_landscape_mode'))) }}">
+                    </div>
                 </div>
+                <div class="col-auto">
+                    <div class="footer-header-socials">
+                        <div class="footer-header-socials__title text-white"
+                            data-anim-child="slide-left delay-{{ $anim++ }}">Follow us on social media</div>
+                        <div class="footer-header-socials__list">
 
-                <!-- social icons -->
-                <div class="col-md-4 text-center">
-                    <ul class="social-icons list-unstyled list-inline mb-0">
-                        @foreach ($list_sosmed as $sosmed)
-                            <li class="list-inline-item">
-                                <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
-                                    <i class="{{ $sosmed['icon'] }}"></i>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                            @foreach ($getSosmed_val as $sosmed)
+                                <li class="list-inline-item list-style-none"
+                                    data-anim-child="slide-left delay-{{ $anim++ }}">
+                                    <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
+                                        <i class="{{ $sosmed['icon'] }}"></i>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- go to top button -->
-                <div class="col-md-4">
-                    <a href="#" id="return-to-top" class="float-md-end">
-                        <i class="icon-arrow-up"></i>Back to Top
-                    </a>
-                </div>
+        <div class="py-30 border-top-light-15" data-anim-child="slide-left delay-{{ $anim++ }}">
+            <div class="d-md-flex items-center h-100 text-white">
+                {!! str_parse(settings()->get(set_front('app.copyright'))) !!}
             </div>
         </div>
     </div>

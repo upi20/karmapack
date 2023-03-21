@@ -1,23 +1,31 @@
 @extends('templates.frontend.master')
 @section('content')
     <!-- page header -->
-    <section class="page-header">
-        <div class="container-xl">
-            <div class="text-center">
-                <h1 class="mt-0 mb-2">List Pendaftaran</h1>
-                <div class="d-flex justify-content-center align-items-center">
-                    <a href="{{ url('') }}" class="me-1">Home</a> > Pendaftaran
+    <section data-anim="fade" class="breadcrumbs ">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="breadcrumbs__content">
+
+                        <div class="breadcrumbs__item ">
+                            <a href="{{ route('home') }}">Utama</a>
+                        </div>
+
+                        <div class="breadcrumbs__item ">
+                            <a href="javascript:void(0)">Pendaftaran</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="main-content">
-        <div class="container-xl">
-            <div class="row mt-3">
+    <section class="layout-pt-md layout-pb-lg">
+        <div data-anim-wrap class="container">
+            <div class="row">
                 @if (!$pendaftaran->isEmpty())
                     @foreach ($pendaftaran as $item)
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mt-30">
                             <div class="card mb-3 card-main">
                                 <div class="row g-0">
                                     @php
@@ -26,17 +34,17 @@
                                             case 1:
                                                 $route = Route::has($item->route) ? route($item->route) : url('');
                                                 break;
-                                        
+
                                             case 2:
                                                 $route = route('frontend.gform.detail', $item->slug);
                                                 break;
-                                        
+
                                             default:
                                                 $route = 'javascript:void(0)';
                                                 break;
                                         }
                                     @endphp
-                                    <div class="col-md-4 p-0 p-0">
+                                    <div class="col-md-4 p-0">
                                         <a href="{{ $route }}">
                                             <img onerror="this.src='{{ asset($image_default) }}';this.onerror='';"
                                                 src="{{ $item->foto }}" class="img-fluid rounded-start"
@@ -45,9 +53,9 @@
                                         </a>
                                     </div>
                                     <div class="col-md-8">
-                                        <div class="card-body">
+                                        <div class="card-body p-3">
                                             <a href="{{ $route }}">
-                                                <h5 class="card-title mt-1 mb-0">{{ $item->nama }}</h5>
+                                                <h5 class="card-title mt-1">{{ $item->nama }}</h5>
                                             </a>
                                             <hr class="my-1">
                                             <p>

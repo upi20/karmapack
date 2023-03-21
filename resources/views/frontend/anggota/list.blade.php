@@ -2,7 +2,7 @@
     $angkatan = 0;
     $is_filter = request()->query('search') || request()->query('category') || request()->query('sort') || request()->query('limit');
 @endphp
-@extends('templates.frontend2.master')
+@extends('templates.frontend.master')
 @section('content')
     <section data-anim="fade" class="breadcrumbs ">
         <div class="container">
@@ -167,7 +167,7 @@
                                             $regencie = $item->regencie ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->regencie) . '">' . $item->regencie . '</a>' : '';
                                             $district = $item->district ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->district) . '">' . $item->district . '</a>' : '';
                                             $village = $item->village ? '<a class="text-purple-1" href="' . url('anggota?search=' . $item->village) . '">' . $item->village . '</a>' : '';
-                                            
+
                                             $alamat_lengkap = '';
                                             $alamat_lengkap .= $alamat_lengkap == '' ? $item->alamat_lengkap : '';
                                             $alamat_lengkap .= $alamat_lengkap == '' ? $province : ($province == '' ? '' : ", $province");

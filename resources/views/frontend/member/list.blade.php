@@ -2,7 +2,7 @@
     $angkatan = 0;
     $is_filter = request()->query('search') || request()->query('category') || request()->query('sort') || request()->query('limit');
 @endphp
-@extends('templates.frontend2.master')
+@extends('templates.frontend.master')
 @section('content')
     <section data-anim="fade" class="breadcrumbs ">
         <div class="container">

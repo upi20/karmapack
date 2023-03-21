@@ -27,3 +27,6 @@ date-input-str
 [x] Email validation
 [x] reset password
 [x] Login Via Google
+
+// PR
+[] Buat halaman error template educrat

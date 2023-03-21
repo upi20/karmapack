@@ -1,4 +1,4 @@
-@extends('templates.frontend2.master')
+@extends('templates.frontend.master')
 @section('content')
     @php
         $anim = 1;
@@ -199,7 +199,7 @@
                                                         $regencie = $anggota->regencie ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->regencie->name) . '">' . $anggota->regencie->name . '</a>' : '';
                                                         $district = $anggota->district ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->district->name) . '">' . $anggota->district->name . '</a>' : '';
                                                         $village = $anggota->village ? '<a class="text-purple-1" href="' . url('anggota?search=' . $anggota->village->name) . '">' . $anggota->village->name . '</a>' : '';
-                                                        
+
                                                         $alamat_lengkap = '';
                                                         $alamat_lengkap .= $alamat_lengkap == '' ? $anggota->alamat_lengkap : '';
                                                         $alamat_lengkap .= $alamat_lengkap == '' ? $province : ($province == '' ? '' : ", $province");

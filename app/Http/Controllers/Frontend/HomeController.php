@@ -85,7 +85,7 @@ class HomeController extends Controller
             'pengurus'
         );
         $data['compact'] = $data;
-        return view('frontend.home2', $data);
+        return view('frontend.home', $data);
     }
 
     public function fronted2(Request $request)

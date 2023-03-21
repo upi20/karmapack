@@ -1,4 +1,4 @@
-@extends('templates.frontend2.master')
+@extends('templates.frontend.master')
 @section('content')
     @php
         $anim = 1;
