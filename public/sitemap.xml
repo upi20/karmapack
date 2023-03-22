@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>http://karmapack.test</loc>
-        <lastmod>2023-03-23T01:09:03+07:00</lastmod>
+        <lastmod>2023-03-23T01:22:35+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-        </url>
+        <image:image>
+    <image:loc>http://karmapack.test/assets/setting/home/hero.png</image:loc>
+    <image:caption>Karmapack</image:caption>
+</image:image>
+</url>
     <url>
         <loc>http://karmapack.test/tentang/sejarah</loc>
         <lastmod>2023-02-19T09:50:07+07:00</lastmod>

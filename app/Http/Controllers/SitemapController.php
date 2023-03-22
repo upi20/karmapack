@@ -50,6 +50,7 @@ class SitemapController extends Controller
             );
         }
 
+        $sitemap->writeToFile(public_path('sitemap.xml'));
         return response(file_get_contents(public_path('sitemap.xml')), 200, [
             'Content-Type' => 'application/xml'
         ]);
