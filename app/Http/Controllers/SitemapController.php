@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Keanggotaan\Anggota;
 use App\Models\Menu\Frontend;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,16 @@ class SitemapController extends Controller
         });
 
         $sitemap = Sitemap::create();
+        $sitemap->add(
+            Url::create(url(''))
+                ->setPriority(1)
+                ->addImage(asset(settings()->get("setting.home.hero.image")), "Karmapack")
+        );
+
         foreach ($frontMenu as $menu) {
-            $sitemap->add(Url::create($menu->route)->setLastModificationDate($menu->updated_at));
+            if ($menu->route != url('')) {
+                $sitemap->add(Url::create($menu->route)->setLastModificationDate($menu->updated_at));
+            }
         }
 
         // Anggota
@@ -41,7 +50,9 @@ class SitemapController extends Controller
             );
         }
 
-        $sitemap->writeToFile(public_path('sitemap.xml'));
+        return response(file_get_contents(public_path('sitemap.xml')), 200, [
+            'Content-Type' => 'application/xml'
+        ]);
     }
 
     private function routeBuild(?string $route): ?string
