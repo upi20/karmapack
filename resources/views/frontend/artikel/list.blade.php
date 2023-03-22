@@ -50,7 +50,7 @@
                     <div class="row y-gap-30">
                         @foreach ($articles as $a)
                             <div class="col-lg-4 col-md-6" data-anim-child="slide-left delay-{{ $anim++ }}">
-                                <a href="blog-single.html" class="blogCard -type-1">
+                                <a href="{{ route('artikel.detail', $a->slug) }}" class="blogCard -type-1">
                                     <div class="blogCard__image">
                                         <img class="w-1/1 rounded-8" src="{{ $a->fotoUrl() }}" alt="{{ $a->nama }}"
                                             style="width: 100%; height: 250px; object-fit: cover; border-radius:16px">
