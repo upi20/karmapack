@@ -31,6 +31,10 @@ class UsernameValidateController extends Controller
             foreach ($rules as $rule) $rule_insert[] = ['rule' => $rule];
             UsernameValidation::insert($rule_insert);
 
+            foreach (UsernameValidation::all() as $model) {
+                UsernameValidation::logToDb($model, 'create');
+            }
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

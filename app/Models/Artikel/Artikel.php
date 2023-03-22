@@ -4,6 +4,7 @@ namespace App\Models\Artikel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use App\Models\Artikel\Kategori;
 use App\Models\Artikel\KategoriArtikel;
 use App\Models\Artikel\Tag;

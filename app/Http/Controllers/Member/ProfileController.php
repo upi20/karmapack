@@ -376,6 +376,10 @@ class ProfileController extends Controller
 
             Hobi::insert($hobis);
 
+            foreach ($anggota->hobis ?? [] as $model) {
+                Hobi::logToDb($model, 'create');
+            }
+
             DB::commit();
             return response()->json();
         } catch (ValidationException $error) {

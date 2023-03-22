@@ -5,11 +5,12 @@ namespace App\Models\Menu;
 use App\Models\RoleHasMenu;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Support\Facades\DB;
 
 class Admin extends Model
 {
-    use HasFactory;
+    use HasFactory, Loggable;
     protected $fillable = [
         'parent_id',
         'title',

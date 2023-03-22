@@ -4,11 +4,12 @@ namespace App\Models\Kepengurusan;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Spatie\Permission\Models\Role;
 
 class Jabatan extends Model
 {
-    use HasFactory;
+    use HasFactory, Loggable;
     protected $fillable = [
         'no_urut',
         'nama',
