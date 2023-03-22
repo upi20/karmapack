@@ -57,22 +57,23 @@
                                     </div>
                                     <div class="blogCard__content mt-20">
                                         <div class="blogCard__category">
-                                            @if ($a->kategori)
-                                                <a href="{{ url("artikel?kategori=$a->kategori_slug") }}"
-                                                    class="blogCard__category" title="Kategori {{ $a->kategori }}">
-                                                    {{ $a->kategori }}
+                                            @if ($a->categories->count() > 0)
+                                                <a href="{{ url("artikel?kategori={$a->categories[0]->slug}") }}"
+                                                    class="blogCard__category"
+                                                    title="Kategori {{ $a->categories[0]->nama }}">
+                                                    {{ $a->categories[0]->nama }}
                                                 </a>
-                                            @elseif ($a->tag)
-                                                <a href="{{ url("artikel?tag=$a->tag_slug") }}" class="blogCard__category"
-                                                    title="tag {{ $a->tag }}">
-                                                    {{ $a->tag }}
+                                            @elseif ($a->tags->count() > 0)
+                                                <a href="{{ url("artikel?tag={$a->tags[0]->slug}") }}"
+                                                    class="blogCard__category" title="tag {{ $a->tags[0]->nama }}">
+                                                    {{ $a->tags[0]->nama }}
                                                 </a>
                                             @endif
                                         </div>
                                         <h4 class="blogCard__title text-18 lh-15 fw-500 mt-5">
                                             <a href="{{ route('artikel.detail', $a->slug) }}">{{ $a->nama }}</a>
                                         </h4>
-                                        <div class="blogCard__date mt-5">{{ $a->date_full }}</div>
+                                        <div class="blogCard__date mt-5">{{ $a->dateFormat() }}</div>
                                     </div>
                                 </a>
                             </div>

@@ -49,7 +49,7 @@
                                 </a>
                             </div>
                             <div class="col-auto">
-                                <p class="page-header__text">{{ date_format(date_create($model->date), 'd F Y') }}</p>
+                                <p class="page-header__text">{{ $model->dateFormat() }}</p>
                             </div>
                         </div>
                     </div>

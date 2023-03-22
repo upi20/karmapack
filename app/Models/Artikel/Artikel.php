@@ -173,7 +173,7 @@ class Artikel extends Model
                 $a.status like '%$search%'
             )");
         }
-        return $model->paginate($paginate)
+        return $model->with(['tags', 'categories'])->paginate($paginate)
             ->appends(request()->query());
     }
 
