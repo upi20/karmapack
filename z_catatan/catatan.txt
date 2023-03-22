@@ -30,3 +30,4 @@ date-input-str
 
 // PR
 [] Buat halaman error template educrat
+[x] Tamplate pendaftaran jadi educrat

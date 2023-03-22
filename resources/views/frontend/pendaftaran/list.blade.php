@@ -49,7 +49,7 @@
                                             <img onerror="this.src='{{ asset($image_default) }}';this.onerror='';"
                                                 src="{{ $item->foto }}" class="img-fluid rounded-start"
                                                 alt="{{ $item->nama }}"
-                                                style="height: 100%; width: 100%; object-fit: cover; object-position: center;">
+                                                style="height: 100%; width: 100%; object-fit: cover; object-position: center; border-radius: 18px 0 0 18px">
                                         </a>
                                     </div>
                                     <div class="col-md-8">
@@ -87,6 +87,7 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
             margin: 3px;
+            border-radius: 18px;
         }
 
         .card-main:hover {
