@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Cache;
 
 class Artikel extends Model
 {
-    use HasFactory;
+    use HasFactory, Loggable;
     protected $fillable = [
         'nama',
         'slug',

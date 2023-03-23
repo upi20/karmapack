@@ -474,27 +474,13 @@
                                         </div>
 
                                         <div class="eventCard__content">
-                                            @php
-                                                $kategori = $a->categories()->first();
-                                                $tags = $a->tags()->first();
-                                            @endphp
-                                            @if ($a->kategori)
-                                                {{-- <a href="{{ url("?kategori=$a->kategori_slug") }}"
-                                                    class="text-13 lh-1 fw-500 uppercase text-purple-1"
-                                                    title="Kategori {{ $a->kategori }}">
-                                                    {{ $a->kategori }}
-                                                    </a> --}}
+                                            @if ($a->categories->count() > 0)
                                                 <div class="text-13 lh-1 fw-500 uppercase text-purple-1">
-                                                    {{ $a->kategori }}
+                                                    {{ $a->categories[0]->nama }}
                                                 </div>
-                                            @elseif ($a->tag)
-                                                {{-- <a href="{{ url("?tag=$a->tag_slug") }}"
-                                                    class="text-13 lh-1 fw-500 uppercase text-purple-1"
-                                                    title="tag {{ $a->tag }}">
-                                                    {{ $a->tag }}
-                                                    </a> --}}
+                                            @elseif ($a->tags->count() > 0)
                                                 <div class="text-13 lh-1 fw-500 uppercase text-purple-1">
-                                                    {{ $a->tag }}
+                                                    {{ $a->tags[0]->nama }}
                                                 </div>
                                             @endif
                                             <h4 class="text-17 lh-15 fw-500 mt-10"> {{ $a->nama }}</h4>

@@ -75,7 +75,6 @@ class backup extends Command
             ],
             'frontend' => [
                 'social_media',
-                'footer_instagrams',
                 'username_validations',
                 'instagram',
             ],

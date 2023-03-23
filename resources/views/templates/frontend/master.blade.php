@@ -15,10 +15,9 @@ $page_attr = (object) [
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_front('app.title'), env('APP_NAME'));
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
 $getSosmed_val = get_sosmed();
-$footerInstagram_val = footer_instagram();
 $notifikasi = notif_depan_atas();
 $compact = isset($compact) ? $compact : [];
-$compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'footerInstagram_val', 'notifikasi', 'page_attr'));
+$compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'notifikasi', 'page_attr'));
 ?>
 
 <!DOCTYPE html>

@@ -10,7 +10,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Tag extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory, Sluggable, Loggable;
     protected $guarded = [
         'nama',
         'slug',

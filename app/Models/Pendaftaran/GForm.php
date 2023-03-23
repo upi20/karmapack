@@ -26,4 +26,11 @@ class GForm extends Model
     protected $table = 'g_forms';
     const tableName = 'g_forms';
     const image_folder = '/assets/pendaftarans/gfrom';
+    const image_default = '/assets/pendaftarans/20220502202741.png';
+
+    public function fotoUrl()
+    {
+        $foto = $this->attributes['foto'];
+        return $foto ? url(self::image_folder . '/' . $foto) : asset(self::image_default);
+    }
 }

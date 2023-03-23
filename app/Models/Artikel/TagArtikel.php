@@ -8,7 +8,7 @@ use Haruncpi\LaravelUserActivity\Traits\Loggable;
 
 class TagArtikel extends Model
 {
-    use HasFactory, Loggable;
+    use HasFactory, Loggable, Loggable;
     protected $fillable = [
         'artikel_id',
         'tag_id',

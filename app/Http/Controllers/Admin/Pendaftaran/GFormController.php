@@ -4,13 +4,11 @@ namespace App\Http\Controllers\Admin\Pendaftaran;
 
 use App\Helpers\Summernote;
 use App\Http\Controllers\Controller;
-use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\GForm;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
-use PhpParser\Node\Expr\AssignOp\Mod;
 use Yajra\Datatables\Datatables;
 
 class GFormController extends Controller
@@ -312,7 +310,7 @@ class GFormController extends Controller
         $folder = GForm::image_folder;
         $user = User::find($model->user_id);
 
-        $image = is_null($model->foto) ? Pendaftaran::image_default : url("$folder/$model->foto");
+        $image = $model->fotoUrl();
         $page_attr = [
             'title' => $model->nama,
             'url' => url(h_prefix_uri()),
