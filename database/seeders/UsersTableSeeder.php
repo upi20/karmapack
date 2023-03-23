@@ -756,7 +756,7 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'VgOwnDhIfLMQyAHJhxPluRaGMbLdaykhNP43F1VMWkTPpYx4WfpfSBiYsgbS',
+                'remember_token' => 'qFENcieaBhFscP9bAXaWoMLt4ecrVtz9nPqqTW1Vcy8uNMo3HR4g2houlGsV',
                 'created_at' => NULL,
                 'updated_at' => '2023-03-18 16:45:36',
             ),

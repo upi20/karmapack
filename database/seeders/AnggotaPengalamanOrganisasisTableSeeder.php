@@ -499,6 +499,42 @@ class AnggotaPengalamanOrganisasisTableSeeder extends Seeder
                 'created_at' => '2023-03-16 16:45:38',
                 'updated_at' => '2023-03-16 16:46:16',
             ),
+            40 => 
+            array (
+                'id' => '41',
+                'nama' => 'DKR KWARAN TANGGEUNG',
+                'dari' => '2016',
+                'sampai' => '2018',
+                'jabatan' => 'Anggota',
+                'keterangan' => NULL,
+                'anggota_id' => '39',
+                'created_at' => '2023-03-21 12:16:55',
+                'updated_at' => '2023-03-21 12:16:55',
+            ),
+            41 => 
+            array (
+                'id' => '42',
+                'nama' => 'GP ANSOR',
+                'dari' => '2019',
+                'sampai' => NULL,
+                'jabatan' => 'Anggota',
+                'keterangan' => NULL,
+                'anggota_id' => '39',
+                'created_at' => '2023-03-21 12:17:55',
+                'updated_at' => '2023-03-21 12:17:55',
+            ),
+            42 => 
+            array (
+                'id' => '43',
+                'nama' => 'OSIS MAN 3 Cianjur',
+                'dari' => '2017',
+                'sampai' => '2018',
+                'jabatan' => 'KETUA UMUM',
+                'keterangan' => NULL,
+                'anggota_id' => '39',
+                'created_at' => '2023-03-21 12:21:08',
+                'updated_at' => '2023-03-21 12:21:08',
+            ),
         ));
         
         

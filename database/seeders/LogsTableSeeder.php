@@ -343,6 +343,105 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"103.147.8.13","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
             ),
+            36 => 
+            array (
+                'id' => '37',
+                'user_id' => '1',
+                'log_date' => '2023-03-21 11:17:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.243.15","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            37 => 
+            array (
+                'id' => '38',
+                'user_id' => '110',
+                'log_date' => '2023-03-21 11:35:25',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.214.40","user_agent":"Mozilla\\/5.0 (Linux; Android 13; V2110) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/105.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            38 => 
+            array (
+                'id' => '39',
+                'user_id' => '57',
+                'log_date' => '2023-03-21 12:09:11',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.216.190","user_agent":"Mozilla\\/5.0 (Linux; Android 11; RMX2180) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/108.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            39 => 
+            array (
+                'id' => '40',
+                'user_id' => '114',
+                'log_date' => '2023-03-21 14:20:50',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"112.215.208.53","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/107.0.0.0 Safari\\/537.36"}',
+            ),
+            40 => 
+            array (
+                'id' => '41',
+                'user_id' => '1',
+                'log_date' => '2023-03-21 19:06:38',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.207.50","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            41 => 
+            array (
+                'id' => '42',
+                'user_id' => '1',
+                'log_date' => '2023-03-21 22:17:59',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.207.179","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            42 => 
+            array (
+                'id' => '43',
+                'user_id' => '1',
+                'log_date' => '2023-03-23 00:57:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.214.64","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            43 => 
+            array (
+                'id' => '44',
+                'user_id' => '1',
+                'log_date' => '2023-03-23 20:19:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.106.98","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            44 => 
+            array (
+                'id' => '45',
+                'user_id' => '1',
+                'log_date' => '2023-03-24 03:53:37',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.106.98","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            45 => 
+            array (
+                'id' => '46',
+                'user_id' => '1',
+                'log_date' => '2023-03-24 03:54:30',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.106.98","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
+            46 => 
+            array (
+                'id' => '47',
+                'user_id' => '1',
+                'log_date' => '2023-03-24 04:05:50',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.106.98","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/111.0.0.0 Safari\\/537.36 Edg\\/111.0.1661.44"}',
+            ),
         ));
         
         
