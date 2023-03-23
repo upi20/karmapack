@@ -33,4 +33,9 @@ class GForm extends Model
         $foto = $this->attributes['foto'];
         return $foto ? url(self::image_folder . '/' . $foto) : asset(self::image_default);
     }
+
+    public function fotoUrlDefault()
+    {
+        return asset(self::image_default);
+    }
 }

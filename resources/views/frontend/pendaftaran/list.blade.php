@@ -23,59 +23,66 @@
     <section class="layout-pt-md layout-pb-lg">
         <div data-anim-wrap class="container">
             <div class="row">
-                @if (!$pendaftaran->isEmpty())
-                    @foreach ($pendaftaran as $item)
-                        <div class="col-lg-6 mt-30">
-                            <div class="card mb-3 card-main">
-                                <div class="row g-0">
-                                    @php
-                                        $route = '#';
-                                        switch ($item->data_type) {
-                                            case 1:
-                                                $route = Route::has($item->route) ? route($item->route) : url('');
-                                                break;
+                <div class="col-lg-6 mt-30">
+                    <div class="card mb-3 card-main">
+                        <div class="row g-0">
+                            <div class="col-md-4 p-0">
+                                <a href="{{ route('pendaftaran.sensus') }}">
+                                    <img onerror="this.src='{{ asset('assets/pendaftarans/20220502202741.png') }}';this.onerror='';"
+                                        src="{{ asset('assets/pendaftarans/20220502202741.png') }}"
+                                        class="img-fluid rounded-start" alt="Sensus Anggota"
+                                        style="height: 100%; width: 100%; object-fit: cover; object-position: center; border-radius: 18px 0 0 18px">
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <a href="{{ route('pendaftaran.sensus') }}">
+                                        <h5 class="card-title mt-1">
+                                            Sensus Anggota
+                                        </h5>
+                                    </a>
+                                    <hr class="my-1">
+                                    <p>
+                                        Sensus anggota bertujuan untuk mendokumentasikan data anggota dan untuk mempermudah
+                                        komunikasi pengurus terhadap anggota yang masih menjabat maupun alumni.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                            case 2:
-                                                $route = route('frontend.gform.detail', $item->slug);
-                                                break;
-
-                                            default:
-                                                $route = 'javascript:void(0)';
-                                                break;
-                                        }
-                                    @endphp
-                                    <div class="col-md-4 p-0">
-                                        <a href="{{ $route }}">
-                                            <img onerror="this.src='{{ asset($image_default) }}';this.onerror='';"
-                                                src="{{ $item->foto }}" class="img-fluid rounded-start"
-                                                alt="{{ $item->nama }}"
-                                                style="height: 100%; width: 100%; object-fit: cover; object-position: center; border-radius: 18px 0 0 18px">
+                @foreach ($gforms as $gform)
+                    <div class="col-lg-6 mt-30">
+                        <div class="card mb-3 card-main">
+                            <div class="row g-0">
+                                <div class="col-md-4 p-0">
+                                    <a href="{{ route('frontend.gform.detail', $gform->slug) }}">
+                                        <img onerror="this.src='{{ $gform->fotoUrlDefault() }}';this.onerror='';"
+                                            src="{{ $gform->fotoUrl() }}" class="img-fluid rounded-start"
+                                            alt="{{ $gform->nama }}"
+                                            style="height: 100%; width: 100%; object-fit: cover; object-position: center; border-radius: 18px 0 0 18px">
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-3">
+                                        <a href="{{ route('frontend.gform.detail', $gform->slug) }}">
+                                            <h5 class="card-title mt-1">{{ $gform->nama }}</h5>
                                         </a>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body p-3">
-                                            <a href="{{ $route }}">
-                                                <h5 class="card-title mt-1">{{ $item->nama }}</h5>
-                                            </a>
-                                            <hr class="my-1">
-                                            <p>
-                                                {{ $item->deskripsi }}
-                                            </p>
-                                            <p>
-                                                {{ date_format(date_create($item->dari), 'd M Y') }} s/d
-                                                {{ date_format(date_create($item->sampai), 'd M Y') }}
-                                            </p>
-                                        </div>
+                                        <hr class="my-1">
+                                        <p>
+                                            {{ $gform->deskripsi }}
+                                        </p>
+                                        <p>
+                                            {{ date_format(date_create($gform->dari), 'd M Y') }} s/d
+                                            {{ date_format(date_create($gform->sampai), 'd M Y') }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                @else
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h6>Data Tidak Tersedia</h6>
                     </div>
-                @endif
+                @endforeach
             </div>
         </div>
     </section>

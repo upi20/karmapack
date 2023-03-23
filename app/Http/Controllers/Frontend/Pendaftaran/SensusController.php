@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Frontend\Pendaftaran;
 
 use App\Http\Controllers\Controller;
 use App\Models\Keanggotaan\Anggota;
-use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\Sensus;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,16 +15,11 @@ class SensusController extends Controller
 {
     public function index(Request $request)
     {
-        $id_sensus = 3;
-        $pendaftaran = Pendaftaran::find($id_sensus);
-
-        if (!$pendaftaran) return abort(404);
-
         $page_attr = [
             'navigation' => 'pendaftaran',
             'title' => 'Sensus data anggota',
             'description' => 'Untuk pemutakhiran databse anggota',
-            'image' => asset(Pendaftaran::image_folder . '/' . $pendaftaran->foto),
+            'image' => asset('assets/pendaftarans/20220502202741.png'),
         ];
         return view('frontend.pendaftaran.sensus', compact('page_attr'));
     }
