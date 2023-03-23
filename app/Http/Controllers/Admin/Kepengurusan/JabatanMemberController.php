@@ -7,17 +7,9 @@ use App\Models\Keanggotaan\Anggota;
 use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
 use App\Models\Kepengurusan\Jabatan as KepengurusanJabatan;
 use App\Models\Kepengurusan\Periode as KepengurusanPeriode;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
-use League\Flysystem\Exception;
-
-// pengurus
-use App\Models\Pengurus\PeriodeMember;
-use App\Models\Pengurus\Jabatan;
-use App\Models\Pengurus\JabatanMember;
-use App\Models\Pengurus\Periode;
 use Error;
 
 class JabatanMemberController extends Controller
@@ -83,7 +75,10 @@ class JabatanMemberController extends Controller
 
 
             // delete anggota jabatan terlebih dahulu
-            $current = KepengurusanAnggota::where('jabatan_id', $request->jabatan_id)->delete();
+            $current = KepengurusanAnggota::where('jabatan_id', $request->jabatan_id)->get();
+            foreach ($current as $c) {
+                $c->delete();
+            }
 
             // masukan ke jabatan
             foreach ($request->anggotas as $anggota) {
@@ -115,21 +110,5 @@ class JabatanMemberController extends Controller
                 'error' => $error,
             ], 500);
         }
-    }
-
-    private function getNamaUsersById(int $id): string
-    {
-        $user = User::selectRaw("concat(angkatan,' | ',name) as text")->where('id', '=', $id)->first();
-        if (!$user) return "";
-        return $user->text;
-    }
-
-    private function cekPeriodeMember(int $periode_id, int $id): bool
-    {
-        $member = PeriodeMember::where('periode_id', '=', $periode_id)
-            ->where('user_id', '=', $id)
-            ->delete(['user_id']);
-
-        return $member ? true : false;
     }
 }
