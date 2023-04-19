@@ -26,10 +26,10 @@ class NotifDepanAtasTableSeeder extends Seeder
                 'deskripsi' => 'Hi i\'m Astro',
                 'dari' => '2022-08-02',
                 'sampai' => '2022-10-01',
-                'link' => 'https://breached.to/User-mr-astroboy',
+                'link' => 'https://karmapack.id/pendaftaran/sensus',
                 'link_nama' => 'Klik disini',
                 'created_at' => '2022-08-08 22:37:14',
-                'updated_at' => '2022-10-22 06:57:26',
+                'updated_at' => '2023-03-24 05:46:05',
             ),
             1 => 
             array (
@@ -42,6 +42,18 @@ class NotifDepanAtasTableSeeder extends Seeder
                 'link_nama' => 'Klik Disini',
                 'created_at' => '2022-08-08 22:38:37',
                 'updated_at' => '2022-08-08 22:59:36',
+            ),
+            2 => 
+            array (
+                'id' => '3',
+                'nama' => 'Sensus Anggota',
+                'deskripsi' => 'Sensus anggota sedang dilakukan, untuk semua anggota maupun alumni karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota',
+                'dari' => '2023-03-23',
+                'sampai' => NULL,
+                'link' => 'https://karmapack.id/pendaftaran/sensus',
+                'link_nama' => 'Klik disini',
+                'created_at' => '2023-03-24 05:45:52',
+                'updated_at' => '2023-03-24 05:48:00',
             ),
         ));
         

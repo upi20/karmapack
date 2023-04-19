@@ -188,6 +188,45 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2023-03-18 23:07:24',
                 'updated_at' => '2023-03-18 23:07:24',
             ),
+            13 => 
+            array (
+                'id' => '14',
+                'nama' => 'Isep lutpi nur testing',
+                'angkatan' => '2022',
+                'email' => 'iseplutpinur8@gmail.com',
+                'whatsapp' => '85798132055',
+                'telepon' => '+6285798132505',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: iseplutpinur8@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-03-24 05:44:10',
+                'updated_at' => '2023-03-24 05:44:10',
+            ),
+            14 => 
+            array (
+                'id' => '15',
+                'nama' => 'Silvia Anggraeni',
+                'angkatan' => '2021',
+                'email' => 'silviaanggraeni183@gmail.com',
+                'whatsapp' => '082315805012',
+                'telepon' => '+62 856-9337-2448',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: silviaanggraeni183@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-03-28 19:13:07',
+                'updated_at' => '2023-03-28 19:13:07',
+            ),
+            15 => 
+            array (
+                'id' => '16',
+                'nama' => 'Rifqi Munawar Ridwan',
+                'angkatan' => '2022',
+                'email' => 'rifqimunawar48@gmail.com',
+                'whatsapp' => '08561145097',
+                'telepon' => '08561145097',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: rifqimunawar48@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-04-03 16:19:42',
+                'updated_at' => '2023-04-03 16:19:42',
+            ),
         ));
         
         
