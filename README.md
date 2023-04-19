@@ -1,64 +1,299 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![Karmapack](public/assets/templates/admin/logo-hd.png "Karmapack")
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Sistem Informasi Anggota (SIA) organisasi Keluarga Mahasiswa dan Pelajar Cianjur Kidul (Karmapack)
 
-## About Laravel
+## Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Fitur pada Aplikasi ini meliputi:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Akun Login
+   - Login dengan akun anggota
+   - Login dengan google
+   - Lupa password
+2. Manajemen Anggota
+   - Profil anggota
+   - Data tambahan profil
+   - Manajemen Alamat
+   - Anggota frontend
+3. Manajemen Kepengurusan
+   - Periode Kepengurusan
+   - Kepengurusan jabatan
+   - Kepengurusan frontend
+4. Manajemen Artikel
+   - Daftar Artikel
+   - Editor Artikel
+   - Artikel Frontend
+5. Pengaturan halaman
+   - Halaman utama
+   - Halaman sejarah
+   - Halaman Admin
+   - Halaman Depan
+6. Pendaftaran
+   - Google Forms
+   - Sensus Anggota
+7. Manajemen Kontak
+   - Instagram
+   - Galeri
+   - Kontak
+   - FAQ
+8. Menu manajemen
+   - Dynamic menu
+   - Menu By Role
+   - RBAC
+9. Manajemen Alumni
+10. Utility
+    - Notifikasi admin
+    - Notifikasi depan
+    - Hari besar nasional
+    - Ulang tahun anggota
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Screenshot
 
-## Learning Laravel
+### Admin
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Halaman Utama Anggota
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   ![image-20230324050427983](z_catatan/Readme/image-20230324050427983.png)
 
-## Laravel Sponsors
+2. Halaman utama Administrator
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+   ![image-20230324050525298](z_catatan/Readme/image-20230324050525299.png)
 
-### Premium Partners
+3. Daftar Artikel
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+   ![image-20230324050656759](z_catatan/Readme/image-20230324050656759.png)
 
-## Contributing
+4. Tambah artikel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ![image-20230324050920072](./z_catatan/Readme/README/image-20230324050920072.png)
 
-## Code of Conduct
+5. Ubah artikel
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ![image-20230324051007940](./z_catatan/Readme/README/image-20230324051007940.png)
 
-## Security Vulnerabilities
+6. Google Form
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ![image-20230324051104190](./z_catatan/Readme/README/image-20230324051104190.png)
 
-## License
+7. Sensus Anggota
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ![image-20230324054924567](./z_catatan/Readme/README/image-20230324054924567.png)
+
+8. Instagram
+
+   ![image-20230324055040720](./z_catatan/Readme/README/image-20230324055040720.png)
+
+9. Galeri
+
+   ![image-20230324055049901](./z_catatan/Readme/README/image-20230324055049901.png)
+
+10. Sosial Media
+
+   ![image-20230324055100840](./z_catatan/Readme/README/image-20230324055100840.png)
+
+11. Pesan diterima -> kontak
+
+    ![image-20230324055117941](./z_catatan/Readme/README/image-20230324055117941.png)
+
+12. Daftar Kontak -> Kontak
+
+    ![image-20230324055130326](./z_catatan/Readme/README/image-20230324055130326.png)
+
+13. FAQ -> Kontak
+
+    ![image-20230324055144167](./z_catatan/Readme/README/image-20230324055144167.png)
+
+14. Kepengurusan
+
+    ![image-20230324055214690](./z_catatan/Readme/README/image-20230324055214690.png)
+
+15. Kepengurusan -> Bidang
+
+    ![image-20230324055234775](./z_catatan/Readme/README/image-20230324055234775.png)
+
+16. Kepengurusan -> Bidang -> Anggota
+
+    ![image-20230324055308002](./z_catatan/Readme/README/image-20230324055308002.png)
+
+17. Anggota
+
+    ![image-20230324060107912](./z_catatan/Readme/README/image-20230324060107912.png)
+
+18. Profil jenis pendidikan
+
+    ![image-20230324060122475](./z_catatan/Readme/README/image-20230324060122475.png)
+
+19. Profil Jenis Kontak
+
+    ![image-20230324060135088](./z_catatan/Readme/README/image-20230324060135088.png)
+
+20. Pengaturan nama profil
+
+    ![image-20230324060148427](./z_catatan/Readme/README/image-20230324060148427.png)
+
+21. Data Alamat Provinsi
+
+    ![image-20230324060159603](./z_catatan/Readme/README/image-20230324060159603.png)
+
+22. Data Alamat Kabupaten/Kota
+
+    ![image-20230324060226715](./z_catatan/Readme/README/image-20230324060226715.png)
+
+23. Data Alamat Kecamatan
+
+    ![image-20230324060236955](./z_catatan/Readme/README/image-20230324060236955.png)
+
+24. Data Alamat Desa/Kelurahan
+
+    ![image-20230324060330787](./z_catatan/Readme/README/image-20230324060330787.png)
+
+25. Akses pengguna Perizinan
+
+    ![image-20230324060341098](./z_catatan/Readme/README/image-20230324060341098.png)
+
+26. Akses Pengguna Role
+
+    ![image-20230324060354473](./z_catatan/Readme/README/image-20230324060354473.png)
+
+27. Role Editor
+
+    ![image-20230324060409164](./z_catatan/Readme/README/image-20230324060409164.png)
+
+28. Admin Menu Management
+
+    ![image-20230324060450723](./z_catatan/Readme/README/image-20230324060450723.png)
+
+29. Frontend Menu Management
+
+    ![image-20230324060501307](./z_catatan/Readme/README/image-20230324060501307.png)
+
+30. Utiltiy Notifikasi Admin Atas
+
+    ![image-20230324060535128](./z_catatan/Readme/README/image-20230324060535128.png)
+
+31. Utility Notifikasi Depan Atas
+
+    ![image-20230324060600382](./z_catatan/Readme/README/image-20230324060600382.png)
+
+32. Hari Besar Nasional
+
+    ![image-20230324060609316](./z_catatan/Readme/README/image-20230324060609316.png)
+
+33. Pengaturan Halaman Admin
+
+    ![image-20230324060620610](./z_catatan/Readme/README/image-20230324060620610.png)
+
+34. Pengaturan Halaman Depan
+
+    ![image-20230324060630990](./z_catatan/Readme/README/image-20230324060630990.png)
+
+35. Pengaturan Halaman Utama
+
+    ![image-20230324060640682](./z_catatan/Readme/README/image-20230324060640682.png)
+
+36. Pengaturan Halaman Sejarah
+
+    ![image-20230324060655318](./z_catatan/Readme/README/image-20230324060655318.png)
+
+37. Daftar kata Alumni
+
+    ![image-20230324060707661](./z_catatan/Readme/README/image-20230324060707661.png)
+
+38. Profile Anggota
+
+    ![image-20230324060720522](./z_catatan/Readme/README/image-20230324060720522.png)
+
+39. Halaman Kata Alumni
+
+    ![image-20230324060729995](./z_catatan/Readme/README/image-20230324060729995.png)
+
+40. Ganti Password
+
+    ![image-20230324060742572](./z_catatan/Readme/README/image-20230324060742572.png)
+
+### Frontend
+
+1. Halaman Utama
+
+   ![image-20230324060943488](./z_catatan/Readme/README/image-20230324060943488.png)
+
+2. Sejarah
+
+   ![image-20230324060953974](./z_catatan/Readme/README/image-20230324060953974.png)
+
+3. Daftar Periode Kepengurusan
+
+   ![image-20230324061007324](./z_catatan/Readme/README/image-20230324061007324.png)
+
+   
+
+4. Struktur Kepengurusan
+
+   ![image-20230324061020852](./z_catatan/Readme/README/image-20230324061020852.png)
+
+   
+
+5. Daftar Anggota
+
+   ![image-20230324061041149](./z_catatan/Readme/README/image-20230324061041149.png)
+
+6. Anggota Detail
+
+   ![image-20230324061058474](./z_catatan/Readme/README/image-20230324061058474.png)
+
+7. Daftar Artikel
+
+   ![image-20230324061112402](./z_catatan/Readme/README/image-20230324061112402.png)
+
+8. Artikel Detail
+
+   ![image-20230324061135860](./z_catatan/Readme/README/image-20230324061135860.png)
+
+9. Daftar Galeri
+
+   ![image-20230324061154818](./z_catatan/Readme/README/image-20230324061154818.png)
+
+10. Galeri Detail
+
+    ![image-20230324061212960](./z_catatan/Readme/README/image-20230324061212960.png)
+
+11. Pendaftaran (Daftar Gform)
+
+    ![image-20230324061223547](./z_catatan/Readme/README/image-20230324061223547.png)
+
+12. Sensus Anggota
+
+    ![image-20230324061238752](./z_catatan/Readme/README/image-20230324061238752.png)
+
+13. Gform Detail
+
+    ![image-20230324061318607](./z_catatan/Readme/README/image-20230324061318607.png)
+
+14. Kontak
+
+    ![image-20230324061328968](./z_catatan/Readme/README/image-20230324061328968.png)
+
+
+## Instalasi
+
+### Spesifikasi
+- PHP ^8.0
+- Laravel 9.x
+- Database MariaDB
+
+### Cara Install
+
+1. Clone atau download source code
+    - Para terminal, clone repo `git clone git@github.com:upi20/karmapack.git`
+    - atau `git clone https://github.com/upi20/karmapack.git`
+    - Jika tidak menggunakan Git, silakan **Download Zip** dan *extract* pada direktori web server (misal: xampp/htdocs)
+2. `cd karmapack`
+3. `composer install`
+4. `cp .env.example .env`
+    - Jika tidak menggunakan Git, bisa rename file `.env.example` menjadi `.env`
+5. Pada terminal `php artisan key:generate`
+6. Buat **database pada mysql** untuk aplikasi ini
+7. **Setting database** pada file `.env`
+8. `php artisan migrate --seed`
+9. `php artisan serve`
+10. Selesai

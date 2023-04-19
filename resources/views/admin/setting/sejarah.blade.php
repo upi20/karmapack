@@ -78,7 +78,7 @@
                     myVideo: function(context) {
                         var ui = $.summernote.ui;
                         var button = ui.button({
-                            contents: '<i class="fa fa-video-camera"/>',
+                            contents: '<i class="fab fa-youtube"></i>',
                             tooltip: 'video',
                             click: function() {
                                 var div = document.createElement('div');

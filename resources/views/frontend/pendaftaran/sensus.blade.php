@@ -40,9 +40,9 @@
             </div>
         </div>
     </section>
-    <section class="layout-pt-md layout-pb-lg">
+    <section class="layout-pt-md layout-pb-lg pt-0">
         <div data-anim-wrap class="container">
-            <form class="contact-form row y-gap-30 lg:pt-40" action="#" id="MainForm">
+            <form class="contact-form row y-gap-30" action="#" id="MainForm">
                 <div class="col-md-6">
                     <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">
                         Nama Lengkap
