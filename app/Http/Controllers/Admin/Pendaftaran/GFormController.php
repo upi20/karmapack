@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Pendaftaran;
 
-use App\Helpers\Summernote;
 use App\Http\Controllers\Controller;
+use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\GForm;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -38,10 +38,15 @@ class GFormController extends Controller
         $page_attr = [
             'title' => 'Google Form',
             'breadcrumbs' => [
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'Pendaftaran'],
             ]
         ];
-        return view('admin.pendaftaran.gform', compact('page_attr', 'image_folder'));
+
+        $view = path_view('pages.admin.pendaftaran.gform');
+        $data = compact('page_attr', 'image_folder', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request): mixed
@@ -98,7 +103,7 @@ class GFormController extends Controller
                 // delete foto
                 if ($model->foto) {
                     $path = public_path("$this->image_folder/$model->foto");
-                    Summernote::deleteFile($path);
+                    delete_file($path);
                 }
                 // save foto
                 $model->foto = $foto;
@@ -131,7 +136,7 @@ class GFormController extends Controller
             // delete foto
             if ($model->foto) {
                 $path = public_path("$this->image_folder/$model->foto");
-                Summernote::deleteFile($path);
+                delete_file($path);
             }
             return response()->json();
         } catch (ValidationException $error) {
@@ -288,10 +293,9 @@ class GFormController extends Controller
     public function member_select2(Request $request)
     {
         try {
-            $model = User::select(['id', DB::raw("concat(angkatan,' | ',name) as text")])
+            $model = User::select(['id', DB::raw("name as text")])
                 ->whereRaw("(
                     `name` like '%$request->search%' or
-                    `angkatan` like '%$request->search%' or
                     `email` like '%$request->search%' or
                     `id` like '%$request->search%'
                     )")
@@ -310,7 +314,7 @@ class GFormController extends Controller
         $folder = GForm::image_folder;
         $user = User::find($model->user_id);
 
-        $image = $model->fotoUrl();
+        $image = is_null($model->foto) ? '' : url("$folder/$model->foto");
         $page_attr = [
             'title' => $model->nama,
             'url' => url(h_prefix_uri()),
@@ -325,6 +329,6 @@ class GFormController extends Controller
 
         $link = str_contains($model->link, '?') ? ($model->link . '&') : ($model->link . '?');
         $link = $link . 'embedded=true';
-        return view('frontend.pendaftaran.gform', compact('page_attr', 'model', 'link'));
+        return view('pages.frontend.pendaftaran.gform', compact('page_attr', 'model', 'link'));
     }
 }

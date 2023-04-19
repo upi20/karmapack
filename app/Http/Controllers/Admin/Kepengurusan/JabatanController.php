@@ -38,7 +38,11 @@ class JabatanController extends Controller
             ],
             'navigation' => $navigation,
         ];
-        return view('admin.kepengurusan.jabatan.list', compact('page_attr', 'periode', 'roles'));
+
+        $view = path_view('pages.admin.kepengurusan.jabatan.list');
+        $data = compact('page_attr', 'periode', 'roles', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)

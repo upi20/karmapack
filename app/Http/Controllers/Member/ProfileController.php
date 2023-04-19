@@ -29,6 +29,7 @@ class ProfileController extends Controller
         } else {
             $anggota = Anggota::findOrFail($request->id);
         }
+
         $user = $anggota->user;
 
         if (!$user) return abort(404);
@@ -54,8 +55,10 @@ class ProfileController extends Controller
             'google_accounts',
         );
 
+        $view = path_view('pages.admin.member.profile');
+        $data = compact('page_attr', 'anggota', 'user', 'provinces', 'kontak_jenis', 'pendidikan_jenis', 'google_accounts', 'view');
         $data['compact'] = $data;
-        return view('member.profile', $data);
+        return view($view, $data);
     }
 
     // tools =====================================================================================
@@ -89,6 +92,7 @@ class ProfileController extends Controller
             $anggota = Anggota::findOrFail($request->id);
             if (!$this->savePermission($anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
 
+            DB::beginTransaction();
             // foto handle
             $foto = '';
             if ($image = $request->file('profile')) {
@@ -105,6 +109,11 @@ class ProfileController extends Controller
 
                 // save foto
                 $anggota->foto = $foto;
+
+                // save to users
+                $user = $anggota->user;
+                $user->foto = $anggota->foto;
+                $user->save();
             }
 
             $anggota->profesi = $request->profesi;
@@ -112,6 +121,7 @@ class ProfileController extends Controller
             $anggota->bio = $request->bio;
             $anggota->angkatan = $request->angkatan;
             $anggota->save();
+            DB::commit();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',

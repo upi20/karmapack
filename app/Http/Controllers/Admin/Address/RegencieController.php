@@ -7,69 +7,29 @@ use App\Models\Address\Province;
 use Illuminate\Http\Request;
 use App\Models\Address\Regencie;
 use Illuminate\Support\Facades\DB;
-use Yajra\Datatables\Datatables;
 use League\Config\Exception\ValidationException;
 
 class RegencieController extends Controller
 {
-    private $query = [];
+
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            // extend query
-            $this->query['district'] = <<<SQL
-                (select count(*) from address_districts where address_districts.regency_id = address_regencies.id)
-            SQL;
-            $this->query['district_alias'] = 'district';
-
-            $this->query['village'] = <<<SQL
-                (select count(*) from address_villages
-                    join address_districts
-                    on address_villages.district_id = address_districts.id
-                    where address_districts.regency_id = address_regencies.id)
-            SQL;
-            $this->query['village_alias'] = 'village';
-
-            // model
-            $model = Regencie::select([
-                'address_regencies.id', 'address_regencies.name',
-                'address_provinces.name as province',
-                'address_provinces.id as province_id',
-                DB::raw("{$this->query['district']} as {$this->query['district_alias']}"),
-                DB::raw("{$this->query['village']} as {$this->query['village_alias']}"),
-            ])->leftJoin('address_provinces', 'address_provinces.id', '=', 'address_regencies.province_id');
-
-            // filter
-            // filter
-            if (isset($request->filter)) {
-                $filter = $request->filter;
-                if ($filter['province'] != '') {
-                    $model->where('address_regencies.province_id', '=', $filter['province']);
-                }
-            }
-
-            return Datatables::of($model)
-                ->addIndexColumn()
-                ->filterColumn($this->query['district_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['district']} like '%$keyword%'");
-                })
-                ->filterColumn($this->query['village_alias'], function ($query, $keyword) {
-                    $query->whereRaw("{$this->query['village']} like '%$keyword%'");
-                })
-                ->filterColumn('province', function ($query, $keyword) {
-                    $query->whereRaw("address_provinces.name like '%$keyword%'");
-                })
-                ->make(true);
+            return Regencie::datatable($request);
         }
 
         $page_attr = [
-            'title' => 'Manage Address Regencies',
+            'title' => 'Kabupaten/Kota',
             'breadcrumbs' => [
-                ['name' => 'Address'],
+                ['name' => 'Alamat'],
             ]
         ];
         $provinces = Province::all();
-        return view('admin.address.regencie', compact('page_attr', 'provinces'));
+
+        $view = path_view('pages.admin.address.regencie');
+        $data = compact('page_attr', 'provinces', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
@@ -143,7 +103,7 @@ class RegencieController extends Controller
 
             $result = $model->get()->toArray();
             if ($request->with_empty) {
-                $result = array_merge([['id' => '', 'text' => 'All Regencie']], $result);
+                $result = array_merge([['id' => '', 'text' => 'Semua Kab/Kota']], $result);
             }
 
             return response()->json(['results' => $result]);

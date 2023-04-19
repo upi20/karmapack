@@ -17,6 +17,6 @@ class PeriodeController extends Controller
         ];
         $periodes = Periode::orderBy('dari', 'desc')->paginate($paginate)
             ->appends($request->query());
-        return view('frontend.tentang.kepengurusan.periode', compact('page_attr', 'periodes'));
+        return view('pages.frontend.tentang.kepengurusan.periode', compact('page_attr', 'periodes'));
     }
 }

@@ -29,7 +29,11 @@ class PeriodeController extends Controller
 
         $roles = Role::all();
         $image_folder = $this->image_folder;
-        return view('admin.kepengurusan.periode.list', compact('page_attr', 'image_folder', 'roles'));
+
+        $view = path_view('pages.admin.kepengurusan.periode.list');
+        $data = compact('page_attr', 'image_folder', 'roles', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function add(Request $request)
@@ -44,7 +48,10 @@ class PeriodeController extends Controller
             'navigation' => $navigation
         ];
 
-        return view('admin.kepengurusan.periode.add', compact('page_attr'));
+        $view = path_view('pages.admin.kepengurusan.periode.add');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function edit(Periode $model)
@@ -60,20 +67,25 @@ class PeriodeController extends Controller
         ];
         $edit = true;
         $image_folder = $this->image_folder;
-        return view('admin.kepengurusan.periode.add', compact('page_attr', 'edit', 'model', 'image_folder'));
+
+        $view = path_view('pages.admin.kepengurusan.periode.add');
+        $data = compact('page_attr', 'edit', 'model', 'image_folder', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
     {
+        $t_periode = Periode::tableName;
         try {
             $request->validate([
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode'],
+                'slug' => ['required', 'string', 'max:255', "unique:$t_periode"],
                 'dari' => ['required', 'int'],
                 'sampai' => ['required', 'int'],
                 'slogan' => ['required', 'string'],
-                'visi' => ['required', 'string'],
-                'misi' => ['required', 'string'],
+                'visi' => ['nullable', 'string'],
+                'misi' => ['nullable', 'string'],
                 'filosofi_logo' => ['nullable', 'string'],
                 'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -115,15 +127,16 @@ class PeriodeController extends Controller
     public function update(Request $request)
     {
         try {
+            $t_periode = Periode::tableName;
             $request->validate([
                 'id' => ['required', 'int'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode,slug,' . $request->id],
+                'slug' => ['required', 'string', 'max:255', "unique:$t_periode,slug," . $request->id],
                 'dari' => ['required', 'int'],
                 'sampai' => ['required', 'int'],
                 'slogan' => ['required', 'string'],
-                'visi' => ['required', 'string'],
-                'misi' => ['required', 'string'],
+                'visi' => ['nullable', 'string'],
+                'misi' => ['nullable', 'string'],
                 'filosofi_logo' => ['nullable', 'string'],
             ]);
             $model = Periode::find($request->id);

@@ -103,7 +103,7 @@ if (!function_exists('menu_frontend')) {
      */
     function menu_frontend()
     {
-        $menu = MenuFrontend::all_view();
+        $menu = MenuFrontend::getFeViewData();
         return menu_parse($menu);
     }
 }
@@ -128,46 +128,55 @@ if (!function_exists('sidebar_menu_admin')) {
 
             // active
             $menu->active = $menu->active || ($menu->route === $navigation);
-            $active_class = $menu->active ? 'active' : '';
+            $active_class = $menu->active ? 'mm-active' : '';
+            $active_class_1 = $menu->active ? 'aria-expanded="true"' : '';
 
             if ($separator) {
                 // separator
-                $menu_body .= "<li class=\"sub-category\"><h3>{$menu->title}</h3></li> ";
+                $menu_body .= "<li class=\"menu-label\">{$menu->title}</li>";
             } elseif ($menu->children) {
                 $child_menu = '';
                 $child_active = false;
                 foreach ($menu->children as $c) {
                     $child = (object)$c;
                     $child->active = $child->active || ($child->route === $navigation);
-                    $active = $child->active ? 'active' : '';
-                    $child_menu .= "<li><a href=\"$child->url\" class=\"slide-item $active\">$child->title</a></li>";
+                    $active = $child->active ? 'mm-active' : '';
+                    $active_1 = $child->active ? 'aria-expanded="true"' : '';
+                    $child_menu .= <<<HTML
+                        <li class="$active">
+                            <a href="$child->url" $active_1><i class="bx bx-radio-circle"></i>$child->title</a>
+                        </li>
+                    HTML;
                     if ($child->active) $child_active = $child->active;
                 }
 
-                $active_1 = ($menu->active || $child_active) ? 'is-expanded' : '';
-                $active_2 = ($menu->active || $child_active) ? 'active' : '';
-                $menu_body .= " <li class=\"slide $active_1\">
-                                    <a class=\"side-menu__item $active_1 $active_2\" data-bs-toggle=\"slide\" href=\"javascript:void(0)\">
-                                        <i class=\"side-menu__icon $menu->icon\"></i>
-                                        <span class=\"side-menu__label\">$menu->title</span>
-                                        <i class=\"angle fe fe-chevron-right\"></i>
-                                    </a>
-                                    <ul class=\"slide-menu\">
-                                        $child_menu
-                                    </ul>
-                                </li> ";
-            } else {
-                $menu_body .= "<li class=\"slide\">
-                        <a class=\"side-menu__item $active_class\" data-bs-toggle=\"slide\" href=\"$menu->url\">
-                            <i class=\"side-menu__icon $menu->icon\"></i>
-                            <span class=\"side-menu__label\">$menu->title</span>
+                $active_1 = ($menu->active || $child_active) ? 'mm-active' : '';
+                $active_2 = ($menu->active || $child_active) ? 'aria-expanded="true"' : '';
+                $menu_body .= <<<HTML
+                    <li class="$active_1">
+                        <a href="javascript:void(0);" class="has-arrow" $active_2>
+                            <div class="parent-icon"><i class="$menu->icon"></i> </div>
+                            <div class="menu-title">$menu->title</div>
                         </a>
-                    </li>";
+                        <ul>
+                            $child_menu
+                        </ul>
+                    </li>
+                HTML;
+            } else {
+                $menu_body .= <<<HTML
+                    <li class="$active_class">
+                        <a href="$menu->url" $active_class_1>
+                            <div class="parent-icon"><i class="$menu->icon"></i></div>
+                            <div class="menu-title">$menu->title</div>
+                        </a>
+                    </li>
+                HTML;
             }
         }
 
         // head element
-        $menu_head = '<ul class="side-menu">';
+        $menu_head = '<ul class="metismenu" id="menu">';
         $menu_footer = '</ul>';
         return $menu_head . $menu_body . $menu_footer;
     }
@@ -190,20 +199,22 @@ if (!function_exists('navbar_menu_front')) {
         };
 
         // get menu list
-        $menus = menu_parse(MenuFrontend::all_view());
+        $menus = menu_parse(MenuFrontend::getFeViewData());
         $menu_body = '';
+
+        // active class
+        $active_class_src = 'class="active"';
         foreach ($menus as $m) {
             $menu = (object)$m;
 
             // 1 check separator
             $separator = $menu->type == 0;
-
             // menu_url
             $menu->url = $route_build($menu->route);
             // active
             $menu->active = $menu->active || ($menu->route === $navigation) || $menu->url == current_url();
-            $active_class = $menu->active ? 'active' : '';
-
+            $active_class = $menu->active ? $active_class_src : '';
+            // dd($active_class);
             if ($separator) {
                 // separator
                 // $menu_body .= "<li class=\"sub-category\"><h3>{$menu->title}</h3></li> ";
@@ -214,128 +225,25 @@ if (!function_exists('navbar_menu_front')) {
                     $child = (object)$c;
                     $child->url = $route_build($child->route);
                     $child->active = $child->active || ($child->route === $navigation) || $child->url == current_url();;
+                    $menu_active = $child->active ? $active_class_src : '';
 
-                    // child
-                    $active_class1 = $child->active ? ' openmenu ' : '';
-                    $active_class = $child->active ? ' text-primary' : '';
-                    $child_menu .= "<li><a class=\"$active_class1 $active_class\" href=\"$child->url\">$child->title</a></li>";
-
+                    $child_menu .= "<li $menu_active><a href=\"$child->url\">$child->title</a></li>";;
                     if ($child->active) $child_active = $child->active;
                 }
-                $active = $menu->active || $child_active;
-                $active_1 = $active ? ' class="openmenu active"' : '';
-                $active_2 = $active ? '<i class="icon-arrow-down switch"></i>' : '';
-                $active_3 = $active ? ' style="display: block;"' : '';
-                $menu_body .= "<li $active_1>
-                                    <a href=\"#\">$menu->title</a>
-                                    $active_2
-                                    <ul class=\"submenu\" $active_3>
-                                        $child_menu
-                                    </ul>
-                                </li>";
-            } else {
-                $menu_body .= " <li class=\"$active_class\"> <a href=\"$menu->url\">$menu->title</a> </li>";
-            }
-        }
 
-
-        // head element
-        $menu_head = '<ul class="vertical-menu">';
-
-        // Menu Extra =================================================================================
-        $dashboard = route('dashboard');
-        $dashboard = "<li><a href=\"$dashboard\">Halaman Utama</a></li>";
-        $login = route('login');
-        $login = "<li><a href=\"$login\">Masuk</a></li>";
-        $menu_extra = auth()->user() ? $dashboard : $login;
-        // Menu Extra =================================================================================
-
-        $menu_footer = $menu_extra . '</ul>';
-        return $menu_head . $menu_body . $menu_footer;
-    }
-}
-
-if (!function_exists('navbar_menu_front_topbar')) {
-    function navbar_menu_front_topbar($navigation = '')
-    {
-        // route builder
-        $route_build = function (string $route) {
-            if (Route::has($route)) {
-                return route($route);
-            } else {
-                if ($route == '' || $route == '#') {
-                    return '#';
-                } else {
-                    return str_parse($route);
-                }
-            }
-        };
-
-        // get menu list
-        $menus = menu_parse(MenuFrontend::all_view());
-        $menu_body = '';
-        foreach ($menus as $m) {
-            $menu = (object)$m;
-
-            // 1 check separator
-            $separator = $menu->type == 0;
-
-            // menu_url
-            $menu->url = $route_build($menu->route);
-            // active
-            $menu->active = $menu->active || ($menu->route === $navigation) || $menu->url == current_url();
-            $active_class = $menu->active ? 'active' : '';
-
-            if ($separator) {
-                // separator
-                // $menu_body .= "<li class=\"sub-category\"><h3>{$menu->title}</h3></li> ";
-            } elseif ($menu->children) {
-                $child_menu = '';
-                $child_active = false;
-                foreach ($menu->children as $c) {
-                    $child = (object)$c;
-                    $child->url = $route_build($child->route);
-                    $child->active = $child->active || ($child->route === $navigation) || $child->url == current_url();;
-
-                    // child
-                    $active_class = $child->active ? ' text-primary' : '';
-                    $child_menu .= "<li><a class=\"dropdown-item $active_class\" href=\"$child->url\">$child->title</a></li>";
-
-                    if ($child->active) $child_active = $child->active;
-                }
-                $active_2 = ($menu->active || $child_active) ? 'active' : '';
-
-                $menu_body .= "<li class=\"nav-item dropdown $active_2\">
-                                <a class=\"nav-link dropdown-toggle\" href=\"#\">$menu->title</a>
-                                <ul class=\"dropdown-menu\">
-                                    $child_menu
+                $menu_active = ($menu->active || $child_active) ? 'active' : '';
+                $menu_body .= <<<HTML
+                            <li class="menu-item-has-children $menu_active"><a href="javascript:void(0)">$menu->title</a>
+                                <ul class="sub-menu">
+                                $child_menu
                                 </ul>
-                            </li>";
+                            </li>
+                HTML;
             } else {
-                $menu_body .= "
-                <li class=\"nav-item  $active_class\">
-                    <a class=\"nav-link\" href=\"$menu->url\">$menu->title</a>
-                </li>";
+                $menu_body .= "<li $active_class><a href=\"$menu->url\">$menu->title</a></li>";
             }
         }
-
-
-        // head element
-        $menu_head = '<ul class="navbar-nav">';
-
-        // Menu Extra =================================================================================
-        $dashboard = route('dashboard');
-        $dashboard = "<li class=\"nav-item \">
-                        <a class=\"nav-link\" href=\"$dashboard\">Halaman Utama</a>
-                    </li>";
-        $login = route('login');
-        $login = "<li class=\"nav-item \">
-                        <a class=\"nav-link\" href=\"$login\">Masuk</a>
-                    </li>";
-        $menu_extra = auth()->user() ? $dashboard : $login;
-        // Menu Extra =================================================================================
-        $menu_footer = $menu_extra . '</ul>';
-        return $menu_head . $menu_body . $menu_footer;
+        return $menu_body;
     }
 }
 

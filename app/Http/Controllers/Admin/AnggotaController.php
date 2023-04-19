@@ -44,7 +44,11 @@ class AnggotaController extends Controller
             ->orderBy('angkatan', 'desc')
             ->distinct()->get();
         $user_role = Role::all();
-        return view('admin.anggota', compact('page_attr', 'user_role', 'angkatans'));
+
+        $view = path_view('pages.admin.anggota');
+        $data = compact('page_attr', 'user_role', 'angkatans', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     private function datatable(Request $request): mixed

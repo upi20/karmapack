@@ -31,10 +31,14 @@ class NotifAdminAtasController extends Controller
         $page_attr = [
             'title' => 'Notifikasi Admin Atas',
             'breadcrumbs' => [
-                ['name' => 'Utility'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Peralatan'],
             ]
-        ];
-        return view('admin.utility.notif_admin_atas', compact('page_attr'));
+        ];;
+        $view = path_view('pages.admin.utility.notif_admin_atas');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request): mixed
@@ -49,8 +53,10 @@ class NotifAdminAtasController extends Controller
             $model->sampai = $request->sampai;
             $model->link = $request->link;
             $model->link_nama = $request->link_nama;
-
             $model->save();
+
+            NotifAdminAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -75,6 +81,9 @@ class NotifAdminAtasController extends Controller
             $model->link = $request->link;
             $model->link_nama = $request->link_nama;
             $model->save();
+
+            NotifAdminAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -88,6 +97,9 @@ class NotifAdminAtasController extends Controller
     {
         try {
             $model->delete();
+
+            NotifAdminAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

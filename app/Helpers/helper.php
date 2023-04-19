@@ -1,9 +1,14 @@
 <?php
 
+use App\Models\Contact\ListContact;
+use App\Models\SocialMedia;
 use App\Models\Utility\NotifAdminAtas;
 use App\Models\Utility\NotifDepanAtas;
 use Illuminate\Support\Facades\Blade;
 use MatthiasMullie\Minify\JS;
+use MatthiasMullie\Minify\CSS;
+use App\Models\Menu\Admin as MenuAdmin;
+use App\Models\SettingActivity;
 
 if (!function_exists('h_prefix_uri')) {
     function h_prefix_uri(?string $param = null, int $min = 0)
@@ -23,19 +28,17 @@ if (!function_exists('h_prefix')) {
     }
 }
 
-if (!function_exists('notif_depan_atas')) {
-    function notif_depan_atas()
+if (!function_exists('feTopNotification')) {
+    function feTopNotification()
     {
-        $now = date('Y-m-d');
-        return NotifDepanAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
+        return NotifDepanAtas::getFeViewData();
     }
 }
 
-if (!function_exists('notif_admin_atas')) {
-    function notif_admin_atas()
+if (!function_exists('beTopNotification')) {
+    function beTopNotification()
     {
-        $now = date('Y-m-d');
-        return NotifAdminAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
+        return NotifAdminAtas::getFeViewData();
     }
 }
 
@@ -61,13 +64,6 @@ if (!function_exists('delete_file')) {
     // delete file
     function delete_file(string $file): bool
     {
-        // parse match os
-        $is_windows = strtolower(PHP_SHLIB_SUFFIX) === 'dll';
-        $file = str_replace(['\\', '/'], ($is_windows ? '\\' : '/'), $file);
-
-        // delte double slash
-        $file = $is_windows ? str_replace('\\\\', '\\', $file) : str_replace('//', '/', $file);
-
         $res_foto = true;
         if ($file != null && $file != '') {
             if (file_exists($file)) {
@@ -83,8 +79,7 @@ if (!function_exists('str_parse')) {
     function str_parse(?string $text = '', array $addon = []): string
     {
         $replace = [
-            ['search' => '__base_url__', 'replace' => url('')],
-            ['search' => '__file_shared__', 'replace' => url('shared/files/shares')],
+            ['search' => '__base_url__', 'replace' => url('')]
         ];
         $replace = array_merge($replace, $addon);
         $result = $text;
@@ -206,29 +201,20 @@ if (!function_exists('check_image_youtube')) {
         if (!isset($data[1])) {
             return null;
         }
-        $matches = '';
-        preg_match(
-            "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",
-            $data[1],
-            $matches
-        );
-        return isset($matches[1]) ? $matches[1] : null;
+        return get_youtube_id($data[1]);
     }
 }
 
-if (!function_exists('footer_instagram')) {
-    function footer_instagram()
+if (!function_exists('get_youtube_id')) {
+    function get_youtube_id(string $data): ?string
     {
-        $result = \App\Models\FooterInstagram::where('status', '=', 1)
-            ->orderBy('order')
-            ->get();
-        $result->map(function ($item) {
-            $image_folder = \App\Models\FooterInstagram::image_folder;
-            $item['foto'] = url("$image_folder/$item->foto");
-            return $item;
-        });
-
-        return $result->toArray();
+        $matches = null;
+        preg_match(
+            "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user|shorts)\/))([^\?&\"'>]+)/",
+            $data,
+            $matches
+        );
+        return isset($matches[1]) ? $matches[1] : null;
     }
 }
 
@@ -258,5 +244,277 @@ if (!function_exists('unsetByKey')) {
             }
         }
         return $array;
+    }
+}
+
+
+if (!function_exists('feSocialMedia')) {
+    function feSocialMedia()
+    {
+        return SocialMedia::getFeViewData();
+    }
+}
+
+if (!function_exists('feKontakList')) {
+    function feKontakList()
+    {
+        return ListContact::getFeViewData();
+    }
+}
+
+if (!function_exists('get_file_attr_attribute')) {
+    function get_file_attr_attribute(string $file)
+    {
+        $results = [
+            'height' => null,
+            'width' => null,
+            'mime' => null,
+            'bits' => null,
+            'channels' => null,
+        ];
+
+        $cek = file_exists($file);
+
+
+        if ($cek) {
+            $result = getimagesize($file);
+            $results['width'] = $result[0];
+            $results['height'] = $result[1];
+            $results['bits'] = $result['bits'];
+            $results['channels'] = $result['channels'];
+            $results['mime'] = $result['mime'];
+            return (object)$results;
+        } else {
+            return (object)$results;
+        }
+    }
+}
+
+if (!function_exists('adminTitle')) {
+    function adminTitle($route, $dashboardTitle = 'Dashboard', $addbreadcrumbs = [], $isChild = false)
+    {
+        $breadcrumbs = [];
+        $routeData = MenuAdmin::with(['parent'])->select(['title', 'parent_id'])->where('route', $route)->first();
+        $menuTitle = is_null($routeData) ? null : $routeData->title;
+        $breadcrumbs[] = ['name' => $dashboardTitle, 'url' => 'admin.dashboard'];
+        if (($routeData != null) ? ($routeData->parent != null) : false) {
+            $breadcrumbs[] =  [
+                'name' => $routeData->parent->title,
+                'url' => $routeData->parent->route
+            ];
+        }
+
+        if ($isChild) {
+            $breadcrumbs[] =  [
+                'name' => $routeData->title,
+                'url' => $routeData->route
+            ];
+        }
+
+        return [
+            'title' => $menuTitle,
+            'breadcrumbs' => array_merge($breadcrumbs, $addbreadcrumbs),
+        ];
+    }
+}
+
+if (!function_exists('unsetByKey')) {
+    function unsetByKey($array, $key)
+    {
+        if (is_array($key)) {
+            foreach ($key as $k) {
+                if (isset($array[$k])) {
+                    unset($array[$k]);
+                }
+            }
+        } else {
+            if (isset($array[$key])) {
+                unset($array[$key]);
+            }
+        }
+        return $array;
+    }
+}
+
+if (!function_exists('format_rupiah')) {
+    function format_rupiah($angka)
+    {
+        if ($angka !== null) {
+            $rupiah = number_format($angka, 0, ',', '.');
+            return "Rp " . $rupiah;
+        }
+
+        return '';
+    }
+}
+
+if (!function_exists('text_cutter')) {
+    function text_cutter($text, $end = 200)
+    {
+        return (strlen($text) > $end) ? substr($text, 0, $end) . '...' : $text;
+    }
+}
+
+if (!function_exists('asset_admin')) {
+    function asset_admin($asset, $name = null, $number = null)
+    {
+        $number = $number ?? config('app.admin_assets_number');
+        $name = $name ?? config('app.admin_assets_default');
+        $base_url = config("app.admin_assets_list");
+        if (isset($base_url[$name][$number])) {
+            return $base_url[$name][$number] . $asset;
+        } else {
+            return '';
+        }
+    }
+}
+
+if (!function_exists('url_params_generator')) {
+    function url_params_generator(array $params = []): string
+    {
+        $results = "?";
+        foreach ($params as $key => $value) {
+            $results .= ($results == "?" ? '' : "&");
+            $results .= "$key=$value";
+        }
+        return $results == "?" ? '' : $results;
+    }
+}
+
+if (!function_exists('resource_loader')) {
+    // $render output render langsung javascript output bukan url
+    function resource_loader(?string $resource = null, ?string $blade_path = null, ?array $params = [], ?string $type = 'js', bool $render = false): string
+    {
+        if (is_null($resource) && $blade_path !== null) {
+            $resource = str_replace('.', '/', $blade_path);
+        }
+
+        $params = array_merge([
+            'k' => csrf_token(),
+            'hpu' => h_prefix_uri(),
+        ], $params);
+
+        if ($render && $type == 'js') {
+            return resource_loader_render_js($resource, $params);
+        }
+
+        if ($render && $type == 'css') {
+            return resource_loader_render_css($resource, $params);
+        }
+
+        if (is_null($resource)) return '';
+        $resource = str_parse($resource, [
+            ['search' => '.js', 'replace' => ''],
+            ['search' => '.css', 'replace' => ''],
+        ]);
+
+        $generate_params = url_params_generator($params);
+
+        return url("loader/{$type}/{$resource}{$generate_params}");
+    }
+}
+
+if (!function_exists('resource_loader_render_js')) {
+    function resource_loader_render_js(string $resource, array $params = []): string
+    {
+        $full_path = resource_path("js/views/$resource.js");
+        $minifier = new JS($full_path);
+        $result = Blade::render($minifier->minify(), $params);
+
+        if ($result == $full_path) {
+            $result = "console.log('javascript {$resource} not found')";
+        }
+
+        return <<<HTML
+            <script>
+                $result
+            </script>
+        HTML;
+    }
+}
+
+if (!function_exists('resource_loader_render_css')) {
+    function resource_loader_render_css(string $resource, array $params = []): string
+    {
+        $full_path = resource_path("css/views/$resource.css");
+        $minifier = new CSS($full_path);
+        $result = Blade::render($minifier->minify(), $params);
+
+        if ($result == $full_path) {
+            $result = "/* {$resource} not found */ ";
+        }
+
+        return <<<HTML
+            <style>
+                {$result}
+            </style>
+        HTML;
+    }
+}
+
+if (!function_exists('path_view')) {
+    function path_view(string $view): string
+    {
+        return $view;
+    }
+}
+
+if (!function_exists('l_prefix_uri')) {
+    // loader prefix uri
+    function l_prefix_uri(string $prefix, ?string $param = null, int $min = 0)
+    {
+        $prefix_uri = explode('/', $prefix);
+        for ($i = 0; $i < $min; $i++) unset($prefix_uri[count($prefix_uri) - 1]);
+        $prefix_uri = implode('/', $prefix_uri);
+        return $param ? "$prefix_uri/$param" : $prefix_uri;
+    }
+}
+
+if (!function_exists('l_prefix')) {
+    // loader prefix uri
+    function l_prefix(string $prefix, ?string $param = null, int $min = 0)
+    {
+        $prefix_uri = l_prefix_uri($prefix, $param, $min);
+        return str_replace('/', '.', $prefix_uri);
+    }
+}
+
+// setting activity
+if (!function_exists('setting_get')) {
+    function setting_get($key, $default = null)
+    {
+        return settings()->get($key, $default);
+    }
+}
+
+if (!function_exists('setting_set')) {
+    function setting_set($key, $value)
+    {
+        if (is_array($value) || is_object($value)) {
+            $value = json_encode($value);
+        } else if (is_bool($value)) {
+            $value = $value ? 1 : 0;
+        }
+        // tracking
+        $setting = SettingActivity::where('key', $key)->first();
+        if (is_null($setting)) {
+            $setting = new SettingActivity();
+            $setting->key = $key;
+            $setting->value = $value;
+        } else {
+            // parse to string
+            $setting->value = $value;
+        }
+        $setting->save();
+
+        return settings()->set($key, $value)->save();
+    }
+}
+
+if (!function_exists('notif_depan_atas')) {
+    function notif_depan_atas()
+    {
+        $now = date('Y-m-d');
+        return NotifDepanAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
     }
 }

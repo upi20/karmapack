@@ -2,8 +2,45 @@
 
 namespace App\Console\Commands;
 
-use mikehaertl\shellcommand\Command as shellcommand;
-
+use App\Models\Artikel\Artikel;
+use App\Models\Artikel\Kategori;
+use App\Models\Artikel\KategoriArtikel;
+use App\Models\Artikel\Tag;
+use App\Models\Artikel\TagArtikel;
+use App\Models\Banner;
+use App\Models\Contact\FAQ;
+use App\Models\Contact\ListContact;
+use App\Models\Contact\Message;
+use App\Models\Galeri;
+use App\Models\Home\Testimonial;
+use App\Models\KataAlumni;
+use App\Models\Keanggotaan\Anggota;
+use App\Models\Keanggotaan\Hobi;
+use App\Models\Keanggotaan\Kontak;
+use App\Models\Keanggotaan\KontakJenis;
+use App\Models\Keanggotaan\Pendidikan;
+use App\Models\Keanggotaan\PendidikanJenis;
+use App\Models\Keanggotaan\PengalamanLain;
+use App\Models\Keanggotaan\PengalamanOrganisasi;
+use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
+use App\Models\Kepengurusan\Jabatan;
+use App\Models\Kepengurusan\Periode;
+use App\Models\Menu\Admin as MenuAdmin;
+use App\Models\Menu\Frontend as MenuFrontend;
+use App\Models\Pendaftaran;
+use App\Models\Pendaftaran\GForm;
+use App\Models\Pendaftaran\Sensus;
+use App\Models\Portfolio\Item as PortfolioItem;
+use App\Models\Portfolio\Kategori as PortfolioKategori;
+use App\Models\Portfolio\Portfolio;
+use App\Models\RoleHasMenu;
+use App\Models\Setting\HomeSlider;
+use App\Models\SocialAccount;
+use App\Models\SocialMedia;
+use App\Models\Tracker;
+use App\Models\Utility\HariBesarNasional;
+use App\Models\Utility\NotifAdminAtas;
+use App\Models\Utility\NotifDepanAtas;
 use Illuminate\Console\Command;
 
 class backup extends Command
@@ -29,6 +66,7 @@ class backup extends Command
      */
     public function handle()
     {
+        $tableNames = config('permission.table_names');
         $is_windows = strtolower(PHP_SHLIB_SUFFIX) === 'dll';
 
         $win_parse = function ($str) use ($is_windows) {
@@ -45,105 +83,106 @@ class backup extends Command
             $folder_parent = $win_parse("$root/backup");
             $folder_backup = $win_parse("$folder_parent/" . date('Y-m-d'));
 
-            if (!file_exists("$folder_parent")) $this->command_exec("mkdir $folder_parent");
-            if (!file_exists($folder_backup)) $this->command_exec("mkdir $folder_backup");
+            if (!file_exists("$folder_parent")) echo shell_exec("mkdir $folder_parent");
+            if (!file_exists($folder_backup)) echo shell_exec("mkdir $folder_backup");
             $copy = $is_windows ? 'copy' : 'cp -R';
-            $this->command_exec($win_parse("$copy $root/database/seeders/* $folder_backup"));
-
-
+            shell_exec($win_parse("$copy $root/database/seeders/* $folder_backup"));
 
             echo 'Berhasil backup data sebelumnya' . PHP_EOL;
         }
 
         $tables =  [
-            'user' => [
-                'social_accounts',
-                'logs',
-            ],
             'artikel' => [
-                'artikel',
-                'artikel_tag',
-                'artikel_kategori',
-                'artikel_tag_item',
-                'artikel_kategori_item'
+                Artikel::tableName,
+                Tag::tableName,
+                Kategori::tableName,
+                TagArtikel::tableName,
+                KategoriArtikel::tableName,
+                Banner::tableName,
             ],
             'galeri' => [
-                'galeri',
-            ],
-            'profile' => [
-                'kata_alumnis',
+                Galeri::tableName,
             ],
             'frontend' => [
-                'social_media',
-                'username_validations',
-                'instagram',
+                SocialMedia::tableName,
+                HomeSlider::tableName,
+                Testimonial::tableName,
+                FAQ::tableName,
+                //     KataKata::tableName,
+                //     ProgramPembelajaran::tableName,
+                //     Pengurus::tableName,
             ],
             'pendaftaran' => [
-                'pendaftarans',
-                'pend_sensus',
-                'g_forms'
+                GForm::tableName,
+                Sensus::tableName,
+                // Pendaftaran::tableName,
             ],
             'permissions' => [
-                'p_model_has_permissions',
-                'p_model_has_roles',
-                'p_permissions',
-                'p_roles',
-                'p_role_has_permissions',
-                'p_menu',
-                'p_menu_frontends',
-                'p_role_has_menu',
+                $tableNames['roles'],
+                $tableNames['permissions'],
+                MenuAdmin::tableName,
+                $tableNames['model_has_permissions'],
+                $tableNames['model_has_roles'],
+                $tableNames['role_has_permissions'],
+                RoleHasMenu::tableName,
+                MenuFrontend::tableName,
             ],
             'utility' => [
-                'notif_admin_atas',
-                'notif_depan_atas',
-                'hari_besar_nasionals',
+                NotifDepanAtas::tableName,
+                NotifAdminAtas::tableName,
+                HariBesarNasional::tableName,
             ],
             'contact' => [
-                'contact_list',
-                'contact_messages',
+                ListContact::tableName,
+                Message::tableName,
             ],
-            'other' => [
-                'faq',
+            'user' => [
+                Tracker::tableName,
+                SocialAccount::tableName,
+                'sessions',
+                'logs',
             ],
             'keanggotaan' => [
-                'anggota_kontak_jenis',
-                'anggota_pendidikan_jenis',
-                'anggotas',
-                'anggota_hobis',
-                'anggota_kontaks',
-                'anggota_pendidikans',
-                'anggota_pengalaman_lains',
-                'anggota_pengalaman_organisasis',
+                KontakJenis::tableName,
+                PendidikanJenis::tableName,
+                Anggota::tableName,
+                Hobi::tableName,
+                Kontak::tableName,
+                Pendidikan::tableName,
+                PengalamanLain::tableName,
+                PengalamanOrganisasi::tableName,
+                KataAlumni::tableName
             ],
             'kepengurusan' => [
-                'pengurus_periodes',
-                'pengurus_jabatans',
-                'pengurus_anggotas',
+                Periode::tableName,
+                Jabatan::tableName,
+                KepengurusanAnggota::tableName,
             ],
-        ];
 
-        if ($opt_users == 1 || $arg_type == 'users') $this->command_exec('php artisan iseed users --force');
+            // 'produk' => [
+            //     ProdukKategori::tableName,
+            //     Produk::tableName,
+            //     MarketPlaceJenis::tableName,
+            //     Foto::tableName,
+            //     MarketPlace::tableName,
+            // ],
+            // 'portfolio' => [
+            //     PortfolioKategori::tableName,
+            //     Portfolio::tableName,
+            //     PortfolioItem::tableName,
+            // ],
+        ];
+        if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
         foreach ($tables as $k => $t) {
             $type = $arg_type == 'all' ? $tables[$k] : ($k == $arg_type ? $t : []);
             foreach ($type as $table) {
-                $this->command_exec('php artisan iseed ' . $table . ' --force');
+                echo shell_exec('php artisan iseed ' . $table . ' --force');
             }
 
             if (in_array($arg_type, $t)) {
-                $this->command_exec('php artisan iseed ' . $arg_type . ' --force');
+                echo shell_exec('php artisan iseed ' . $arg_type . ' --force');
             }
         }
         return 1;
-    }
-
-    private function command_exec($command_str)
-    {
-        $command = new shellcommand($command_str);
-        if ($command->execute()) {
-            echo $command->getOutput() . PHP_EOL;
-        } else {
-            echo $command->getError() . PHP_EOL;
-            $exitCode = $command->getExitCode();
-        }
     }
 }

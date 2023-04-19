@@ -1,18 +1,19 @@
 <?php
 $page_attr = (object) [
     'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
-    'description' => isset($page_attr['description']) ? $page_attr['description'] : settings()->get(set_admin('meta.description')),
-    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : settings()->get(set_admin('meta.keyword')),
-    'author' => isset($page_attr['author']) ? $page_attr['author'] : settings()->get(set_admin('meta.author')),
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(settings()->get(set_admin('meta.image'))),
+    'description' => isset($page_attr['description']) ? $page_attr['description'] : setting_get(set_admin('meta.description')),
+    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : setting_get(set_admin('meta.keyword')),
+    'author' => isset($page_attr['author']) ? $page_attr['author'] : setting_get(set_admin('meta.author')),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(setting_get(set_admin('meta.image'))),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
-    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_admin('app.preloader')),
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : setting_get(set_admin('app.preloader')),
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
-$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_admin('app.title'), env('APP_NAME'));
+$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . setting_get(set_admin('app.title'), env('APP_NAME'));
 ?>
+
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <!-- Favicon -->
@@ -37,7 +38,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <!-- META DATA -->
     <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -67,180 +68,147 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta itemprop="description" content="{{ $page_attr->description }}">
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
-    <!-- BOOTSTRAP CSS -->
-    <link id="style" href="{{ asset('assets/templates/admin/plugins/bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet" />
+    <!--plugins-->
+    <link href="{{ asset_admin('plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
+    <link href="{{ asset_admin('plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
 
-    <!-- STYLE CSS -->
-    <link href="{{ asset('assets/templates/admin/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/templates/admin/css/dark-style.css') }}" rel="stylesheet" />
+    @if ($page_attr->loader)
+        <!-- loader-->
+        <link href="{{ asset_admin('css/pace.min.css') }}" rel="stylesheet" />
+        <script src="{{ asset_admin('js/pace.min.js') }}"></script>
+    @endif
 
-    <link href="{{ asset('assets/templates/admin/css/skin-modes.css') }}" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset_admin('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset_admin('css/bootstrap-extended.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="{{ asset_admin('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset_admin('css/icons.css') }}" rel="stylesheet">
 
-    <!--- FONT-ICONS CSS -->
-    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet" />
-
-    <!-- COLOR SKIN CSS -->
-    <link id="theme" rel="stylesheet" type="text/css" media="all"
-        href="{{ asset('assets/templates/admin/colors/color1.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
-
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css') }}" />
     <link rel="stylesheet"
-        href="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
-    @foreach (json_decode(settings()->get(set_admin('meta_list'), '{}')) as $meta)
+        href="{{ asset_admin('plugins/fontawesome-free-5.15.4-web/css/all.min.css', name: 'sash') }}">
+
+    <!-- Dark mode-->
+    <script>
+        const templateHasDarkMode = localStorage.getItem('dark-mode') == 'true';
+        const templateTheme = localStorage.getItem('theme');
+        if (localStorage.getItem('dark-mode') !== null) {
+            if (templateHasDarkMode) {
+                document.querySelector('html').setAttribute('class', 'dark-theme');
+            } else {
+                document.querySelector('html').classList.remove("dark-theme");
+                if (templateTheme) {
+                    document.querySelector('html').classList.add(templateTheme);
+                }
+            }
+        }
+    </script>
+
+    @foreach (json_decode(setting_get(set_admin('meta_list'), '{}')) as $meta)
         <!-- custom {{ $meta->name }} -->
         {!! $meta->value !!}
     @endforeach
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="app sidebar-mini ltr dark-mode">
-
-    <!-- BACKGROUND-IMAGE -->
-    <div class="login-img">
-
-        @if ($page_attr->loader)
-            <!-- GLOBAL-LOADER -->
-            <div id="global-loader" style="background-color: #1a1a3c">
-                <img src="{{ asset(settings()->get(set_admin('app.foto_light_mode'))) }}" class="loader-img"
-                    alt="Loader">
-            </div>
-            <!-- /GLOBAL-LOADER -->
-        @endif
-
-        <!-- PAGE -->
-        <div class="page" style="position: absolute; width: 100%; height: 100vh;">
-            <div class="">
-                <div class="container-login100">
-                    <div class="wrap-login100 p-6" style="border-radius: 24px; box-shadow: none">
-                        <div class="text-center">
-                            <img src="{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}"
-                                class="header-brand-img" alt="Logo Karmapack" id="logo">
-                        </div>
-                        <p class="text-center mt-5">Sistem Informasi Anggota (SIA)</p>
-                        @if (session()->has('message'))
-                            <p class="text-center mt-2 text-danger">{{ session()->get('message') }}</p>
-                        @endif
-                        <div class="panel panel-primary">
-                            <div class="panel-body tabs-menu-body p-0">
-                                <div class="tab-content">
-                                    <form action="javascript:void(0)" id="Loginform" name="Loginform" method="POST"
-                                        enctype="multipart/form-data" autocomplete="false">
-                                        <div class="wrap-input100 validate-input input-group"
-                                            data-bs-validate="Valid email is required: ex@abc.xyz">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
-                                                style="border-radius: 24px 0 0 24px;">
-                                                <i class="zmdi zmdi-email text-muted ms-1" aria-hidden="true"></i>
-                                            </a>
-                                            <input class="input100 border-start-0 form-control ms-0 bg-white"
-                                                type="email" placeholder="Email" id="email" required=""
-                                                name="email" style="border-radius: 0 24px 24px 0;">
-                                        </div>
-                                        <div class="text-end">
-                                            <a href="{{ url('forgot-password') }}" class="text-primary">
-                                                Lupa Password
-                                            </a>
-                                        </div>
-                                        <div class="wrap-input100 validate-input input-group" id="Password-toggle">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
-                                                style="border-radius: 24px 0 0 24px;">
-                                                <i class="zmdi zmdi-eye text-muted ms-1" aria-hidden="true"></i>
-                                            </a>
-                                            <input class="input100 border-start-0 form-control ms-0 bg-white"
-                                                type="password" placeholder="Password" id="password" required=""
-                                                name="password" style="border-radius: 0 24px 24px 0;">
-                                        </div>
-                                        <div class="container-login100-form-btn">
-                                            <button type="submit" class="login100-form-btn btn-primary p-0"
-                                                style="border: 0; border-radius: 24px">
-                                                Masuk
-                                            </button>
-
-                                            <a href="{{ url('auth/google') }}"
-                                                class="login100-form-btn btn-danger mt-2 p-0"
-                                                style="border: 0; border-radius: 24px">
-                                                <i class="fab fa-google me-2"></i> | Masuk Dengan Google
-                                            </a>
-                                            <div class="text-center pt-4">
-                                                <p class="mb-0">
-                                                    <a href="{{ url('/') }}" class="text-primary ms-1"> Kembali
-                                                    </a>
-                                                </p>
+<body class="">
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                    <div class="col mx-auto">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="p-4">
+                                    <div class="mb-3 text-center">
+                                        <img src="{{ asset(setting_get(set_admin('app.foto_dark_landscape_mode'))) }}"
+                                            style="max-height: 65px;" alt="Logo" />
+                                    </div>
+                                    <div class="text-center mb-1">
+                                        <p class="mb-0">Sistem Informasi Anggota <b>(SIA)</b></p>
+                                    </div>
+                                    <div class="form-body">
+                                        <form class="row g-3" action="javascript:void(0)" id="Loginform"
+                                            name="Loginform" method="POST" enctype="multipart/form-data"
+                                            autocomplete="false">
+                                            <div class="col-12">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="email"
+                                                    id="email" placeholder="Email">
                                             </div>
-                                        </div>
-                                        {{-- <label class="login-social-icon"><span>Masuk Dengan Media Sosial</span></label>
-                                        <div class="d-flex justify-content-center">
-                                            <a href="javascript:void(0)">
-                                                <div class="social-login me-4 text-center">
-                                                    <i class="fab fa-google"></i>
+                                            <div class="col-12">
+                                                <label for="password" class="form-label">Password</label>
+                                                <div class="input-group" id="show_hide_password">
+                                                    <input type="password" class="form-control border-end-0"
+                                                        id="password" name="password" value="12345678"
+                                                        placeholder="Masukan Password">
+                                                    <a href="javascript:void;"
+                                                        class="input-group-text bg-transparent">
+                                                        <i class='bx bx-hide'></i>
+                                                    </a>
                                                 </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="social-login me-4 text-center">
-                                                    <i class="fab fa-facebook"></i>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <a href="{{ url('forgot-password') }}">Lupa Password ?</a>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="d-grid  gap-2">
+                                                    <button type="submit" class="btn btn-primary">Masuk</button>
+                                                    <a href="{{ url('auth/google') }}" class="btn btn-light">
+                                                        <i class='bx bxl-google me-1'></i>Masuk Dengan Google</a>
                                                 </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="social-login text-center">
-                                                    <i class="fab fa-twitter"></i>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="text-center ">
+                                                    <p class="mb-0">Kembali
+                                                        <a href="{{ url('/') }}">Ke halaman utama</a>
+                                                    </p>
                                                 </div>
-                                            </a>
-                                        </div> --}}
-                                    </form>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- CONTAINER CLOSED -->
-                <div class="col col-login mx-auto">
-                    <div class="text-center d-md-flex  justify-content-center"> {!! str_parse(settings()->get(set_admin('app.copyright'))) !!}</div>
-                </div>
+                <!--end row-->
             </div>
         </div>
-
-        <div id="particles-js" style="height: 100vh"> </div>
-        <!-- End PAGE -->
     </div>
-    <!-- BACKGROUND-IMAGE CLOSED -->
+    <!--end wrapper-->
+    <!-- Bootstrap JS -->
+    <script src="{{ asset_admin('js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- JQUERY JS -->
-    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
+    <!--plugins-->
+    <script src="{{ asset_admin('js/jquery.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/simplebar/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/metismenu/js/metisMenu.min.js') }}"></script>
+    <script src="{{ resource_loader('app.js') }}"></script>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!-- SHOW PASSWORD JS -->
-    <script src="{{ asset('assets/templates/admin/js/show-password.min.js') }}"></script>
-
-    <!-- Color Theme js -->
-    <script src="{{ asset('assets/templates/admin/js/themeColors.js') }}"></script>
-
-    <!-- CUSTOM JS -->
-    <script src="{{ asset('assets/templates/admin/js/custom.js') }}"></script>
-
-    <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-
-    <script src="{{ asset('assets/templates/admin/plugins/particle/particles.js') }}"></script>
-
-    <script src="{{ asset('assets/templates/admin/plugins/fontawesome-free-5.15.4-web/js/all.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
+    <script src="{{ resource_loader('pages/admin/auth/login.js', params: ['redirect' => $redirect]) }}"></script>
 
     <script>
-        {{-- if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
-            $('#logo').attr('src', "{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}");
-        } --}}
-
-        // auto darkmode
-        $(window).on("load", function(e) {
-            if (!(document.querySelector('body').classList.contains('dark-mode'))) {
-                $('body').addClass('dark-mode');
-            }
-        })
+        $(document).ready(function() {
+            $("#show_hide_password a").on('click', function(event) {
+                event.preventDefault();
+                if ($('#show_hide_password input').attr("type") == "text") {
+                    $('#show_hide_password input').attr('type', 'password');
+                    $('#show_hide_password i').addClass("bx-hide");
+                    $('#show_hide_password i').removeClass("bx-show");
+                } else if ($('#show_hide_password input').attr("type") == "password") {
+                    $('#show_hide_password input').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("bx-hide");
+                    $('#show_hide_password i').addClass("bx-show");
+                }
+            });
+        });
     </script>
-
-    <script src="{{ url('loader/js/auth/login.js') }}"></script>
-
-</body>
 
 </html>

@@ -4,9 +4,9 @@ namespace App\Models\Artikel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Support\Facades\DB;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 
 class Kategori extends Model
 {
@@ -45,7 +45,7 @@ class Kategori extends Model
     // static function
     public static function getTopList(?int $limit = 6)
     {
-        $b = self::tableName;
+        $b = static::tableName;
         $a = KategoriArtikel::tableName;
         $artikel = <<<SQL
             (select count(*) from $a
@@ -53,7 +53,7 @@ class Kategori extends Model
         SQL;
         $artikel_alias = 'artikel';
 
-        $model = self::select([
+        $model = static::select([
             'id',
             'nama',
             'slug',

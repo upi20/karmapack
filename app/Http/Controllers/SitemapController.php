@@ -25,7 +25,7 @@ class SitemapController extends Controller
         $sitemap->add(
             Url::create(url(''))
                 ->setPriority(1)
-                ->addImage(asset(settings()->get("setting.home.hero.image")), "Karmapack")
+                ->addImage(asset(setting_get("setting.home.hero.image")), "Karmapack")
         );
 
         foreach ($frontMenu as $menu) {

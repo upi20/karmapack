@@ -31,10 +31,14 @@ class NotifDepanAtasController extends Controller
         $page_attr = [
             'title' => 'Notifikasi Depan Atas',
             'breadcrumbs' => [
-                ['name' => 'Utility'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Peralatan'],
             ]
         ];
-        return view('admin.utility.notif_depan_atas', compact('page_attr'));
+        $view = path_view('pages.admin.utility.notif_depan_atas');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request): mixed
@@ -49,8 +53,10 @@ class NotifDepanAtasController extends Controller
             $model->sampai = $request->sampai;
             $model->link = $request->link;
             $model->link_nama = $request->link_nama;
-
             $model->save();
+
+            NotifDepanAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -75,6 +81,9 @@ class NotifDepanAtasController extends Controller
             $model->link = $request->link;
             $model->link_nama = $request->link_nama;
             $model->save();
+
+            NotifDepanAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -88,6 +97,9 @@ class NotifDepanAtasController extends Controller
     {
         try {
             $model->delete();
+
+            NotifDepanAtas::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

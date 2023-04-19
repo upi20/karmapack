@@ -17,7 +17,7 @@ class PendaftaranController extends Controller
             'title' => 'Pendaftaran'
         ];
         $gforms = GForm::where('status', '<>', 0)->where('tampilkan', '=', 1)->orderBy('dari', 'desc')->get();
-        return view('frontend.pendaftaran.list', compact(
+        return view('pages.frontend.pendaftaran.list', compact(
             'gforms',
             'page_attr',
         ));

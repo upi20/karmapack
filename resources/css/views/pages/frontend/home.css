@@ -1,0 +1,49 @@
+.portfolio-section.btn-close {
+    position: absolute;
+    right: 56px;
+    top: 56px;
+    background: #fd562a;
+    color: #fff;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.meta-wrapper {
+    background: #f6f6f6;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+
+.item-meta {
+    font-size: 16px;
+    list-style-type: none;
+}
+
+.item-meta li {
+    margin-bottom: 18px
+}
+
+.item-meta li span {
+    font-weight: bold;
+    color: #222;
+    margin-left: 8px
+}
+
+.testimonial-foto {
+    margin: auto;
+    position: relative;
+    margin: auto;
+    width: 83px;
+    height: 83px;
+    max-height: 83px;
+    border-radius: 83px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-border-radius: 83px;
+    -moz-border-radius: 83px;
+}

@@ -4,7 +4,6 @@ namespace App\Models\Artikel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use App\Models\Artikel\Kategori;
 use App\Models\Artikel\KategoriArtikel;
 use App\Models\Artikel\Tag;
@@ -12,6 +11,8 @@ use App\Models\Artikel\TagArtikel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 
 class Artikel extends Model
 {
@@ -33,6 +34,7 @@ class Artikel extends Model
     const tableName = 'artikel';
     const image_folder = '/assets/artikel';
     const homeCacheKey = 'homeArtikel';
+    const footerCacheKey = 'footerArtikel';
 
     // eloquent
     public function tags()
@@ -65,10 +67,8 @@ class Artikel extends Model
     {
         $foto = $this->attributes['foto'];
         $detail = $this->attributes['detail'];
-
         $get_id_yt = check_image_youtube($detail);
-        $youtube = $get_id_yt ? true : false;
-        $foto = $youtube ? 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg' : asset($foto);
+        $foto = $foto ? asset($foto) : 'https://i.ytimg.com/vi/' . $get_id_yt . '/sddefault.jpg';
 
         return $foto;
     }
@@ -109,7 +109,7 @@ class Artikel extends Model
         $list_category = $this->parseId($categories);
 
         $artikel_id = $this->attributes['id'];
-        return self::getByCategory(kategori_id: $list_category, except_id: $artikel_id);
+        return static::getByCategory(kategori_id: $list_category, except_id: $artikel_id);
     }
 
     public function parseId($collect)
@@ -126,7 +126,7 @@ class Artikel extends Model
     // static function
     public static function getTopList(int $limit = 6)
     {
-        $model = self::select(['slug', 'foto', 'date', 'detail', 'nama'])
+        $model = static::select(['slug', 'foto', 'date', 'detail', 'nama'])
             ->where('status', '=', 1)
             ->orderBy('counter', 'desc')
             ->limit($limit)
@@ -137,15 +137,15 @@ class Artikel extends Model
 
     public static function getList(Request $request): object
     {
-        $paginate = is_numeric($request->limit) ? $request->limit : 9;
-        $a = self::tableName;
+        $paginate = is_numeric($request->limit) ? $request->limit : 3;
+        $a = static::tableName;
 
         $kat = Kategori::tableName;
         $kat_item = KategoriArtikel::tableName;
         $tag = Tag::tableName;
         $tag_item = TagArtikel::tableName;
 
-        $model = self::selectRaw("$a.*")->where("$a.status", '=', 1)
+        $model = static::selectRaw("$a.*")->where("$a.status", '=', 1)
             ->orderBy("$a.date", 'desc')
             ->orderBy("$a.id", 'desc');
 
@@ -174,16 +174,16 @@ class Artikel extends Model
                 $a.status like '%$search%'
             )");
         }
-        return $model->with(['tags', 'categories'])->paginate($paginate)
+        return $model->paginate($paginate)
             ->appends(request()->query());
     }
 
     public static function getByCategory(int|array $kategori_id, int $limit = 6, $except_id = null)
     {
-        $a = self::tableName;
+        $a = static::tableName;
         $b = KategoriArtikel::tableName;
 
-        $result = self::selectRaw("$a.*")
+        $result = static::selectRaw("$a.*")
             ->join($b, "$b.artikel_id", '=', "$a.id")
             ->orderBy("$a.date", 'desc')
             ->limit($limit);
@@ -202,14 +202,27 @@ class Artikel extends Model
 
     public static function getHomeViewData()
     {
-        return Cache::rememberForever(self::homeCacheKey, function () {
-            $get = static::with('user')->orderBy('date', 'desc')->orderBy('id', 'desc')->limit(3)->get();
+        return Cache::rememberForever(static::homeCacheKey, function () {
+            $get = static::with('categories')->orderBy('date', 'desc')->orderBy('id', 'desc')->limit(3)->get();
             return $get ? $get : [];
         });
     }
 
-    public static function homeClearCache()
+    public static function getFooterViewData()
     {
-        return Cache::pull(self::homeCacheKey);
+        return Cache::rememberForever(static::homeCacheKey, function () {
+            $get = static::orderBy('date', 'desc')->orderBy('id', 'desc')->limit(4)->get();
+            return $get ? $get : [];
+        });
+    }
+
+    public static function clearCache()
+    {
+        $cacheKey = [
+            static::footerCacheKey,
+            static::homeCacheKey
+        ];
+
+        foreach ($cacheKey as $key) Cache::pull($key);
     }
 }

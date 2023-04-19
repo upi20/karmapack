@@ -20,7 +20,11 @@ class PendidikanJenisController extends Controller
                 ['name' => 'Data Tambahan Profil'],
             ]
         ];
-        return view('admin.profile.pendidikan_jenis', compact('page_attr'));
+
+        $view = path_view('pages.admin.profile.pendidikan_jenis');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)

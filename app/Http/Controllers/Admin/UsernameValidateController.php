@@ -6,19 +6,24 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
 use App\Models\UsernameValidation;
+use Illuminate\Support\Facades\DB;
 
 class UsernameValidateController extends Controller
 {
     public function index(Request $request)
     {
-        $rules = UsernameValidation::all();
         $page_attr = [
             'title' => 'Pengaturan Nama Profil',
             'breadcrumbs' => [
                 ['name' => 'Halaman Utama'],
             ]
         ];
-        return view('admin.username_validation', compact('page_attr', 'rules'));
+
+        $rules = UsernameValidation::all();
+        $view = path_view('pages.admin.username_validation');
+        $data = compact('page_attr', 'rules', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function save(Request $request)
@@ -28,13 +33,12 @@ class UsernameValidateController extends Controller
             UsernameValidation::truncate();
 
             $rule_insert = [];
-            foreach ($rules as $rule) $rule_insert[] = ['rule' => $rule];
+            foreach ($rules ?? [] as $rule) $rule_insert[] = ['rule' => $rule];
             UsernameValidation::insert($rule_insert);
 
-            foreach (UsernameValidation::all() as $model) {
+            foreach (UsernameValidation::all() ?? [] as $model) {
                 UsernameValidation::logToDb($model, 'create');
             }
-
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

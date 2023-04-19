@@ -31,13 +31,14 @@ class HariBesarNasionalController extends Controller
         $page_attr = [
             'title' => 'Hari Besar Nasional',
             'breadcrumbs' => [
-                ['name' => 'Utility'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Peralatan'],
             ]
         ];
-
-        $data = compact('page_attr');
+        $view = path_view('pages.admin.utility.hari_besar_nasional');
+        $data = compact('page_attr', 'view');
         $data['compact'] = $data;
-        return view('admin.utility.hari_besar_nasional', $data);
+        return view($view, $data);
     }
 
     public function insert(Request $request): mixed

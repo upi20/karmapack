@@ -85,7 +85,7 @@ class HomeController extends Controller
             'pengurus'
         );
         $data['compact'] = $data;
-        return view('frontend.home', $data);
+        return view('pages.frontend.home', $data);
     }
 
     public function fronted2(Request $request)
@@ -93,7 +93,7 @@ class HomeController extends Controller
         $page_attr = [];
         $data = compact('page_attr');
         $data['compact'] = $data;
-        return view('frontend.home2', $data);
+        return view('pages.frontend.home2', $data);
     }
 
     private function checkVisible(string $item): ?bool

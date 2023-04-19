@@ -22,7 +22,7 @@ class DashboardController extends Controller
 
         $total_anggota = Anggota::count();
         $page_attr = ['title' => 'Dashboard'];
-        return view('member.dashborard', compact(
+        return view('pages.admin.member.dashboard', compact(
             'total_anggota',
             'page_attr',
             'anggota_by_angkatan',

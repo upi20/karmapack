@@ -14,7 +14,6 @@ class FrontendController extends Controller
         'title' => ['required', 'string', 'max:255'],
         'active' => ['required', 'integer', 'max:9'],
         'icon' => ['nullable', 'string', 'max:255'],
-        'title' => ['required', 'string', 'max:255'],
         'sequence' => ['required', 'integer'],
     ];
 
@@ -23,14 +22,15 @@ class FrontendController extends Controller
         $page_attr = [
             'title' => 'Menu Management',
             'breadcrumbs' => [
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'User Access'],
             ]
         ];
 
-        $data = compact(
-            'page_attr',
-        );
-        return view('admin.menu.frontend',  array_merge($data, ['compact' => $data]));
+        $view = path_view('pages.admin.menu.frontend');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
 
@@ -69,8 +69,10 @@ class FrontendController extends Controller
             $menu->save();
             $sequence++;
         }
-
         DB::commit();
+
+        MenuFrontend::feClearCache();
+
         return response()->json();
     }
 
@@ -87,6 +89,10 @@ class FrontendController extends Controller
             $model->route = $request->route;
             $model->type = $request->type;
             $model->save();
+
+            MenuFrontend::feClearCache();
+
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -110,6 +116,10 @@ class FrontendController extends Controller
             $model->route = $request->route;
             $model->type = $request->type;
             $model->save();
+
+            MenuFrontend::feClearCache();
+
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -125,6 +135,9 @@ class FrontendController extends Controller
         MenuFrontend::where('parent_id', '=', $model->id)->update(['parent_id' => null]);
         $model->delete();
         DB::commit();
+
+        MenuFrontend::feClearCache();
+
         return response()->json();
     }
 }

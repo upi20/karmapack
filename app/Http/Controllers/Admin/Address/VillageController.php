@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Address\Province;
 use Illuminate\Support\Facades\DB;
-use Yajra\Datatables\Datatables;
 use League\Config\Exception\ValidationException;
 use App\Models\Address\Village;
 
@@ -15,63 +14,21 @@ class VillageController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            // model
-            $model = Village::select([
-                // village
-                'address_villages.name',
-                'address_villages.id',
-                // district
-                'address_districts.name as district',
-                'address_districts.id as district_id',
-                // regencie
-                'address_regencies.name as regencie',
-                'address_regencies.id as regency_id',
-                // province
-                'address_provinces.name as province',
-                'address_provinces.id as province_id',
-            ])
-                ->leftJoin('address_districts', 'address_districts.id', '=', 'address_villages.district_id')
-                ->leftJoin('address_regencies', 'address_regencies.id', '=', 'address_districts.regency_id')
-                ->leftJoin('address_provinces', 'address_provinces.id', '=', 'address_regencies.province_id');
-
-            // filter
-            if (isset($request->filter)) {
-                $filter = $request->filter;
-                if ($filter['province'] && !$filter['regencie'] && !$filter['district']) {
-                    $model->where('address_regencies.province_id', '=', $filter['province']);
-                }
-
-                if ($filter['regencie'] && !$filter['district']) {
-                    $model->where('address_districts.regency_id', '=', $filter['regencie']);
-                }
-
-                if ($filter['district']) {
-                    $model->where('address_villages.district_id', '=', $filter['district']);
-                }
-            }
-
-            return Datatables::of($model)
-                ->addIndexColumn()
-                ->filterColumn('district', function ($query, $keyword) {
-                    $query->whereRaw("address_districts.name like '%$keyword%'");
-                })
-                ->filterColumn('regencie', function ($query, $keyword) {
-                    $query->whereRaw("address_regencies.name like '%$keyword%'");
-                })
-                ->filterColumn('province', function ($query, $keyword) {
-                    $query->whereRaw("address_provinces.name like '%$keyword%'");
-                })
-                ->make(true);
+            return Village::datatable($request);
         }
 
         $page_attr = [
-            'title' => 'Manage Address Villages',
+            'title' => 'Desa/Kelurahan',
             'breadcrumbs' => [
-                ['name' => 'Address'],
+                ['name' => 'Alamat'],
             ]
         ];
         $provinces = Province::all();
-        return view('admin.address.village', compact('page_attr', 'provinces'));
+
+        $view = path_view('pages.admin.address.village');
+        $data = compact('page_attr', 'provinces', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
@@ -146,7 +103,7 @@ class VillageController extends Controller
 
             $result = $model->get()->toArray();
             if ($request->with_empty) {
-                $result = array_merge([['id' => '', 'text' => 'All Village']], $result);
+                $result = array_merge([['id' => '', 'text' => 'Semua Kel/Des']], $result);
             }
 
             return response()->json(['results' => $result]);

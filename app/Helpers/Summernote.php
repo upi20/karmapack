@@ -12,9 +12,16 @@ class Summernote
     /**
      * Insert Image
      */
-    public static function insert(string $text, string $folder_asset, string $prefix = ''): object
+    public static function insert(?string $text, string $folder_asset, string $prefix = ''): object
     {
         try {
+            if (is_null($text) || $text == '') {
+                return (object)[
+                    'first_img' => '',
+                    'html' => ''
+                ];
+            }
+
             $dom = new \DomDocument();
             libxml_use_internal_errors(true);
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -31,7 +38,7 @@ class Summernote
                 list(, $data)      = explode(',', $data);
                 $data = base64_decode($data);
 
-                $image_name = '/' . $prefix . time() . $k  . '.png';
+                $image_name = '/' . $prefix . time() . mt_rand(1, 100) . $k  . '.png';
                 $image_src = $path_image_src . $image_name;
 
                 $path = public_path() . $image_src;
@@ -60,9 +67,20 @@ class Summernote
         }
     }
 
-    public static function update(string $text, string $folder_asset, string $current_foto, string $prefix = ''): object
+    public static function update(?string $text, string $folder_asset, string $current_foto, string $prefix = ''): object
     {
         try {
+            // foto / icon artikel diambil dari foto pertama dalam artikel
+            $image_icon_status = true;
+            $image_icon = $current_foto;
+
+            if (is_null($text) || $text == '') {
+                return (object)[
+                    'first_img' => $image_icon,
+                    'html' => ''
+                ];
+            }
+
             $dom = new \DomDocument();
             libxml_use_internal_errors(true);
             $dom->loadHtml($text, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -70,10 +88,6 @@ class Summernote
 
             $path_image_src = "$folder_asset";
             $path_folder = public_path() . $path_image_src;
-
-            // foto / icon artikel diambil dari foto pertama dalam artikel
-            $image_icon_status = true;
-            $image_icon = $current_foto;
 
             // foto yang dipakai
             $foto_used = [];
@@ -144,6 +158,10 @@ class Summernote
 
     public static function delete($text): bool
     {
+        if (is_null($text) || $text == '') {
+            return false;
+        }
+
         $result = true;
         $dom = new \DomDocument();
         libxml_use_internal_errors(true);

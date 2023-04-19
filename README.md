@@ -277,8 +277,8 @@ Fitur pada Aplikasi ini meliputi:
 ## Instalasi
 
 ### Spesifikasi
-- PHP ^8.0
-- Laravel 9.x
+- PHP ^8.1
+- Laravel 10.x
 - Database MariaDB
 
 ### Cara Install

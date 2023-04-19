@@ -70,7 +70,6 @@ Route::controller(AnggotaController::class)->prefix($prefix)->group(function () 
     Route::post('/save', 'save_password')->name("$name.save")->middleware("permission:$name.save");
 });
 
-
 $prefix = 'kata_alumni';
 Route::controller(KataAlumniController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
     $name = "$name.$prefix"; // member.kata_alumni

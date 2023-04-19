@@ -21,7 +21,7 @@ class SensusController extends Controller
             'description' => 'Untuk pemutakhiran databse anggota',
             'image' => asset('assets/pendaftarans/20220502202741.png'),
         ];
-        return view('frontend.pendaftaran.sensus', compact('page_attr'));
+        return view('pages.frontend.pendaftaran.sensus', compact('page_attr'));
     }
 
     public function insert(Request $request)
