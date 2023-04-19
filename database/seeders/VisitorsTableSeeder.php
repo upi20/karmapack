@@ -1774,6 +1774,19 @@ class VisitorsTableSeeder extends Seeder
                 'hits' => 45,
                 'has_detail' => 0,
             ),
+            135 => 
+            array (
+                'id' => 136,
+                'ip' => '127.0.0.1',
+                'date' => '2023-04-20',
+                'time' => '06:05:35',
+                'platform' => 'Windows',
+                'browser' => 'Edge',
+                'browser_version' => '112.0.1722.48',
+            'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.48',
+                'hits' => 1,
+                'has_detail' => 0,
+            ),
         ));
         
         
