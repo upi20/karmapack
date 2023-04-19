@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,12 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::beginTransaction();
-        // address seeders
-        AddressProvinceSeeders::run();
-        AddressRegenciesSeeder::run();
-        AddressDistrictSeeders::run();
-        AddressVillageSeeders::run();
+        // address
+        $this->call(AddressProvinceSeeders::class);
+        $this->call(AddressRegenciesSeeder::class);
+        $this->call(AddressDistrictSeeders::class);
+        $this->call(AddressVillageSeeders::class);
 
         // master
         $this->call(UsersTableSeeder::class);
@@ -83,6 +80,32 @@ class DatabaseSeeder extends Seeder
         $this->call(PengurusAnggotasTableSeeder::class);
         $this->call(SocialAccountsTableSeeder::class);
         $this->call(LogsTableSeeder::class);
-        DB::commit();
+
+        // auth
+        $this->call(SessionsTableSeeder::class);
+        $this->call(LogsTableSeeder::class);
+        $this->call(VisitorsTableSeeder::class);
+
+        // produk
+        $this->call(ProdukKategoriTableSeeder::class);
+        $this->call(ProdukTableSeeder::class);
+        $this->call(ProdukMarketPlaceJenisTableSeeder::class);
+        $this->call(ProdukFotoTableSeeder::class);
+        $this->call(ProdukMarketPlaceTableSeeder::class);
+
+        // portfolio
+        $this->call(PortfolioKategoriTableSeeder::class);
+        $this->call(PortfolioTableSeeder::class);
+        $this->call(PortfolioItemTableSeeder::class);
+
+        // home
+        $this->call(HomeTestimonialsTableSeeder::class);
+        $this->call(HomeProgramPembelajaranTableSeeder::class);
+        $this->call(HomeKataKatasTableSeeder::class);
+        $this->call(HomePengurusTableSeeder::class);
+        $this->call(HomeSlidersTableSeeder::class);
+
+        // other
+        $this->call(BannersTableSeeder::class);
     }
 }

@@ -37,7 +37,7 @@ class ArtikelController extends Controller
             'request',
         );
         $data['compact'] = $data;
-        return view('frontend.artikel.list', $data);
+        return view('pages.frontend.artikel.list', $data);
     }
 
     // artikel render
@@ -68,7 +68,7 @@ class ArtikelController extends Controller
         $top_article = Artikel::getTopList(4);
 
         // return
-        return view('frontend.artikel.detail', compact(
+        return view('pages.frontend.artikel.detail', compact(
             'page_attr',
             'model',
             'top_article',

@@ -1,18 +1,19 @@
 <?php
 $page_attr = (object) [
-    'title' => 'Lupa Password',
-    'description' => 'Halaman Lupa Password',
-    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : settings()->get(set_admin('meta.keyword')),
-    'author' => isset($page_attr['author']) ? $page_attr['author'] : settings()->get(set_admin('meta.author')),
-    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(settings()->get(set_admin('meta.image'))),
+    'title' => isset($page_attr['title']) ? $page_attr['title'] : '',
+    'description' => isset($page_attr['description']) ? $page_attr['description'] : setting_get(set_admin('meta.description')),
+    'keywords' => isset($page_attr['keywords']) ? $page_attr['keywords'] : setting_get(set_admin('meta.keyword')),
+    'author' => isset($page_attr['author']) ? $page_attr['author'] : setting_get(set_admin('meta.author')),
+    'image' => isset($page_attr['image']) ? $page_attr['image'] : asset(setting_get(set_admin('meta.image'))),
     'navigation' => isset($page_attr['navigation']) ? $page_attr['navigation'] : false,
-    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : settings()->get(set_admin('app.preloader')),
+    'loader' => isset($page_attr['loader']) ? $page_attr['loader'] : setting_get(set_admin('app.preloader')),
     'breadcrumbs' => isset($page_attr['breadcrumbs']) ? (is_array($page_attr['breadcrumbs']) ? $page_attr['breadcrumbs'] : false) : false,
 ];
-$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_admin('app.title'), env('APP_NAME'));
+$page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . setting_get(set_admin('app.title'), env('APP_NAME'));
 ?>
+
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <!-- Favicon -->
@@ -37,7 +38,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <!-- META DATA -->
     <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -67,104 +68,82 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta itemprop="description" content="{{ $page_attr->description }}">
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
-    <!-- BOOTSTRAP CSS -->
-    <link id="style" href="{{ asset('assets/templates/admin/plugins/bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet" />
+    <!--plugins-->
+    <link href="{{ asset_admin('plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
+    <link href="{{ asset_admin('plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
 
-    <!-- STYLE CSS -->
-    <link href="{{ asset('assets/templates/admin/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/templates/admin/css/dark-style.css') }}" rel="stylesheet" />
+    @if ($page_attr->loader)
+        <!-- loader-->
+        <link href="{{ asset_admin('css/pace.min.css') }}" rel="stylesheet" />
+        <script src="{{ asset_admin('js/pace.min.js') }}"></script>
+    @endif
 
-    <link href="{{ asset('assets/templates/admin/css/skin-modes.css') }}" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="{{ asset_admin('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset_admin('css/bootstrap-extended.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="{{ asset_admin('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset_admin('css/icons.css') }}" rel="stylesheet">
 
-    <!--- FONT-ICONS CSS -->
-    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet" />
+    <!-- Theme Style CSS -->
+    <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset_admin('plugins/fontawesome-free-5.15.4-web/css/all.min.css', name: 'sash') }}">
 
-    <!-- COLOR SKIN CSS -->
-    <link id="theme" rel="stylesheet" type="text/css" media="all"
-        href="{{ asset('assets/templates/admin/colors/color1.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.css') }}">
-
-    @foreach (json_decode(settings()->get(set_admin('meta_list'), '{}')) as $meta)
+    @foreach (json_decode(setting_get(set_admin('meta_list'), '{}')) as $meta)
         <!-- custom {{ $meta->name }} -->
         {!! $meta->value !!}
     @endforeach
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="app sidebar-mini ltr dark-mode">
+<body class="">
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+                    <div class="col mx-auto">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="p-3">
+                                    <div class="text-center">
+                                        <img src="{{ asset_admin('images/icons/forgot-2.png') }}" width="100"
+                                            alt="Logo" />
+                                    </div>
+                                    <h4 class="mt-5 font-weight-bold">Lupa Password?</h4>
+                                    <p class="text-muted">Masukan email yang sudah terdaftar</p>
 
-    <!-- BACKGROUND-IMAGE -->
-    <div class="login-img">
+                                    @if (session('status'))
+                                        <p class="text-success">
+                                            {{ session('status') }}
+                                        </p>
+                                    @endif
 
-        @if ($page_attr->loader)
-            <!-- GLOBAL-LOADER -->
-            <div id="global-loader" style="background-color: #1a1a3c">
-                <img src="{{ asset(settings()->get(set_admin('app.foto_light_mode'))) }}" class="loader-img"
-                    alt="Loader">
-            </div>
-            <!-- /GLOBAL-LOADER -->
-        @endif
-
-        <!-- PAGE -->
-        <div class="page" style="position: absolute; width: 100%; height: 100vh;">
-            <div class="">
-                <div class="container-login100">
-                    <div class="wrap-login100 p-6" style="border-radius: 24px; box-shadow: none">
-                        <div class="text-center">
-                            <img src="{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}"
-                                class="header-brand-img" alt="Logo Karmapack" id="logo">
-                        </div>
-
-                        <p class="text-muted mt-3">Masukan email yang sudah terdaftar sebagai anggota</p>
-                        @if (session('status'))
-                            <p class="text-success">
-                                {{ session('status') }}
-                            </p>
-                        @endif
-
-                        @if ($errors->any())
-                            <div class="mt-1">
-                                <div class="fw-bold text-danger">{{ __('Whoops! Something went wrong.') }}</div>
-                                <ul class="text-danger">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        @if (session()->has('message'))
-                            <p class="text-center mt-2 text-danger">{{ session()->get('message') }}</p>
-                        @endif
-                        <div class="panel panel-primary">
-                            <div class="panel-body tabs-menu-body p-0">
-                                <div class="tab-content">
-                                    <form id="Loginform" name="Loginform" method="POST"
+                                    @if ($errors->any())
+                                        <div class="mt-1">
+                                            <div class="fw-bold text-danger">{{ __('Whoops! Something went wrong.') }}
+                                            </div>
+                                            <ul class="text-danger">
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    <form class="account-form" id="Loginform" name="Loginform" method="POST"
                                         action="{{ route('password.email') }}">
                                         @csrf
-                                        <div class="wrap-input100 validate-input input-group"
-                                            data-bs-validate="Valid email is required: ex@abc.xyz">
-                                            <a href="javascript:void(0)" class="input-group-text bg-white text-muted"
-                                                style="border-radius: 24px 0 0 24px;">
-                                                <i class="zmdi zmdi-email text-muted ms-1" aria-hidden="true"></i>
-                                            </a>
-                                            <input class="input100 border-start-0 form-control ms-0 bg-white"
-                                                type="email" placeholder="Email" id="email" required=""
-                                                name="email" style="border-radius: 0 24px 24px 0;">
+                                        <div class="mb-4 mt-1">
+                                            <input type="email" name="email" type="email" class="form-control"
+                                                placeholder="example@user.com" />
                                         </div>
-                                        <div class="container-login100-form-btn">
-                                            <button type="submit" class="login100-form-btn btn-primary p-0"
-                                                style="border: 0; border-radius: 24px">
-                                                Kirim Email
-                                            </button>
-
-                                            <div class="text-center pt-4">
-                                                <p class="mb-0">
-                                                    <a href="{{ route('login') }}" class="text-primary ms-1">
-                                                        Halaman Masuk
-                                                    </a>
-                                                </p>
-                                            </div>
+                                        <div class="d-grid gap-2">
+                                            <button type="submit" class="btn btn-primary">Kirim</button>
+                                            <a href="{{ route('login') }}" class="btn btn-light">
+                                                <i class='bx bx-arrow-back me-1'></i>Kembali Ke login</a>
                                         </div>
                                     </form>
                                 </div>
@@ -172,53 +151,12 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                         </div>
                     </div>
                 </div>
-                <!-- CONTAINER CLOSED -->
-                <div class="col col-login mx-auto">
-                    <div class="text-center d-md-flex  justify-content-center"> {!! str_parse(settings()->get(set_admin('app.copyright'))) !!}</div>
-                </div>
             </div>
         </div>
-
-        <div id="particles-js" style="height: 100vh"> </div>
-        <!-- End PAGE -->
     </div>
-    <!-- BACKGROUND-IMAGE CLOSED -->
+    <!-- end wrapper -->
 
-    <!-- JQUERY JS -->
-    <script src="{{ asset('assets/templates/admin/js/jquery.min.js') }}"></script>
-
-    <!-- BOOTSTRAP JS -->
-    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/templates/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!-- SHOW PASSWORD JS -->
-    <script src="{{ asset('assets/templates/admin/js/show-password.min.js') }}"></script>
-
-    <!-- Color Theme js -->
-    <script src="{{ asset('assets/templates/admin/js/themeColors.js') }}"></script>
-
-    <!-- CUSTOM JS -->
-    <script src="{{ asset('assets/templates/admin/js/custom.js') }}"></script>
-
-    <script src="{{ asset('assets/templates/admin/plugins/sweet-alert/sweetalert2.all.js') }}"></script>
-
-    <script src="{{ asset('assets/templates/admin/plugins/particle/particles.js') }}"></script>
-
-    <script>
-        {{-- if (localStorage.getItem('lightMode') || localStorage.getItem('darkMode') == null) {
-            $('#logo').attr('src', "{{ asset(settings()->get(set_admin('app.foto_light_landscape_mode'))) }}");
-        } --}}
-
-        // auto darkmode
-        $(window).on("load", function(e) {
-            if (!(document.querySelector('body').classList.contains('dark-mode'))) {
-                $('body').addClass('dark-mode');
-            }
-        })
-    </script>
-
-    <script src="{{ url('loader/js/auth/forgot-password.js') }}"></script>
-
-</body>
+    <!-- Bootstrap JS -->
+    <script src="{{ asset_admin('js/bootstrap.bundle.min.js') }}"></script>
 
 </html>

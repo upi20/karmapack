@@ -28,7 +28,7 @@ class KontakController extends Controller
 
         $data = compact('page_attr', 'contacts', 'faqs');
         $data['compact'] = $data;
-        return view('frontend.kontak', $data);
+        return view('pages.frontend.kontak', $data);
     }
 
     public function faq(Request $request)
@@ -40,7 +40,7 @@ class KontakController extends Controller
         $faqs = FAQ::where('status', '=', 1)->get();
         $data = compact('page_attr', 'faqs');
         $data['compact'] = $data;
-        return view('frontend.faq', $data);
+        return view('pages.frontend.faq', $data);
     }
 
     public function insert(Request $request): mixed

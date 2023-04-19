@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use League\Config\Exception\ValidationException;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
@@ -18,7 +17,6 @@ class AdminController extends Controller
         'title' => ['required', 'string', 'max:255'],
         'active' => ['required', 'integer', 'max:9'],
         'icon' => ['nullable', 'string', 'max:255'],
-        'title' => ['required', 'string', 'max:255'],
         'roles' => ['required'],
         'sequence' => ['required', 'integer'],
     ];
@@ -35,15 +33,15 @@ class AdminController extends Controller
         $page_attr = [
             'title' => 'Menu Management',
             'breadcrumbs' => [
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'Admin'],
             ]
         ];
-        $data = compact(
-            'page_attr',
-            'routes',
-            'roles',
-        );
-        return view('admin.menu.admin',  array_merge($data, ['compact' => $data]));
+
+        $view = path_view('pages.admin.menu.admin');
+        $data = compact('page_attr', 'routes', 'roles', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
 
@@ -103,15 +101,9 @@ class AdminController extends Controller
             $model->type = $request->type;
             $model->save();
 
-            // check route permission
-            if ($request->route) {
-                $this->ceheckPermission($request->route);
-            }
-
             // insert role
             foreach ($request->roles as $role) {
                 $role = Role::findByParam(['name' => $role]);
-                $role->givePermissionTo($request->route);
                 RoleHasMenu::create([
                     'role_id' => $role->id,
                     'menu_id' => $model->id,
@@ -135,13 +127,6 @@ class AdminController extends Controller
                 $this->validation_rule
             ));
             DB::beginTransaction();
-            // delete semua permission di role sebelumnya
-
-            // check route permission
-            if ($request->route != null) {
-                $this->ceheckPermission($request->route);
-            }
-
             // update menu
             $model = MenuAdmin::find($request->id);
             $model->parent_id = $request->parent_id == 0 ? null : $request->parent_id;
@@ -150,32 +135,20 @@ class AdminController extends Controller
             $model->icon = $request->icon;
             $model->route = $request->route;
             $model->type = $request->type;
-
-            $role_has_menu = RoleHasMenu::where('menu_id', '=', $model->id);
-            // remove permission current
-            foreach ($role_has_menu->get() as $role) {
-                if (is_null($model->route)) continue;
-                $role = Role::find($role->role_id);
-                // insert permission
-                $role->revokePermissionTo($model->route);
-            }
+            $model->save();
 
             // delete role
-            $role_has_menu->delete();
+            RoleHasMenu::where('menu_id', '=', $model->id)->delete();
 
             // insert role
             foreach ($request->roles as $role) {
                 $role = Role::findByParam(['name' => $role]);
-
-                // insert permission
-                $role->givePermissionTo($request->route);
                 RoleHasMenu::create([
                     'role_id' => $role->id,
                     'menu_id' => $model->id,
                 ]);
             }
 
-            $model->save();
             DB::commit();
         } catch (ValidationException $error) {
             return response()->json([
@@ -193,17 +166,5 @@ class AdminController extends Controller
         $model->delete();
         DB::commit();
         return response()->json();
-    }
-
-    private function ceheckPermission(String $name)
-    {
-        $guard_name = 'web';
-        $get = Permission::where('name', $name)->where('guard_name', $guard_name)->get();
-        if ($get->count() < 1) {
-            Permission::create([
-                'name' => $name,
-                'guard_name' => $guard_name,
-            ]);
-        }
     }
 }

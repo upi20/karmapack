@@ -17,6 +17,6 @@ class BidangController extends Controller
             'image' => $jabatan->fotoUrl(),
         ];
 
-        return view('frontend.tentang.kepengurusan.bidang', compact('page_attr', 'jabatan'));
+        return view('pages.frontend.tentang.kepengurusan.bidang', compact('page_attr', 'jabatan'));
     }
 }

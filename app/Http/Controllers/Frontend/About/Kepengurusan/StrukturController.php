@@ -26,6 +26,6 @@ class StrukturController extends Controller
             'navigation' => 'tentang.kepengurusan.struktur',
         ];
 
-        return view('frontend.tentang.kepengurusan.struktur', compact('page_attr', 'periode'));
+        return view('pages.frontend.tentang.kepengurusan.struktur', compact('page_attr', 'periode'));
     }
 }

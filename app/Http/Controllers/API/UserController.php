@@ -33,8 +33,8 @@ class UserController extends Controller
     {
         try {
             $request->validate([
-                'email' => 'email|required',
-                'password' => 'required'
+                'email' => ['required'],
+                'password' => ['required']
             ]);
 
             $credentials = request(['email', 'password']);
@@ -43,8 +43,8 @@ class UserController extends Controller
                     'message' => 'Unauthorized'
                 ], 'Authentication Failed', 500);
             }
-
             $user = User::where('email', $request->email)->first();
+
             if (!Hash::check($request->password, $user->password, [])) {
                 throw new \Exception('Invalid Credentials');
             }
@@ -74,7 +74,7 @@ class UserController extends Controller
             $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'username' => ['required', 'string', 'max:255', 'unique:users'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'email' => ['required', 'integer', 'digits:16', 'unique:users'],
                 'password' => ['required', 'string', new Password]
             ]);
 

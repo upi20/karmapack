@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
-use Yajra\Datatables\Datatables;
 use App\Models\Instagram;
 use Illuminate\Support\Facades\DB;
 
@@ -14,21 +13,7 @@ class InstagramController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            $model = Instagram::select(['id', 'nama', 'keterangan', 'tanggal', 'status'])
-                ->selectRaw("IF(status = 1, 'Tampilkan', 'Tidak Tampilkan') as status_str")
-                ->selectRaw("date_format(tanggal, '%d-%b-%Y') as tanggal_str");
-
-            // filter
-            if (isset($request->filter)) {
-                $filter = $request->filter;
-                if ($filter['status'] != '') {
-                    $model->where('status', '=', $filter['status']);
-                }
-            }
-
-            return Datatables::of($model)
-                ->addIndexColumn()
-                ->make(true);
+            return Instagram::datatable($request);
         }
         $page_attr = [
             'title' => 'Instagram',
@@ -36,7 +21,11 @@ class InstagramController extends Controller
                 ['name' => 'Dashboard'],
             ]
         ];
-        return view('admin.instagram', compact('page_attr'));
+
+        $view = path_view('pages.admin.instagram');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)

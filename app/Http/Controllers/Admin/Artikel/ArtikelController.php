@@ -12,6 +12,7 @@ use App\Models\Artikel\Kategori;
 use App\Models\Artikel\Tag;
 use App\Models\Artikel\TagArtikel;
 use App\Models\Artikel\KategoriArtikel;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
@@ -42,7 +43,10 @@ class ArtikelController extends Controller
                 ['name' => 'Artikel'],
             ]
         ];
-        return view('admin.artikel.data.list', compact('page_attr'));
+        $view = path_view('pages.admin.artikel.data.list');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function add(Request $request)
@@ -57,9 +61,13 @@ class ArtikelController extends Controller
             'navigation' => $navigation
         ];
 
-        Artikel::homeClearCache();
+        Artikel::clearCache();
 
-        return view('admin.artikel.data.add', compact('page_attr'));
+        $users = User::all();
+        $view = path_view('pages.admin.artikel.data.add');
+        $data = compact('page_attr', 'users', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function edit(Artikel $artikel)
@@ -91,7 +99,12 @@ class ArtikelController extends Controller
             ->join('artikel_tag', "$tbl.tag_id", '=', "artikel_tag.id")
             ->where("$tbl.artikel_id", "=", $artikel->id)
             ->get();
-        return view('admin.artikel.data.add', compact('page_attr', 'edit', 'artikel', 'kategori', 'tag'));
+        $users = User::all();
+
+        $view = path_view('pages.admin.artikel.data.add');
+        $data = compact('page_attr', 'edit', 'artikel', 'kategori', 'tag', 'users', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
@@ -116,14 +129,14 @@ class ArtikelController extends Controller
                 'status' => $request->status,
                 'detail' => $detail->html,
                 'foto' => $detail->first_img,
-                'user_id' => auth()->user()->id,
+                'user_id' => $request->user_id,
                 // 'created_by' => auth()->user()->id,
             ]);
             $this->kategori_store($request->kategori, $model->id);
             $this->tag_store($request->tag, $model->id);
             DB::commit();
 
-            Artikel::homeClearCache();
+            Artikel::clearCache();
 
             return response()->json();
         } catch (ValidationException $error) {
@@ -157,6 +170,7 @@ class ArtikelController extends Controller
             $model->date = $request->date;
             $model->status = $request->status;
             $model->slug = $request->slug;
+            $model->user_id = $request->user_id;
             // $model->updated_by = auth()->user()->id;
 
             $this->kategori_store($request->kategori, $model->id);
@@ -164,7 +178,7 @@ class ArtikelController extends Controller
             $model->save();
             DB::commit();
 
-            Artikel::homeClearCache();
+            Artikel::clearCache();
 
             return response()->json();
         } catch (ValidationException $error) {
@@ -181,7 +195,7 @@ class ArtikelController extends Controller
             Summernote::delete($artikel->detail);
             $artikel->delete();
 
-            Artikel::homeClearCache();
+            Artikel::clearCache();
 
             return response()->json();
         } catch (ValidationException $error) {

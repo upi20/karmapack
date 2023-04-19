@@ -47,7 +47,10 @@ class KategoriController extends Controller
                 ['name' => 'Artikel'],
             ]
         ];
-        return view('admin.artikel.kategori', compact('page_attr'));
+        $view = path_view('pages.admin.artikel.kategori');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)

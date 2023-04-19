@@ -11,13 +11,14 @@ class LoginController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+        $redirect = $request->previous ?? urlencode(route('dashboard'));
         if (Auth::check()) {
             return Redirect::route('dashboard');
         }
-        $page_attr = ['title' => 'Masuk'];
-        return view('auth.login', compact('page_attr'));
+        $page_attr = ['title' => 'Login'];
+        return view('auth.login', compact('page_attr', 'redirect'));
     }
 
     /**

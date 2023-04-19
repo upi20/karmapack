@@ -14,20 +14,21 @@ class HomeController extends Controller
     public function index()
     {
         $page_attr = [
-            'title' => 'Home Page Setting',
+            'title' => 'Halaman Depan',
             'breadcrumbs' => [
-                ['name' => 'Setting'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Halaman Utama'],
             ]
         ];
         $pre = $this->setting_prefix;
         $s = function (string $str) use ($pre): string {
             return "$pre.$str";
         };
-        $data = compact(
-            'page_attr',
-            's'
-        );
-        return view('admin.setting.home',  array_merge($data, ['compact' => $data]));
+
+        $view = path_view('pages.admin.setting.home');
+        $data = compact('page_attr', 'view', 's');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function hero(Request $request)

@@ -25,7 +25,7 @@ class AnggotaController extends Controller
 
         $anggotas = Anggota::frontendListAnggota($request);
         $attr = json_decode(json_encode($anggotas));
-        return view('frontend.anggota.list', compact('page_attr', 'image', 'attr', 'anggotas'));
+        return view('pages.frontend.anggota.list', compact('page_attr', 'image', 'attr', 'anggotas'));
     }
 
     public function user(User $user)
@@ -46,7 +46,7 @@ class AnggotaController extends Controller
             'image' => $image,
         ];
 
-        return view('frontend.anggota.detail', compact(
+        return view('pages.frontend.anggota.detail', compact(
             'page_attr',
             'anggota',
             'user',

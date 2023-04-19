@@ -25,12 +25,15 @@ class RoleController extends Controller
         $page_attr = [
             'title' => 'Role',
             'breadcrumbs' => [
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
                 ['name' => 'User Access'],
             ]
         ];
 
-        $data = compact('page_attr');
-        return view('admin.user_access.role.list',  array_merge($data, ['compact' => $data]));
+        $view = path_view('pages.admin.user_access.role.list');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function create()
@@ -53,13 +56,15 @@ class RoleController extends Controller
             'title' => 'Create Role',
             'breadcrumbs' => [
                 ['name' => 'User Access'],
-                ['name' => 'Role', 'url' => h_prefix(null, 2)],
+                ['name' => 'Role', 'url' => h_prefix(null, 1)],
             ],
-            'navigation' => h_prefix(null, 2),
+            'navigation' => h_prefix(null, 1),
         ];
-
-        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload');
-        return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
+        $route_min = 1;
+        $view = $this->get_editor();
+        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload', 'route_min', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function edit(Role $model)
@@ -90,10 +95,12 @@ class RoleController extends Controller
             ],
             'navigation' => h_prefix(null, 2),
         ];
+        $route_min = 2;
 
-        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload');
-
-        return view($this->get_editor(),  array_merge($data, ['compact' => $data]));
+        $view = $this->get_editor();
+        $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload', 'route_min', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function store(Request $request)
@@ -198,6 +205,6 @@ class RoleController extends Controller
             $ui = request('v') == 1;
         }
 
-        return $ui ? 'admin.user_access.role.editor' : 'admin.user_access.role.editor2';
+        return $ui ? 'pages.admin.user_access.role.editor' : 'pages.admin.user_access.role.editor2';
     }
 }

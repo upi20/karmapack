@@ -45,10 +45,15 @@ class SocialMediaController extends Controller
         $page_attr = [
             'title' => 'Sosial Media',
             'breadcrumbs' => [
-                ['name' => 'Dashboard'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Kontak'],
             ]
         ];
-        return view('admin.social_media', compact('page_attr'));
+
+        $view = path_view('pages.admin.social_media');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
@@ -63,7 +68,9 @@ class SocialMediaController extends Controller
             $model->keterangan = $request->keterangan;
             $model->status = $request->status;
             $model->order = $request->order;
-            // $model->created_by = auth()->user()->id;
+
+            SocialMedia::feClearCache();
+
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {
@@ -86,7 +93,9 @@ class SocialMediaController extends Controller
             $model->keterangan = $request->keterangan;
             $model->status = $request->status;
             $model->order = $request->order;
-            // $model->updated_by = auth()->user()->id;
+
+            SocialMedia::feClearCache();
+
             $model->save();
             return response()->json();
         } catch (ValidationException $error) {
@@ -101,6 +110,9 @@ class SocialMediaController extends Controller
     {
         try {
             $model->delete();
+
+            SocialMedia::feClearCache();
+
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

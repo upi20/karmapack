@@ -2,9 +2,9 @@
 
 return [
     'activated'        => true, // active/inactive all logging
-    'middleware'       => ['web', 'auth' ,'role:' . env('SUPER_ADMIN_ROLE')],
+    'middleware'       => ['web', 'auth'],
     'route_path'       => 'admin/user-activity',
-    'admin_panel_path' => '/admin/dashboard',
+    'admin_panel_path' => 'admin/dashboard',
     'delete_limit'     => 7, // default 7 days
 
     'model' => [

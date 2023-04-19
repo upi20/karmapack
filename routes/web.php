@@ -1,5 +1,6 @@
 <?php
 
+
 // ====================================================================================================================
 // utility ============================================================================================================
 use Illuminate\Support\Facades\Redirect;
@@ -7,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 // ====================================================================================================================
 // Controller =========================================================================================================
-use App\Http\Controllers\Auth\SocialiteController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\LoaderController;
@@ -30,9 +31,18 @@ use App\Http\Controllers\Frontend\About\SejarahController;
 use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController;
+use App\Http\Controllers\Frontend\AboutController;
+
+// ====================================================================================================================
+// Produk =============================================================================================================
+use App\Http\Controllers\Frontend\KatalogController;
+use App\Http\Controllers\Frontend\MarketplaceController;
+use App\Http\Controllers\Frontend\ProdukController;
 
 // ====================================================================================================================
 // ====================================================================================================================
+
+
 
 // auth ===============================================================================================================
 Route::controller(LoginController::class)->group(function () {
@@ -41,18 +51,18 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/logout', 'logout')->name("login.logout");
 });
 
-Route::get('/auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
-Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+Route::controller(SocialiteController::class)->group(function () {
+    Route::get('/auth/{provider}', 'redirectToProvider');
+    Route::get('/auth/{provider}/callback', 'handleProvideCallback');
+});
 // ====================================================================================================================
-
-
-
 
 // home default =======================================================================================================
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name("home");
     Route::get('/periode/{periode:slug}', 'periode')->name("periode");
 });
+Route::get('/admin', fn () => Redirect::route('dashboard'));
 
 // artikel ============================================================================================================
 $prefix = 'artikel';
@@ -61,9 +71,6 @@ Route::controller(ArtikelController::class)->prefix($prefix)->group(function () 
     Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
 });
 // ====================================================================================================================
-
-
-
 
 // Periode Kepengurusan ===============================================================================================
 $name = 'tentang';
@@ -96,19 +103,13 @@ Route::group(['prefix' => $name], function () use ($name) {
 });
 // ====================================================================================================================
 
-
-
-
-// Anggota =============================================================================================================
+// Anggota ============================================================================================================
 $name = 'anggota';
 Route::controller(AnggotaController::class)->prefix($name)->group(function () use ($name) {
     Route::get('/', 'index')->name($name);
     Route::get('/{anggota:id}', 'anggota')->name("$name.id");
 });
 // ====================================================================================================================
-
-
-
 
 // Kontak =============================================================================================================
 $name = 'kontak';
@@ -119,9 +120,6 @@ Route::controller(KontakController::class)->prefix($name)->group(function () use
 });
 // ====================================================================================================================
 
-
-
-
 // Galeri =============================================================================================================
 $name = 'galeri';
 Route::controller(GaleriController::class)->prefix($name)->group(function () use ($name) {
@@ -129,9 +127,6 @@ Route::controller(GaleriController::class)->prefix($name)->group(function () use
     Route::get('/detail/{model:slug}', 'detail')->name("$name.detail");
 });
 // ====================================================================================================================
-
-
-
 
 // Pendaftaran ========================================================================================================
 $name = 'pendaftaran';
@@ -149,9 +144,6 @@ Route::prefix($name)->group(function () use ($name) {
 });
 // ====================================================================================================================
 
-
-
-
 // dashboard ==========================================================================================================
 Route::get('/dashboard', function () {
     if (!auth()->user()) return Redirect::route('login');
@@ -163,47 +155,73 @@ Route::get('/dashboard', function () {
 })->name("dashboard");
 // ====================================================================================================================
 
+// katalog ============================================================================================================
+$prefix = 'katalog';
+Route::controller(KatalogController::class)->prefix($prefix)->group(function () use ($prefix) {
+    Route::get('/', 'index')->name($prefix);
+    Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
+});
+// ====================================================================================================================
+
+// produk =============================================================================================================
+$prefix = 'produk';
+Route::controller(ProdukController::class)->prefix($prefix)->group(function () use ($prefix) {
+    Route::get('/', 'index')->name($prefix);
+    Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
+});
+// ====================================================================================================================
+
+// AboutUs ============================================================================================================
+$name = 'about';
+Route::controller(AboutController::class)->prefix($name)->group(function () use ($name) {
+    Route::get('/', 'index')->name($name);
+});
+// ====================================================================================================================
+
+// Marketplace ========================================================================================================
+$name = 'marketplace';
+Route::controller(MarketplaceController::class)->prefix($name)->group(function () use ($name) {
+    Route::get('/', 'index')->name($name);
+});
+// ====================================================================================================================
+
+
+
+
+
+
+
 // Utility ============================================================================================================
 $prefix = 'loader';
 Route::controller(LoaderController::class)->prefix($prefix)->group(function () {
     Route::prefix('js')->group(function () {
-        Route::get('/{file}.js', 'js')->name("load_js");
-        Route::get('/{f}/{file}.js', 'js_f')->name("load_js_a");
-        Route::get('/{f}/{f_a}/{file}.js', 'js_a')->name("load_js_b");
-        Route::get('/{f}/{f_a}/{f_b}/{file}.js', 'js_b')->name("load_js_b");
-        Route::get('/{f}/{f_a}/{f_b}/{f_c}/{file}.js', 'js_c')->name("load_js_c");
-        Route::get('/{f}/{f_a}/{f_b}/{f_c}/{f_d}/{file}.js', 'js_d')->name("load_js_d");
+        Route::any('{path}', 'js')->where('path', '.*');
+    });
+    Route::prefix('css')->group(function () {
+        Route::any('{path}', 'css')->where('path', '.*');
     });
 });
 // ====================================================================================================================
 
-
-
-
 // laboartorium =======================================================================================================
 $prefix = 'lab';
 Route::controller(LabController::class)->prefix($prefix)->group(function () {
-    Route::get('/migrate', 'migrate');
-    Route::get('/updb', 'updb');
-    Route::get('/belumisi', 'belumisi');
     Route::get('/phpspreadsheet', 'phpspreadsheet')->name("lab.phpspreadsheet");
     Route::get('/javascript', 'javascript')->name("lab.javascript");
     Route::get('/jstes', 'jstes')->name("lab.jstes");
+    Route::get('/count', 'count')->name("lab.count");
+    Route::get('/set_profile', 'set_profile')->name("lab.set_profile");
 });
-
-Route::get('/sitemap', [SitemapController::class, 'index']);
 // ====================================================================================================================
 
+// frontend ===========================================================================================================
+Route::get('/frontend', [HomeController::class, 'fronted2'])->name('frontend');
 
-// frontend2 ==========================================================================================================
-Route::get('/frontend2', [HomeController::class, 'fronted2'])->name('frontend2');
-
-Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
-
-// profile username ===================================================================================================
-Route::get('/{user:username}', [AnggotaController::class, 'user'])->name("anggota.username");
+// sitmap =============================================================================================================
+Route::get('/sitemap', [SitemapController::class, 'index']);
 
 // Gform
 Route::get('/f/{model:slug}', [GFormController::class, 'frontend_detail'])->name("frontend.gform.detail");
+
+// profile username ===================================================================================================
+Route::get('/{user:username}', [AnggotaController::class, 'user'])->name("anggota.username");

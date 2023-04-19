@@ -31,7 +31,11 @@ class JabatanMemberController extends Controller
             ],
             'navigation' => $navigation,
         ];
-        return view('admin.kepengurusan.jabatan.member', compact('page_attr', 'jabatan', 'anggotas'));
+
+        $view = path_view('pages.admin.kepengurusan.jabatan.member');
+        $data = compact('page_attr', 'jabatan', 'anggotas', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function select2(Request $request)

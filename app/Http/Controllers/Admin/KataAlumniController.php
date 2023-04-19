@@ -34,7 +34,11 @@ class KataAlumniController extends Controller
                 ['name' => 'Dashboard'],
             ]
         ];
-        return view('admin.kata_alumni', compact('page_attr'));
+
+        $view = path_view('pages.admin.kata_alumni');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request): mixed

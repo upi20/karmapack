@@ -14,6 +14,6 @@ class SejarahController extends Controller
             'title' => 'Sejarah',
             'navigation' => 'tentang.sejarah',
         ];
-        return view('frontend.tentang.sejarah', compact('page_attr'));
+        return view('pages.frontend.tentang.sejarah', compact('page_attr'));
     }
 }

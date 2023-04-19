@@ -21,7 +21,11 @@ class KontakTipeController extends Controller
                 ['name' => 'Data Tambahan Profil'],
             ]
         ];
-        return view('admin.profile.kontak_tipe', compact('page_attr'));
+
+        $view = path_view('pages.admin.profile.kontak_tipe');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
 

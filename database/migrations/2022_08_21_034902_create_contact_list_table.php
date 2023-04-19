@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama')->nullable()->default(null);
             $table->string('icon')->nullable()->default(null);
-            $table->string('url')->nullable()->default(null);
+            $table->text('url')->nullable()->default(null);
             $table->integer('order')->nullable()->default(null);
             $table->string('keterangan')->nullable()->default(null);
             $table->boolean('status')->nullable()->default(null)->comment('1 digunakan, 0 tidak digunakan');

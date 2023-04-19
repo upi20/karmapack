@@ -7,35 +7,37 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    private $folder_logo = '/assets/setting/admin/logo';
-    private $folder_meta_logo = '/assets/setting/admin/meta';
+    private $folder_logo = 'assets/setting/admin/logo';
+    private $folder_meta_logo = 'assets/setting/admin/meta';
 
     public function index(Request $request)
     {
         $page_attr = [
-            'title' => 'Admin Setting',
+            'title' => 'Pengaturan Admin',
             'breadcrumbs' => [
-                ['name' => 'Setting'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
+                ['name' => 'Pengaturan'],
             ]
         ];
-        $data = compact(
-            'page_attr',
-        );
-        return view('admin.setting.admin',  array_merge($data, ['compact' => $data]));
+
+        $view = path_view('pages.admin.setting.admin');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function save_app(Request $request)
     {
         $result = [];
-        settings()->set(set_admin('app.title'), $request->title)->save();
-        settings()->set(set_admin('app.copyright'), $request->copyright)->save();
-        settings()->set(set_admin('app.preloader'), !is_null($request->preloader))->save();
+        setting_set(set_admin('app.title'), $request->title);
+        setting_set(set_admin('app.copyright'), $request->copyright);
+        setting_set(set_admin('app.preloader'), !is_null($request->preloader));
 
         // logo
         // dark mode
         $foto = '';
         $key = 'foto_dark_landscape_mode';
-        $current = settings()->get(set_admin("app.$key"));
+        $current = setting_get(set_admin("app.$key"));
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
@@ -44,18 +46,18 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('Ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
-            settings()->set(set_admin("app.$key"), $foto)->save();
+            setting_set(set_admin("app.$key"), $foto);
             $result[count($result) - 1] = [$key => $foto];
         }
 
         // light mode
         $foto = '';
         $key = 'foto_light_landscape_mode';
-        $current = settings()->get(set_admin("app.$key"));
+        $current = setting_get(set_admin("app.$key"));
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
@@ -64,11 +66,11 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('Ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
-            settings()->set(set_admin("app.$key"), $foto)->save();
+            setting_set(set_admin("app.$key"), $foto);
             $result[count($result) - 1] = [$key => $foto];
         }
 
@@ -76,7 +78,7 @@ class AdminController extends Controller
         // dark mode
         $foto = '';
         $key = 'foto_dark_mode';
-        $current = settings()->get(set_admin("app.$key"));
+        $current = setting_get(set_admin("app.$key"));
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
@@ -85,18 +87,18 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('Ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
-            settings()->set(set_admin("app.$key"), $foto)->save();
+            setting_set(set_admin("app.$key"), $foto);
             $result[count($result) - 1] = [$key => $foto];
         }
 
         // light mode
         $foto = '';
         $key = 'foto_light_mode';
-        $current = settings()->get(set_admin("app.$key"));
+        $current = setting_get(set_admin("app.$key"));
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
@@ -105,11 +107,11 @@ class AdminController extends Controller
                 delete_file($path);
             }
 
-            $foto = $this->folder_logo . '/' . $key . date('ymdhis') . "." . $image->getClientOriginalExtension();
+            $foto = $this->folder_logo . '/' . $key . date('Ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($this->folder_logo), $foto);
 
             // save foto
-            settings()->set(set_admin("app.$key"), $foto)->save();
+            setting_set(set_admin("app.$key"), $foto);
             $result[count($result) - 1] = [$key => $foto];
         }
         return response()->json($result);
@@ -118,27 +120,27 @@ class AdminController extends Controller
     public function save_meta(Request $request)
     {
         $result = [];
-        settings()->set(set_admin('meta.author'), $request->author)->save();
-        settings()->set(set_admin('meta.keyword'), $request->keyword)->save();
-        settings()->set(set_admin('meta.description'), $request->description)->save();
+        setting_set(set_admin('meta.author'), $request->author);
+        setting_set(set_admin('meta.keyword'), $request->keyword);
+        setting_set(set_admin('meta.description'), $request->description);
 
         // logo
         $key = 'image';
-        $current = settings()->get(set_admin("meta.$key"));
+        $current = setting_get(set_admin("meta.$key"));
         $result[] = [$key => $current];
         if ($image = $request->file($key)) {
             // delete foto
             $folder = $this->folder_meta_logo;
             if ($current) {
-                $path = public_path("$folder/$current");
+                $path = public_path("$current");
                 delete_file($path);
             }
 
-            $foto = $folder . '/' . $key . "." . $image->getClientOriginalExtension();
+            $foto = $folder . '/' . $key . date('Ymdhis') . "." . $image->getClientOriginalExtension();
             $image->move(public_path($folder), $foto);
 
             // save foto
-            settings()->set(set_admin("meta.$key"), $foto)->save();
+            setting_set(set_admin("meta.$key"), $foto);
             $result[count($result) - 1] = [$key => $foto];
         }
 
@@ -148,14 +150,14 @@ class AdminController extends Controller
     private function meta_list_get()
     {
 
-        $list = settings()->get(set_admin("meta_list"), null);
+        $list = setting_get(set_admin("meta_list"), null);
         return is_null($list) ? [] : json_decode($list);
     }
 
     private function meta_list_set($list)
     {
         $list = json_encode($list);
-        settings()->set(set_admin("meta_list"), $list)->save();
+        setting_set(set_admin("meta_list"), $list);
 
         return $this->meta_list_get();
     }

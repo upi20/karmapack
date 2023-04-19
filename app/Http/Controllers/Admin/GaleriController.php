@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class GaleriController extends Controller
 {
+    public $query = [];
     public function index(Request $request)
     {
         if (request()->ajax()) {
@@ -33,10 +34,14 @@ class GaleriController extends Controller
         $page_attr = [
             'title' => 'Galeri',
             'breadcrumbs' => [
-                ['name' => 'Dashboard'],
+                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
             ]
         ];
-        return view('admin.galeri', compact('page_attr'));
+
+        $view = path_view('pages.admin.galeri');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)
@@ -66,6 +71,8 @@ class GaleriController extends Controller
                 'keterangan' => $request->keterangan,
                 // 'created_by' => auth()->user()->id,
             ]);
+
+            Galeri::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -100,6 +107,7 @@ class GaleriController extends Controller
             $model->keterangan = $request->keterangan;
             // $model->updated_by = auth()->user()->id;
             $model->save();
+            Galeri::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -113,6 +121,7 @@ class GaleriController extends Controller
     {
         try {
             $model->delete();
+            Galeri::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

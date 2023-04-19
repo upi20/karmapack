@@ -1,0 +1,38 @@
+{
+  "resources/css/_c3-chart.scss": {
+    "file": "assets/_c3-chart-34466ec7.css",
+    "isEntry": true,
+    "src": "resources/css/_c3-chart.scss"
+  },
+  "resources/css/_summernote.scss": {
+    "file": "assets/_summernote-7b5155f7.css",
+    "isEntry": true,
+    "src": "resources/css/_summernote.scss"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-bc80a74d.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/font/summernote.eot": {
+    "file": "assets/summernote-e0e54acd.eot",
+    "src": "resources/font/summernote.eot"
+  },
+  "resources/font/summernote.ttf": {
+    "file": "assets/summernote-bc06998a.ttf",
+    "src": "resources/font/summernote.ttf"
+  },
+  "resources/font/summernote.woff": {
+    "file": "assets/summernote-ad20bd13.woff",
+    "src": "resources/font/summernote.woff"
+  },
+  "resources/font/summernote.woff2": {
+    "file": "assets/summernote-6ae62bbe.woff2",
+    "src": "resources/font/summernote.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-a6d2e222.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}

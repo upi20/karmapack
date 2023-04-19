@@ -47,7 +47,11 @@ class TagController extends Controller
                 ['name' => 'Artikel'],
             ]
         ];
-        return view('admin.artikel.tag', compact('page_attr'));
+
+        $view = path_view('pages.admin.artikel.tag');
+        $data = compact('page_attr', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function insert(Request $request)

@@ -21,8 +21,8 @@ class LogsTableSeeder extends Seeder
         \DB::table('logs')->insert(array (
             0 => 
             array (
-                'id' => '5',
-                'user_id' => '1',
+                'id' => 5,
+                'user_id' => 1,
                 'log_date' => '2023-03-18 13:41:15',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -30,8 +30,8 @@ class LogsTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '6',
-                'user_id' => '1',
+                'id' => 6,
+                'user_id' => 1,
                 'log_date' => '2023-03-18 16:37:33',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -39,8 +39,8 @@ class LogsTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '7',
-                'user_id' => '1',
+                'id' => 7,
+                'user_id' => 1,
                 'log_date' => '2023-03-18 16:42:50',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -48,8 +48,8 @@ class LogsTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => '8',
-                'user_id' => '57',
+                'id' => 8,
+                'user_id' => 57,
                 'log_date' => '2023-03-18 16:44:55',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -57,8 +57,8 @@ class LogsTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => '9',
-                'user_id' => '57',
+                'id' => 9,
+                'user_id' => 57,
                 'log_date' => '2023-03-18 16:46:48',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -66,8 +66,8 @@ class LogsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => '10',
-                'user_id' => '185',
+                'id' => 10,
+                'user_id' => 185,
                 'log_date' => '2023-03-18 18:53:18',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -75,8 +75,8 @@ class LogsTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => '11',
-                'user_id' => '185',
+                'id' => 11,
+                'user_id' => 185,
                 'log_date' => '2023-03-18 18:58:58',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -84,8 +84,8 @@ class LogsTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => '12',
-                'user_id' => '205',
+                'id' => 12,
+                'user_id' => 205,
                 'log_date' => '2023-03-18 19:24:29',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -93,8 +93,8 @@ class LogsTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => '13',
-                'user_id' => '58',
+                'id' => 13,
+                'user_id' => 58,
                 'log_date' => '2023-03-18 19:26:05',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -102,8 +102,8 @@ class LogsTableSeeder extends Seeder
             ),
             9 => 
             array (
-                'id' => '14',
-                'user_id' => '26',
+                'id' => 14,
+                'user_id' => 26,
                 'log_date' => '2023-03-18 19:54:39',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -111,8 +111,8 @@ class LogsTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'id' => '15',
-                'user_id' => '26',
+                'id' => 15,
+                'user_id' => 26,
                 'log_date' => '2023-03-18 19:58:42',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -120,8 +120,8 @@ class LogsTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => '16',
-                'user_id' => '79',
+                'id' => 16,
+                'user_id' => 79,
                 'log_date' => '2023-03-18 20:30:33',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -129,8 +129,8 @@ class LogsTableSeeder extends Seeder
             ),
             12 => 
             array (
-                'id' => '17',
-                'user_id' => '79',
+                'id' => 17,
+                'user_id' => 79,
                 'log_date' => '2023-03-18 20:35:29',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -138,8 +138,8 @@ class LogsTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'id' => '18',
-                'user_id' => '110',
+                'id' => 18,
+                'user_id' => 110,
                 'log_date' => '2023-03-18 20:42:53',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -147,8 +147,8 @@ class LogsTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'id' => '19',
-                'user_id' => '110',
+                'id' => 19,
+                'user_id' => 110,
                 'log_date' => '2023-03-18 20:45:10',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -156,8 +156,8 @@ class LogsTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => '20',
-                'user_id' => '110',
+                'id' => 20,
+                'user_id' => 110,
                 'log_date' => '2023-03-18 21:00:58',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -165,8 +165,8 @@ class LogsTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'id' => '21',
-                'user_id' => '287',
+                'id' => 21,
+                'user_id' => 287,
                 'log_date' => '2023-03-18 23:07:41',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -174,8 +174,8 @@ class LogsTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'id' => '22',
-                'user_id' => '113',
+                'id' => 22,
+                'user_id' => 113,
                 'log_date' => '2023-03-18 23:09:25',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -183,8 +183,8 @@ class LogsTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'id' => '23',
-                'user_id' => '110',
+                'id' => 23,
+                'user_id' => 110,
                 'log_date' => '2023-03-18 23:14:03',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -192,8 +192,8 @@ class LogsTableSeeder extends Seeder
             ),
             19 => 
             array (
-                'id' => '24',
-                'user_id' => '57',
+                'id' => 24,
+                'user_id' => 57,
                 'log_date' => '2023-03-19 00:50:45',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -201,8 +201,8 @@ class LogsTableSeeder extends Seeder
             ),
             20 => 
             array (
-                'id' => '25',
-                'user_id' => '1',
+                'id' => 25,
+                'user_id' => 1,
                 'log_date' => '2023-03-19 00:55:24',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -210,8 +210,8 @@ class LogsTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'id' => '26',
-                'user_id' => '185',
+                'id' => 26,
+                'user_id' => 185,
                 'log_date' => '2023-03-19 06:25:01',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -219,8 +219,8 @@ class LogsTableSeeder extends Seeder
             ),
             22 => 
             array (
-                'id' => '27',
-                'user_id' => '114',
+                'id' => 27,
+                'user_id' => 114,
                 'log_date' => '2023-03-19 08:24:28',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -228,8 +228,8 @@ class LogsTableSeeder extends Seeder
             ),
             23 => 
             array (
-                'id' => '28',
-                'user_id' => '1',
+                'id' => 28,
+                'user_id' => 1,
                 'log_date' => '2023-03-19 10:40:35',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -237,8 +237,8 @@ class LogsTableSeeder extends Seeder
             ),
             24 => 
             array (
-                'id' => '29',
-                'user_id' => '93',
+                'id' => 29,
+                'user_id' => 93,
                 'log_date' => '2023-03-19 10:41:32',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -246,8 +246,8 @@ class LogsTableSeeder extends Seeder
             ),
             25 => 
             array (
-                'id' => '30',
-                'user_id' => '93',
+                'id' => 30,
+                'user_id' => 93,
                 'log_date' => '2023-03-19 10:42:30',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -255,8 +255,8 @@ class LogsTableSeeder extends Seeder
             ),
             26 => 
             array (
-                'id' => '31',
-                'user_id' => '93',
+                'id' => 31,
+                'user_id' => 93,
                 'log_date' => '2023-03-19 10:45:11',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -264,8 +264,8 @@ class LogsTableSeeder extends Seeder
             ),
             27 => 
             array (
-                'id' => '32',
-                'user_id' => '93',
+                'id' => 32,
+                'user_id' => 93,
                 'log_date' => '2023-03-19 10:45:13',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -273,8 +273,8 @@ class LogsTableSeeder extends Seeder
             ),
             28 => 
             array (
-                'id' => '33',
-                'user_id' => '1',
+                'id' => 33,
+                'user_id' => 1,
                 'log_date' => '2023-03-20 10:09:06',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -282,8 +282,8 @@ class LogsTableSeeder extends Seeder
             ),
             29 => 
             array (
-                'id' => '34',
-                'user_id' => '1',
+                'id' => 34,
+                'user_id' => 1,
                 'log_date' => '2023-03-20 10:21:51',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -291,8 +291,8 @@ class LogsTableSeeder extends Seeder
             ),
             30 => 
             array (
-                'id' => '35',
-                'user_id' => '1',
+                'id' => 35,
+                'user_id' => 1,
                 'log_date' => '2023-03-20 20:03:39',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -300,8 +300,8 @@ class LogsTableSeeder extends Seeder
             ),
             31 => 
             array (
-                'id' => '36',
-                'user_id' => '1',
+                'id' => 36,
+                'user_id' => 1,
                 'log_date' => '2023-03-20 22:34:54',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -309,8 +309,8 @@ class LogsTableSeeder extends Seeder
             ),
             32 => 
             array (
-                'id' => '37',
-                'user_id' => '1',
+                'id' => 37,
+                'user_id' => 1,
                 'log_date' => '2023-03-21 11:17:18',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -318,8 +318,8 @@ class LogsTableSeeder extends Seeder
             ),
             33 => 
             array (
-                'id' => '38',
-                'user_id' => '110',
+                'id' => 38,
+                'user_id' => 110,
                 'log_date' => '2023-03-21 11:35:25',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -327,8 +327,8 @@ class LogsTableSeeder extends Seeder
             ),
             34 => 
             array (
-                'id' => '39',
-                'user_id' => '57',
+                'id' => 39,
+                'user_id' => 57,
                 'log_date' => '2023-03-21 12:09:11',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -336,8 +336,8 @@ class LogsTableSeeder extends Seeder
             ),
             35 => 
             array (
-                'id' => '40',
-                'user_id' => '114',
+                'id' => 40,
+                'user_id' => 114,
                 'log_date' => '2023-03-21 14:20:50',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -345,8 +345,8 @@ class LogsTableSeeder extends Seeder
             ),
             36 => 
             array (
-                'id' => '41',
-                'user_id' => '1',
+                'id' => 41,
+                'user_id' => 1,
                 'log_date' => '2023-03-21 19:06:38',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -354,8 +354,8 @@ class LogsTableSeeder extends Seeder
             ),
             37 => 
             array (
-                'id' => '42',
-                'user_id' => '1',
+                'id' => 42,
+                'user_id' => 1,
                 'log_date' => '2023-03-21 22:17:59',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -363,8 +363,8 @@ class LogsTableSeeder extends Seeder
             ),
             38 => 
             array (
-                'id' => '43',
-                'user_id' => '1',
+                'id' => 43,
+                'user_id' => 1,
                 'log_date' => '2023-03-23 00:57:05',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -372,8 +372,8 @@ class LogsTableSeeder extends Seeder
             ),
             39 => 
             array (
-                'id' => '44',
-                'user_id' => '1',
+                'id' => 44,
+                'user_id' => 1,
                 'log_date' => '2023-03-23 20:19:54',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -381,8 +381,8 @@ class LogsTableSeeder extends Seeder
             ),
             40 => 
             array (
-                'id' => '45',
-                'user_id' => '1',
+                'id' => 45,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 03:53:37',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -390,8 +390,8 @@ class LogsTableSeeder extends Seeder
             ),
             41 => 
             array (
-                'id' => '46',
-                'user_id' => '1',
+                'id' => 46,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 03:54:30',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -399,8 +399,8 @@ class LogsTableSeeder extends Seeder
             ),
             42 => 
             array (
-                'id' => '47',
-                'user_id' => '1',
+                'id' => 47,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 04:05:50',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -408,8 +408,8 @@ class LogsTableSeeder extends Seeder
             ),
             43 => 
             array (
-                'id' => '48',
-                'user_id' => '1',
+                'id' => 48,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:43:16',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -417,8 +417,8 @@ class LogsTableSeeder extends Seeder
             ),
             44 => 
             array (
-                'id' => '49',
-                'user_id' => '1',
+                'id' => 49,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:44:10',
                 'table_name' => 'users',
                 'log_type' => 'create',
@@ -426,8 +426,8 @@ class LogsTableSeeder extends Seeder
             ),
             45 => 
             array (
-                'id' => '50',
-                'user_id' => '1',
+                'id' => 50,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:44:10',
                 'table_name' => 'anggotas',
                 'log_type' => 'create',
@@ -435,8 +435,8 @@ class LogsTableSeeder extends Seeder
             ),
             46 => 
             array (
-                'id' => '51',
-                'user_id' => '1',
+                'id' => 51,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:44:10',
                 'table_name' => 'pend_sensus',
                 'log_type' => 'create',
@@ -444,8 +444,8 @@ class LogsTableSeeder extends Seeder
             ),
             47 => 
             array (
-                'id' => '52',
-                'user_id' => '1',
+                'id' => 52,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:44:28',
                 'table_name' => 'anggotas',
                 'log_type' => 'delete',
@@ -453,8 +453,8 @@ class LogsTableSeeder extends Seeder
             ),
             48 => 
             array (
-                'id' => '53',
-                'user_id' => '1',
+                'id' => 53,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:44:28',
                 'table_name' => 'users',
                 'log_type' => 'delete',
@@ -462,8 +462,8 @@ class LogsTableSeeder extends Seeder
             ),
             49 => 
             array (
-                'id' => '54',
-                'user_id' => '1',
+                'id' => 54,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:45:52',
                 'table_name' => 'notif_depan_atas',
                 'log_type' => 'create',
@@ -471,8 +471,8 @@ class LogsTableSeeder extends Seeder
             ),
             50 => 
             array (
-                'id' => '55',
-                'user_id' => '1',
+                'id' => 55,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:46:05',
                 'table_name' => 'notif_depan_atas',
                 'log_type' => 'edit',
@@ -480,8 +480,8 @@ class LogsTableSeeder extends Seeder
             ),
             51 => 
             array (
-                'id' => '56',
-                'user_id' => '1',
+                'id' => 56,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 05:48:00',
                 'table_name' => 'notif_depan_atas',
                 'log_type' => 'edit',
@@ -489,8 +489,8 @@ class LogsTableSeeder extends Seeder
             ),
             52 => 
             array (
-                'id' => '57',
-                'user_id' => '1',
+                'id' => 57,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 06:11:19',
                 'table_name' => 'artikel',
                 'log_type' => 'edit',
@@ -498,8 +498,8 @@ class LogsTableSeeder extends Seeder
             ),
             53 => 
             array (
-                'id' => '58',
-                'user_id' => '1',
+                'id' => 58,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 11:58:48',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -507,8 +507,8 @@ class LogsTableSeeder extends Seeder
             ),
             54 => 
             array (
-                'id' => '59',
-                'user_id' => '1',
+                'id' => 59,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 12:04:05',
                 'table_name' => 'artikel',
                 'log_type' => 'edit',
@@ -516,8 +516,8 @@ class LogsTableSeeder extends Seeder
             ),
             55 => 
             array (
-                'id' => '60',
-                'user_id' => '1',
+                'id' => 60,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 12:05:40',
                 'table_name' => 'users',
                 'log_type' => 'edit',
@@ -525,8 +525,8 @@ class LogsTableSeeder extends Seeder
             ),
             56 => 
             array (
-                'id' => '61',
-                'user_id' => '1',
+                'id' => 61,
+                'user_id' => 1,
                 'log_date' => '2023-03-24 12:05:53',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -534,8 +534,8 @@ class LogsTableSeeder extends Seeder
             ),
             57 => 
             array (
-                'id' => '62',
-                'user_id' => '1',
+                'id' => 62,
+                'user_id' => 1,
                 'log_date' => '2023-03-25 11:44:59',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -543,8 +543,8 @@ class LogsTableSeeder extends Seeder
             ),
             58 => 
             array (
-                'id' => '63',
-                'user_id' => '1',
+                'id' => 63,
+                'user_id' => 1,
                 'log_date' => '2023-03-26 06:22:27',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -552,8 +552,8 @@ class LogsTableSeeder extends Seeder
             ),
             59 => 
             array (
-                'id' => '64',
-                'user_id' => '1',
+                'id' => 64,
+                'user_id' => 1,
                 'log_date' => '2023-03-27 06:06:57',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -561,8 +561,8 @@ class LogsTableSeeder extends Seeder
             ),
             60 => 
             array (
-                'id' => '65',
-                'user_id' => '113',
+                'id' => 65,
+                'user_id' => 113,
                 'log_date' => '2023-03-27 20:40:53',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -570,8 +570,8 @@ class LogsTableSeeder extends Seeder
             ),
             61 => 
             array (
-                'id' => '66',
-                'user_id' => '1',
+                'id' => 66,
+                'user_id' => 1,
                 'log_date' => '2023-03-27 20:57:53',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -579,8 +579,8 @@ class LogsTableSeeder extends Seeder
             ),
             62 => 
             array (
-                'id' => '67',
-                'user_id' => '113',
+                'id' => 67,
+                'user_id' => 113,
                 'log_date' => '2023-03-27 22:32:29',
                 'table_name' => 'users',
                 'log_type' => 'edit',
@@ -588,8 +588,8 @@ class LogsTableSeeder extends Seeder
             ),
             63 => 
             array (
-                'id' => '68',
-                'user_id' => '1',
+                'id' => 68,
+                'user_id' => 1,
                 'log_date' => '2023-04-04 13:33:38',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -597,8 +597,8 @@ class LogsTableSeeder extends Seeder
             ),
             64 => 
             array (
-                'id' => '69',
-                'user_id' => '1',
+                'id' => 69,
+                'user_id' => 1,
                 'log_date' => '2023-04-07 13:06:20',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -606,8 +606,8 @@ class LogsTableSeeder extends Seeder
             ),
             65 => 
             array (
-                'id' => '70',
-                'user_id' => '1',
+                'id' => 70,
+                'user_id' => 1,
                 'log_date' => '2023-04-11 22:42:45',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -615,8 +615,8 @@ class LogsTableSeeder extends Seeder
             ),
             66 => 
             array (
-                'id' => '71',
-                'user_id' => '1',
+                'id' => 71,
+                'user_id' => 1,
                 'log_date' => '2023-04-12 14:50:01',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -624,8 +624,8 @@ class LogsTableSeeder extends Seeder
             ),
             67 => 
             array (
-                'id' => '72',
-                'user_id' => '1',
+                'id' => 72,
+                'user_id' => 1,
                 'log_date' => '2023-04-12 20:05:53',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -633,8 +633,8 @@ class LogsTableSeeder extends Seeder
             ),
             68 => 
             array (
-                'id' => '73',
-                'user_id' => '1',
+                'id' => 73,
+                'user_id' => 1,
                 'log_date' => '2023-04-13 14:07:58',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -642,8 +642,8 @@ class LogsTableSeeder extends Seeder
             ),
             69 => 
             array (
-                'id' => '74',
-                'user_id' => '1',
+                'id' => 74,
+                'user_id' => 1,
                 'log_date' => '2023-04-14 09:25:47',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -651,8 +651,8 @@ class LogsTableSeeder extends Seeder
             ),
             70 => 
             array (
-                'id' => '75',
-                'user_id' => '1',
+                'id' => 75,
+                'user_id' => 1,
                 'log_date' => '2023-04-15 16:43:50',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -660,8 +660,8 @@ class LogsTableSeeder extends Seeder
             ),
             71 => 
             array (
-                'id' => '76',
-                'user_id' => '1',
+                'id' => 76,
+                'user_id' => 1,
                 'log_date' => '2023-04-16 13:45:22',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -669,8 +669,8 @@ class LogsTableSeeder extends Seeder
             ),
             72 => 
             array (
-                'id' => '77',
-                'user_id' => '1',
+                'id' => 77,
+                'user_id' => 1,
                 'log_date' => '2023-04-16 20:57:47',
                 'table_name' => '',
                 'log_type' => 'login',
@@ -678,12 +678,1209 @@ class LogsTableSeeder extends Seeder
             ),
             73 => 
             array (
-                'id' => '78',
-                'user_id' => '1',
+                'id' => 78,
+                'user_id' => 1,
                 'log_date' => '2023-04-18 22:06:08',
                 'table_name' => '',
                 'log_type' => 'login',
             'data' => '{"ip":"114.122.109.98","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.48"}',
+            ),
+            74 => 
+            array (
+                'id' => 79,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:14:30',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'edit',
+                'data' => '{"id":1,"nama":"Kabinet Masagi","foto":"iconkabinet-ma20220425164938.png","dari":"2021","sampai":"2022","slug":"kabinet-masagi","slogan":"Ngabdi ka nagri bela ka nagara piken ngawujudkeun lemah nu sajati tur ngawangun cianjur pakidulan.","visi":"<p>\\"Terwujudnya KARMAPACK dan masyarakat Cianjur Kidul yang menjungjung tinggi nilai, dan\\r\\nnorma agama,\\r\\nsosial\\r\\nserta budaya lokal.\\"<\\/p>\\r\\n","misi":"<p>1. Meningkatkan pemahaman dan pengalaman keagamaan bagi anggota KARMAPACK dan masyarakat\\r\\nCianjru Kidul\\r\\n<br>\\r\\n2. Melakukan pengabdian kepada masyarakat<br>\\r\\n3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan<\\/p>\\r\\n","filosofi_logo":null,"status":0,"created_at":"2023-02-11 02:06:13","updated_at":"2023-02-18 17:39:38"}',
+            ),
+            75 => 
+            array (
+                'id' => 80,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:16:23',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'create',
+                'data' => '{"nama":"Situs ini masih dalam masa pengembangan.","slug":"situs-ini-masih-dalam-masa-pengembangan","dari":"2000","sampai":"2022","slogan":"slogan","status":0,"visi":"","misi":"","filosofi_logo":"","foto":"iconsitus-ini-20230420051623.jpg","updated_at":"2023-04-19T22:16:23.000000Z","created_at":"2023-04-19T22:16:23.000000Z","id":3}',
+            ),
+            76 => 
+            array (
+                'id' => 81,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:19:45',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'delete',
+                'data' => '{"id":3,"nama":"Situs ini masih dalam masa pengembangan.","foto":"iconsitus-ini-20230420051623.jpg","dari":"2000","sampai":"2022","slug":"situs-ini-masih-dalam-masa-pengembangan","slogan":"slogan","visi":"","misi":"","filosofi_logo":"","status":0,"created_at":"2023-04-20 05:16:23","updated_at":"2023-04-20 05:16:23"}',
+            ),
+            77 => 
+            array (
+                'id' => 82,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":82,"jabatan_id":63,"anggota_id":30,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            78 => 
+            array (
+                'id' => 83,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":83,"jabatan_id":63,"anggota_id":53,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            79 => 
+            array (
+                'id' => 84,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":84,"jabatan_id":63,"anggota_id":54,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            80 => 
+            array (
+                'id' => 85,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":85,"jabatan_id":63,"anggota_id":55,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            81 => 
+            array (
+                'id' => 86,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":86,"jabatan_id":63,"anggota_id":56,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            82 => 
+            array (
+                'id' => 87,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":87,"jabatan_id":63,"anggota_id":57,"created_at":"2023-02-11 02:06:14","updated_at":"2023-02-11 02:06:14"}',
+            ),
+            83 => 
+            array (
+                'id' => 88,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":116}',
+            ),
+            84 => 
+            array (
+                'id' => 89,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":117}',
+            ),
+            85 => 
+            array (
+                'id' => 90,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":118}',
+            ),
+            86 => 
+            array (
+                'id' => 91,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":119}',
+            ),
+            87 => 
+            array (
+                'id' => 92,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":120}',
+            ),
+            88 => 
+            array (
+                'id' => 93,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:40:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"57","jabatan_id":"63","updated_at":"2023-04-19T22:40:46.000000Z","created_at":"2023-04-19T22:40:46.000000Z","id":121}',
+            ),
+            89 => 
+            array (
+                'id' => 94,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":116,"jabatan_id":63,"anggota_id":30,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            90 => 
+            array (
+                'id' => 95,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":117,"jabatan_id":63,"anggota_id":53,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            91 => 
+            array (
+                'id' => 96,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":118,"jabatan_id":63,"anggota_id":54,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            92 => 
+            array (
+                'id' => 97,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":119,"jabatan_id":63,"anggota_id":55,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            93 => 
+            array (
+                'id' => 98,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":120,"jabatan_id":63,"anggota_id":56,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            94 => 
+            array (
+                'id' => 99,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":121,"jabatan_id":63,"anggota_id":57,"created_at":"2023-04-20 05:40:46","updated_at":"2023-04-20 05:40:46"}',
+            ),
+            95 => 
+            array (
+                'id' => 100,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":122}',
+            ),
+            96 => 
+            array (
+                'id' => 101,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":123}',
+            ),
+            97 => 
+            array (
+                'id' => 102,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":124}',
+            ),
+            98 => 
+            array (
+                'id' => 103,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":125}',
+            ),
+            99 => 
+            array (
+                'id' => 104,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":126}',
+            ),
+            100 => 
+            array (
+                'id' => 105,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:07',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"57","jabatan_id":"63","updated_at":"2023-04-19T22:41:07.000000Z","created_at":"2023-04-19T22:41:07.000000Z","id":127}',
+            ),
+            101 => 
+            array (
+                'id' => 106,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":122,"jabatan_id":63,"anggota_id":30,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            102 => 
+            array (
+                'id' => 107,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":123,"jabatan_id":63,"anggota_id":53,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            103 => 
+            array (
+                'id' => 108,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":124,"jabatan_id":63,"anggota_id":54,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            104 => 
+            array (
+                'id' => 109,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":125,"jabatan_id":63,"anggota_id":55,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            105 => 
+            array (
+                'id' => 110,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":126,"jabatan_id":63,"anggota_id":56,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            106 => 
+            array (
+                'id' => 111,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":127,"jabatan_id":63,"anggota_id":57,"created_at":"2023-04-20 05:41:07","updated_at":"2023-04-20 05:41:07"}',
+            ),
+            107 => 
+            array (
+                'id' => 112,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":128}',
+            ),
+            108 => 
+            array (
+                'id' => 113,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":129}',
+            ),
+            109 => 
+            array (
+                'id' => 114,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":130}',
+            ),
+            110 => 
+            array (
+                'id' => 115,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":131}',
+            ),
+            111 => 
+            array (
+                'id' => 116,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":132}',
+            ),
+            112 => 
+            array (
+                'id' => 117,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:13',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"57","jabatan_id":"63","updated_at":"2023-04-19T22:41:13.000000Z","created_at":"2023-04-19T22:41:13.000000Z","id":133}',
+            ),
+            113 => 
+            array (
+                'id' => 118,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":128,"jabatan_id":63,"anggota_id":30,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            114 => 
+            array (
+                'id' => 119,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":129,"jabatan_id":63,"anggota_id":53,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            115 => 
+            array (
+                'id' => 120,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":130,"jabatan_id":63,"anggota_id":54,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            116 => 
+            array (
+                'id' => 121,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":131,"jabatan_id":63,"anggota_id":55,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            117 => 
+            array (
+                'id' => 122,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":132,"jabatan_id":63,"anggota_id":56,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            118 => 
+            array (
+                'id' => 123,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":133,"jabatan_id":63,"anggota_id":57,"created_at":"2023-04-20 05:41:13","updated_at":"2023-04-20 05:41:13"}',
+            ),
+            119 => 
+            array (
+                'id' => 124,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":134}',
+            ),
+            120 => 
+            array (
+                'id' => 125,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":135}',
+            ),
+            121 => 
+            array (
+                'id' => 126,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":136}',
+            ),
+            122 => 
+            array (
+                'id' => 127,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":137}',
+            ),
+            123 => 
+            array (
+                'id' => 128,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":138}',
+            ),
+            124 => 
+            array (
+                'id' => 129,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:41:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"57","jabatan_id":"63","updated_at":"2023-04-19T22:41:41.000000Z","created_at":"2023-04-19T22:41:41.000000Z","id":139}',
+            ),
+            125 => 
+            array (
+                'id' => 130,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":134,"jabatan_id":63,"anggota_id":30,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            126 => 
+            array (
+                'id' => 131,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":135,"jabatan_id":63,"anggota_id":53,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            127 => 
+            array (
+                'id' => 132,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":136,"jabatan_id":63,"anggota_id":54,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            128 => 
+            array (
+                'id' => 133,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":137,"jabatan_id":63,"anggota_id":55,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            129 => 
+            array (
+                'id' => 134,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":138,"jabatan_id":63,"anggota_id":56,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            130 => 
+            array (
+                'id' => 135,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":139,"jabatan_id":63,"anggota_id":57,"created_at":"2023-04-20 05:41:41","updated_at":"2023-04-20 05:41:41"}',
+            ),
+            131 => 
+            array (
+                'id' => 136,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":140}',
+            ),
+            132 => 
+            array (
+                'id' => 137,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":141}',
+            ),
+            133 => 
+            array (
+                'id' => 138,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":142}',
+            ),
+            134 => 
+            array (
+                'id' => 139,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":143}',
+            ),
+            135 => 
+            array (
+                'id' => 140,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":144}',
+            ),
+            136 => 
+            array (
+                'id' => 141,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:44:38',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"57","jabatan_id":"63","updated_at":"2023-04-19T22:44:38.000000Z","created_at":"2023-04-19T22:44:38.000000Z","id":145}',
+            ),
+            137 => 
+            array (
+                'id' => 142,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":1,"name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":null,"username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"PIkbbqCffBYt0omRaXxKTHqxql6qlKeNUHMmElWi9sKJoAqdMU0TH94jxLnW","created_at":null,"updated_at":"2023-03-16 15:02:39"}',
+            ),
+            138 => 
+            array (
+                'id' => 143,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":17,"name":"NITA HALIMATUSSA\\u2019DIYAH","email":"nita_halimatus_syadiah@karmapack.id","foto":null,"username":"nita-hasa","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:44:47"}',
+            ),
+            139 => 
+            array (
+                'id' => 144,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":19,"name":"ABDUL MUHLIS","email":"abdul_muhlis@karmapack.id","foto":null,"username":"abdul_muhlis","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:46:56"}',
+            ),
+            140 => 
+            array (
+                'id' => 145,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":21,"name":"SUKIRMAN MAULANA","email":"sukirman_maulana@karmapack.id","foto":null,"username":"ukir","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:43:22"}',
+            ),
+            141 => 
+            array (
+                'id' => 146,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":22,"name":"DEWI","email":"dewi@karmapack.id","foto":null,"username":"2019dewi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:29:15"}',
+            ),
+            142 => 
+            array (
+                'id' => 147,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":23,"name":"WIWIT AWALIYAH","email":"wiwit_awaliyah@karmapack.id","foto":null,"username":"wiwit_awaliyah","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:35:32"}',
+            ),
+            143 => 
+            array (
+                'id' => 148,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":24,"name":"SAEPUL ROHMAN","email":"saepul_rohman@karmapack.id","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:05:22"}',
+            ),
+            144 => 
+            array (
+                'id' => 149,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":26,"name":"HILMI FITRIANI","email":"hilmifuaidah0201@gmail.com","foto":null,"username":"hilmiff","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"jx1NL0GzRJMyD6YcurTcVCjY2ZQmaSbqt9FvDBjpi4m0SCpZTLr6MlkqvTCg","created_at":null,"updated_at":"2023-03-18 19:56:40"}',
+            ),
+            145 => 
+            array (
+                'id' => 150,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":27,"name":"SAMSUL MA\'ARIP","email":"samsul_maarip@karmapack.id","foto":null,"username":"samsul_m","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:22:57"}',
+            ),
+            146 => 
+            array (
+                'id' => 151,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:05',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":30,"name":"WAHID NURSIDIK","email":"wahid_nursidik@karmapack.id","foto":null,"username":"wahid_nursidik","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:25:14"}',
+            ),
+            147 => 
+            array (
+                'id' => 152,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":32,"name":"SALAFIA AL ZAHRA FAUZIA","email":"salafia_al_zahra_fauzia@karmapack.id","foto":null,"username":"salafiaazf","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:12:23"}',
+            ),
+            148 => 
+            array (
+                'id' => 153,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":33,"name":"YUSI YUSFITA","email":"yusi_yusfita@karmapack.id","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-10-01 14:54:52"}',
+            ),
+            149 => 
+            array (
+                'id' => 154,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":34,"name":"CUCU MARYAM NURPADILAH","email":"cucu_maryam_nurfadilah@karmapack.id","foto":null,"username":"cucumaryamnurpadilah","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-29 18:27:48"}',
+            ),
+            150 => 
+            array (
+                'id' => 155,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":35,"name":"RIFKI ALFAIZAR","email":"rifki_alfaizar@karmapack.id","foto":null,"username":"rifki_alfaizar","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:02:11"}',
+            ),
+            151 => 
+            array (
+                'id' => 156,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":43,"name":"MUHAMMAD CAHYADI","email":"muhammad_cahyadi@karmapack.id","foto":null,"username":"muhammad_cahyadi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:52:06"}',
+            ),
+            152 => 
+            array (
+                'id' => 157,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":45,"name":"SRI AYUNI WAHYUDIN","email":"sri_ayuni_wahyudin@karmapack.id","foto":null,"username":"sri_ayuni_wahyudin","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:13:43"}',
+            ),
+            153 => 
+            array (
+                'id' => 158,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":46,"name":"ENCEP ABDUL HAKIM","email":"encep_abdul_hakim@karmapack.id","foto":null,"username":"ncepkazama27","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:02:44"}',
+            ),
+            154 => 
+            array (
+                'id' => 159,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":51,"name":"RURI C. HETIAWATI","email":"ruri_c_hetiawati@karmapack.id","foto":null,"username":"ruri_c_hetiawati","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:32:42"}',
+            ),
+            155 => 
+            array (
+                'id' => 160,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":54,"name":"APRILIA UTAMI HERDI","email":"aprilia_utami_herdi@karmapack.id","foto":null,"username":"aprilia_utami_herdi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:03:07"}',
+            ),
+            156 => 
+            array (
+                'id' => 161,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":57,"name":"NU\\u2019MAN BASIR","email":"numanbasir253@gmail.com","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"qFENcieaBhFscP9bAXaWoMLt4ecrVtz9nPqqTW1Vcy8uNMo3HR4g2houlGsV","created_at":null,"updated_at":"2023-03-18 16:45:36"}',
+            ),
+            157 => 
+            array (
+                'id' => 162,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":58,"name":"MAULANA YUSUF","email":"maulyusuf246@gmail.com","foto":null,"username":"maulana_yusuf","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-03-18 19:27:30"}',
+            ),
+            158 => 
+            array (
+                'id' => 163,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":63,"name":"M SYAHRUL RAMADHAN","email":"m_syahrul_ramdan@karmapack.id","foto":null,"username":"m_syahrul_ramadhan","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:51:21"}',
+            ),
+            159 => 
+            array (
+                'id' => 164,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":64,"name":"ILHAM FAOZ","email":"ilham_faoz@karmapack.id","foto":null,"username":"ilham_faoz","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:12:42"}',
+            ),
+            160 => 
+            array (
+                'id' => 165,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":65,"name":"ADRIAN SYAMSYUL RAMLI","email":"adrian_samsul_ramli@karmapack.id","foto":null,"username":"adrian_syamsyul_ramli","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:30:41"}',
+            ),
+            161 => 
+            array (
+                'id' => 166,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":68,"name":"YUSUF MUGHNI","email":"yusuf_mughni@karmapack.id","foto":null,"username":"yusuf_mugni","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:22:14"}',
+            ),
+            162 => 
+            array (
+                'id' => 167,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":69,"name":"SITI SUROH HOLISOH","email":"siti_suroh_holisoh@karmapack.id","foto":null,"username":"siti_suroh_holisoh","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:28:05"}',
+            ),
+            163 => 
+            array (
+                'id' => 168,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":72,"name":"SRI HASTUTI","email":"sri_hastuti@karmapack.id","foto":null,"username":"sri_hastuti","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:26:36"}',
+            ),
+            164 => 
+            array (
+                'id' => 169,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":73,"name":"DERIS KUSNAEDI","email":"deris_kusnaedi@karmapack.id","foto":null,"username":"deris_kusnaedi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:27:40"}',
+            ),
+            165 => 
+            array (
+                'id' => 170,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":74,"name":"Feri Firmansyah","email":"feryfirmansyah280@karmapack.id","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-10-24 10:22:51"}',
+            ),
+            166 => 
+            array (
+                'id' => 171,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":75,"name":"NISYARA SEPTIARANI SUKMA","email":"nisyara_septiarani_sukma@karmapack.id","foto":null,"username":"nisyara","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:25:16"}',
+            ),
+            167 => 
+            array (
+                'id' => 172,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":76,"name":"SITI NURJAMILAH","email":"siti_nurjamilah@karmapack.id","foto":null,"username":"jemi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:09:19"}',
+            ),
+            168 => 
+            array (
+                'id' => 173,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":77,"name":"PUPUNG RUSTIKA","email":"pupung_rustika@karmapack.id","foto":null,"username":"pupung_rustika","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:25:56"}',
+            ),
+            169 => 
+            array (
+                'id' => 174,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":78,"name":"HASBI ABDUL HUSAIN","email":"hasbi_abdul_husain@karmapack.id","foto":null,"username":"hasbi_abdul_husain","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:22:52"}',
+            ),
+            170 => 
+            array (
+                'id' => 175,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":79,"name":"NUR HASAN","email":"hnur60443@gmail.com","foto":null,"username":"nurhasan","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"fSxtf2rPwLQQbxz0899Amo0M1ErOYweKMtdkN79SUb7CPl9VV9zAiaGgmB3n","created_at":null,"updated_at":"2023-03-18 20:33:38"}',
+            ),
+            171 => 
+            array (
+                'id' => 176,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":80,"name":"ARSILA KHAIRUNNISA","email":"arsila_khairunnisa@karmapack.id","foto":null,"username":"arsila_khairunnisa","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:29:24"}',
+            ),
+            172 => 
+            array (
+                'id' => 177,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":81,"name":"Sofy Tri Alfiani","email":"trifyalfiani@karmapack.id","foto":null,"username":"sofy","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:15:49"}',
+            ),
+            173 => 
+            array (
+                'id' => 178,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":82,"name":"Ragil JS Munster","email":"ragilsaputra211998@gmail.com","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA\\/oIKwHD4AIGzIHmHZO","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:18:37"}',
+            ),
+            174 => 
+            array (
+                'id' => 179,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":83,"name":"MUHAMMAD IMAN NURJAMAN","email":"muhammad_iman_nurjaman@karmapack.id","foto":null,"username":"m_iman_nurjaman","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:19:36"}',
+            ),
+            175 => 
+            array (
+                'id' => 180,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":84,"name":"Moh Indra Sukmara Esma","email":"Mohindra.Sukmaraesma29@gmail.com","foto":null,"username":"moh_indra_sukmara_esma","email_verified_at":null,"password":"$2y$10$VDWYFdw4u68s9nvOp7G8A.HunvtPJWsi0eIWD6VFnn8lT7U5vEQzq","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:15:39"}',
+            ),
+            176 => 
+            array (
+                'id' => 181,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":85,"name":"MUHAMMAD RAIHAN RAHMAN","email":"muhammad_raihan@karmapack.id","foto":null,"username":"m_raihan_rahman","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:16:47"}',
+            ),
+            177 => 
+            array (
+                'id' => 182,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":86,"name":"IMAT ROHIMAT","email":"imat_rohimat@karmapack.id","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-12-04 14:07:45"}',
+            ),
+            178 => 
+            array (
+                'id' => 183,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":87,"name":"Alvirda Damayanti Anwari","email":"alfirda_damayanti@karmapack.id","foto":null,"username":"alvirdada","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:37:09"}',
+            ),
+            179 => 
+            array (
+                'id' => 184,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":89,"name":"SILVIA ANGGRAENI","email":"silvia_anggraeni@karmapack.id","foto":null,"username":"silviaanggrnii","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:35:23"}',
+            ),
+            180 => 
+            array (
+                'id' => 185,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":90,"name":"AI YETI KOKOM KOMALASARI","email":"ai_yeti_kokom_komalasari@karmapack.id","foto":null,"username":"ai_yeti","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:38:45"}',
+            ),
+            181 => 
+            array (
+                'id' => 186,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":91,"name":"SIPA PUSPITA SARI","email":"sipapuspita620@gmail.com","foto":null,"username":null,"email_verified_at":null,"password":"$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA\\/oIKwHD4AIGzIHmHZO","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-07 11:43:35"}',
+            ),
+            182 => 
+            array (
+                'id' => 187,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":92,"name":"ADE MUNAWAR","email":"ade_munawar@karmapack.id","foto":null,"username":"ade_munawar","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:50:36"}',
+            ),
+            183 => 
+            array (
+                'id' => 188,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":93,"name":"ABDUL AZIZ","email":"azizalhazkil24@gmail.com","foto":null,"username":"abdul_aziz","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"GJn4SEMcEYrKSjFByQB6A66lwjozGNjd4RYrmgesb2dRxP8OTopLhEV8MAg1","created_at":null,"updated_at":"2023-03-19 10:42:11"}',
+            ),
+            184 => 
+            array (
+                'id' => 189,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":94,"name":"GUSAERI","email":"gusaeri@karmapack.id","foto":null,"username":"gusaeri","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:56:04"}',
+            ),
+            185 => 
+            array (
+                'id' => 190,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":95,"name":"M. FAISHAL","email":"m_faishal@karmapack.id","foto":null,"username":"m_faishal","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:58:08"}',
+            ),
+            186 => 
+            array (
+                'id' => 191,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":96,"name":"NASRIATUL HAMIDAH","email":"nasriatulhamidah12@gmail.com","foto":null,"username":"nasiratul_hamidah","email_verified_at":null,"password":"$2y$10$DHRAQsNhXq6LEcSKHlr.2ejnw04g9NS39HT2gpsNa0TXWDv1ge37m","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:58:51"}',
+            ),
+            187 => 
+            array (
+                'id' => 192,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":97,"name":"NENG NURHASANAH","email":"neng_nurhasanah@karmapack.id","foto":null,"username":"nengnurhasanah","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:56:39"}',
+            ),
+            188 => 
+            array (
+                'id' => 193,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":98,"name":"SOLEHUDIN","email":"solehudin@karmapack.id","foto":null,"username":"solehudin","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:59:34"}',
+            ),
+            189 => 
+            array (
+                'id' => 194,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":99,"name":"AHMAD DIMYATI RIDWAN","email":"dimyatiridwanahmad@gmail.com","foto":null,"username":"ahmaddimyatiridwan16","email_verified_at":null,"password":"$2y$10$DsI7ChQu4aIwEwc0CTlCnO66pBuIukicAIA\\/oIKwHD4AIGzIHmHZO","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:44:12"}',
+            ),
+            190 => 
+            array (
+                'id' => 195,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":100,"name":"ELISA PUTRI ANGGRAENI","email":"elisa_putri_anggraeni@karmapack.id","foto":null,"username":"elisot","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-03-17 20:21:34"}',
+            ),
+            191 => 
+            array (
+                'id' => 196,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":101,"name":"WIDI AYUNI MAULIDIA","email":"widi@karmapack.id","foto":null,"username":"widimailcom","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:47:51"}',
+            ),
+            192 => 
+            array (
+                'id' => 197,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":106,"name":"RAMLAN HIDAYAT","email":"ramlan_hidayat@karmapack.id","foto":null,"username":"ramlan_hidayat","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 01:49:15"}',
+            ),
+            193 => 
+            array (
+                'id' => 198,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":108,"name":"AJENG KARTINI","email":"ajeng_kartini@karmapack.id","foto":null,"username":"ajeng_kartini_pcy","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:08:49"}',
+            ),
+            194 => 
+            array (
+                'id' => 199,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":109,"name":"M. ILHAM FAISAL","email":"ilham_faisal_debo@karmapack.id","foto":null,"username":"m_ilham_faisal","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:06:30"}',
+            ),
+            195 => 
+            array (
+                'id' => 200,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":110,"name":"RISMAWANTI AWALIAH S","email":"rismawas1073@gmail.com","foto":null,"username":"rismawannti","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"7ZKL26mR4eWPIfRSAOMa9zPaUCD51bORjbFqCP78NONGlUnRCUicgIQjV3Sx","created_at":null,"updated_at":"2023-03-18 20:44:26"}',
+            ),
+            196 => 
+            array (
+                'id' => 201,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":111,"name":"THIA RAMADHANI AMIN","email":"thia_ramadhani_amin@karmapack.id","foto":null,"username":"thia_ramadhani_amin","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2022-09-01 02:04:45"}',
+            ),
+            197 => 
+            array (
+                'id' => 202,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":114,"name":"Engkon Abdul Gani","email":"ukonag04@gmail.com","foto":null,"username":"engkon-abdul-gani20230316162922","email_verified_at":null,"password":"$2y$10$Lz80zGpWXp5XtuH9kmCMDO6FH1lKzO8v6EMgzxC6L\\/5Vz0udA.smi","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"DEoeCQOlOFCCaxMVqmJidEJAzWWUQ9cewGhUDAigAkh0b4AkBEGdY78VKD7l","created_at":"2023-03-16 16:29:23","updated_at":"2023-03-16 16:29:23"}',
+            ),
+            198 => 
+            array (
+                'id' => 203,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:50:06',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":185,"name":"Dian Nopiandi","email":"diannopiandi150995@gmail.com","foto":null,"username":"diannopiandi","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"kTq4Otx1xhLpNz1Ap8g9wrBCnzszTL92u8gh8rL6h0JaDeDD6o90UKbdGqQs","created_at":"2023-03-17 23:45:54","updated_at":"2023-03-18 18:56:09"}',
+            ),
+            199 => 
+            array (
+                'id' => 204,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:51:30',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":403,"parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":47,"active":1,"type":1,"created_at":"2022-08-18 18:54:07","updated_at":"2023-02-19 20:36:03"}',
+            ),
+            200 => 
+            array (
+                'id' => 205,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:51:30',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":403,"updated_at":"2023-04-19T22:51:30.000000Z","created_at":"2023-04-19T22:51:30.000000Z","id":1230}',
+            ),
+            201 => 
+            array (
+                'id' => 206,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:51:30',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":403,"updated_at":"2023-04-19T22:51:30.000000Z","created_at":"2023-04-19T22:51:30.000000Z","id":1231}',
+            ),
+            202 => 
+            array (
+                'id' => 207,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:51:30',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":403,"updated_at":"2023-04-19T22:51:30.000000Z","created_at":"2023-04-19T22:51:30.000000Z","id":1232}',
+            ),
+            203 => 
+            array (
+                'id' => 208,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 05:51:30',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":403,"updated_at":"2023-04-19T22:51:30.000000Z","created_at":"2023-04-19T22:51:30.000000Z","id":1233}',
+            ),
+            204 => 
+            array (
+                'id' => 209,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 06:35:28',
+                'table_name' => 'artikel',
+                'log_type' => 'edit',
+            'data' => '{"id":40,"nama":"DISKUSI PUBLIK","slug":"diskusi-publik","foto":"\\/assets\\/artikel\\/diskusi-pu16789612170.png","detail":"<div class=\\"_a9zs\\" style=\'display: inline; color: rgb(38, 38, 38); font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\'><img data-bs-filename=\\"330374136_875625676874459_7239910307577273849_n.webp\\" style=\\"width: 640.4px;\\" src=\\"\\/assets\\/artikel\\/diskusi-pu16789612170.png\\"><br><div class=\\"_a9zs\\" style=\'display: inline; color: rgb(38, 38, 38); font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\'>Alhamdulillah hirobbil alamin diskusi publik dengan tema \\"Peran Mahasiswa dan Pelajar dalam Mengawal Demokrasi\\" dalam rangka memperingati hari ulang tahun Karmapack ke-18 telah selesai dilaksanakan.<br><br>kami ucapkan terimakasih kepada semua pihak yang telah terlibat dalam kegiatan ini. Sampai jumpa di kegiatan selanjutnya &eth;&#159;&#145;&#139;&eth;&#159;&#145;&#139;<br><br>18 Tahun KARMAPACK<br>\\"Meningkatkan Semangat, Menguatkan Persaudaraan \\"<br><br>11 Februari 2023<br><br>HALING KU AING!<br><br>Instagram :&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz notranslate _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/orda_karmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline;\\">@orda_karmapack<\\/a><br>Facebook : Orda Karmapack<br>__________________________<br><a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/ordakarmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#ordakarmapack<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/karmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#karmapack<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/karmapack2022\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#karmapack2022<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/kabinetsabilulungan\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#kabinetsabilulungan<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/halingkuaing\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#halingkuaing<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlah\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlah<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlahkarmapack18\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlahkarmapack18<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlahkarmapackke18\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlahkarmapackke18<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/orda\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#orda<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/cianjur\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#cianjur<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/cianjurkidul\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#cianjurkidul<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/diskusi\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#diskusi<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/diskusipublik\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#diskusipublik<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/mahasiswa\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#mahasiswa<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/pelajar\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#pelajar<\\/a><\\/div><\\/div>\\r\\n","excerpt":"Alhamdulillah hirobbil alamin diskusi publik dengan tema \\"Peran Mahasiswa dan Pelajar dalam Mengawal Demokrasi\\" dalam rangka memperingati hari ulang tahun Karmapack ke-18 telah selesai dilaksanakan.","counter":186,"date":"2023-02-11","status":1,"created_at":"2023-03-16 17:06:57","updated_at":"2023-04-19 04:46:56","user_id":1}',
+            ),
+            205 => 
+            array (
+                'id' => 210,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 06:38:31',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":1,"name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230316150353.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":1,"two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"PIkbbqCffBYt0omRaXxKTHqxql6qlKeNUHMmElWi9sKJoAqdMU0TH94jxLnW","created_at":null,"updated_at":"2023-04-20 05:50:05"}',
+            ),
+            206 => 
+            array (
+                'id' => 211,
+                'user_id' => 1,
+                'log_date' => '2023-04-20 06:38:31',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":1,"nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051006","alamat_lengkap":"Jl. Tipar, Rt 23\\/Rw 12 Dekat SD Negeri 1 Tipar","bio":"Gajah mati meninggalkan gading, harimau mati meninggalkan belang, manusia mati meninggalkan nama.","profesi":"Pelajar\\/Mahasiswa","foto":"iseplutpinur20230316150353.png","telepon":"085798132505","whatsapp":"85798132505","status":"ANGGOTA BIASA","user_id":1,"created_at":"2023-02-11 00:40:11","updated_at":"2023-03-16 15:03:53"}',
             ),
         ));
         

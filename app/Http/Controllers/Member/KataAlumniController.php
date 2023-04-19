@@ -25,7 +25,11 @@ class KataAlumniController extends Controller
                 ['name' => 'Dashboard'],
             ]
         ];
-        return view('member.kata_alumni', compact('page_attr', 'data'));
+
+        $view = path_view('pages.admin.member.kata_alumni');
+        $data = compact('page_attr', 'data', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function save(Request $request): mixed

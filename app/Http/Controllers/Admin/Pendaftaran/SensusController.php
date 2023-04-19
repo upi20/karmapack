@@ -27,7 +27,10 @@ class SensusController extends Controller
             'sebagai' => settings()->get('setting.sensus.sebagai', ''),
         ];
 
-        return view('admin.pendaftaran.sensus', compact('page_attr', 'setting', 'user_role'));
+        $view = path_view('pages.admin.pendaftaran.sensus');
+        $data = compact('page_attr', 'setting', 'user_role', 'view');
+        $data['compact'] = $data;
+        return view($view, $data);
     }
 
     public function status(Request $request)

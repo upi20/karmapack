@@ -31,3 +31,24 @@ date-input-str
 // PR
 [] Buat halaman error template educrat
 [x] Tamplate pendaftaran jadi educrat
+
+"cviebrock/eloquent-sluggable": "^9.0",
+"arcanedev/laravel-settings": "^9.0",
+"yajra/laravel-datatables-oracle": "^9.19",
+
+<link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2.min.css') }}" />
+<link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2-bootstrap-5-theme.min.css') }}" />
+
+<script src="{{ asset_admin('plugins/select2/js/select2.min.js') }}"></script>
+<script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>
+
+theme: "bootstrap-5",
+width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+
+<script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
+
+npm run build
+git add .
+git commit -m "Perbaikan tombol tambah function add jadi addFunc"
+clear
+npm run dev
