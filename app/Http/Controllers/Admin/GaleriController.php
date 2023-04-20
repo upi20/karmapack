@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
-use Yajra\Datatables\Datatables;
-use App\Models\Galeri;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Models\Galeri;
 
 class GaleriController extends Controller
 {
@@ -15,22 +14,9 @@ class GaleriController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            $this->query['artikel_alias'] = 'artikel';
-            $model = Galeri::select(['id', 'nama', 'slug', 'status', 'id_gdrive', 'foto_id_gdrive', 'keterangan', 'tanggal', 'lokasi'])
-                ->selectRaw("IF(status = 1, 'Tampilkan', 'Tidak Tampilkan') as status_str");
-
-            // filter
-            if (isset($request->filter)) {
-                $filter = $request->filter;
-                if ($filter['status'] != '') {
-                    $model->where('status', '=', $filter['status']);
-                }
-            }
-
-            return Datatables::of($model)
-                ->addIndexColumn()
-                ->make(true);
+            return Galeri::datatable($request);
         }
+
         $page_attr = [
             'title' => 'Galeri',
             'breadcrumbs' => [

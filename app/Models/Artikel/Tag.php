@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class Tag extends Model
 {
@@ -62,5 +64,33 @@ class Tag extends Model
             ->limit($limit)
             ->get();
         return $model;
+    }
+
+    public static function datatable(Request $request): mixed
+    {
+        $query = [];
+        $query['artikel'] = <<<SQL
+                 (select count(*) from artikel_tag_item
+                     where artikel_tag_item.tag_id = artikel_tag.id)
+             SQL;
+        $query['artikel_alias'] = 'artikel';
+        $model = Tag::select(['id', 'nama', 'slug', 'status'])
+            ->selectRaw("IF(status = 1, 'Dipakai', 'Tidak Dipakai') as status_str")
+            ->selectRaw("{$query['artikel']} as {$query['artikel_alias']}");
+
+        // filter
+        if (isset($request->filter)) {
+            $filter = $request->filter;
+            if ($filter['status'] != '') {
+                $model->where('status', '=', $filter['status']);
+            }
+        }
+
+        return DataTables::of($model)
+            ->addIndexColumn()
+            ->filterColumn($query['artikel_alias'], function ($query, $keyword) {
+                $query->whereRaw("{$query['artikel']} like '%$keyword%'");
+            })
+            ->make(true);
     }
 }

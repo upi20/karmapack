@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
-use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Yajra\Datatables\Datatables;
+use Illuminate\Http\Request;
 
 class Galeri extends Model
 {
@@ -91,5 +92,23 @@ class Galeri extends Model
     {
         $foto = $this->attributes['foto_id_gdrive'];
         return "https://drive.google.com/uc?export=view&id={$foto}";
+    }
+
+    public static function datatable(Request $request): mixed
+    {
+        $model = static::select(['id', 'nama', 'slug', 'status', 'id_gdrive', 'foto_id_gdrive', 'keterangan', 'tanggal', 'lokasi'])
+            ->selectRaw("IF(status = 1, 'Tampilkan', 'Tidak Tampilkan') as status_str");
+
+        // filter
+        if (isset($request->filter)) {
+            $filter = $request->filter;
+            if ($filter['status'] != '') {
+                $model->where('status', '=', $filter['status']);
+            }
+        }
+
+        return Datatables::of($model)
+            ->addIndexColumn()
+            ->make(true);
     }
 }

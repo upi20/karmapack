@@ -3,16 +3,16 @@
 namespace App\Models\Artikel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Artikel\Kategori;
-use App\Models\Artikel\KategoriArtikel;
-use App\Models\Artikel\Tag;
-use App\Models\Artikel\TagArtikel;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Artikel\KategoriArtikel;
+use Illuminate\Support\Facades\Cache;
+use App\Models\Artikel\TagArtikel;
+use Yajra\Datatables\Datatables;
+use App\Models\Artikel\Kategori;
+use Illuminate\Http\Request;
+use App\Models\Artikel\Tag;
+use App\Models\User;
 
 class Artikel extends Model
 {
@@ -224,5 +224,23 @@ class Artikel extends Model
         ];
 
         foreach ($cacheKey as $key) Cache::pull($key);
+    }
+
+    public static function datatable(Request $request): mixed
+    {
+        $model = Artikel::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at', 'date'])
+            ->selectRaw('IF(status = 1, "Dipublish", "Disimpan") as status_str');
+
+        // filter
+        if (isset($request->filter)) {
+            $filter = $request->filter;
+            if ($filter['status'] != '') {
+                $model->where('status', '=', $filter['status']);
+            }
+        }
+
+        return Datatables::of($model)
+            ->addIndexColumn()
+            ->make(true);
     }
 }

@@ -21,6 +21,7 @@
                     </div>
                 @endif
             </div>
+
             <hr class="mt-1 mb-0" />
             <div class="accordion accordion-flush" id="accordionOption">
                 <div class="accordion-item">
@@ -54,23 +55,26 @@
                 </div>
             </div>
 
-            <hr class="mt-1 mb-0" />
-            <div class="accordion accordion-flush" id="error_list_container">
-                <div class="accordion-item">
-                    <h6 class="accordion-header" id="error_list">
-                        <button class="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#errorList" aria-expanded="false" aria-controls="errorList">
-                            Error (Tanggal untuk tahun ini belum di tentukan)
-                        </button>
-                    </h6>
-                    <div id="errorList" class="accordion-collapse collapse" aria-labelledby="error_list"
-                        data-bs-parent="#error_list_container">
-                        <div class="accordion-body">
-                            <div class="list-group list-group-flush" id="error_list_body"></div>
+            @if ($can_update)
+                <hr class="mt-1 mb-0" />
+                <div class="accordion accordion-flush" id="error_list_container">
+                    <div class="accordion-item">
+                        <h6 class="accordion-header" id="error_list">
+                            <button class="accordion-button collapsed text-danger" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#errorList" aria-expanded="false" aria-controls="errorList">
+                                Error (Tanggal untuk tahun ini belum di tentukan)
+                            </button>
+                        </h6>
+                        <div id="errorList" class="accordion-collapse collapse" aria-labelledby="error_list"
+                            data-bs-parent="#error_list_container">
+                            <div class="accordion-body">
+                                <div class="list-group list-group-flush" id="error_list_body"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
+
             <table class="table table-striped table-hover" id="tbl_main">
                 <thead>
                     <tr>

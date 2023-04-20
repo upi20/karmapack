@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\KataAlumni;
-use App\Models\Keanggotaan\Anggota;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
-use Yajra\Datatables\Datatables;
+use App\Http\Controllers\Controller;
+use App\Models\Keanggotaan\Anggota;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Models\KataAlumni;
+use App\Models\User;
 
 class KataAlumniController extends Controller
 {
@@ -21,12 +20,10 @@ class KataAlumniController extends Controller
         'user_id' => ['required', 'int'],
     ];
 
-    private $query = [];
-
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            return $this->datatable($request);
+            return KataAlumni::datatable($request);
         }
         $page_attr = [
             'title' => 'Kata Alumni',
@@ -129,103 +126,6 @@ class KataAlumniController extends Controller
                 return false;
             }
         }
-    }
-
-    public function datatable(Request $request): mixed
-    {
-        // list table
-        $t_user = User::tableName;
-        $table = KataAlumni::tableName;
-
-        // cusotm query
-        // ========================================================================================================
-        // creted at and updated at
-        $date_format_fun = function (string $select, string $format, string $alias) use ($table): array {
-            $str = <<<SQL
-                (DATE_FORMAT($table.$select, '$format'))
-            SQL;
-            return [$alias => $str, ($alias . '_alias') => $alias];
-        };
-
-        $c_created = 'created';
-        $c_created_str = 'created_str';
-        $c_updated = 'updated';
-        $c_updated_str = 'updated_str';
-        $this->query = array_merge($this->query, $date_format_fun('created_at', '%d-%b-%Y', $c_created));
-        $this->query = array_merge($this->query, $date_format_fun('created_at', '%W, %d %M %Y %H:%i:%s', $c_created_str));
-        $this->query = array_merge($this->query, $date_format_fun('updated_at', '%d-%b-%Y', $c_updated));
-        $this->query = array_merge($this->query, $date_format_fun('updated_at', '%W, %d %M %Y %H:%i:%s', $c_updated_str));
-
-
-        // status
-        $c_status_str = 'status_str';
-        $this->query[$c_status_str] = <<<SQL
-                (if($table.status = 0, 'Disimpan', if($table.status = 2, 'Ditutup', 'Di Pusbish')))
-        SQL;
-
-        $this->query["{$c_status_str}_alias"] = $c_status_str;
-
-        // user
-        $c_user = 'user';
-        $this->query[$c_user] = "$t_user.name";
-        $this->query["{$c_user}_alias"] = $c_user;
-        // ========================================================================================================
-
-
-        // ========================================================================================================
-        // select raw as alias
-        $sraa = function (string $col): string {
-            return $this->query[$col] . ' as ' . $this->query[$col . '_alias'];
-        };
-        $model_filter = [
-            $c_created,
-            $c_created_str,
-            $c_updated,
-            $c_updated_str,
-            $c_status_str,
-            $c_user
-        ];
-
-        $to_db_raw = array_map(function ($a) use ($sraa) {
-            return DB::raw($sraa($a));
-        }, $model_filter);
-        // ========================================================================================================
-
-
-        // Select =====================================================================================================
-        $model = KataAlumni::select(array_merge([
-            DB::raw("$table.*"),
-        ], $to_db_raw))
-            ->leftJoin($t_user, "$t_user.id", '=', "$table.user_id");
-
-        // Filter =====================================================================================================
-        // filter check
-        $f_c = function (string $param) use ($request): mixed {
-            $filter = $request->filter;
-            return isset($filter[$param]) ? $filter[$param] : false;
-        };
-
-        // filter custom
-        $filters = ['status'];
-        foreach ($filters as  $f) {
-            if ($f_c($f) !== false) {
-                $model->whereRaw("$table.$f='{$f_c($f)}'");
-            }
-        }
-        // ========================================================================================================
-
-
-        // ========================================================================================================
-        $datatable = Datatables::of($model)->addIndexColumn();
-        foreach ($model_filter as $v) {
-            // custom pencarian
-            $datatable->filterColumn($this->query["{$v}_alias"], function ($query, $keyword) use ($v) {
-                $query->whereRaw("({$this->query[$v]} like '%$keyword%')");
-            });
-        }
-
-        // create datatable
-        return $datatable->make(true);
     }
 
     public function member_select2(Request $request)
