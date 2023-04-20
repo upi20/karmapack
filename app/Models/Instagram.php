@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Illuminate\Support\Facades\Cache;
 
 class Instagram extends Model
 {
@@ -21,6 +22,7 @@ class Instagram extends Model
     protected $primaryKey = 'id';
     protected $table = 'instagram';
     const tableName = 'instagram';
+    const homeCacheKey = 'homeInstagram';
 
     public static function datatable(Request $request)
     {
@@ -39,5 +41,23 @@ class Instagram extends Model
         return Datatables::of($model)
             ->addIndexColumn()
             ->make(true);
+    }
+
+    public static function getHomeViewData()
+    {
+        return Cache::rememberForever(static::homeCacheKey, function () {
+            $instagrams_limit = settings()->get('setting.home.instagram.jml_konten', 6);
+            $get = static::limit($instagrams_limit)->where('status', 1)->orderBy('tanggal', 'desc')->get();
+            return $get ? $get : [];
+        });
+    }
+
+    public static function clearCache()
+    {
+        $cacheKey = [
+            static::homeCacheKey
+        ];
+
+        foreach ($cacheKey as $key) Cache::pull($key);
     }
 }

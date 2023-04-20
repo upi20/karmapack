@@ -51,6 +51,8 @@ class KataAlumniController extends Controller
             $data = $model->toArray();
             $data['status_str'] = is_null($model) ? 'Belum Dibuat' : ($model->status == 0 ? "Disimpan" : ($model->status == 1 ? "Di Publish" : "Tidak Diketahui"));
             $data['status_bg'] = is_null($model) ? 'warning' : ($model->status == 0 ? "primary" : ($model->status == 1 ? "success" : "danger"));
+
+            KataAlumni::clearCache();
             return response()->json($data);
         } catch (ValidationException $error) {
             return response()->json([
@@ -65,6 +67,7 @@ class KataAlumniController extends Controller
         try {
             $model = KataAlumni::where('user_id', '=', auth()->user()->id)->first();
             $model->delete();
+            KataAlumni::clearCache();
             return response()->json(['status' => null, 'status_str' => 'Belum Dibuat', 'status_bg' => 'warning']);
         } catch (ValidationException $error) {
             return response()->json([

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 use League\Config\Exception\ValidationException;
 use App\Helpers\Summernote;
 use App\Models\Address\Province;
+use App\Models\Artikel\Artikel;
+use App\Models\KataAlumni;
 use App\Models\Keanggotaan\Anggota;
 use App\Models\Keanggotaan\Hobi;
 use App\Models\Keanggotaan\Kontak;
@@ -16,6 +17,7 @@ use App\Models\Keanggotaan\PendidikanJenis;
 use App\Models\Keanggotaan\Pendidikan;
 use App\Models\Keanggotaan\PengalamanLain;
 use App\Models\Keanggotaan\PengalamanOrganisasi;
+use App\Models\Kepengurusan\Periode;
 use App\Models\SocialAccount;
 use App\Models\UsernameValidation;
 use Illuminate\Support\Facades\DB;
@@ -122,6 +124,11 @@ class ProfileController extends Controller
             $anggota->angkatan = $request->angkatan;
             $anggota->save();
             DB::commit();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -182,6 +189,11 @@ class ProfileController extends Controller
             $anggota->village_id = $request->village_id;
             $anggota->alamat_lengkap = $request->alamat_lengkap;
             $anggota->save();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -232,6 +244,11 @@ class ProfileController extends Controller
             $user->name = $request->nama;
             $user->email = $request->email;
             $user->save();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -258,7 +275,10 @@ class ProfileController extends Controller
             $kontak->nilai = $request->nilai;
             $kontak->save();
 
-            return response()->json([]);
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -284,7 +304,11 @@ class ProfileController extends Controller
             $kontak->jenis_id = $request->jenis;
             $kontak->nilai = $request->nilai;
             $kontak->save();
-            return response()->json([]);
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -321,6 +345,10 @@ class ProfileController extends Controller
         try {
             if (!$this->savePermission($kontak->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $kontak->delete();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -391,6 +419,10 @@ class ProfileController extends Controller
             }
 
             DB::commit();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -426,7 +458,9 @@ class ProfileController extends Controller
             $pendidikan->keterangan = $request->keterangan;
             $pendidikan->save();
 
-            return response()->json([]);
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -461,7 +495,10 @@ class ProfileController extends Controller
             $pendidikan->keterangan = $request->keterangan;
             $pendidikan->save();
 
-            return response()->json([]);
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
+            return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
                 'message' => 'Something went wrong',
@@ -491,6 +528,8 @@ class ProfileController extends Controller
             ->orderBy("$a.dari", 'desc')
             ->get();
 
+        Artikel::clearCache();
+        Periode::clearCache();
         return response()->json(['datas' => $kontak]);
     }
 
@@ -537,6 +576,9 @@ class ProfileController extends Controller
                 $results = array_merge([['id' => $request->search, 'text' => $request->search]], $filter);
             }
 
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json(['results' => $results]);
         } catch (\Exception $error) {
             return response()->json($error, 500);
@@ -567,6 +609,9 @@ class ProfileController extends Controller
             $model->keterangan = $request->keterangan;
             $model->save();
 
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json([]);
         } catch (ValidationException $error) {
             return response()->json([
@@ -600,6 +645,9 @@ class ProfileController extends Controller
             $model->keterangan = $request->keterangan;
             $model->save();
 
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json([]);
         } catch (ValidationException $error) {
             return response()->json([
@@ -632,6 +680,10 @@ class ProfileController extends Controller
         try {
             if (!$this->savePermission($model->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -690,6 +742,9 @@ class ProfileController extends Controller
             $model->keterangan = $request->keterangan;
             $model->save();
 
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json([]);
         } catch (ValidationException $error) {
             return response()->json([
@@ -717,6 +772,9 @@ class ProfileController extends Controller
             $model->keterangan = $request->keterangan;
             $model->save();
 
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json([]);
         } catch (ValidationException $error) {
             return response()->json([
@@ -745,6 +803,10 @@ class ProfileController extends Controller
         try {
             if (!$this->savePermission($model->anggota)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -766,6 +828,10 @@ class ProfileController extends Controller
                 $s->detail = $s->getProviderData();
                 $results[] = $s;
             }
+
+            Artikel::clearCache();
+            Periode::clearCache();
+            KataAlumni::clearCache();
             return response()->json($results);
         } catch (ValidationException $error) {
             return response()->json([

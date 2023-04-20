@@ -21,8 +21,8 @@ class HomeSlidersTableSeeder extends Seeder
         \DB::table('home_sliders')->insert(array (
             0 => 
             array (
-                'id' => '3',
-                'urutan' => '1',
+                'id' => 3,
+                'urutan' => 1,
                 'nama' => 'Utama',
                 'foto' => '20230419133545.png',
                 'judul' => 'Jasa Website, Desain, Foto, Video dan Sosial Media Marketing Cepat, Murah dan Berkualitas.',
@@ -37,8 +37,8 @@ class HomeSlidersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '8',
-                'urutan' => '2',
+                'id' => 8,
+                'urutan' => 2,
                 'nama' => 'Utama',
                 'foto' => '20230419135903.png',
                 'judul' => 'Jasa Website, Desain, Foto, Video dan Sosial Media Marketing Cepat, Murah dan Berkualitas.',
@@ -53,8 +53,8 @@ class HomeSlidersTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '9',
-                'urutan' => '3',
+                'id' => 9,
+                'urutan' => 3,
                 'nama' => 'Utama',
                 'foto' => '20230419135921.png',
                 'judul' => 'Jasa Website, Desain, Foto, Video dan Sosial Media Marketing Cepat, Murah dan Berkualitas.',

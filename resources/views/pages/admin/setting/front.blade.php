@@ -86,7 +86,7 @@
                                 placeholder="Application Copyright">{!! setting_get(set_front('app.copyright')) !!}</textarea>
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label class="form-label mb-1" for="{{ set_front('app.no_telepon') }}">No Telepon
                                 <span class="text-danger">*</span></label>
                             <input type="number" id="{{ set_front('app.no_telepon') }}" name="no_telepon"
@@ -108,7 +108,7 @@
                             <input type="text" id="{{ set_front('app.address') }}" name="address"
                                 class="form-control" placeholder="Bandung, Indonesia"
                                 value="{{ setting_get(set_front('app.address')) }}" required />
-                        </div>
+                        </div> --}}
                     </form>
                     <div class="text-end mt-3">
                         <button type="submit" class="btn btn-primary" form="app-form">
@@ -132,9 +132,8 @@
                         <div class="form-group">
                             <label class="form-label mb-1" for="{{ set_front('meta.author') }}">Author
                                 <span class="text-danger">*</span></label>
-                            <input type="text" id="{{ set_front('meta.author') }}" name="author"
-                                class="form-control" placeholder="Meta Author"
-                                value="{{ setting_get(set_front('meta.author')) }}" required />
+                            <input type="text" id="{{ set_front('meta.author') }}" name="author" class="form-control"
+                                placeholder="Meta Author" value="{{ setting_get(set_front('meta.author')) }}" required />
                         </div>
 
                         <div class="form-group">

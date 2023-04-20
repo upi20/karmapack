@@ -137,7 +137,7 @@ class Artikel extends Model
 
     public static function getList(Request $request): object
     {
-        $paginate = is_numeric($request->limit) ? $request->limit : 3;
+        $paginate = is_numeric($request->limit) ? $request->limit : 9;
         $a = static::tableName;
 
         $kat = Kategori::tableName;
@@ -203,15 +203,10 @@ class Artikel extends Model
     public static function getHomeViewData()
     {
         return Cache::rememberForever(static::homeCacheKey, function () {
-            $get = static::with('categories')->orderBy('date', 'desc')->orderBy('id', 'desc')->limit(3)->get();
-            return $get ? $get : [];
-        });
-    }
-
-    public static function getFooterViewData()
-    {
-        return Cache::rememberForever(static::homeCacheKey, function () {
-            $get = static::orderBy('date', 'desc')->orderBy('id', 'desc')->limit(4)->get();
+            $get = static::with('categories')->where('status', '=', 1)
+                ->orderBy('date', 'desc')
+                ->orderBy('id', 'desc')
+                ->limit(6)->get();
             return $get ? $get : [];
         });
     }

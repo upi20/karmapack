@@ -62,7 +62,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name("home");
     Route::get('/periode/{periode:slug}', 'periode')->name("periode");
 });
+
 Route::get('/admin', fn () => Redirect::route('dashboard'));
+// ====================================================================================================================
 
 // artikel ============================================================================================================
 $prefix = 'artikel';

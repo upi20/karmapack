@@ -93,6 +93,7 @@ class JabatanController extends Controller
             $model->save();
             DB::commit();
 
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -156,8 +157,9 @@ class JabatanController extends Controller
             $model->role_id = $request->role_id;
             $model->singkatan = $request->singkatan ?? null;
             $model->save();
-
             DB::commit();
+
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -194,6 +196,8 @@ class JabatanController extends Controller
             $jabatan->delete();
 
             DB::commit();
+
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

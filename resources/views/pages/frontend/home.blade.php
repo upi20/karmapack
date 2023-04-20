@@ -19,12 +19,12 @@
                             <p data-anim-child="slide-right delay-{{ $anim++ }}" class="masthead__text pt-15">
                                 {!! settings()->get("$k.sub_title") !!}
                             <div class="col-auto mt-20" data-anim-child="slide-right delay-{{ $anim++ }}">
-                                <a href="https://www.youtube.com/watch?v=8zYT2VKUpmI" class="d-flex items-center js-gallery"
+                                <a href="{!! settings()->get("$k.video_link") !!}" class="d-flex items-center js-gallery"
                                     data-gallery="gallery1">
                                     <div class="d-flex justify-center items-center size-60 rounded-full border-dark-1-lg">
                                         <div class="icon-play text-20 text-dark-1 pl-5"></div>
                                     </div>
-                                    <div class="ml-10">Karmapack Mengabdi 2022</div>
+                                    <div class="ml-10">{!! settings()->get("$k.video_title") !!}</div>
                                 </a>
                             </div>
                             </p>
@@ -364,9 +364,10 @@
 
     @php
         $k = "$p.instagram";
+        $instagram_visible = settings()->get("$k.visible");
         $anim = 1;
     @endphp
-    @if (settings()->get("$k.visible"))
+    @if ($instagram_visible)
         <section class="layout-pt-md layout-pb-lg bg-dark-5">
             <div data-anim-wrap class="container">
                 <div class="page-header__content">
@@ -531,27 +532,28 @@
 @endsection
 
 @section('stylesheet')
-    <style>
-        .instagram-media {
-            border-radius: 16px !important;
-            box-shadow: 0px 1px 4px 0px #14034212 !important;
-        }
-    </style>
+    @if ($instagram_visible)
+        <style>
+            .instagram-media {
+                border-radius: 16px !important;
+                box-shadow: 0px 1px 4px 0px #14034212 !important;
+            }
+        </style>
+    @endif
 @endsection
-@section('javascript')
-    {{-- mansory --}}
-    <script src="{{ asset_admin('plugins/mansory.min.js', name: 'sash') }}"></script>
-    <script>
-        let meta_list_is_edit = true;
-        const meta_list = new Map();
 
-        $(window).on('load', function() {
-            setTimeout(() => {
-                var msnry = new Masonry(document.querySelector('.grid'), {
-                    itemSelector: '.grid-item',
-                    columnWidth: '.grid-sizer'
-                });
-            }, 2000);
-        });
-    </script>
+@section('javascript')
+    @if ($instagram_visible)
+        <script src="{{ asset_admin('plugins/mansory.min.js', name: 'sash') }}"></script>
+        <script>
+            $(window).on('load', function() {
+                setTimeout(() => {
+                    var msnry = new Masonry(document.querySelector('.grid'), {
+                        itemSelector: '.grid-item',
+                        columnWidth: '.grid-sizer'
+                    });
+                }, 2000);
+            });
+        </script>
+    @endif
 @endsection

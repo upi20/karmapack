@@ -69,7 +69,9 @@ class Galeri extends Model
     public static function getHomeViewData()
     {
         return Cache::rememberForever(static::homeCacheKey, function () {
-            $get = static::orderBy('tanggal', 'desc')->limit(4)->get();
+            $galeri_limit = settings()->get('setting.home.galeri_kegiatan.limit', 6);
+            $get = static::where('status', '=', 1)->select([DB::raw('*'), DB::raw("date_format(tanggal, '%d %M %Y') as tanggal_str")])
+                ->orderBy('tanggal', 'desc')->limit($galeri_limit)->get();
             return $get ? $get : [];
         });
     }

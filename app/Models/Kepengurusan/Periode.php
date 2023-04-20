@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 
@@ -31,6 +32,7 @@ class Periode extends Model
     const tableName = 'pengurus_periodes';
     const image_default = 'assets/image/logo_default.png';
     const image_folder = '/assets/periode';
+    const homeCacheKey = 'homePengurus';
 
     public function jabatans()
     {
@@ -233,25 +235,27 @@ class Periode extends Model
 
     public function homePengurus()
     {
-        $t_peng_anggota = Anggota::tableName;
-        $t_jabatan = Jabatan::tableName;
-        $periode_id = $this->attributes['id'];
-        $t_periode = self::tableName;
+        return Cache::rememberForever(static::homeCacheKey, function () {
+            $t_peng_anggota = Anggota::tableName;
+            $t_jabatan = Jabatan::tableName;
+            $periode_id = $this->attributes['id'];
+            $t_periode = self::tableName;
 
-        $results = Anggota::select([
-            DB::raw("$t_peng_anggota.id"),
-            DB::raw("$t_peng_anggota.anggota_id"),
-            DB::raw("$t_peng_anggota.jabatan_id"),
-        ])
-            ->join($t_jabatan, "$t_jabatan.id", "=", "$t_peng_anggota.jabatan_id")
-            ->join($t_periode, "$t_periode.id", "=", "$t_jabatan.periode_id")
-            ->leftJoin("$t_jabatan as j2", "j2.id", "=", "$t_jabatan.parent_id")
-            ->where("$t_periode.id", $periode_id)
-            ->orderByRaw("(select pj2.no_urut from $t_jabatan pj2 where pj2.id = $t_jabatan.parent_id), $t_jabatan.no_urut")
-            ->with(['anggota.user', 'jabatan.parent'])
-            ->get();
+            $results = Anggota::select([
+                DB::raw("$t_peng_anggota.id"),
+                DB::raw("$t_peng_anggota.anggota_id"),
+                DB::raw("$t_peng_anggota.jabatan_id"),
+            ])
+                ->join($t_jabatan, "$t_jabatan.id", "=", "$t_peng_anggota.jabatan_id")
+                ->join($t_periode, "$t_periode.id", "=", "$t_jabatan.periode_id")
+                ->leftJoin("$t_jabatan as j2", "j2.id", "=", "$t_jabatan.parent_id")
+                ->where("$t_periode.id", $periode_id)
+                ->orderByRaw("(select pj2.no_urut from $t_jabatan pj2 where pj2.id = $t_jabatan.parent_id), $t_jabatan.no_urut")
+                ->with(['anggota.user', 'jabatan.parent'])
+                ->get();
 
-        return $results;
+            return $results;
+        });
     }
 
     public function jabatanDatatable(Request $request): mixed
@@ -386,5 +390,14 @@ class Periode extends Model
 
         // create datatable
         return $datatable->make(true);
+    }
+
+    public static function clearCache()
+    {
+        $cacheKey = [
+            static::homeCacheKey
+        ];
+
+        foreach ($cacheKey as $key) Cache::pull($key);
     }
 }

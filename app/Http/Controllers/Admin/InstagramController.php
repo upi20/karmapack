@@ -43,6 +43,8 @@ class InstagramController extends Controller
                 'status' => $request->status,
                 'keterangan' => $request->keterangan,
             ]);
+
+            Instagram::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -67,6 +69,8 @@ class InstagramController extends Controller
             $model->status = $request->status;
             $model->keterangan = $request->keterangan;
             $model->save();
+
+            Instagram::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -80,6 +84,8 @@ class InstagramController extends Controller
     {
         try {
             $model->delete();
+
+            Instagram::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

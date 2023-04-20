@@ -52,6 +52,23 @@
                             <input type="file" accept="image/*" id="{{ $s('hero.image') }}" name="image"
                                 class="form-control" />
                         </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.video_title") }}">Tombol video teks
+                                <span class="text-danger">*</span></label>
+                            <input type="text" id="{{ $s("$name.video_title") }}" name="video_title"
+                                class="form-control" placeholder="Tombol video teks"
+                                value="{{ settings()->get($s("$name.video_title")) }}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="{{ $s("$name.video_link") }}">Tombol video link youtube
+                                <span class="text-danger">*</span></label>
+                            <input type="url" id="{{ $s("$name.video_link") }}" name="video_link" class="form-control"
+                                placeholder="Tombol video link youtube"
+                                value="{{ settings()->get($s("$name.video_link")) }}" />
+                        </div>
+
                     </form>
 
                     <div class="text-end mt-3">

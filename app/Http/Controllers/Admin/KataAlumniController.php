@@ -51,6 +51,8 @@ class KataAlumniController extends Controller
             $model->user_id = $request->user_id;
 
             $model->save();
+
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -75,6 +77,8 @@ class KataAlumniController extends Controller
             $model->status = $request->status;
             $model->user_id = $request->user_id;
             $model->save();
+
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -89,6 +93,8 @@ class KataAlumniController extends Controller
         try {
             if (!$this->savePermission($model)) return response()->json(['message' => 'Maaf. Anda tidak memiliki akses'], 401);
             $model->delete();
+
+            KataAlumni::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -173,8 +179,9 @@ class KataAlumniController extends Controller
             $menu->save();
             $sequence++;
         }
-
         DB::commit();
+
+        KataAlumni::clearCache();
         return response()->json();
     }
 }

@@ -14,10 +14,11 @@ $page_attr = (object) [
 ];
 $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . settings()->get(set_front('app.title'), env('APP_NAME'));
 $search_master_key = isset($_GET['search']) ? $_GET['search'] : '';
-$getSosmed_val = get_sosmed();
-$notifikasi = notif_depan_atas();
+$getSosmed_val = feSocialMedia();
+$notifikasi = feTopNotification();
 $compact = isset($compact) ? $compact : [];
 $compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'notifikasi', 'page_attr'));
+
 \App\Models\Tracker::hit();
 ?>
 
@@ -90,41 +91,10 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/vendors.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/templates/frontend/css/mainv2.css') }}">
+    <link rel="stylesheet" href="{{ resource_loader('pages/frontend/frontend.css', type: 'css') }}">
     <link rel="stylesheet"
         href="{{ asset('assets/templates/frontend/assets/font-awesome/5.15.4/css/all.min.css') }}" />
 
-    <style>
-        #preloader {
-            background: #FFF;
-            height: 100%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1031;
-        }
-
-        #back-to-top {
-            color: #fff;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1030;
-            height: 50px;
-            width: 50px;
-            background-repeat: no-repeat;
-            background-position: center;
-            transition: background-color .1s linear;
-            -moz-transition: background-color .1s linear;
-            -webkit-transition: background-color .1s linear;
-            -o-transition: background-color .1s linear;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: #FFF 3px solid;
-        }
-    </style>
     @yield('stylesheet')
 
     @foreach (json_decode(settings()->get(set_front('meta_list'), '{}')) as $meta)
@@ -134,7 +104,6 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 </head>
 
 <body>
-
     <!-- preloader -->
     @if ($page_attr->loader)
         <div id="preloader">
@@ -148,13 +117,8 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
     <!-- barba container start -->
     <div class="barba-container" data-barba="container">
-
-
         <main class="main-content ">
-
             @include('layouts.frontend.body.header', $compact)
-
-
             <div class="content-wrapper  js-content-wrapper">
                 @yield('content', '')
                 @include('layouts.frontend.body.footer', $compact)
@@ -164,7 +128,6 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
                     <i class="fas fa-arrow-up" style="font-size: 1.5em"></i>
                 </div>
             </div>
-
         </main>
     </div>
     <!-- barba container end -->
@@ -175,55 +138,7 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
     <script src="{{ asset('assets/templates/frontend/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/main_v2.js') }}"></script>
     <script src="{{ asset_admin('plugins/jquery.lazy-master/jquery.lazy.min.js', name: 'sash') }}"></script>
-    <script>
-        const preload_container = $("#preloader");
-        $(window).on('load', function() {
-            "use strict";
-            preload_container.delay(750).fadeOut('slow');
-            refresh_margin_top();
-            $('.lazy').Lazy({
-                scrollDirection: 'vertical',
-            });
-        });
-
-        setTimeout(() => {
-            preload_container.delay(750).fadeOut('slow');
-        }, 1500);
-
-        (function pulse(back) {
-            const img_el = preload_container.find('img');
-            img_el.animate({
-                'font-size': (back) ? '100px' : '140px',
-                opacity: (back) ? 1 : 0.5
-            }, 700, function() {
-                pulse(!back)
-            });
-        })(false);
-
-        const btn_scroll = $('#back-to-top');
-
-        $(window).scroll(function() {
-            // position
-            const p = $(window).scrollTop();
-
-            if (p >= 100) btn_scroll.parent().fadeIn();
-            else btn_scroll.parent().fadeOut();
-
-            // document height
-            const d_height = $(document).height() - $(window).height();
-            refresh_margin_top();
-        });
-
-        btn_scroll.click(() => {
-            $("html, body").animate({
-                scrollTop: 0
-            }, "slow");
-        })
-
-        function refresh_margin_top() {
-            $('.content-wrapper').css('margin-top', $('header').height() + 'px');
-        }
-    </script>
+    <script src="{{ resource_loader('pages/frontend/frontend.js') }}"></script>
     @yield('javascript')
 
     <!-- Google tag (gtag.js) -->
@@ -235,7 +150,6 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-FHJNB91XME');
     </script>
 </body>

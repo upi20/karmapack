@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Artikel\Artikel;
+use App\Models\KataAlumni;
 use App\Models\Keanggotaan\Anggota;
+use App\Models\Kepengurusan\Periode;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -26,8 +29,6 @@ use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 
 class AnggotaController extends Controller
 {
-    private $query = [];
-
     public function index(Request $request)
     {
         if (request()->ajax()) {
@@ -86,6 +87,9 @@ class AnggotaController extends Controller
         $anggota->save();
         DB::commit();
 
+        Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
         return response()->json();
     }
 
@@ -122,6 +126,10 @@ class AnggotaController extends Controller
         $anggota->user_id = $user->id;
         $anggota->save();
         DB::commit();
+
+        Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
         return response()->json();
     }
 
@@ -135,6 +143,10 @@ class AnggotaController extends Controller
         // delete user
         $user->delete();
         DB::commit();
+
+        Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
         return response()->json();
     }
 

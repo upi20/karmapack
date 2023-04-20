@@ -115,6 +115,7 @@ class PeriodeController extends Controller
             $periode->foto = $foto;
             $periode->save();
 
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -171,6 +172,7 @@ class PeriodeController extends Controller
             $model->filosofi_logo = $filosofi_logo->html;
             $model->save();
 
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -196,6 +198,8 @@ class PeriodeController extends Controller
 
             // delete data
             $model->delete();
+
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -226,6 +230,8 @@ class PeriodeController extends Controller
             // set other nonactive
             Periode::where('id', '<>', $model->id)->update(['status' => '0']);
             DB::commit();
+
+            Periode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -257,6 +263,8 @@ class PeriodeController extends Controller
         }
 
         DB::commit();
+
+        Periode::clearCache();
         return response()->json();
     }
 }

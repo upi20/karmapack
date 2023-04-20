@@ -4,15 +4,13 @@
         @foreach ($notifikasi as $v)
             <div class="bg-dark-1 py-10 notification_top">
                 <div class="container  d-flex justify-content-between">
-
                     <p class="text-white">{{ $v->deskripsi }}
                         @if ($v->link)
                             <a href="{{ $v->link }}" class="text-purple-1 fw-bold">{{ $v->link_nama }}</a>
                         @endif
                     </p>
                     <span class="text-white fw-bold" style="cursor: pointer"
-                        onclick="$(this).parent().parent().fadeOut()">
-                        x</span>
+                        onclick="$(this).parent().parent().fadeOut()"> x</span>
                 </div>
             </div>
         @endforeach
@@ -47,7 +45,7 @@
                             @endif
                             <div class="menu js-navList">
                                 <ul class="list-style-none menu__nav text-dark-1 -is-active">
-                                    {!! navbar_menu_front2($page_attr->navigation) !!}
+                                    {!! navbar_menu_front($page_attr->navigation) !!}
                                 </ul>
                             </div>
 

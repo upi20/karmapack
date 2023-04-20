@@ -21,73 +21,73 @@ class AnggotaHobisTableSeeder extends Seeder
         \DB::table('anggota_hobis')->insert(array (
             0 => 
             array (
-                'id' => '9',
+                'id' => 9,
                 'nama' => 'Sepakbola',
-                'anggota_id' => '88',
+                'anggota_id' => 88,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             1 => 
             array (
-                'id' => '10',
+                'id' => 10,
                 'nama' => 'Volly',
-                'anggota_id' => '88',
+                'anggota_id' => 88,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             2 => 
             array (
-                'id' => '11',
+                'id' => 11,
                 'nama' => 'Coding',
-                'anggota_id' => '88',
+                'anggota_id' => 88,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             3 => 
             array (
-                'id' => '12',
-                'nama' => 'Musik',
-                'anggota_id' => '1',
+                'id' => 15,
+                'nama' => 'Coding',
+                'anggota_id' => 89,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             4 => 
             array (
-                'id' => '13',
-                'nama' => 'Sepedaan',
-                'anggota_id' => '1',
+                'id' => 16,
+                'nama' => 'Mendaki Gunung',
+                'anggota_id' => 89,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             5 => 
             array (
-                'id' => '14',
-                'nama' => 'Coding',
-                'anggota_id' => '1',
+                'id' => 17,
+                'nama' => 'Bermain Sepak Bola',
+                'anggota_id' => 89,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             6 => 
             array (
-                'id' => '15',
+                'id' => 25,
                 'nama' => 'Coding',
-                'anggota_id' => '89',
+                'anggota_id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             7 => 
             array (
-                'id' => '16',
-                'nama' => 'Mendaki Gunung',
-                'anggota_id' => '89',
+                'id' => 26,
+                'nama' => 'Musik',
+                'anggota_id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             8 => 
             array (
-                'id' => '17',
-                'nama' => 'Bermain Sepak Bola',
-                'anggota_id' => '89',
+                'id' => 27,
+                'nama' => 'Sepedaan',
+                'anggota_id' => 1,
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

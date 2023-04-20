@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin\Setting;
 
 use App\Http\Controllers\Controller;
+use App\Models\Galeri;
+use App\Models\Instagram;
+use App\Models\KataAlumni;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -37,6 +40,8 @@ class HomeController extends Controller
         settings()->set($this->s('visible'), $request->visible != null)->save();
         settings()->set($this->s('title'), $request->title)->save();
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
+        settings()->set($this->s('video_title'), $request->video_title)->save();
+        settings()->set($this->s('video_link'), $request->video_link)->save();
 
         // image
         $key = 'image';
@@ -100,6 +105,8 @@ class HomeController extends Controller
         settings()->set($this->s('title'), $request->title)->save();
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
         settings()->set($this->s('limit'), $request->limit)->save();
+
+        KataAlumni::clearCache();
         return response()->json();
     }
 
@@ -111,6 +118,8 @@ class HomeController extends Controller
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
         settings()->set($this->s('button_text'), $request->button_text)->save();
         settings()->set($this->s('limit'), $request->limit)->save();
+
+        Galeri::clearCache();
         return response()->json();
     }
 
@@ -131,6 +140,8 @@ class HomeController extends Controller
         settings()->set($this->s('title'), $request->title)->save();
         settings()->set($this->s('sub_title'), $request->sub_title)->save();
         settings()->set($this->s('jml_konten'), $request->jml_konten)->save();
+
+        Instagram::clearCache();
         return response()->json();
     }
 

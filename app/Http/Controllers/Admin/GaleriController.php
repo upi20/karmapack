@@ -93,6 +93,7 @@ class GaleriController extends Controller
             $model->keterangan = $request->keterangan;
             // $model->updated_by = auth()->user()->id;
             $model->save();
+
             Galeri::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
@@ -107,6 +108,7 @@ class GaleriController extends Controller
     {
         try {
             $model->delete();
+
             Galeri::clearCache();
             return response()->json();
         } catch (ValidationException $error) {

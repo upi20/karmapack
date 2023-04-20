@@ -7,7 +7,7 @@ use App\Models\Artikel\Artikel;
 use App\Models\Galeri;
 use App\Models\Instagram;
 use App\Models\KataAlumni;
-use App\Models\Kepengurusan\Periode as KepengurusanPeriode;
+use App\Models\Kepengurusan\Periode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,14 +15,13 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $periode = KepengurusanPeriode::where('status', '=', '1')
+        $periode = Periode::where('status', '=', '1')
             ->first();
         if (!$periode) abort(404);
         return $this->periode($periode, $request);
     }
 
-    // home render
-    public function periode(KepengurusanPeriode $periode, Request $request)
+    public function periode(Periode $periode, Request $request)
     {
 
         $request = $request ? $request : request(); // intelephense nya error
@@ -37,36 +36,24 @@ class HomeController extends Controller
             $pengurus = collect([]);
         }
 
-        // frontend
-        $list_sosmed = get_sosmed();
-
-
-        // artikel
         if ($this->checkVisible('artikel')) {
-            $request->limit = 6;
-            $articles = Artikel::getList($request);
+            $articles = Artikel::getHomeViewData();
         } else {
             $articles = [];
         }
 
-
         if ($this->checkVisible('galeri_kegiatan')) {
-            $galeri_limit = settings()->get('setting.home.galeri_kegiatan.limit', 6);
-            $galeri_list = Galeri::where('status', '=', 1)->select([DB::raw('*'), DB::raw("date_format(tanggal, '%d %M %Y') as tanggal_str")])
-                ->orderBy('tanggal', 'desc')->limit($galeri_limit)->get();
+            $galeri_list = Galeri::getHomeViewData();
         } else {
             $galeri_list = [];
         }
 
-
         if ($this->checkVisible('kata_alumni')) {
-            $kata_alumni_limit = settings()->get('setting.home.kata_alumni.limit', 6);
-            $kata_alumni_list = KataAlumni::getHome($kata_alumni_limit);
+            $kata_alumni_list = KataAlumni::getHomeViewData();
         } else {
             $kata_alumni_list = [];
         }
 
-        // instagrams
         if ($this->checkVisible('instagram')) {
             $instagrams_limit = settings()->get('setting.home.instagram.jml_konten', 6);
             $instagrams = Instagram::limit($instagrams_limit)->where('status', 1)->orderBy('tanggal', 'desc')->get();
@@ -74,26 +61,10 @@ class HomeController extends Controller
             $instagrams = [];
         }
 
-        $data = compact(
-            'page_attr',
-            'periode',
-            'list_sosmed',
-            'articles',
-            'galeri_list',
-            'kata_alumni_list',
-            'instagrams',
-            'pengurus'
-        );
+        $view = path_view('pages.frontend.home');
+        $data = compact('page_attr', 'periode', 'articles', 'galeri_list', 'kata_alumni_list', 'instagrams', 'pengurus', 'view');
         $data['compact'] = $data;
-        return view('pages.frontend.home', $data);
-    }
-
-    public function fronted2(Request $request)
-    {
-        $page_attr = [];
-        $data = compact('page_attr');
-        $data['compact'] = $data;
-        return view('pages.frontend.home2', $data);
+        return view($view, $data);
     }
 
     private function checkVisible(string $item): ?bool

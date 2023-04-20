@@ -1,7 +1,4 @@
-delete pendaftaran
-refactore gform
-sesuaikan artikel dengan yang di geb
-Tanggal di artikel detail masih berbahasa inggris
+
 
 Jabatan belum ada tombol detail
        render(data, type, full, meta) {

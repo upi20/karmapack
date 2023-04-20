@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class KataAlumni extends Model
 {
@@ -24,6 +25,7 @@ class KataAlumni extends Model
     protected $table = 'kata_alumnis';
     const tableName = 'kata_alumnis';
     const image_folder = '/assets/kata_alumnis';
+    const homeCacheKey = 'homeKataAlumni';
 
     public static function getHome(?int $limit = 6): mixed
     {
@@ -177,5 +179,23 @@ class KataAlumni extends Model
 
         // create datatable
         return $datatable->make(true);
+    }
+
+    public static function getHomeViewData()
+    {
+        return Cache::rememberForever(static::homeCacheKey, function () {
+            $kata_alumni_limit = settings()->get('setting.home.kata_alumni.limit', 6);
+            $get = static::getHome($kata_alumni_limit);
+            return $get ? $get : [];
+        });
+    }
+
+    public static function clearCache()
+    {
+        $cacheKey = [
+            static::homeCacheKey
+        ];
+
+        foreach ($cacheKey as $key) Cache::pull($key);
     }
 }

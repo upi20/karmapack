@@ -107,6 +107,8 @@ class JabatanMemberController extends Controller
                 $new_anggota->save();
             }
             DB::commit();
+
+            KepengurusanPeriode::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

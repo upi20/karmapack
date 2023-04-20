@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Artikel;
 
 use League\Config\Exception\ValidationException;
 use App\Http\Controllers\Controller;
+use App\Models\Artikel\Artikel;
 use Illuminate\Support\Facades\DB;
 use App\Models\Artikel\Tag;
 use Illuminate\Http\Request;
@@ -45,6 +46,7 @@ class TagController extends Controller
                 'status' => $request->status,
                 // 'created_by' => auth()->user()->id,
             ]);
+            Artikel::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -69,6 +71,7 @@ class TagController extends Controller
             $model->status = $request->status;
             // $model->updated_by = auth()->user()->id;
             $model->save();
+            Artikel::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -82,6 +85,7 @@ class TagController extends Controller
     {
         try {
             $model->delete();
+            Artikel::clearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([

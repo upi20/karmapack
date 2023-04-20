@@ -10,6 +10,8 @@ use Spatie\Permission\Models\Role;
 use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\Models\KataAlumni;
+use App\Models\Kepengurusan\Periode;
 use League\Config\Exception\ValidationException;
 
 class UserController extends Controller
@@ -39,6 +41,8 @@ class UserController extends Controller
     {
 
         Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
 
         try {
             $request->validate([
@@ -69,6 +73,8 @@ class UserController extends Controller
     public function update(Request $request)
     {
         Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
 
         try {
             $user = User::find($request->id);
@@ -103,6 +109,8 @@ class UserController extends Controller
     public function delete(Request $user)
     {
         Artikel::clearCache();
+        Periode::clearCache();
+        KataAlumni::clearCache();
 
         try {
             $user = User::find($user->id);
