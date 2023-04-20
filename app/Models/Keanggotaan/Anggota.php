@@ -16,6 +16,7 @@ use App\Models\Address\Village;
 use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
 use App\Models\Kepengurusan\Jabatan;
 use App\Models\Kepengurusan\Periode;
+use Yajra\Datatables\Datatables;
 
 class Anggota extends Model
 {
@@ -334,5 +335,184 @@ class Anggota extends Model
         $anggota->whereRaw($where);
         return $anggota->paginate($paginate)
             ->appends(request()->query());
+    }
+
+    public static function datatable(Request $request): mixed
+    {
+        // import
+        $tableNames = config('permission.table_names');
+        $columnNames = config('permission.column_names');
+
+        // tables name
+        $query = [];
+        $c_roles = 'roles';
+        $t_has_roles = $tableNames['model_has_roles'];
+        $t_roles = $tableNames['roles'];
+        $t_user = User::tableName;
+        $table = static::tableName;
+
+        $base_url_image_folder = url(str_replace('./', '', static::image_folder)) . '/';
+        $image_default = asset(self::image_default);
+
+        // cusotm query
+        // ========================================================================================================
+        // creted at and updated at
+        $date_format_fun = function (string $select, string $format, string $alias) use ($table): array {
+            $str = <<<SQL
+                (DATE_FORMAT($table.$select, '$format'))
+            SQL;
+            return [$alias => $str, ($alias . '_alias') => $alias];
+        };
+
+        $c_created = 'created';
+        $c_created_str = 'created_str';
+        $c_updated = 'updated';
+        $c_updated_str = 'updated_str';
+        $query = array_merge($query, $date_format_fun('created_at', '%d-%b-%Y', $c_created));
+        $query = array_merge($query, $date_format_fun('created_at', '%W, %d %M %Y %H:%i:%s', $c_created_str));
+        $query = array_merge($query, $date_format_fun('updated_at', '%d-%b-%Y', $c_updated));
+        $query = array_merge($query, $date_format_fun('updated_at', '%W, %d %M %Y %H:%i:%s', $c_updated_str));
+
+        $year = (int)date('Y');
+        $year_add_one = $year + 1;
+        $c_ulang_tahun = 'ulang_tahun';
+        $query[$c_ulang_tahun] = <<<SQL
+            ifnull((if(DATEDIFF(date(concat('{$year}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) < 0,
+                DATEDIFF(date(concat('{$year_add_one}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) ,
+                DATEDIFF(date(concat('{$year}-', month($table.tanggal_lahir), '-', day($table.tanggal_lahir))), CURDATE()) )
+            ), 999)
+        SQL;
+        $query["{$c_ulang_tahun}_alias"] = $c_ulang_tahun;
+
+        // roles
+        $c_model_id = $columnNames['model_morph_key'];
+        $c_roles = 'roles';
+        $query[$c_roles] = <<<SQL
+            (SELECT GROUP_CONCAT($t_roles.`name` SEPARATOR ', ') FROM $t_has_roles
+            join $t_roles on $t_has_roles.role_id = $t_roles.id
+            where $t_has_roles.$c_model_id = $t_user.id)
+        SQL;
+        $query["{$c_roles}_alias"] = $c_roles;
+
+        // email
+        $c_email = 'email';
+        $query[$c_email] = "$t_user.email";
+        $query["{$c_email}_alias"] = $c_email;
+
+        $c_active = 'active';
+        $query[$c_active] = "$t_user.active";
+        $query["{$c_active}_alias"] = $c_active;
+
+        // foto_icon
+        $c_foto_link = 'foto_link';
+        $query[$c_foto_link] = <<<SQL
+                (ifnull(concat('$base_url_image_folder',$table.foto),'$image_default'))
+        SQL;
+        $query["{$c_foto_link}_alias"] = $c_foto_link;
+
+        // ========================================================================================================
+
+
+        // ========================================================================================================
+        // select raw as alias
+        $sraa = function (string $col) use ($query): string {
+            return $query[$col] . ' as ' . $query[$col . '_alias'];
+        };
+        $model_filter = [
+            $c_created,
+            $c_created_str,
+            $c_updated,
+            $c_updated_str,
+            $c_ulang_tahun,
+            $c_roles,
+            $c_email,
+            $c_active,
+            $c_foto_link
+        ];
+
+        $to_db_raw = array_map(function ($a) use ($sraa) {
+            return DB::raw($sraa($a));
+        }, $model_filter);
+        // ========================================================================================================
+
+
+        // Select =====================================================================================================
+        $model = static::select(array_merge([
+            DB::raw("$table.*"),
+        ], $to_db_raw))
+            ->leftJoin($t_user, "$t_user.id", '=', "$table.user_id");
+
+        // Filter =====================================================================================================
+        // filter check
+        $f_c = function (string $param) use ($request): mixed {
+            $filter = $request->filter;
+            return isset($filter[$param]) ? $filter[$param] : false;
+        };
+
+        // filter ini menurut data model filter
+        $f = [$c_active];
+        // loop filter
+        foreach ($f as $v) {
+            if ($f_c($v) !== false) {
+                $model->whereRaw("{$query[$v]}='{$f_c($v)}'");
+            }
+        }
+
+        // filter custom
+        $filters = ['angkatan'];
+        foreach ($filters as  $f) {
+            if ($f_c($f) !== false) {
+                $model->whereRaw("$table.$f='{$f_c($f)}'");
+            }
+        }
+
+        if (isset($request->filter)) {
+            $filter = $request->filter;
+            if ($filter['role'] != '') {
+                $f = $filter['role'];
+                $where = <<<SQL
+                    ((SELECT count(*) FROM $t_has_roles
+                    join $t_roles on $t_has_roles.role_id = $t_roles.id
+                    where $t_has_roles.$c_model_id = $t_user.id and $t_roles.`name` = '$f') > 0)
+                SQL;
+                $model->whereRaw($where);
+            }
+        }
+        // ========================================================================================================
+
+
+        // ========================================================================================================
+        $datatable = Datatables::of($model)->addIndexColumn();
+
+        // search
+        // ========================================================================================================
+        $query_filter = $query;
+        $datatable->filter(function ($query) use ($model_filter, $query_filter, $table) {
+            $search = request('search');
+            $search = isset($search['value']) ? $search['value'] : null;
+            if ((is_null($search) || $search == '') && count($model_filter) > 0) return false;
+
+            // tambah pencarian
+            $static = new static();
+            $search_add = $static->fillable;
+            $search_add = array_map(function ($v) use ($table) {
+                return "$table.$v";
+            }, $search_add);
+            $search_arr = array_merge($model_filter, $search_add);
+
+            // pake or where
+            $search_str = "(";
+            foreach ($search_arr as $k => $v) {
+                $or = (($k + 1) < count($search_arr)) ? 'or' : '';
+                $column = isset($query_filter[$v]) ? $query_filter[$v] : $v;
+                $search_str .= "$column like '%$search%' $or ";
+            }
+
+            $search_str .= ")";
+            $query->whereRaw($search_str);
+        });
+
+        // create datatable
+        return $datatable->make(true);
     }
 }

@@ -1,0 +1,8 @@
+[x] DATA PERIODE KEPENGURUSAN Detail modal diperbesar
+[x] DATA PERIODE KEPENGURUSAN PERIODE modal diperbesar
+[x] DATA PERIODE KEPENGURUSAN Detail foto ukuran 100%
+[x] Semua tombol kembali warna nya abu abu
+[x] DATA ANGGOTA List table pake foto
+[x] Profil Perbaikan teks yant tidak terlihat ketika dark mode
+[x] Profil Hobi select2 seperti username validation
+[x] Profil Kontak media sosial list di perbaiki

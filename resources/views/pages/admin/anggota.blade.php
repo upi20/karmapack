@@ -97,6 +97,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Foto</th>
                         <th>Nama</th>
                         {!! $is_admin ? '<th>Email</th>' : '' !!}
                         <th>Tgl. Lahir</th>
@@ -179,6 +180,26 @@
                     <button class="btn btn-light" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
                         Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-image">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-demo">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-image-title">View Foto</h6><button aria-label="Close"
+                        class="btn-close" data-bs-dismiss="modal"><span aria-hidden="true"></span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modal-image-element" alt="" style="width: 100%">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Close
                     </button>
                 </div>
             </div>

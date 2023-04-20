@@ -18,7 +18,7 @@
                                     style="height: 80px; width: 80px; object-fit: cover; object-position: center; border-radius: 50%;">
                             </div>
                             <div class="text-center">
-                                <h6 class="mb-1 text-dark">{{ $anggota->nama }}</h6>
+                                <h6 class="mb-1">{{ $anggota->nama }}</h6>
                                 @if ($user->username)
                                     <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ '@' . $user->username }}</p>
                                 @endif
@@ -31,7 +31,7 @@
                         @endphp
                         @if ($kepengurusans)
                             <div class="text-left mt-3">
-                                <h6 class="mb-1 text-dark">Riwayat Kepengurusan:</h6>
+                                <h6 class="mb-1">Riwayat Kepengurusan:</h6>
                                 @foreach ($kepengurusans as $kepengurusan)
                                     <p class="text-muted mt-0 mb-0 pt-0 fs-13">{{ $kepengurusan }}</p>
                                 @endforeach
@@ -225,11 +225,16 @@
             <div class="row">
                 @if ($google_accounts->count())
                     {{-- google akun --}}
-                    <div class="col-12" id="google_account_container">
-                        <div class="card panel-theme">
-                            <div class="card-body">
-                                <h6 class="mt-2 text-uppercase">Akun Google</h6>
-                                <hr>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
+                                    <div>
+                                        <h6 class="mt-2 text-uppercase">Akun Google</h6>
+                                    </div>
+                                </div>
+                                <hr class="m-0">
+
                                 <div class="list-group list-group-flush" id="akun-google-body">
                                     @foreach ($google_accounts as $akun)
                                         @php
@@ -268,9 +273,10 @@
                         </div>
                     </div>
                 @endif
+
                 {{-- kontak --}}
                 <div class="col-12">
-                    <div class="card panel-theme">
+                    <div class="card">
                         <div class="card-body p-0">
                             <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
                                 <div>
@@ -279,14 +285,13 @@
                                 <div>
                                     <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
                                         data-bs-toggle="modal" href="#modal-kontak" onclick="kontakAdd()"
-                                        data-target="#modal-kontak" data-toggle="tooltip" title="Tambah Data"><i
-                                            class="fa fa-plus"></i></button>
+                                        data-target="#modal-kontak" data-toggle="tooltip" title="Tambah Data">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <hr class="mt-0">
-                            <div class="list-group list-group-flush" id="kontak-body">
-
-                            </div>
+                            <hr class="m-0">
+                            <div class="list-group list-group-flush" id="kontak-body"> </div>
                         </div>
                     </div>
                 </div>
@@ -373,12 +378,13 @@
 
                             <form action="" id="hobi_form">
                                 <input type="hidden" name="anggota_id" value="{{ $anggota->id }}">
-                                <select class="form-control" style="width: 100%;" required="" id="hobis" multiple
+                                <select class="form-control" data-role="tagsinput" id="hobis" multiple
                                     name="hobis[]">
                                     @foreach ($anggota->hobis->sortBy('nama') ?? [] as $hobi)
                                         <option value="{{ $hobi->nama }}" selected>{{ $hobi->nama }}</option>
                                     @endforeach
                                 </select>
+                                <p>*Tekan enter untuk menambahkan</p>
                             </form>
                         </div>
                     </div>
@@ -621,6 +627,7 @@
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>
+    <script src="{{ asset_admin('plugins/input-tags/js/tagsinput.js') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,

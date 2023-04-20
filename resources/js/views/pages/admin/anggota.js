@@ -36,26 +36,7 @@ $(document).ready(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    const column = [];
-    if (can_update || can_delete || can_save_another) {
-        column.push({
-            data: 'id',
-            name: 'id',
-            render(data, type, full, meta) {
-                const btn_profile = can_save_another ? `<a class="btn btn-rounded btn-secondary btn-sm me-1" data-toggle="tooltip" title="Ubah Profil"
-                        href="{{ route('member.profile') }}?id=${data}" >
-                        <i class="fas fa-user"></i></a>` : '';
-                const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data"
-                        onClick="editFunc('${full.id}')">
-                        <i class="fas fa-edit"></i></button>` : '';
-                const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
-                        <i class="fas fa-trash"></i></button>` : '';
-                return btn_profile + btn_update + btn_delete;
-            },
-            orderable: false
-        });
-    }
-    let order_column = 3;
+    let order_column = 4;
     if (!is_admin) order_column--;
     const new_table = table_html.DataTable({
         searchDelay: 500,
@@ -84,6 +65,14 @@ $(document).ready(function () {
             orderable: false,
         },
         {
+            data: 'foto_link',
+            name: 'foto_link',
+            render(data, type, full, meta) {
+                return data ? ` <img class="table-foto" src="${data}" alt="${full.nama}" onclick="viewImage('${data}', 'Foto icon ${full.nama}')"> ` : '';
+            },
+            orderable: false
+        },
+        {
             data: 'nama',
             name: 'nama',
             render(data, type, full, meta) {
@@ -92,7 +81,7 @@ $(document).ready(function () {
                 const sebagai = String(full.roles).split(', ').reduce((r, v) => {
                     return r + `<span class="badge bg-primary me-2">${v}</span>`;
                 }, "");
-                return `<a class="text-dark" target="_blank" href="{{ url('anggota') }}/${full.id}">${full.nama}</a>
+                return `<a target="_blank" href="{{ url('anggota') }}/${full.id}">${full.nama}</a>
                     <br>${anggatan} ${sebagai}`;
             },
         },
@@ -116,7 +105,22 @@ $(document).ready(function () {
                     <small>${ulang_tahun}</small>`;
             },
         },
-        ...column
+        ...(is_admin ? [{
+            data: 'id',
+            name: 'id',
+            render(data, type, full, meta) {
+                const btn_profile = can_save_another ? `<a class="btn btn-rounded btn-secondary btn-sm me-1" data-toggle="tooltip" title="Ubah Profil"
+                        href="{{ route('member.profile') }}?id=${data}" >
+                        <i class="fas fa-user"></i></a>` : '';
+                const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1" data-toggle="tooltip" title="Ubah Data"
+                        onClick="editFunc('${full.id}')">
+                        <i class="fas fa-edit"></i></button>` : '';
+                const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
+                        <i class="fas fa-trash"></i></button>` : '';
+                return btn_profile + btn_update + btn_delete;
+            },
+            orderable: false
+        }] : []),
         ],
         order: [
             [order_column, 'asc']
@@ -307,3 +311,11 @@ function exportExcel() {
     let arg = `?active=${active}&role=${role}&search=${search}`;
     window.location.href = base + arg;
 }
+
+function viewImage(image, title) {
+    $('#modal-image').modal('show');
+    $('#modal-image-title').html(title);
+    const ele = $('#modal-image-element');
+    ele.attr('src', image);
+    ele.attr('alt', title);
+};

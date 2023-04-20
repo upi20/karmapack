@@ -20,8 +20,8 @@
                             </option>
                         @endforeach
                     </select>
+                    <p>*Tekan enter untuk menambahkan</p>
                 </div>
-                <p>*Tekan enter untuk menambahkan</p>
             </form>
             @if (auth_can(h_prefix('save')))
                 <button type="submit" class="btn btn-primary mt-3" id="btn-save" form="MainForm">

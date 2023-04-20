@@ -13,7 +13,7 @@
     $status = $is_edit ? $artikel->status : 1;
     $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
     $user_id = $is_edit ? $artikel->user_id : auth()->user()->id;
-    
+
     $kategori = isset($kategori) ? $kategori : [];
     $tag = isset($tag) ? $tag : [];
 @endphp
@@ -25,7 +25,7 @@
                     <h6 class="mt-2 text-uppercase"id="menu-title">Form {{ $page_attr['title'] }}</h6>
                 </div>
                 <div>
-                    <a href="{{ url()->previous() }}" class="btn btn-light">
+                    <a href="{{ url()->previous() }}" class="btn btn-secondary">
                         <i class='bx bx-arrow-back me-1'></i>Kembali</a>
                 </div>
             </div>

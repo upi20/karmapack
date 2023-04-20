@@ -171,25 +171,6 @@ $(document).ready(() => {
             'style',
     });
 
-    $('#hobis').select2({
-        ajax: {
-            url: "{{ route(l_prefix($hpu,'hobi_select2')) }}",
-            type: "GET",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: function (params) {
-                var query = {
-                    search: params.term,
-                }
-                return query;
-            }
-        },
-        theme: "bootstrap-5",
-        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' :
-            'style',
-    });
-
     // ==============================================================================================
     $("#username").keyup(function () {
         var Text = $(this).val();
@@ -417,7 +398,11 @@ $(document).ready(() => {
     $('#hobi_form').submit(function (e) {
         e.preventDefault();
         resetErrorAfterInput();
-        var formData = new FormData(this);
+        var formData = new FormData();
+        formData.append('anggota_id', anggota_id);
+        $('#hobis').tagsinput('items').forEach(d => {
+            formData.append('hobis[]', d);
+        });
         setBtnLoading('button[type=submit][form=hobi_form]', 'Simpan Perubahan');
         const route = "{{ route(l_prefix($hpu,'hobi_save')) }}";
         $.ajax({
