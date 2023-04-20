@@ -31,7 +31,7 @@ class LabController extends Controller
         }
     }
 
-    public function belumisi()
+    public function belumisi(Request $request)
     {
         $users = User::with([
             'anggota.district',
@@ -44,23 +44,29 @@ class LabController extends Controller
         // return $users;
         // return 'a';
         $date = date_format(date_create(date('Y-m-d H:i:s')), 'd F Y ');
-        $column = $users[0]->anggota->getFillable();
-        unset($column[16]);
-        unset($column[15]);
-        unset($column[12]);
-        unset($column[5]);
-        unset($column[6]);
-        unset($column[7]);
-        unset($column[8]);
-        unset($column[0]);
-        unset($column[1]);
-        $addon = ['no', 'name', 'email', 'password', 'kontak', 'pendidikan'];
+        $headers = [
+            'no',
+            'nama',
+            'email',
+            // 'password',
+            'kontak',
+            'alamat',
+            'tanggal_lahir',
+            'jenis_kelamin',
+            'angkatan',
+            'bio',
+            'profesi',
+            'telepon',
+            'whatsapp',
+
+        ];
+
 
         // dd($column);
         // laporan baru
         $row = 1;
         $col_start = "A";
-        $col_end = chr(64 + count($column) + count($addon));
+        $col_end = chr(64 + count($headers));
         $title_excel = "Daftar Users Aplikasi SIA";
         // Header excel ================================================================================================
         $spreadsheet = new Spreadsheet();
@@ -122,9 +128,6 @@ class LabController extends Controller
         $styleArray['fill']['startColor']['rgb'] = 'E5E7EB';
         $sheet->getStyle($col_start . $row . ":" . $col_end . $row)->applyFromArray($styleArray);
 
-        // poin-poin header disini
-        $headers = array_merge($addon, $column);
-
         // apply header
         for ($i = 0; $i < count($headers); $i++) {
             $sheet->setCellValue(chr(65 + $i) . ($row - 1), $headers[$i]);
@@ -152,7 +155,7 @@ class LabController extends Controller
             $sheet->setCellValue(chr(65 + $c) . "$row", ($row - 5));
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->name);
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->email);
-            $sheet->setCellValue(chr(65 + ++$c) . "$row", "12345678");
+            // $sheet->setCellValue(chr(65 + ++$c) . "$row", "12345678");
 
             // kontak
             if ($anggota->kontaks) {
@@ -168,11 +171,25 @@ class LabController extends Controller
 
             // alamat
             $alamat_str = '';
+            $alamat_str .= $anggota->province ? "Provinsi : {$anggota->province->name}" : '';
+            $alamat_str .= $anggota->regencie ? "\nKab/Kota : {$anggota->regencie->name}" : '';
+            $alamat_str .= $anggota->district ? "\nKecamatan : {$anggota->district->name}" : '';
+            $alamat_str .= $anggota->village ? "\nDesa/Kel : {$anggota->village->name}" : '';
+            $alamat_str .= $anggota->alamat_lengkap ? "\nAlamat Lengkap : $anggota->alamat_lengkap" : '';
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $alamat_str);
 
-            foreach ($column as $col) {
-                $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->anggota->{$col});
-            }
+            // anggota
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->tanggal_lahir);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->jenis_kelamin);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->angkatan);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->bio);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->profesi);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->telepon);
+            $sheet->setCellValue(chr(65 + ++$c) . "$row", $anggota->whatsapp);
+
+            // foreach ($column as $col) {
+            //     $sheet->setCellValue(chr(65 + ++$c) . "$row", $user->anggota->{$col});
+            // }
         }
         // format
         // nomor center
@@ -199,7 +216,7 @@ class LabController extends Controller
         }
 
         // set width column
-        for ($i = 0; $i < count($column) + count($addon); $i++) {
+        for ($i = 0; $i < count($headers); $i++) {
             $spreadsheet->getActiveSheet()->getColumnDimension(chr(65 + $i))->setAutoSize(true);
         }
 
@@ -219,10 +236,6 @@ class LabController extends Controller
         // page center on
         $spreadsheet->getActiveSheet()->getPageSetup()->setHorizontalCentered(true);
         $spreadsheet->getActiveSheet()->getPageSetup()->setVerticalCentered(false);
-
-        // simpan di folder
-        // $writer = new Xlsx($spreadsheet);
-        // $writer->save('hello world.xlsx');
 
         // simpan langsung
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
