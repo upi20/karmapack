@@ -52,3 +52,9 @@ html.dark-theme .logo-landscape {
 .form-group {
     margin-top: 8px;
 }
+
+
+html.dark-theme .paginate_button.page-item.active>a {
+    background-color: #008cff !important;
+    color: #32393f;
+}

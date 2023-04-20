@@ -345,7 +345,7 @@ function viewDetail(id) {
             <h4 class="h4">Slogan:</h4><p>${data.detail.slogan}</p>
             <h4 class="h4">Filosofi Logo:</h4><p>${data.detail.filosofi_logo ?? ''}</p>
             <h4 class="h4">Status:</h4><p><i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}</p>
-            <h4 class="h4">Foto:</h4><p><img src="${data.detail.foto}" alt="${data.detail.nama}"/></p>
+            <h4 class="h4">Foto:</h4><p><img src="${data.detail.foto}" alt="${data.detail.nama}" style="width:100%"/></p>
             <h4 class="h4">Pengurus:</h4>
         `);
 
