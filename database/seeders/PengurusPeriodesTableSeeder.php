@@ -21,7 +21,7 @@ class PengurusPeriodesTableSeeder extends Seeder
         \DB::table('pengurus_periodes')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'nama' => 'Kabinet Masagi',
                 'foto' => 'iconkabinet-ma20220425164938.png',
                 'dari' => '2021',
@@ -40,13 +40,13 @@ Cianjru Kidul
 3. Menumbuhkan rasa cinta terhadap seni dan budaya kedaerahan</p>
 ',
                 'filosofi_logo' => '',
-                'status' => 0,
+                'status' => '0',
                 'created_at' => '2023-02-11 02:06:13',
                 'updated_at' => '2023-04-20 05:14:30',
             ),
             1 => 
             array (
-                'id' => 2,
+                'id' => '2',
                 'nama' => 'Kabinet Sabilulungan',
                 'foto' => 'iconkabinet-sa20220816164522.png',
                 'dari' => '2022',
@@ -58,7 +58,7 @@ Cianjru Kidul
                 'misi' => '<ol><li>Mewujudkan karmapack sebagai pribadi yang kompetitif dan cinta daerah.</li><li>Mampu membuat dan melaksanakan fungsi sosial dan kepemudaan serta ikut andil dalam pembangunan karakter kepemudaan.</li><li>Mampu merawat dan membangun koordinasi seluruh elemen karmapack</li></ol>
 ',
                 'filosofi_logo' => NULL,
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2023-02-11 02:06:14',
                 'updated_at' => '2023-02-18 17:39:38',
             ),
