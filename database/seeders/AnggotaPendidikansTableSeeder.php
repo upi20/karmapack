@@ -21,9 +21,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
         \DB::table('anggota_pendidikans')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'jenis_id' => 2,
-                'anggota_id' => 1,
+                'id' => '1',
+                'jenis_id' => '2',
+                'anggota_id' => '1',
                 'dari' => '2007',
                 'sampai' => '2013',
                 'instansi' => 'SD Negeri 1 Tipar',
@@ -34,9 +34,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
-                'jenis_id' => 3,
-                'anggota_id' => 1,
+                'id' => '2',
+                'jenis_id' => '3',
+                'anggota_id' => '1',
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'SMP PGRI 46 CIBINONG',
@@ -47,9 +47,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 3,
-                'jenis_id' => 4,
-                'anggota_id' => 1,
+                'id' => '3',
+                'jenis_id' => '4',
+                'anggota_id' => '1',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMK Negeri 1 Tanggeung',
@@ -60,9 +60,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 4,
-                'jenis_id' => 5,
-                'anggota_id' => 1,
+                'id' => '4',
+                'jenis_id' => '5',
+                'anggota_id' => '1',
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Sangga Buana YPKP Bandung',
@@ -73,9 +73,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 5,
-                'jenis_id' => 2,
-                'anggota_id' => 3,
+                'id' => '5',
+                'jenis_id' => '2',
+                'anggota_id' => '3',
                 'dari' => '2008',
                 'sampai' => '2014',
                 'instansi' => 'SD NEGERI POGOR',
@@ -86,9 +86,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'jenis_id' => 2,
-                'anggota_id' => 6,
+                'id' => '6',
+                'jenis_id' => '2',
+                'anggota_id' => '6',
                 'dari' => '2005',
                 'sampai' => '2011',
                 'instansi' => 'SDN CIAKAR',
@@ -99,9 +99,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 7,
-                'jenis_id' => 3,
-                'anggota_id' => 6,
+                'id' => '7',
+                'jenis_id' => '3',
+                'anggota_id' => '6',
                 'dari' => '2011',
                 'sampai' => '2014',
                 'instansi' => 'SMPN 2 SINDANGBARANG',
@@ -112,9 +112,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => 8,
-                'jenis_id' => 4,
-                'anggota_id' => 6,
+                'id' => '8',
+                'jenis_id' => '4',
+                'anggota_id' => '6',
                 'dari' => '2014',
                 'sampai' => '2015',
                 'instansi' => 'MA AR-ROCHMAH LEMBANG',
@@ -125,9 +125,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => 9,
-                'jenis_id' => 4,
-                'anggota_id' => 6,
+                'id' => '9',
+                'jenis_id' => '4',
+                'anggota_id' => '6',
                 'dari' => '2015',
                 'sampai' => '2017',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -138,9 +138,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             9 => 
             array (
-                'id' => 10,
-                'jenis_id' => 5,
-                'anggota_id' => 17,
+                'id' => '10',
+                'jenis_id' => '5',
+                'anggota_id' => '17',
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -151,9 +151,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             10 => 
             array (
-                'id' => 11,
-                'jenis_id' => 2,
-                'anggota_id' => 30,
+                'id' => '11',
+                'jenis_id' => '2',
+                'anggota_id' => '30',
                 'dari' => '2009',
                 'sampai' => '2014',
                 'instansi' => 'SD Negeri Rawasari',
@@ -164,9 +164,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             11 => 
             array (
-                'id' => 12,
-                'jenis_id' => 3,
-                'anggota_id' => 30,
+                'id' => '12',
+                'jenis_id' => '3',
+                'anggota_id' => '30',
                 'dari' => '2014',
                 'sampai' => '2017',
                 'instansi' => 'SMP Negeri 1 Pagelaran',
@@ -177,9 +177,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             12 => 
             array (
-                'id' => 13,
-                'jenis_id' => 4,
-                'anggota_id' => 30,
+                'id' => '13',
+                'jenis_id' => '4',
+                'anggota_id' => '30',
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'SMK Negeri 1 Tanggeung',
@@ -190,9 +190,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'id' => 14,
-                'jenis_id' => 5,
-                'anggota_id' => 30,
+                'id' => '14',
+                'jenis_id' => '5',
+                'anggota_id' => '30',
                 'dari' => '2020',
                 'sampai' => '2024',
             'instansi' => 'Institut Pendidikan Dan Bahasa (IPB) INVADA Cirebon',
@@ -203,9 +203,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             14 => 
             array (
-                'id' => 15,
-                'jenis_id' => 5,
-                'anggota_id' => 33,
+                'id' => '15',
+                'jenis_id' => '5',
+                'anggota_id' => '33',
                 'dari' => '2019',
                 'sampai' => '2023',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -216,9 +216,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 16,
-                'jenis_id' => 2,
-                'anggota_id' => 39,
+                'id' => '16',
+                'jenis_id' => '2',
+                'anggota_id' => '39',
                 'dari' => '2006',
                 'sampai' => '2012',
                 'instansi' => 'SDN Sumberjaya',
@@ -229,9 +229,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'id' => 17,
-                'jenis_id' => 3,
-                'anggota_id' => 39,
+                'id' => '17',
+                'jenis_id' => '3',
+                'anggota_id' => '39',
                 'dari' => '2012',
                 'sampai' => '2015',
                 'instansi' => 'MTsN 1 Tanggeung',
@@ -242,9 +242,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             17 => 
             array (
-                'id' => 18,
-                'jenis_id' => 4,
-                'anggota_id' => 39,
+                'id' => '18',
+                'jenis_id' => '4',
+                'anggota_id' => '39',
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -255,9 +255,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'id' => 19,
-                'jenis_id' => 5,
-                'anggota_id' => 39,
+                'id' => '19',
+                'jenis_id' => '5',
+                'anggota_id' => '39',
                 'dari' => '2019',
                 'sampai' => NULL,
             'instansi' => 'Institut Keguruan Ilmu Pendidikan (IKIP) Siliwangi Cimahi',
@@ -268,9 +268,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             19 => 
             array (
-                'id' => 20,
-                'jenis_id' => 2,
-                'anggota_id' => 54,
+                'id' => '20',
+                'jenis_id' => '2',
+                'anggota_id' => '54',
                 'dari' => '2009',
                 'sampai' => '2014',
                 'instansi' => 'SDN KARANG ANYAR',
@@ -281,9 +281,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             20 => 
             array (
-                'id' => 21,
-                'jenis_id' => 3,
-                'anggota_id' => 54,
+                'id' => '21',
+                'jenis_id' => '3',
+                'anggota_id' => '54',
                 'dari' => '2015',
                 'sampai' => '2017',
                 'instansi' => 'SMPN 1 CIJATI',
@@ -294,9 +294,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             21 => 
             array (
-                'id' => 22,
-                'jenis_id' => 4,
-                'anggota_id' => 54,
+                'id' => '22',
+                'jenis_id' => '4',
+                'anggota_id' => '54',
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'SMKN 1 CIJATI',
@@ -307,9 +307,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             22 => 
             array (
-                'id' => 23,
-                'jenis_id' => 5,
-                'anggota_id' => 54,
+                'id' => '23',
+                'jenis_id' => '5',
+                'anggota_id' => '54',
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Suryakancana',
@@ -320,9 +320,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             23 => 
             array (
-                'id' => 24,
-                'jenis_id' => 5,
-                'anggota_id' => 65,
+                'id' => '24',
+                'jenis_id' => '5',
+                'anggota_id' => '65',
                 'dari' => '2022',
                 'sampai' => '2026',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -333,9 +333,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             24 => 
             array (
-                'id' => 25,
-                'jenis_id' => 5,
-                'anggota_id' => 66,
+                'id' => '25',
+                'jenis_id' => '5',
+                'anggota_id' => '66',
                 'dari' => '2022',
                 'sampai' => '2026',
                 'instansi' => 'Universitas pakuan Bogor',
@@ -346,9 +346,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             25 => 
             array (
-                'id' => 26,
-                'jenis_id' => 5,
-                'anggota_id' => 67,
+                'id' => '26',
+                'jenis_id' => '5',
+                'anggota_id' => '67',
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -359,9 +359,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             26 => 
             array (
-                'id' => 27,
-                'jenis_id' => 2,
-                'anggota_id' => 68,
+                'id' => '27',
+                'jenis_id' => '2',
+                'anggota_id' => '68',
                 'dari' => '2006',
                 'sampai' => '2012',
                 'instansi' => 'SDN Sukaresmi',
@@ -372,9 +372,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             27 => 
             array (
-                'id' => 28,
-                'jenis_id' => 3,
-                'anggota_id' => 68,
+                'id' => '28',
+                'jenis_id' => '3',
+                'anggota_id' => '68',
                 'dari' => '2012',
                 'sampai' => '2015',
                 'instansi' => 'SMPN 3 TAKOKAK',
@@ -385,9 +385,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             28 => 
             array (
-                'id' => 29,
-                'jenis_id' => 4,
-                'anggota_id' => 68,
+                'id' => '29',
+                'jenis_id' => '4',
+                'anggota_id' => '68',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMA plus YASPIDA Sukabumi',
@@ -398,9 +398,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             29 => 
             array (
-                'id' => 30,
-                'jenis_id' => 5,
-                'anggota_id' => 68,
+                'id' => '30',
+                'jenis_id' => '5',
+                'anggota_id' => '68',
                 'dari' => '2019',
                 'sampai' => '2023',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -411,9 +411,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             30 => 
             array (
-                'id' => 31,
-                'jenis_id' => 1,
-                'anggota_id' => 69,
+                'id' => '31',
+                'jenis_id' => '1',
+                'anggota_id' => '69',
                 'dari' => '2008',
                 'sampai' => '2009',
                 'instansi' => 'Paud Pepaya Cikadu',
@@ -424,9 +424,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             31 => 
             array (
-                'id' => 32,
-                'jenis_id' => 2,
-                'anggota_id' => 69,
+                'id' => '32',
+                'jenis_id' => '2',
+                'anggota_id' => '69',
                 'dari' => '2009',
                 'sampai' => '2010',
                 'instansi' => 'SD NEGERI CIKADU 1',
@@ -437,9 +437,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             32 => 
             array (
-                'id' => 33,
-                'jenis_id' => 2,
-                'anggota_id' => 69,
+                'id' => '33',
+                'jenis_id' => '2',
+                'anggota_id' => '69',
                 'dari' => '2010',
                 'sampai' => '2015',
                 'instansi' => 'SD CIDOMBA',
@@ -450,9 +450,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             33 => 
             array (
-                'id' => 34,
-                'jenis_id' => 3,
-                'anggota_id' => 69,
+                'id' => '34',
+                'jenis_id' => '3',
+                'anggota_id' => '69',
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'SMP NEGERI 1 CIKADU',
@@ -463,9 +463,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             34 => 
             array (
-                'id' => 35,
-                'jenis_id' => 4,
-                'anggota_id' => 69,
+                'id' => '35',
+                'jenis_id' => '4',
+                'anggota_id' => '69',
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'SMK NEGERI 1 CIKADU',
@@ -476,9 +476,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             35 => 
             array (
-                'id' => 36,
-                'jenis_id' => 5,
-                'anggota_id' => 69,
+                'id' => '36',
+                'jenis_id' => '5',
+                'anggota_id' => '69',
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Winaya Mukti',
@@ -489,9 +489,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             36 => 
             array (
-                'id' => 37,
-                'jenis_id' => 5,
-                'anggota_id' => 70,
+                'id' => '37',
+                'jenis_id' => '5',
+                'anggota_id' => '70',
                 'dari' => '2021',
                 'sampai' => NULL,
                 'instansi' => 'Stisip Guna Nusantara Cianjur',
@@ -502,9 +502,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             37 => 
             array (
-                'id' => 38,
-                'jenis_id' => 2,
-                'anggota_id' => 71,
+                'id' => '38',
+                'jenis_id' => '2',
+                'anggota_id' => '71',
                 'dari' => '2008',
                 'sampai' => '2013',
                 'instansi' => 'SD Negeri Layung Sari',
@@ -515,9 +515,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             38 => 
             array (
-                'id' => 39,
-                'jenis_id' => 3,
-                'anggota_id' => 71,
+                'id' => '39',
+                'jenis_id' => '3',
+                'anggota_id' => '71',
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'MTsN 2 Cianjur',
@@ -528,9 +528,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             39 => 
             array (
-                'id' => 40,
-                'jenis_id' => 4,
-                'anggota_id' => 71,
+                'id' => '40',
+                'jenis_id' => '4',
+                'anggota_id' => '71',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMA Negeri 1 Cibinong',
@@ -541,9 +541,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             40 => 
             array (
-                'id' => 41,
-                'jenis_id' => 2,
-                'anggota_id' => 77,
+                'id' => '41',
+                'jenis_id' => '2',
+                'anggota_id' => '77',
                 'dari' => '2007',
                 'sampai' => '2013',
                 'instansi' => 'MI AL-HUDA RAWAHANJA',
@@ -554,9 +554,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             41 => 
             array (
-                'id' => 42,
-                'jenis_id' => 3,
-                'anggota_id' => 77,
+                'id' => '42',
+                'jenis_id' => '3',
+                'anggota_id' => '77',
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'MTS AL-HUDA RAWAHANJA',
@@ -567,9 +567,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             42 => 
             array (
-                'id' => 43,
-                'jenis_id' => 4,
-                'anggota_id' => 77,
+                'id' => '43',
+                'jenis_id' => '4',
+                'anggota_id' => '77',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'MAS AL-MANSHURIYAH',
@@ -580,9 +580,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             43 => 
             array (
-                'id' => 44,
-                'jenis_id' => 6,
-                'anggota_id' => 77,
+                'id' => '44',
+                'jenis_id' => '6',
+                'anggota_id' => '77',
                 'dari' => '2019',
                 'sampai' => '2020',
             'instansi' => 'AZHARY CENTER (DARUL AZHAR)',
@@ -593,9 +593,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             44 => 
             array (
-                'id' => 45,
-                'jenis_id' => 5,
-                'anggota_id' => 77,
+                'id' => '45',
+                'jenis_id' => '5',
+                'anggota_id' => '77',
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Muhammadiyah Bandung',
@@ -606,9 +606,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             45 => 
             array (
-                'id' => 46,
-                'jenis_id' => 5,
-                'anggota_id' => 79,
+                'id' => '46',
+                'jenis_id' => '5',
+                'anggota_id' => '79',
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -619,9 +619,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             46 => 
             array (
-                'id' => 47,
-                'jenis_id' => 4,
-                'anggota_id' => 79,
+                'id' => '47',
+                'jenis_id' => '4',
+                'anggota_id' => '79',
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -632,9 +632,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             47 => 
             array (
-                'id' => 48,
-                'jenis_id' => 5,
-                'anggota_id' => 80,
+                'id' => '48',
+                'jenis_id' => '5',
+                'anggota_id' => '80',
                 'dari' => '2021',
                 'sampai' => '2025',
                 'instansi' => 'Stisip Guna Nusantara Cianjur',
@@ -645,9 +645,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             48 => 
             array (
-                'id' => 49,
-                'jenis_id' => 2,
-                'anggota_id' => 80,
+                'id' => '49',
+                'jenis_id' => '2',
+                'anggota_id' => '80',
                 'dari' => '2009',
                 'sampai' => '2015',
                 'instansi' => 'Mi Cijoho',
@@ -658,9 +658,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             49 => 
             array (
-                'id' => 50,
-                'jenis_id' => 3,
-                'anggota_id' => 80,
+                'id' => '50',
+                'jenis_id' => '3',
+                'anggota_id' => '80',
                 'dari' => '2015',
                 'sampai' => '2018',
                 'instansi' => 'Mts Tanwirul Amin',
@@ -671,9 +671,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             50 => 
             array (
-                'id' => 51,
-                'jenis_id' => 4,
-                'anggota_id' => 80,
+                'id' => '51',
+                'jenis_id' => '4',
+                'anggota_id' => '80',
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'MA Tanwirul',
@@ -684,9 +684,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             51 => 
             array (
-                'id' => 52,
-                'jenis_id' => 5,
-                'anggota_id' => 81,
+                'id' => '52',
+                'jenis_id' => '5',
+                'anggota_id' => '81',
                 'dari' => '2020',
                 'sampai' => '2024',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -697,9 +697,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             52 => 
             array (
-                'id' => 53,
-                'jenis_id' => 4,
-                'anggota_id' => 81,
+                'id' => '53',
+                'jenis_id' => '4',
+                'anggota_id' => '81',
                 'dari' => '2017',
                 'sampai' => '2020',
                 'instansi' => 'MAN 3 CIANJUR',
@@ -710,9 +710,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             53 => 
             array (
-                'id' => 54,
-                'jenis_id' => 3,
-                'anggota_id' => 81,
+                'id' => '54',
+                'jenis_id' => '3',
+                'anggota_id' => '81',
                 'dari' => '2013',
                 'sampai' => '2016',
                 'instansi' => 'SMP 1 CIBEBER',
@@ -723,9 +723,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             54 => 
             array (
-                'id' => 55,
-                'jenis_id' => 2,
-                'anggota_id' => 81,
+                'id' => '55',
+                'jenis_id' => '2',
+                'anggota_id' => '81',
                 'dari' => '2008',
                 'sampai' => '2013',
                 'instansi' => 'MI AL KHOERIYAH',
@@ -736,9 +736,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             55 => 
             array (
-                'id' => 56,
-                'jenis_id' => 4,
-                'anggota_id' => 85,
+                'id' => '56',
+                'jenis_id' => '4',
+                'anggota_id' => '85',
                 'dari' => '2019',
                 'sampai' => '2021',
                 'instansi' => 'SMA Negri 1 Pasirkuda',
@@ -749,9 +749,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             56 => 
             array (
-                'id' => 57,
-                'jenis_id' => 1,
-                'anggota_id' => 89,
+                'id' => '57',
+                'jenis_id' => '1',
+                'anggota_id' => '89',
                 'dari' => '2007',
                 'sampai' => '2009',
                 'instansi' => 'paud batu lambang Bengkulu',
@@ -762,9 +762,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             57 => 
             array (
-                'id' => 58,
-                'jenis_id' => 2,
-                'anggota_id' => 89,
+                'id' => '58',
+                'jenis_id' => '2',
+                'anggota_id' => '89',
                 'dari' => '2009',
                 'sampai' => '2014',
                 'instansi' => 'MI Neglasari Ciaul',
@@ -775,9 +775,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             58 => 
             array (
-                'id' => 59,
-                'jenis_id' => 2,
-                'anggota_id' => 89,
+                'id' => '59',
+                'jenis_id' => '2',
+                'anggota_id' => '89',
                 'dari' => '2014',
                 'sampai' => '2015',
                 'instansi' => 'SD Muhammadiyah Palembang',
@@ -788,9 +788,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             59 => 
             array (
-                'id' => 60,
-                'jenis_id' => 3,
-                'anggota_id' => 89,
+                'id' => '60',
+                'jenis_id' => '3',
+                'anggota_id' => '89',
                 'dari' => '2016',
                 'sampai' => '2018',
                 'instansi' => 'SMP Muhammadiyah Palembang',
@@ -801,9 +801,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             60 => 
             array (
-                'id' => 61,
-                'jenis_id' => 4,
-                'anggota_id' => 89,
+                'id' => '61',
+                'jenis_id' => '4',
+                'anggota_id' => '89',
                 'dari' => '2018',
                 'sampai' => '2021',
                 'instansi' => 'SMA Muhammadiyah kota Pagaralam',
@@ -814,9 +814,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             61 => 
             array (
-                'id' => 62,
-                'jenis_id' => 5,
-                'anggota_id' => 89,
+                'id' => '62',
+                'jenis_id' => '5',
+                'anggota_id' => '89',
                 'dari' => '2022',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Sangga Buana YPKP Bandung',
@@ -827,9 +827,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             62 => 
             array (
-                'id' => 63,
-                'jenis_id' => 2,
-                'anggota_id' => 88,
+                'id' => '63',
+                'jenis_id' => '2',
+                'anggota_id' => '88',
                 'dari' => '2010',
                 'sampai' => '2016',
                 'instansi' => 'MI Neglasari Ciaul',
@@ -840,9 +840,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             63 => 
             array (
-                'id' => 64,
-                'jenis_id' => 3,
-                'anggota_id' => 88,
+                'id' => '64',
+                'jenis_id' => '3',
+                'anggota_id' => '88',
                 'dari' => '2016',
                 'sampai' => '2019',
                 'instansi' => 'SMPN 1 PASIRKUDA',
@@ -853,9 +853,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             64 => 
             array (
-                'id' => 65,
-                'jenis_id' => 4,
-                'anggota_id' => 88,
+                'id' => '65',
+                'jenis_id' => '4',
+                'anggota_id' => '88',
                 'dari' => '2019',
                 'sampai' => '2022',
                 'instansi' => 'SMKN 1 PAGELARAN',
@@ -866,9 +866,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             65 => 
             array (
-                'id' => 66,
-                'jenis_id' => 5,
-                'anggota_id' => 88,
+                'id' => '66',
+                'jenis_id' => '5',
+                'anggota_id' => '88',
                 'dari' => '2022',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Sangga Buana YPKP Bandung',
@@ -879,9 +879,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             66 => 
             array (
-                'id' => 67,
-                'jenis_id' => 5,
-                'anggota_id' => 90,
+                'id' => '67',
+                'jenis_id' => '5',
+                'anggota_id' => '90',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -892,9 +892,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             67 => 
             array (
-                'id' => 68,
-                'jenis_id' => 5,
-                'anggota_id' => 91,
+                'id' => '68',
+                'jenis_id' => '5',
+                'anggota_id' => '91',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -905,9 +905,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             68 => 
             array (
-                'id' => 69,
-                'jenis_id' => 5,
-                'anggota_id' => 92,
+                'id' => '69',
+                'jenis_id' => '5',
+                'anggota_id' => '92',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -918,9 +918,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             69 => 
             array (
-                'id' => 70,
-                'jenis_id' => 5,
-                'anggota_id' => 93,
+                'id' => '70',
+                'jenis_id' => '5',
+                'anggota_id' => '93',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -931,9 +931,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             70 => 
             array (
-                'id' => 71,
-                'jenis_id' => 5,
-                'anggota_id' => 94,
+                'id' => '71',
+                'jenis_id' => '5',
+                'anggota_id' => '94',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -944,9 +944,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             71 => 
             array (
-                'id' => 72,
-                'jenis_id' => 5,
-                'anggota_id' => 95,
+                'id' => '72',
+                'jenis_id' => '5',
+                'anggota_id' => '95',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -957,9 +957,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             72 => 
             array (
-                'id' => 73,
-                'jenis_id' => 5,
-                'anggota_id' => 96,
+                'id' => '73',
+                'jenis_id' => '5',
+                'anggota_id' => '96',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -970,9 +970,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             73 => 
             array (
-                'id' => 74,
-                'jenis_id' => 5,
-                'anggota_id' => 97,
+                'id' => '74',
+                'jenis_id' => '5',
+                'anggota_id' => '97',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -983,9 +983,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             74 => 
             array (
-                'id' => 75,
-                'jenis_id' => 5,
-                'anggota_id' => 98,
+                'id' => '75',
+                'jenis_id' => '5',
+                'anggota_id' => '98',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -996,9 +996,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             75 => 
             array (
-                'id' => 76,
-                'jenis_id' => 5,
-                'anggota_id' => 99,
+                'id' => '76',
+                'jenis_id' => '5',
+                'anggota_id' => '99',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1009,9 +1009,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             76 => 
             array (
-                'id' => 77,
-                'jenis_id' => 5,
-                'anggota_id' => 100,
+                'id' => '77',
+                'jenis_id' => '5',
+                'anggota_id' => '100',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1022,9 +1022,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             77 => 
             array (
-                'id' => 78,
-                'jenis_id' => 5,
-                'anggota_id' => 101,
+                'id' => '78',
+                'jenis_id' => '5',
+                'anggota_id' => '101',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1035,9 +1035,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             78 => 
             array (
-                'id' => 79,
-                'jenis_id' => 5,
-                'anggota_id' => 102,
+                'id' => '79',
+                'jenis_id' => '5',
+                'anggota_id' => '102',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1048,9 +1048,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             79 => 
             array (
-                'id' => 80,
-                'jenis_id' => 5,
-                'anggota_id' => 103,
+                'id' => '80',
+                'jenis_id' => '5',
+                'anggota_id' => '103',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1061,9 +1061,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             80 => 
             array (
-                'id' => 81,
-                'jenis_id' => 5,
-                'anggota_id' => 104,
+                'id' => '81',
+                'jenis_id' => '5',
+                'anggota_id' => '104',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1074,9 +1074,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             81 => 
             array (
-                'id' => 82,
-                'jenis_id' => 5,
-                'anggota_id' => 105,
+                'id' => '82',
+                'jenis_id' => '5',
+                'anggota_id' => '105',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1087,9 +1087,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             82 => 
             array (
-                'id' => 83,
-                'jenis_id' => 5,
-                'anggota_id' => 106,
+                'id' => '83',
+                'jenis_id' => '5',
+                'anggota_id' => '106',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Akper Bhakti Kencana',
@@ -1100,9 +1100,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             83 => 
             array (
-                'id' => 84,
-                'jenis_id' => 5,
-                'anggota_id' => 107,
+                'id' => '84',
+                'jenis_id' => '5',
+                'anggota_id' => '107',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1113,9 +1113,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             84 => 
             array (
-                'id' => 85,
-                'jenis_id' => 5,
-                'anggota_id' => 108,
+                'id' => '85',
+                'jenis_id' => '5',
+                'anggota_id' => '108',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1126,9 +1126,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             85 => 
             array (
-                'id' => 86,
-                'jenis_id' => 5,
-                'anggota_id' => 109,
+                'id' => '86',
+                'jenis_id' => '5',
+                'anggota_id' => '109',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1139,9 +1139,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             86 => 
             array (
-                'id' => 87,
-                'jenis_id' => 5,
-                'anggota_id' => 110,
+                'id' => '87',
+                'jenis_id' => '5',
+                'anggota_id' => '110',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1152,9 +1152,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             87 => 
             array (
-                'id' => 88,
-                'jenis_id' => 5,
-                'anggota_id' => 111,
+                'id' => '88',
+                'jenis_id' => '5',
+                'anggota_id' => '111',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1165,9 +1165,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             88 => 
             array (
-                'id' => 89,
-                'jenis_id' => 5,
-                'anggota_id' => 112,
+                'id' => '89',
+                'jenis_id' => '5',
+                'anggota_id' => '112',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1178,9 +1178,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             89 => 
             array (
-                'id' => 90,
-                'jenis_id' => 5,
-                'anggota_id' => 113,
+                'id' => '90',
+                'jenis_id' => '5',
+                'anggota_id' => '113',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1191,9 +1191,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             90 => 
             array (
-                'id' => 91,
-                'jenis_id' => 5,
-                'anggota_id' => 114,
+                'id' => '91',
+                'jenis_id' => '5',
+                'anggota_id' => '114',
                 'dari' => '2015',
                 'sampai' => '2019',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1204,9 +1204,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             91 => 
             array (
-                'id' => 92,
-                'jenis_id' => 5,
-                'anggota_id' => 115,
+                'id' => '92',
+                'jenis_id' => '5',
+                'anggota_id' => '115',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1217,9 +1217,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             92 => 
             array (
-                'id' => 93,
-                'jenis_id' => 5,
-                'anggota_id' => 116,
+                'id' => '93',
+                'jenis_id' => '5',
+                'anggota_id' => '116',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1230,9 +1230,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             93 => 
             array (
-                'id' => 94,
-                'jenis_id' => 5,
-                'anggota_id' => 117,
+                'id' => '94',
+                'jenis_id' => '5',
+                'anggota_id' => '117',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1243,9 +1243,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             94 => 
             array (
-                'id' => 95,
-                'jenis_id' => 5,
-                'anggota_id' => 118,
+                'id' => '95',
+                'jenis_id' => '5',
+                'anggota_id' => '118',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1256,9 +1256,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             95 => 
             array (
-                'id' => 96,
-                'jenis_id' => 5,
-                'anggota_id' => 119,
+                'id' => '96',
+                'jenis_id' => '5',
+                'anggota_id' => '119',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1269,9 +1269,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             96 => 
             array (
-                'id' => 97,
-                'jenis_id' => 5,
-                'anggota_id' => 120,
+                'id' => '97',
+                'jenis_id' => '5',
+                'anggota_id' => '120',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1282,9 +1282,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             97 => 
             array (
-                'id' => 98,
-                'jenis_id' => 5,
-                'anggota_id' => 121,
+                'id' => '98',
+                'jenis_id' => '5',
+                'anggota_id' => '121',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1295,9 +1295,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             98 => 
             array (
-                'id' => 99,
-                'jenis_id' => 5,
-                'anggota_id' => 122,
+                'id' => '99',
+                'jenis_id' => '5',
+                'anggota_id' => '122',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1308,9 +1308,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             99 => 
             array (
-                'id' => 100,
-                'jenis_id' => 5,
-                'anggota_id' => 123,
+                'id' => '100',
+                'jenis_id' => '5',
+                'anggota_id' => '123',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Langlangbuana',
@@ -1321,9 +1321,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             100 => 
             array (
-                'id' => 101,
-                'jenis_id' => 5,
-                'anggota_id' => 124,
+                'id' => '101',
+                'jenis_id' => '5',
+                'anggota_id' => '124',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1334,9 +1334,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             101 => 
             array (
-                'id' => 102,
-                'jenis_id' => 5,
-                'anggota_id' => 125,
+                'id' => '102',
+                'jenis_id' => '5',
+                'anggota_id' => '125',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1347,9 +1347,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             102 => 
             array (
-                'id' => 103,
-                'jenis_id' => 5,
-                'anggota_id' => 126,
+                'id' => '103',
+                'jenis_id' => '5',
+                'anggota_id' => '126',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1360,9 +1360,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             103 => 
             array (
-                'id' => 104,
-                'jenis_id' => 5,
-                'anggota_id' => 127,
+                'id' => '104',
+                'jenis_id' => '5',
+                'anggota_id' => '127',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Pasundan',
@@ -1373,9 +1373,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             104 => 
             array (
-                'id' => 105,
-                'jenis_id' => 5,
-                'anggota_id' => 128,
+                'id' => '105',
+                'jenis_id' => '5',
+                'anggota_id' => '128',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Pasundan',
@@ -1386,9 +1386,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             105 => 
             array (
-                'id' => 106,
-                'jenis_id' => 5,
-                'anggota_id' => 129,
+                'id' => '106',
+                'jenis_id' => '5',
+                'anggota_id' => '129',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1399,9 +1399,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             106 => 
             array (
-                'id' => 107,
-                'jenis_id' => 5,
-                'anggota_id' => 130,
+                'id' => '107',
+                'jenis_id' => '5',
+                'anggota_id' => '130',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1412,9 +1412,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             107 => 
             array (
-                'id' => 108,
-                'jenis_id' => 5,
-                'anggota_id' => 131,
+                'id' => '108',
+                'jenis_id' => '5',
+                'anggota_id' => '131',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1425,9 +1425,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             108 => 
             array (
-                'id' => 109,
-                'jenis_id' => 5,
-                'anggota_id' => 132,
+                'id' => '109',
+                'jenis_id' => '5',
+                'anggota_id' => '132',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1438,9 +1438,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             109 => 
             array (
-                'id' => 110,
-                'jenis_id' => 5,
-                'anggota_id' => 133,
+                'id' => '110',
+                'jenis_id' => '5',
+                'anggota_id' => '133',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Akper Bhakti Kencana',
@@ -1451,9 +1451,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             110 => 
             array (
-                'id' => 111,
-                'jenis_id' => 5,
-                'anggota_id' => 134,
+                'id' => '111',
+                'jenis_id' => '5',
+                'anggota_id' => '134',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'AKPER BAKTI KENCANA',
@@ -1464,9 +1464,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             111 => 
             array (
-                'id' => 112,
-                'jenis_id' => 5,
-                'anggota_id' => 135,
+                'id' => '112',
+                'jenis_id' => '5',
+                'anggota_id' => '135',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1477,9 +1477,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             112 => 
             array (
-                'id' => 113,
-                'jenis_id' => 5,
-                'anggota_id' => 136,
+                'id' => '113',
+                'jenis_id' => '5',
+                'anggota_id' => '136',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1490,9 +1490,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             113 => 
             array (
-                'id' => 114,
-                'jenis_id' => 5,
-                'anggota_id' => 137,
+                'id' => '114',
+                'jenis_id' => '5',
+                'anggota_id' => '137',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1503,9 +1503,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             114 => 
             array (
-                'id' => 115,
-                'jenis_id' => 5,
-                'anggota_id' => 138,
+                'id' => '115',
+                'jenis_id' => '5',
+                'anggota_id' => '138',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1516,9 +1516,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             115 => 
             array (
-                'id' => 116,
-                'jenis_id' => 5,
-                'anggota_id' => 139,
+                'id' => '116',
+                'jenis_id' => '5',
+                'anggota_id' => '139',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1529,9 +1529,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             116 => 
             array (
-                'id' => 117,
-                'jenis_id' => 5,
-                'anggota_id' => 140,
+                'id' => '117',
+                'jenis_id' => '5',
+                'anggota_id' => '140',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1542,9 +1542,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             117 => 
             array (
-                'id' => 118,
-                'jenis_id' => 5,
-                'anggota_id' => 141,
+                'id' => '118',
+                'jenis_id' => '5',
+                'anggota_id' => '141',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1555,9 +1555,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             118 => 
             array (
-                'id' => 119,
-                'jenis_id' => 5,
-                'anggota_id' => 142,
+                'id' => '119',
+                'jenis_id' => '5',
+                'anggota_id' => '142',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1568,9 +1568,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             119 => 
             array (
-                'id' => 120,
-                'jenis_id' => 5,
-                'anggota_id' => 143,
+                'id' => '120',
+                'jenis_id' => '5',
+                'anggota_id' => '143',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1581,9 +1581,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             120 => 
             array (
-                'id' => 121,
-                'jenis_id' => 5,
-                'anggota_id' => 144,
+                'id' => '121',
+                'jenis_id' => '5',
+                'anggota_id' => '144',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1594,9 +1594,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             121 => 
             array (
-                'id' => 122,
-                'jenis_id' => 5,
-                'anggota_id' => 145,
+                'id' => '122',
+                'jenis_id' => '5',
+                'anggota_id' => '145',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1607,9 +1607,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             122 => 
             array (
-                'id' => 123,
-                'jenis_id' => 5,
-                'anggota_id' => 146,
+                'id' => '123',
+                'jenis_id' => '5',
+                'anggota_id' => '146',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1620,9 +1620,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             123 => 
             array (
-                'id' => 124,
-                'jenis_id' => 5,
-                'anggota_id' => 147,
+                'id' => '124',
+                'jenis_id' => '5',
+                'anggota_id' => '147',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1633,9 +1633,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             124 => 
             array (
-                'id' => 125,
-                'jenis_id' => 5,
-                'anggota_id' => 148,
+                'id' => '125',
+                'jenis_id' => '5',
+                'anggota_id' => '148',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1646,9 +1646,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             125 => 
             array (
-                'id' => 126,
-                'jenis_id' => 5,
-                'anggota_id' => 149,
+                'id' => '126',
+                'jenis_id' => '5',
+                'anggota_id' => '149',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1659,9 +1659,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             126 => 
             array (
-                'id' => 127,
-                'jenis_id' => 5,
-                'anggota_id' => 150,
+                'id' => '127',
+                'jenis_id' => '5',
+                'anggota_id' => '150',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1672,9 +1672,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             127 => 
             array (
-                'id' => 128,
-                'jenis_id' => 5,
-                'anggota_id' => 151,
+                'id' => '128',
+                'jenis_id' => '5',
+                'anggota_id' => '151',
                 'dari' => '2013',
                 'sampai' => '2017',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1685,9 +1685,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             128 => 
             array (
-                'id' => 129,
-                'jenis_id' => 5,
-                'anggota_id' => 152,
+                'id' => '129',
+                'jenis_id' => '5',
+                'anggota_id' => '152',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1698,9 +1698,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             129 => 
             array (
-                'id' => 130,
-                'jenis_id' => 5,
-                'anggota_id' => 153,
+                'id' => '130',
+                'jenis_id' => '5',
+                'anggota_id' => '153',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1711,9 +1711,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             130 => 
             array (
-                'id' => 131,
-                'jenis_id' => 5,
-                'anggota_id' => 154,
+                'id' => '131',
+                'jenis_id' => '5',
+                'anggota_id' => '154',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1724,9 +1724,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             131 => 
             array (
-                'id' => 132,
-                'jenis_id' => 5,
-                'anggota_id' => 155,
+                'id' => '132',
+                'jenis_id' => '5',
+                'anggota_id' => '155',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1737,9 +1737,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             132 => 
             array (
-                'id' => 133,
-                'jenis_id' => 5,
-                'anggota_id' => 156,
+                'id' => '133',
+                'jenis_id' => '5',
+                'anggota_id' => '156',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1750,9 +1750,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             133 => 
             array (
-                'id' => 134,
-                'jenis_id' => 5,
-                'anggota_id' => 157,
+                'id' => '134',
+                'jenis_id' => '5',
+                'anggota_id' => '157',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1763,9 +1763,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             134 => 
             array (
-                'id' => 135,
-                'jenis_id' => 5,
-                'anggota_id' => 158,
+                'id' => '135',
+                'jenis_id' => '5',
+                'anggota_id' => '158',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1776,9 +1776,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             135 => 
             array (
-                'id' => 136,
-                'jenis_id' => 5,
-                'anggota_id' => 159,
+                'id' => '136',
+                'jenis_id' => '5',
+                'anggota_id' => '159',
                 'dari' => '2013',
                 'sampai' => '2017',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1789,9 +1789,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             136 => 
             array (
-                'id' => 137,
-                'jenis_id' => 5,
-                'anggota_id' => 160,
+                'id' => '137',
+                'jenis_id' => '5',
+                'anggota_id' => '160',
                 'dari' => '2009',
                 'sampai' => '2013',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1802,9 +1802,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             137 => 
             array (
-                'id' => 138,
-                'jenis_id' => 5,
-                'anggota_id' => 161,
+                'id' => '138',
+                'jenis_id' => '5',
+                'anggota_id' => '161',
                 'dari' => '2013',
                 'sampai' => '2017',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1815,9 +1815,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             138 => 
             array (
-                'id' => 139,
-                'jenis_id' => 5,
-                'anggota_id' => 162,
+                'id' => '139',
+                'jenis_id' => '5',
+                'anggota_id' => '162',
                 'dari' => '2013',
                 'sampai' => '2017',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1828,9 +1828,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             139 => 
             array (
-                'id' => 140,
-                'jenis_id' => 5,
-                'anggota_id' => 163,
+                'id' => '140',
+                'jenis_id' => '5',
+                'anggota_id' => '163',
                 'dari' => '2013',
                 'sampai' => '2017',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1841,9 +1841,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             140 => 
             array (
-                'id' => 141,
-                'jenis_id' => 5,
-                'anggota_id' => 164,
+                'id' => '141',
+                'jenis_id' => '5',
+                'anggota_id' => '164',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1854,9 +1854,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             141 => 
             array (
-                'id' => 142,
-                'jenis_id' => 5,
-                'anggota_id' => 165,
+                'id' => '142',
+                'jenis_id' => '5',
+                'anggota_id' => '165',
                 'dari' => '2004',
                 'sampai' => '2008',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1867,9 +1867,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             142 => 
             array (
-                'id' => 143,
-                'jenis_id' => 5,
-                'anggota_id' => 166,
+                'id' => '143',
+                'jenis_id' => '5',
+                'anggota_id' => '166',
                 'dari' => '2006',
                 'sampai' => '2010',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1880,9 +1880,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             143 => 
             array (
-                'id' => 144,
-                'jenis_id' => 5,
-                'anggota_id' => 167,
+                'id' => '144',
+                'jenis_id' => '5',
+                'anggota_id' => '167',
                 'dari' => '2004',
                 'sampai' => '2008',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1893,9 +1893,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             144 => 
             array (
-                'id' => 145,
-                'jenis_id' => 5,
-                'anggota_id' => 168,
+                'id' => '145',
+                'jenis_id' => '5',
+                'anggota_id' => '168',
                 'dari' => '2008',
                 'sampai' => '2012',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1906,9 +1906,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             145 => 
             array (
-                'id' => 146,
-                'jenis_id' => 5,
-                'anggota_id' => 169,
+                'id' => '146',
+                'jenis_id' => '5',
+                'anggota_id' => '169',
                 'dari' => '2010',
                 'sampai' => '2014',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1919,9 +1919,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             146 => 
             array (
-                'id' => 147,
-                'jenis_id' => 5,
-                'anggota_id' => 170,
+                'id' => '147',
+                'jenis_id' => '5',
+                'anggota_id' => '170',
                 'dari' => '2009',
                 'sampai' => '2013',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1932,9 +1932,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             147 => 
             array (
-                'id' => 148,
-                'jenis_id' => 5,
-                'anggota_id' => 171,
+                'id' => '148',
+                'jenis_id' => '5',
+                'anggota_id' => '171',
                 'dari' => '2009',
                 'sampai' => '2013',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1945,9 +1945,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             148 => 
             array (
-                'id' => 149,
-                'jenis_id' => 5,
-                'anggota_id' => 172,
+                'id' => '149',
+                'jenis_id' => '5',
+                'anggota_id' => '172',
                 'dari' => '2012',
                 'sampai' => '2016',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1958,9 +1958,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             149 => 
             array (
-                'id' => 150,
-                'jenis_id' => 5,
-                'anggota_id' => 173,
+                'id' => '150',
+                'jenis_id' => '5',
+                'anggota_id' => '173',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1971,9 +1971,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             150 => 
             array (
-                'id' => 151,
-                'jenis_id' => 5,
-                'anggota_id' => 174,
+                'id' => '151',
+                'jenis_id' => '5',
+                'anggota_id' => '174',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1984,9 +1984,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             151 => 
             array (
-                'id' => 152,
-                'jenis_id' => 5,
-                'anggota_id' => 175,
+                'id' => '152',
+                'jenis_id' => '5',
+                'anggota_id' => '175',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -1997,9 +1997,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             152 => 
             array (
-                'id' => 153,
-                'jenis_id' => 5,
-                'anggota_id' => 176,
+                'id' => '153',
+                'jenis_id' => '5',
+                'anggota_id' => '176',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2010,9 +2010,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             153 => 
             array (
-                'id' => 154,
-                'jenis_id' => 5,
-                'anggota_id' => 177,
+                'id' => '154',
+                'jenis_id' => '5',
+                'anggota_id' => '177',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2023,9 +2023,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             154 => 
             array (
-                'id' => 155,
-                'jenis_id' => 5,
-                'anggota_id' => 178,
+                'id' => '155',
+                'jenis_id' => '5',
+                'anggota_id' => '178',
                 'dari' => '2014',
                 'sampai' => '2018',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2036,9 +2036,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             155 => 
             array (
-                'id' => 156,
-                'jenis_id' => 5,
-                'anggota_id' => 179,
+                'id' => '156',
+                'jenis_id' => '5',
+                'anggota_id' => '179',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2049,9 +2049,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             156 => 
             array (
-                'id' => 157,
-                'jenis_id' => 5,
-                'anggota_id' => 180,
+                'id' => '157',
+                'jenis_id' => '5',
+                'anggota_id' => '180',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2062,9 +2062,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             157 => 
             array (
-                'id' => 158,
-                'jenis_id' => 5,
-                'anggota_id' => 181,
+                'id' => '158',
+                'jenis_id' => '5',
+                'anggota_id' => '181',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2075,9 +2075,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             158 => 
             array (
-                'id' => 159,
-                'jenis_id' => 5,
-                'anggota_id' => 182,
+                'id' => '159',
+                'jenis_id' => '5',
+                'anggota_id' => '182',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2088,9 +2088,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             159 => 
             array (
-                'id' => 160,
-                'jenis_id' => 5,
-                'anggota_id' => 183,
+                'id' => '160',
+                'jenis_id' => '5',
+                'anggota_id' => '183',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2101,9 +2101,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             160 => 
             array (
-                'id' => 161,
-                'jenis_id' => 5,
-                'anggota_id' => 184,
+                'id' => '161',
+                'jenis_id' => '5',
+                'anggota_id' => '184',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2114,9 +2114,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             161 => 
             array (
-                'id' => 162,
-                'jenis_id' => 5,
-                'anggota_id' => 185,
+                'id' => '162',
+                'jenis_id' => '5',
+                'anggota_id' => '185',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2127,9 +2127,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             162 => 
             array (
-                'id' => 163,
-                'jenis_id' => 5,
-                'anggota_id' => 186,
+                'id' => '163',
+                'jenis_id' => '5',
+                'anggota_id' => '186',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2140,9 +2140,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             163 => 
             array (
-                'id' => 164,
-                'jenis_id' => 5,
-                'anggota_id' => 187,
+                'id' => '164',
+                'jenis_id' => '5',
+                'anggota_id' => '187',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2153,9 +2153,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             164 => 
             array (
-                'id' => 165,
-                'jenis_id' => 5,
-                'anggota_id' => 188,
+                'id' => '165',
+                'jenis_id' => '5',
+                'anggota_id' => '188',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2166,9 +2166,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             165 => 
             array (
-                'id' => 166,
-                'jenis_id' => 5,
-                'anggota_id' => 189,
+                'id' => '166',
+                'jenis_id' => '5',
+                'anggota_id' => '189',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2179,9 +2179,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             166 => 
             array (
-                'id' => 167,
-                'jenis_id' => 5,
-                'anggota_id' => 190,
+                'id' => '167',
+                'jenis_id' => '5',
+                'anggota_id' => '190',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2192,9 +2192,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             167 => 
             array (
-                'id' => 168,
-                'jenis_id' => 5,
-                'anggota_id' => 191,
+                'id' => '168',
+                'jenis_id' => '5',
+                'anggota_id' => '191',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2205,9 +2205,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             168 => 
             array (
-                'id' => 169,
-                'jenis_id' => 5,
-                'anggota_id' => 192,
+                'id' => '169',
+                'jenis_id' => '5',
+                'anggota_id' => '192',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2218,9 +2218,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             169 => 
             array (
-                'id' => 170,
-                'jenis_id' => 5,
-                'anggota_id' => 193,
+                'id' => '170',
+                'jenis_id' => '5',
+                'anggota_id' => '193',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2231,9 +2231,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             170 => 
             array (
-                'id' => 171,
-                'jenis_id' => 5,
-                'anggota_id' => 194,
+                'id' => '171',
+                'jenis_id' => '5',
+                'anggota_id' => '194',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2244,9 +2244,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             171 => 
             array (
-                'id' => 172,
-                'jenis_id' => 5,
-                'anggota_id' => 195,
+                'id' => '172',
+                'jenis_id' => '5',
+                'anggota_id' => '195',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2257,9 +2257,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             172 => 
             array (
-                'id' => 173,
-                'jenis_id' => 5,
-                'anggota_id' => 196,
+                'id' => '173',
+                'jenis_id' => '5',
+                'anggota_id' => '196',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2270,9 +2270,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             173 => 
             array (
-                'id' => 174,
-                'jenis_id' => 5,
-                'anggota_id' => 197,
+                'id' => '174',
+                'jenis_id' => '5',
+                'anggota_id' => '197',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2283,9 +2283,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             174 => 
             array (
-                'id' => 175,
-                'jenis_id' => 5,
-                'anggota_id' => 198,
+                'id' => '175',
+                'jenis_id' => '5',
+                'anggota_id' => '198',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2296,9 +2296,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             175 => 
             array (
-                'id' => 176,
-                'jenis_id' => 5,
-                'anggota_id' => 199,
+                'id' => '176',
+                'jenis_id' => '5',
+                'anggota_id' => '199',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2309,9 +2309,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             176 => 
             array (
-                'id' => 177,
-                'jenis_id' => 5,
-                'anggota_id' => 200,
+                'id' => '177',
+                'jenis_id' => '5',
+                'anggota_id' => '200',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2322,9 +2322,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             177 => 
             array (
-                'id' => 178,
-                'jenis_id' => 5,
-                'anggota_id' => 201,
+                'id' => '178',
+                'jenis_id' => '5',
+                'anggota_id' => '201',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2335,9 +2335,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             178 => 
             array (
-                'id' => 179,
-                'jenis_id' => 5,
-                'anggota_id' => 202,
+                'id' => '179',
+                'jenis_id' => '5',
+                'anggota_id' => '202',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2348,9 +2348,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             179 => 
             array (
-                'id' => 180,
-                'jenis_id' => 5,
-                'anggota_id' => 203,
+                'id' => '180',
+                'jenis_id' => '5',
+                'anggota_id' => '203',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2361,9 +2361,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             180 => 
             array (
-                'id' => 181,
-                'jenis_id' => 5,
-                'anggota_id' => 204,
+                'id' => '181',
+                'jenis_id' => '5',
+                'anggota_id' => '204',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2374,9 +2374,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             181 => 
             array (
-                'id' => 182,
-                'jenis_id' => 5,
-                'anggota_id' => 205,
+                'id' => '182',
+                'jenis_id' => '5',
+                'anggota_id' => '205',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2387,9 +2387,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             182 => 
             array (
-                'id' => 183,
-                'jenis_id' => 5,
-                'anggota_id' => 206,
+                'id' => '183',
+                'jenis_id' => '5',
+                'anggota_id' => '206',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2400,9 +2400,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             183 => 
             array (
-                'id' => 184,
-                'jenis_id' => 5,
-                'anggota_id' => 207,
+                'id' => '184',
+                'jenis_id' => '5',
+                'anggota_id' => '207',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2413,9 +2413,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             184 => 
             array (
-                'id' => 185,
-                'jenis_id' => 5,
-                'anggota_id' => 208,
+                'id' => '185',
+                'jenis_id' => '5',
+                'anggota_id' => '208',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2426,9 +2426,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             185 => 
             array (
-                'id' => 186,
-                'jenis_id' => 5,
-                'anggota_id' => 209,
+                'id' => '186',
+                'jenis_id' => '5',
+                'anggota_id' => '209',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2439,9 +2439,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             186 => 
             array (
-                'id' => 187,
-                'jenis_id' => 5,
-                'anggota_id' => 210,
+                'id' => '187',
+                'jenis_id' => '5',
+                'anggota_id' => '210',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2452,9 +2452,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             187 => 
             array (
-                'id' => 188,
-                'jenis_id' => 5,
-                'anggota_id' => 211,
+                'id' => '188',
+                'jenis_id' => '5',
+                'anggota_id' => '211',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2465,9 +2465,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             188 => 
             array (
-                'id' => 189,
-                'jenis_id' => 5,
-                'anggota_id' => 212,
+                'id' => '189',
+                'jenis_id' => '5',
+                'anggota_id' => '212',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2478,9 +2478,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             189 => 
             array (
-                'id' => 190,
-                'jenis_id' => 5,
-                'anggota_id' => 213,
+                'id' => '190',
+                'jenis_id' => '5',
+                'anggota_id' => '213',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2491,9 +2491,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             190 => 
             array (
-                'id' => 191,
-                'jenis_id' => 5,
-                'anggota_id' => 214,
+                'id' => '191',
+                'jenis_id' => '5',
+                'anggota_id' => '214',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2504,9 +2504,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             191 => 
             array (
-                'id' => 192,
-                'jenis_id' => 5,
-                'anggota_id' => 215,
+                'id' => '192',
+                'jenis_id' => '5',
+                'anggota_id' => '215',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2517,9 +2517,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             192 => 
             array (
-                'id' => 193,
-                'jenis_id' => 5,
-                'anggota_id' => 216,
+                'id' => '193',
+                'jenis_id' => '5',
+                'anggota_id' => '216',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2530,9 +2530,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             193 => 
             array (
-                'id' => 194,
-                'jenis_id' => 5,
-                'anggota_id' => 217,
+                'id' => '194',
+                'jenis_id' => '5',
+                'anggota_id' => '217',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2543,9 +2543,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             194 => 
             array (
-                'id' => 195,
-                'jenis_id' => 5,
-                'anggota_id' => 218,
+                'id' => '195',
+                'jenis_id' => '5',
+                'anggota_id' => '218',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2556,9 +2556,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             195 => 
             array (
-                'id' => 196,
-                'jenis_id' => 5,
-                'anggota_id' => 219,
+                'id' => '196',
+                'jenis_id' => '5',
+                'anggota_id' => '219',
                 'dari' => '2016',
                 'sampai' => '2020',
             'instansi' => 'Institut Keguruan Ilmu Pendidikan (IKIP) Siliwangi Cimahi',
@@ -2569,9 +2569,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             196 => 
             array (
-                'id' => 197,
-                'jenis_id' => 5,
-                'anggota_id' => 220,
+                'id' => '197',
+                'jenis_id' => '5',
+                'anggota_id' => '220',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Sekolah Tinggi Teknologi Mandala Bandung',
@@ -2582,9 +2582,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             197 => 
             array (
-                'id' => 198,
-                'jenis_id' => 5,
-                'anggota_id' => 221,
+                'id' => '198',
+                'jenis_id' => '5',
+                'anggota_id' => '221',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2595,9 +2595,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             198 => 
             array (
-                'id' => 199,
-                'jenis_id' => 5,
-                'anggota_id' => 222,
+                'id' => '199',
+                'jenis_id' => '5',
+                'anggota_id' => '222',
                 'dari' => '2016',
                 'sampai' => '2020',
             'instansi' => 'Institut Keguruan Ilmu Pendidikan (IKIP) Siliwangi Cimahi',
@@ -2608,9 +2608,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             199 => 
             array (
-                'id' => 200,
-                'jenis_id' => 5,
-                'anggota_id' => 223,
+                'id' => '200',
+                'jenis_id' => '5',
+                'anggota_id' => '223',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -2621,9 +2621,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             200 => 
             array (
-                'id' => 201,
-                'jenis_id' => 5,
-                'anggota_id' => 224,
+                'id' => '201',
+                'jenis_id' => '5',
+                'anggota_id' => '224',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -2634,9 +2634,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             201 => 
             array (
-                'id' => 202,
-                'jenis_id' => 5,
-                'anggota_id' => 225,
+                'id' => '202',
+                'jenis_id' => '5',
+                'anggota_id' => '225',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -2647,9 +2647,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             202 => 
             array (
-                'id' => 203,
-                'jenis_id' => 5,
-                'anggota_id' => 226,
+                'id' => '203',
+                'jenis_id' => '5',
+                'anggota_id' => '226',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Nusantara',
@@ -2660,9 +2660,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             203 => 
             array (
-                'id' => 204,
-                'jenis_id' => 5,
-                'anggota_id' => 227,
+                'id' => '204',
+                'jenis_id' => '5',
+                'anggota_id' => '227',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2673,9 +2673,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             204 => 
             array (
-                'id' => 205,
-                'jenis_id' => 5,
-                'anggota_id' => 228,
+                'id' => '205',
+                'jenis_id' => '5',
+                'anggota_id' => '228',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2686,9 +2686,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             205 => 
             array (
-                'id' => 206,
-                'jenis_id' => 5,
-                'anggota_id' => 229,
+                'id' => '206',
+                'jenis_id' => '5',
+                'anggota_id' => '229',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'AKPER BAKTI KENCANA',
@@ -2699,9 +2699,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             206 => 
             array (
-                'id' => 207,
-                'jenis_id' => 5,
-                'anggota_id' => 230,
+                'id' => '207',
+                'jenis_id' => '5',
+                'anggota_id' => '230',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Pendidikan Indonesia',
@@ -2712,9 +2712,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             207 => 
             array (
-                'id' => 208,
-                'jenis_id' => 5,
-                'anggota_id' => 231,
+                'id' => '208',
+                'jenis_id' => '5',
+                'anggota_id' => '231',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Pendidikan Indonesia',
@@ -2725,9 +2725,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             208 => 
             array (
-                'id' => 209,
-                'jenis_id' => 5,
-                'anggota_id' => 232,
+                'id' => '209',
+                'jenis_id' => '5',
+                'anggota_id' => '232',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Suryakancana',
@@ -2738,9 +2738,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             209 => 
             array (
-                'id' => 210,
-                'jenis_id' => 5,
-                'anggota_id' => 233,
+                'id' => '210',
+                'jenis_id' => '5',
+                'anggota_id' => '233',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2751,9 +2751,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             210 => 
             array (
-                'id' => 211,
-                'jenis_id' => 5,
-                'anggota_id' => 234,
+                'id' => '211',
+                'jenis_id' => '5',
+                'anggota_id' => '234',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2764,9 +2764,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             211 => 
             array (
-                'id' => 212,
-                'jenis_id' => 5,
-                'anggota_id' => 235,
+                'id' => '212',
+                'jenis_id' => '5',
+                'anggota_id' => '235',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'UNIVERSITAS BINA SARANA INFORMATIKA',
@@ -2777,9 +2777,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             212 => 
             array (
-                'id' => 213,
-                'jenis_id' => 5,
-                'anggota_id' => 236,
+                'id' => '213',
+                'jenis_id' => '5',
+                'anggota_id' => '236',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2790,9 +2790,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             213 => 
             array (
-                'id' => 214,
-                'jenis_id' => 5,
-                'anggota_id' => 237,
+                'id' => '214',
+                'jenis_id' => '5',
+                'anggota_id' => '237',
                 'dari' => '2016',
                 'sampai' => '2020',
                 'instansi' => 'Universitas Pasundan',
@@ -2803,9 +2803,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             214 => 
             array (
-                'id' => 215,
-                'jenis_id' => 5,
-                'anggota_id' => 238,
+                'id' => '215',
+                'jenis_id' => '5',
+                'anggota_id' => '238',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2816,9 +2816,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             215 => 
             array (
-                'id' => 216,
-                'jenis_id' => 5,
-                'anggota_id' => 239,
+                'id' => '216',
+                'jenis_id' => '5',
+                'anggota_id' => '239',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2829,9 +2829,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             216 => 
             array (
-                'id' => 217,
-                'jenis_id' => 5,
-                'anggota_id' => 240,
+                'id' => '217',
+                'jenis_id' => '5',
+                'anggota_id' => '240',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2842,9 +2842,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             217 => 
             array (
-                'id' => 218,
-                'jenis_id' => 5,
-                'anggota_id' => 241,
+                'id' => '218',
+                'jenis_id' => '5',
+                'anggota_id' => '241',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2855,9 +2855,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             218 => 
             array (
-                'id' => 219,
-                'jenis_id' => 5,
-                'anggota_id' => 242,
+                'id' => '219',
+                'jenis_id' => '5',
+                'anggota_id' => '242',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2868,9 +2868,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             219 => 
             array (
-                'id' => 220,
-                'jenis_id' => 5,
-                'anggota_id' => 243,
+                'id' => '220',
+                'jenis_id' => '5',
+                'anggota_id' => '243',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2881,9 +2881,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             220 => 
             array (
-                'id' => 221,
-                'jenis_id' => 5,
-                'anggota_id' => 244,
+                'id' => '221',
+                'jenis_id' => '5',
+                'anggota_id' => '244',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2894,9 +2894,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             221 => 
             array (
-                'id' => 222,
-                'jenis_id' => 5,
-                'anggota_id' => 245,
+                'id' => '222',
+                'jenis_id' => '5',
+                'anggota_id' => '245',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2907,9 +2907,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             222 => 
             array (
-                'id' => 223,
-                'jenis_id' => 5,
-                'anggota_id' => 246,
+                'id' => '223',
+                'jenis_id' => '5',
+                'anggota_id' => '246',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2920,9 +2920,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             223 => 
             array (
-                'id' => 224,
-                'jenis_id' => 5,
-                'anggota_id' => 247,
+                'id' => '224',
+                'jenis_id' => '5',
+                'anggota_id' => '247',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2933,9 +2933,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             224 => 
             array (
-                'id' => 225,
-                'jenis_id' => 5,
-                'anggota_id' => 248,
+                'id' => '225',
+                'jenis_id' => '5',
+                'anggota_id' => '248',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2946,9 +2946,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             225 => 
             array (
-                'id' => 226,
-                'jenis_id' => 5,
-                'anggota_id' => 249,
+                'id' => '226',
+                'jenis_id' => '5',
+                'anggota_id' => '249',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2959,9 +2959,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             226 => 
             array (
-                'id' => 227,
-                'jenis_id' => 5,
-                'anggota_id' => 250,
+                'id' => '227',
+                'jenis_id' => '5',
+                'anggota_id' => '250',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2972,9 +2972,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             227 => 
             array (
-                'id' => 228,
-                'jenis_id' => 5,
-                'anggota_id' => 251,
+                'id' => '228',
+                'jenis_id' => '5',
+                'anggota_id' => '251',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2985,9 +2985,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             228 => 
             array (
-                'id' => 229,
-                'jenis_id' => 5,
-                'anggota_id' => 252,
+                'id' => '229',
+                'jenis_id' => '5',
+                'anggota_id' => '252',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -2998,9 +2998,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             229 => 
             array (
-                'id' => 230,
-                'jenis_id' => 5,
-                'anggota_id' => 253,
+                'id' => '230',
+                'jenis_id' => '5',
+                'anggota_id' => '253',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3011,9 +3011,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             230 => 
             array (
-                'id' => 231,
-                'jenis_id' => 5,
-                'anggota_id' => 254,
+                'id' => '231',
+                'jenis_id' => '5',
+                'anggota_id' => '254',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3024,9 +3024,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             231 => 
             array (
-                'id' => 232,
-                'jenis_id' => 5,
-                'anggota_id' => 255,
+                'id' => '232',
+                'jenis_id' => '5',
+                'anggota_id' => '255',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3037,9 +3037,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             232 => 
             array (
-                'id' => 233,
-                'jenis_id' => 5,
-                'anggota_id' => 256,
+                'id' => '233',
+                'jenis_id' => '5',
+                'anggota_id' => '256',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3050,9 +3050,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             233 => 
             array (
-                'id' => 234,
-                'jenis_id' => 5,
-                'anggota_id' => 257,
+                'id' => '234',
+                'jenis_id' => '5',
+                'anggota_id' => '257',
                 'dari' => '2003',
                 'sampai' => '2007',
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3063,9 +3063,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             234 => 
             array (
-                'id' => 235,
-                'jenis_id' => 5,
-                'anggota_id' => 10,
+                'id' => '235',
+                'jenis_id' => '5',
+                'anggota_id' => '10',
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3076,9 +3076,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             235 => 
             array (
-                'id' => 236,
-                'jenis_id' => 5,
-                'anggota_id' => 60,
+                'id' => '236',
+                'jenis_id' => '5',
+                'anggota_id' => '60',
                 'dari' => '2020',
                 'sampai' => NULL,
             'instansi' => 'Institut Pendidikan Dan Bahasa (IPB) INVADA Cirebon',
@@ -3089,9 +3089,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             236 => 
             array (
-                'id' => 237,
-                'jenis_id' => 5,
-                'anggota_id' => 262,
+                'id' => '237',
+                'jenis_id' => '5',
+                'anggota_id' => '262',
                 'dari' => '2019',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
@@ -3102,9 +3102,9 @@ class AnggotaPendidikansTableSeeder extends Seeder
             ),
             237 => 
             array (
-                'id' => 238,
-                'jenis_id' => 5,
-                'anggota_id' => 73,
+                'id' => '238',
+                'jenis_id' => '5',
+                'anggota_id' => '73',
                 'dari' => '2020',
                 'sampai' => NULL,
                 'instansi' => 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
