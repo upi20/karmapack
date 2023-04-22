@@ -64,7 +64,8 @@ function refreshVistor(tanggal) {
 function renderVistor(datas) {
     const data = [];
     const categories = [];
-
+    const container = document.querySelector("#chart-pengunjung");
+    container.innerHTML = '';
     datas.forEach(e => {
         data.push(e.value);
         categories.push(e.title);
@@ -95,13 +96,15 @@ function renderVistor(datas) {
         },
     }
 
-    var chart = new ApexCharts(document.querySelector("#chart-pengunjung"), options);
+    var chart = new ApexCharts(container, options);
     chart.render();
 }
 
 function renderPlatform(datas) {
     let counter = 1;
     const columns = [];
+    const container = '#chart-platform';
+    document.querySelector(container).innerHTML = '';
 
     datas.forEach(e => {
         columns.push([e.title, e.value]);
@@ -109,7 +112,7 @@ function renderPlatform(datas) {
     });
 
     var chart = c3.generate({
-        bindto: '#chart-platform',
+        bindto: container,
         data: {
             columns,
             type: 'donut',
@@ -128,6 +131,8 @@ function renderPlatform(datas) {
 function renderBrowser(datas) {
     let counter = 1;
     const columns = [];
+    const container = '#chart-browser';
+    document.querySelector(container).innerHTML = '';
 
     datas.forEach(e => {
         columns.push([e.title, e.value]);
@@ -135,7 +140,7 @@ function renderBrowser(datas) {
     });
 
     var chart = c3.generate({
-        bindto: '#chart-browser',
+        bindto: container,
         data: {
             columns,
             type: 'donut',
