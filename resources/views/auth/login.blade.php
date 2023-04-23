@@ -135,7 +135,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                     <div class="form-body">
                                         <form class="row g-3" action="javascript:void(0)" id="Loginform"
                                             name="Loginform" method="POST" enctype="multipart/form-data"
-                                            autocomplete="false">
+                                            autocomplete="true">
                                             <div class="col-12">
                                                 <label for="email" class="form-label">Email</label>
                                                 <input type="email" class="form-control" name="email"
@@ -145,7 +145,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                                 <label for="password" class="form-label">Password</label>
                                                 <div class="input-group" id="show_hide_password">
                                                     <input type="password" class="form-control border-end-0"
-                                                        id="password" name="password" value="12345678"
+                                                        id="password" name="password"
                                                         placeholder="Masukan Password">
                                                     <a href="javascript:void;"
                                                         class="input-group-text bg-transparent">
@@ -175,6 +175,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                 </div>
                             </div>
                         </div>
+                        <div class="mt-3 text-center">
+                            <p>{!! str_parse(settings()->get(set_front('app.copyright'))) !!}</p>
+                        </div>
                     </div>
                 </div>
                 <!--end row-->
@@ -193,22 +196,5 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     <script src="{{ resource_loader('pages/admin/auth/login.js', params: ['redirect' => $redirect]) }}"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("#show_hide_password a").on('click', function(event) {
-                event.preventDefault();
-                if ($('#show_hide_password input').attr("type") == "text") {
-                    $('#show_hide_password input').attr('type', 'password');
-                    $('#show_hide_password i').addClass("bx-hide");
-                    $('#show_hide_password i').removeClass("bx-show");
-                } else if ($('#show_hide_password input').attr("type") == "password") {
-                    $('#show_hide_password input').attr('type', 'text');
-                    $('#show_hide_password i').removeClass("bx-hide");
-                    $('#show_hide_password i').addClass("bx-show");
-                }
-            });
-        });
-    </script>
 
 </html>

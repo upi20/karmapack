@@ -28,3 +28,7 @@
     cursor: pointer;
     border: #FFF 3px solid;
 }
+
+#footer-text a {
+    color: #0d6efd;
+}

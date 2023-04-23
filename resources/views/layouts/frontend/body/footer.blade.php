@@ -32,7 +32,7 @@
         </div>
 
         <div class="py-30 border-top-light-15" data-anim-child="slide-left delay-{{ $anim++ }}">
-            <div class="d-md-flex items-center h-100 text-white">
+            <div class="d-flex flex-column" id="footer-text">
                 {!! str_parse(settings()->get(set_front('app.copyright'))) !!}
             </div>
         </div>
