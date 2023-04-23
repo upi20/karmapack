@@ -1,0 +1,1 @@
+[x] fix error tambah bidang

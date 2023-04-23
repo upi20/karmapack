@@ -60,7 +60,7 @@ class JabatanController extends Controller
             $request->validate([
                 'parent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan'],
+                'slug' => ['required', 'string', 'max:255', 'unique:' . Jabatan::tableName],
                 'status' => ['required', 'int'],
                 'no_urut' => ['required', 'int'],
                 'visi' => ['nullable', 'string'],
@@ -119,7 +119,7 @@ class JabatanController extends Controller
                 'id' => ['required', 'int'],
                 'parent_id' => ['nullable'],
                 'nama' => ['required', 'string', 'max:255'],
-                'slug' => ['required', 'string', 'max:255', 'unique:pengurus_periode_jabatan,slug,' . $request->id],
+                'slug' => ['required', 'string', 'max:255', 'unique:' . Jabatan::tableName . ',slug,' . $request->id],
                 'status' => ['required', 'int'],
                 'no_urut' => ['required', 'int'],
                 'visi' => ['nullable', 'string'],
