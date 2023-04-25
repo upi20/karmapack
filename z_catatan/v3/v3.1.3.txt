@@ -1,0 +1,5 @@
+[x] Halaman pengunjung detail di panel admin
+    [x] Detail ip
+[x] hapus pengunjung dengan ip ignore di config
+[x] ignore ip local saat simpan data vistor tracker
+[] Buat halaman versioning di panel admin

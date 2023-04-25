@@ -289,4 +289,21 @@ class LabController extends Controller
         $trackers = Tracker::with('ipDetail')->get();
         return $trackers;
     }
+
+    public function ip_detail(Request $request)
+    {
+        $id = $request->vistor;
+        $vistor = Tracker::find($id);
+
+        if (is_null($vistor)) {
+            return response()->json(['result' => false]);
+        }
+
+        if ($vistor->has_detail == 1) {
+            return response()->json(['result' => false]);
+        }
+
+        $vistor->createIPDetail();
+        return response()->json(['result' => true]);
+    }
 }

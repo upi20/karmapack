@@ -21,7 +21,7 @@ class ContactMessagesTableSeeder extends Seeder
         \DB::table('contact_messages')->insert(array (
             0 => 
             array (
-                'id' => '1',
+                'id' => 1,
                 'nama' => 'Isep Lutpi Nur',
                 'email' => 'iseplutpinur7@gmail.com',
                 'message' => 'Tes via hp',
@@ -31,7 +31,7 @@ class ContactMessagesTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '2',
+                'id' => 2,
                 'nama' => 'Isep Lutpi Nur',
                 'email' => 'iseplutpinur7@gmail.com',
                 'message' => 'Saya pesen teh 1 bungkus',
@@ -41,7 +41,7 @@ class ContactMessagesTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '3',
+                'id' => 3,
                 'nama' => 'ISEP LUTPI NUR',
                 'email' => 'iseplutpinur7@gmail.com',
                 'message' => '123',

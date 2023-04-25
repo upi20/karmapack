@@ -18,8 +18,6 @@ $getSosmed_val = feSocialMedia();
 $notifikasi = feTopNotification();
 $compact = isset($compact) ? $compact : [];
 $compact = array_merge($compact, compact('page_attr_title', 'search_master_key', 'getSosmed_val', 'notifikasi', 'page_attr'));
-
-\App\Models\Tracker::hit();
 ?>
 
 <!DOCTYPE html>
@@ -152,6 +150,8 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
         gtag('js', new Date());
         gtag('config', 'G-FHJNB91XME');
     </script>
+
+    {!! \App\Models\Tracker::hit(true) !!}
 </body>
 
 </html>

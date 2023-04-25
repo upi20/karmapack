@@ -218,5 +218,8 @@ return [
     ],
     'admin_assets_default' => env('ADMIN_ASSETS_DEFAULT', 'rockeradmin_vertical'),
     'admin_assets_number' => env('ADMIN_ASSETS_NUMBER', 0),
+    'vistor_tracker_ip_ignore' => [
+        '127.0.0.1'
+    ],
 
 ];

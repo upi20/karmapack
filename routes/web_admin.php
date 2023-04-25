@@ -2,7 +2,6 @@
 // ====================================================================================================================
 // utility ============================================================================================================
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Redirect;
 
 // ====================================================================================================================
 // Admin ==============================================================================================================
@@ -16,6 +15,7 @@ use App\Http\Controllers\Admin\KataAlumniController;
 use App\Http\Controllers\Admin\InstagramController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\VistorController;
 
 // Address ============================================================================================================
 use App\Http\Controllers\Admin\Address\ProvinceController;
@@ -768,6 +768,14 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
     Route::get('/', 'profile')->name($name)->middleware("permission:$name");
     Route::post('/save', 'save_profile')->name("$name.save")->middleware("permission:$name.save");
     Route::post('/save/password', 'save_password')->name("$name.password.save")->middleware("permission:$name.password.save");
+});
+
+$prefix = 'vistor';
+Route::prefix($prefix)->controller(VistorController::class)->group(function () use ($prefix, $name) {
+    $name = "$name.$prefix"; // admin.vistor
+    Route::get('/', 'index')->name($name)->middleware("permission:$name");
+    Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
+    Route::get('/refresh_detail_ip', 'refresh_detail_ip')->name("$name.refresh_detail_ip")->middleware("permission:$name");
 });
 
 $prefix = "password";

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class Tracker extends Model
 {
@@ -28,10 +30,17 @@ class Tracker extends Model
     protected $primaryKey = 'id';
     const tableName = 'visitors';
 
-    public static function hit()
+    public static function hit(bool $script = false): string
     {
         $ip = $_SERVER['REMOTE_ADDR'];
         $ua = $_SERVER['HTTP_USER_AGENT'];
+
+        // ignore vistor
+        // example: 127.0.0.1 localhost
+        $ignore = config('app.vistor_tracker_ip_ignore', []);
+        if (in_array($ip, $ignore)) {
+            return false;
+        }
 
         $date = date('Y-m-d');
         $time = date('H:i:s');
@@ -57,8 +66,23 @@ class Tracker extends Model
         $hit->time = $time;
         $hit->hits++;
         $hit->save();
-
-        return $hit;
+        if ($script && $hit->hits == 1) {
+            $route = route('lab.ip_detail');
+            return <<<HTML
+                <script>
+                    $(document).ready(function() {
+                        $.ajax({
+                            type: "GET",
+                            url: '$route',
+                            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                            data: { vistor: '$hit->id' },
+                            success: console.log,
+                            error: console.log,
+                        });
+                    });
+                </script>
+            HTML;
+        } else return '';
     }
 
     public function ipDetail()
@@ -99,6 +123,127 @@ class Tracker extends Model
         } catch (\Throwable $th) {
             //throw $th;
         }
+    }
+
+    public static function datatable(Request $request): mixed
+    {
+        $query = [];
+        // list table
+        $table = static::tableName;
+        $t_detail = TrackerIPDetail::tableName;
+
+        // cusotm query
+        // ========================================================================================================
+        // creted at and time at
+        $date_format_fun = function (string $select, string $format, string $alias) use ($table): array {
+            $str = <<<SQL
+                (DATE_FORMAT($table.$select, '$format'))
+            SQL;
+            return [$alias => $str, ($alias . '_alias') => $alias];
+        };
+
+        $c_date_str = 'date_str';
+        $query = array_merge($query, $date_format_fun('date', '%d-%b-%Y', $c_date_str));
+        $c_time_str = 'time_str';
+        $query = array_merge($query, $date_format_fun('time', '%H:%i:%s', $c_time_str));
+
+        // date_time
+        $c_date_time = 'date_time';
+        $query[$c_date_time] = <<<SQL
+            CONVERT(concat($table.date,' ', $table.time),datetime)
+        SQL;
+        $query["{$c_date_time}_alias"] = $c_date_time;
+
+        // country
+        $c_country = 'country';
+        $query[$c_country] = "$t_detail.country";
+        $query["{$c_country}_alias"] = $c_country;
+        // ========================================================================================================
+
+
+        // ========================================================================================================
+        // select raw as alias
+        $sraa = function (string $col) use ($query): string {
+            return $query[$col] . ' as ' . $query[$col . '_alias'];
+        };
+        $model_filter = [
+            $c_date_str,
+            $c_time_str,
+            $c_date_time,
+            $c_country
+        ];
+
+        $to_db_raw = array_map(function ($a) use ($sraa) {
+            return DB::raw($sraa($a));
+        }, $model_filter);
+        // ========================================================================================================
+
+
+        // Select =====================================================================================================
+        $model = static::select(array_merge([
+            DB::raw("$table.*"),
+        ], $to_db_raw))
+            ->leftJoin($t_detail, "$t_detail.visitors_id", '=', "$table.id");
+
+        // Filter =====================================================================================================
+        // filter check
+        $f_c = function (string $param) use ($request): mixed {
+            $filter = $request->filter;
+            return isset($filter[$param]) ? $filter[$param] : false;
+        };
+
+        // filter ini menurut data model filter
+        $f = [$c_country];
+        // loop filter
+        foreach ($f as $v) {
+            if ($f_c($v)) {
+                $model->whereRaw("{$query[$v]}='{$f_c($v)}'");
+            }
+        }
+
+        // filter custom
+        $filters = ['has_detail', 'platform', 'browser'];
+        foreach ($filters as  $f) {
+            if ($f_c($f) !== false) {
+                $model->whereRaw("$table.$f='{$f_c($f)}'");
+            }
+        }
+        // ========================================================================================================
+
+
+        // ========================================================================================================
+        $datatable = Datatables::of($model)->addIndexColumn();
+
+        // search
+        // ========================================================================================================
+        $query_filter = $query;
+        $datatable->filter(function ($query) use ($model_filter, $query_filter, $table) {
+            $search = request('search');
+            $search = isset($search['value']) ? $search['value'] : null;
+            if ((is_null($search) || $search == '') && count($model_filter) > 0) return false;
+
+            // tambah pencarian
+            $static = new static();
+            $search_add = $static->fillable;
+            $search_add = array_map(function ($v) use ($table) {
+                return "$table.$v";
+            }, $search_add);
+            $search_arr = array_merge($model_filter, $search_add);
+
+            // pake or where
+            $search_str = "(";
+            foreach ($search_arr as $k => $v) {
+                $or = (($k + 1) < count($search_arr)) ? 'or' : '';
+                $column = isset($query_filter[$v]) ? $query_filter[$v] : $v;
+                $search_str .= "$column like '%$search%' $or ";
+            }
+
+            $search_str .= ")";
+            $query->whereRaw($search_str);
+        });
+
+        // create datatable
+        return $datatable->make(true);
     }
 
     private function code_to_country($code)

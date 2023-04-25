@@ -214,6 +214,7 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
     Route::get('/count', 'count')->name("lab.count");
     Route::get('/set_profile', 'set_profile')->name("lab.set_profile");
     Route::get('/belumisi', 'belumisi')->name("lab.belumisi");
+    Route::get('/ip_detail', 'ip_detail')->name("lab.ip_detail");
 });
 // ====================================================================================================================
 
