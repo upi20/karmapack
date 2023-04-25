@@ -449,11 +449,11 @@ Goals Report 2021<p></p></span></p><p class="MsoNormal" style="margin-bottom: 11
 </p><p class="MsoNormal"><p>&nbsp;</p></p></p>
 ',
                 'excerpt' => 'Sejak tahun 2012, Majelis Umum PBB telah menetapkan tanggal 21 Maret sebagai peringatan Hari Hutan Internasional. Tahun 2022 bertema: “Forests and sustainable production and consumption”',
-                'counter' => '10',
+                'counter' => '11',
                 'date' => '2022-04-21',
                 'status' => '1',
                 'created_at' => '2022-04-25 04:07:23',
-                'updated_at' => '2023-03-24 06:28:50',
+                'updated_at' => '2023-04-23 11:55:23',
                 'user_id' => '1',
             ),
             4 => 

@@ -2467,6 +2467,69 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"114.122.69.226","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.48"}',
             ),
+            272 => 
+            array (
+                'id' => '277',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 07:58:53',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.79.178","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.48"}',
+            ),
+            273 => 
+            array (
+                'id' => '278',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 08:44:39',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230420144240.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"ZeT70S3UgscGpFMYZNQgMwa39DiEwr00fodQz5EvOpDpyYrEzLSQKsUAghKE","created_at":null,"updated_at":"2023-04-20 14:42:40"}',
+            ),
+            274 => 
+            array (
+                'id' => '279',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 08:57:38',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.69.226","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.48"}',
+            ),
+            275 => 
+            array (
+                'id' => '280',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 17:05:00',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.69.118","user_agent":"Mozilla\\/5.0 (Linux; Android 12; M2010J19CG) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/103.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            276 => 
+            array (
+                'id' => '281',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 17:05:22',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230420144240.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"YEJExGZidL9W3W5JgbK4Ua9L5oHNioOEedjTAWyALGuo6KObW3WUwp2j0LOz","created_at":null,"updated_at":"2023-04-20 14:42:40"}',
+            ),
+            277 => 
+            array (
+                'id' => '282',
+                'user_id' => '1',
+                'log_date' => '2023-04-23 23:11:11',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.105.40","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.58"}',
+            ),
+            278 => 
+            array (
+                'id' => '283',
+                'user_id' => '1',
+                'log_date' => '2023-04-24 01:51:04',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.105.60","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Safari\\/537.36 Edg\\/112.0.1722.58"}',
+            ),
         ));
         
         
