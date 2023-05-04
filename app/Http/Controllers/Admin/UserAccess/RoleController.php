@@ -22,13 +22,7 @@ class RoleController extends Controller
                 ->make(true);
         }
 
-        $page_attr = [
-            'title' => 'Role',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'User Access'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.user_access.role.list');
         $data = compact('page_attr', 'view');
@@ -52,14 +46,13 @@ class RoleController extends Controller
 
         $reload = true;
 
+        $page_attr = adminBreadcumb(h_prefix(min: 1), isChild: true);
         $page_attr = [
             'title' => 'Create Role',
-            'breadcrumbs' => [
-                ['name' => 'User Access'],
-                ['name' => 'Role', 'url' => h_prefix(null, 1)],
-            ],
+            'breadcrumbs' => $page_attr['breadcrumbs'],
             'navigation' => h_prefix(null, 1),
         ];
+
         $route_min = 1;
         $view = $this->get_editor();
         $data = compact('page_attr', 'permissions', 'model', 'roles', 'reload', 'route_min', 'view');
@@ -87,14 +80,13 @@ class RoleController extends Controller
             return $v->name;
         })->toArray();
 
+        $page_attr = adminBreadcumb(h_prefix(min: 2), isChild: true);
         $page_attr = [
             'title' => 'Edit Role',
-            'breadcrumbs' => [
-                ['name' => 'User Access'],
-                ['name' => 'Role', 'url' => h_prefix(null, 2)],
-            ],
+            'breadcrumbs' => $page_attr['breadcrumbs'],
             'navigation' => h_prefix(null, 2),
         ];
+
         $route_min = 2;
 
         $view = $this->get_editor();

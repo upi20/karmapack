@@ -17,12 +17,8 @@ class DistrictController extends Controller
             return District::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Kecamatan',
-            'breadcrumbs' => [
-                ['name' => 'Alamat'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $provinces = Province::all();
 
         $view = path_view('pages.admin.address.district');

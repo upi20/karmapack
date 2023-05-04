@@ -17,12 +17,8 @@ class VillageController extends Controller
             return Village::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Desa/Kelurahan',
-            'breadcrumbs' => [
-                ['name' => 'Alamat'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $provinces = Province::all();
 
         $view = path_view('pages.admin.address.village');

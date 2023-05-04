@@ -19,12 +19,7 @@ class KataAlumniController extends Controller
         $data['status_str'] = is_null($get) ? 'Belum Dibuat' : ($get->status == 0 ? "Disimpan" : ($get->status == 1 ? "Di Publish" : "Tidak Diketahui"));
         $data['status_bg'] = is_null($get) ? 'warning' : ($get->status == 0 ? "primary" : ($get->status == 1 ? "success" : "danger"));
         $data = (object)$data;
-        $page_attr = [
-            'title' => 'Kata Alumni',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.member.kata_alumni');
         $data = compact('page_attr', 'data', 'view');

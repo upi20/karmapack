@@ -42,13 +42,7 @@ class SocialMediaController extends Controller
                 ->addIndexColumn()
                 ->make(true);
         }
-        $page_attr = [
-            'title' => 'Sosial Media',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Kontak'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.social_media');
         $data = compact('page_attr', 'view');

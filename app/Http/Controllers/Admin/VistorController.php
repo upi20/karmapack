@@ -15,12 +15,7 @@ class VistorController extends Controller
             return Tracker::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Pengunjung',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $platforms = Tracker::distinct('platform')->select(['platform'])->where('platform', '<>', null)->get();
         $browsers = Tracker::distinct('browser')->select(['browser'])->where('browser', '<>', null)->get();

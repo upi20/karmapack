@@ -18,18 +18,15 @@ class JabatanMemberController extends Controller
     {
 
         $anggotas = $jabatan->anggotas()->with('anggota')->get();
-
-        $navigation = h_prefix('periode', 3);
-
-        // page atribut
+        $page_attr = adminBreadcumb(
+            h_prefix('periode', 3),
+            addbreadcrumbs: [['name' => 'Bidang', 'url' => ['admin.kepengurusan.jabatan', $jabatan->periode_id]]],
+            isChild: true
+        );
         $page_attr = [
             'title' => "Anggota Bidang " . $jabatan->nama,
-            'breadcrumbs' => [
-                ['name' => 'Kepengurusan'],
-                ['name' => 'Periode', 'url' => $navigation],
-                ['name' => 'Bidang', 'url' => ['admin.kepengurusan.jabatan', $jabatan->periode_id]],
-            ],
-            'navigation' => $navigation,
+            'breadcrumbs' => $page_attr['breadcrumbs'],
+            'navigation' => h_prefix('periode', 3),
         ];
 
         $view = path_view('pages.admin.kepengurusan.jabatan.member');

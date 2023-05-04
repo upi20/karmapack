@@ -10,12 +10,7 @@ class SejarahController extends Controller
 {
     public function index()
     {
-        $page_attr = [
-            'title' => 'Sejarah',
-            'breadcrumbs' => [
-                ['name' => 'Setting Halaman'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $data = compact(
             'page_attr'

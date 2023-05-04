@@ -14,12 +14,7 @@ class PendidikanJenisController extends Controller
         if (request()->ajax()) {
             return PendidikanJenis::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Jenis Pendidikan Profil',
-            'breadcrumbs' => [
-                ['name' => 'Data Tambahan Profil'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.profile.pendidikan_jenis');
         $data = compact('page_attr', 'view');

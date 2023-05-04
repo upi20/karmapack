@@ -18,12 +18,8 @@ class RegencieController extends Controller
             return Regencie::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Kabupaten/Kota',
-            'breadcrumbs' => [
-                ['name' => 'Alamat'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $provinces = Province::all();
 
         $view = path_view('pages.admin.address.regencie');

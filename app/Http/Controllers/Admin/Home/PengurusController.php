@@ -40,11 +40,8 @@ class PengurusController extends Controller
                 ['name' => 'Halaman Utama'],
             ]
         ];
-        $setting = (object)[
-            'visible' => setting_get("$this->key.visible"),
-            'title' => setting_get("$this->key.title"),
-            'sub_title' => setting_get("$this->key.sub_title"),
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $folder_image = $this->folder_image;
         $view = path_view('pages.admin.home.pengurus');
         $data = compact('page_attr', 'image_folder', 'setting', 'view');

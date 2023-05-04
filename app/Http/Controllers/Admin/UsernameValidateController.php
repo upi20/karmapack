@@ -12,12 +12,7 @@ class UsernameValidateController extends Controller
 {
     public function index(Request $request)
     {
-        $page_attr = [
-            'title' => 'Pengaturan Nama Profil',
-            'breadcrumbs' => [
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $rules = UsernameValidation::all();
         $view = path_view('pages.admin.username_validation');

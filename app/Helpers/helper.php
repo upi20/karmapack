@@ -9,6 +9,7 @@ use MatthiasMullie\Minify\JS;
 use MatthiasMullie\Minify\CSS;
 use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\SettingActivity;
+use Illuminate\Support\Facades\Route;
 
 if (!function_exists('h_prefix_uri')) {
     function h_prefix_uri(?string $param = null, int $min = 0)
@@ -310,6 +311,60 @@ if (!function_exists('adminTitle')) {
                 'name' => $routeData->title,
                 'url' => $routeData->route
             ];
+        }
+
+        return [
+            'title' => $menuTitle,
+            'breadcrumbs' => array_merge($breadcrumbs, $addbreadcrumbs),
+        ];
+    }
+}
+
+if (!function_exists('adminBreadcumb')) {
+    // kasus
+    // custom title
+    // $page_attr = adminBreadcumb(h_prefix(min: 2), 'Ubah');
+
+    // $page_attr = [
+    //     'title' => $page_attr['title'],
+    //     'navigation' => h_prefix(min: 2),
+    //     'breadcrumbs' => $page_attr['breadcrumbs']
+    // ];
+
+    function adminBreadcumb($route, $title = null,  $addbreadcrumbs = [], $addDashboard = true, $isChild = false)
+    {
+        // deklarasi variable
+        $dashboardTitle = env('ADMIN_BREADCRUMB_DEFAULT_TITLE');
+        $dashboardRoute = env('ADMIN_BREADCRUMB_DEFAULT_ROUTE');
+        $breadcrumbs = [];
+
+        // get menu
+        $routeData = MenuAdmin::with(['parent'])->select(['title', 'parent_id', 'route'])->where('route', $route)->first();
+        $menuTitle = is_null($routeData) ? null : $routeData->title;
+
+        // jika menu ingin ada dashboard
+        if ($addDashboard) {
+            $breadcrumbs[] = ['name' => $dashboardTitle, 'url' => $dashboardRoute];
+        }
+
+        if (($routeData != null) ? ($routeData->parent != null) : false) {
+            $breadcrumbs[] =  [
+                'name' => $routeData->parent->title,
+                'url' => Route::has($routeData->parent->route) ? $routeData->parent->route : null
+            ];
+        }
+
+        // digunakan jika ingin custom title makan menu utama nya di masukin ke breadcumb
+        if ($isChild) {
+            $breadcrumbs[] =  [
+                'name' => $routeData->title,
+                'url' => Route::has($routeData->route) ? $routeData->route : null
+            ];
+        }
+
+        if ($title !== null) {
+            // dan title dari parameter title
+            $menuTitle = $title;
         }
 
         return [

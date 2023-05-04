@@ -23,14 +23,8 @@ class NotifAdminAtasController extends Controller
         if (request()->ajax()) {
             return NotifAdminAtas::datatable($request);
         }
+        $page_attr = adminBreadcumb(h_prefix());
 
-        $page_attr = [
-            'title' => 'Notifikasi Admin Atas',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Peralatan'],
-            ]
-        ];;
         $view = path_view('pages.admin.utility.notif_admin_atas');
         $data = compact('page_attr', 'view');
         $data['compact'] = $data;

@@ -24,7 +24,7 @@ class MarketplaceController extends Controller
         if (request()->ajax()) {
             return MarketPlaceJenis::datatable($request);
         };
-        $page_attr = adminTitle(h_prefix());
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.produk.marketplace');
         $data = compact('page_attr', 'view');

@@ -14,13 +14,7 @@ class MessageController extends Controller
         if (request()->ajax()) {
             return Message::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Pesan Diterima',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Kontak'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
         $setting = (object)[
             'title' => setting_get('setting.contact.message.title'),
             'sub_title' => setting_get('setting.contact.message.sub_title'),

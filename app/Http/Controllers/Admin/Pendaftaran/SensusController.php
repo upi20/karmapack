@@ -15,12 +15,8 @@ class SensusController extends Controller
             return Sensus::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'List Data Sensus',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $user_role = Role::all();
         $setting = (object)[
             'jadikan_pengguna' => settings()->get('setting.sensus.jadikan_pengguna', false),

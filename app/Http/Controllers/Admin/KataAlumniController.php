@@ -25,12 +25,7 @@ class KataAlumniController extends Controller
         if (request()->ajax()) {
             return KataAlumni::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Kata Alumni',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.kata_alumni');
         $data = compact('page_attr', 'view');

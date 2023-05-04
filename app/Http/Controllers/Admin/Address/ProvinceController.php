@@ -18,12 +18,7 @@ class ProvinceController extends Controller
             return Province::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Provinsi',
-            'breadcrumbs' => [
-                ['name' => 'Alamat'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.address.province');
         $data = compact('page_attr', 'view');

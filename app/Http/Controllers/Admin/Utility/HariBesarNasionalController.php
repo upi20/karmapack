@@ -24,14 +24,8 @@ class HariBesarNasionalController extends Controller
         if (request()->ajax()) {
             return HariBesarNasional::datatable($request);
         }
+        $page_attr = adminBreadcumb(h_prefix());
 
-        $page_attr = [
-            'title' => 'Hari Besar Nasional',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Peralatan'],
-            ]
-        ];
         $view = path_view('pages.admin.utility.hari_besar_nasional');
         $data = compact('page_attr', 'view');
         $data['compact'] = $data;

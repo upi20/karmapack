@@ -20,8 +20,7 @@ class DashboardController extends Controller
         $total_artikel = Artikel::count();
         $total_pesan = ContactMessage::count();
         $total_anggota = Anggota::count();
-        $page_attr = ['title' => 'Dashboard'];
-
+        $page_attr = adminBreadcumb(h_prefix(), addDashboard: false);
 
         $view = path_view('pages.admin.dashboard');
         $data = compact(

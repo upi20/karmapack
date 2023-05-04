@@ -30,13 +30,7 @@ class HomeSliderController extends Controller
             return HomeSlider::datatable($request);
         }
         $image_folder = $this->image_folder;
-        $page_attr = [
-            'title' => 'Slider',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.setting.home_slider');
         $data = compact('page_attr', 'image_folder', 'view');

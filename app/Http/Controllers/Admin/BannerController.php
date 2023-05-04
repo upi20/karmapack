@@ -23,13 +23,7 @@ class BannerController extends Controller
             return Banner::datatable($request);
         }
         $image_folder = $this->image_folder;
-        $page_attr = [
-            'title' => 'Banner',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Artikel'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $image_folder = $this->image_folder;
 

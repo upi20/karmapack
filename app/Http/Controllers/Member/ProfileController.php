@@ -35,12 +35,8 @@ class ProfileController extends Controller
         $user = $anggota->user;
 
         if (!$user) return abort(404);
-        $page_attr = [
-            'title' => 'Profil',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
+
+        $page_attr = adminBreadcumb(h_prefix());
 
         $provinces = Province::all();
         $kontak_jenis = KontakJenis::where('status', '=', 1)->select(['id', 'nama'])->get();

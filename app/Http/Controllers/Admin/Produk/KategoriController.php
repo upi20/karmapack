@@ -20,13 +20,8 @@ class KategoriController extends Controller
         if (request()->ajax()) {
             return ProdukKategori::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Kategori',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Produk'],
-            ]
-        ];
+
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.produk.kategori');
         $data = compact('page_attr', 'view');

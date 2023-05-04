@@ -12,13 +12,7 @@ class FrontController extends Controller
 
     public function index(Request $request)
     {
-        $page_attr = [
-            'title' => 'Pengaturan Depan',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Pengaturan'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.setting.front');
         $data = compact('page_attr', 'view');

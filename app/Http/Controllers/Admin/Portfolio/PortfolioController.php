@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Portfolio;
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio\Item;
 use App\Models\Portfolio\Portfolio;
-use App\Models\Portfolio\Kategori as PortfolioKategori;
+use App\Models\Portfolio\SubKategori as PortfolioSubKategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
@@ -37,8 +37,9 @@ class PortfolioController extends Controller
         if (request()->ajax()) {
             return Portfolio::datatable($request);
         }
-        $kategoris = PortfolioKategori::orderBy('nama')->get();
-        $page_attr = adminTitle(h_prefix());
+        $kategoris = PortfolioSubKategori::orderBy('nama')->get();
+        $page_attr = adminBreadcumb(h_prefix());
+
         $setting = (object)[
             'visible' => setting_get("$this->key.visible"),
             'title' => setting_get("$this->key.title"),
@@ -54,13 +55,14 @@ class PortfolioController extends Controller
     public function insert(Request $request): mixed
     {
         $portfolio = Portfolio::getInsert();
-        $kategoris = PortfolioKategori::orderBy('nama')->get();
+        $kategoris = PortfolioSubKategori::orderBy('nama')->get();
         $isEdit = false;
-        $adminTitle = adminTitle(h_prefix(min: 1), isChild: true);
+        $page_attr = adminBreadcumb(h_prefix(min: 1), 'Tambah', isChild: true);
+
         $page_attr = [
-            'title' => 'Tambah',
+            'title' => $page_attr['title'],
             'navigation' => h_prefix(min: 1),
-            'breadcrumbs' => $adminTitle['breadcrumbs']
+            'breadcrumbs' => $page_attr['breadcrumbs']
         ];
 
         $route_save = route(h_prefix('save', 1), $portfolio->id);
@@ -73,14 +75,14 @@ class PortfolioController extends Controller
 
     public function update(Portfolio $portfolio): mixed
     {
-        $kategoris = PortfolioKategori::orderBy('nama')->get();
+        $kategoris = PortfolioSubKategori::orderBy('nama')->get();
         $isEdit = true;
-        $adminTitle = adminTitle(h_prefix(min: 2), isChild: true);
+        $page_attr = adminBreadcumb(h_prefix(min: 2), 'Ubah', isChild: true);
 
         $page_attr = [
-            'title' => 'Ubah',
+            'title' => $page_attr['title'],
             'navigation' => h_prefix(min: 2),
-            'breadcrumbs' => $adminTitle['breadcrumbs']
+            'breadcrumbs' => $page_attr['breadcrumbs']
         ];
         $route_save = route(h_prefix('save', 2), $portfolio->id);
 

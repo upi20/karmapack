@@ -24,13 +24,8 @@ class KataKataController extends Controller
         if (request()->ajax()) {
             return KataKata::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Kata Kata',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $setting = (object)[
             'visible' => setting_get("$this->key.visible"),
             'title' => setting_get("$this->key.title"),

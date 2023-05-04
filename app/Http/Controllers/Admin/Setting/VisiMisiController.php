@@ -13,13 +13,7 @@ class VisiMisiController extends Controller
 
     public function index(Request $request)
     {
-        $page_attr = [
-            'title' => 'Visi Misi',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Pengaturan'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
         $setting = (object)[
             'visible' => setting_get("$this->key.visible"),
             'title' => setting_get("$this->key.title"),

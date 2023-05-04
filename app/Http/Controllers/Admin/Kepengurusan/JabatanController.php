@@ -29,14 +29,12 @@ class JabatanController extends Controller
             return $periode->jabatanDatatable($request);
         }
         $roles = Role::all();
-        $navigation = h_prefix('periode', 2);
+
+        $page_attr = adminBreadcumb(h_prefix('periode', 2), isChild: true);
         $page_attr = [
             'title' => "Bidang Periode " . $periode->nama,
-            'breadcrumbs' => [
-                ['name' => 'Kepengurusan'],
-                ['name' => 'Periode', 'url' => $navigation],
-            ],
-            'navigation' => $navigation,
+            'breadcrumbs' => $page_attr['breadcrumbs'],
+            'navigation' => h_prefix('periode', 2),
         ];
 
         $view = path_view('pages.admin.kepengurusan.jabatan.list');

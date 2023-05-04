@@ -15,12 +15,7 @@ class KontakTipeController extends Controller
             return KontakJenis::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Jenis Kontak Profil',
-            'breadcrumbs' => [
-                ['name' => 'Data Tambahan Profil'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.profile.kontak_tipe');
         $data = compact('page_attr', 'view');

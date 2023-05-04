@@ -10,12 +10,7 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $page_attr = [
-            'title' => 'Tentang',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.setting.about');
         $data = compact('page_attr', 'view');

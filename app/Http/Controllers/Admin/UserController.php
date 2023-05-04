@@ -22,13 +22,7 @@ class UserController extends Controller
             return User::datatable($request);
         }
 
-        $page_attr = [
-            'title' => 'Manajemen Pengguna',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-            ],
-            'navigation' => 'user.view',
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
         $user_role = Role::all();
 
         $view = path_view('pages.admin.user');

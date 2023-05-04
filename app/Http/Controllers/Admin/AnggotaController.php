@@ -35,13 +35,8 @@ class AnggotaController extends Controller
         if (request()->ajax()) {
             return Anggota::datatable($request);
         }
+        $page_attr = adminBreadcumb(h_prefix());
 
-        $page_attr = [
-            'title' => 'Anggota',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
         $angkatans = Anggota::select(['angkatan'])
             ->orderBy('angkatan', 'desc')
             ->distinct()->get();

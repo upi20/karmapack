@@ -24,13 +24,8 @@ class ListContactController extends Controller
         if (request()->ajax()) {
             return ListContact::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Daftar Kontak',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Kontak'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $setting = (object)[
             'title' => setting_get('setting.contact.list.title'),
             'sub_title' => setting_get('setting.contact.list.sub_title'),

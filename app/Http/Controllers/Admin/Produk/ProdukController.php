@@ -51,7 +51,7 @@ class ProdukController extends Controller
             return Produk::datatable($request);
         }
         $kategoris = ProdukKategori::orderBy('nama')->get();
-        $page_attr = adminTitle(h_prefix());
+        $page_attr = adminBreadcumb(h_prefix());
 
 
         $view = path_view('pages.admin.produk.produk');
@@ -65,13 +65,13 @@ class ProdukController extends Controller
         $produk = Produk::getInsert();
         $kategoris = ProdukKategori::orderBy('nama')->get();
         $isEdit = false;
-        $adminTitle = adminTitle(h_prefix(min: 1), isChild: true);
         $marketplaceJenis = MarketPlaceJenis::orderBy('nama')->get();
 
+        $page_attr = adminBreadcumb(h_prefix(min: 1), 'Tambah');
         $page_attr = [
-            'title' => 'Tambah',
+            'title' => $page_attr['title'],
             'navigation' => h_prefix(min: 1),
-            'breadcrumbs' => $adminTitle['breadcrumbs']
+            'breadcrumbs' => $page_attr['breadcrumbs']
         ];
 
         $route_save = route(h_prefix('save', 1), $produk->id);
@@ -86,13 +86,14 @@ class ProdukController extends Controller
     {
         $kategoris = ProdukKategori::orderBy('nama')->get();
         $isEdit = true;
-        $adminTitle = adminTitle(h_prefix(min: 2), isChild: true);
         $marketplaceJenis = MarketPlaceJenis::orderBy('nama')->get();
 
+        $page_attr = adminBreadcumb(h_prefix(min: 2), 'Tambah');
+
         $page_attr = [
-            'title' => 'Ubah',
+            'title' => $page_attr['title'],
             'navigation' => h_prefix(min: 2),
-            'breadcrumbs' => $adminTitle['breadcrumbs']
+            'breadcrumbs' => $page_attr['breadcrumbs']
         ];
         $route_save = route(h_prefix('save', 2), $produk->id);
 

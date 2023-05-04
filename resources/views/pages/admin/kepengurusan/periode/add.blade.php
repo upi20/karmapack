@@ -26,7 +26,7 @@
                 <h6 class="text-light mt-2">Form {{ $page_attr['title'] }}</h6>
             </div>
             <div>
-                <a href="{{ url()->previous() }}" class="btn btn-secondary">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary btn-sm">
                     <i class='bx bx-arrow-back me-1'></i>Kembali</a>
             </div>
         </div>

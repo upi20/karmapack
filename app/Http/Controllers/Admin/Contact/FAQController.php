@@ -22,13 +22,8 @@ class FAQController extends Controller
         if (request()->ajax()) {
             return FAQ::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Frequently Asked Questions',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix(), title: 'Frequently Asked Questions');
+
         $setting = (object)[
             'title' => setting_get('setting.contact.faq.title'),
             'sub_title' => setting_get('setting.contact.faq.sub_title'),

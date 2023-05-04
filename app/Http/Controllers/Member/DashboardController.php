@@ -21,7 +21,7 @@ class DashboardController extends Controller
         $anggota_by_riwayat_pendidikan = $this->anggota_by_riwayat_pendidikan();
 
         $total_anggota = Anggota::count();
-        $page_attr = ['title' => 'Dashboard'];
+        $page_attr = adminBreadcumb(h_prefix(), addDashboard: false);
         return view('pages.admin.member.dashboard', compact(
             'total_anggota',
             'page_attr',

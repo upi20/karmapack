@@ -19,13 +19,7 @@ class FrontendController extends Controller
 
     public function index()
     {
-        $page_attr = [
-            'title' => 'Menu Management',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'User Access'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.menu.frontend');
         $data = compact('page_attr', 'view');

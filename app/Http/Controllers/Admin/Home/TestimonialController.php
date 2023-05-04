@@ -29,13 +29,8 @@ class TestimonialController extends Controller
             return Testimonial::datatable($request);
         }
         $image_folder = $this->image_folder;
-        $page_attr = [
-            'title' => 'Testimonial',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $setting = (object)[
             'visible' => setting_get("$this->key.visible"),
             'title' => setting_get("$this->key.title"),

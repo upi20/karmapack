@@ -20,12 +20,8 @@ class PeriodeController extends Controller
         if (request()->ajax()) {
             return Periode::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Periode Kepengurusan',
-            'breadcrumbs' => [
-                ['name' => 'Kepengurusan'],
-            ]
-        ];
+
+        $page_attr = adminBreadcumb(h_prefix());
 
         $roles = Role::all();
         $image_folder = $this->image_folder;
@@ -38,14 +34,11 @@ class PeriodeController extends Controller
 
     public function add(Request $request)
     {
-        $navigation = h_prefix(null, 1);
+        $page_attr = adminBreadcumb(h_prefix(null, 1), isChild: true);
         $page_attr = [
-            'title' => 'Tambah Periode Kepengurusan',
-            'breadcrumbs' => [
-                ['name' => 'Kepengurusan'],
-                ['name' => 'Periode', 'url' => $navigation],
-            ],
-            'navigation' => $navigation
+            'title' => "Tambah",
+            'breadcrumbs' => $page_attr['breadcrumbs'],
+            'navigation' => h_prefix(null, 1),
         ];
 
         $view = path_view('pages.admin.kepengurusan.periode.add');
@@ -56,14 +49,11 @@ class PeriodeController extends Controller
 
     public function edit(Periode $model)
     {
-        $navigation = h_prefix(null, 2);
+        $page_attr = adminBreadcumb(h_prefix(null, 2), isChild: true);
         $page_attr = [
-            'title' => 'Ubah Periode Kepengurusan',
-            'breadcrumbs' => [
-                ['name' => 'Kepengurusan'],
-                ['name' => 'Periode', 'url' => $navigation],
-            ],
-            'navigation' => $navigation
+            'title' => "Ubah",
+            'breadcrumbs' => $page_attr['breadcrumbs'],
+            'navigation' => h_prefix(null, 2),
         ];
         $edit = true;
         $image_folder = $this->image_folder;

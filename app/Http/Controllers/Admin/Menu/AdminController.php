@@ -30,13 +30,7 @@ class AdminController extends Controller
 
         $roles = Role::all();
 
-        $page_attr = [
-            'title' => 'Menu Management',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Admin'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.menu.admin');
         $data = compact('page_attr', 'routes', 'roles', 'view');

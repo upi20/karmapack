@@ -14,12 +14,8 @@ class PendaftaranController extends Controller
         if (request()->ajax()) {
             return Pendaftaran::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Pendaftaran',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
+
         $view = path_view('pages.admin.pendaftaran');
         $data = compact('page_attr', 'view');
         $data['compact'] = $data;

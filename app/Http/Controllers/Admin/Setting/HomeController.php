@@ -16,13 +16,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $page_attr = [
-            'title' => 'Halaman Depan',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Halaman Utama'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
         $pre = $this->setting_prefix;
         $s = function (string $str) use ($pre): string {
             return "$pre.$str";

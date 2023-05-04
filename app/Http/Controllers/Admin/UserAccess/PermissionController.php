@@ -20,13 +20,7 @@ class PermissionController extends Controller
                 ->make(true);
         }
 
-        $page_attr = [
-            'title' => 'Permission',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'User Access'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.user_access.permission');
         $data = compact('page_attr', 'view');

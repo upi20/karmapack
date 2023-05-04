@@ -12,13 +12,7 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-        $page_attr = [
-            'title' => 'Pengaturan Admin',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard', 'url' => 'admin.dashboard'],
-                ['name' => 'Pengaturan'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.setting.admin');
         $data = compact('page_attr', 'view');

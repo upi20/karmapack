@@ -15,12 +15,7 @@ class InstagramController extends Controller
         if (request()->ajax()) {
             return Instagram::datatable($request);
         }
-        $page_attr = [
-            'title' => 'Instagram',
-            'breadcrumbs' => [
-                ['name' => 'Dashboard'],
-            ]
-        ];
+        $page_attr = adminBreadcumb(h_prefix());
 
         $view = path_view('pages.admin.instagram');
         $data = compact('page_attr', 'view');
