@@ -1,0 +1,4 @@
+[x] Sesuaikan breadcrumbs dengan database menu
+[] Buat halaman versioning di panel admin
+[x] Hapus file kode yang tidak di butuhkan
+[x] Hapus permissions yang tidak di butuhkan

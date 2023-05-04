@@ -27,12 +27,8 @@ use App\Models\Kepengurusan\Jabatan;
 use App\Models\Kepengurusan\Periode;
 use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\Menu\Frontend as MenuFrontend;
-use App\Models\Pendaftaran;
 use App\Models\Pendaftaran\GForm;
 use App\Models\Pendaftaran\Sensus;
-use App\Models\Portfolio\Item as PortfolioItem;
-use App\Models\Portfolio\Kategori as PortfolioKategori;
-use App\Models\Portfolio\Portfolio;
 use App\Models\RoleHasMenu;
 use App\Models\Setting\HomeSlider;
 use App\Models\SocialAccount;
@@ -158,19 +154,6 @@ class backup extends Command
                 Jabatan::tableName,
                 KepengurusanAnggota::tableName,
             ],
-
-            // 'produk' => [
-            //     ProdukKategori::tableName,
-            //     Produk::tableName,
-            //     MarketPlaceJenis::tableName,
-            //     Foto::tableName,
-            //     MarketPlace::tableName,
-            // ],
-            // 'portfolio' => [
-            //     PortfolioKategori::tableName,
-            //     Portfolio::tableName,
-            //     PortfolioItem::tableName,
-            // ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
         foreach ($tables as $k => $t) {

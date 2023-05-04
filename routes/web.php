@@ -34,12 +34,6 @@ use App\Http\Controllers\Frontend\Pendaftaran\SensusController;
 use App\Http\Controllers\Frontend\AboutController;
 
 // ====================================================================================================================
-// Produk =============================================================================================================
-use App\Http\Controllers\Frontend\KatalogController;
-use App\Http\Controllers\Frontend\MarketplaceController;
-use App\Http\Controllers\Frontend\ProdukController;
-
-// ====================================================================================================================
 // ====================================================================================================================
 
 
@@ -160,14 +154,6 @@ Route::get('/dashboard', function () {
 // katalog ============================================================================================================
 $prefix = 'katalog';
 Route::controller(KatalogController::class)->prefix($prefix)->group(function () use ($prefix) {
-    Route::get('/', 'index')->name($prefix);
-    Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
-});
-// ====================================================================================================================
-
-// produk =============================================================================================================
-$prefix = 'produk';
-Route::controller(ProdukController::class)->prefix($prefix)->group(function () use ($prefix) {
     Route::get('/', 'index')->name($prefix);
     Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
 });

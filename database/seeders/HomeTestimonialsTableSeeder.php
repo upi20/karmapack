@@ -21,8 +21,8 @@ class HomeTestimonialsTableSeeder extends Seeder
         \DB::table('home_testimonials')->insert(array (
             0 => 
             array (
-                'id' => '1',
-                'urutan' => '1',
+                'id' => 1,
+                'urutan' => 1,
                 'nama' => 'Taufiq',
                 'sebagai' => 'Product Designer',
                 'foto' => '20230418133444.jpg',
@@ -33,8 +33,8 @@ class HomeTestimonialsTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '2',
-                'urutan' => '2',
+                'id' => 2,
+                'urutan' => 2,
                 'nama' => 'Fahri',
                 'sebagai' => 'Product Designer',
                 'foto' => '20230413130311.png',
@@ -45,8 +45,8 @@ class HomeTestimonialsTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => '3',
-                'urutan' => '3',
+                'id' => 3,
+                'urutan' => 3,
                 'nama' => 'Lutpi N.',
                 'sebagai' => 'Web Programmer',
                 'foto' => '20230418133537.jpeg',
@@ -57,8 +57,8 @@ class HomeTestimonialsTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => '4',
-                'urutan' => '4',
+                'id' => 4,
+                'urutan' => 4,
                 'nama' => 'Handip Yusuf Kurniawan',
                 'sebagai' => 'Web Programmer',
                 'foto' => '20230413130424.png',

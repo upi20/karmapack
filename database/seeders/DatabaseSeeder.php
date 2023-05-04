@@ -86,18 +86,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LogsTableSeeder::class);
         $this->call(VisitorsTableSeeder::class);
 
-        // produk
-        $this->call(ProdukKategoriTableSeeder::class);
-        $this->call(ProdukTableSeeder::class);
-        $this->call(ProdukMarketPlaceJenisTableSeeder::class);
-        $this->call(ProdukFotoTableSeeder::class);
-        $this->call(ProdukMarketPlaceTableSeeder::class);
-
-        // portfolio
-        $this->call(PortfolioKategoriTableSeeder::class);
-        $this->call(PortfolioTableSeeder::class);
-        $this->call(PortfolioItemTableSeeder::class);
-
         // home
         $this->call(HomeTestimonialsTableSeeder::class);
         $this->call(HomeProgramPembelajaranTableSeeder::class);
