@@ -21,7 +21,7 @@ class GaleriTableSeeder extends Seeder
         \DB::table('galeri')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => '1',
                 'nama' => 'Poesaka 2021 HP',
                 'foto' => '2022-02-04_06-42-23_karmapack_image_WhatsApp_Image_2022-02-02_at_10_49_38_PM.jpeg',
                 'foto_id_gdrive' => '101IqEbeTRlQjpM8_zsxRL17oLtN9Ys4d',
@@ -30,13 +30,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             1 => 
             array (
-                'id' => 2,
+                'id' => '2',
                 'nama' => 'Poesaka 2021 Aksi',
                 'foto' => '',
                 'foto_id_gdrive' => '1KtN8BkNL6tYdyA9QCoWOeFKjHh1iota6',
@@ -45,13 +45,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => '2022-08-18 13:44:21',
             ),
             2 => 
             array (
-                'id' => 3,
+                'id' => '3',
                 'nama' => 'Poesaka 2021 Alumni',
                 'foto' => '',
                 'foto_id_gdrive' => '1Jwt9I0B2f6nsl06xjK8qGkW2Al-dlW61',
@@ -60,13 +60,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             3 => 
             array (
-                'id' => 4,
+                'id' => '4',
                 'nama' => 'Poesaka 2021 Bersama',
                 'foto' => '',
                 'foto_id_gdrive' => '1Avfj0C4Bpc-aDLGIdvZQ_vaPSOIb4XO-',
@@ -75,13 +75,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             4 => 
             array (
-                'id' => 5,
+                'id' => '5',
                 'nama' => 'Poesaka 2021 Panitia',
                 'foto' => '',
                 'foto_id_gdrive' => '128lESTK9ev2dPZHHKcXIBhERrn6mrU4S',
@@ -90,13 +90,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             5 => 
             array (
-                'id' => 6,
+                'id' => '6',
                 'nama' => 'Poesaka 2021 Pemateri',
                 'foto' => '',
                 'foto_id_gdrive' => '1tXN1M5xWIUioc33smp6e2ptye8i8WU6i',
@@ -105,13 +105,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             6 => 
             array (
-                'id' => 7,
+                'id' => '7',
                 'nama' => 'Poesaka 2021 Peserta',
                 'foto' => '',
                 'foto_id_gdrive' => '1Avfj0C4Bpc-aDLGIdvZQ_vaPSOIb4XO-',
@@ -120,13 +120,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2021-11-18',
                 'lokasi' => 'lokasi',
                 'keterangan' => 'Poesaka 2021',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
             7 => 
             array (
-                'id' => 8,
+                'id' => '8',
                 'nama' => 'Makrab 2022 Hari Ke 1 Panitia',
                 'foto' => NULL,
                 'foto_id_gdrive' => '1KW97kgB1wthNHIluw4w4cCIEwV98bOWp',
@@ -135,13 +135,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2023-03-18',
                 'lokasi' => 'Curug Citambur Cianjur Selatan',
                 'keterangan' => 'Makrab 2022',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2023-03-20 22:40:40',
                 'updated_at' => '2023-03-20 22:42:40',
             ),
             8 => 
             array (
-                'id' => 9,
+                'id' => '9',
                 'nama' => 'Makrab 2022 Hari Ke 1 Peserta',
                 'foto' => NULL,
                 'foto_id_gdrive' => '1M2BtiyHHjTPG2kae6YY_WAXjt43VZpGF',
@@ -150,13 +150,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2023-03-18',
                 'lokasi' => 'Curug Citambur Cianjur Selatan',
                 'keterangan' => 'Makrab 2022',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2023-03-20 22:41:57',
                 'updated_at' => '2023-03-20 22:42:45',
             ),
             9 => 
             array (
-                'id' => 10,
+                'id' => '10',
                 'nama' => 'Makrab 2022 Hari Ke 2 Panitia',
                 'foto' => NULL,
                 'foto_id_gdrive' => '1Uz5ntT9RWgxRWwai515ky_hTeZht15Z9',
@@ -165,13 +165,13 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2023-03-19',
                 'lokasi' => 'Curug Citambur Cianjur Selatan',
                 'keterangan' => 'Makrab 2022',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2023-03-20 22:45:01',
                 'updated_at' => '2023-03-20 22:45:01',
             ),
             10 => 
             array (
-                'id' => 11,
+                'id' => '11',
                 'nama' => 'Makrab 2022 Hari Ke 2 Peserta',
                 'foto' => NULL,
                 'foto_id_gdrive' => '1y-gsrCE4B3ZiBTo_mgbnLZI1VCIqUbLN',
@@ -180,7 +180,7 @@ class GaleriTableSeeder extends Seeder
                 'tanggal' => '2023-03-19',
                 'lokasi' => 'Curug Citambur Cianjur Selatan',
                 'keterangan' => 'Makrab 2022',
-                'status' => 1,
+                'status' => '1',
                 'created_at' => '2023-03-20 22:46:17',
                 'updated_at' => '2023-03-20 22:46:17',
             ),
