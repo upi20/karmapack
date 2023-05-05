@@ -137,8 +137,9 @@ class Anggota extends Model
         $id = $this->attributes['id'];
 
         $ifHaveParent = "if($t_jabatan.parent_id is null, '', (select j2.nama from $t_jabatan j2 where j2.id = $t_jabatan.parent_id limit 1))";
+        $ifHaveParentSlug = "if($t_jabatan.parent_id is null, $t_jabatan.slug, (select j3.slug from $t_jabatan j3 where j3.id = $t_jabatan.parent_id limit 1))";
         // $selectRaw = "concat($t_periode.dari, '-',$t_periode.sampai, ' | ', $t_jabatan.nama, $ifHaveParent) as text";
-        $selectRaw = "$t_periode.dari, $t_periode.sampai, $t_jabatan.slug as slug_bidang,
+        $selectRaw = "$t_periode.dari, $t_periode.sampai, $ifHaveParentSlug as slug_bidang,
         $t_jabatan.nama as jabatan, $ifHaveParent as bidang, $t_periode.slug as periode_slug,
         $t_periode.nama as periode ";
         $gets = KepengurusanAnggota::selectRaw($selectRaw)
