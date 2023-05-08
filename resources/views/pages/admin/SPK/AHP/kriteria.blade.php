@@ -74,6 +74,15 @@
         </div>
     </div>
 
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title d-md-flex flex-row justify-content-between">
+                <h6 class="mt-2 text-uppercase">Normalisasi {{ $page_attr['title'] ?? 'Kriteria' }}</h6>
+            </div>
+            <table class="table table-hover" id="tbl_normalisasi"> </table>
+        </div>
+    </div>
+
     <!-- End Row -->
     <div class="modal fade" id="modal-default">
         <div class="modal-dialog modal-dialog-centered" role="document">

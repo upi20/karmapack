@@ -274,17 +274,18 @@ function deleteFunc(id) {
     });
 }
 
+function renderNumber(number, fix = 2) {
+    const nm = Number(number);
+
+    if (isNaN(nm)) {
+        return number;
+    }
+
+    return Number.isInteger(number) ? nm : nm.toFixed(fix);
+};
+
+
 function kriteriaRefresh() {
-    const renderNumber = (number) => {
-        const nm = Number(number);
-
-        if (isNaN(nm)) {
-            return number;
-        }
-
-        return Number.isInteger(number) ? nm : nm.toFixed(2);
-    };
-
     const renderTable = (datas) => {
         const bobot_table = $('#tbl_bobot');
         let baris = 1;
@@ -379,5 +380,70 @@ function kriteriaBobotOptionRefresh() {
     });
 }
 
+function kriteriaNormalisasiRefresh() {
+
+    const renderTable = (datas) => {
+        const bobot_table = $('#tbl_normalisasi');
+        let baris = 1;
+        let table_header = '';
+        let table_bdoy = '';
+        datas.normalisasi.forEach(e => {
+            let tbl_row = '';
+            let kolom = 1;
+            e.forEach(i => {
+                let bg = '';
+                if (baris == kolom && kolom <= datas.jml_data + 1) bg = baris > 1 ? 'bg-primary text-white' : '';
+                if (kolom > baris && kolom <= datas.jml_data + 1) bg = baris > 1 ? 'bg-secondary text-white' : '';
+                const td = baris == 1 ? 'th' : 'td';
+                const text_center = kolom != 1 ? 'text-center' : '';
+                tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i, 3)}</${td}>`;
+                kolom++;
+
+            });
+            if (baris == 1) {
+                table_header = `<thead><tr>${tbl_row}</tr></thead>`;
+            } else {
+                table_header += `<tr>${tbl_row}</tr>`;
+            }
+
+            baris++;
+        });
+
+        let total_html = '';
+        datas.total_normalisasi.forEach((e, i) => {
+            const text_center = i != 0 ? 'text-center' : '';
+            total_html += `<td class="${text_center} fw-bold">${renderNumber(e, 3)}</td>`;
+        })
+
+        const result = `${table_header}<tbody>${table_bdoy}</tbody><tfooter><tr>${total_html}</tr></tfooter>`;
+        bobot_table.html(result);
+        // total
+
+        return result;
+    }
+
+    $.ajax({
+        type: "GET",
+        url: `{{ route(l_prefix($hpu,'bobot.normalisasi')) }}`,
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        success: (data) => {
+            renderTable(data);
+        },
+        error: function (data) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Something went wrong',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        complete: function () {
+            $.LoadingOverlay("hide");
+        }
+    });
+}
+
+kriteriaNormalisasiRefresh();
 kriteriaBobotOptionRefresh();
 kriteriaRefresh();

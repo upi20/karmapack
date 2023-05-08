@@ -226,7 +226,7 @@ class Kriteria extends Model
         // jumlah
         for ($y = 0; $y < count($result); $y++) {
             if ($y == 0) {
-                $result[$y][] = 0;
+                $result[$y][] = "Jumlah";
                 continue;
             }
 
@@ -244,7 +244,7 @@ class Kriteria extends Model
         $jml_data = count($result) - 1; // -1 header
         for ($y = 0; $y < count($result); $y++) {
             if ($y == 0) {
-                $result[$y][] = 0;
+                $result[$y][] = "Prioritas";
                 $prioritas[] = 0;
                 continue;
             }
@@ -260,7 +260,7 @@ class Kriteria extends Model
         $ev = [];
         for ($y = 0; $y < count($result); $y++) {
             if ($y == 0) {
-                $result[$y][] = 0;
+                $result[$y][] = "Eign Value";
                 $ev[] = 0;
                 continue;
             }
@@ -280,7 +280,20 @@ class Kriteria extends Model
         // Consistency Ratio
         $cr = $ci / $ri;
 
+        $total_normalisasi = [];
+        $result_item_length = isset($result[0]) ? count($result[0]) : 0;
+        for ($x = 0; $x < $result_item_length; $x++) {
+            for ($y = 0; $y < count($result); $y++) {
+                if (!isset($total_normalisasi[$x])) {
+                    $total_normalisasi[$x] = 0;
+                }
+                $total_normalisasi[$x] += is_numeric($result[$y][$x]) ? $result[$y][$x] : 0;
+            }
+        }
+        $total_normalisasi[0] = 'Total';
+
         return [
+            'jml_data' => $jml_data,
             'ci' => $ci,
             'ri' => $ri,
             'cr' => $cr,
@@ -288,6 +301,7 @@ class Kriteria extends Model
             'normalisasi' => $result,
             'prioritas' => $prioritas,
             'total' => $table['total'],
+            'total_normalisasi' => $total_normalisasi,
             'id' => $table['id'],
         ];
     }
