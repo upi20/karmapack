@@ -59,6 +59,7 @@ class KriteriaController extends Controller
                 $perbandingan->nilai = 1;
                 $perbandingan->save();
             }
+            Kriteria::setNomralisasi();
 
             DB::commit();
             return response()->json(Perbandingan::all());
@@ -95,6 +96,7 @@ class KriteriaController extends Controller
     {
         try {
             $model->delete();
+            Kriteria::setNomralisasi();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
@@ -135,6 +137,8 @@ class KriteriaController extends Controller
             $perbandingan = Perbandingan::where('kriteria_x_id', $request->kriteria_y)->where('kriteria_y_id', $request->kriteria_x)->first();
             $perbandingan->nilai = 1 / $request->nilai;
             $perbandingan->save();
+
+            Kriteria::setNomralisasi();
             DB::commit();
 
             return response()->json();

@@ -284,7 +284,7 @@ class Kriteria extends Model
             'ci' => $ci,
             'ri' => $ri,
             'cr' => $cr,
-            'ev' => $ev,
+            'eign_value' => $ev,
             'normalisasi' => $result,
             'prioritas' => $prioritas,
             'total' => $table['total'],
@@ -294,6 +294,17 @@ class Kriteria extends Model
 
     public static function setNomralisasi()
     {
-        // set total
+        $nm = static::normalisasi();
+        DB::beginTransaction();
+        for ($y = 1; $y < count($nm['id']); $y++) {
+            $id = $nm['id'][$y];
+            $k = static::find($id);
+            $k->prioritas = $nm['prioritas'][$y];
+            $k->total = $nm['total'][$y];
+            $k->eign_value = $nm['eign_value'][$y];
+            $k->save();
+        }
+        DB::commit();
+        return static::all();
     }
 }
