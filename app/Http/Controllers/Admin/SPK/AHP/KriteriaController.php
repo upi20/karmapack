@@ -145,4 +145,9 @@ class KriteriaController extends Controller
             ], 500);
         }
     }
+
+    public function bobot_normalisasi(Request $request)
+    {
+        return Kriteria::normalisasi();
+    }
 }

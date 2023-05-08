@@ -8,24 +8,37 @@ use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Kriteria extends Model
 {
-    use HasFactory, Loggable;
+    use HasFactory, Loggable, Sluggable;
 
     protected $fillable = [
         'id',
         'kode',
         'nama',
+        'slug',
         'ci',
         'ri',
         'cr',
         'prioritas',
+        'total',
+        'eign_value',
     ];
 
     protected $primaryKey = 'id';
     protected $table = 'spk_ahp_kriteria';
     const tableName = 'spk_ahp_kriteria';
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'nama'
+            ]
+        ];
+    }
 
     public function perbandingan_x()
     {
@@ -143,8 +156,10 @@ class Kriteria extends Model
 
             return 0;
         };
+        $ids = ["id"];
 
         $header = ['Kode'];
+
         $body = [];
         foreach ($results as $x) {
             $header[] = $x->kode;
@@ -152,11 +167,133 @@ class Kriteria extends Model
 
             $body_item[] = $x->kode;
             foreach ($results as $y) {
-                $body_item[] = $findPerbandingan($x->id, $y->id);
+                $res = $findPerbandingan($x->id, $y->id);;
+                $body_item[] = $res;
             }
             $body[] = $body_item;
+            $ids[] = $x->id;
         }
 
-        return array_merge([$header], $body);
+        // jumlahkan total
+        $sums = [];
+        foreach ($body as $row) {
+            foreach ($row as $col => $item) {
+                if ($col == 0) {
+                    continue;
+                }
+
+                if (!isset($sums[$col])) {
+                    $sums[$col] = 0;
+                }
+                $sums[$col] += $item;
+            }
+        }
+
+        $total = [];
+        for ($y = 0; $y <= count($body); $y++) {
+            if ($y == 0) {
+                $total[] = 'Total';
+            } else {
+                $total[] = $sums[$y];
+            }
+        }
+        $body_header = array_merge([$header], $body);
+
+        return [
+            'body' => $body_header,
+            'total' => $total,
+            'id' => $ids,
+        ];
+    }
+
+    public static function normalisasi()
+    {
+        $table = static::getPerbandingan();
+        $result = [];
+        $body = $table['body'];
+        $total = $table['total'];
+
+        for ($y = 0; $y < count($body); $y++) {
+            for ($x = 0; $x < count($body[$y]); $x++) {
+                if ($x == 0 || $y == 0) {
+                    $result[$y][$x] = $body[$y][$x];
+                } else {
+                    $result[$y][$x] = $body[$y][$x] / $total[$x];
+                }
+            }
+        }
+
+        // jumlah
+        for ($y = 0; $y < count($result); $y++) {
+            if ($y == 0) {
+                $result[$y][] = 0;
+                continue;
+            }
+
+            $total = 0;
+            for ($x = 0; $x < count($result[$y]); $x++) {
+                if ($x == 0) continue;
+                $total += $result[$y][$x];
+            }
+
+            $result[$y][] = $total;
+        }
+
+        // prioritas
+        $prioritas = [];
+        $jml_data = count($result) - 1; // -1 header
+        for ($y = 0; $y < count($result); $y++) {
+            if ($y == 0) {
+                $result[$y][] = 0;
+                $prioritas[] = 0;
+                continue;
+            }
+            $res = $result[$y][$jml_data + 1] / $jml_data;;
+            $prioritas[] = $res;
+            $result[$y][] = $res;
+        }
+
+        // eigen value
+        $jml_data = count($result) + 1; // prioritas
+        $total = $table['total'];
+        $total_ev = 0;
+        $ev = [];
+        for ($y = 0; $y < count($result); $y++) {
+            if ($y == 0) {
+                $result[$y][] = 0;
+                $ev[] = 0;
+                continue;
+            }
+            $res = $result[$y][$jml_data] * $total[$y];
+            $result[$y][] = $res;
+            $total_ev += $res;
+            $ev[] = $res;
+        }
+
+        // Consistency Index
+        $jml_data = count($result) - 1; // -1 header
+        $ci = ($total_ev - $jml_data) / ($jml_data - 1);
+
+        // random consistency index
+        $ri = config('ahp.rci')[$jml_data];
+
+        // Consistency Ratio
+        $cr = $ci / $ri;
+
+        return [
+            'ci' => $ci,
+            'ri' => $ri,
+            'cr' => $cr,
+            'ev' => $ev,
+            'normalisasi' => $result,
+            'prioritas' => $prioritas,
+            'total' => $table['total'],
+            'id' => $table['id'],
+        ];
+    }
+
+    public static function setNomralisasi()
+    {
+        // set total
     }
 }

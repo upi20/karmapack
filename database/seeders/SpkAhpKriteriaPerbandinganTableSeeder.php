@@ -22,20 +22,20 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 38,
-                'nilai' => 3.0,
+                'nilai' => 1.0,
                 'kriteria_x_id' => 10,
                 'kriteria_y_id' => 10,
                 'created_at' => '2023-05-08 20:04:45',
-                'updated_at' => '2023-05-08 20:04:45',
+                'updated_at' => '2023-05-08 23:36:47',
             ),
             1 => 
             array (
                 'id' => 39,
-                'nilai' => 3.0,
+                'nilai' => 0.5,
                 'kriteria_x_id' => 11,
                 'kriteria_y_id' => 10,
                 'created_at' => '2023-05-08 20:05:18',
-                'updated_at' => '2023-05-08 22:05:09',
+                'updated_at' => '2023-05-08 23:35:57',
             ),
             2 => 
             array (
@@ -49,11 +49,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 41,
-                'nilai' => 0.33333333333333,
+                'nilai' => 2.0,
                 'kriteria_x_id' => 10,
                 'kriteria_y_id' => 11,
                 'created_at' => '2023-05-08 20:05:18',
-                'updated_at' => '2023-05-08 22:05:09',
+                'updated_at' => '2023-05-08 23:35:57',
             ),
             4 => 
             array (
@@ -67,11 +67,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 43,
-                'nilai' => 1.0,
+                'nilai' => 2.0,
                 'kriteria_x_id' => 12,
                 'kriteria_y_id' => 11,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-08 20:06:22',
+                'updated_at' => '2023-05-08 22:23:36',
             ),
             6 => 
             array (
@@ -94,11 +94,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 46,
-                'nilai' => 1.0,
+                'nilai' => 0.5,
                 'kriteria_x_id' => 11,
                 'kriteria_y_id' => 12,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-08 20:06:22',
+                'updated_at' => '2023-05-08 22:23:36',
             ),
             9 => 
             array (
@@ -112,11 +112,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             10 => 
             array (
                 'id' => 48,
-                'nilai' => 1.0,
+                'nilai' => 2.0,
                 'kriteria_x_id' => 13,
                 'kriteria_y_id' => 11,
                 'created_at' => '2023-05-08 20:06:38',
-                'updated_at' => '2023-05-08 20:06:38',
+                'updated_at' => '2023-05-08 22:23:39',
             ),
             11 => 
             array (
@@ -139,20 +139,20 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             13 => 
             array (
                 'id' => 51,
-                'nilai' => 4.0,
+                'nilai' => 1.0,
                 'kriteria_x_id' => 10,
                 'kriteria_y_id' => 13,
                 'created_at' => '2023-05-08 20:06:38',
-                'updated_at' => '2023-05-08 20:06:38',
+                'updated_at' => '2023-05-08 23:37:18',
             ),
             14 => 
             array (
                 'id' => 52,
-                'nilai' => 1.0,
+                'nilai' => 0.5,
                 'kriteria_x_id' => 11,
                 'kriteria_y_id' => 13,
                 'created_at' => '2023-05-08 20:06:38',
-                'updated_at' => '2023-05-08 20:06:38',
+                'updated_at' => '2023-05-08 22:23:39',
             ),
             15 => 
             array (

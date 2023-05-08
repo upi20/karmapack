@@ -290,7 +290,7 @@ function kriteriaRefresh() {
         let baris = 1;
         let table_header = '';
         let table_bdoy = '';
-        datas.forEach(e => {
+        datas.body.forEach(e => {
             let tbl_row = '';
             let kolom = 1;
             e.forEach(i => {
@@ -312,8 +312,16 @@ function kriteriaRefresh() {
             baris++;
         });
 
-        const result = `${table_header}<body>${table_bdoy}</body>`;
+        let total_html = '';
+        datas.total.forEach((e, i) => {
+            const text_center = i != 0 ? 'text-center' : '';
+            total_html += `<td class="${renderNumber(text_center)} fw-bold">${e}</td>`;
+        })
+
+        const result = `${table_header}<tbody>${table_bdoy}</tbody><tfooter><tr>${total_html}</tr></tfooter>`;
         bobot_table.html(result);
+        // total
+
         return result;
     }
     $.ajax({

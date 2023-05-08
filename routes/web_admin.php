@@ -711,6 +711,7 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
                 $name = "$name.$prefix"; // admin.spk.ahp.bobot
                 Route::get('/', 'bobot_all')->name($name)->middleware("permission:$name");
                 Route::get('/matrix', 'bobot_matrix')->name("$name.matrix")->middleware("permission:$name");
+                Route::get('/normalisasi', 'bobot_normalisasi')->name("$name.normalisasi")->middleware("permission:$name");
                 Route::post('/update', 'bobot_update')->name("$name.update")->middleware("permission:$name");
             });
         });

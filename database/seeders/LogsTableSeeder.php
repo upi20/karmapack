@@ -5115,6 +5115,186 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'create',
                 'data' => '{"role_id":4,"menu_id":369,"updated_at":"2023-05-04T13:22:12.000000Z","created_at":"2023-05-04T13:22:12.000000Z","id":1237}',
             ),
+            66 => 
+            array (
+                'id' => 571,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:19',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":11,"nama":"Seleksi administrasi","slug":null,"kode":"C1","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 20:06:03"}',
+            ),
+            67 => 
+            array (
+                'id' => 572,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:22',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":10,"nama":"Seleksi Wawancara","slug":null,"kode":"C2","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:04:45","updated_at":"2023-05-08 20:05:59"}',
+            ),
+            68 => 
+            array (
+                'id' => 573,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:25',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":12,"nama":"Pengalaman Organisasi","slug":null,"kode":"C3","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-08 20:06:22"}',
+            ),
+            69 => 
+            array (
+                'id' => 574,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:27',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":null,"kode":"C5","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-08 20:06:50"}',
+            ),
+            70 => 
+            array (
+                'id' => 575,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:39',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":"wawasan-ke-organisasian","kode":"C5","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-08 22:22:27"}',
+            ),
+            71 => 
+            array (
+                'id' => 576,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:22:45',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":"wawasan-ke-organisasian","kode":"C54","ci":0,"ri":0,"cr":0,"prioritas":0,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-08 22:22:39"}',
+            ),
+            72 => 
+            array (
+                'id' => 577,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:32',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":41,"nilai":0.33333333333333,"kriteria_x_id":10,"kriteria_y_id":11,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 22:05:09"}',
+            ),
+            73 => 
+            array (
+                'id' => 578,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:32',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":39,"nilai":3,"kriteria_x_id":11,"kriteria_y_id":10,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 22:05:09"}',
+            ),
+            74 => 
+            array (
+                'id' => 579,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:36',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":43,"nilai":1,"kriteria_x_id":12,"kriteria_y_id":11,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-08 20:06:22"}',
+            ),
+            75 => 
+            array (
+                'id' => 580,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:36',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":46,"nilai":1,"kriteria_x_id":11,"kriteria_y_id":12,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-08 20:06:22"}',
+            ),
+            76 => 
+            array (
+                'id' => 581,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:39',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":48,"nilai":1,"kriteria_x_id":13,"kriteria_y_id":11,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-08 20:06:38"}',
+            ),
+            77 => 
+            array (
+                'id' => 582,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 22:23:39',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":52,"nilai":1,"kriteria_x_id":11,"kriteria_y_id":13,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-08 20:06:38"}',
+            ),
+            78 => 
+            array (
+                'id' => 583,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:32:30',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":41,"nilai":2,"kriteria_x_id":10,"kriteria_y_id":11,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 22:23:32"}',
+            ),
+            79 => 
+            array (
+                'id' => 584,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:32:30',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":39,"nilai":0.5,"kriteria_x_id":11,"kriteria_y_id":10,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 22:23:32"}',
+            ),
+            80 => 
+            array (
+                'id' => 585,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:32:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":41,"nilai":9,"kriteria_x_id":10,"kriteria_y_id":11,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 23:32:30"}',
+            ),
+            81 => 
+            array (
+                'id' => 586,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:32:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":39,"nilai":0.11111111111111,"kriteria_x_id":11,"kriteria_y_id":10,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 23:32:30"}',
+            ),
+            82 => 
+            array (
+                'id' => 587,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:35:57',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":41,"nilai":1,"kriteria_x_id":10,"kriteria_y_id":11,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 23:32:41"}',
+            ),
+            83 => 
+            array (
+                'id' => 588,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:35:57',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":39,"nilai":1,"kriteria_x_id":11,"kriteria_y_id":10,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-08 23:32:41"}',
+            ),
+            84 => 
+            array (
+                'id' => 589,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:36:47',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":38,"nilai":3,"kriteria_x_id":10,"kriteria_y_id":10,"created_at":"2023-05-08 20:04:45","updated_at":"2023-05-08 20:04:45"}',
+            ),
+            85 => 
+            array (
+                'id' => 590,
+                'user_id' => 1,
+                'log_date' => '2023-05-08 23:37:18',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":51,"nilai":4,"kriteria_x_id":10,"kriteria_y_id":13,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-08 20:06:38"}',
+            ),
         ));
         
         

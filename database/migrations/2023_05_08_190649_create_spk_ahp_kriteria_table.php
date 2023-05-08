@@ -15,11 +15,14 @@ return new class extends Migration
         Schema::create(Kriteria::tableName, function (Blueprint $table) {
             $table->id();
             $table->text('nama')->nullable()->default(null);
+            $table->text('slug')->nullable()->default(null);
             $table->string('kode')->nullable()->default(null);
             $table->double('ci')->nullable()->default(0);
             $table->double('ri')->nullable()->default(0);
             $table->double('cr')->nullable()->default(0);
             $table->double('prioritas')->nullable()->default(0);
+            $table->double('total')->nullable()->default(0);
+            $table->double('eign_value')->nullable()->default(0);
             $table->timestamps();
         });
     }
