@@ -28,9 +28,11 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'ci' => 0.0,
                 'ri' => 0.0,
                 'cr' => 0.0,
-                'prioritas' => 0.0,
+                'prioritas' => 0.22603174603175,
+                'total' => 4.5,
+                'eign_value' => 1.0171428571429,
                 'created_at' => '2023-05-08 20:04:45',
-                'updated_at' => '2023-05-08 22:22:22',
+                'updated_at' => '2023-05-09 01:29:52',
             ),
             1 => 
             array (
@@ -41,9 +43,11 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'ci' => 0.0,
                 'ri' => 0.0,
                 'cr' => 0.0,
-                'prioritas' => 0.0,
+                'prioritas' => 0.15301587301587,
+                'total' => 7.0,
+                'eign_value' => 1.0711111111111,
                 'created_at' => '2023-05-08 20:05:18',
-                'updated_at' => '2023-05-08 22:22:19',
+                'updated_at' => '2023-05-09 01:29:52',
             ),
             2 => 
             array (
@@ -54,22 +58,26 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'ci' => 0.0,
                 'ri' => 0.0,
                 'cr' => 0.0,
-                'prioritas' => 0.0,
+                'prioritas' => 0.22603174603175,
+                'total' => 4.5,
+                'eign_value' => 1.0171428571429,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-08 22:22:25',
+                'updated_at' => '2023-05-09 01:29:52',
             ),
             3 => 
             array (
                 'id' => 13,
                 'nama' => 'Tahun Masuk',
-                'slug' => NULL,
+                'slug' => 'tahun-masuk',
                 'kode' => 'C4',
                 'ci' => 0.0,
                 'ri' => 0.0,
                 'cr' => 0.0,
-                'prioritas' => 0.0,
+                'prioritas' => 0.19746031746032,
+                'total' => 5.0,
+                'eign_value' => 0.98730158730159,
                 'created_at' => '2023-05-08 20:06:38',
-                'updated_at' => '2023-05-08 20:06:38',
+                'updated_at' => '2023-05-09 01:29:52',
             ),
             4 => 
             array (
@@ -80,9 +88,11 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'ci' => 0.0,
                 'ri' => 0.0,
                 'cr' => 0.0,
-                'prioritas' => 0.0,
+                'prioritas' => 0.19746031746032,
+                'total' => 5.0,
+                'eign_value' => 0.98730158730159,
                 'created_at' => '2023-05-08 20:06:50',
-                'updated_at' => '2023-05-08 22:22:45',
+                'updated_at' => '2023-05-09 01:29:52',
             ),
         ));
         

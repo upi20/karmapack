@@ -80,6 +80,9 @@
                 <h6 class="mt-2 text-uppercase">Normalisasi {{ $page_attr['title'] ?? 'Kriteria' }}</h6>
             </div>
             <table class="table table-hover" id="tbl_normalisasi"> </table>
+            <p>Consistency Index: <span id="ci"></span></p>
+            <p>Ratio Index: <span id="ri"></span></p>
+            <p>Consistency Ratio: <span id="cr"></span></p>
         </div>
     </div>
 

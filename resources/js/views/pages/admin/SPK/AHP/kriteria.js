@@ -127,6 +127,7 @@ $(document).ready(function () {
                 setBtnLoading('#btn-save', '<li class="fas fa-save mr-1"></li> Simpan', false);
                 kriteriaBobotOptionRefresh();
                 kriteriaRefresh();
+                kriteriaNormalisasiRefresh();
             }
         });
     });
@@ -167,6 +168,7 @@ $(document).ready(function () {
             complete: function () {
                 setBtnLoading(btn_submit, '<li class="fas fa-save mr-1"></li> Simpan Bobot', false);
                 kriteriaRefresh();
+                kriteriaNormalisasiRefresh();
             }
         });
     });
@@ -264,6 +266,7 @@ function deleteFunc(id) {
                     swal.hideLoading();
                     kriteriaBobotOptionRefresh();
                     kriteriaRefresh();
+                    kriteriaNormalisasiRefresh();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     swal.hideLoading();
@@ -418,6 +421,12 @@ function kriteriaNormalisasiRefresh() {
         const result = `${table_header}<tbody>${table_bdoy}</tbody><tfooter><tr>${total_html}</tr></tfooter>`;
         bobot_table.html(result);
         // total
+
+        // render data lain
+        $('#ci').html(datas.ci);
+        $('#ri').html(datas.ri);
+        $('#cr').html(`${datas.cr} ${datas.cr < 0.1 ? '(KONSISTEN)' : '(TIDAK KONSISTEN)'}`);
+        $('#cr').attr('class', datas.cr < 0.1 ? 'text-success' : 'text-danger')
 
         return result;
     }
