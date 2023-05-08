@@ -33,6 +33,8 @@ use App\Models\RoleHasMenu;
 use App\Models\Setting\HomeSlider;
 use App\Models\SocialAccount;
 use App\Models\SocialMedia;
+use App\Models\SPK\AHP\Kriteria\Kriteria;
+use App\Models\SPK\AHP\Kriteria\Perbandingan;
 use App\Models\Tracker;
 use App\Models\Utility\HariBesarNasional;
 use App\Models\Utility\NotifAdminAtas;
@@ -153,6 +155,10 @@ class backup extends Command
                 Periode::tableName,
                 Jabatan::tableName,
                 KepengurusanAnggota::tableName,
+            ],
+            'spk_ahp' => [
+                Kriteria::tableName,
+                Perbandingan::tableName,
             ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');

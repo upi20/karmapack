@@ -95,5 +95,7 @@ class DatabaseSeeder extends Seeder
 
         // other
         $this->call(BannersTableSeeder::class);
+        $this->call(SpkAhpKriteriaTableSeeder::class);
+        $this->call(SpkAhpKriteriaPerbandinganTableSeeder::class);
     }
 }

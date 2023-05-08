@@ -77,6 +77,7 @@ use App\Http\Controllers\Admin\Home\KataKataController;
 use App\Http\Controllers\Admin\Home\PengurusController;
 use App\Http\Controllers\Admin\Home\ProgramPembelajaranController;
 use App\Http\Controllers\Admin\Home\TestimonialController;
+use App\Http\Controllers\Admin\SPK\AHP\KriteriaController;
 
 // Lainnya ============================================================================================================
 
@@ -686,4 +687,32 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
     $name = "$name.$prefix"; // admin.password
     Route::get('/', 'change_password')->name($name)->middleware("permission:$name");
     Route::post('/save', 'save_password')->name("$name.save")->middleware("permission:$name.save");
+});
+
+$prefix = 'spk';
+Route::prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.spk
+
+    $prefix = 'ahp';
+    Route::prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.spk.ahp
+
+        $prefix = 'kriteria';
+        Route::controller(KriteriaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.spk.ahp.kriteria
+            Route::get('/', 'index')->name($name)->middleware("permission:$name");
+            Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+            Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
+            Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+            Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+            $prefix = 'bobot';
+            Route::prefix($prefix)->group(function () use ($name, $prefix) {
+                $name = "$name.$prefix"; // admin.spk.ahp.bobot
+                Route::get('/', 'bobot_all')->name($name)->middleware("permission:$name");
+                Route::get('/matrix', 'bobot_matrix')->name("$name.matrix")->middleware("permission:$name");
+                Route::post('/update', 'bobot_update')->name("$name.update")->middleware("permission:$name");
+            });
+        });
+    });
 });
