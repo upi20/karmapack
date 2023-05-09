@@ -14,7 +14,7 @@ function renderNumber(number, fix = 2) {
     return Number.isInteger(number) ? nm : nm.toFixed(fix);
 };
 
-function renderTable(element_table) {
+function renderTable(element_table, order = 1) {
     const tableUser = $(element_table).DataTable({
         columnDefs: [{
             orderable: false,
@@ -24,7 +24,7 @@ function renderTable(element_table) {
         aAutoWidth: true,
         bAutoWidth: true,
         order: [
-            [1, 'asc']
+            [order, 'asc']
         ],
         language: {
             url: datatable_indonesia_language_url
@@ -86,7 +86,7 @@ function tableHasil() {
         // render table
         table_head.html(table_head_html);
         table_body.html(table_body_html);
-        renderTable(element_table);
+        renderTable(element_table, datas.header.length + 3);
     }
 
     $.ajax({

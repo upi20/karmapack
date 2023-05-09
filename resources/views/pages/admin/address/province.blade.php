@@ -23,7 +23,7 @@
             </div>
             <hr class="mt-1" />
 
-            <table class="table table-striped table-hover" id="tbl_main">
+            <table class="table table-striped table-hover w-100" id="tbl_main">
                 <thead>
                     <tr>
                         <th>No</th>
