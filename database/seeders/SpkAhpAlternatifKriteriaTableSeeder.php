@@ -21,141 +21,6 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
         \DB::table('spk_ahp_alternatif_kriteria')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'alternatif_id' => 5,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 6,
-                'created_at' => '2023-05-09 17:29:46',
-                'updated_at' => '2023-05-09 17:29:46',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'alternatif_id' => 5,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 3,
-                'created_at' => '2023-05-09 17:29:46',
-                'updated_at' => '2023-05-09 17:29:46',
-            ),
-            2 => 
-            array (
-                'id' => 3,
-                'alternatif_id' => 5,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 14,
-                'created_at' => '2023-05-09 17:29:46',
-                'updated_at' => '2023-05-09 17:29:46',
-            ),
-            3 => 
-            array (
-                'id' => 4,
-                'alternatif_id' => 5,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 17:29:46',
-                'updated_at' => '2023-05-09 17:29:46',
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'alternatif_id' => 5,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 20,
-                'created_at' => '2023-05-09 17:29:46',
-                'updated_at' => '2023-05-09 17:29:46',
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'alternatif_id' => 6,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 4,
-                'created_at' => '2023-05-09 17:30:20',
-                'updated_at' => '2023-05-09 17:30:20',
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'alternatif_id' => 6,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 1,
-                'created_at' => '2023-05-09 17:30:20',
-                'updated_at' => '2023-05-09 17:30:20',
-            ),
-            7 => 
-            array (
-                'id' => 8,
-                'alternatif_id' => 6,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 9,
-                'created_at' => '2023-05-09 17:30:20',
-                'updated_at' => '2023-05-09 17:30:20',
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'alternatif_id' => 6,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 17:30:20',
-                'updated_at' => '2023-05-09 17:30:20',
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'alternatif_id' => 6,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 19,
-                'created_at' => '2023-05-09 17:30:20',
-                'updated_at' => '2023-05-09 17:30:20',
-            ),
-            10 => 
-            array (
-                'id' => 11,
-                'alternatif_id' => 7,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 4,
-                'created_at' => '2023-05-09 17:30:25',
-                'updated_at' => '2023-05-09 17:30:25',
-            ),
-            11 => 
-            array (
-                'id' => 12,
-                'alternatif_id' => 7,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 1,
-                'created_at' => '2023-05-09 17:30:25',
-                'updated_at' => '2023-05-09 17:30:25',
-            ),
-            12 => 
-            array (
-                'id' => 13,
-                'alternatif_id' => 7,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 9,
-                'created_at' => '2023-05-09 17:30:25',
-                'updated_at' => '2023-05-09 17:30:25',
-            ),
-            13 => 
-            array (
-                'id' => 14,
-                'alternatif_id' => 7,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 17:30:25',
-                'updated_at' => '2023-05-09 17:30:25',
-            ),
-            14 => 
-            array (
-                'id' => 15,
-                'alternatif_id' => 7,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 19,
-                'created_at' => '2023-05-09 17:30:25',
-                'updated_at' => '2023-05-09 17:30:25',
-            ),
-            15 => 
-            array (
                 'id' => 26,
                 'alternatif_id' => 10,
                 'kriteria_id' => 10,
@@ -163,7 +28,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            16 => 
+            1 => 
             array (
                 'id' => 27,
                 'alternatif_id' => 10,
@@ -172,7 +37,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            17 => 
+            2 => 
             array (
                 'id' => 28,
                 'alternatif_id' => 10,
@@ -181,7 +46,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            18 => 
+            3 => 
             array (
                 'id' => 29,
                 'alternatif_id' => 10,
@@ -190,7 +55,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            19 => 
+            4 => 
             array (
                 'id' => 30,
                 'alternatif_id' => 10,
@@ -199,7 +64,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            20 => 
+            5 => 
             array (
                 'id' => 31,
                 'alternatif_id' => 11,
@@ -208,7 +73,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            21 => 
+            6 => 
             array (
                 'id' => 32,
                 'alternatif_id' => 11,
@@ -217,7 +82,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            22 => 
+            7 => 
             array (
                 'id' => 33,
                 'alternatif_id' => 11,
@@ -226,7 +91,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            23 => 
+            8 => 
             array (
                 'id' => 34,
                 'alternatif_id' => 11,
@@ -235,7 +100,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            24 => 
+            9 => 
             array (
                 'id' => 35,
                 'alternatif_id' => 11,
@@ -244,97 +109,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            25 => 
-            array (
-                'id' => 36,
-                'alternatif_id' => 12,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 4,
-                'created_at' => '2023-05-09 19:26:34',
-                'updated_at' => '2023-05-09 19:26:34',
-            ),
-            26 => 
-            array (
-                'id' => 37,
-                'alternatif_id' => 12,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 1,
-                'created_at' => '2023-05-09 19:26:34',
-                'updated_at' => '2023-05-09 19:26:34',
-            ),
-            27 => 
-            array (
-                'id' => 38,
-                'alternatif_id' => 12,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 9,
-                'created_at' => '2023-05-09 19:26:34',
-                'updated_at' => '2023-05-09 19:26:34',
-            ),
-            28 => 
-            array (
-                'id' => 39,
-                'alternatif_id' => 12,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 19:26:34',
-                'updated_at' => '2023-05-09 19:26:34',
-            ),
-            29 => 
-            array (
-                'id' => 40,
-                'alternatif_id' => 12,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 19,
-                'created_at' => '2023-05-09 19:26:34',
-                'updated_at' => '2023-05-09 19:26:34',
-            ),
-            30 => 
-            array (
-                'id' => 41,
-                'alternatif_id' => 13,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 4,
-                'created_at' => '2023-05-09 19:27:13',
-                'updated_at' => '2023-05-09 19:27:13',
-            ),
-            31 => 
-            array (
-                'id' => 42,
-                'alternatif_id' => 13,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 1,
-                'created_at' => '2023-05-09 19:27:13',
-                'updated_at' => '2023-05-09 19:27:13',
-            ),
-            32 => 
-            array (
-                'id' => 43,
-                'alternatif_id' => 13,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 9,
-                'created_at' => '2023-05-09 19:27:13',
-                'updated_at' => '2023-05-09 19:27:13',
-            ),
-            33 => 
-            array (
-                'id' => 44,
-                'alternatif_id' => 13,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 19:27:13',
-                'updated_at' => '2023-05-09 19:27:13',
-            ),
-            34 => 
-            array (
-                'id' => 45,
-                'alternatif_id' => 13,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 19,
-                'created_at' => '2023-05-09 19:27:13',
-                'updated_at' => '2023-05-09 19:27:13',
-            ),
-            35 => 
+            10 => 
             array (
                 'id' => 61,
                 'alternatif_id' => 8,
@@ -343,7 +118,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            36 => 
+            11 => 
             array (
                 'id' => 62,
                 'alternatif_id' => 8,
@@ -352,7 +127,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            37 => 
+            12 => 
             array (
                 'id' => 63,
                 'alternatif_id' => 8,
@@ -361,7 +136,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            38 => 
+            13 => 
             array (
                 'id' => 64,
                 'alternatif_id' => 8,
@@ -370,7 +145,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            39 => 
+            14 => 
             array (
                 'id' => 65,
                 'alternatif_id' => 8,
@@ -378,6 +153,231 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'kriteria_jenis_id' => 21,
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
+            ),
+            15 => 
+            array (
+                'id' => 66,
+                'alternatif_id' => 5,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 6,
+                'created_at' => '2023-05-10 00:43:58',
+                'updated_at' => '2023-05-10 00:43:58',
+            ),
+            16 => 
+            array (
+                'id' => 67,
+                'alternatif_id' => 5,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 3,
+                'created_at' => '2023-05-10 00:43:58',
+                'updated_at' => '2023-05-10 00:43:58',
+            ),
+            17 => 
+            array (
+                'id' => 68,
+                'alternatif_id' => 5,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 14,
+                'created_at' => '2023-05-10 00:43:58',
+                'updated_at' => '2023-05-10 00:43:58',
+            ),
+            18 => 
+            array (
+                'id' => 69,
+                'alternatif_id' => 5,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 18,
+                'created_at' => '2023-05-10 00:43:58',
+                'updated_at' => '2023-05-10 00:43:58',
+            ),
+            19 => 
+            array (
+                'id' => 70,
+                'alternatif_id' => 5,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 20,
+                'created_at' => '2023-05-10 00:43:58',
+                'updated_at' => '2023-05-10 00:43:58',
+            ),
+            20 => 
+            array (
+                'id' => 71,
+                'alternatif_id' => 13,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 4,
+                'created_at' => '2023-05-10 01:32:34',
+                'updated_at' => '2023-05-10 01:32:34',
+            ),
+            21 => 
+            array (
+                'id' => 72,
+                'alternatif_id' => 13,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 1,
+                'created_at' => '2023-05-10 01:32:34',
+                'updated_at' => '2023-05-10 01:32:34',
+            ),
+            22 => 
+            array (
+                'id' => 73,
+                'alternatif_id' => 13,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 13,
+                'created_at' => '2023-05-10 01:32:34',
+                'updated_at' => '2023-05-10 01:32:34',
+            ),
+            23 => 
+            array (
+                'id' => 74,
+                'alternatif_id' => 13,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-10 01:32:34',
+                'updated_at' => '2023-05-10 01:32:34',
+            ),
+            24 => 
+            array (
+                'id' => 75,
+                'alternatif_id' => 13,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-10 01:32:34',
+                'updated_at' => '2023-05-10 01:32:34',
+            ),
+            25 => 
+            array (
+                'id' => 76,
+                'alternatif_id' => 7,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 5,
+                'created_at' => '2023-05-10 01:32:42',
+                'updated_at' => '2023-05-10 01:32:42',
+            ),
+            26 => 
+            array (
+                'id' => 77,
+                'alternatif_id' => 7,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 2,
+                'created_at' => '2023-05-10 01:32:42',
+                'updated_at' => '2023-05-10 01:32:42',
+            ),
+            27 => 
+            array (
+                'id' => 78,
+                'alternatif_id' => 7,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 9,
+                'created_at' => '2023-05-10 01:32:42',
+                'updated_at' => '2023-05-10 01:32:42',
+            ),
+            28 => 
+            array (
+                'id' => 79,
+                'alternatif_id' => 7,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-10 01:32:42',
+                'updated_at' => '2023-05-10 01:32:42',
+            ),
+            29 => 
+            array (
+                'id' => 80,
+                'alternatif_id' => 7,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-10 01:32:42',
+                'updated_at' => '2023-05-10 01:32:42',
+            ),
+            30 => 
+            array (
+                'id' => 81,
+                'alternatif_id' => 6,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 4,
+                'created_at' => '2023-05-10 01:33:14',
+                'updated_at' => '2023-05-10 01:33:14',
+            ),
+            31 => 
+            array (
+                'id' => 82,
+                'alternatif_id' => 6,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 1,
+                'created_at' => '2023-05-10 01:33:14',
+                'updated_at' => '2023-05-10 01:33:14',
+            ),
+            32 => 
+            array (
+                'id' => 83,
+                'alternatif_id' => 6,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 11,
+                'created_at' => '2023-05-10 01:33:14',
+                'updated_at' => '2023-05-10 01:33:14',
+            ),
+            33 => 
+            array (
+                'id' => 84,
+                'alternatif_id' => 6,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-10 01:33:14',
+                'updated_at' => '2023-05-10 01:33:14',
+            ),
+            34 => 
+            array (
+                'id' => 85,
+                'alternatif_id' => 6,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-10 01:33:14',
+                'updated_at' => '2023-05-10 01:33:14',
+            ),
+            35 => 
+            array (
+                'id' => 86,
+                'alternatif_id' => 12,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 5,
+                'created_at' => '2023-05-10 01:33:40',
+                'updated_at' => '2023-05-10 01:33:40',
+            ),
+            36 => 
+            array (
+                'id' => 87,
+                'alternatif_id' => 12,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 2,
+                'created_at' => '2023-05-10 01:33:40',
+                'updated_at' => '2023-05-10 01:33:40',
+            ),
+            37 => 
+            array (
+                'id' => 88,
+                'alternatif_id' => 12,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 10,
+                'created_at' => '2023-05-10 01:33:40',
+                'updated_at' => '2023-05-10 01:33:40',
+            ),
+            38 => 
+            array (
+                'id' => 89,
+                'alternatif_id' => 12,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-10 01:33:40',
+                'updated_at' => '2023-05-10 01:33:40',
+            ),
+            39 => 
+            array (
+                'id' => 90,
+                'alternatif_id' => 12,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-10 01:33:40',
+                'updated_at' => '2023-05-10 01:33:40',
             ),
         ));
         

@@ -5,14 +5,56 @@
         $can_insert = auth_can(h_prefix('insert'));
         $can_update = auth_can(h_prefix('update'));
         $can_delete = auth_can(h_prefix('delete'));
+        $can_setting = auth_can(h_prefix('setting'));
     @endphp
     <div class="card mt-3">
         <div class="card-body">
+
             <div class="card-title d-md-flex flex-row justify-content-between">
                 <div>
                     <h6 class="mt-2 text-uppercase">Data {{ $page_attr['title'] }}</h6>
                 </div>
             </div>
+
+            <hr class="mt-1 mb-0" />
+            @if ($can_setting)
+                <div class="accordion accordion-flush" id="setting_list_container">
+                    <div class="accordion-item">
+                        <h6 class="accordion-header" id="setting_list">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#settingList" aria-expanded="false" aria-controls="settingList">
+                                Pengaturan
+                            </button>
+                        </h6>
+                        <div id="settingList" class="accordion-collapse collapse" aria-labelledby="setting_list"
+                            data-bs-parent="#setting_list_container">
+                            <div class="accordion-body">
+                                <form action="javascript:void(0)" class="ml-md-3 mb-md-3" id="setting_form">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" name="umumkan" id="umumkan" type="checkbox"
+                                            {{ $setting->umumkan ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="umumkan">
+                                            Umumkan
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label mb-1">Jumlah Seleksi</label>
+                                        <input type="number" min="1" id="jml_seleksi" name="jml_seleksi"
+                                            class="form-control" value="{{ $setting->jml_seleksi }}" />
+                                    </div>
+                                </form>
+                                <div style="clear: both"></div>
+                                <button type="submit" form="setting_form" class="btn btn-rounded btn-sm btn-secondary mt-2"
+                                    data-toggle="tooltip" title="Simpan perubahan">
+                                    <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             <table class="table table-striped table-hover w-100" id="tbl_main">
                 <thead>
                     <tr>

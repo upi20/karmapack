@@ -10,6 +10,43 @@ $(document).ready(function () {
     for (let i = 1; i <= jumlah_kriteria; i++) {
         renderTable(`#datatable-${i}`);
     }
+
+    $('#setting_form').submit(function (e) {
+        const load_el = $(this).parent().parent();
+        e.preventDefault();
+        var formData = new FormData(this);
+        load_el.LoadingOverlay("show");
+        $.ajax({
+            type: "POST",
+            url: `{{ route(l_prefix($hpu,'setting')) }}`,
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: (data) => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Data saved successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            },
+            error: function (data) {
+                const res = data.responseJSON ?? {};
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: res.message ?? 'Something went wrong',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            },
+            complete: function () {
+                load_el.LoadingOverlay("hide");
+            }
+        });
+    });
 });
 
 function renderNumber(number, fix = 2) {
