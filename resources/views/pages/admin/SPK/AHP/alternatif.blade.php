@@ -24,65 +24,17 @@
             <table class="table table-striped table-hover" id="tbl_main">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Kode</th>
-                        <th>Nama</th>
-                        {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody> </tbody>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
-        </div>
-    </div>
-
-    <div class="card mt-3">
-        <div class="card-body">
-            <form action="javascript:void(0)" id="BobotForm" name="BobotForm" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <select class="form-control" required="" id="kriteria_x" name="kriteria_x">
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <select class="form-control" required="" id="nilai" name="nilai">
-                                @foreach (config('ahp.nilai_option') as $k => $nilai)
-                                    <option value="{{ $k }}">{{ $k }} {{ $nilai }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <select class="form-control" required="" id="kriteria_y" name="kriteria_y">
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col pt-2">
-                        <button type="submit" class="btn btn-primary" form="BobotForm">
-                            <li class="fas fa-save mr-1"></li> Simpan Bobot
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <div class="card-title d-md-flex flex-row justify-content-between">
-                <h6 class="mt-2 text-uppercase">Bobot {{ $page_attr['title'] ?? 'Kriteria' }}</h6>
-            </div>
-            <table class="table table-hover" id="tbl_bobot"> </table>
-        </div>
-    </div>
-
-    <div class="card mt-3">
-        <div class="card-body">
-            <div class="card-title d-md-flex flex-row justify-content-between">
-                <h6 class="mt-2 text-uppercase">Normalisasi {{ $page_attr['title'] ?? 'Kriteria' }}</h6>
-            </div>
-            <table class="table table-hover" id="tbl_normalisasi"> </table>
-            <p>Consistency Index: <span id="ci"></span></p>
-            <p>Ratio Index: <span id="ri"></span></p>
-            <p>Consistency Ratio: <span id="cr"></span></p>
         </div>
     </div>
 
@@ -101,15 +53,10 @@
                         enctype="multipart/form-data">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label class="form-label mb-1" for="kode">Kode <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode"
-                                required="" />
+                            <label for="anggota_id">Pengurus</label>
+                            <select class="form-control" id="anggota_id" name="anggota_id"> </select>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label mb-1" for="nama">Nama <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama"
-                                required="" />
-                        </div>
+                        <div id="myForm"></div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -128,6 +75,8 @@
 
 @section('stylesheet')
     <link rel="stylesheet" href="{{ asset_admin('plugins/datatable/css/dataTables.bootstrap5.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2-bootstrap-5-theme.min.css') }}" />
 @endsection
 
 @section('javascript')
@@ -135,6 +84,8 @@
     <script src="{{ asset_admin('plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset_admin('plugins/loading/loadingoverlay.min.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
+    <script src="{{ asset_admin('plugins/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,

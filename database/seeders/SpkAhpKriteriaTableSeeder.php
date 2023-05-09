@@ -32,7 +32,7 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'total' => 4.5,
                 'eign_value' => 1.005,
                 'created_at' => '2023-05-08 20:04:45',
-                'updated_at' => '2023-05-09 11:42:51',
+                'updated_at' => '2023-05-09 18:13:53',
             ),
             1 => 
             array (
@@ -47,7 +47,7 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'total' => 8.0,
                 'eign_value' => 1.0533333333333,
                 'created_at' => '2023-05-08 20:05:18',
-                'updated_at' => '2023-05-09 11:42:02',
+                'updated_at' => '2023-05-09 18:13:53',
             ),
             2 => 
             array (
@@ -62,7 +62,7 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'total' => 4.5,
                 'eign_value' => 1.005,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-09 11:47:23',
+                'updated_at' => '2023-05-09 18:13:53',
             ),
             3 => 
             array (
@@ -77,7 +77,7 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'total' => 4.5,
                 'eign_value' => 1.005,
                 'created_at' => '2023-05-08 20:06:38',
-                'updated_at' => '2023-05-09 11:49:07',
+                'updated_at' => '2023-05-09 18:13:53',
             ),
             4 => 
             array (
@@ -92,7 +92,7 @@ class SpkAhpKriteriaTableSeeder extends Seeder
                 'total' => 5.0,
                 'eign_value' => 0.99166666666667,
                 'created_at' => '2023-05-08 20:06:50',
-                'updated_at' => '2023-05-09 11:50:40',
+                'updated_at' => '2023-05-09 18:13:53',
             ),
         ));
         

@@ -9167,6 +9167,1005 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'create',
                 'data' => '{"role_id":1,"menu_id":413,"updated_at":"2023-05-09T04:55:18.000000Z","created_at":"2023-05-09T04:55:18.000000Z","id":1241}',
             ),
+            16 => 
+            array (
+                'id' => 1029,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:16:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"127.0.0.1","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Safari\\/537.36 Edg\\/113.0.1774.35"}',
+            ),
+            17 => 
+            array (
+                'id' => 1030,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:17:57',
+                'table_name' => 'p_menu',
+                'log_type' => 'create',
+                'data' => '{"sequence":"55","parent_id":"413","active":"1","title":"Calon","icon":null,"route":null,"type":"1","updated_at":"2023-05-09T07:17:57.000000Z","created_at":"2023-05-09T07:17:57.000000Z","id":415}',
+            ),
+            18 => 
+            array (
+                'id' => 1031,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:17:57',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":415,"updated_at":"2023-05-09T07:17:57.000000Z","created_at":"2023-05-09T07:17:57.000000Z","id":1242}',
+            ),
+            19 => 
+            array (
+                'id' => 1032,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:10',
+                'table_name' => 'p_menu',
+                'log_type' => 'create',
+                'data' => '{"sequence":"56","parent_id":"413","active":"1","title":"Perhitungan","icon":null,"route":null,"type":"1","updated_at":"2023-05-09T07:18:10.000000Z","created_at":"2023-05-09T07:18:10.000000Z","id":416}',
+            ),
+            20 => 
+            array (
+                'id' => 1033,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:10',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":416,"updated_at":"2023-05-09T07:18:10.000000Z","created_at":"2023-05-09T07:18:10.000000Z","id":1243}',
+            ),
+            21 => 
+            array (
+                'id' => 1034,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":415,"parent_id":413,"title":"Calon","icon":null,"route":null,"sequence":55,"active":1,"type":1,"created_at":"2023-05-09 14:17:57","updated_at":"2023-05-09 14:17:57"}',
+            ),
+            22 => 
+            array (
+                'id' => 1035,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":416,"parent_id":413,"title":"Perhitungan","icon":null,"route":null,"sequence":56,"active":1,"type":1,"created_at":"2023-05-09 14:18:10","updated_at":"2023-05-09 14:18:10"}',
+            ),
+            23 => 
+            array (
+                'id' => 1036,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":414,"parent_id":413,"title":"Kriteria","icon":null,"route":"admin.spk.ahp.kriteria","sequence":55,"active":1,"type":1,"created_at":"2023-05-09 11:54:34","updated_at":"2023-05-09 11:54:34"}',
+            ),
+            24 => 
+            array (
+                'id' => 1037,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":355,"parent_id":null,"title":"Data Alamat Profil","icon":"fas fa-map-marker-alt","route":null,"sequence":27,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            25 => 
+            array (
+                'id' => 1038,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":356,"parent_id":355,"title":"Provinsi","icon":null,"route":"admin.address.province","sequence":28,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            26 => 
+            array (
+                'id' => 1039,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":357,"parent_id":355,"title":"Kabupaten\\/Kota","icon":null,"route":"admin.address.regencie","sequence":29,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            27 => 
+            array (
+                'id' => 1040,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":358,"parent_id":355,"title":"Kecamatan","icon":null,"route":"admin.address.district","sequence":30,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            28 => 
+            array (
+                'id' => 1041,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":359,"parent_id":355,"title":"Desa\\/Keluarahan","icon":null,"route":"admin.address.village","sequence":31,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            29 => 
+            array (
+                'id' => 1042,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":367,"parent_id":null,"title":"Akses Pengguna","icon":"fas fa-user-check","route":null,"sequence":32,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            30 => 
+            array (
+                'id' => 1043,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":368,"parent_id":367,"title":"Perizinan","icon":null,"route":"admin.user_access.permission","sequence":33,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            31 => 
+            array (
+                'id' => 1044,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":369,"parent_id":367,"title":"Sebagai","icon":null,"route":"admin.user_access.role","sequence":34,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            32 => 
+            array (
+                'id' => 1045,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":361,"parent_id":null,"title":"Menu Management","icon":"fas fa-stream","route":null,"sequence":35,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            33 => 
+            array (
+                'id' => 1046,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":405,"parent_id":361,"title":"Admin","icon":null,"route":"admin.menu.admin","sequence":36,"active":1,"type":1,"created_at":"2022-08-20 14:12:45","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            34 => 
+            array (
+                'id' => 1047,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":406,"parent_id":361,"title":"Depan","icon":null,"route":"admin.menu.frontend","sequence":37,"active":1,"type":1,"created_at":"2022-08-20 14:16:07","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            35 => 
+            array (
+                'id' => 1048,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":393,"parent_id":null,"title":"Utility","icon":"fas fa-tools","route":null,"sequence":38,"active":1,"type":1,"created_at":"2022-08-08 22:41:26","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            36 => 
+            array (
+                'id' => 1049,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":402,"parent_id":393,"title":"Notifikasi Admin Atas","icon":null,"route":"admin.utility.notif_admin_atas","sequence":39,"active":1,"type":1,"created_at":"2022-08-18 16:42:00","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            37 => 
+            array (
+                'id' => 1050,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":394,"parent_id":393,"title":"Notifikasi Depan Atas","icon":null,"route":"admin.utility.notif_depan_atas","sequence":40,"active":1,"type":1,"created_at":"2022-08-08 22:41:53","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            38 => 
+            array (
+                'id' => 1051,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":401,"parent_id":393,"title":"Hari Besar Nasional","icon":null,"route":"admin.utility.hari_besar_nasional","sequence":41,"active":1,"type":1,"created_at":"2022-08-17 21:19:05","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            39 => 
+            array (
+                'id' => 1052,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":397,"parent_id":null,"title":"Setting Halaman","icon":"fas fa-wrench","route":null,"sequence":42,"active":1,"type":1,"created_at":"2022-08-14 21:10:57","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            40 => 
+            array (
+                'id' => 1053,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":398,"parent_id":397,"title":"Halaman Admin","icon":null,"route":"admin.setting.admin","sequence":43,"active":1,"type":1,"created_at":"2022-08-14 21:11:42","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            41 => 
+            array (
+                'id' => 1054,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":399,"parent_id":397,"title":"Halaman Depan","icon":null,"route":"admin.setting.front","sequence":44,"active":1,"type":1,"created_at":"2022-08-14 21:52:45","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            42 => 
+            array (
+                'id' => 1055,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":400,"parent_id":397,"title":"Halaman Utama","icon":null,"route":"admin.setting.home","sequence":45,"active":1,"type":1,"created_at":"2022-08-16 14:55:41","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            43 => 
+            array (
+                'id' => 1056,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":412,"parent_id":397,"title":"Halaman Sejarah","icon":null,"route":"admin.setting.sejarah","sequence":46,"active":1,"type":1,"created_at":"2023-02-19 10:02:10","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            44 => 
+            array (
+                'id' => 1057,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":395,"parent_id":null,"title":"Daftar Kata Alumni","icon":"fas fa-user-edit","route":"admin.kata_alumni","sequence":47,"active":1,"type":1,"created_at":"2022-08-09 15:20:36","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            45 => 
+            array (
+                'id' => 1058,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":403,"parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":48,"active":0,"type":1,"created_at":"2022-08-18 18:54:07","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            46 => 
+            array (
+                'id' => 1059,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":404,"parent_id":403,"title":"Anggota","icon":null,"route":"admin.lapooran.anggota","sequence":49,"active":1,"type":1,"created_at":"2022-08-18 18:55:08","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            47 => 
+            array (
+                'id' => 1060,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":370,"parent_id":null,"title":"Anggota","icon":null,"route":null,"sequence":50,"active":1,"type":0,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            48 => 
+            array (
+                'id' => 1061,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":372,"parent_id":null,"title":"Profile","icon":"fas fa-user","route":"member.profile","sequence":51,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            49 => 
+            array (
+                'id' => 1062,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":389,"parent_id":null,"title":"Alumni Menu","icon":null,"route":null,"sequence":52,"active":1,"type":0,"created_at":"2022-08-06 14:06:05","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            50 => 
+            array (
+                'id' => 1063,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":396,"parent_id":null,"title":"Kata Alumni","icon":"fas fa-user-edit","route":"member.kata_alumni","sequence":53,"active":1,"type":1,"created_at":"2022-08-09 15:23:52","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            51 => 
+            array (
+                'id' => 1064,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":373,"parent_id":null,"title":"Ganti Password","icon":"fas fa-key","route":"member.password","sequence":54,"active":1,"type":1,"created_at":"2022-08-05 23:50:28","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            52 => 
+            array (
+                'id' => 1065,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:18:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":386,"parent_id":null,"title":"Logout","icon":"fas fa-sign-out-alt","route":"logout","sequence":55,"active":1,"type":1,"created_at":"2022-08-05 23:54:09","updated_at":"2023-05-09 11:53:18"}',
+            ),
+            53 => 
+            array (
+                'id' => 1066,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:19:10',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":416,"parent_id":413,"title":"Perhitungan","icon":null,"route":null,"sequence":28,"active":1,"type":1,"created_at":"2023-05-09 14:18:10","updated_at":"2023-05-09 14:18:58"}',
+            ),
+            54 => 
+            array (
+                'id' => 1067,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:19:10',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":415,"parent_id":413,"title":"Calon","icon":null,"route":null,"sequence":27,"active":1,"type":1,"created_at":"2023-05-09 14:17:57","updated_at":"2023-05-09 14:18:58"}',
+            ),
+            55 => 
+            array (
+                'id' => 1068,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:19:27',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":414,"parent_id":413,"title":"Kriteria","icon":null,"route":"admin.spk.ahp.kriteria","sequence":29,"active":1,"type":1,"created_at":"2023-05-09 11:54:34","updated_at":"2023-05-09 14:18:58"}',
+            ),
+            56 => 
+            array (
+                'id' => 1069,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 14:19:27',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":416,"parent_id":413,"title":"Perhitungan","icon":null,"route":null,"sequence":27,"active":1,"type":1,"created_at":"2023-05-09 14:18:10","updated_at":"2023-05-09 14:19:10"}',
+            ),
+            57 => 
+            array (
+                'id' => 1070,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 16:22:10',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":415,"parent_id":413,"title":"Calon","icon":null,"route":null,"sequence":28,"active":1,"type":1,"created_at":"2023-05-09 14:17:57","updated_at":"2023-05-09 14:19:10"}',
+            ),
+            58 => 
+            array (
+                'id' => 1071,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 16:22:10',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":415,"updated_at":"2023-05-09T09:22:10.000000Z","created_at":"2023-05-09T09:22:10.000000Z","id":1244}',
+            ),
+            59 => 
+            array (
+                'id' => 1076,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"1","updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":5}',
+            ),
+            60 => 
+            array (
+                'id' => 1077,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":5,"kriteria_id":10,"kriteria_jenis_id":6,"updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":1}',
+            ),
+            61 => 
+            array (
+                'id' => 1078,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":5,"kriteria_id":11,"kriteria_jenis_id":3,"updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":2}',
+            ),
+            62 => 
+            array (
+                'id' => 1079,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":5,"kriteria_id":12,"kriteria_jenis_id":14,"updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":3}',
+            ),
+            63 => 
+            array (
+                'id' => 1080,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":5,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":4}',
+            ),
+            64 => 
+            array (
+                'id' => 1081,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:29:46',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":5,"kriteria_id":14,"kriteria_jenis_id":20,"updated_at":"2023-05-09T10:29:46.000000Z","created_at":"2023-05-09T10:29:46.000000Z","id":5}',
+            ),
+            65 => 
+            array (
+                'id' => 1082,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"2","updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":6}',
+            ),
+            66 => 
+            array (
+                'id' => 1083,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":6,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":6}',
+            ),
+            67 => 
+            array (
+                'id' => 1084,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":6,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":7}',
+            ),
+            68 => 
+            array (
+                'id' => 1085,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":6,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":8}',
+            ),
+            69 => 
+            array (
+                'id' => 1086,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":6,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":9}',
+            ),
+            70 => 
+            array (
+                'id' => 1087,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:20',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":6,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T10:30:20.000000Z","created_at":"2023-05-09T10:30:20.000000Z","id":10}',
+            ),
+            71 => 
+            array (
+                'id' => 1088,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"3","updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":7}',
+            ),
+            72 => 
+            array (
+                'id' => 1089,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":7,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":11}',
+            ),
+            73 => 
+            array (
+                'id' => 1090,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":7,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":12}',
+            ),
+            74 => 
+            array (
+                'id' => 1091,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":7,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":13}',
+            ),
+            75 => 
+            array (
+                'id' => 1092,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":7,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":14}',
+            ),
+            76 => 
+            array (
+                'id' => 1093,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:25',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":7,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T10:30:25.000000Z","created_at":"2023-05-09T10:30:25.000000Z","id":15}',
+            ),
+            77 => 
+            array (
+                'id' => 1094,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:39',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"4","updated_at":"2023-05-09T10:30:39.000000Z","created_at":"2023-05-09T10:30:39.000000Z","id":8}',
+            ),
+            78 => 
+            array (
+                'id' => 1095,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T10:30:39.000000Z","created_at":"2023-05-09T10:30:39.000000Z","id":16}',
+            ),
+            79 => 
+            array (
+                'id' => 1096,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:40',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T10:30:39.000000Z","created_at":"2023-05-09T10:30:39.000000Z","id":17}',
+            ),
+            80 => 
+            array (
+                'id' => 1097,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:40',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T10:30:40.000000Z","created_at":"2023-05-09T10:30:40.000000Z","id":18}',
+            ),
+            81 => 
+            array (
+                'id' => 1098,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:40',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T10:30:40.000000Z","created_at":"2023-05-09T10:30:40.000000Z","id":19}',
+            ),
+            82 => 
+            array (
+                'id' => 1099,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 17:30:40',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T10:30:40.000000Z","created_at":"2023-05-09T10:30:40.000000Z","id":20}',
+            ),
+            83 => 
+            array (
+                'id' => 1100,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:00:21',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":415,"parent_id":413,"title":"Calon","icon":null,"route":"admin.spk.ahp.alternatif","sequence":28,"active":1,"type":1,"created_at":"2023-05-09 14:17:57","updated_at":"2023-05-09 16:22:10"}',
+            ),
+            84 => 
+            array (
+                'id' => 1101,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:00:21',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":415,"updated_at":"2023-05-09T11:00:21.000000Z","created_at":"2023-05-09T11:00:21.000000Z","id":1245}',
+            ),
+            85 => 
+            array (
+                'id' => 1102,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'create',
+                'data' => '{"nama":"dddd","kode":"C1d","slug":"dddd","updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":15}',
+            ),
+            86 => 
+            array (
+                'id' => 1103,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":10,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":63}',
+            ),
+            87 => 
+            array (
+                'id' => 1104,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":11,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":64}',
+            ),
+            88 => 
+            array (
+                'id' => 1105,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":12,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":65}',
+            ),
+            89 => 
+            array (
+                'id' => 1106,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":13,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":66}',
+            ),
+            90 => 
+            array (
+                'id' => 1107,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":14,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":67}',
+            ),
+            91 => 
+            array (
+                'id' => 1108,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":15,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":68}',
+            ),
+            92 => 
+            array (
+                'id' => 1109,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":10,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":69}',
+            ),
+            93 => 
+            array (
+                'id' => 1110,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":11,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":70}',
+            ),
+            94 => 
+            array (
+                'id' => 1111,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":12,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":71}',
+            ),
+            95 => 
+            array (
+                'id' => 1112,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":13,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":72}',
+            ),
+            96 => 
+            array (
+                'id' => 1113,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'create',
+                'data' => '{"kriteria_x_id":14,"kriteria_y_id":15,"nilai":1,"updated_at":"2023-05-09T11:13:41.000000Z","created_at":"2023-05-09T11:13:41.000000Z","id":73}',
+            ),
+            97 => 
+            array (
+                'id' => 1114,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":11,"nama":"Seleksi administrasi","slug":"seleksi-administrasi","kode":"C1","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.13166666666667,"total":8,"eign_value":1.0533333333333,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-09 11:42:02"}',
+            ),
+            98 => 
+            array (
+                'id' => 1115,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":15,"nama":"dddd","slug":"dddd","kode":"C1d","ci":0,"ri":0,"cr":0,"prioritas":0,"total":0,"eign_value":0,"created_at":"2023-05-09 18:13:41","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            99 => 
+            array (
+                'id' => 1116,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":10,"nama":"Seleksi Wawancara","slug":"seleksi-wawancara","kode":"C2","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:04:45","updated_at":"2023-05-09 11:42:51"}',
+            ),
+            100 => 
+            array (
+                'id' => 1117,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":12,"nama":"Pengalaman Organisasi","slug":"pengalaman-organisasi","kode":"C3","ci":0.033780862157283,"ri":1.24,"cr":0.027242630772003,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-09 11:47:23"}',
+            ),
+            101 => 
+            array (
+                'id' => 1118,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":13,"nama":"Tahun Masuk","slug":"tahun-masuk","kode":"C4","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-09 11:49:07"}',
+            ),
+            102 => 
+            array (
+                'id' => 1119,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:41',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":"wawasan-ke-organisasian","kode":"C5","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.19833333333333,"total":5,"eign_value":0.99166666666667,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-09 11:50:40"}',
+            ),
+            103 => 
+            array (
+                'id' => 1120,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'delete',
+                'data' => '{"id":15,"nama":"dddd","slug":"dddd","kode":"C1d","ci":0,"ri":0,"cr":0,"prioritas":0.16498316498316,"total":6,"eign_value":0.98989898989899,"created_at":"2023-05-09 18:13:41","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            104 => 
+            array (
+                'id' => 1121,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":11,"nama":"Seleksi administrasi","slug":"seleksi-administrasi","kode":"C1","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.11952861952862,"total":9,"eign_value":1.0757575757576,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            105 => 
+            array (
+                'id' => 1122,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":10,"nama":"Seleksi Wawancara","slug":"seleksi-wawancara","kode":"C2","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.18350168350168,"total":5.5,"eign_value":1.0092592592593,"created_at":"2023-05-08 20:04:45","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            106 => 
+            array (
+                'id' => 1123,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":12,"nama":"Pengalaman Organisasi","slug":"pengalaman-organisasi","kode":"C3","ci":0.033780862157283,"ri":1.24,"cr":0.027242630772003,"prioritas":0.18350168350168,"total":5.5,"eign_value":1.0092592592593,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            107 => 
+            array (
+                'id' => 1124,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":13,"nama":"Tahun Masuk","slug":"tahun-masuk","kode":"C4","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.18350168350168,"total":5.5,"eign_value":1.0092592592593,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            108 => 
+            array (
+                'id' => 1125,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:13:53',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":"wawasan-ke-organisasian","kode":"C5","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.16498316498316,"total":6,"eign_value":0.98989898989899,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-09 18:13:41"}',
+            ),
+            109 => 
+            array (
+                'id' => 1126,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"6","updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":9}',
+            ),
+            110 => 
+            array (
+                'id' => 1127,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":9,"kriteria_id":10,"kriteria_jenis_id":6,"updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":21}',
+            ),
+            111 => 
+            array (
+                'id' => 1128,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":9,"kriteria_id":11,"kriteria_jenis_id":2,"updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":22}',
+            ),
+            112 => 
+            array (
+                'id' => 1129,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":9,"kriteria_id":12,"kriteria_jenis_id":11,"updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":23}',
+            ),
+            113 => 
+            array (
+                'id' => 1130,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":9,"kriteria_id":13,"kriteria_jenis_id":17,"updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":24}',
+            ),
+            114 => 
+            array (
+                'id' => 1131,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:12',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":9,"kriteria_id":14,"kriteria_jenis_id":20,"updated_at":"2023-05-09T11:16:12.000000Z","created_at":"2023-05-09T11:16:12.000000Z","id":25}',
+            ),
+            115 => 
+            array (
+                'id' => 1132,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"9","updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":10}',
+            ),
+            116 => 
+            array (
+                'id' => 1133,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":10,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":26}',
+            ),
+            117 => 
+            array (
+                'id' => 1134,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":10,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":27}',
+            ),
+            118 => 
+            array (
+                'id' => 1135,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":10,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":28}',
+            ),
+            119 => 
+            array (
+                'id' => 1136,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":10,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":29}',
+            ),
+            120 => 
+            array (
+                'id' => 1137,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:16:39',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":10,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T11:16:39.000000Z","created_at":"2023-05-09T11:16:39.000000Z","id":30}',
+            ),
+            121 => 
+            array (
+                'id' => 1138,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"10","updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":11}',
+            ),
+            122 => 
+            array (
+                'id' => 1139,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":11,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":31}',
+            ),
+            123 => 
+            array (
+                'id' => 1140,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":11,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":32}',
+            ),
+            124 => 
+            array (
+                'id' => 1141,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":11,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":33}',
+            ),
+            125 => 
+            array (
+                'id' => 1142,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":11,"kriteria_id":13,"kriteria_jenis_id":18,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":34}',
+            ),
+            126 => 
+            array (
+                'id' => 1143,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 18:21:07',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":11,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":35}',
+            ),
         ));
         
         

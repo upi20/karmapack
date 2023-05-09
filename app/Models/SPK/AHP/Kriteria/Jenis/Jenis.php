@@ -32,7 +32,6 @@ class Jenis extends Model
         return $this->belongsTo(Kriteria::class, 'kriteria_id', 'id');
     }
 
-
     public function perbandingan_x()
     {
         return $this->hasMany(Perbandingan::class, 'kriteria_x_id', 'id');
