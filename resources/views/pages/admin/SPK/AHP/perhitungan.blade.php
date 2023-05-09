@@ -29,6 +29,163 @@
             </table>
         </div>
     </div>
+
+    <h4 class="mt-2">Perhitungan</h4>
+    <hr>
+    <h6 class="mt-2">Data Kriteria</h6>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="card-title d-md-flex flex-row justify-content-between">
+                        <div>
+                            <h6 class="mt-2 text-uppercase">
+                                <a href="{{ route(h_prefix('kriteria', 1)) }}">Data Kriteria Utama</a>
+                            </h6>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover w-100" id="tbl_alternatif">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kode</th>
+                                <th>Nama</th>
+                                <th>Prioritas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($kriterias as $k => $kriteria)
+                                <tr>
+                                    <td>{{ $k + 1 }}</td>
+                                    <td>{{ $kriteria->kode }}</td>
+                                    <td>{{ $kriteria->nama }}</td>
+                                    <td title="{{ $kriteria->prioritas }}">
+                                        {{ number_format($kriteria->prioritas, 4) }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        @foreach ($kriterias as $i => $kriteria)
+            <div class="col-lg-6">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="card-title d-md-flex flex-row justify-content-between">
+                            <div>
+                                <h6 class="mt-2 text-uppercase">
+                                    <a href="{{ route(h_prefix('kriteria.jenis', 1), $kriteria->slug) }}">
+                                        Kriteria {{ $kriteria->nama }}
+                                    </a>
+                                </h6>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover w-100" id="datatable-{{ $i + 1 }}">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode</th>
+                                    <th>Nama</th>
+                                    <th>Prioritas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($kriteria->jenis as $k => $jenis)
+                                    <tr>
+                                        <td>{{ $k + 1 }}</td>
+                                        <td>{{ $jenis->kode }}</td>
+                                        <td>{{ $jenis->nama }}</td>
+                                        <td title="{{ $jenis->prioritas }}">
+                                            {{ number_format($jenis->prioritas, 4) }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <h6 class="mt-2">Data Alternatif</h6>
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title d-md-flex flex-row justify-content-between">
+                <div>
+                    <h6 class="mt-2 text-uppercase">
+                        <a href="{{ route(h_prefix('alternatif', 1)) }}">Alternatif</a>
+                    </h6>
+                </div>
+            </div>
+            <table class="table table-striped table-hover w-100" id="tbl_alternatif1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h6 class="mt-2">Nilai Prioritas</h6>
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title d-md-flex flex-row justify-content-between">
+                <div>
+                    <h6 class="mt-2 text-uppercase">Data Alternatif Nilai Prioritas</h6>
+                </div>
+            </div>
+            <table class="table table-striped table-hover w-100" id="tbl_alternatif2">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h6 class="mt-2">Hasil akhir</h6>
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="card-title d-md-flex flex-row justify-content-between">
+                <div>
+                    <h6 class="mt-2 text-uppercase">Data Alternatif Nilai Prioritas * Nilai Prioritas Alternatif Utama</h6>
+                </div>
+            </div>
+            <table class="table table-striped table-hover w-100" id="tbl_alternatif3">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 @endsection
 
 @section('stylesheet')
@@ -52,6 +209,7 @@
                 'can_delete' => $can_delete ? 'true' : 'false',
                 'page_title' => $page_attr['title'],
                 'alternatif_title' => $alternatif_title['title'],
+                'jumlah_kriteria' => $kriterias->count(),
             ],
         );
     @endphp
