@@ -272,13 +272,15 @@ class Kriteria extends Model
 
         // Consistency Index
         $jml_data = count($result) - 1; // -1 header
-        $ci = ($total_ev - $jml_data) / ($jml_data - 1);
+        $jumlah_data_kurang_dari_dua = ($jml_data - 1) == 0;
+        $ci = $jumlah_data_kurang_dari_dua ? 0 : (($total_ev - $jml_data) / ($jml_data - 1));
 
         // random consistency index
-        $ri = config('ahp.rci')[$jml_data];
+        $data_tidak_ada = $jml_data == 0;
+        $ri = $data_tidak_ada ? 0 : config('ahp.rci')[$jml_data];
 
         // Consistency Ratio
-        $cr = $ci / $ri;
+        $cr = $ri == 0 ? 0 : ($ci / $ri);
 
         $total_normalisasi = [];
         $result_item_length = isset($result[0]) ? count($result[0]) : 0;
