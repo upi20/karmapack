@@ -82,6 +82,7 @@ use App\Http\Controllers\Admin\Home\TestimonialController;
 use App\Http\Controllers\Admin\SPK\AHP\AlternatifController as SPK_AHP_AlternatifController;
 use App\Http\Controllers\Admin\SPK\AHP\JenisController as SPK_AHP_JenisController;
 use App\Http\Controllers\Admin\SPK\AHP\KriteriaController as SPK_AHP_KriteriaController;
+use App\Http\Controllers\Admin\SPK\AHP\PerhitunganController as SPK_AHP_PerhitunganController;
 
 // Lainnya ============================================================================================================
 
@@ -753,6 +754,12 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
             Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
             Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
             Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        });
+
+        $prefix = 'perhitungan';
+        Route::controller(SPK_AHP_PerhitunganController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.spk.ahp.perhitungan
+            Route::get('/', 'index')->name($name)->middleware("permission:$name");
         });
     });
 });

@@ -329,18 +329,25 @@ function kriteriaRefresh() {
             let kolom = 1;
             e.forEach(i => {
                 let bg = '';
+                let text = '';
                 if (baris == kolom) bg = baris > 1 ? 'bg-primary text-white' : '';
                 if (kolom > baris) bg = baris > 1 ? 'bg-secondary text-white' : '';
                 const td = baris == 1 ? 'th' : 'td';
                 const text_center = kolom != 1 ? 'text-center' : '';
-                tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i, 3)}</${td}>`;
-                kolom++;
 
+                if (baris > 1) {
+                    text = kolom > 1 ? renderNumber(i, 3) : i.kode;
+                } else {
+                    text = kolom > 1 ? i.kode : i;
+                }
+
+                tbl_row += `<${td} class="${bg} ${text_center}">${text}</${td}>`;
+                kolom++;
             });
             if (baris == 1) {
                 table_header = `<thead><tr>${tbl_row}</tr></thead>`;
             } else {
-                table_header += `<tr>${tbl_row}</tr>`;
+                table_bdoy += `<tr>${tbl_row}</tr>`;
             }
 
             baris++;
@@ -395,20 +402,28 @@ function kriteriaNormalisasiRefresh() {
             let kolom = 1;
             e.forEach(i => {
                 let bg = '';
+                let text = '';
                 const is_data_body = kolom <= datas.jml_data + 1;
                 const is_data_prioritas = kolom == datas.jml_data + 3;
                 if (baris == kolom && is_data_body) bg = baris > 1 ? 'bg-primary text-white' : '';
                 if ((kolom > baris && is_data_body) || is_data_prioritas) bg = baris > 1 ? 'bg-secondary text-white' : '';
                 const td = baris == 1 ? 'th' : 'td';
                 const text_center = kolom != 1 ? 'text-center' : '';
-                tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i, 3)}</${td}>`;
+
+                if (baris > 1) {
+                    text = kolom > 1 ? renderNumber(i, 3) : i.kode;
+                } else {
+                    text = kolom > 1 && kolom < datas.jml_data + 2 ? i.kode : i;
+                }
+
+                tbl_row += `<${td} class="${bg} ${text_center}">${text}</${td}>`;
                 kolom++;
 
             });
             if (baris == 1) {
                 table_header = `<thead><tr>${tbl_row}</tr></thead>`;
             } else {
-                table_header += `<tr>${tbl_row}</tr>`;
+                table_bdoy += `<tr>${tbl_row}</tr>`;
             }
 
             baris++;

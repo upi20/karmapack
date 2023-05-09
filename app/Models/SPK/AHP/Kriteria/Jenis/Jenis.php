@@ -155,12 +155,17 @@ class Jenis extends Model
 
         $header = ['Kode'];
 
-        $body = [];
         foreach ($results as $x) {
-            $header[] = $x->kode;
+            $header[] = [
+                'nama' => $x->nama,
+                'kode' => $x->kode,
+            ];
             $body_item = [];
 
-            $body_item[] = $x->kode;
+            $body_item[] = [
+                'nama' => $x->nama,
+                'kode' => $x->kode,
+            ];
             foreach ($results as $y) {
                 $res = $findPerbandingan($x->id, $y->id);;
                 $body_item[] = $res;
