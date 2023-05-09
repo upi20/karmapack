@@ -10454,6 +10454,114 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'create',
                 'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":21,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":65}',
             ),
+            159 => 
+            array (
+                'id' => 1176,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:25:09',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'delete',
+                'data' => '{"id":9,"anggota_id":6,"created_at":"2023-05-09 18:16:12","updated_at":"2023-05-09 18:16:12"}',
+            ),
+            160 => 
+            array (
+                'id' => 1177,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:29:49',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":416,"parent_id":413,"title":"Perhitungan","icon":null,"route":null,"sequence":29,"active":1,"type":1,"created_at":"2023-05-09 14:18:10","updated_at":"2023-05-09 14:19:27"}',
+            ),
+            161 => 
+            array (
+                'id' => 1178,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:29:49',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":416,"updated_at":"2023-05-09T13:29:49.000000Z","created_at":"2023-05-09T13:29:49.000000Z","id":1246}',
+            ),
+            162 => 
+            array (
+                'id' => 1179,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:56:34',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":416,"parent_id":413,"title":"Hasil","icon":null,"route":null,"sequence":29,"active":1,"type":1,"created_at":"2023-05-09 14:18:10","updated_at":"2023-05-09 20:29:49"}',
+            ),
+            163 => 
+            array (
+                'id' => 1180,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:56:34',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":416,"updated_at":"2023-05-09T13:56:34.000000Z","created_at":"2023-05-09T13:56:34.000000Z","id":1247}',
+            ),
+            164 => 
+            array (
+                'id' => 1181,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":42,"nilai":1,"kriteria_x_id":12,"kriteria_y_id":10,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-08 20:06:22"}',
+            ),
+            165 => 
+            array (
+                'id' => 1182,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria_perbandingan',
+                'log_type' => 'edit',
+                'data' => '{"id":45,"nilai":1,"kriteria_x_id":10,"kriteria_y_id":12,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-08 20:06:22"}',
+            ),
+            166 => 
+            array (
+                'id' => 1183,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":11,"nama":"Seleksi administrasi","slug":"seleksi-administrasi","kode":"C1","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.13166666666667,"total":8,"eign_value":1.0533333333333,"created_at":"2023-05-08 20:05:18","updated_at":"2023-05-09 18:13:53"}',
+            ),
+            167 => 
+            array (
+                'id' => 1184,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":10,"nama":"Seleksi Wawancara","slug":"seleksi-wawancara","kode":"C2","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:04:45","updated_at":"2023-05-09 18:13:53"}',
+            ),
+            168 => 
+            array (
+                'id' => 1185,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":12,"nama":"Pengalaman Organisasi","slug":"pengalaman-organisasi","kode":"C3","ci":0.033780862157283,"ri":1.24,"cr":0.027242630772003,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:06:22","updated_at":"2023-05-09 18:13:53"}',
+            ),
+            169 => 
+            array (
+                'id' => 1186,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":13,"nama":"Tahun Masuk","slug":"tahun-masuk","kode":"C4","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.22333333333333,"total":4.5,"eign_value":1.005,"created_at":"2023-05-08 20:06:38","updated_at":"2023-05-09 18:13:53"}',
+            ),
+            170 => 
+            array (
+                'id' => 1187,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 23:34:57',
+                'table_name' => 'spk_ahp_kriteria',
+                'log_type' => 'edit',
+                'data' => '{"id":14,"nama":"Wawasan Ke organisasian","slug":"wawasan-ke-organisasian","kode":"C5","ci":0.0055916305916288,"ri":0.58,"cr":0.00964074239936,"prioritas":0.19833333333333,"total":5,"eign_value":0.99166666666667,"created_at":"2023-05-08 20:06:50","updated_at":"2023-05-09 18:13:53"}',
+            ),
         ));
         
         

@@ -58,11 +58,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 42,
-                'nilai' => 1.0,
+                'nilai' => 4.0,
                 'kriteria_x_id' => 12,
                 'kriteria_y_id' => 10,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-08 20:06:22',
+                'updated_at' => '2023-05-09 23:34:57',
             ),
             5 => 
             array (
@@ -85,11 +85,11 @@ class SpkAhpKriteriaPerbandinganTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 45,
-                'nilai' => 1.0,
+                'nilai' => 0.25,
                 'kriteria_x_id' => 10,
                 'kriteria_y_id' => 12,
                 'created_at' => '2023-05-08 20:06:22',
-                'updated_at' => '2023-05-08 20:06:22',
+                'updated_at' => '2023-05-09 23:34:57',
             ),
             8 => 
             array (

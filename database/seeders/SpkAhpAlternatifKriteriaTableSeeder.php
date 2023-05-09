@@ -156,51 +156,6 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 21,
-                'alternatif_id' => 9,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 6,
-                'created_at' => '2023-05-09 18:16:12',
-                'updated_at' => '2023-05-09 18:16:12',
-            ),
-            16 => 
-            array (
-                'id' => 22,
-                'alternatif_id' => 9,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 2,
-                'created_at' => '2023-05-09 18:16:12',
-                'updated_at' => '2023-05-09 18:16:12',
-            ),
-            17 => 
-            array (
-                'id' => 23,
-                'alternatif_id' => 9,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 11,
-                'created_at' => '2023-05-09 18:16:12',
-                'updated_at' => '2023-05-09 18:16:12',
-            ),
-            18 => 
-            array (
-                'id' => 24,
-                'alternatif_id' => 9,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 17,
-                'created_at' => '2023-05-09 18:16:12',
-                'updated_at' => '2023-05-09 18:16:12',
-            ),
-            19 => 
-            array (
-                'id' => 25,
-                'alternatif_id' => 9,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 20,
-                'created_at' => '2023-05-09 18:16:12',
-                'updated_at' => '2023-05-09 18:16:12',
-            ),
-            20 => 
-            array (
                 'id' => 26,
                 'alternatif_id' => 10,
                 'kriteria_id' => 10,
@@ -208,7 +163,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            21 => 
+            16 => 
             array (
                 'id' => 27,
                 'alternatif_id' => 10,
@@ -217,7 +172,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            22 => 
+            17 => 
             array (
                 'id' => 28,
                 'alternatif_id' => 10,
@@ -226,7 +181,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            23 => 
+            18 => 
             array (
                 'id' => 29,
                 'alternatif_id' => 10,
@@ -235,7 +190,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            24 => 
+            19 => 
             array (
                 'id' => 30,
                 'alternatif_id' => 10,
@@ -244,7 +199,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            25 => 
+            20 => 
             array (
                 'id' => 31,
                 'alternatif_id' => 11,
@@ -253,7 +208,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            26 => 
+            21 => 
             array (
                 'id' => 32,
                 'alternatif_id' => 11,
@@ -262,7 +217,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            27 => 
+            22 => 
             array (
                 'id' => 33,
                 'alternatif_id' => 11,
@@ -271,7 +226,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            28 => 
+            23 => 
             array (
                 'id' => 34,
                 'alternatif_id' => 11,
@@ -280,7 +235,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            29 => 
+            24 => 
             array (
                 'id' => 35,
                 'alternatif_id' => 11,
@@ -289,7 +244,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            30 => 
+            25 => 
             array (
                 'id' => 36,
                 'alternatif_id' => 12,
@@ -298,7 +253,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:26:34',
                 'updated_at' => '2023-05-09 19:26:34',
             ),
-            31 => 
+            26 => 
             array (
                 'id' => 37,
                 'alternatif_id' => 12,
@@ -307,7 +262,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:26:34',
                 'updated_at' => '2023-05-09 19:26:34',
             ),
-            32 => 
+            27 => 
             array (
                 'id' => 38,
                 'alternatif_id' => 12,
@@ -316,7 +271,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:26:34',
                 'updated_at' => '2023-05-09 19:26:34',
             ),
-            33 => 
+            28 => 
             array (
                 'id' => 39,
                 'alternatif_id' => 12,
@@ -325,7 +280,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:26:34',
                 'updated_at' => '2023-05-09 19:26:34',
             ),
-            34 => 
+            29 => 
             array (
                 'id' => 40,
                 'alternatif_id' => 12,
@@ -334,7 +289,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:26:34',
                 'updated_at' => '2023-05-09 19:26:34',
             ),
-            35 => 
+            30 => 
             array (
                 'id' => 41,
                 'alternatif_id' => 13,
@@ -343,7 +298,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:27:13',
                 'updated_at' => '2023-05-09 19:27:13',
             ),
-            36 => 
+            31 => 
             array (
                 'id' => 42,
                 'alternatif_id' => 13,
@@ -352,7 +307,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:27:13',
                 'updated_at' => '2023-05-09 19:27:13',
             ),
-            37 => 
+            32 => 
             array (
                 'id' => 43,
                 'alternatif_id' => 13,
@@ -361,7 +316,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:27:13',
                 'updated_at' => '2023-05-09 19:27:13',
             ),
-            38 => 
+            33 => 
             array (
                 'id' => 44,
                 'alternatif_id' => 13,
@@ -370,7 +325,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:27:13',
                 'updated_at' => '2023-05-09 19:27:13',
             ),
-            39 => 
+            34 => 
             array (
                 'id' => 45,
                 'alternatif_id' => 13,
@@ -379,7 +334,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 19:27:13',
                 'updated_at' => '2023-05-09 19:27:13',
             ),
-            40 => 
+            35 => 
             array (
                 'id' => 61,
                 'alternatif_id' => 8,
@@ -388,7 +343,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            41 => 
+            36 => 
             array (
                 'id' => 62,
                 'alternatif_id' => 8,
@@ -397,7 +352,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            42 => 
+            37 => 
             array (
                 'id' => 63,
                 'alternatif_id' => 8,
@@ -406,7 +361,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            43 => 
+            38 => 
             array (
                 'id' => 64,
                 'alternatif_id' => 8,
@@ -415,7 +370,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 20:17:04',
                 'updated_at' => '2023-05-09 20:17:04',
             ),
-            44 => 
+            39 => 
             array (
                 'id' => 65,
                 'alternatif_id' => 8,

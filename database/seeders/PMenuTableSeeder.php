@@ -764,14 +764,14 @@ class PMenuTableSeeder extends Seeder
             array (
                 'id' => 416,
                 'parent_id' => 413,
-                'title' => 'Perhitungan',
+                'title' => 'Hasil',
                 'icon' => NULL,
-                'route' => NULL,
+                'route' => 'admin.spk.ahp.perhitungan',
                 'sequence' => 29,
                 'active' => 1,
                 'type' => 1,
                 'created_at' => '2023-05-09 14:18:10',
-                'updated_at' => '2023-05-09 14:19:27',
+                'updated_at' => '2023-05-09 20:56:34',
             ),
         ));
         
