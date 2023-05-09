@@ -389,6 +389,11 @@
 
     <script>
         $(document).ready(() => {
+            const umumkan = "{{ $setting->umumkan ? 'true' : 'false' }}" === "true";
+            if (umumkan) {
+                renderTable('#tbl_seleksi', 3);
+            }
+
             @for ($i = 1; $i <= $jml_table; $i++)
                 const table_html_{{ $i }} = $('#table{{ $i }}');
                 const table_{{ $i }} = table_html_{{ $i }}.DataTable({
@@ -403,9 +408,33 @@
                     },
                 });
             @endfor
-
-
         })
+
+        function renderTable(element_table, order = 1) {
+            const tableUser = $(element_table).DataTable({
+                columnDefs: [{
+                    orderable: false,
+                    targets: [0]
+                }],
+                scrollX: true,
+                aAutoWidth: true,
+                bAutoWidth: true,
+                order: [
+                    [order, 'asc']
+                ],
+                language: {
+                    url: datatable_indonesia_language_url
+                }
+            });
+            tableUser.on('draw.dt', function() {
+                var PageInfo = $(element_table).DataTable().page.info();
+                tableUser.column(0, {
+                    page: 'current'
+                }).nodes().each(function(cell, i) {
+                    cell.innerHTML = i + 1 + PageInfo.start;
+                });
+            });
+        }
     </script>
     @if ($using_chart > 0)
         <script>
