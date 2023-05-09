@@ -303,7 +303,7 @@ function kriteriaRefresh() {
                 if (kolom > baris) bg = baris > 1 ? 'bg-secondary text-white' : '';
                 const td = baris == 1 ? 'th' : 'td';
                 const text_center = kolom != 1 ? 'text-center' : '';
-                tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i)}</${td}>`;
+                tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i, 3)}</${td}>`;
                 kolom++;
 
             });
@@ -319,7 +319,7 @@ function kriteriaRefresh() {
         let total_html = '';
         datas.total.forEach((e, i) => {
             const text_center = i != 0 ? 'text-center' : '';
-            total_html += `<td class="${renderNumber(text_center)} fw-bold">${e}</td>`;
+            total_html += `<td class="${text_center} fw-bold">${renderNumber(e, 3)}</td>`;
         })
 
         const result = `${table_header}<tbody>${table_bdoy}</tbody><tfooter><tr>${total_html}</tr></tfooter>`;
@@ -425,9 +425,9 @@ function kriteriaNormalisasiRefresh() {
         // total
 
         // render data lain
-        $('#ci').html(datas.ci);
+        $('#ci').html(renderNumber(datas.ci, 3));
         $('#ri').html(datas.ri);
-        $('#cr').html(`${datas.cr} ${datas.cr < 0.1 ? '(KONSISTEN)' : '(TIDAK KONSISTEN)'}`);
+        $('#cr').html(`${renderNumber(datas.cr, 3)} ${datas.cr < 0.1 ? '(KONSISTEN)' : '(TIDAK KONSISTEN)'}`);
         $('#cr').attr('class', datas.cr < 0.1 ? 'text-success' : 'text-danger')
 
         return result;
