@@ -760,6 +760,7 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
         Route::controller(SPK_AHP_PerhitunganController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
             $name = "$name.$prefix"; // admin.spk.ahp.perhitungan
             Route::get('/', 'index')->name($name)->middleware("permission:$name");
+            Route::get('/hasil', 'hasil')->name("$name.hasil")->middleware("permission:$name");
         });
     });
 });

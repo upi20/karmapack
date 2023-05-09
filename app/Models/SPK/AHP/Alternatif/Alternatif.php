@@ -103,4 +103,58 @@ class Alternatif extends Model
             'options' => $options
         ];
     }
+
+    public static function hasil()
+    {
+        $alternatifs = static::with(['anggota', 'kriterias.kriteria', 'kriterias.kriteria_jenis'])->get();
+        $kriterias = Kriteria::orderBy('kode')->get(); // kriteria jenis
+        $alternatifs = $alternatifs->map(function ($alternatif) use ($kriterias) {
+            $old_kriteria = $alternatif->kriterias;
+
+            $cari_kriteria = function ($jenis_id) use ($old_kriteria) {
+                foreach ($old_kriteria as $kriteria) {
+                    if ($kriteria->kriteria_id == $jenis_id) {
+                        return $kriteria;
+                    }
+                }
+                return null;
+            };
+
+
+            $new_kriterias = [];
+            $total_prioritas = 0;
+            foreach ($kriterias as $k) {
+                $kriteria = $cari_kriteria($k->id);
+                if ($kriteria) { // cek kriteria jika tidak ada maka null
+                    $kriteria_prioritas = $kriteria->kriteria->prioritas; // yang dimiliki alternatif
+                    $kriteria_jenis_prioritas = $kriteria->kriteria_jenis->prioritas; // yang dimilki kiterianya (parent)
+
+                    $jml = ($kriteria_prioritas * $kriteria_jenis_prioritas);
+                    $total_prioritas += $jml;
+
+                    $kriteria->jumlah = $jml;
+                }
+                // supaya dapat jumlah per kriteria
+                $new_kriterias[] = $kriteria;
+            }
+
+            // ganti menjadi kriteria yang baru
+            unset($alternatif->kriterias);
+            $alternatif->kriterias = $new_kriterias;
+
+            // tambahkan total
+            $alternatif->total_prioritas = $total_prioritas;
+            return $alternatif;
+        });
+        $sort = $alternatifs->sortByDesc('total_prioritas')->values()->all();
+        $results = [];
+        foreach ($sort as $k => $s) {
+            $s['rank'] = $k + 1;
+            $results[] = $s;
+        }
+        return [
+            'header' => $kriterias,
+            'body' => $results
+        ];
+    }
 }

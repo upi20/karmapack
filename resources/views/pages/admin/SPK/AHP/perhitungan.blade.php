@@ -12,16 +12,8 @@
                 <div>
                     <h6 class="mt-2 text-uppercase">Data {{ $page_attr['title'] }}</h6>
                 </div>
-                @if ($can_insert)
-                    <div>
-                        <button type="button" class="btn btn-rounded btn-primary btn-sm" data-bs-effect="effect-scale"
-                            data-bs-toggle="modal" href="#modal-default" onclick="addFunc()" data-target="#modal-default">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    </div>
-                @endif
             </div>
-            <table class="table table-striped table-hover" id="tbl_main">
+            <table class="table table-striped table-hover w-100" id="tbl_main">
                 <thead>
                     <tr>
                         <th></th>
@@ -35,40 +27,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-
-    <!-- End Row -->
-    <div class="modal fade" id="modal-default">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-content-demo">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="modal-default-title"></h6>
-                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
-                        <span aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="javascript:void(0)" id="MainForm" name="MainForm" method="POST"
-                        enctype="multipart/form-data">
-                        <input type="hidden" name="id" id="id">
-                        <div class="form-group">
-                            <label for="anggota_id">Pengurus</label>
-                            <select class="form-control" id="anggota_id" name="anggota_id"> </select>
-                        </div>
-                        <div id="myForm"></div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" id="btn-save" form="MainForm">
-                        <li class="fas fa-save mr-1"></li> Simpan
-                    </button>
-                    <button class="btn btn-light" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                        Tutup
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 @endsection
@@ -93,6 +51,7 @@
                 'can_update' => $can_update ? 'true' : 'false',
                 'can_delete' => $can_delete ? 'true' : 'false',
                 'page_title' => $page_attr['title'],
+                'alternatif_title' => $alternatif_title['title'],
             ],
         );
     @endphp
