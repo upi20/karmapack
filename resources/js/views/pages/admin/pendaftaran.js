@@ -47,7 +47,7 @@ $(document).ready(function () {
         searchDelay: 500,
         processing: true,
         serverSide: true,
-        responsive: true,
+        // responsive: true,
         scrollX: true,
         aAutoWidth: false,
         bAutoWidth: false,

@@ -59,6 +59,49 @@
         </div>
     </div>
 
+    @if ($setting->umumkan)
+        <hr>
+        <h5 class="page-title">Pengumuman seleksi calon ketua umum</h5>
+        <p>Keterangan:
+            <i class="fas fa-square text-success"></i> Lulus
+            <i class="fas fa-square text-danger"></i> Gagal
+        </p>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-md-flex flex-row justify-content-between">
+                    <div>
+                        <h6 class="mt-2 text-uppercase">Hasil seleksi</h6>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover w-100" id="tbl_seleksi">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Pengurus</th>
+                            <th>Nilai</th>
+                            <th>Peringkat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($spk_ahp_hasil['body'] as $k => $hasil)
+                            <tr>
+                                <td>{{ $k + 1 }}</td>
+                                <td>{{ $hasil->anggota->angkatan }} | {{ $hasil->anggota->nama }}</td>
+                                <td title="{{ $hasil->total_prioritas }}">
+                                    {{ number_format($hasil->total_prioritas * 100, 4) }}
+                                </td>
+                                @php
+                                    $status = $k + 1 > $setting->jml_seleksi ? 'bg-danger' : 'bg-success';
+                                @endphp
+                                <td class="{{ $status }} text-white">{{ $hasil->rank }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endif
+
     <hr>
     <h5 class="page-title">Statistik Anggota</h5>
     <div class="row">

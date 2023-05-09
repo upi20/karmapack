@@ -8,11 +8,14 @@ use App\Models\Address\Village;
 use App\Models\Keanggotaan\Anggota;
 use App\Models\Keanggotaan\Pendidikan;
 use App\Models\Keanggotaan\PendidikanJenis;
+use App\Models\SPK\AHP\Alternatif\Alternatif;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+    private $spk_ahp_key = 'setting.spk.ahp';
+
     public function index(Request $request)
     {
         $anggota_by_angkatan = $this->anggota_by_angkatan();
@@ -22,6 +25,16 @@ class DashboardController extends Controller
 
         $total_anggota = Anggota::count();
         $page_attr = adminBreadcumb(h_prefix(), addDashboard: false);
+
+        $spk_ahp_hasil = [];
+        $setting = (object)[
+            'umumkan' => setting_get("$this->spk_ahp_key.umumkan"),
+            'jml_seleksi' => setting_get("$this->spk_ahp_key.jml_seleksi"),
+        ];
+        if ($setting->umumkan) {
+            $spk_ahp_hasil = Alternatif::hasil();
+        }
+
         return view('pages.admin.member.dashboard', compact(
             'total_anggota',
             'page_attr',
@@ -29,6 +42,8 @@ class DashboardController extends Controller
             'anggota_by_address',
             'anggota_by_jk',
             'anggota_by_riwayat_pendidikan',
+            'setting',
+            'spk_ahp_hasil',
         ));
     }
 

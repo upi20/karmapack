@@ -221,9 +221,14 @@ if (!function_exists('adminBreadcumb')) {
 
         // digunakan jika ingin custom title makan menu utama nya di masukin ke breadcumb
         if ($isChild) {
+            if (isset($routeData->route)) {
+                $url = Route::has($routeData->route) ? $routeData->route : null;
+            } else {
+                $url = null;
+            }
             $breadcrumbs[] =  [
-                'name' => $routeData->title,
-                'url' => Route::has($routeData->route) ? $routeData->route : null
+                'name' => isset($routeData->title) ? $routeData->title : null,
+                'url' => $url
             ];
         }
 

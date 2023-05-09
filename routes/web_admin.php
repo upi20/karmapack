@@ -78,6 +78,12 @@ use App\Http\Controllers\Admin\Home\PengurusController;
 use App\Http\Controllers\Admin\Home\ProgramPembelajaranController;
 use App\Http\Controllers\Admin\Home\TestimonialController;
 
+// SPK ================================================================================================================
+use App\Http\Controllers\Admin\SPK\AHP\AlternatifController as SPK_AHP_AlternatifController;
+use App\Http\Controllers\Admin\SPK\AHP\JenisController as SPK_AHP_JenisController;
+use App\Http\Controllers\Admin\SPK\AHP\KriteriaController as SPK_AHP_KriteriaController;
+use App\Http\Controllers\Admin\SPK\AHP\PerhitunganController as SPK_AHP_PerhitunganController;
+
 // Lainnya ============================================================================================================
 
 $name = 'admin';
@@ -686,4 +692,76 @@ Route::controller(UserController::class)->prefix($prefix)->group(function () use
     $name = "$name.$prefix"; // admin.password
     Route::get('/', 'change_password')->name($name)->middleware("permission:$name");
     Route::post('/save', 'save_password')->name("$name.save")->middleware("permission:$name.save");
+});
+
+$prefix = 'spk';
+Route::prefix($prefix)->group(function () use ($name, $prefix) {
+    $name = "$name.$prefix"; // admin.spk
+
+    $prefix = 'ahp';
+    Route::prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.spk.ahp
+
+        $prefix = 'kriteria';
+        Route::controller(SPK_AHP_KriteriaController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.spk.ahp.kriteria
+            Route::get('/', 'index')->name($name)->middleware("permission:$name");
+            Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+            Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
+            Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+            Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+
+            $prefix = 'bobot';
+            Route::prefix($prefix)->group(function () use ($name, $prefix) {
+                $name = "$name.$prefix"; // admin.spk.ahp.bobot
+                Route::get('/', 'bobot_all')->name($name)->middleware("permission:$name");
+                Route::get('/matrix', 'bobot_matrix')->name("$name.matrix")->middleware("permission:$name");
+                Route::get('/normalisasi', 'bobot_normalisasi')->name("$name.normalisasi")->middleware("permission:$name");
+                Route::post('/update', 'bobot_update')->name("$name.update")->middleware("permission:$name");
+            });
+
+            $prefix = 'jenis';
+            Route::controller(SPK_AHP_JenisController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+                $name = "$name.$prefix"; // admin.spk.ahp.kriteria.jenis
+                Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+                Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
+                Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+
+                $prefix = 'bobot';
+                Route::prefix($prefix)->group(function () use ($name, $prefix) {
+                    $name = "$name.$prefix"; // admin.spk.ahp.kriteria.jenis.bobot
+                    Route::get('/', 'bobot_all')->name($name)->middleware("permission:$name");
+                    Route::get('/matrix', 'bobot_matrix')->name("$name.matrix")->middleware("permission:$name");
+                    Route::get('/normalisasi', 'bobot_normalisasi')->name("$name.normalisasi")->middleware("permission:$name");
+                    Route::post('/update', 'bobot_update')->name("$name.update")->middleware("permission:$name");
+                });
+
+                Route::get('/{kriteria:slug}', 'index')->name($name)->middleware("permission:$name");
+                Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+            });
+        });
+
+        $prefix = 'alternatif';
+        Route::controller(SPK_AHP_AlternatifController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.spk.ahp.alternatif
+            Route::get('/', 'index')->name($name)->middleware("permission:$name");
+            Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+
+            Route::get('/table', 'table')->name("$name.table")->middleware("permission:$name");
+            Route::get('/option', 'option')->name("$name.option")->middleware("permission:$name");
+            Route::get('/select2', 'select2')->name("$name.select2")->middleware("permission:$name");
+
+            Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name");
+            Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+            Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
+        });
+
+        $prefix = 'perhitungan';
+        Route::controller(SPK_AHP_PerhitunganController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+            $name = "$name.$prefix"; // admin.spk.ahp.perhitungan
+            Route::get('/', 'index')->name($name)->middleware("permission:$name");
+            Route::get('/hasil', 'hasil')->name("$name.hasil")->middleware("permission:$name");
+            Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
+        });
+    });
 });

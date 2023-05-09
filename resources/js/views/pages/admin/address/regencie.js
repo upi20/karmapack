@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
     const new_table = table_html.DataTable({
         searchDelay: 500,
-        processing: true,
+        // processing: true,
         serverSide: true,
         // responsive: true,
         scrollX: true,

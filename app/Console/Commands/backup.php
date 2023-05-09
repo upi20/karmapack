@@ -33,6 +33,12 @@ use App\Models\RoleHasMenu;
 use App\Models\Setting\HomeSlider;
 use App\Models\SocialAccount;
 use App\Models\SocialMedia;
+use App\Models\SPK\AHP\Kriteria\Kriteria as SPK_AHP_Kriteria;
+use App\Models\SPK\AHP\Kriteria\Perbandingan as SPK_AHP_KriteriaPerbandingan;
+use App\Models\SPK\AHP\Kriteria\Jenis\Jenis as SPK_AHP_KriteriaJenis;
+use App\Models\SPK\AHP\Kriteria\Jenis\Perbandingan as SPK_AHP_KriteriaJenisPerbandingan;
+use App\Models\SPK\AHP\Alternatif\Alternatif as SPK_AHP_Alternatif;
+use App\Models\SPK\AHP\Alternatif\Kriteria as SPK_AHP_AlternatifKriteria;
 use App\Models\Tracker;
 use App\Models\Utility\HariBesarNasional;
 use App\Models\Utility\NotifAdminAtas;
@@ -153,6 +159,14 @@ class backup extends Command
                 Periode::tableName,
                 Jabatan::tableName,
                 KepengurusanAnggota::tableName,
+            ],
+            'spk_ahp' => [
+                SPK_AHP_Kriteria::tableName,
+                SPK_AHP_KriteriaPerbandingan::tableName,
+                SPK_AHP_KriteriaJenis::tableName,
+                SPK_AHP_KriteriaJenisPerbandingan::tableName,
+                SPK_AHP_Alternatif::tableName,
+                SPK_AHP_AlternatifKriteria::tableName,
             ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');
