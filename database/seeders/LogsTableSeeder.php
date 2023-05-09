@@ -10166,6 +10166,294 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'create',
                 'data' => '{"alternatif_id":11,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T11:21:07.000000Z","created_at":"2023-05-09T11:21:07.000000Z","id":35}',
             ),
+            127 => 
+            array (
+                'id' => 1144,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"38","updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":12}',
+            ),
+            128 => 
+            array (
+                'id' => 1145,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":12,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":36}',
+            ),
+            129 => 
+            array (
+                'id' => 1146,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":12,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":37}',
+            ),
+            130 => 
+            array (
+                'id' => 1147,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":12,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":38}',
+            ),
+            131 => 
+            array (
+                'id' => 1148,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":12,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":39}',
+            ),
+            132 => 
+            array (
+                'id' => 1149,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:26:34',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":12,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T12:26:34.000000Z","created_at":"2023-05-09T12:26:34.000000Z","id":40}',
+            ),
+            133 => 
+            array (
+                'id' => 1150,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"183","updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":13}',
+            ),
+            134 => 
+            array (
+                'id' => 1151,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":13,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":41}',
+            ),
+            135 => 
+            array (
+                'id' => 1152,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":13,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":42}',
+            ),
+            136 => 
+            array (
+                'id' => 1153,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":13,"kriteria_id":12,"kriteria_jenis_id":9,"updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":43}',
+            ),
+            137 => 
+            array (
+                'id' => 1154,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":13,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":44}',
+            ),
+            138 => 
+            array (
+                'id' => 1155,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 19:27:13',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":13,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T12:27:13.000000Z","created_at":"2023-05-09T12:27:13.000000Z","id":45}',
+            ),
+            139 => 
+            array (
+                'id' => 1156,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:15:49',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":10,"kriteria_jenis_id":4,"updated_at":"2023-05-09T13:15:49.000000Z","created_at":"2023-05-09T13:15:49.000000Z","id":46}',
+            ),
+            140 => 
+            array (
+                'id' => 1157,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:15:49',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":11,"kriteria_jenis_id":1,"updated_at":"2023-05-09T13:15:49.000000Z","created_at":"2023-05-09T13:15:49.000000Z","id":47}',
+            ),
+            141 => 
+            array (
+                'id' => 1158,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:15:49',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":12,"kriteria_jenis_id":14,"updated_at":"2023-05-09T13:15:49.000000Z","created_at":"2023-05-09T13:15:49.000000Z","id":48}',
+            ),
+            142 => 
+            array (
+                'id' => 1159,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:15:49',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":13,"kriteria_jenis_id":16,"updated_at":"2023-05-09T13:15:49.000000Z","created_at":"2023-05-09T13:15:49.000000Z","id":49}',
+            ),
+            143 => 
+            array (
+                'id' => 1160,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:15:49',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":19,"updated_at":"2023-05-09T13:15:49.000000Z","created_at":"2023-05-09T13:15:49.000000Z","id":50}',
+            ),
+            144 => 
+            array (
+                'id' => 1161,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:19',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":10,"kriteria_jenis_id":6,"updated_at":"2023-05-09T13:16:19.000000Z","created_at":"2023-05-09T13:16:19.000000Z","id":51}',
+            ),
+            145 => 
+            array (
+                'id' => 1162,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:19',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":11,"kriteria_jenis_id":3,"updated_at":"2023-05-09T13:16:19.000000Z","created_at":"2023-05-09T13:16:19.000000Z","id":52}',
+            ),
+            146 => 
+            array (
+                'id' => 1163,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:19',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":12,"kriteria_jenis_id":14,"updated_at":"2023-05-09T13:16:19.000000Z","created_at":"2023-05-09T13:16:19.000000Z","id":53}',
+            ),
+            147 => 
+            array (
+                'id' => 1164,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:19',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":13,"kriteria_jenis_id":18,"updated_at":"2023-05-09T13:16:19.000000Z","created_at":"2023-05-09T13:16:19.000000Z","id":54}',
+            ),
+            148 => 
+            array (
+                'id' => 1165,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:19',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":21,"updated_at":"2023-05-09T13:16:19.000000Z","created_at":"2023-05-09T13:16:19.000000Z","id":55}',
+            ),
+            149 => 
+            array (
+                'id' => 1166,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:51',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":10,"kriteria_jenis_id":6,"updated_at":"2023-05-09T13:16:51.000000Z","created_at":"2023-05-09T13:16:51.000000Z","id":56}',
+            ),
+            150 => 
+            array (
+                'id' => 1167,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:51',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":11,"kriteria_jenis_id":3,"updated_at":"2023-05-09T13:16:51.000000Z","created_at":"2023-05-09T13:16:51.000000Z","id":57}',
+            ),
+            151 => 
+            array (
+                'id' => 1168,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:51',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":12,"kriteria_jenis_id":14,"updated_at":"2023-05-09T13:16:51.000000Z","created_at":"2023-05-09T13:16:51.000000Z","id":58}',
+            ),
+            152 => 
+            array (
+                'id' => 1169,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:51',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":13,"kriteria_jenis_id":18,"updated_at":"2023-05-09T13:16:51.000000Z","created_at":"2023-05-09T13:16:51.000000Z","id":59}',
+            ),
+            153 => 
+            array (
+                'id' => 1170,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:16:51',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":21,"updated_at":"2023-05-09T13:16:51.000000Z","created_at":"2023-05-09T13:16:51.000000Z","id":60}',
+            ),
+            154 => 
+            array (
+                'id' => 1171,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:17:04',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":10,"kriteria_jenis_id":6,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":61}',
+            ),
+            155 => 
+            array (
+                'id' => 1172,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:17:04',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":11,"kriteria_jenis_id":3,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":62}',
+            ),
+            156 => 
+            array (
+                'id' => 1173,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:17:04',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":12,"kriteria_jenis_id":14,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":63}',
+            ),
+            157 => 
+            array (
+                'id' => 1174,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:17:04',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":13,"kriteria_jenis_id":18,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":64}',
+            ),
+            158 => 
+            array (
+                'id' => 1175,
+                'user_id' => 1,
+                'log_date' => '2023-05-09 20:17:04',
+                'table_name' => 'spk_ahp_alternatif_kriteria',
+                'log_type' => 'create',
+                'data' => '{"alternatif_id":8,"kriteria_id":14,"kriteria_jenis_id":21,"updated_at":"2023-05-09T13:17:04.000000Z","created_at":"2023-05-09T13:17:04.000000Z","id":65}',
+            ),
         ));
         
         

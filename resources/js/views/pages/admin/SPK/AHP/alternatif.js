@@ -72,10 +72,11 @@ $(document).ready(function () {
     });
 });
 
-const renderOption = (jenis, selected = null) => {
+const renderOption = (item) => {
     let results = '';
-    jenis.forEach(e => {
-        results += `<option value="${e.id}">${e.nama}</option>`;
+    item.forEach(e => {
+        let selected = e.selected ? 'selected' : '';
+        results += `<option value="${e.id}" ${selected}>${e.nama}</option>`;
     });
 
     return results;
@@ -83,6 +84,7 @@ const renderOption = (jenis, selected = null) => {
 
 function addFunc() {
     const render = (data) => {
+        $('#id').val('');
         const conteiner = $('#myForm');
         let html = '';
 
@@ -127,6 +129,30 @@ function addFunc() {
 }
 
 function editFunc(id) {
+    const render = (data) => {
+        const conteiner = $('#myForm');
+        $('#anggota_id').append((new Option(data.anggota, data.anggota_id, true, true))).trigger('change');
+        $('#id').val(data.id);
+
+        let html = '';
+
+        data.options.forEach(option => {
+            const body = renderOption(option.jenis);
+            html += ` <div class="form-group">
+                <label class="form-label" for="jenis-${option.slug}">${option.nama}</label>
+                <select class="form-control select2" required="" id="jenis-${option.slug}" name="jenis[]">
+                    ${body}
+                </select>
+            </div> `;
+        });
+
+        conteiner.html(html);
+
+        $('#MainForm').trigger("reset");
+        $('#modal-default').modal('show');
+        $('#modal-default-title').html("Ubah");
+    };
+
     $.LoadingOverlay("show");
     $.ajax({
         type: "GET",
@@ -138,16 +164,7 @@ function editFunc(id) {
             id
         },
         success: (data) => {
-            isEdit = true;
-            $('#modal-default-title').html("Ubah");
-            $('#modal-default').modal('show');
-            $('#id').val(data.id);
-            $('#nama').val(data.nama);
-            $('#kode').val(data.kode);
-            $('#lihat-foto').fadeIn();
-            $('#lihat-foto').attr('onclick', `viewImage('${data.foto}', '${data.nama}' )`);
-            $('#foto').removeAttr('required');
-            $('#foto').val('');
+            render(data);
         },
         error: function (data) {
             Swal.fire({
@@ -220,9 +237,9 @@ function renderTable(element_table) {
             orderable: false,
             targets: [0]
         }],
-        // "responsive": true,
-        // "lengthChange": true,
-        // "autoWidth": false,
+        scrollX: true,
+        aAutoWidth: true,
+        bAutoWidth: true,
         order: [
             [1, 'asc']
         ],
@@ -254,7 +271,8 @@ function getTable() {
 
         // generate table header
         let table_head_html_item = '';
-        datas.header.forEach(e => {
+        datas.header.forEach((e, i) => {
+            if (i == 0) return;
             table_head_html_item += ` <th>${e}</th>`;
         });
 
@@ -262,17 +280,25 @@ function getTable() {
                 <th>No</th>
                 <th>${page_title}</th>
                 ${table_head_html_item}
+                <th>Aksi</th>
             </tr>`;
 
         // generate table body
         let table_body_html = '';
         datas.body.forEach(e => {
             let table_body_html_item = '';
-            e.forEach(j => {
+            e.forEach((j, i) => {
+                if (i == 0) return;
                 table_body_html_item += ` <td>${j}</td> `;
             });
 
-            table_body_html += ` <tr> <td></td> ${table_body_html_item} </tr> `;
+            const id = e[0];
+            const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1 mt-1" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${id}')">
+            <i class="fas fa-edit"></i></button>` : '';
+            const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1 mt-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${id}')">
+            <i class="fas fa-trash"></i></button>` : '';
+            const btn = btn_update + btn_delete;
+            table_body_html += ` <tr> <td></td> ${table_body_html_item} <td class="text-nowrap">${btn}</td></tr> `;
         });
 
 

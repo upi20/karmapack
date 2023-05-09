@@ -156,51 +156,6 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 16,
-                'alternatif_id' => 8,
-                'kriteria_id' => 10,
-                'kriteria_jenis_id' => 4,
-                'created_at' => '2023-05-09 17:30:39',
-                'updated_at' => '2023-05-09 17:30:39',
-            ),
-            16 => 
-            array (
-                'id' => 17,
-                'alternatif_id' => 8,
-                'kriteria_id' => 11,
-                'kriteria_jenis_id' => 1,
-                'created_at' => '2023-05-09 17:30:39',
-                'updated_at' => '2023-05-09 17:30:39',
-            ),
-            17 => 
-            array (
-                'id' => 18,
-                'alternatif_id' => 8,
-                'kriteria_id' => 12,
-                'kriteria_jenis_id' => 9,
-                'created_at' => '2023-05-09 17:30:40',
-                'updated_at' => '2023-05-09 17:30:40',
-            ),
-            18 => 
-            array (
-                'id' => 19,
-                'alternatif_id' => 8,
-                'kriteria_id' => 13,
-                'kriteria_jenis_id' => 16,
-                'created_at' => '2023-05-09 17:30:40',
-                'updated_at' => '2023-05-09 17:30:40',
-            ),
-            19 => 
-            array (
-                'id' => 20,
-                'alternatif_id' => 8,
-                'kriteria_id' => 14,
-                'kriteria_jenis_id' => 19,
-                'created_at' => '2023-05-09 17:30:40',
-                'updated_at' => '2023-05-09 17:30:40',
-            ),
-            20 => 
-            array (
                 'id' => 21,
                 'alternatif_id' => 9,
                 'kriteria_id' => 10,
@@ -208,7 +163,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:12',
                 'updated_at' => '2023-05-09 18:16:12',
             ),
-            21 => 
+            16 => 
             array (
                 'id' => 22,
                 'alternatif_id' => 9,
@@ -217,7 +172,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:12',
                 'updated_at' => '2023-05-09 18:16:12',
             ),
-            22 => 
+            17 => 
             array (
                 'id' => 23,
                 'alternatif_id' => 9,
@@ -226,7 +181,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:12',
                 'updated_at' => '2023-05-09 18:16:12',
             ),
-            23 => 
+            18 => 
             array (
                 'id' => 24,
                 'alternatif_id' => 9,
@@ -235,7 +190,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:12',
                 'updated_at' => '2023-05-09 18:16:12',
             ),
-            24 => 
+            19 => 
             array (
                 'id' => 25,
                 'alternatif_id' => 9,
@@ -244,7 +199,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:12',
                 'updated_at' => '2023-05-09 18:16:12',
             ),
-            25 => 
+            20 => 
             array (
                 'id' => 26,
                 'alternatif_id' => 10,
@@ -253,7 +208,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            26 => 
+            21 => 
             array (
                 'id' => 27,
                 'alternatif_id' => 10,
@@ -262,7 +217,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            27 => 
+            22 => 
             array (
                 'id' => 28,
                 'alternatif_id' => 10,
@@ -271,7 +226,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            28 => 
+            23 => 
             array (
                 'id' => 29,
                 'alternatif_id' => 10,
@@ -280,7 +235,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            29 => 
+            24 => 
             array (
                 'id' => 30,
                 'alternatif_id' => 10,
@@ -289,7 +244,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:16:39',
                 'updated_at' => '2023-05-09 18:16:39',
             ),
-            30 => 
+            25 => 
             array (
                 'id' => 31,
                 'alternatif_id' => 11,
@@ -298,7 +253,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            31 => 
+            26 => 
             array (
                 'id' => 32,
                 'alternatif_id' => 11,
@@ -307,7 +262,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            32 => 
+            27 => 
             array (
                 'id' => 33,
                 'alternatif_id' => 11,
@@ -316,7 +271,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            33 => 
+            28 => 
             array (
                 'id' => 34,
                 'alternatif_id' => 11,
@@ -325,7 +280,7 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
-            34 => 
+            29 => 
             array (
                 'id' => 35,
                 'alternatif_id' => 11,
@@ -333,6 +288,141 @@ class SpkAhpAlternatifKriteriaTableSeeder extends Seeder
                 'kriteria_jenis_id' => 19,
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
+            ),
+            30 => 
+            array (
+                'id' => 36,
+                'alternatif_id' => 12,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 4,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            31 => 
+            array (
+                'id' => 37,
+                'alternatif_id' => 12,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 1,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            32 => 
+            array (
+                'id' => 38,
+                'alternatif_id' => 12,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 9,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            33 => 
+            array (
+                'id' => 39,
+                'alternatif_id' => 12,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            34 => 
+            array (
+                'id' => 40,
+                'alternatif_id' => 12,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            35 => 
+            array (
+                'id' => 41,
+                'alternatif_id' => 13,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 4,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
+            36 => 
+            array (
+                'id' => 42,
+                'alternatif_id' => 13,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 1,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
+            37 => 
+            array (
+                'id' => 43,
+                'alternatif_id' => 13,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 9,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
+            38 => 
+            array (
+                'id' => 44,
+                'alternatif_id' => 13,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 16,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
+            39 => 
+            array (
+                'id' => 45,
+                'alternatif_id' => 13,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 19,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
+            40 => 
+            array (
+                'id' => 61,
+                'alternatif_id' => 8,
+                'kriteria_id' => 10,
+                'kriteria_jenis_id' => 6,
+                'created_at' => '2023-05-09 20:17:04',
+                'updated_at' => '2023-05-09 20:17:04',
+            ),
+            41 => 
+            array (
+                'id' => 62,
+                'alternatif_id' => 8,
+                'kriteria_id' => 11,
+                'kriteria_jenis_id' => 3,
+                'created_at' => '2023-05-09 20:17:04',
+                'updated_at' => '2023-05-09 20:17:04',
+            ),
+            42 => 
+            array (
+                'id' => 63,
+                'alternatif_id' => 8,
+                'kriteria_id' => 12,
+                'kriteria_jenis_id' => 14,
+                'created_at' => '2023-05-09 20:17:04',
+                'updated_at' => '2023-05-09 20:17:04',
+            ),
+            43 => 
+            array (
+                'id' => 64,
+                'alternatif_id' => 8,
+                'kriteria_id' => 13,
+                'kriteria_jenis_id' => 18,
+                'created_at' => '2023-05-09 20:17:04',
+                'updated_at' => '2023-05-09 20:17:04',
+            ),
+            44 => 
+            array (
+                'id' => 65,
+                'alternatif_id' => 8,
+                'kriteria_id' => 14,
+                'kriteria_jenis_id' => 21,
+                'created_at' => '2023-05-09 20:17:04',
+                'updated_at' => '2023-05-09 20:17:04',
             ),
         ));
         

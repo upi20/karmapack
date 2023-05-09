@@ -68,6 +68,20 @@ class SpkAhpAlternatifTableSeeder extends Seeder
                 'created_at' => '2023-05-09 18:21:07',
                 'updated_at' => '2023-05-09 18:21:07',
             ),
+            7 => 
+            array (
+                'id' => 12,
+                'anggota_id' => 38,
+                'created_at' => '2023-05-09 19:26:34',
+                'updated_at' => '2023-05-09 19:26:34',
+            ),
+            8 => 
+            array (
+                'id' => 13,
+                'anggota_id' => 183,
+                'created_at' => '2023-05-09 19:27:13',
+                'updated_at' => '2023-05-09 19:27:13',
+            ),
         ));
         
         

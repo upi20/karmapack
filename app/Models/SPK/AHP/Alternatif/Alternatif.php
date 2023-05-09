@@ -4,7 +4,6 @@ namespace App\Models\SPK\AHP\Alternatif;
 
 use App\Models\Keanggotaan\Anggota;
 use App\Models\SPK\AHP\Alternatif\Kriteria as AlternatifKriteria;
-use App\Models\SPK\AHP\Kriteria\Jenis\Jenis;
 use App\Models\SPK\AHP\Kriteria\Kriteria;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -29,7 +28,7 @@ class Alternatif extends Model
 
     public function kriterias()
     {
-        return $this->hasMany(Kriteria::class, 'alternatif_id', 'id');
+        return $this->hasMany(AlternatifKriteria::class, 'alternatif_id', 'id');
     }
 
     public static function table()
@@ -42,6 +41,7 @@ class Alternatif extends Model
         foreach ($alternatifs as $alternatif) {
             $result = [];
             // x ke 0 nama
+            $result[] = $alternatif->id;
             $result[] = $alternatif->anggota->nama;
 
             // cari alternatif kriteria -> kriteria jenis -> name
@@ -55,6 +55,7 @@ class Alternatif extends Model
         }
 
         $headers = [];
+        $headers[] = "ID";
         foreach ($kriterias as $kriteria) {
             $headers[] = $kriteria->nama;
         }
@@ -62,6 +63,44 @@ class Alternatif extends Model
         return [
             "header" => $headers,
             "body" => $results,
+        ];
+    }
+
+    public static function getEdit($id)
+    {
+        $alternatif = static::findOrFail($id);
+        $anggota = $alternatif->anggota;
+        $kriteria = $alternatif->kriterias;
+        $get = Kriteria::with(['jenis' => function ($query) {
+            $query->orderBy('kode');
+        }])->get();
+
+        $selected = function ($kriteria_id, $kriteria_jenis_id) use ($kriteria) {
+            foreach ($kriteria as $k) {
+                if ($k->kriteria_id == $kriteria_id && $k->kriteria_jenis_id == $kriteria_jenis_id) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        $options = [];
+        foreach ($get as $g) {
+            $item = [];
+            foreach ($g->jenis as $jenis) {
+                $jenis->selected = $selected($g->id, $jenis->id);
+                $item[] = $jenis;
+            }
+            $new = $g->toArray();
+            $new['jenis'] = $item;
+            $options[] = $g;
+        }
+
+        return [
+            'id' => $alternatif->id,
+            'anggota_id' => $alternatif->anggota_id,
+            'anggota' => "$anggota->angkatan | $anggota->nama",
+            'options' => $options
         ];
     }
 }

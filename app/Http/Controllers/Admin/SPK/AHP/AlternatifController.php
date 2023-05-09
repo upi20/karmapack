@@ -71,8 +71,38 @@ class AlternatifController extends Controller
     public function update(Request $request): mixed
     {
         try {
-            $model = Kriteria::findOrFail($request->id);
-            $this->validate_model['kode'] = ['required', 'string', 'unique:' . Kriteria::tableName . ',kode,' . $request->id];
+            DB::beginTransaction();
+            $alternatif = Alternatif::findOrFail($request->id);
+            $request->validate($this->validate_model);
+
+            // check apakah anggota sudah ada
+            $check = Alternatif::where('anggota_id', $request->anggota_id)
+                ->where('id', '<>', $request->id)
+                ->count();
+            if ($check > 0) {
+                return response()->json(['message' => 'Pengurus sudah ada'], 400);
+            }
+
+            // simpan alternatif
+            $alternatif->anggota_id = $request->anggota_id;
+            $alternatif->save();
+
+            // hapus semua kriteria yang ada
+            AlternatifKriteria::where('alternatif_id', $alternatif->id)->delete();
+
+            // simpan alternatif kriteria
+            foreach ($request->jenis as $jenis) {
+                $jenis_get = Jenis::findOrFail($jenis);
+
+                // alternatif_kriteria
+                $ak = new AlternatifKriteria();
+                $ak->alternatif_id = $alternatif->id;
+                $ak->kriteria_id = $jenis_get->kriteria_id;
+                $ak->kriteria_jenis_id = $jenis_get->id;
+                $ak->save();
+            }
+
+            DB::commit();
 
             return response()->json();
         } catch (ValidationException $error) {
@@ -83,7 +113,7 @@ class AlternatifController extends Controller
         }
     }
 
-    public function delete(Kriteria $model): mixed
+    public function delete(Alternatif $model): mixed
     {
         try {
             $model->delete();
@@ -140,6 +170,19 @@ class AlternatifController extends Controller
             return response()->json(['results' => $result]);
         } catch (\Exception $error) {
             return response()->json($error, 500);
+        }
+    }
+
+    public function find(Request $request)
+    {
+        try {
+            $get = Alternatif::getEdit($request->id);
+            return response()->json($get);
+        } catch (ValidationException $error) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'error' => $error,
+            ], 500);
         }
     }
 }
