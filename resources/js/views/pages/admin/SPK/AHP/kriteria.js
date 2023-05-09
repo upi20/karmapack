@@ -395,8 +395,10 @@ function kriteriaNormalisasiRefresh() {
             let kolom = 1;
             e.forEach(i => {
                 let bg = '';
-                if (baris == kolom && kolom <= datas.jml_data + 1) bg = baris > 1 ? 'bg-primary text-white' : '';
-                if (kolom > baris && kolom <= datas.jml_data + 1) bg = baris > 1 ? 'bg-secondary text-white' : '';
+                const is_data_body = kolom <= datas.jml_data + 1;
+                const is_data_prioritas = kolom == datas.jml_data + 3;
+                if (baris == kolom && is_data_body) bg = baris > 1 ? 'bg-primary text-white' : '';
+                if ((kolom > baris && is_data_body) || is_data_prioritas) bg = baris > 1 ? 'bg-secondary text-white' : '';
                 const td = baris == 1 ? 'th' : 'td';
                 const text_center = kolom != 1 ? 'text-center' : '';
                 tbl_row += `<${td} class="${bg} ${text_center}">${renderNumber(i, 3)}</${td}>`;
