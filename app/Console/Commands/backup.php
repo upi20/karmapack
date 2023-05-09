@@ -33,6 +33,8 @@ use App\Models\RoleHasMenu;
 use App\Models\Setting\HomeSlider;
 use App\Models\SocialAccount;
 use App\Models\SocialMedia;
+use App\Models\SPK\AHP\Kriteria\Jenis\Jenis;
+use App\Models\SPK\AHP\Kriteria\Jenis\Perbandingan as JenisPerbandingan;
 use App\Models\SPK\AHP\Kriteria\Kriteria;
 use App\Models\SPK\AHP\Kriteria\Perbandingan;
 use App\Models\Tracker;
@@ -159,6 +161,8 @@ class backup extends Command
             'spk_ahp' => [
                 Kriteria::tableName,
                 Perbandingan::tableName,
+                Jenis::tableName,
+                JenisPerbandingan::tableName,
             ],
         ];
         if ($opt_users == 1 || $arg_type == 'users') echo shell_exec('php artisan iseed users --force');

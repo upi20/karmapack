@@ -1,50 +1,37 @@
 <?php
 
-namespace App\Models\SPK\AHP\Kriteria;
+namespace App\Models\SPK\AHP\Kriteria\Jenis;
 
-use App\Models\SPK\AHP\Kriteria\Jenis\Jenis;
+use App\Models\SPK\AHP\Kriteria\Kriteria;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Haruncpi\LaravelUserActivity\Traits\Loggable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-class Kriteria extends Model
+class Jenis extends Model
 {
-    use HasFactory, Loggable, Sluggable;
-
+    use HasFactory, Loggable;
     protected $fillable = [
         'id',
         'kode',
         'nama',
-        'slug',
-        'ci',
-        'ri',
-        'cr',
         'prioritas',
         'total',
         'eign_value',
+        'kriteria_id',
     ];
 
     protected $primaryKey = 'id';
-    protected $table = 'spk_ahp_kriteria';
-    const tableName = 'spk_ahp_kriteria';
+    protected $table = 'spk_ahp_kriteria_jenis';
+    const tableName = 'spk_ahp_kriteria_jenis';
 
-    public function sluggable(): array
+    public function kriteria()
     {
-        return [
-            'slug' => [
-                'source' => 'nama'
-            ]
-        ];
+        return $this->belongsTo(Kriteria::class, 'kriteria_id', 'id');
     }
 
-    public function jenis()
-    {
-        return $this->hasMany(Jenis::class, 'kriteria_id', 'id');
-    }
 
     public function perbandingan_x()
     {
@@ -97,7 +84,7 @@ class Kriteria extends Model
         }
 
         // filter custom
-        $filters = ['status'];
+        $filters = ['kriteria_id'];
         foreach ($filters as  $f) {
             if ($f_c($f) !== false) {
                 $model->whereRaw("$table.$f='{$f_c($f)}'");
@@ -142,9 +129,12 @@ class Kriteria extends Model
         return $datatable->make(true);
     }
 
-    public static function getPerbandingan()
+    public static function getPerbandingan($kriteria_id)
     {
-        $results = static::with(['perbandingan_x', 'perbandingan_y'])->orderBy('kode')->get();
+        $results = static::with(['perbandingan_x', 'perbandingan_y'])
+            ->where('kriteria_id', $kriteria_id)
+            ->orderBy('kode')->get();
+
         $findPerbandingan = function ($x_id, $y_id) use ($results) {
             foreach ($results as $obj) {
                 foreach ($obj->perbandingan_x as $x) {
@@ -212,9 +202,9 @@ class Kriteria extends Model
         ];
     }
 
-    public static function normalisasi()
+    public static function normalisasi($kriteria_id)
     {
-        $table = static::getPerbandingan();
+        $table = static::getPerbandingan($kriteria_id);
         $result = [];
         $body = $table['body'];
         $total = $table['total'];
@@ -314,9 +304,9 @@ class Kriteria extends Model
         ];
     }
 
-    public static function setNomralisasi()
+    public static function setNomralisasi($kriteria_id)
     {
-        $nm = static::normalisasi();
+        $nm = static::normalisasi($kriteria_id);
         DB::beginTransaction();
         for ($y = 1; $y < count($nm['id']); $y++) {
             $id = $nm['id'][$y];
@@ -326,6 +316,11 @@ class Kriteria extends Model
             $k->eign_value = $nm['eign_value'][$y];
             $k->save();
         }
+        $kriteria = Kriteria::find($kriteria_id);
+        $kriteria->ci = $nm['ci'];
+        $kriteria->ri = $nm['ri'];
+        $kriteria->cr = $nm['cr'];
+        $kriteria->save();
         DB::commit();
         return static::all();
     }

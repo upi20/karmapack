@@ -2,6 +2,7 @@
 const can_update = "{{ $can_update == 'true' ? 'true' : 'false' }}" === "true";
 const can_delete = "{{ $can_delete == 'true' ? 'true' : 'false' }}" === "true";
 const table_html = $('#tbl_main');
+const kriteria_id = $('#kriteria_id').val();
 let isEdit = true;
 $(document).ready(function () {
     // datatable ====================================================================================
@@ -20,9 +21,9 @@ $(document).ready(function () {
         bAutoWidth: false,
         type: 'GET',
         ajax: {
-            url: "{{ route(l_prefix($hpu)) }}",
+            url: "{{ route(l_prefix($hpu,min:1), $slug) }}",
             data: function (d) {
-                d['filter[kode]'] = $('#filter_kode').val();
+                d['filter[kriteria_id]'] = kriteria_id;
             }
         },
         columns: [{
@@ -42,13 +43,11 @@ $(document).ready(function () {
             data: 'id',
             name: 'id',
             render(data, type, full, meta) {
-                const btn_kriteria = `<a href="{{url(l_prefix_uri($hpu, 'jenis'))}}/${full.slug}" class="btn btn-rounded btn-secondary btn-sm me-1 mt-1" data-toggle="tooltip" title="Jenis Kriteria">
-                        <i class="fas fa-list"></i></a>`;
                 const btn_update = can_update ? `<button type="button" class="btn btn-rounded btn-primary btn-sm me-1 mt-1" data-toggle="tooltip" title="Ubah Data" onClick="editFunc('${data}')">
                         <i class="fas fa-edit"></i></button>` : '';
                 const btn_delete = can_delete ? `<button type="button" class="btn btn-rounded btn-danger btn-sm me-1 mt-1" data-toggle="tooltip" title="Hapus Data" onClick="deleteFunc('${data}')">
                         <i class="fas fa-trash"></i></button>` : '';
-                return btn_kriteria + btn_update + btn_delete;
+                return btn_update + btn_delete;
             },
             orderable: false
         }] : []),
@@ -84,8 +83,8 @@ $(document).ready(function () {
         var formData = new FormData(this);
         setBtnLoading('#btn-save', 'Simpan');
         const route = ($('#id').val() == '') ?
-            "{{ route(l_prefix($hpu,'insert')) }}" :
-            "{{ route(l_prefix($hpu,'update')) }}";
+            "{{ route(l_prefix($hpu,'insert',1)) }}" :
+            "{{ route(l_prefix($hpu,'update',1)) }}";
         $.ajax({
             type: "POST",
             url: route,
@@ -112,17 +111,11 @@ $(document).ready(function () {
             },
             error: function (data) {
                 const res = data.responseJSON ?? {};
-                errorAfterInput = [];
-                for (const property in res.errors) {
-                    errorAfterInput.push(property);
-                    setErrorAfterInput(res.errors[property], `#${property}`);
-                }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
-                    showConfirmButton: false,
-                    timer: 1500
+                    showConfirmButton: true,
                 })
             },
             complete: function () {
@@ -133,15 +126,15 @@ $(document).ready(function () {
             }
         });
     });
-
     $('#BobotForm').submit(function (e) {
         e.preventDefault();
         var formData = new FormData(this);
+        formData.append('kriteria_id', kriteria_id);
         const btn_submit = $(this).find('button[type=submit]');
         setBtnLoading(btn_submit, 'Simpan Bobot');
         $.ajax({
             type: "POST",
-            url: "{{ route(l_prefix($hpu,'bobot.update')) }}",
+            url: "{{ route(l_prefix($hpu,'bobot.update',1)) }}",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
@@ -194,7 +187,7 @@ function editFunc(id) {
     $.LoadingOverlay("show");
     $.ajax({
         type: "GET",
-        url: `{{ route(l_prefix($hpu,'find')) }}`,
+        url: `{{ route(l_prefix($hpu,'find',1)) }}`,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
@@ -238,7 +231,7 @@ function deleteFunc(id) {
     }).then(function (result) {
         if (result.value) {
             $.ajax({
-                url: `{{ url(l_prefix_uri($hpu)) }}/${id}`,
+                url: `{{ url(l_prefix_uri($hpu,null,1)) }}/${id}`,
                 type: 'DELETE',
                 dataType: 'json',
                 headers: {
@@ -289,6 +282,42 @@ function renderNumber(number, fix = 2) {
     return Number.isInteger(number) ? nm : nm.toFixed(fix);
 };
 
+function kriteriaBobotOptionRefresh() {
+    const renderOption = (datas) => {
+        let result_html = '';
+        datas.forEach(e => {
+            result_html += `<option value="${e.id}">${e.kode} ${e.nama}</option>`;
+        });
+
+        $('#kriteria_x').html(result_html);
+        $('#kriteria_y').html(result_html);
+        return result_html;
+    }
+    $.ajax({
+        type: "GET",
+        url: `{{ route(l_prefix($hpu,'bobot', 1)) }}`,
+        data: {
+            kriteria_id
+        },
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        success: (data) => {
+            renderOption(data);
+        },
+        error: function (data) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Something went wrong',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        },
+        complete: function () {
+            $.LoadingOverlay("hide");
+        }
+    });
+}
+
 function kriteriaRefresh() {
     const renderTable = (datas) => {
         const bobot_table = $('#tbl_bobot');
@@ -331,43 +360,13 @@ function kriteriaRefresh() {
     }
     $.ajax({
         type: "GET",
-        url: `{{ route(l_prefix($hpu,'bobot.matrix')) }}`,
+        url: `{{ route(l_prefix($hpu,'bobot.matrix', 1)) }}`,
+        data: {
+            kriteria_id
+        },
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
         success: (data) => {
             renderTable(data);
-        },
-        error: function (data) {
-            Swal.fire({
-                position: 'top-end',
-                icon: 'error',
-                title: 'Something went wrong',
-                showConfirmButton: false,
-                timer: 1500
-            })
-        },
-        complete: function () {
-            $.LoadingOverlay("hide");
-        }
-    });
-}
-
-function kriteriaBobotOptionRefresh() {
-    const renderOption = (datas) => {
-        let result_html = '';
-        datas.forEach(e => {
-            result_html += `<option value="${e.id}">${e.kode} ${e.nama}</option>`;
-        });
-
-        $('#kriteria_x').html(result_html);
-        $('#kriteria_y').html(result_html);
-        return result_html;
-    }
-    $.ajax({
-        type: "GET",
-        url: `{{ route(l_prefix($hpu,'bobot')) }}`,
-        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-        success: (data) => {
-            renderOption(data);
         },
         error: function (data) {
             Swal.fire({
@@ -430,13 +429,15 @@ function kriteriaNormalisasiRefresh() {
         $('#ri').html(datas.ri);
         $('#cr').html(`${renderNumber(datas.cr, 3)} ${datas.cr < 0.1 ? '(KONSISTEN)' : '(TIDAK KONSISTEN)'}`);
         $('#cr').attr('class', datas.cr < 0.1 ? 'text-success' : 'text-danger')
-
         return result;
     }
 
     $.ajax({
         type: "GET",
-        url: `{{ route(l_prefix($hpu,'bobot.normalisasi')) }}`,
+        url: `{{ route(l_prefix($hpu,'bobot.normalisasi', 1)) }}`,
+        data: {
+            kriteria_id
+        },
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
         success: (data) => {
             renderTable(data);
@@ -456,6 +457,6 @@ function kriteriaNormalisasiRefresh() {
     });
 }
 
-kriteriaNormalisasiRefresh();
 kriteriaBobotOptionRefresh();
 kriteriaRefresh();
+kriteriaNormalisasiRefresh();
