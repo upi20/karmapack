@@ -21,16 +21,6 @@ class SocialAccountsTableSeeder extends Seeder
         \DB::table('social_accounts')->insert(array (
             0 => 
             array (
-                'id' => '2',
-                'user_id' => '1',
-                'provider_id' => '111291161449881637624',
-                'provider_name' => 'google',
-            'provider_data' => '{"id":"111291161449881637624","nickname":null,"name":"Isep Lutpi Nur (upi)","email":"iseplutpinur7@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c","user":{"sub":"111291161449881637624","name":"Isep Lutpi Nur (upi)","given_name":"Isep","family_name":"Lutpi Nur","picture":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c","email":"iseplutpinur7@gmail.com","email_verified":true,"locale":"id","id":"111291161449881637624","verified_email":true,"link":null},"attributes":{"id":"111291161449881637624","nickname":null,"name":"Isep Lutpi Nur (upi)","email":"iseplutpinur7@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c","avatar_original":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c"},"token":"ya29.a0AVvZVsqEs_Jb8m7mGikJZVIoAbCVHI9YwX1iPanxlRrz0kmeBYhidWNPTyyVQNEdO_3IvlfEUoUGeK97GkEUXI789nPix7sbnrQRfUf2AexzX5akjYKcRN3Q8wZtqSP3l1RtWwtDyLFVLKeK2Ayjkb8hi833zQaCgYKAegSARMSFQGbdwaIIDz7C0laJXfrF3AOr-LAEw0165","refreshToken":null,"expiresIn":3599,"approvedScopes":["openid","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.email","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.profile"]}',
-                'created_at' => '2023-03-16 02:13:21',
-                'updated_at' => '2023-03-16 02:13:21',
-            ),
-            1 => 
-            array (
                 'id' => '3',
                 'user_id' => '113',
                 'provider_id' => '103853047478079863516',
@@ -39,7 +29,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-16 16:20:21',
                 'updated_at' => '2023-03-16 16:20:21',
             ),
-            2 => 
+            1 => 
             array (
                 'id' => '4',
                 'user_id' => '114',
@@ -49,7 +39,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-16 16:31:38',
                 'updated_at' => '2023-03-16 16:31:38',
             ),
-            3 => 
+            2 => 
             array (
                 'id' => '5',
                 'user_id' => '57',
@@ -59,7 +49,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 16:46:48',
                 'updated_at' => '2023-03-18 16:46:48',
             ),
-            4 => 
+            3 => 
             array (
                 'id' => '6',
                 'user_id' => '185',
@@ -69,7 +59,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 18:58:58',
                 'updated_at' => '2023-03-18 18:58:58',
             ),
-            5 => 
+            4 => 
             array (
                 'id' => '7',
                 'user_id' => '26',
@@ -79,7 +69,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 19:58:42',
                 'updated_at' => '2023-03-18 19:58:42',
             ),
-            6 => 
+            5 => 
             array (
                 'id' => '8',
                 'user_id' => '79',
@@ -89,7 +79,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 20:35:28',
                 'updated_at' => '2023-03-18 20:35:28',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => '9',
                 'user_id' => '110',
@@ -99,7 +89,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 20:45:10',
                 'updated_at' => '2023-03-18 20:45:10',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => '10',
                 'user_id' => '287',
@@ -109,7 +99,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-18 23:07:41',
                 'updated_at' => '2023-03-18 23:07:41',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => '11',
                 'user_id' => '93',
@@ -119,7 +109,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-03-19 10:42:30',
                 'updated_at' => '2023-03-19 10:42:30',
             ),
-            10 => 
+            9 => 
             array (
                 'id' => '12',
                 'user_id' => '291',
@@ -129,7 +119,7 @@ class SocialAccountsTableSeeder extends Seeder
                 'created_at' => '2023-04-20 20:17:13',
                 'updated_at' => '2023-04-20 20:17:13',
             ),
-            11 => 
+            10 => 
             array (
                 'id' => '13',
                 'user_id' => '290',
@@ -138,6 +128,16 @@ class SocialAccountsTableSeeder extends Seeder
                 'provider_data' => '{"id":"116773779989527340914","nickname":null,"name":"Rifqi Munawar R.","email":"rifqimunawar48@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZtJNss5lcjIEgKTzRsVNJjW2mwn2kKQcVWWUlwhQ=s96-c","user":{"sub":"116773779989527340914","name":"Rifqi Munawar R.","given_name":"Rifqi","family_name":"Munawar R.","picture":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZtJNss5lcjIEgKTzRsVNJjW2mwn2kKQcVWWUlwhQ=s96-c","email":"rifqimunawar48@gmail.com","email_verified":true,"locale":"id","id":"116773779989527340914","verified_email":true,"link":null},"attributes":{"id":"116773779989527340914","nickname":null,"name":"Rifqi Munawar R.","email":"rifqimunawar48@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZtJNss5lcjIEgKTzRsVNJjW2mwn2kKQcVWWUlwhQ=s96-c","avatar_original":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AGNmyxZtJNss5lcjIEgKTzRsVNJjW2mwn2kKQcVWWUlwhQ=s96-c"},"token":"ya29.a0AWY7Ckkd5FXjMYcIouNXJCuWxmTyUBoTXvbgWAfUse457iz23Q0Y1iYekE03C8g_2BWwpptfUZQarDcoVdBuKwN0v_XKyhYvEbmC1qkNEbVfVyyxsw88tM4behIJgdmshXzEzifHZH4wKfV6nuyT6fbNPNZpaCgYKAbUSARESFQG1tDrpthEGltmrtK-n0E8m6xF8bA0163","refreshToken":null,"expiresIn":3599,"approvedScopes":["openid","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.profile","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.email"]}',
                 'created_at' => '2023-05-16 20:55:40',
                 'updated_at' => '2023-05-16 20:55:40',
+            ),
+            11 => 
+            array (
+                'id' => '14',
+                'user_id' => '1',
+                'provider_id' => '111291161449881637624',
+                'provider_name' => 'google',
+            'provider_data' => '{"id":"111291161449881637624","nickname":null,"name":"Isep Lutpi Nur (upi)","email":"iseplutpinur7@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AAcHTte_2FV45YTfvGaEnHJjYIjkto2dTboo78qGDaCtx_77KQ=s96-c","user":{"sub":"111291161449881637624","name":"Isep Lutpi Nur (upi)","given_name":"Isep","family_name":"Lutpi Nur","picture":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AAcHTte_2FV45YTfvGaEnHJjYIjkto2dTboo78qGDaCtx_77KQ=s96-c","email":"iseplutpinur7@gmail.com","email_verified":true,"locale":"id","id":"111291161449881637624","verified_email":true,"link":null},"attributes":{"id":"111291161449881637624","nickname":null,"name":"Isep Lutpi Nur (upi)","email":"iseplutpinur7@gmail.com","avatar":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AAcHTte_2FV45YTfvGaEnHJjYIjkto2dTboo78qGDaCtx_77KQ=s96-c","avatar_original":"https:\\/\\/lh3.googleusercontent.com\\/a\\/AAcHTte_2FV45YTfvGaEnHJjYIjkto2dTboo78qGDaCtx_77KQ=s96-c"},"token":"ya29.a0AfB_byBn6WZjNaB5j6ZZ7EyCGMKR6LDcSZQ0asZAeENNN2AFuWL9r--QcObPIM_DvZ9CFDknZD9OmWZk2XVuqJfn8KPeuPxLjU_KMiH8z39Id2opqGiEZY-66f0e2YysZY2cW8Rcnr0Xjhn176Eb8NGOAAbb2NRS4fza7c01aCgYKATwSARMSFQHsvYlsh6ouT09iVqo0t8PRd2z1bw0175","refreshToken":null,"expiresIn":3599,"approvedScopes":["https:\\/\\/www.googleapis.com\\/auth\\/userinfo.profile","https:\\/\\/www.googleapis.com\\/auth\\/userinfo.email","openid"]}',
+                'created_at' => '2023-08-31 11:45:37',
+                'updated_at' => '2023-08-31 11:45:37',
             ),
         ));
         

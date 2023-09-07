@@ -11462,6 +11462,834 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'create',
                 'data' => '{"ip":"103.90.64.253","visitors_id":"1186","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-14T03:51:18.000000Z","created_at":"2023-06-14T03:51:18.000000Z","id":199}',
             ),
+            271 => 
+            array (
+                'id' => '1288',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:32',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            272 => 
+            array (
+                'id' => '1289',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:32',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            273 => 
+            array (
+                'id' => '1290',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:33',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            274 => 
+            array (
+                'id' => '1291',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:33',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.164","visitors_id":"1311","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-18T06:58:33.000000Z","created_at":"2023-06-18T06:58:33.000000Z","id":217}',
+            ),
+            275 => 
+            array (
+                'id' => '1292',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:33',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            276 => 
+            array (
+                'id' => '1293',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 13:58:38',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            277 => 
+            array (
+                'id' => '1294',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:39:39',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.243.8.139","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36"}',
+            ),
+            278 => 
+            array (
+                'id' => '1295',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:42:36',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230420144240.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$OlqEyVYw3cMTKRbuQLjPaePcKi1nrmiQVt7T7jIVyE7kJIoaf\\/eUm","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-04-23 17:05:22"}',
+            ),
+            279 => 
+            array (
+                'id' => '1296',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:42:36',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051006","alamat_lengkap":"Jl. Tipar, Rt 23\\/Rw 12 Dekat SD Negeri 1 Tipar","bio":"Gajah mati meninggalkan gading, harimau mati meninggalkan belang, manusia mati meninggalkan nama.","profesi":"Pelajar\\/Mahasiswa","foto":"iseplutpinur20230420144240.png","telepon":"085798132505","whatsapp":"85798132505","status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-04-20 14:42:40"}',
+            ),
+            280 => 
+            array (
+                'id' => '1297',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:42:44',
+                'table_name' => 'social_accounts',
+                'log_type' => 'delete',
+            'data' => '{"id":"2","user_id":"1","provider_id":"111291161449881637624","provider_name":"google","provider_data":"{\\"id\\":\\"111291161449881637624\\",\\"nickname\\":null,\\"name\\":\\"Isep Lutpi Nur (upi)\\",\\"email\\":\\"iseplutpinur7@gmail.com\\",\\"avatar\\":\\"https:\\\\\\/\\\\\\/lh3.googleusercontent.com\\\\\\/a\\\\\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\\",\\"user\\":{\\"sub\\":\\"111291161449881637624\\",\\"name\\":\\"Isep Lutpi Nur (upi)\\",\\"given_name\\":\\"Isep\\",\\"family_name\\":\\"Lutpi Nur\\",\\"picture\\":\\"https:\\\\\\/\\\\\\/lh3.googleusercontent.com\\\\\\/a\\\\\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\\",\\"email\\":\\"iseplutpinur7@gmail.com\\",\\"email_verified\\":true,\\"locale\\":\\"id\\",\\"id\\":\\"111291161449881637624\\",\\"verified_email\\":true,\\"link\\":null},\\"attributes\\":{\\"id\\":\\"111291161449881637624\\",\\"nickname\\":null,\\"name\\":\\"Isep Lutpi Nur (upi)\\",\\"email\\":\\"iseplutpinur7@gmail.com\\",\\"avatar\\":\\"https:\\\\\\/\\\\\\/lh3.googleusercontent.com\\\\\\/a\\\\\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\\",\\"avatar_original\\":\\"https:\\\\\\/\\\\\\/lh3.googleusercontent.com\\\\\\/a\\\\\\/AGNmyxZdwkAeMu6tgf95EzVDIiZPwijo5jBB3yzRDwe8=s96-c\\"},\\"token\\":\\"ya29.a0AVvZVsqEs_Jb8m7mGikJZVIoAbCVHI9YwX1iPanxlRrz0kmeBYhidWNPTyyVQNEdO_3IvlfEUoUGeK97GkEUXI789nPix7sbnrQRfUf2AexzX5akjYKcRN3Q8wZtqSP3l1RtWwtDyLFVLKeK2Ayjkb8hi833zQaCgYKAegSARMSFQGbdwaIIDz7C0laJXfrF3AOr-LAEw0165\\",\\"refreshToken\\":null,\\"expiresIn\\":3599,\\"approvedScopes\\":[\\"openid\\",\\"https:\\\\\\/\\\\\\/www.googleapis.com\\\\\\/auth\\\\\\/userinfo.email\\",\\"https:\\\\\\/\\\\\\/www.googleapis.com\\\\\\/auth\\\\\\/userinfo.profile\\"]}","created_at":"2023-03-16 02:13:21","updated_at":"2023-03-16 02:13:21"}',
+            ),
+            281 => 
+            array (
+                'id' => '1298',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:43:22',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051006","alamat_lengkap":"Jl. Tipar, Rt 23\\/Rw 12 Dekat SD Negeri 1 Tipar","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":"085798132505","whatsapp":"85798132505","status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:42:36"}',
+            ),
+            282 => 
+            array (
+                'id' => '1299',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:43:22',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$OlqEyVYw3cMTKRbuQLjPaePcKi1nrmiQVt7T7jIVyE7kJIoaf\\/eUm","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:42:36"}',
+            ),
+            283 => 
+            array (
+                'id' => '1300',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:43:58',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Fajar Aldiansyah Sidiq","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051006","alamat_lengkap":"Jl. Tipar, Rt 23\\/Rw 12 Dekat SD Negeri 1 Tipar","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":"0895397320823","whatsapp":"895397320823","status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:43:22"}',
+            ),
+            284 => 
+            array (
+                'id' => '1301',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:45:40',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Fajar Aldiansyah Sidiq","email":"fajaraldi6110@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"fajaraldiansyah","email_verified_at":null,"password":"$2y$10$OlqEyVYw3cMTKRbuQLjPaePcKi1nrmiQVt7T7jIVyE7kJIoaf\\/eUm","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:43:22"}',
+            ),
+            285 => 
+            array (
+                'id' => '1302',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:51:25',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Fajar Aldiansyah Sidiq","email":"fajaraldi6110@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"fajaraldiansyah","email_verified_at":null,"password":"$2y$10$8uA4PEZ6xy2mojxHkNdWFul2pBLknipiijS4fueUVYS8kBTKVgk1W","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:45:40"}',
+            ),
+            286 => 
+            array (
+                'id' => '1303',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:51:53',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Fajar Aldiansyah Sidiq","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"36","regency_id":"3603","district_id":"3603120","village_id":"3603120006","alamat_lengkap":"Kp Cilongok Rt 04\\/ Rw 05 Desa Sukmantri Kecamatan Pasar Kemis Kabupaten Tangerang","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":"0895397320823","whatsapp":"895397320823","status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:43:58"}',
+            ),
+            287 => 
+            array (
+                'id' => '1304',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:52:41',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Fajar Aldiansyah Sidiq","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"36","regency_id":"3603","district_id":"3603120","village_id":"3603120006","alamat_lengkap":"Kp Cilongok Rt 04\\/ Rw 05 Desa Sukmantri Kecamatan Pasar Kemis Kabupaten Tangerang","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:51:53"}',
+            ),
+            288 => 
+            array (
+                'id' => '1305',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:52:41',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Fajar Aldiansyah Sidiq","email":"fajaraldi6110@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"fajaraldiansyah","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:51:25"}',
+            ),
+            289 => 
+            array (
+                'id' => '1306',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:54:20',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"isepipnulutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:52:41"}',
+            ),
+            290 => 
+            array (
+                'id' => '1307',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:55:05',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"36","regency_id":"3603","district_id":"3603120","village_id":"3603120006","alamat_lengkap":"Kp Cilongok Rt 04\\/ Rw 05 Desa Sukmantri Kecamatan Pasar Kemis Kabupaten Tangerang","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:52:41"}',
+            ),
+            291 => 
+            array (
+                'id' => '1308',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:56:49',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618174236.jfif","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:54:20"}',
+            ),
+            292 => 
+            array (
+                'id' => '1309',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 17:56:49',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203200","village_id":null,"alamat_lengkap":null,"bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Karyawan","foto":"iseplutpinur20230618174236.jfif","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:55:05"}',
+            ),
+            293 => 
+            array (
+                'id' => '1310',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 18:23:43',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            294 => 
+            array (
+                'id' => '1311',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 19:05:50',
+                'table_name' => 'contact_list',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nama":"Location","icon":"fas fa-map-marker-alt","url":"https:\\/\\/goo.gl\\/maps\\/5r4WzKbNY89GSHHe6","order":"1","keterangan":"Cianjur Selatan<br> Jawa Barat 43272, Indonesia.","status":"1","created_at":"2022-08-21 08:34:56","updated_at":"2022-08-21 08:34:56"}',
+            ),
+            295 => 
+            array (
+                'id' => '1312',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 19:06:11',
+                'table_name' => 'contact_list',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nama":"Location","icon":"fas fa-map-marker-alt","url":"https:\\/\\/goo.gl\\/maps\\/5r4WzKbNY89GSHHe6","order":"1","keterangan":"Kota Tangerang<br> Banten, Indonesia.","status":"1","created_at":"2022-08-21 08:34:56","updated_at":"2023-06-18 19:05:50"}',
+            ),
+            296 => 
+            array (
+                'id' => '1313',
+                'user_id' => '1',
+                'log_date' => '2023-06-18 20:41:09',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.164","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            297 => 
+            array (
+                'id' => '1314',
+                'user_id' => '290',
+                'log_date' => '2023-06-19 11:13:50',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.69.36","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36"}',
+            ),
+            298 => 
+            array (
+                'id' => '1315',
+                'user_id' => '290',
+                'log_date' => '2023-06-19 11:17:31',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"265","nomor_anggota":null,"nama":"Rifqi Munawar Ridwan","tanggal_lahir":"2001-11-05","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203020","village_id":"3203020002","alamat_lengkap":"didieu pokokna mah","bio":"hidup seperti larry","profesi":"Pelajar\\/Mahasiswa","foto":"rifqi-munawar-ridwan2023040316194220230516210039.jpg","telepon":"08561145097","whatsapp":"085161145097","status":null,"user_id":"290","created_at":"2023-04-03 16:19:42","updated_at":"2023-05-16 21:00:50"}',
+            ),
+            299 => 
+            array (
+                'id' => '1316',
+                'user_id' => '290',
+                'log_date' => '2023-06-19 11:19:21',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"290","name":"Rifqi Munawar Ridwan","email":"rifqimunawar48@gmail.com","foto":"rifqi-munawar-ridwan2023040316194220230516210039.jpg","username":"rifqi_munawar","email_verified_at":null,"password":"$2y$10$qZB.ejA.OYUqIh1PFprzpeyuIszHuUVXspz39mivoe.NqBVZHpQeC","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"6T0htFN9BOZK3RDfz5EBXDO9bzFSt0ppuLiGEh5jLpQJMuqI4i6QgDlEHMWS","created_at":"2023-04-03 16:19:42","updated_at":"2023-05-16 21:00:42"}',
+            ),
+            300 => 
+            array (
+                'id' => '1317',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:51:53',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.84.198","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.51"}',
+            ),
+            301 => 
+            array (
+                'id' => '1318',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:51:55',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.122.84.198","visitors_id":"1462","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-21T15:51:55.000000Z","created_at":"2023-06-21T15:51:55.000000Z","id":237}',
+            ),
+            302 => 
+            array (
+                'id' => '1319',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:52:32',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.122.77.230","visitors_id":"1463","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-21T15:52:32.000000Z","created_at":"2023-06-21T15:52:32.000000Z","id":238}',
+            ),
+            303 => 
+            array (
+                'id' => '1320',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:54:33',
+                'table_name' => 'hari_besar_nasionals',
+                'log_type' => 'edit',
+            'data' => '{"id":"187","type":"0","hari":"2","bulan":"5","tahun":"2022","nama":"Idul Fitri (Islam)","keterangan":null,"created_at":null,"updated_at":"2022-08-27 13:02:27"}',
+            ),
+            304 => 
+            array (
+                'id' => '1321',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:54:37',
+                'table_name' => 'hari_besar_nasionals',
+                'log_type' => 'edit',
+            'data' => '{"id":"187","type":"0","hari":"2","bulan":"4","tahun":"2022","nama":"Idul Fitri (Islam)","keterangan":null,"created_at":null,"updated_at":"2023-06-21 22:54:33"}',
+            ),
+            305 => 
+            array (
+                'id' => '1322',
+                'user_id' => '1',
+                'log_date' => '2023-06-21 22:54:50',
+                'table_name' => 'hari_besar_nasionals',
+                'log_type' => 'edit',
+            'data' => '{"id":"188","type":"0","hari":null,"bulan":null,"tahun":null,"nama":"Idul Adha (Islam)","keterangan":"","created_at":null,"updated_at":null}',
+            ),
+            306 => 
+            array (
+                'id' => '1323',
+                'user_id' => '93',
+                'log_date' => '2023-06-24 16:54:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.222","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            307 => 
+            array (
+                'id' => '1324',
+                'user_id' => '93',
+                'log_date' => '2023-06-24 16:54:16',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.249.222","visitors_id":"1638","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-24T09:54:16.000000Z","created_at":"2023-06-24T09:54:16.000000Z","id":252}',
+            ),
+            308 => 
+            array (
+                'id' => '1325',
+                'user_id' => '93',
+                'log_date' => '2023-06-24 21:24:10',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.222","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            309 => 
+            array (
+                'id' => '1326',
+                'user_id' => '93',
+                'log_date' => '2023-06-25 07:06:48',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.222","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            310 => 
+            array (
+                'id' => '1327',
+                'user_id' => '93',
+                'log_date' => '2023-06-25 07:06:52',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.249.222","visitors_id":"1691","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-06-25T00:06:52.000000Z","created_at":"2023-06-25T00:06:52.000000Z","id":259}',
+            ),
+            311 => 
+            array (
+                'id' => '1328',
+                'user_id' => '93',
+                'log_date' => '2023-06-25 15:05:07',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.222","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; id-id; Redmi Note 11 Build\\/SKQ1.211103.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/89.0.4389.116 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.6.0-gn"}',
+            ),
+            312 => 
+            array (
+                'id' => '1329',
+                'user_id' => '1',
+                'log_date' => '2023-07-08 15:23:35',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.205","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.67"}',
+            ),
+            313 => 
+            array (
+                'id' => '1330',
+                'user_id' => '1',
+                'log_date' => '2023-07-08 15:23:36',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.205","visitors_id":"2368","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-08T08:23:36.000000Z","created_at":"2023-07-08T08:23:36.000000Z","id":316}',
+            ),
+            314 => 
+            array (
+                'id' => '1331',
+                'user_id' => '1',
+                'log_date' => '2023-07-09 15:07:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.107","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.67"}',
+            ),
+            315 => 
+            array (
+                'id' => '1332',
+                'user_id' => '1',
+                'log_date' => '2023-07-09 15:07:56',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.107","visitors_id":"2411","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-09T08:07:56.000000Z","created_at":"2023-07-09T08:07:56.000000Z","id":321}',
+            ),
+            316 => 
+            array (
+                'id' => '1333',
+                'user_id' => '1',
+                'log_date' => '2023-07-10 00:40:37',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.123","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.67"}',
+            ),
+            317 => 
+            array (
+                'id' => '1334',
+                'user_id' => '1',
+                'log_date' => '2023-07-10 00:40:38',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.123","visitors_id":"2424","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-09T17:40:38.000000Z","created_at":"2023-07-09T17:40:38.000000Z","id":323}',
+            ),
+            318 => 
+            array (
+                'id' => '1335',
+                'user_id' => '1',
+                'log_date' => '2023-07-11 08:57:21',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.123","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            319 => 
+            array (
+                'id' => '1336',
+                'user_id' => '1',
+                'log_date' => '2023-07-11 08:57:21',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.123","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            320 => 
+            array (
+                'id' => '1337',
+                'user_id' => '1',
+                'log_date' => '2023-07-11 08:57:23',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.123","visitors_id":"2523","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-11T01:57:23.000000Z","created_at":"2023-07-11T01:57:23.000000Z","id":342}',
+            ),
+            321 => 
+            array (
+                'id' => '1338',
+                'user_id' => '1',
+                'log_date' => '2023-07-13 22:56:34',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.222","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.79"}',
+            ),
+            322 => 
+            array (
+                'id' => '1339',
+                'user_id' => '1',
+                'log_date' => '2023-07-13 22:56:37',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.222","visitors_id":"2707","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-13T15:56:37.000000Z","created_at":"2023-07-13T15:56:37.000000Z","id":368}',
+            ),
+            323 => 
+            array (
+                'id' => '1340',
+                'user_id' => '1',
+                'log_date' => '2023-07-17 16:19:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.82.77","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.82"}',
+            ),
+            324 => 
+            array (
+                'id' => '1341',
+                'user_id' => '1',
+                'log_date' => '2023-07-17 16:19:56',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.122.82.77","visitors_id":"2992","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-17T09:19:56.000000Z","created_at":"2023-07-17T09:19:56.000000Z","id":399}',
+            ),
+            325 => 
+            array (
+                'id' => '1342',
+                'user_id' => '1',
+                'log_date' => '2023-07-18 08:18:35',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.205","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            326 => 
+            array (
+                'id' => '1343',
+                'user_id' => '1',
+                'log_date' => '2023-07-18 08:18:36',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.205","visitors_id":"3035","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-07-18T01:18:36.000000Z","created_at":"2023-07-18T01:18:36.000000Z","id":408}',
+            ),
+            327 => 
+            array (
+                'id' => '1344',
+                'user_id' => '1',
+                'log_date' => '2023-07-18 08:18:45',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"yTCZZkOOf8Sdk2fWubjn6ruHmLYzILsGcgO9mZDT5nTayFENC7owvQdcfpkP","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            328 => 
+            array (
+                'id' => '1345',
+                'user_id' => '1',
+                'log_date' => '2023-07-24 20:05:23',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Safari\\/537.36 Edg\\/114.0.1823.82"}',
+            ),
+            329 => 
+            array (
+                'id' => '1346',
+                'user_id' => '1',
+                'log_date' => '2023-07-25 11:59:25',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Safari\\/537.36 Edg\\/115.0.1901.183"}',
+            ),
+            330 => 
+            array (
+                'id' => '1347',
+                'user_id' => '93',
+                'log_date' => '2023-07-28 15:45:24',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"120.188.35.217","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            331 => 
+            array (
+                'id' => '1348',
+                'user_id' => '93',
+                'log_date' => '2023-07-28 15:45:29',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"120.188.35.217","visitors_id":"4133","city":"Jakarta","region":"Jakarta","country_code":"ID","country":"Indonesia","loc":"-6.2146,106.8451","timezone":"Asia\\/Jakarta","updated_at":"2023-07-28T08:45:29.000000Z","created_at":"2023-07-28T08:45:29.000000Z","id":485}',
+            ),
+            332 => 
+            array (
+                'id' => '1349',
+                'user_id' => '93',
+                'log_date' => '2023-07-28 23:15:22',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"120.188.35.217","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            333 => 
+            array (
+                'id' => '1350',
+                'user_id' => '293',
+                'log_date' => '2023-08-05 17:50:25',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.244.129.66","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Safari\\/537.36"}',
+            ),
+            334 => 
+            array (
+                'id' => '1351',
+                'user_id' => '286',
+                'log_date' => '2023-08-05 17:58:04',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.244.129.66","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Safari\\/537.36"}',
+            ),
+            335 => 
+            array (
+                'id' => '1352',
+                'user_id' => '93',
+                'log_date' => '2023-08-08 20:41:20',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            336 => 
+            array (
+                'id' => '1353',
+                'user_id' => '93',
+                'log_date' => '2023-08-08 20:41:26',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.4.214.160","visitors_id":"7054","city":"Jakarta","region":"Jakarta","country_code":"ID","country":"Indonesia","loc":"-6.2146,106.8451","timezone":"Asia\\/Jakarta","updated_at":"2023-08-08T13:41:26.000000Z","created_at":"2023-08-08T13:41:26.000000Z","id":582}',
+            ),
+            337 => 
+            array (
+                'id' => '1354',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:51:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            338 => 
+            array (
+                'id' => '1355',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:51:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            339 => 
+            array (
+                'id' => '1356',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:51:21',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            340 => 
+            array (
+                'id' => '1357',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:52:41',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            341 => 
+            array (
+                'id' => '1358',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:52:41',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            342 => 
+            array (
+                'id' => '1359',
+                'user_id' => '93',
+                'log_date' => '2023-08-09 02:52:43',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.214.160","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            343 => 
+            array (
+                'id' => '1360',
+                'user_id' => '114',
+                'log_date' => '2023-08-12 21:42:15',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.125.252.195","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Safari\\/537.36"}',
+            ),
+            344 => 
+            array (
+                'id' => '1361',
+                'user_id' => '114',
+                'log_date' => '2023-08-12 21:42:18',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.125.252.195","visitors_id":"7376","city":"Palembang","region":"South Sumatra","country_code":"ID","country":"Indonesia","loc":"-2.9167,104.7458","timezone":"Asia\\/Jakarta","updated_at":"2023-08-12T14:42:18.000000Z","created_at":"2023-08-12T14:42:18.000000Z","id":608}',
+            ),
+            345 => 
+            array (
+                'id' => '1362',
+                'user_id' => '114',
+                'log_date' => '2023-08-12 21:43:04',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.125.237.71","visitors_id":"7377","city":"Palembang","region":"South Sumatra","country_code":"ID","country":"Indonesia","loc":"-2.9167,104.7458","timezone":"Asia\\/Jakarta","updated_at":"2023-08-12T14:43:04.000000Z","created_at":"2023-08-12T14:43:04.000000Z","id":609}',
+            ),
+            346 => 
+            array (
+                'id' => '1363',
+                'user_id' => '293',
+                'log_date' => '2023-08-16 06:08:16',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.68.217.75","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            347 => 
+            array (
+                'id' => '1364',
+                'user_id' => '293',
+                'log_date' => '2023-08-16 06:17:40',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.68.217.75","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            348 => 
+            array (
+                'id' => '1365',
+                'user_id' => '293',
+                'log_date' => '2023-08-16 06:17:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.68.217.75","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            349 => 
+            array (
+                'id' => '1366',
+                'user_id' => '293',
+                'log_date' => '2023-08-16 06:28:07',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"36.68.217.75","visitors_id":"7916","city":"Surabaya","region":"East Java","country_code":"ID","country":"Indonesia","loc":"-7.2492,112.7508","timezone":"Asia\\/Jakarta","updated_at":"2023-08-15T23:28:07.000000Z","created_at":"2023-08-15T23:28:07.000000Z","id":630}',
+            ),
+            350 => 
+            array (
+                'id' => '1367',
+                'user_id' => '1',
+                'log_date' => '2023-08-31 11:45:37',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.77.165","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.62"}',
+            ),
+            351 => 
+            array (
+                'id' => '1368',
+                'user_id' => '1',
+                'log_date' => '2023-08-31 11:46:37',
+                'table_name' => 'notif_depan_atas',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Sensus Anggota","deskripsi":"Sensus anggota sedang dilakukan, untuk semua anggota maupun alumni karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota","dari":"2023-03-23","sampai":null,"link":"https:\\/\\/karmapack.id\\/pendaftaran\\/sensus","link_nama":"Klik disini","created_at":"2023-03-24 05:45:52","updated_at":"2023-03-24 05:48:00"}',
+            ),
+            352 => 
+            array (
+                'id' => '1369',
+                'user_id' => '1',
+                'log_date' => '2023-08-31 11:47:16',
+                'table_name' => 'notif_admin_atas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nama":"situs belum siap wkwk","deskripsi":"Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer","dari":"2022-08-17","sampai":"2023-03-18","link":"https:\\/\\/wa.me\\/+6285798132505","link_nama":"Klik disini","created_at":"2022-08-18 16:42:49","updated_at":"2023-03-19 10:54:30"}',
+            ),
+            353 => 
+            array (
+                'id' => '1370',
+                'user_id' => '1',
+                'log_date' => '2023-08-31 11:47:46',
+                'table_name' => 'notif_admin_atas',
+                'log_type' => 'create',
+                'data' => '{"nama":"Isep Lutpi Nur","deskripsi":"Aadmin","dari":"2023-08-31","sampai":"2023-08-31","link":"https:\\/\\/padiumkm.id\\/store\\/68374-wkg-roastery","link_nama":"Klik disini","updated_at":"2023-08-31T04:47:46.000000Z","created_at":"2023-08-31T04:47:46.000000Z","id":2}',
+            ),
+            354 => 
+            array (
+                'id' => '1371',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:24:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            355 => 
+            array (
+                'id' => '1372',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:24:53',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.90.64.253","visitors_id":"12324","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-06T12:24:53.000000Z","created_at":"2023-09-06T12:24:53.000000Z","id":760}',
+            ),
+            356 => 
+            array (
+                'id' => '1373',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:30:55',
+                'table_name' => 'notif_admin_atas',
+                'log_type' => 'delete',
+                'data' => '{"id":"1","nama":"situs belum siap wkwk","deskripsi":"Website ini masih dalam masa pengembangan. jika anda menemukan error atau ada saran lain-nya bisa menghubungi developer","dari":"2022-08-17","sampai":"2023-09-01","link":"https:\\/\\/wa.me\\/+6285798132505","link_nama":"Klik disini","created_at":"2022-08-18 16:42:49","updated_at":"2023-08-31 11:47:16"}',
+            ),
+            357 => 
+            array (
+                'id' => '1374',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:30:58',
+                'table_name' => 'notif_admin_atas',
+                'log_type' => 'delete',
+                'data' => '{"id":"2","nama":"Isep Lutpi Nur","deskripsi":"Aadmin","dari":"2023-08-31","sampai":"2023-08-31","link":"https:\\/\\/padiumkm.id\\/store\\/68374-wkg-roastery","link_nama":"Klik disini","created_at":"2023-08-31 11:47:46","updated_at":"2023-08-31 11:47:46"}',
+            ),
+            358 => 
+            array (
+                'id' => '1375',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:31:26',
+                'table_name' => 'setting_activities',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","key":"setting.spk.ahp.umumkan","value":"1","created_at":"2023-05-10 02:11:43","updated_at":"2023-05-27 13:25:05"}',
+            ),
+            359 => 
+            array (
+                'id' => '1376',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:31:37',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":"413","parent_id":null,"title":"Seleksi Calon Ketua Umum","icon":"fas fa-id-card","route":null,"sequence":"26","active":"1","type":"1","created_at":"2023-05-09 11:53:00","updated_at":"2023-05-09 11:55:18"}',
+            ),
+            360 => 
+            array (
+                'id' => '1377',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:31:37',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":413,"updated_at":"2023-09-06T12:31:37.000000Z","created_at":"2023-09-06T12:31:37.000000Z","id":1250}',
+            ),
+            361 => 
+            array (
+                'id' => '1378',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:40:45',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"qWUqOPNH0wpcjKNwAPB8srxTM8OsZk4HNmscB6XEXFDQTzTAWEDJDUnfxvXg","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            362 => 
+            array (
+                'id' => '1379',
+                'user_id' => '1',
+                'log_date' => '2023-09-06 19:40:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
         ));
         
         

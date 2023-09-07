@@ -266,6 +266,71 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2023-06-01 15:57:21',
                 'updated_at' => '2023-06-01 15:57:21',
             ),
+            19 => 
+            array (
+                'id' => '20',
+                'nama' => 'Muhammad Diqqa Kurniawan',
+                'angkatan' => '2007',
+                'email' => 'diqqa.daqqa@gmail.com',
+                'whatsapp' => '089898886121',
+                'telepon' => '021787999',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: diqqa.daqqa@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-06-17 19:39:17',
+                'updated_at' => '2023-06-17 19:39:17',
+            ),
+            20 => 
+            array (
+                'id' => '21',
+                'nama' => 'Muhammad Firdaus Fahrullah',
+                'angkatan' => '2017',
+                'email' => 'theltmaeve@gmail.com',
+                'whatsapp' => '081273767042',
+                'telepon' => '081273767042',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: theltmaeve@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-07-20 15:48:39',
+                'updated_at' => '2023-07-20 15:48:39',
+            ),
+            21 => 
+            array (
+                'id' => '22',
+                'nama' => 'Muhammad Firdaus Fahrullah',
+                'angkatan' => '2017',
+                'email' => 'theltmaeve@gmail.com',
+                'whatsapp' => '081273767042',
+                'telepon' => '081273767042',
+                'keterangan' => 'Email sudah digunakan',
+                'status' => '3',
+                'created_at' => '2023-07-20 15:50:02',
+                'updated_at' => '2023-07-20 15:50:02',
+            ),
+            22 => 
+            array (
+                'id' => '23',
+                'nama' => 'Muhammad Firdaus Fahrullah',
+                'angkatan' => '2001',
+                'email' => 'theltmaeve@gmail.com',
+                'whatsapp' => '081273767042',
+                'telepon' => '081273767042',
+                'keterangan' => 'Email sudah digunakan',
+                'status' => '3',
+                'created_at' => '2023-07-20 16:32:08',
+                'updated_at' => '2023-07-20 16:32:08',
+            ),
+            23 => 
+            array (
+                'id' => '24',
+                'nama' => 'mohamad mudhopir',
+                'angkatan' => '2023',
+                'email' => 'dhoppink@gmail.com',
+                'whatsapp' => '085851111603',
+                'telepon' => '085851111603',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: dhoppink@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-08-20 23:46:50',
+                'updated_at' => '2023-08-20 23:46:50',
+            ),
         ));
         
         

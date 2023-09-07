@@ -729,10 +729,10 @@ class PMenuTableSeeder extends Seeder
                 'icon' => 'fas fa-id-card',
                 'route' => NULL,
                 'sequence' => '26',
-                'active' => '1',
+                'active' => '0',
                 'type' => '1',
                 'created_at' => '2023-05-09 11:53:00',
-                'updated_at' => '2023-05-09 11:55:18',
+                'updated_at' => '2023-09-06 19:31:37',
             ),
             55 => 
             array (

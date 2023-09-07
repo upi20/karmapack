@@ -29,7 +29,7 @@ class ContactListTableSeeder extends Seeder
                 'keterangan' => 'Cianjur Selatan<br> Jawa Barat 43272, Indonesia.',
                 'status' => '1',
                 'created_at' => '2022-08-21 08:34:56',
-                'updated_at' => '2022-08-21 08:34:56',
+                'updated_at' => '2023-06-18 19:06:11',
             ),
             1 => 
             array (

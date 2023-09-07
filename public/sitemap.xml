@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://karmapack.id</loc>
-        <lastmod>2023-06-06T13:25:29+07:00</lastmod>
+        <lastmod>2023-06-26T20:34:53+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -108,11 +108,11 @@
         </url>
     <url>
         <loc>https://karmapack.id/iseplutpinur</loc>
-        <lastmod>2023-04-20T14:42:40+07:00</lastmod>
+        <lastmod>2023-06-18T17:56:49+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/iseplutpinur20230420144240.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/iseplutpinur20230618175649.png</image:loc>
     <image:caption>Isep Lutpi Nur</image:caption>
 </image:image>
 </url>
@@ -2728,7 +2728,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/rifqi_munawar</loc>
-        <lastmod>2023-05-16T21:00:50+07:00</lastmod>
+        <lastmod>2023-06-19T11:17:31+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -2764,6 +2764,16 @@
         <image:image>
     <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
     <image:caption>sarmin</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/muhammad-diqqa-kurniawan20230617193916</loc>
+        <lastmod>2023-06-17T19:39:17+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>Muhammad Diqqa Kurniawan</image:caption>
 </image:image>
 </url>
 </urlset>
