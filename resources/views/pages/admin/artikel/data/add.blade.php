@@ -24,21 +24,16 @@
                 <div>
                     <h6 class="mt-2 text-uppercase"id="menu-title">Form {{ $page_attr['title'] }}</h6>
                 </div>
-                <div>
-                    <a href="{{ url()->previous() }}" class="btn btn-secondary btn-sm">
-                        <i class='bx bx-arrow-back me-1'></i>Kembali</a>
-                </div>
             </div>
             <hr class="mt-0" />
             <form method="post" action="" enctype="multipart/form-data" id="MainForm">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="form-group">
-                            <label><strong>Deskripsi :</strong></label>
-                            <textarea class="summernote" name="detail">{{ $detail }}</textarea>
+                            <textarea name="detail" id="detail">{!! $detail !!}</textarea>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
@@ -136,7 +131,7 @@
                 </div>
             </form>
             <div class="text-end">
-                <button type="submit" class="btn btn-primary" form="MainForm">
+                <button type="submit" class="btn btn-success" form="MainForm">
                     <li class="fas fa-save mr-1"></li> Simpan
                 </button>
             </div>
@@ -147,14 +142,14 @@
 @section('stylesheet')
     <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2-bootstrap-5-theme.min.css') }}" />
-    @vite(['resources/css/_summernote.scss']);
+    <script src="https://cdn.tiny.cloud/1/hdswucb0j2g4wl27cod7yrirjqdc9en0d6apd19en6cp8inr/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 @endsection
 
 @section('javascript')
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>
-    <script src="{{ asset_admin('plugins/summernote/summernote1.js', name: 'sash') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,

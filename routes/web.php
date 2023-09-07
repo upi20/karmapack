@@ -32,6 +32,7 @@ use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController;
 use App\Http\Controllers\Frontend\AboutController;
+use Illuminate\Http\Request;
 
 // ====================================================================================================================
 // ====================================================================================================================
@@ -202,6 +203,23 @@ Route::controller(LabController::class)->prefix($prefix)->group(function () {
     Route::get('/belumisi', 'belumisi')->name("lab.belumisi");
     Route::get('/ip_detail', 'ip_detail')->name("lab.ip_detail");
 });
+
+Route::post('/image_to_base64', function (Request $request) {
+    // save
+    $base64 = '';
+    if ($image = $request->file('file')) {
+        $folder_path = 'upload/temp';
+        $foto = date('YmdHis') . random_int(1, 100) . random_int(1, 100) . "." . $image->getClientOriginalExtension();
+        $folder = public_path($folder_path);
+        $image->move($folder, $foto);
+        $foto_path = "$folder/$foto";
+        // base64
+        $base64 = "data:image/png;base64," . base64_encode(file_get_contents($foto_path));
+        // delete
+        delete_file($foto_path);
+    }
+    return response()->json(['base64' => $base64]);
+})->name('image_to_base64');
 // ====================================================================================================================
 
 // frontend ===========================================================================================================

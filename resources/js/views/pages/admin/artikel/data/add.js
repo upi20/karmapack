@@ -8,9 +8,7 @@ $(document).ready(function () {
         ajax: {
             url: "{{ route(l_prefix($hpu,'kategori.select2', $min + 1)) }}",
             type: "GET",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
             data: function (params) {
                 var query = {
                     search: params.term,
@@ -27,9 +25,7 @@ $(document).ready(function () {
         ajax: {
             url: "{{ route(l_prefix($hpu,'tag.select2', $min + 1)) }}",
             type: "GET",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
             data: function (params) {
                 var query = {
                     search: params.term,
@@ -41,59 +37,85 @@ $(document).ready(function () {
         theme: "bootstrap-5",
         width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
     });
-    // init summernote
-    $('.summernote').summernote({
-        toolbar: [
-            ['fontsize', ['fontsize']],
-            ['fontname', ['fontname']],
-            ['style',
-                ['bold',
-                    'italic',
-                    'underline',
-                    'strikethrough',
-                    'superscript',
-                    'subscript',
-                    'clear'
-                ]
-            ],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['color', ['color']],
-            ['float', ['floatLeft', 'floatRight', 'floatNone']],
-            ['remove', ['removeMedia']],
-            ['table', ['table']],
-            ['insert', ['link', 'unlink', 'audio', 'hr', 'picture']],
-            ['mybutton', ['myVideo']],
-            ['view', ['fullscreen', 'codeview']],
-            ['help', ['help']],
-        ],
-        buttons: {
-            myVideo: function (context) {
-                var ui = $.summernote.ui;
-                var button = ui.button({
-                    contents: '<i class="fab fa-youtube"></i>',
-                    tooltip: 'video',
-                    click: function () {
-                        var div = document.createElement('div');
-                        div.classList.add('embed-container');
-                        var iframe = document.createElement('iframe');
-                        var src = prompt('Enter video url:');
-                        src = youtube_parser(src);
-                        iframe.src =
-                            `https://www.youtube.com/embed/${src}?autoplay=1&fs=1&iv_load_policy=&showinfo=1&rel=0&cc_load_policy=1&start=0&modestbranding&end=0&controls=1`;
-                        iframe.setAttribute('frameborder', 0);
-                        iframe.setAttribute('width', '100%');
-                        iframe.setAttribute('height', '500px');
-                        iframe.setAttribute('type', 'text/html');
-                        iframe.setAttribute('allowfullscreen', true);
-                        div.appendChild(iframe);
-                        context.invoke('editor.insertNode', div);
-                    }
-                });
-                return button.render();
-            }
+
+    tinymce.init({
+        selector: '#detail',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount code',
+        toolbar: 'undo redo | fontsize bold italic underline strikethrough align lineheight | link image media table | addcomment showcomments | spellcheckdialog a11ycheck | checklist numlist bullist indent outdent | emoticons charmap | blocks fontfamily removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [{
+            value: 'First.Name',
+            title: 'First Name'
         },
-        height: 600,
+        {
+            value: 'Email',
+            title: 'Email'
+        },
+        ],
+        height: 700,
+        image_class_list: [{
+            title: 'none',
+            value: ''
+        },
+        {
+            title: 'Margin Right 1',
+            value: 'me-1'
+        },
+        {
+            title: 'Margin Right 2',
+            value: 'me-2'
+        },
+        {
+            title: 'Margin Right 3',
+            value: 'me-3'
+        },
+        {
+            title: 'Margin Right 4',
+            value: 'me-4'
+        },
+        ],
+        images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', "{{ route('image_to_base64') }}");
+            xhr.setRequestHeader("X-CSRF-TOKEN", $('meta[name="csrf-token"]').attr('content'));
+            xhr.upload.onprogress = (e) => {
+                progress(e.loaded / e.total * 100);
+            };
+            xhr.onload = () => {
+                if (xhr.status === 403) {
+                    reject({ message: 'HTTP Error: ' + xhr.status, remove: true });
+                    return;
+                }
+
+                if (xhr.status < 200 || xhr.status >= 300) {
+                    reject('HTTP Error: ' + xhr.status);
+                    return;
+                }
+
+                const json = JSON.parse(xhr.responseText);
+
+                if (!json || typeof json.base64 != 'string') {
+                    reject('Invalid JSON: ' + xhr.responseText);
+                    return;
+                }
+
+                resolve(json.base64);
+            };
+
+            xhr.onerror = () => {
+                reject('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+            };
+
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+            xhr.send(formData);
+        }),
+        relative_urls: false,
+        skin: document.querySelector('html').classList.contains('dark-theme') ? "oxide-dark" : "oxide",
+        content_css: document.querySelector('html').classList.contains('dark-theme') ? "dark" : "default",
     });
 
     $("#nama").keyup(function () {
@@ -113,9 +135,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: route,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
             data: formData,
             cache: false,
             contentType: false,

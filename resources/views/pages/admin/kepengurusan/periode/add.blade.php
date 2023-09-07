@@ -89,19 +89,19 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="visi">Visi</label>
-                            <textarea class="form-control mb-4 summernote" placeholder="Visi Periode" id="visi" name="visi" rows="4">{{ $visi }}</textarea>
+                            <textarea class="form-control mb-4 tinymce" placeholder="Visi Periode" id="visi" name="visi" rows="4">{{ $visi }}</textarea>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label for="misi">Misi</label>
-                            <textarea class="form-control mb-4 summernote" placeholder="Misi Periode" id="misi" name="misi" rows="4">{{ $misi }}</textarea>
+                            <textarea class="form-control mb-4 tinymce" placeholder="Misi Periode" id="misi" name="misi" rows="4">{{ $misi }}</textarea>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
                             <label for="filosofi_logo">Filosofi Logo</label>
-                            <textarea class="form-control mb-4 summernote" placeholder="Filosofi Logo" id="filosofi_logo" name="filosofi_logo"
+                            <textarea class="form-control mb-4 tinymce" placeholder="Filosofi Logo" id="filosofi_logo" name="filosofi_logo"
                                 rows="4">{{ $filosofi_logo }}</textarea>
                         </div>
                     </div>
@@ -138,11 +138,11 @@
 @endsection
 
 @section('stylesheet')
-    @vite(['resources/css/_summernote.scss'])
+    <script src="https://cdn.tiny.cloud/1/hdswucb0j2g4wl27cod7yrirjqdc9en0d6apd19en6cp8inr/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 @endsection
 
 @section('javascript')
-    <script src="{{ asset_admin('plugins/summernote/summernote1.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     @php
         $resource = resource_loader(

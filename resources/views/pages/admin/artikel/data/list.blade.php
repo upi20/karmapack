@@ -10,11 +10,11 @@
         <div class="card-body">
             <div class="card-title d-md-flex flex-row justify-content-between">
                 <div>
-                    <h6 class="mt-2 text-uppercase">Data {{ $page_attr['title'] }}</h6>
+                    <h6 class="mt-2">Tabel {{ $page_attr['title'] }}</h6>
                 </div>
                 @if ($can_insert)
                     <div>
-                        <a class="btn btn-rounded btn-primary btn-sm" href="{{ route(h_prefix('add')) }}"
+                        <a class="btn btn-rounded btn-success btn-sm" href="{{ route(h_prefix('add')) }}"
                             data-bs-effect="effect-scale">
                             <i class="fas fa-plus"></i> Tambah Artikel
                         </a>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover w-100" id="tbl_main">
+            <table class="table table-striped table-hover" id="tbl_main">
                 <thead>
                     <tr>
                         <th>No</th>

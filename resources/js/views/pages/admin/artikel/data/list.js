@@ -10,9 +10,9 @@ $(document).ready(function () {
     });
     const new_table = table_html.DataTable({
         searchDelay: 500,
-        // processing: true,
+        processing: true,
         serverSide: true,
-        // responsive: true,
+        // responsive: false,
         scrollX: true,
         aAutoWidth: false,
         bAutoWidth: false,
@@ -84,9 +84,7 @@ $(document).ready(function () {
         order: [
             [5, 'desc']
         ],
-        language: {
-            url: datatable_indonesia_language_url
-        }
+        language: { url: datatable_indonesia_language_url }
     });
 
     new_table.on('draw.dt', function () {
@@ -99,11 +97,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#FilterForm').submit(function (e) {
-        e.preventDefault();
-        var oTable = table_html.dataTable();
-        oTable.fnDraw(false);
-    });
+    $('#FilterForm').submit(function (e) { e.preventDefault(); var oTable = table_html.dataTable(); oTable.fnDraw(false); });
 });
 
 function deleteFunc(id) {
@@ -119,21 +113,13 @@ function deleteFunc(id) {
                 url: `{{ url(l_prefix_uri($hpu)) }}/${id}`,
                 type: 'DELETE',
                 dataType: 'json',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
                 beforeSend: function () {
-                    swal.fire({
-                        title: 'Please Wait..!',
-                        text: 'Is working..',
-                        onOpen: function () {
-                            Swal.showLoading()
-                        }
-                    })
+                    swal.fire({ title: 'Please Wait..!', text: 'Is working..', onOpen: function () { Swal.showLoading() } });
                 },
                 success: function (data) {
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'center',
                         icon: 'success',
                         title: 'Data deleted successfully',
                         showConfirmButton: false,
@@ -147,7 +133,8 @@ function deleteFunc(id) {
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     swal.hideLoading();
-                    swal.fire("!Opps ", "Something went wrong, try again later", "error");
+                    const res = jqXHR.responseJSON ?? {};
+                    Swal.fire({ position: 'center', icon: 'error', text: res.message ?? 'Something went wrong', showConfirmButton: true, })
                 }
             });
         }

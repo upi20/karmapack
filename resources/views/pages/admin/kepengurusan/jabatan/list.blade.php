@@ -172,7 +172,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="foto">Icon</label>
-                                    <input type="file" class="form-control-file" id="foto" name="foto"
+                                    <input type="file" class="form-control" id="foto" name="foto"
                                         accept="image/png, image/jpeg, image/JPG, image/PNG, image/JPEG">
                                 </div>
                             </div>
@@ -180,12 +180,12 @@
 
                         <div class="form-group">
                             <label for="visi">Visi</label>
-                            <textarea cols="3" rows="4" class="form-control summernote" id="visi" name="visi"
+                            <textarea cols="3" rows="4" class="form-control tinymce" id="visi" name="visi"
                                 placeholder="Visi"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="misi">Misi</label>
-                            <textarea cols="3" rows="4" class="form-control summernote" id="misi" name="misi"
+                            <textarea cols="3" rows="4" class="form-control tinymce" id="misi" name="misi"
                                 placeholder="Misi"></textarea>
                         </div>
                     </form>
@@ -224,7 +224,8 @@
 @endsection
 
 @section('stylesheet')
-    @vite(['resources/css/_summernote.scss'])
+    <script src="https://cdn.tiny.cloud/1/hdswucb0j2g4wl27cod7yrirjqdc9en0d6apd19en6cp8inr/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <link rel="stylesheet" href="{{ asset_admin('plugins/datatable/css/dataTables.bootstrap5.min.css') }}" />
 @endsection
 
@@ -233,7 +234,6 @@
     <script src="{{ asset_admin('plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/loading/loadingoverlay.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/summernote/summernote1.js', name: 'sash') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,

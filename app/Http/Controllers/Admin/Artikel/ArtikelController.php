@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin\Artikel;
 
-use League\Config\Exception\ValidationException;
-use App\Models\Artikel\KategoriArtikel;
 use App\Http\Controllers\Controller;
-use App\Models\Artikel\TagArtikel;
-use Illuminate\Support\Facades\DB;
-use App\Models\Artikel\Kategori;
-use App\Models\Artikel\Artikel;
 use Illuminate\Http\Request;
+use App\Models\Artikel\Artikel;
+use League\Config\Exception\ValidationException;
+use Yajra\Datatables\Datatables;
 use App\Helpers\Summernote;
+use App\Models\Artikel\Kategori;
 use App\Models\Artikel\Tag;
+use App\Models\Artikel\TagArtikel;
+use App\Models\Artikel\KategoriArtikel;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class ArtikelController extends Controller
 {
@@ -20,10 +21,22 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         if (request()->ajax()) {
-            return Artikel::datatable($request);
+            $model = Artikel::select(['id', 'nama', 'slug', 'excerpt', 'status', 'created_at', 'date'])
+                ->selectRaw('IF(status = 1, "Dipublish", "Disimpan") as status_str');
+
+            // filter
+            if (isset($request->filter)) {
+                $filter = $request->filter;
+                if ($filter['status'] != '') {
+                    $model->where('status', '=', $filter['status']);
+                }
+            }
+
+            return Datatables::of($model)
+                ->addIndexColumn()
+                ->make(true);
         }
         $page_attr = adminBreadcumb(h_prefix());
-
         $view = path_view('pages.admin.artikel.data.list');
         $data = compact('page_attr', 'view');
         $data['compact'] = $data;
