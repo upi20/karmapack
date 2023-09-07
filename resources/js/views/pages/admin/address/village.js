@@ -239,7 +239,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -315,7 +315,7 @@ function deleteFunc(id) {
                 },
                 success: function (data) {
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'center',
                         icon: 'success',
                         title: 'Berhasil Menghapus Data',
                         showConfirmButton: false,

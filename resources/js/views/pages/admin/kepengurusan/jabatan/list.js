@@ -223,7 +223,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -353,7 +353,7 @@ function refresh_parent(periode_id, selected_id = '', option_id = '', custom_fun
                 setErrorAfterInput(res.errors[property], `#${property}`);
             }
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,

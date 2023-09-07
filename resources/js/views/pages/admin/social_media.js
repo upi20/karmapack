@@ -141,7 +141,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,

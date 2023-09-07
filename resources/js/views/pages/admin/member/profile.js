@@ -218,7 +218,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -268,7 +268,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -318,7 +318,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -379,7 +379,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -433,7 +433,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -486,7 +486,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -539,7 +539,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -592,7 +592,7 @@ $(document).ready(() => {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -760,7 +760,7 @@ function kontakRender() {
         error: function (data) {
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,
@@ -895,7 +895,7 @@ function pendidikanRender() {
         error: function (data) {
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,
@@ -1028,7 +1028,7 @@ function pengalaman_organisasiRender() {
         error: function (data) {
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,
@@ -1148,7 +1148,7 @@ function pengalaman_lainRender() {
         error: function (data) {
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,

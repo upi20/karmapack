@@ -35,7 +35,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -141,7 +141,7 @@ function tableHasil() {
         renderTabelCalon(data);
     }).fail(($xhr) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: 'Something went wrong, try again later',
             showConfirmButton: false,
@@ -201,7 +201,7 @@ function tableAlternatif() {
         renderTabelCalon(data);
     }).fail(($xhr) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: 'Something went wrong, try again later',
             showConfirmButton: false,
@@ -262,7 +262,7 @@ function tableAlternatif2() {
         renderTabelCalon(data);
     }).fail(($xhr) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: 'Something went wrong, try again later',
             showConfirmButton: false,
@@ -327,7 +327,7 @@ function tableAlternatif3() {
         renderTabelCalon(data);
     }).fail(($xhr) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: 'Something went wrong, try again later',
             showConfirmButton: false,

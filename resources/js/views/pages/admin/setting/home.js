@@ -37,7 +37,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -75,7 +75,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -113,7 +113,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -151,7 +151,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -189,7 +189,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -227,7 +227,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -265,7 +265,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -308,7 +308,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -346,7 +346,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,

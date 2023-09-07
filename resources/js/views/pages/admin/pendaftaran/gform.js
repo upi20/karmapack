@@ -196,7 +196,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -254,7 +254,7 @@ function editFunc(id) {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -348,7 +348,7 @@ function detail(id) {
         error: function (data) {
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,

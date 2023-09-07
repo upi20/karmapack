@@ -115,7 +115,7 @@ function addFunc() {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -168,7 +168,7 @@ function editFunc(id) {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -315,7 +315,7 @@ function getTable() {
         renderTabelCalon(data);
     }).fail(($xhr) => {
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'error',
             title: 'Something went wrong, try again later',
             showConfirmButton: false,

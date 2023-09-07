@@ -27,7 +27,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -64,7 +64,7 @@ $(document).ready(function () {
             error: function (data) {
                 const res = data.responseJSON ?? {};
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -115,7 +115,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -215,7 +215,7 @@ function meta_list_delete(id) {
                 },
                 success: function (data) {
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'center',
                         icon: 'success',
                         title: 'Data deleted successfully',
                         showConfirmButton: false,

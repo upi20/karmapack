@@ -116,7 +116,7 @@ function deleteFunc(id) {
                 },
                 success: function (data) {
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'center',
                         icon: 'success',
                         title: 'Permission deleted successfully',
                         showConfirmButton: false,

@@ -208,7 +208,7 @@ function editFunc(id) {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -305,7 +305,7 @@ function kriteriaBobotOptionRefresh() {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -377,7 +377,7 @@ function kriteriaRefresh() {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -459,7 +459,7 @@ function kriteriaNormalisasiRefresh() {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,

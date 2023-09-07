@@ -141,7 +141,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -191,7 +191,7 @@ function editFunc(id) {
         },
         error: function (data) {
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: 'Something went wrong',
                 showConfirmButton: false,
@@ -231,7 +231,7 @@ function deleteFunc(id) {
                 },
                 success: function (data) {
                     Swal.fire({
-                        position: 'top-end',
+                        position: 'center',
                         icon: 'success',
                         title: 'Data deleted successfully',
                         showConfirmButton: false,

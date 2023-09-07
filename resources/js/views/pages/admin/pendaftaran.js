@@ -191,7 +191,7 @@ $(document).ready(function () {
                     setErrorAfterInput(res.errors[property], `#${property}`);
                 }
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'error',
                     title: res.message ?? 'Something went wrong',
                     showConfirmButton: false,
@@ -298,7 +298,7 @@ function detail(id) {
             $.LoadingOverlay("hide");
             const res = data.responseJSON ?? {};
             Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'error',
                 title: res.message ?? 'Something went wrong',
                 showConfirmButton: false,
