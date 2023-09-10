@@ -38,40 +38,6 @@ class GFormsTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => '3',
-                'user_id' => '1',
-                'nama' => 'Testing',
-                'slug' => 'testing',
-                'deskripsi' => 'Testing',
-                'no_urut' => '2',
-                'dari' => '2022-08-25',
-                'sampai' => '2022-09-03',
-                'link' => 'https://forms.gle/emJnUVmXYZN9hRsa7',
-                'foto' => '',
-                'tampilkan' => '0',
-                'status' => '0',
-                'created_at' => '2022-08-08 17:06:30',
-                'updated_at' => '2022-08-09 11:45:00',
-            ),
-            2 => 
-            array (
-                'id' => '4',
-                'user_id' => '1',
-                'nama' => 'tes',
-                'slug' => 'tes',
-                'deskripsi' => 'des',
-                'no_urut' => '1',
-                'dari' => '2022-08-13',
-                'sampai' => '2022-08-25',
-                'link' => 'http://www.zondervan.com/the-reason-for-god-discussion-guide-with-dvd',
-                'foto' => '',
-                'tampilkan' => '0',
-                'status' => '0',
-                'created_at' => '2022-08-08 17:10:52',
-                'updated_at' => '2022-08-09 11:45:16',
-            ),
-            3 => 
-            array (
                 'id' => '5',
                 'user_id' => '1',
                 'nama' => 'EVALUASI PENGISIAN DATA PENGURUS DI WEBSITE KARMAPACK PERIODE 2022-2023',
@@ -87,7 +53,7 @@ class GFormsTableSeeder extends Seeder
                 'created_at' => '2022-08-30 11:11:21',
                 'updated_at' => '2022-08-30 11:13:36',
             ),
-            4 => 
+            2 => 
             array (
                 'id' => '6',
                 'user_id' => '1',
@@ -104,7 +70,7 @@ class GFormsTableSeeder extends Seeder
                 'created_at' => '2022-12-17 17:43:57',
                 'updated_at' => '2022-12-21 19:24:34',
             ),
-            5 => 
+            3 => 
             array (
                 'id' => '7',
                 'user_id' => '1',

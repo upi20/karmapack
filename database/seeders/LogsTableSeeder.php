@@ -12290,6 +12290,1385 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
             ),
+            363 => 
+            array (
+                'id' => '1380',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            364 => 
+            array (
+                'id' => '1381',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            365 => 
+            array (
+                'id' => '1382',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:07',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            366 => 
+            array (
+                'id' => '1383',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:07',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            367 => 
+            array (
+                'id' => '1384',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:10',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            368 => 
+            array (
+                'id' => '1385',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:10',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            369 => 
+            array (
+                'id' => '1386',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:14:10',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            370 => 
+            array (
+                'id' => '1387',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:43:49',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            371 => 
+            array (
+                'id' => '1388',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 07:43:50',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.128","visitors_id":"12422","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-07T00:43:50.000000Z","created_at":"2023-09-07T00:43:50.000000Z","id":763}',
+            ),
+            372 => 
+            array (
+                'id' => '1389',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:08:23',
+                'table_name' => 'artikel',
+                'log_type' => 'delete',
+                'data' => '{"id":"39","nama":"Nama","slug":"nama","foto":"","detail":"<p>Testing<\\/p>\\n","excerpt":"Kilasan","counter":"2","date":"2023-02-19","status":"0","created_at":"2023-02-19 22:14:06","updated_at":"2023-03-16 17:08:08","user_id":"1"}',
+            ),
+            373 => 
+            array (
+                'id' => '1390',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:08:26',
+                'table_name' => 'artikel',
+                'log_type' => 'delete',
+                'data' => '{"id":"36","nama":"Tes youtube","slug":"tes-youtube","foto":"","detail":"<p><br><div class=\\"embed-container\\"><br><\\/div><div class=\\"embed-container\\"><iframe src=\\"https:\\/\\/www.youtube.com\\/embed\\/WH1SduDRL_Y?autoplay=1&amp;fs=1&amp;iv_load_policy=&amp;showinfo=1&amp;rel=0&amp;cc_load_policy=1&amp;start=0&amp;modestbranding&amp;end=0&amp;controls=1\\" frameborder=\\"0\\" width=\\"100%\\" height=\\"500px\\" type=\\"text\\/html\\" allowfullscreen=\\"true\\"><\\/iframe><\\/div><p><\\/p><\\/p>\\n","excerpt":"Testing video youtube","counter":"54","date":"2022-04-27","status":"1","created_at":"2022-04-28 07:19:02","updated_at":"2023-09-05 09:07:37","user_id":"1"}',
+            ),
+            374 => 
+            array (
+                'id' => '1391',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:08:45',
+                'table_name' => 'g_forms',
+                'log_type' => 'delete',
+                'data' => '{"id":"4","user_id":"1","nama":"tes","slug":"tes","deskripsi":"des","no_urut":"1","dari":"2022-08-13","sampai":"2022-08-25","link":"http:\\/\\/www.zondervan.com\\/the-reason-for-god-discussion-guide-with-dvd","foto":"","tampilkan":"0","status":"0","created_at":"2022-08-08 17:10:52","updated_at":"2022-08-09 11:45:16"}',
+            ),
+            375 => 
+            array (
+                'id' => '1392',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:08:49',
+                'table_name' => 'g_forms',
+                'log_type' => 'delete',
+                'data' => '{"id":"3","user_id":"1","nama":"Testing","slug":"testing","deskripsi":"Testing","no_urut":"2","dari":"2022-08-25","sampai":"2022-09-03","link":"https:\\/\\/forms.gle\\/emJnUVmXYZN9hRsa7","foto":"","tampilkan":"0","status":"0","created_at":"2022-08-08 17:06:30","updated_at":"2022-08-09 11:45:00"}',
+            ),
+            376 => 
+            array (
+                'id' => '1393',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:09:00',
+                'table_name' => 'notif_depan_atas',
+                'log_type' => 'delete',
+                'data' => '{"id":"2","nama":"Testing","deskripsi":"Testing wkwk","dari":"2022-08-01","sampai":"2022-08-07","link":"https:\\/\\/docs.google.com\\/forms\\/d\\/e\\/1FAIpQLSdau6VwXEPJ_fiKm1SZAZf4tZ7UCZFGpejVbmfbHevdQcmA5Q\\/viewform","link_nama":"Klik Disini","created_at":"2022-08-08 22:38:37","updated_at":"2022-08-08 22:59:36"}',
+            ),
+            377 => 
+            array (
+                'id' => '1394',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:09:04',
+                'table_name' => 'notif_depan_atas',
+                'log_type' => 'delete',
+                'data' => '{"id":"1","nama":"Hi i\'m Astro","deskripsi":"Hi i\'m Astro","dari":"2022-08-02","sampai":"2022-10-01","link":"https:\\/\\/karmapack.id\\/pendaftaran\\/sensus","link_nama":"Klik disini","created_at":"2022-08-08 22:37:14","updated_at":"2023-03-24 05:46:05"}',
+            ),
+            378 => 
+            array (
+                'id' => '1395',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:09:09',
+                'table_name' => 'notif_depan_atas',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Sensus Anggota","deskripsi":"Sensus anggota sedang dilakukan, untuk semua anggota maupun alumni karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota","dari":"2023-03-23","sampai":"2023-08-30","link":"https:\\/\\/karmapack.id\\/pendaftaran\\/sensus","link_nama":"Klik disini","created_at":"2023-03-24 05:45:52","updated_at":"2023-08-31 11:46:37"}',
+            ),
+            379 => 
+            array (
+                'id' => '1396',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:10:39',
+                'table_name' => 'anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"266","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":"5798132505","whatsapp":"5798132505","status":null,"user_id":"291","created_at":"2023-04-20 20:16:14","updated_at":"2023-04-20 20:16:14"}',
+            ),
+            380 => 
+            array (
+                'id' => '1397',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:10:39',
+                'table_name' => 'users',
+                'log_type' => 'delete',
+                'data' => '{"id":"291","name":"Isep Lutpi Nur","email":"iseplutpi1008@gmail.com","foto":null,"username":"isep-lutpi-nur20230420201614","email_verified_at":null,"password":"$2y$10$6l6sTUqdXao0HsBblE4T0uZVrACDUCJyc4cgmSyiE.SKQFL8RZe\\/u","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"PaEBRDP4DwO57fKfBfPl6kgN3ZN1tgIoAH347QbXcOeNPdwxTGYHZ7dMW3Mm","created_at":"2023-04-20 20:16:14","updated_at":"2023-04-20 20:16:14"}',
+            ),
+            381 => 
+            array (
+                'id' => '1398',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:37:41',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"AwatLh3Dl3mgSo996MHoF26lA4NjVCQvyqBc4RzD1vPLEaCUmtTszWTvFgig","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            382 => 
+            array (
+                'id' => '1399',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:37:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.69"}',
+            ),
+            383 => 
+            array (
+                'id' => '1400',
+                'user_id' => '1',
+                'log_date' => '2023-09-07 08:37:56',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"3pXySmKqw6bA4HmUB15IcUM9AQi92dy51TdPBEFzrFKY5RjKAn1TeCuuHzmD","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            384 => 
+            array (
+                'id' => '1401',
+                'user_id' => '1',
+                'log_date' => '2023-09-08 23:12:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.212.14","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
+            ),
+            385 => 
+            array (
+                'id' => '1402',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:36:37',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.30","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            386 => 
+            array (
+                'id' => '1403',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:37:29',
+                'table_name' => 'anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"264","nomor_anggota":null,"nama":"Silvia Anggraeni","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2021","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":"+62 856-9337-2448","whatsapp":"082315805012","status":null,"user_id":"289","created_at":"2023-03-28 19:13:07","updated_at":"2023-03-28 19:13:07"}',
+            ),
+            387 => 
+            array (
+                'id' => '1404',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:37:29',
+                'table_name' => 'users',
+                'log_type' => 'delete',
+                'data' => '{"id":"289","name":"Silvia Anggraeni","email":"silviaanggraeni183@gmail.com","foto":null,"username":"silvia-anggraeni20230328191307","email_verified_at":null,"password":"$2y$10$DumhhJMuddez.k41Apet6OmAG06a2xHjXY4iYp8jfb7XKMsXtNeIW","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-03-28 19:13:07","updated_at":"2023-03-28 19:13:07"}',
+            ),
+            388 => 
+            array (
+                'id' => '1405',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:37:39',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"89","name":"SILVIA ANGGRAENI","email":"silvia_anggraeni@karmapack.id","foto":"silviaanggrnii20220901013330.png","username":"silviaanggrnii","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-04-20 05:50:06"}',
+            ),
+            389 => 
+            array (
+                'id' => '1406',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:37:48',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"89","name":"SILVIA ANGGRAENI","email":"silviaanggraeni183@gmail.com","foto":"silviaanggrnii20220901013330.png","username":"silviaanggrnii","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-09-09 19:37:39"}',
+            ),
+            390 => 
+            array (
+                'id' => '1407',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:40:45',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"69","nomor_anggota":null,"nama":"SILVIA ANGGRAENI","tanggal_lahir":"2003-08-10","jenis_kelamin":"perempuan","angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051004","alamat_lengkap":"Jln.raya Simpang-Koleberes Blok D, RT\\/RW 02\\/09. Desa Cikadu. Kecamatan Cikadu","bio":"Saya adalah seseorang yang suka berorganisasi. Organisasi internal maupun eksternal. Saya rajin dan tekun dalam menjalankan suatu tugas atau misi.","profesi":"Pelajar\\/Mahasiswa","foto":"silviaanggrnii20220901013330.png","telepon":"+62 856-9337-2448","whatsapp":"082315805012","status":"ANGGOTA BIASA","user_id":"89","created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            391 => 
+            array (
+                'id' => '1408',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:46:23',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'create',
+                'data' => '{"nama":"Kabinet Adiluhung","slug":"kabinet-adiluhung","dari":"2023","sampai":"2024","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","status":0,"visi":"<p>Visi Periode<\\/p>\\n","misi":"<p>Misi Periode<\\/p>\\n","filosofi_logo":"<p>Filosofi Logo<\\/p>\\n","foto":"iconkabinet-ad20230909194623.png","updated_at":"2023-09-09T12:46:23.000000Z","created_at":"2023-09-09T12:46:23.000000Z","id":3}',
+            ),
+            392 => 
+            array (
+                'id' => '1409',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:46:44',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Kabinet Adiluhung","foto":"iconkabinet-ad20230909194623.png","dari":"2023","sampai":"2024","slug":"kabinet-adiluhung","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","visi":"<p>Visi Periode<\\/p>\\n","misi":"<p>Misi Periode<\\/p>\\n","filosofi_logo":"<p>Filosofi Logo<\\/p>\\n","status":"0","created_at":"2023-09-09 19:46:23","updated_at":"2023-09-09 19:46:23"}',
+            ),
+            393 => 
+            array (
+                'id' => '1410',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:49:26',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Ketua Umum","slug":"2023-2024-ketua-umum","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"4","updated_at":"2023-09-09T12:49:26.000000Z","created_at":"2023-09-09T12:49:26.000000Z","id":87}',
+            ),
+            394 => 
+            array (
+                'id' => '1411',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:49:48',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Sekertaris Umum","slug":"2023-2024-sekertaris-umum","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"5","updated_at":"2023-09-09T12:49:48.000000Z","created_at":"2023-09-09T12:49:48.000000Z","id":88}',
+            ),
+            395 => 
+            array (
+                'id' => '1412',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:53:34',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Bendahara Umum","slug":"2023-2024-bendahara-umum","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"6","updated_at":"2023-09-09T12:53:34.000000Z","created_at":"2023-09-09T12:53:34.000000Z","id":89}',
+            ),
+            396 => 
+            array (
+                'id' => '1413',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:55:15',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Komunikasi dan Informasi","slug":"2023-2024-komunikasi-dan-informasi","status":"1","no_urut":"4","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T12:55:15.000000Z","created_at":"2023-09-09T12:55:15.000000Z","id":90}',
+            ),
+            397 => 
+            array (
+                'id' => '1414',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:56:06',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"90","nama":"Ketua Bidang","slug":"2023-2024-komunikasi-dan-informasi-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T12:56:06.000000Z","created_at":"2023-09-09T12:56:06.000000Z","id":91}',
+            ),
+            398 => 
+            array (
+                'id' => '1415',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:56:21',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"91","no_urut":"1","nama":"Ketua Bidang","slug":"2023-2024-komunikasi-dan-informasi-ketua-bidang","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":"90","created_at":"2023-09-09 19:56:06","updated_at":"2023-09-09 19:56:06"}',
+            ),
+            399 => 
+            array (
+                'id' => '1416',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:56:39',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"90","nama":"Sekertaris bidang","slug":"2023-2024-komunikasi-dan-informasi-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T12:56:39.000000Z","created_at":"2023-09-09T12:56:39.000000Z","id":92}',
+            ),
+            400 => 
+            array (
+                'id' => '1417',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:56:58',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"90","nama":"Anggota","slug":"2023-2024-komunikasi-dan-informasi-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T12:56:58.000000Z","created_at":"2023-09-09T12:56:58.000000Z","id":93}',
+            ),
+            401 => 
+            array (
+                'id' => '1418',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:57:55',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Wirausaha","slug":"2023-2024-wirausaha","status":"1","no_urut":"5","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T12:57:55.000000Z","created_at":"2023-09-09T12:57:55.000000Z","id":94}',
+            ),
+            402 => 
+            array (
+                'id' => '1419',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:58:08',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"94","nama":"Ketua Bidang","slug":"2023-2024-wirausaha-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T12:58:08.000000Z","created_at":"2023-09-09T12:58:08.000000Z","id":95}',
+            ),
+            403 => 
+            array (
+                'id' => '1420',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:58:25',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"94","nama":"Sekertaris bidang","slug":"2023-2024-wirausaha-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T12:58:25.000000Z","created_at":"2023-09-09T12:58:25.000000Z","id":96}',
+            ),
+            404 => 
+            array (
+                'id' => '1421',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:58:39',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"94","nama":"Anggota","slug":"2023-2024-wirausaha-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T12:58:39.000000Z","created_at":"2023-09-09T12:58:39.000000Z","id":97}',
+            ),
+            405 => 
+            array (
+                'id' => '1422',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 19:59:43',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Pengembangan Aparatur Organisasi","slug":"2023-2024-pengembangan-aparatur-organisasi","status":"1","no_urut":"4","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T12:59:43.000000Z","created_at":"2023-09-09T12:59:43.000000Z","id":98}',
+            ),
+            406 => 
+            array (
+                'id' => '1423',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:00:02',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"98","nama":"Ketua Bidang","slug":"2023-2024-pengembangan-aparatur-organisasi-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:00:02.000000Z","created_at":"2023-09-09T13:00:02.000000Z","id":99}',
+            ),
+            407 => 
+            array (
+                'id' => '1424',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:00:18',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"98","nama":"Sekertaris bidang","slug":"2023-2024-pengembangan-aparatur-organisasi-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T13:00:18.000000Z","created_at":"2023-09-09T13:00:18.000000Z","id":100}',
+            ),
+            408 => 
+            array (
+                'id' => '1425',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:00:31',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"98","nama":"Anggota","slug":"2023-2024-pengembangan-aparatur-organisasi-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:00:31.000000Z","created_at":"2023-09-09T13:00:31.000000Z","id":101}',
+            ),
+            409 => 
+            array (
+                'id' => '1426',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:01:01',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"94","no_urut":"5","nama":"Wirausaha","slug":"2023-2024-wirausaha","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:57:55","updated_at":"2023-09-09 19:57:55"}',
+            ),
+            410 => 
+            array (
+                'id' => '1427',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:01:26',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"90","no_urut":"4","nama":"Komunikasi dan Informasi","slug":"2023-2024-komunikasi-dan-informasi","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:55:15","updated_at":"2023-09-09 19:55:15"}',
+            ),
+            411 => 
+            array (
+                'id' => '1428',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:02:38',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Pengembangan Kode Etik dan Akhlakul Karimah","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah","status":"1","no_urut":"5","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T13:02:38.000000Z","created_at":"2023-09-09T13:02:38.000000Z","id":102}',
+            ),
+            412 => 
+            array (
+                'id' => '1429',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:02:59',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"102","nama":"Ketua Bidang","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:02:59.000000Z","created_at":"2023-09-09T13:02:59.000000Z","id":103}',
+            ),
+            413 => 
+            array (
+                'id' => '1430',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:03:25',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"102","nama":"Sekertaris bidang","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T13:03:25.000000Z","created_at":"2023-09-09T13:03:25.000000Z","id":104}',
+            ),
+            414 => 
+            array (
+                'id' => '1431',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:03:40',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"102","nama":"Anggota","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:03:40.000000Z","created_at":"2023-09-09T13:03:40.000000Z","id":105}',
+            ),
+            415 => 
+            array (
+                'id' => '1432',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:04:14',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Pengembangan Nalar dan Intelektual","slug":"2023-2024-pengembangan-nalar-dan-intelektual","status":"1","no_urut":"6","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T13:04:14.000000Z","created_at":"2023-09-09T13:04:14.000000Z","id":106}',
+            ),
+            416 => 
+            array (
+                'id' => '1433',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:04:30',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"106","nama":"Ketua Bidang","slug":"2023-2024-pengembangan-nalar-dan-intelektual-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:04:30.000000Z","created_at":"2023-09-09T13:04:30.000000Z","id":107}',
+            ),
+            417 => 
+            array (
+                'id' => '1434',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:04:41',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"106","nama":"Sekertaris bidang","slug":"2023-2024-pengembangan-nalar-dan-intelektual-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T13:04:41.000000Z","created_at":"2023-09-09T13:04:41.000000Z","id":108}',
+            ),
+            418 => 
+            array (
+                'id' => '1435',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:04:54',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"106","nama":"Anggota","slug":"2023-2024-pengembangan-nalar-dan-intelektual-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:04:54.000000Z","created_at":"2023-09-09T13:04:54.000000Z","id":109}',
+            ),
+            419 => 
+            array (
+                'id' => '1436',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:05:43',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Pengembangan Minat dan Bakat","slug":"2023-2024-pengembangan-minat-dan-bakat","status":"1","no_urut":"7","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T13:05:43.000000Z","created_at":"2023-09-09T13:05:43.000000Z","id":110}',
+            ),
+            420 => 
+            array (
+                'id' => '1437',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:05:55',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"110","nama":"Ketua Bidang","slug":"2023-2024-pengembangan-minat-dan-bakat-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:05:55.000000Z","created_at":"2023-09-09T13:05:55.000000Z","id":111}',
+            ),
+            421 => 
+            array (
+                'id' => '1438',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:06:11',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"110","nama":"Sekertaris bidang","slug":"2023-2024-pengembangan-minat-dan-bakat-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T13:06:11.000000Z","created_at":"2023-09-09T13:06:11.000000Z","id":112}',
+            ),
+            422 => 
+            array (
+                'id' => '1439',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:06:34',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"110","nama":"Anggota","slug":"2023-2024-pengembangan-minat-dan-bakat-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:06:34.000000Z","created_at":"2023-09-09T13:06:34.000000Z","id":113}',
+            ),
+            423 => 
+            array (
+                'id' => '1440',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:07:22',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Sosial Masyarakat","slug":"2023-2024-sosial-masyarakat","status":"1","no_urut":"8","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T13:07:22.000000Z","created_at":"2023-09-09T13:07:22.000000Z","id":114}',
+            ),
+            424 => 
+            array (
+                'id' => '1441',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:07:38',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"114","nama":"Ketua Bidang","slug":"2023-2024-sosial-masyarakat-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:07:38.000000Z","created_at":"2023-09-09T13:07:38.000000Z","id":115}',
+            ),
+            425 => 
+            array (
+                'id' => '1442',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:07:55',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"114","nama":"Sekertaris bidang","slug":"2023-2024-sosial-masyarakat-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"8","updated_at":"2023-09-09T13:07:55.000000Z","created_at":"2023-09-09T13:07:55.000000Z","id":116}',
+            ),
+            426 => 
+            array (
+                'id' => '1443',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:08:10',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"114","nama":"Anggota","slug":"2023-2024-sosial-masyarakat-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:08:10.000000Z","created_at":"2023-09-09T13:08:10.000000Z","id":117}',
+            ),
+            427 => 
+            array (
+                'id' => '1444',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:08:41',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"90","no_urut":"6","nama":"Komunikasi dan Informasi","slug":"2023-2024-komunikasi-dan-informasi","foto":"","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:55:15","updated_at":"2023-09-09 20:01:26"}',
+            ),
+            428 => 
+            array (
+                'id' => '1445',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:09:37',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":null,"nama":"Keperempuanan","slug":"2023-2024-keperempuanan","status":"1","no_urut":"10","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"2","updated_at":"2023-09-09T13:09:37.000000Z","created_at":"2023-09-09T13:09:37.000000Z","id":118}',
+            ),
+            429 => 
+            array (
+                'id' => '1446',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:10:50',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"118","nama":"Ketua Bidang","slug":"2023-2024-keperempuanan-ketua-bidang","status":"1","no_urut":"1","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"7","updated_at":"2023-09-09T13:10:50.000000Z","created_at":"2023-09-09T13:10:50.000000Z","id":119}',
+            ),
+            430 => 
+            array (
+                'id' => '1447',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:11:44',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"118","nama":"Sekertaris bidang","slug":"2023-2024-keperempuanan-sekertaris-bidang","status":"1","no_urut":"2","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"5","updated_at":"2023-09-09T13:11:44.000000Z","created_at":"2023-09-09T13:11:44.000000Z","id":120}',
+            ),
+            431 => 
+            array (
+                'id' => '1448',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:12:00',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'create',
+                'data' => '{"parent_id":"118","nama":"Anggota","slug":"2023-2024-keperempuanan-anggota","status":"1","no_urut":"3","visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"singkatan":null,"foto":"","periode_id":"3","role_id":"3","updated_at":"2023-09-09T13:12:00.000000Z","created_at":"2023-09-09T13:12:00.000000Z","id":121}',
+            ),
+            432 => 
+            array (
+                'id' => '1449',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:12:56',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"94","no_urut":"8","nama":"Wirausaha","slug":"2023-2024-wirausaha","foto":"","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:57:55","updated_at":"2023-09-09 20:01:01"}',
+            ),
+            433 => 
+            array (
+                'id' => '1450',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:14:28',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"19","jabatan_id":"87","updated_at":"2023-09-09T13:14:28.000000Z","created_at":"2023-09-09T13:14:28.000000Z","id":146}',
+            ),
+            434 => 
+            array (
+                'id' => '1451',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:15:20',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"27","jabatan_id":"88","updated_at":"2023-09-09T13:15:20.000000Z","created_at":"2023-09-09T13:15:20.000000Z","id":147}',
+            ),
+            435 => 
+            array (
+                'id' => '1452',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:15:45',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"27","nomor_anggota":null,"nama":"MUHAMMAD CAHYADI","tanggal_lahir":"1999-08-16","jenis_kelamin":null,"angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":"muhammad_cahyadi20220901015206.png","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"43","created_at":"2023-02-11 00:40:12","updated_at":"2023-03-17 20:07:22"}',
+            ),
+            436 => 
+            array (
+                'id' => '1453',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:16:33',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"62","jabatan_id":"89","updated_at":"2023-09-09T13:16:33.000000Z","created_at":"2023-09-09T13:16:33.000000Z","id":148}',
+            ),
+            437 => 
+            array (
+                'id' => '1454',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:16:59',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"45","jabatan_id":"99","updated_at":"2023-09-09T13:16:59.000000Z","created_at":"2023-09-09T13:16:59.000000Z","id":149}',
+            ),
+            438 => 
+            array (
+                'id' => '1455',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:17:29',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"65","jabatan_id":"100","updated_at":"2023-09-09T13:17:29.000000Z","created_at":"2023-09-09T13:17:29.000000Z","id":150}',
+            ),
+            439 => 
+            array (
+                'id' => '1456',
+                'user_id' => '297',
+                'log_date' => '2023-09-09 20:22:20',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.30","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            440 => 
+            array (
+                'id' => '1457',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:24:37',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"272","jabatan_id":"101","updated_at":"2023-09-09T13:24:37.000000Z","created_at":"2023-09-09T13:24:37.000000Z","id":151}',
+            ),
+            441 => 
+            array (
+                'id' => '1458',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:24:37',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"273","jabatan_id":"101","updated_at":"2023-09-09T13:24:37.000000Z","created_at":"2023-09-09T13:24:37.000000Z","id":152}',
+            ),
+            442 => 
+            array (
+                'id' => '1459',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:24:37',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"29","jabatan_id":"101","updated_at":"2023-09-09T13:24:37.000000Z","created_at":"2023-09-09T13:24:37.000000Z","id":153}',
+            ),
+            443 => 
+            array (
+                'id' => '1460',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"18","jabatan_id":"103","updated_at":"2023-09-09T13:28:02.000000Z","created_at":"2023-09-09T13:28:02.000000Z","id":154}',
+            ),
+            444 => 
+            array (
+                'id' => '1461',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"60","jabatan_id":"103","updated_at":"2023-09-09T13:28:02.000000Z","created_at":"2023-09-09T13:28:02.000000Z","id":155}',
+            ),
+            445 => 
+            array (
+                'id' => '1462',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"103","updated_at":"2023-09-09T13:28:02.000000Z","created_at":"2023-09-09T13:28:02.000000Z","id":156}',
+            ),
+            446 => 
+            array (
+                'id' => '1463',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"274","jabatan_id":"103","updated_at":"2023-09-09T13:28:02.000000Z","created_at":"2023-09-09T13:28:02.000000Z","id":157}',
+            ),
+            447 => 
+            array (
+                'id' => '1464',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"275","jabatan_id":"103","updated_at":"2023-09-09T13:28:02.000000Z","created_at":"2023-09-09T13:28:02.000000Z","id":158}',
+            ),
+            448 => 
+            array (
+                'id' => '1465',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"154","jabatan_id":"103","anggota_id":"18","created_at":"2023-09-09 20:28:02","updated_at":"2023-09-09 20:28:02"}',
+            ),
+            449 => 
+            array (
+                'id' => '1466',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"156","jabatan_id":"103","anggota_id":"56","created_at":"2023-09-09 20:28:02","updated_at":"2023-09-09 20:28:02"}',
+            ),
+            450 => 
+            array (
+                'id' => '1467',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"155","jabatan_id":"103","anggota_id":"60","created_at":"2023-09-09 20:28:02","updated_at":"2023-09-09 20:28:02"}',
+            ),
+            451 => 
+            array (
+                'id' => '1468',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"157","jabatan_id":"103","anggota_id":"274","created_at":"2023-09-09 20:28:02","updated_at":"2023-09-09 20:28:02"}',
+            ),
+            452 => 
+            array (
+                'id' => '1469',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'delete',
+                'data' => '{"id":"158","jabatan_id":"103","anggota_id":"275","created_at":"2023-09-09 20:28:02","updated_at":"2023-09-09 20:28:02"}',
+            ),
+            453 => 
+            array (
+                'id' => '1470',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:28:30',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"18","jabatan_id":"103","updated_at":"2023-09-09T13:28:30.000000Z","created_at":"2023-09-09T13:28:30.000000Z","id":159}',
+            ),
+            454 => 
+            array (
+                'id' => '1471',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:29:21',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"60","jabatan_id":"104","updated_at":"2023-09-09T13:29:21.000000Z","created_at":"2023-09-09T13:29:21.000000Z","id":160}',
+            ),
+            455 => 
+            array (
+                'id' => '1472',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:29:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"56","jabatan_id":"105","updated_at":"2023-09-09T13:29:46.000000Z","created_at":"2023-09-09T13:29:46.000000Z","id":161}',
+            ),
+            456 => 
+            array (
+                'id' => '1473',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:29:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"274","jabatan_id":"105","updated_at":"2023-09-09T13:29:46.000000Z","created_at":"2023-09-09T13:29:46.000000Z","id":162}',
+            ),
+            457 => 
+            array (
+                'id' => '1474',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:29:46',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"275","jabatan_id":"105","updated_at":"2023-09-09T13:29:46.000000Z","created_at":"2023-09-09T13:29:46.000000Z","id":163}',
+            ),
+            458 => 
+            array (
+                'id' => '1475',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:30:52',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"14","jabatan_id":"107","updated_at":"2023-09-09T13:30:52.000000Z","created_at":"2023-09-09T13:30:52.000000Z","id":164}',
+            ),
+            459 => 
+            array (
+                'id' => '1476',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:31:03',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"63","jabatan_id":"108","updated_at":"2023-09-09T13:31:03.000000Z","created_at":"2023-09-09T13:31:03.000000Z","id":165}',
+            ),
+            460 => 
+            array (
+                'id' => '1477',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:34:16',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"53","jabatan_id":"109","updated_at":"2023-09-09T13:34:16.000000Z","created_at":"2023-09-09T13:34:16.000000Z","id":166}',
+            ),
+            461 => 
+            array (
+                'id' => '1478',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:34:16',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"276","jabatan_id":"109","updated_at":"2023-09-09T13:34:16.000000Z","created_at":"2023-09-09T13:34:16.000000Z","id":167}',
+            ),
+            462 => 
+            array (
+                'id' => '1479',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:34:16',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jabatan_id":"109","updated_at":"2023-09-09T13:34:16.000000Z","created_at":"2023-09-09T13:34:16.000000Z","id":168}',
+            ),
+            463 => 
+            array (
+                'id' => '1480',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:35:11',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"73","jabatan_id":"111","updated_at":"2023-09-09T13:35:11.000000Z","created_at":"2023-09-09T13:35:11.000000Z","id":169}',
+            ),
+            464 => 
+            array (
+                'id' => '1481',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:35:24',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"54","jabatan_id":"112","updated_at":"2023-09-09T13:35:24.000000Z","created_at":"2023-09-09T13:35:24.000000Z","id":170}',
+            ),
+            465 => 
+            array (
+                'id' => '1482',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:38:08',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"76","jabatan_id":"113","updated_at":"2023-09-09T13:38:08.000000Z","created_at":"2023-09-09T13:38:08.000000Z","id":171}',
+            ),
+            466 => 
+            array (
+                'id' => '1483',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:38:08',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"278","jabatan_id":"113","updated_at":"2023-09-09T13:38:08.000000Z","created_at":"2023-09-09T13:38:08.000000Z","id":172}',
+            ),
+            467 => 
+            array (
+                'id' => '1484',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:38:08',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"279","jabatan_id":"113","updated_at":"2023-09-09T13:38:08.000000Z","created_at":"2023-09-09T13:38:08.000000Z","id":173}',
+            ),
+            468 => 
+            array (
+                'id' => '1485',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:39:12',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","jabatan_id":"115","updated_at":"2023-09-09T13:39:12.000000Z","created_at":"2023-09-09T13:39:12.000000Z","id":174}',
+            ),
+            469 => 
+            array (
+                'id' => '1486',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:39:26',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"81","jabatan_id":"116","updated_at":"2023-09-09T13:39:26.000000Z","created_at":"2023-09-09T13:39:26.000000Z","id":175}',
+            ),
+            470 => 
+            array (
+                'id' => '1487',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:43:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"85","jabatan_id":"117","updated_at":"2023-09-09T13:43:41.000000Z","created_at":"2023-09-09T13:43:41.000000Z","id":176}',
+            ),
+            471 => 
+            array (
+                'id' => '1488',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:43:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"280","jabatan_id":"117","updated_at":"2023-09-09T13:43:41.000000Z","created_at":"2023-09-09T13:43:41.000000Z","id":177}',
+            ),
+            472 => 
+            array (
+                'id' => '1489',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:43:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"281","jabatan_id":"117","updated_at":"2023-09-09T13:43:41.000000Z","created_at":"2023-09-09T13:43:41.000000Z","id":178}',
+            ),
+            473 => 
+            array (
+                'id' => '1490',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:43:41',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jabatan_id":"117","updated_at":"2023-09-09T13:43:41.000000Z","created_at":"2023-09-09T13:43:41.000000Z","id":179}',
+            ),
+            474 => 
+            array (
+                'id' => '1491',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:43:55',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"77","jabatan_id":"91","updated_at":"2023-09-09T13:43:55.000000Z","created_at":"2023-09-09T13:43:55.000000Z","id":180}',
+            ),
+            475 => 
+            array (
+                'id' => '1492',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:44:18',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"69","jabatan_id":"92","updated_at":"2023-09-09T13:44:18.000000Z","created_at":"2023-09-09T13:44:18.000000Z","id":181}',
+            ),
+            476 => 
+            array (
+                'id' => '1493',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:48:45',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"285","jabatan_id":"93","updated_at":"2023-09-09T13:48:45.000000Z","created_at":"2023-09-09T13:48:45.000000Z","id":182}',
+            ),
+            477 => 
+            array (
+                'id' => '1494',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:48:45',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"282","jabatan_id":"93","updated_at":"2023-09-09T13:48:45.000000Z","created_at":"2023-09-09T13:48:45.000000Z","id":183}',
+            ),
+            478 => 
+            array (
+                'id' => '1495',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:48:45',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jabatan_id":"93","updated_at":"2023-09-09T13:48:45.000000Z","created_at":"2023-09-09T13:48:45.000000Z","id":184}',
+            ),
+            479 => 
+            array (
+                'id' => '1496',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:48:45',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"284","jabatan_id":"93","updated_at":"2023-09-09T13:48:45.000000Z","created_at":"2023-09-09T13:48:45.000000Z","id":185}',
+            ),
+            480 => 
+            array (
+                'id' => '1497',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:49:19',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"86","jabatan_id":"119","updated_at":"2023-09-09T13:49:19.000000Z","created_at":"2023-09-09T13:49:19.000000Z","id":186}',
+            ),
+            481 => 
+            array (
+                'id' => '1498',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:49:32',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"67","jabatan_id":"120","updated_at":"2023-09-09T13:49:32.000000Z","created_at":"2023-09-09T13:49:32.000000Z","id":187}',
+            ),
+            482 => 
+            array (
+                'id' => '1499',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:52:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"70","jabatan_id":"121","updated_at":"2023-09-09T13:52:02.000000Z","created_at":"2023-09-09T13:52:02.000000Z","id":188}',
+            ),
+            483 => 
+            array (
+                'id' => '1500',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:52:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"286","jabatan_id":"121","updated_at":"2023-09-09T13:52:02.000000Z","created_at":"2023-09-09T13:52:02.000000Z","id":189}',
+            ),
+            484 => 
+            array (
+                'id' => '1501',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:52:02',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"287","jabatan_id":"121","updated_at":"2023-09-09T13:52:02.000000Z","created_at":"2023-09-09T13:52:02.000000Z","id":190}',
+            ),
+            485 => 
+            array (
+                'id' => '1502',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:52:20',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"74","jabatan_id":"95","updated_at":"2023-09-09T13:52:20.000000Z","created_at":"2023-09-09T13:52:20.000000Z","id":191}',
+            ),
+            486 => 
+            array (
+                'id' => '1503',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:56:43',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"288","jabatan_id":"96","updated_at":"2023-09-09T13:56:43.000000Z","created_at":"2023-09-09T13:56:43.000000Z","id":192}',
+            ),
+            487 => 
+            array (
+                'id' => '1504',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:56:43',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"289","jabatan_id":"96","updated_at":"2023-09-09T13:56:43.000000Z","created_at":"2023-09-09T13:56:43.000000Z","id":193}',
+            ),
+            488 => 
+            array (
+                'id' => '1505',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:56:43',
+                'table_name' => 'pengurus_anggotas',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"290","jabatan_id":"96","updated_at":"2023-09-09T13:56:43.000000Z","created_at":"2023-09-09T13:56:43.000000Z","id":194}',
+            ),
+            489 => 
+            array (
+                'id' => '1506',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 20:57:26',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"8ipYhxtMre2J5YbGuVShXBSISAs2XvDwmtXapUiwdx4D1EGfLTZcJkmSkXeJ","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            490 => 
+            array (
+                'id' => '1507',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 20:57:35',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.30","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            491 => 
+            array (
+                'id' => '1508',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:04:16',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"98","no_urut":"4","nama":"Pengembangan Aparatur Organisasi","slug":"2023-2024-pengembangan-aparatur-organisasi","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:59:43","updated_at":"2023-09-09 19:59:43"}',
+            ),
+            492 => 
+            array (
+                'id' => '1509',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:05:14',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"102","no_urut":"5","nama":"Pengembangan Kode Etik dan Akhlakul Karimah","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:02:38","updated_at":"2023-09-09 20:02:38"}',
+            ),
+            493 => 
+            array (
+                'id' => '1510',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:05:24',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"102","no_urut":"5","nama":"Pengembangan Kode Etik dan Akhlakul Karimah","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah","foto":"iconpengembangan-kode-etik-dan-akhlakul-kari20230909210514.png","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:02:38","updated_at":"2023-09-09 21:05:14"}',
+            ),
+            494 => 
+            array (
+                'id' => '1511',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:05:36',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"106","no_urut":"6","nama":"Pengembangan Nalar dan Intelektual","slug":"2023-2024-pengembangan-nalar-dan-intelektual","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:04:14","updated_at":"2023-09-09 20:04:14"}',
+            ),
+            495 => 
+            array (
+                'id' => '1512',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:06:04',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"110","no_urut":"7","nama":"Pengembangan Minat dan Bakat","slug":"2023-2024-pengembangan-minat-dan-bakat","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:05:43","updated_at":"2023-09-09 20:05:43"}',
+            ),
+            496 => 
+            array (
+                'id' => '1513',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:06:23',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"102","no_urut":"5","nama":"Pengembangan Kode Etik dan Akhlakul Karimah","slug":"2023-2024-pengembangan-kode-etik-dan-akhlakul-karimah","foto":"iconpengembangan-kode-etik-dan-akhlakul-kari20230909210524.png","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:02:38","updated_at":"2023-09-09 21:05:24"}',
+            ),
+            497 => 
+            array (
+                'id' => '1514',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:06:29',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"106","no_urut":"6","nama":"Pengembangan Nalar dan Intelektual","slug":"2023-2024-pengembangan-nalar-dan-intelektual","foto":"iconpengembangan-nalar-dan-intelektual20230909210536.png","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:04:14","updated_at":"2023-09-09 21:05:36"}',
+            ),
+            498 => 
+            array (
+                'id' => '1515',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:07:29',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"106","no_urut":"6","nama":"Pengembangan Nalar dan Intelektual","slug":"2023-2024-pengembangan-nalar-dan-intelektual","foto":"iconpengembangan-nalar-dan-intelektual20230909210536.png","singkatan":"NI","visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:04:14","updated_at":"2023-09-09 21:06:29"}',
+            ),
+            499 => 
+            array (
+                'id' => '1516',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:07:53',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"114","no_urut":"8","nama":"Sosial Masyarakat","slug":"2023-2024-sosial-masyarakat","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:07:22","updated_at":"2023-09-09 20:07:22"}',
+            ),
+        ));
+        \DB::table('logs')->insert(array (
+            0 => 
+            array (
+                'id' => '1517',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:08:07',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"114","no_urut":"8","nama":"Sosial Masyarakat","slug":"2023-2024-sosial-masyarakat","foto":"","singkatan":"SOSMAS","visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:07:22","updated_at":"2023-09-09 21:07:53"}',
+            ),
+            1 => 
+            array (
+                'id' => '1518',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:08:37',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"90","no_urut":"9","nama":"Komunikasi dan Informasi","slug":"2023-2024-komunikasi-dan-informasi","foto":"","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:55:15","updated_at":"2023-09-09 20:08:41"}',
+            ),
+            2 => 
+            array (
+                'id' => '1519',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:08:56',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"118","no_urut":"10","nama":"Keperempuanan","slug":"2023-2024-keperempuanan","foto":"","singkatan":null,"visi":"<p><\\/p>\\n","misi":"<p><\\/p>\\n","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 20:09:37","updated_at":"2023-09-09 20:09:37"}',
+            ),
+            3 => 
+            array (
+                'id' => '1520',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:09:40',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"94","no_urut":"12","nama":"Wirausaha","slug":"2023-2024-wirausaha","foto":"","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:57:55","updated_at":"2023-09-09 20:12:56"}',
+            ),
+            4 => 
+            array (
+                'id' => '1521',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 21:17:56',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.30","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            5 => 
+            array (
+                'id' => '1522',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 21:20:21',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"qyLrYIxKhfHqclWpk7h4TbHv6R1mI8Jp0kV0gpYIqlSVUmwzwmTfgP6Qc3WB","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            6 => 
+            array (
+                'id' => '1523',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:20:29',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.30","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            7 => 
+            array (
+                'id' => '1524',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:23:31',
+                'table_name' => 'artikel',
+                'log_type' => 'edit',
+            'data' => '{"id":"40","nama":"DISKUSI PUBLIK","slug":"diskusi-publik","foto":"\\/assets\\/artikel\\/diskusi-pu16789612170.png","detail":"<div class=\\"_a9zs\\" style=\'display: inline; color: rgb(38, 38, 38); font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\'><img data-bs-filename=\\"330374136_875625676874459_7239910307577273849_n.webp\\" style=\\"width: 640.4px;\\" src=\\"\\/assets\\/artikel\\/diskusi-pu16789612170.png\\"><br><div class=\\"_a9zs\\" style=\'display: inline; color: rgb(38, 38, 38); font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif;\'>Alhamdulillah hirobbil alamin diskusi publik dengan tema \\"Peran Mahasiswa dan Pelajar dalam Mengawal Demokrasi\\" dalam rangka memperingati hari ulang tahun Karmapack ke-18 telah selesai dilaksanakan.<br><br>kami ucapkan terimakasih kepada semua pihak yang telah terlibat dalam kegiatan ini. Sampai jumpa di kegiatan selanjutnya &eth;&#159;&#145;&#139;&eth;&#159;&#145;&#139;<br><br>18 Tahun KARMAPACK<br>\\"Meningkatkan Semangat, Menguatkan Persaudaraan \\"<br><br>11 Februari 2023<br><br>HALING KU AING!<br><br>Instagram :&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz notranslate _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/orda_karmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline;\\">@orda_karmapack<\\/a><br>Facebook : Orda Karmapack<br>__________________________<br><a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/ordakarmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#ordakarmapack<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/karmapack\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#karmapack<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/karmapack2022\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#karmapack2022<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/kabinetsabilulungan\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#kabinetsabilulungan<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/halingkuaing\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#halingkuaing<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlah\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlah<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlahkarmapack18\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlahkarmapack18<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/harlahkarmapackke18\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#harlahkarmapackke18<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/orda\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#orda<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/cianjur\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#cianjur<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/cianjurkidul\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#cianjurkidul<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/diskusi\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#diskusi<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/diskusipublik\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#diskusipublik<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/mahasiswa\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#mahasiswa<\\/a>&nbsp;<a class=\\"x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz  _aa9_ _a6hd\\" href=\\"https:\\/\\/www.instagram.com\\/explore\\/tags\\/pelajar\\/\\" role=\\"link\\" tabindex=\\"0\\" style=\\"cursor: pointer; text-align: inherit; outline: none; border-width: 0px; border-style: initial; border-color: initial; -webkit-tap-highlight-color: transparent; list-style: none; touch-action: manipulation; display: inline; overflow-wrap: break-word;\\">#pelajar<\\/a><\\/div><\\/div>\\n","excerpt":"Alhamdulillah hirobbil alamin diskusi publik dengan tema \\"Peran Mahasiswa dan Pelajar dalam Mengawal Demokrasi\\" dalam rangka memperingati hari ulang tahun Karmapack ke-18 telah selesai dilaksanakan.","counter":"232","date":"2023-02-11","status":"1","created_at":"2023-03-16 17:06:57","updated_at":"2023-09-06 13:27:36","user_id":"1"}',
+            ),
+            8 => 
+            array (
+                'id' => '1525',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:33:07',
+                'table_name' => 'pengurus_jabatans',
+                'log_type' => 'edit',
+                'data' => '{"id":"98","no_urut":"4","nama":"Pengembangan Aparatur Organisasi","slug":"2023-2024-pengembangan-aparatur-organisasi","foto":"iconpengembangan-aparatur-organisasi20230909210416.png","singkatan":null,"visi":"","misi":"","slogan":null,"status":"1","role_id":"2","periode_id":"3","parent_id":null,"created_at":"2023-09-09 19:59:43","updated_at":"2023-09-09 21:04:16"}',
+            ),
+            9 => 
+            array (
+                'id' => '1526',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 21:39:06',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203200","village_id":null,"alamat_lengkap":null,"bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Pelajar\\/Mahasiswa","foto":"iseplutpinur20230618175649.png","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-06-18 17:56:49"}',
+            ),
+            10 => 
+            array (
+                'id' => '1527',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 22:52:31',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            11 => 
+            array (
+                'id' => '1528',
+                'user_id' => '1',
+                'log_date' => '2023-09-09 22:53:56',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.218.186","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
+            ),
+            12 => 
+            array (
+                'id' => '1529',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 22:57:14',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"69","nomor_anggota":null,"nama":"SILVIA ANGGRAENI","tanggal_lahir":"2003-08-10","jenis_kelamin":"perempuan","angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051004","alamat_lengkap":"Jln.raya Simpang-Koleberes Blok D, RT\\/RW 02\\/09. Desa Cikadu. Kecamatan Cikadu","bio":"Saya adalah seseorang yang suka berorganisasi. Organisasi internal maupun eksternal. Saya rajin dan tekun dalam menjalankan suatu tugas atau misi.","profesi":"Pelajar\\/Mahasiswa","foto":"silviaanggrnii20220901013330.png","telepon":"+62 856-9337-2448","whatsapp":"82315805012","status":"ANGGOTA BIASA","user_id":"89","created_at":"2023-02-11 00:40:12","updated_at":"2023-09-09 19:40:45"}',
+            ),
+            13 => 
+            array (
+                'id' => '1530',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 23:20:23',
+                'table_name' => 'pend_sensus',
+                'log_type' => 'create',
+                'data' => '{"nama":"Silvia Anggraeni","angkatan":"2021","email":"silviaanggraeni183@gmail.com","whatsapp":"082315805012","telepon":null,"status":3,"keterangan":"Email sudah digunakan","updated_at":"2023-09-09T16:20:23.000000Z","created_at":"2023-09-09T16:20:23.000000Z","id":44}',
+            ),
+            14 => 
+            array (
+                'id' => '1531',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 23:30:48',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Kabinet Adiluhung","foto":"iconkabinet-ad20230909194623.png","dari":"2023","sampai":"2024","slug":"kabinet-adiluhung","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","visi":"<p>Visi Periode<\\/p>\\n","misi":"<p>Misi Periode<\\/p>\\n","filosofi_logo":"<p>Filosofi Logo<\\/p>\\n","status":"1","created_at":"2023-09-09 19:46:23","updated_at":"2023-09-09 19:46:44"}',
+            ),
+            15 => 
+            array (
+                'id' => '1532',
+                'user_id' => '89',
+                'log_date' => '2023-09-09 23:31:06',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Kabinet Adiluhung","foto":"iconkabinet-ad20230909194623.png","dari":"2023","sampai":"2024","slug":"kabinet-adiluhung","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","visi":"<p><strong>KARMAPACK <\\/strong>Eksis, Disiplin dan Berkualitas<\\/p>\\n","misi":"<p>1. Menghadirkan kegiatan keagamaan secara rutin sebagai upaya meningkatkan ketakwaan kepada Allah SWT.<p>2. Menggiatkan kembali diskusi dan kajian keilmuan<\\/p><p>3. Secara berkelanjutan menggelar kegiatan pelatihan soft skill<\\/p><p>4. Membangun kolaborasi<\\/p><\\/p>\\n","filosofi_logo":"","status":"1","created_at":"2023-09-09 19:46:23","updated_at":"2023-09-09 23:30:48"}',
+            ),
         ));
         
         

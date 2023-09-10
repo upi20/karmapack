@@ -99,14 +99,6 @@ class ArtikelTagItemTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
-            array (
-                'id' => '29',
-                'artikel_id' => '39',
-                'tag_id' => '8',
-                'created_at' => NULL,
-                'updated_at' => NULL,
-            ),
         ));
         
         

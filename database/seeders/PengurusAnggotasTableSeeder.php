@@ -907,6 +907,358 @@ class PengurusAnggotasTableSeeder extends Seeder
                 'created_at' => '2023-04-20 05:44:38',
                 'updated_at' => '2023-04-20 05:44:38',
             ),
+            111 => 
+            array (
+                'id' => '146',
+                'jabatan_id' => '87',
+                'anggota_id' => '19',
+                'created_at' => '2023-09-09 20:14:28',
+                'updated_at' => '2023-09-09 20:14:28',
+            ),
+            112 => 
+            array (
+                'id' => '147',
+                'jabatan_id' => '88',
+                'anggota_id' => '27',
+                'created_at' => '2023-09-09 20:15:20',
+                'updated_at' => '2023-09-09 20:15:20',
+            ),
+            113 => 
+            array (
+                'id' => '148',
+                'jabatan_id' => '89',
+                'anggota_id' => '62',
+                'created_at' => '2023-09-09 20:16:33',
+                'updated_at' => '2023-09-09 20:16:33',
+            ),
+            114 => 
+            array (
+                'id' => '149',
+                'jabatan_id' => '99',
+                'anggota_id' => '45',
+                'created_at' => '2023-09-09 20:16:59',
+                'updated_at' => '2023-09-09 20:16:59',
+            ),
+            115 => 
+            array (
+                'id' => '150',
+                'jabatan_id' => '100',
+                'anggota_id' => '65',
+                'created_at' => '2023-09-09 20:17:29',
+                'updated_at' => '2023-09-09 20:17:29',
+            ),
+            116 => 
+            array (
+                'id' => '151',
+                'jabatan_id' => '101',
+                'anggota_id' => '272',
+                'created_at' => '2023-09-09 20:24:37',
+                'updated_at' => '2023-09-09 20:24:37',
+            ),
+            117 => 
+            array (
+                'id' => '152',
+                'jabatan_id' => '101',
+                'anggota_id' => '273',
+                'created_at' => '2023-09-09 20:24:37',
+                'updated_at' => '2023-09-09 20:24:37',
+            ),
+            118 => 
+            array (
+                'id' => '153',
+                'jabatan_id' => '101',
+                'anggota_id' => '29',
+                'created_at' => '2023-09-09 20:24:37',
+                'updated_at' => '2023-09-09 20:24:37',
+            ),
+            119 => 
+            array (
+                'id' => '159',
+                'jabatan_id' => '103',
+                'anggota_id' => '18',
+                'created_at' => '2023-09-09 20:28:30',
+                'updated_at' => '2023-09-09 20:28:30',
+            ),
+            120 => 
+            array (
+                'id' => '160',
+                'jabatan_id' => '104',
+                'anggota_id' => '60',
+                'created_at' => '2023-09-09 20:29:21',
+                'updated_at' => '2023-09-09 20:29:21',
+            ),
+            121 => 
+            array (
+                'id' => '161',
+                'jabatan_id' => '105',
+                'anggota_id' => '56',
+                'created_at' => '2023-09-09 20:29:46',
+                'updated_at' => '2023-09-09 20:29:46',
+            ),
+            122 => 
+            array (
+                'id' => '162',
+                'jabatan_id' => '105',
+                'anggota_id' => '274',
+                'created_at' => '2023-09-09 20:29:46',
+                'updated_at' => '2023-09-09 20:29:46',
+            ),
+            123 => 
+            array (
+                'id' => '163',
+                'jabatan_id' => '105',
+                'anggota_id' => '275',
+                'created_at' => '2023-09-09 20:29:46',
+                'updated_at' => '2023-09-09 20:29:46',
+            ),
+            124 => 
+            array (
+                'id' => '164',
+                'jabatan_id' => '107',
+                'anggota_id' => '14',
+                'created_at' => '2023-09-09 20:30:52',
+                'updated_at' => '2023-09-09 20:30:52',
+            ),
+            125 => 
+            array (
+                'id' => '165',
+                'jabatan_id' => '108',
+                'anggota_id' => '63',
+                'created_at' => '2023-09-09 20:31:03',
+                'updated_at' => '2023-09-09 20:31:03',
+            ),
+            126 => 
+            array (
+                'id' => '166',
+                'jabatan_id' => '109',
+                'anggota_id' => '53',
+                'created_at' => '2023-09-09 20:34:16',
+                'updated_at' => '2023-09-09 20:34:16',
+            ),
+            127 => 
+            array (
+                'id' => '167',
+                'jabatan_id' => '109',
+                'anggota_id' => '276',
+                'created_at' => '2023-09-09 20:34:16',
+                'updated_at' => '2023-09-09 20:34:16',
+            ),
+            128 => 
+            array (
+                'id' => '168',
+                'jabatan_id' => '109',
+                'anggota_id' => '277',
+                'created_at' => '2023-09-09 20:34:16',
+                'updated_at' => '2023-09-09 20:34:16',
+            ),
+            129 => 
+            array (
+                'id' => '169',
+                'jabatan_id' => '111',
+                'anggota_id' => '73',
+                'created_at' => '2023-09-09 20:35:11',
+                'updated_at' => '2023-09-09 20:35:11',
+            ),
+            130 => 
+            array (
+                'id' => '170',
+                'jabatan_id' => '112',
+                'anggota_id' => '54',
+                'created_at' => '2023-09-09 20:35:24',
+                'updated_at' => '2023-09-09 20:35:24',
+            ),
+            131 => 
+            array (
+                'id' => '171',
+                'jabatan_id' => '113',
+                'anggota_id' => '76',
+                'created_at' => '2023-09-09 20:38:08',
+                'updated_at' => '2023-09-09 20:38:08',
+            ),
+            132 => 
+            array (
+                'id' => '172',
+                'jabatan_id' => '113',
+                'anggota_id' => '278',
+                'created_at' => '2023-09-09 20:38:08',
+                'updated_at' => '2023-09-09 20:38:08',
+            ),
+            133 => 
+            array (
+                'id' => '173',
+                'jabatan_id' => '113',
+                'anggota_id' => '279',
+                'created_at' => '2023-09-09 20:38:08',
+                'updated_at' => '2023-09-09 20:38:08',
+            ),
+            134 => 
+            array (
+                'id' => '174',
+                'jabatan_id' => '115',
+                'anggota_id' => '30',
+                'created_at' => '2023-09-09 20:39:12',
+                'updated_at' => '2023-09-09 20:39:12',
+            ),
+            135 => 
+            array (
+                'id' => '175',
+                'jabatan_id' => '116',
+                'anggota_id' => '81',
+                'created_at' => '2023-09-09 20:39:26',
+                'updated_at' => '2023-09-09 20:39:26',
+            ),
+            136 => 
+            array (
+                'id' => '176',
+                'jabatan_id' => '117',
+                'anggota_id' => '85',
+                'created_at' => '2023-09-09 20:43:41',
+                'updated_at' => '2023-09-09 20:43:41',
+            ),
+            137 => 
+            array (
+                'id' => '177',
+                'jabatan_id' => '117',
+                'anggota_id' => '280',
+                'created_at' => '2023-09-09 20:43:41',
+                'updated_at' => '2023-09-09 20:43:41',
+            ),
+            138 => 
+            array (
+                'id' => '178',
+                'jabatan_id' => '117',
+                'anggota_id' => '281',
+                'created_at' => '2023-09-09 20:43:41',
+                'updated_at' => '2023-09-09 20:43:41',
+            ),
+            139 => 
+            array (
+                'id' => '179',
+                'jabatan_id' => '117',
+                'anggota_id' => '55',
+                'created_at' => '2023-09-09 20:43:41',
+                'updated_at' => '2023-09-09 20:43:41',
+            ),
+            140 => 
+            array (
+                'id' => '180',
+                'jabatan_id' => '91',
+                'anggota_id' => '77',
+                'created_at' => '2023-09-09 20:43:55',
+                'updated_at' => '2023-09-09 20:43:55',
+            ),
+            141 => 
+            array (
+                'id' => '181',
+                'jabatan_id' => '92',
+                'anggota_id' => '69',
+                'created_at' => '2023-09-09 20:44:18',
+                'updated_at' => '2023-09-09 20:44:18',
+            ),
+            142 => 
+            array (
+                'id' => '182',
+                'jabatan_id' => '93',
+                'anggota_id' => '285',
+                'created_at' => '2023-09-09 20:48:45',
+                'updated_at' => '2023-09-09 20:48:45',
+            ),
+            143 => 
+            array (
+                'id' => '183',
+                'jabatan_id' => '93',
+                'anggota_id' => '282',
+                'created_at' => '2023-09-09 20:48:45',
+                'updated_at' => '2023-09-09 20:48:45',
+            ),
+            144 => 
+            array (
+                'id' => '184',
+                'jabatan_id' => '93',
+                'anggota_id' => '283',
+                'created_at' => '2023-09-09 20:48:45',
+                'updated_at' => '2023-09-09 20:48:45',
+            ),
+            145 => 
+            array (
+                'id' => '185',
+                'jabatan_id' => '93',
+                'anggota_id' => '284',
+                'created_at' => '2023-09-09 20:48:45',
+                'updated_at' => '2023-09-09 20:48:45',
+            ),
+            146 => 
+            array (
+                'id' => '186',
+                'jabatan_id' => '119',
+                'anggota_id' => '86',
+                'created_at' => '2023-09-09 20:49:19',
+                'updated_at' => '2023-09-09 20:49:19',
+            ),
+            147 => 
+            array (
+                'id' => '187',
+                'jabatan_id' => '120',
+                'anggota_id' => '67',
+                'created_at' => '2023-09-09 20:49:32',
+                'updated_at' => '2023-09-09 20:49:32',
+            ),
+            148 => 
+            array (
+                'id' => '188',
+                'jabatan_id' => '121',
+                'anggota_id' => '70',
+                'created_at' => '2023-09-09 20:52:02',
+                'updated_at' => '2023-09-09 20:52:02',
+            ),
+            149 => 
+            array (
+                'id' => '189',
+                'jabatan_id' => '121',
+                'anggota_id' => '286',
+                'created_at' => '2023-09-09 20:52:02',
+                'updated_at' => '2023-09-09 20:52:02',
+            ),
+            150 => 
+            array (
+                'id' => '190',
+                'jabatan_id' => '121',
+                'anggota_id' => '287',
+                'created_at' => '2023-09-09 20:52:02',
+                'updated_at' => '2023-09-09 20:52:02',
+            ),
+            151 => 
+            array (
+                'id' => '191',
+                'jabatan_id' => '95',
+                'anggota_id' => '74',
+                'created_at' => '2023-09-09 20:52:20',
+                'updated_at' => '2023-09-09 20:52:20',
+            ),
+            152 => 
+            array (
+                'id' => '192',
+                'jabatan_id' => '96',
+                'anggota_id' => '288',
+                'created_at' => '2023-09-09 20:56:43',
+                'updated_at' => '2023-09-09 20:56:43',
+            ),
+            153 => 
+            array (
+                'id' => '193',
+                'jabatan_id' => '96',
+                'anggota_id' => '289',
+                'created_at' => '2023-09-09 20:56:43',
+                'updated_at' => '2023-09-09 20:56:43',
+            ),
+            154 => 
+            array (
+                'id' => '194',
+                'jabatan_id' => '96',
+                'anggota_id' => '290',
+                'created_at' => '2023-09-09 20:56:43',
+                'updated_at' => '2023-09-09 20:56:43',
+            ),
         ));
         
         
