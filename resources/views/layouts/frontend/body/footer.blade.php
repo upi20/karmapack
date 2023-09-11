@@ -19,7 +19,8 @@
 
                             @foreach ($getSosmed_val as $sosmed)
                                 <li class="list-inline-item list-style-none"
-                                    data-anim-child="slide-left delay-{{ $anim++ }}">
+                                    data-anim-child="slide-left delay-{{ $anim++ }}" value="{{ $sosmed['nama'] }}"
+                                    title="{{ $sosmed['nama'] }}">
                                     <a href="{{ $sosmed['url'] }}" title="{{ $sosmed['nama'] }}" target="_blank">
                                         <i class="{{ $sosmed['icon'] }}"></i>
                                     </a>
