@@ -233,13 +233,13 @@ if (!function_exists('navbar_menu_front')) {
                 $menu_active = ($menu->active || $child_active) ? $active_class_src : '';
                 $menu_body .= <<<HTML
                     <li class="menu-item-has-children">
-                        <a href="#" $menu_active>
+                        <a href="/" $menu_active>
                             $menu->title <i class="icon-chevron-right text-13 ml-10"> </i>
                         </a>
 
                         <ul class="list-style-none subnav">
                             <li class="menu__backButton js-nav-list-back">
-                                <a href="#">
+                                <a href="/">
                                     <i class="icon-chevron-left text-13 mr-10"></i> $menu->title
                                 </a>
                             </li>
