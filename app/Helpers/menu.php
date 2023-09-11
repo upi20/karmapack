@@ -226,14 +226,14 @@ if (!function_exists('navbar_menu_front')) {
                     $child->url = $route_build($child->route);
                     $child->active = $child->active || ($child->route === $navigation) || $child->url == current_url();;
                     $menu_active = $child->active ? $active_class_src : '';
-                    $child_menu .= "<li><a data-barba=\"\" href=\"$child->url\" $menu_active>$child->title</a></li>";
+                    $child_menu .= "<li><a href=\"$child->url\" $menu_active>$child->title</a></li>";
                     if ($child->active) $child_active = $child->active;
                 }
 
                 $menu_active = ($menu->active || $child_active) ? $active_class_src : '';
                 $menu_body .= <<<HTML
                     <li class="menu-item-has-children">
-                        <a data-barba href="#" $menu_active>
+                        <a href="#" $menu_active>
                             $menu->title <i class="icon-chevron-right text-13 ml-10"> </i>
                         </a>
 
@@ -248,7 +248,7 @@ if (!function_exists('navbar_menu_front')) {
                     </li>
                 HTML;
             } else {
-                $menu_body .= "<li><a data-barba=\"\" href=\"$menu->url\" $active_class>$menu->title</a></li>";
+                $menu_body .= "<li><a href=\"$menu->url\" $active_class>$menu->title</a></li>";
             }
         }
         return $menu_body;
