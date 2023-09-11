@@ -33,7 +33,7 @@
 
                     <div class="col-xl-6 col-lg-6" style="padding-bottom: 0;">
                         <div data-anim-child="slide-left delay-{{ $anim++ }}" class="masthead__image">
-                            <img src="{{ asset(settings()->get("$k.image")) }}" alt="image"
+                            <img class="lazy" data-src="{{ asset(settings()->get("$k.image")) }}" alt="image"
                                 style="position: relative; max-width: 600px;">
                         </div>
                     </div>
@@ -78,7 +78,7 @@
             <div class="container">
                 <div class="row y-gap-30 justify-between items-center">
                     <div class="col-lg-6" data-anim-child="slide-right delay-{{ $anim++ }}">
-                        <img class="w-1/1" src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
+                        <img class="w-1/1 lazy" data-src="{{ $periode->fotoUrl() }}" alt="{{ $periode->nama }}"
                             style="max-width: 500px;">
                     </div>
 
