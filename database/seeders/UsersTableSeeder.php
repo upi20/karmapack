@@ -5453,6 +5453,25 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-09-09 20:56:28',
                 'updated_at' => '2023-09-09 20:56:28',
             ),
+            286 => 
+            array (
+                'id' => '316',
+                'name' => 'Daris Yusyfa Atqia',
+                'email' => 'yusyfadaris@gmail.com',
+                'foto' => NULL,
+                'username' => 'daris-yusyfa-atqia20230911163101',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$11hbgwBinnujK4I6tK4KwONURT3mcL93NTGKQN1gXKVEIYsRNMT2S',
+                'active' => '1',
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'current_team_id' => NULL,
+                'profile_photo_path' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2023-09-11 16:31:01',
+                'updated_at' => '2023-09-11 16:31:01',
+            ),
         ));
         
         

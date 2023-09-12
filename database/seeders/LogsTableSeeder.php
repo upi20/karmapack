@@ -13669,6 +13669,60 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'edit',
                 'data' => '{"id":"3","nama":"Kabinet Adiluhung","foto":"iconkabinet-ad20230909194623.png","dari":"2023","sampai":"2024","slug":"kabinet-adiluhung","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","visi":"<p><strong>KARMAPACK <\\/strong>Eksis, Disiplin dan Berkualitas<\\/p>\\n","misi":"<p>1. Menghadirkan kegiatan keagamaan secara rutin sebagai upaya meningkatkan ketakwaan kepada Allah SWT.<p>2. Menggiatkan kembali diskusi dan kajian keilmuan<\\/p><p>3. Secara berkelanjutan menggelar kegiatan pelatihan soft skill<\\/p><p>4. Membangun kolaborasi<\\/p><\\/p>\\n","filosofi_logo":"","status":"1","created_at":"2023-09-09 19:46:23","updated_at":"2023-09-09 23:30:48"}',
             ),
+            16 => 
+            array (
+                'id' => '1533',
+                'user_id' => '1',
+                'log_date' => '2023-09-10 22:23:50',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            17 => 
+            array (
+                'id' => '1534',
+                'user_id' => '1',
+                'log_date' => '2023-09-11 18:29:55',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.158.96.157","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            18 => 
+            array (
+                'id' => '1535',
+                'user_id' => '1',
+                'log_date' => '2023-09-11 18:30:23',
+                'table_name' => 'pengurus_periodes',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Kabinet Adiluhung","foto":"iconkabinet-ad20230909194623.png","dari":"2023","sampai":"2024","slug":"kabinet-adiluhung","slogan":"Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan","visi":"<p><strong>KARMAPACK <\\/strong>Eksis, Disiplin dan Berkualitas<\\/p>\\n","misi":"<p>1. Menghadirkan kegiatan keagamaan secara rutin sebagai upaya meningkatkan ketakwaan kepada Allah SWT.<p>2. Menggiatkan kembali diskusi dan kajian keilmuan<\\/p><p>3. Secara berkelanjutan menggelar kegiatan pelatihan soft skill<\\/p><p>4. Membangun kolaborasi<\\/p><p>&nbsp;<\\/p><\\/p>\\n","filosofi_logo":"","status":"1","created_at":"2023-09-09 19:46:23","updated_at":"2023-09-09 23:31:06"}',
+            ),
+            19 => 
+            array (
+                'id' => '1536',
+                'user_id' => '89',
+                'log_date' => '2023-09-11 19:46:04',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            20 => 
+            array (
+                'id' => '1537',
+                'user_id' => '1',
+                'log_date' => '2023-09-12 10:33:51',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.76"}',
+            ),
+            21 => 
+            array (
+                'id' => '1538',
+                'user_id' => '1',
+                'log_date' => '2023-09-12 10:33:52',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.85","visitors_id":"13683","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-12T03:33:52.000000Z","created_at":"2023-09-12T03:33:52.000000Z","id":825}',
+            ),
         ));
         
         
