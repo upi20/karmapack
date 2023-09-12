@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://karmapack.id</loc>
-        <lastmod>2023-09-11T18:13:24+07:00</lastmod>
+        <lastmod>2023-09-12T11:14:11+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/setting/home/hero.png</image:loc>
+    <image:loc>https://karmapack.id/assets/setting/home/hero.webp</image:loc>
     <image:caption>Karmapack</image:caption>
 </image:image>
 </url>

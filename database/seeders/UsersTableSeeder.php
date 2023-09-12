@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'current_team_id' => NULL,
                 'profile_photo_path' => NULL,
-                'remember_token' => 'CzqD8fhVtgk7Ljq8V9RcvUCemxk4XiqtsrFo0tLM2v8rRMTo1ZYQmI4hZBQT',
+                'remember_token' => 'uDHAyJRXyXXEaHmnivy8pkBlnjAM7rbJi5gNWHfFfJxb037SvrUXeIixF54s',
                 'created_at' => NULL,
                 'updated_at' => '2023-06-18 17:56:49',
             ),

@@ -109,6 +109,36 @@ class ArtikelKategoriTableSeeder extends Seeder
                 'created_at' => '2023-02-19 22:14:06',
                 'updated_at' => '2023-02-19 22:14:06',
             ),
+            9 => 
+            array (
+                'id' => '11',
+                'nama' => 'Nalar Intelektual',
+                'slug' => 'nalar-intelektual',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2023-09-12 10:50:07',
+                'updated_at' => '2023-09-12 10:50:07',
+            ),
+            10 => 
+            array (
+                'id' => '12',
+                'nama' => 'Pendidikan',
+                'slug' => 'pendidikan',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2023-09-12 11:03:20',
+                'updated_at' => '2023-09-12 11:03:20',
+            ),
+            11 => 
+            array (
+                'id' => '13',
+                'nama' => 'Podcast',
+                'slug' => 'podcast',
+                'foto' => NULL,
+                'status' => '1',
+                'created_at' => '2023-09-12 11:11:23',
+                'updated_at' => '2023-09-12 11:11:23',
+            ),
         ));
         
         

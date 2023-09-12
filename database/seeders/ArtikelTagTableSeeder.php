@@ -91,6 +91,42 @@ class ArtikelTagTableSeeder extends Seeder
                 'created_at' => '2023-03-16 17:06:57',
                 'updated_at' => '2023-03-16 17:06:57',
             ),
+            8 => 
+            array (
+                'id' => '10',
+                'nama' => 'Diskusi',
+                'slug' => 'diskusi',
+                'status' => '1',
+                'created_at' => '2023-09-12 10:50:07',
+                'updated_at' => '2023-09-12 10:50:07',
+            ),
+            9 => 
+            array (
+                'id' => '11',
+                'nama' => 'Tentang',
+                'slug' => 'tentang',
+                'status' => '1',
+                'created_at' => '2023-09-12 11:03:20',
+                'updated_at' => '2023-09-12 11:03:20',
+            ),
+            10 => 
+            array (
+                'id' => '12',
+                'nama' => 'Berproses',
+                'slug' => 'berproses',
+                'status' => '1',
+                'created_at' => '2023-09-12 11:03:20',
+                'updated_at' => '2023-09-12 11:03:20',
+            ),
+            11 => 
+            array (
+                'id' => '13',
+                'nama' => 'kominfohariini',
+                'slug' => 'kominfohariini',
+                'status' => '1',
+                'created_at' => '2023-09-12 11:11:23',
+                'updated_at' => '2023-09-12 11:11:23',
+            ),
         ));
         
         
