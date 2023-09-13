@@ -9,11 +9,9 @@
             <div class="row">
                 <div class="col-auto">
                     <div class="breadcrumbs__content">
-
                         <div class="breadcrumbs__item ">
                             <a href="{{ route('home') }}">Utama</a>
                         </div>
-
                         <div class="breadcrumbs__item ">
                             <a href="javascript:void(0)">Anggota</a>
                         </div>
@@ -130,10 +128,10 @@
                     @endphp
                     <div class="grid-item col-lg-3 col-md-6 p-2" data-anim-child="slide-left delay-{{ $k + 3 }}">
                         <div class="teamCard -type-1 rounded-16 bg-white -dark-bg-dark-1 shadow-4 card-main">
-                            <div class="teamCard__image">
+                            <div class="teamCard__image" style="height: 250px;">
                                 <a href="{{ $link_profile }}">
                                     <img onerror="this.src='{{ asset($image->default) }}';this.onerror='';"
-                                        src="{{ $item->foto }}" alt="{{ $item->nama }}"
+                                        data-src="{{ $item->foto }}" alt="{{ $item->nama }}" class="lazy2"
                                         style="width: 100%; height: 250px; object-fit: cover; border-radius:16px">
                                 </a>
                             </div>
@@ -245,11 +243,18 @@
     <script>
         let meta_list_is_edit = true;
         const meta_list = new Map();
+        let $grid = null;
         $(document).ready(function() {
-            var msnry = new Masonry(document.querySelector('.grid'), {
+            $grid = new Masonry(document.querySelector('.grid'), {
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-sizer'
             });
+
+            setTimeout(() => {
+                $('.lazy2').Lazy({
+                    scrollDirection: 'vertical',
+                });
+            }, 2000);
 
             @if ($is_filter)
                 setTimeout(() => {
