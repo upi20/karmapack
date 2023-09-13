@@ -591,6 +591,19 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2023-09-09 23:20:23',
                 'updated_at' => '2023-09-09 23:20:23',
             ),
+            44 => 
+            array (
+                'id' => '45',
+                'nama' => 'Daris Yusyfa Atqia',
+                'angkatan' => '2020',
+                'email' => 'yusyfadaris@gmail.com',
+                'whatsapp' => '085723175479',
+                'telepon' => '085723175479',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: yusyfadaris@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-09-11 16:31:01',
+                'updated_at' => '2023-09-11 16:31:01',
+            ),
         ));
         
         

@@ -66,19 +66,19 @@ Cianjru Kidul
             array (
                 'id' => '3',
                 'nama' => 'Kabinet Adiluhung',
-                'foto' => 'iconkabinet-ad20230909194623.png',
+                'foto' => 'iconkabinet-ad20230911183023.webp',
                 'dari' => '2023',
                 'sampai' => '2024',
                 'slug' => 'kabinet-adiluhung',
                 'slogan' => 'Ngabdi Ka Nagri Bela Ka Nagara Pikeun Ngawujudkeun Lemah Cai Nusajati Tur Ngawangun Cianjur Pakidulan',
                 'visi' => '<p><strong>KARMAPACK </strong>Eksis, Disiplin dan Berkualitas</p>
 ',
-                'misi' => '<p>1. Menghadirkan kegiatan keagamaan secara rutin sebagai upaya meningkatkan ketakwaan kepada Allah SWT.<p>2. Menggiatkan kembali diskusi dan kajian keilmuan</p><p>3. Secara berkelanjutan menggelar kegiatan pelatihan soft skill</p><p>4. Membangun kolaborasi</p><p>&nbsp;</p></p>
+                'misi' => '<p>1. Menghadirkan kegiatan keagamaan secara rutin sebagai upaya meningkatkan ketakwaan kepada Allah SWT.<p>2. Menggiatkan kembali diskusi dan kajian keilmuan</p><p>3. Secara berkelanjutan menggelar kegiatan pelatihan soft skill</p><p>4. Membangun kolaborasi</p><p>&nbsp;</p><p>&nbsp;</p></p>
 ',
                 'filosofi_logo' => '',
                 'status' => '1',
                 'created_at' => '2023-09-09 19:46:23',
-                'updated_at' => '2023-09-09 23:31:06',
+                'updated_at' => '2023-09-11 18:30:23',
             ),
         ));
         
