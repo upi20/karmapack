@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://karmapack.id</loc>
-        <lastmod>2023-09-12T11:14:11+07:00</lastmod>
+        <lastmod>2023-09-16T01:10:44+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -398,11 +398,11 @@
 </url>
     <url>
         <loc>https://karmapack.id/ncepkazama27</loc>
-        <lastmod>2023-03-17T20:07:32+07:00</lastmod>
+        <lastmod>2023-09-13T18:08:57+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/ncepkazama2720220901010244.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/ncepkazama2720230913175753.jpg</image:loc>
     <image:caption>ENCEP ABDUL HAKIM</image:caption>
 </image:image>
 </url>
@@ -628,7 +628,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/sri_hastuti</loc>
-        <lastmod>2023-02-11T00:40:12+07:00</lastmod>
+        <lastmod>2023-09-13T18:09:15+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -2798,11 +2798,11 @@
 </url>
     <url>
         <loc>https://karmapack.id/aldi-hartono20230909202631</loc>
-        <lastmod>2023-09-09T20:26:31+07:00</lastmod>
+        <lastmod>2023-09-13T14:03:25+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/aldi-hartono2023090920263120230913140325.jpg</image:loc>
     <image:caption>Aldi Hartono</image:caption>
 </image:image>
 </url>
@@ -2828,12 +2828,12 @@
 </url>
     <url>
         <loc>https://karmapack.id/m-ruli-pahrulani20230909203349</loc>
-        <lastmod>2023-09-09T20:33:49+07:00</lastmod>
+        <lastmod>2023-09-14T14:30:17+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
-    <image:caption>M Ruli Pahrulani</image:caption>
+    <image:loc>https://karmapack.id/assets/anggota/m-ruli-pahrulani2023090920334920230913173219.jpg</image:loc>
+    <image:caption>M Rulli Pahrulani</image:caption>
 </image:image>
 </url>
     <url>
@@ -2888,11 +2888,11 @@
 </url>
     <url>
         <loc>https://karmapack.id/widia-rahmawati20230909204717</loc>
-        <lastmod>2023-09-09T20:47:17+07:00</lastmod>
+        <lastmod>2023-09-13T14:27:49+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/widia-rahmawati2023090920471720230913142748.jpg</image:loc>
     <image:caption>Widia Rahmawati</image:caption>
 </image:image>
 </url>

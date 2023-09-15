@@ -13921,6 +13921,798 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'edit',
                 'data' => '{"id":"42","nama":"Kenapa harus masuk organisasi?","slug":"kenapa-harus-masuk-organisasi","foto":"","detail":"<p><iframe style=\\"display: table; margin-left: auto; margin-right: auto;\\" src=\\"https:\\/\\/www.youtube.com\\/embed\\/GM39AxNTO40?ab_channel=OrdaKarmapack\\" width=\\"420\\" height=\\"236\\" allowfullscreen=\\"allowfullscreen\\"><\\/iframe><p>&nbsp;<\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">Halawwww! Siapa nih yang masih bingung mau masuk organisasi apa ngga? manfaat dari masuk organisasi bisa buat kamu lebih banyak pengalaman, belajar mengatur waktu, banyak teman dan relasi, melatih jiwa kepemimpinan, lebih percaya diri, dan melatih cara berkomunikasi lohh.<\\/span><\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">&nbsp;Di video ini, kalian akan tau kenapa harus masuk organisasi. <\\/span><\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">_________________________&nbsp;<br><\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\">SOSIAL MEDIA LAINNYA <br>Instagram: @orda_karmapack <br>Facebook: Orda Karmapack <br>Tiktok: @ordakarmapack <br>E-mail: <a href=\\"mailto:orda.karmapack@gmail.com\\">orda.karmapack@gmail.com<\\/a><br><\\/span><\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">_______________________&nbsp;<br>TIM PENYUSUN VIDEO <br>Script: <a title=\\"Widia rahmawati\\" href=\\"\\/anggota\\/283\\" target=\\"_blank\\" rel=\\"noopener\\">Widia rahmawati<\\/a> <br>Audio Editor: <a href=\\"\\/anggota\\/77\\" target=\\"_blank\\" rel=\\"noopener\\">Neng Nurhasanah<\\/a> <br>Video Editor: Ikhsanul Hakim <br><br>____________________ <br>Jangan lupa like, comment, sahre, &amp; subscribe yaa! <\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/ordakarmapack\\" target=\\"\\" rel=\\"nofollow\\">#ordakarmapack<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/halingkuaing\\" target=\\"\\" rel=\\"nofollow\\">#halingkuaing<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/cianjurkidul\\" target=\\"\\" rel=\\"nofollow\\">#cianjurkidul<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/pendidikan\\" target=\\"\\" rel=\\"nofollow\\">#pendidikan<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/kesuksesan\\" target=\\"\\" rel=\\"nofollow\\">#kesuksesan<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/relasi\\" target=\\"\\" rel=\\"nofollow\\">#relasi<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/mengatur\\" target=\\"\\" rel=\\"nofollow\\">#mengatur<\\/a><\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"> waktu <\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/pendapat\\" target=\\"\\" rel=\\"nofollow\\">#pendapat<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/berproses\\" target=\\"\\" rel=\\"nofollow\\">#berproses<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/kominfohariini\\" target=\\"\\" rel=\\"nofollow\\">#kominfohariini<\\/a><\\/span><\\/p><p>&nbsp;<\\/p><p>&nbsp;<\\/p><p>&nbsp;<\\/p><p>&nbsp;<\\/p><p>&nbsp;<\\/p><\\/p>\\n","excerpt":"Halawwww! Siapa nih yang masih bingung mau masuk organisasi apa ngga? manfaat dari masuk organisasi bisa buat kamu lebih banyak pengalaman, belajar mengatur waktu, banyak teman dan relasi, melatih jiwa kepemimpinan, lebih percaya diri, dan melatih cara berkomunikasi lohh.","counter":"7","date":"2023-08-19","status":"1","created_at":"2023-09-12 11:03:20","updated_at":"2023-09-12 11:07:42","user_id":"89"}',
             ),
+            44 => 
+            array (
+                'id' => '1561',
+                'user_id' => '89',
+                'log_date' => '2023-09-12 22:06:33',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            45 => 
+            array (
+                'id' => '1562',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:19:46',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            46 => 
+            array (
+                'id' => '1563',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:20:42',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":28,"nama":"Membaca","anggota_id":"69","created_at":null,"updated_at":null}',
+            ),
+            47 => 
+            array (
+                'id' => '1564',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:21:24',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"69","nama":"PERHIMPUNAN MAHASISWA BANDUNG","dari":"2023","sampai":null,"jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-13T05:21:24.000000Z","created_at":"2023-09-13T05:21:24.000000Z","id":44}',
+            ),
+            48 => 
+            array (
+                'id' => '1565',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:22:01',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+            'data' => '{"anggota_id":"69","nama":"Himpunan Mahasiswa Islam (HMI)","dari":"2022","sampai":null,"jabatan":"Kader","keterangan":null,"updated_at":"2023-09-13T05:22:01.000000Z","created_at":"2023-09-13T05:22:01.000000Z","id":45}',
+            ),
+            49 => 
+            array (
+                'id' => '1566',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:37:33',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"69","nama":"KARMAPACK","dari":"2021","sampai":null,"jabatan":"Pengurus","keterangan":null,"updated_at":"2023-09-13T05:37:33.000000Z","created_at":"2023-09-13T05:37:33.000000Z","id":46}',
+            ),
+            50 => 
+            array (
+                'id' => '1567',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:40:22',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'edit',
+                'data' => '{"id":"33","jenis_id":"2","anggota_id":"69","dari":"2010","sampai":"2015","instansi":"SD CIDOMBA","jurusan":null,"keterangan":null,"created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            51 => 
+            array (
+                'id' => '1568',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:41:10',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"101.128.112.3","visitors_id":"13971","city":"Jakarta","region":"Jakarta","country_code":"ID","country":"Indonesia","loc":"-6.2146,106.8451","timezone":"Asia\\/Jakarta","updated_at":"2023-09-13T05:41:10.000000Z","created_at":"2023-09-13T05:41:10.000000Z","id":837}',
+            ),
+            52 => 
+            array (
+                'id' => '1569',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 12:44:01',
+                'table_name' => 'artikel',
+                'log_type' => 'edit',
+                'data' => '{"id":"43","nama":"KKN emang harus cinlok yaa?","slug":"kkn-emang-harus-cinlok-yaa","foto":null,"detail":"<p><iframe style=\\"display: table; margin-left: auto; margin-right: auto;\\" src=\\"https:\\/\\/www.youtube.com\\/embed\\/uzVjmiqkvwQ?ab_channel=OrdaKarmapack\\" width=\\"560\\" height=\\"314\\" allowfullscreen=\\"allowfullscreen\\"><\\/iframe><p>Halawwww! Kaka-Kaka adik-adik kalian pernah dengar kan soal cinlok di KKN atau cinta lokasi? padahal kan KKN itu salah satu bentuk pengabdian kepada masyarakat,hampir semua mahasiswa harus mengikuti KKN atau Kuliah kerja nyata, supaya bisa lulus dan meraih gelar sarjana bukan.<\\/p><p>Di video ini, kalian akan tau apakah KKN itu memang harus cinlok aja<\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">_________________________&nbsp;<br><\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\">SOSIAL MEDIA LAINNYA <br>Instagram: @orda_karmapack <br>Facebook: Orda Karmapack <br>Tiktok: @ordakarmapack <br>E-mail: <a href=\\"mailto:orda.karmapack@gmail.com\\">orda.karmapack@gmail.com<\\/a><br><\\/span><\\/p><p><span class=\\"yt-core-attributed-string--link-inherit-color\\">_______________________&nbsp;<br>TIM PENYUSUN VIDEO <br>Script: <a title=\\"Widia rahmawati\\" href=\\"\\/anggota\\/283\\" target=\\"_blank\\" rel=\\"noopener\\">Widia rahmawati<\\/a> <br>Audio Editor: <a href=\\"\\/anggota\\/77\\" target=\\"_blank\\" rel=\\"noopener\\">Neng Nurhasanah<\\/a> <br>Video Editor: Ikhsanul Hakim <br><br>____________________ <br>Jangan lupa like, comment, sahre, &amp; subscribe yaa! <\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/ordakarmapack\\" target=\\"\\" rel=\\"nofollow\\">#ordakarmapack<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/halingkuaing\\" target=\\"\\" rel=\\"nofollow\\">#halingkuaing<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/cianjurkidul\\" target=\\"\\" rel=\\"nofollow\\">#cianjurkidul<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/pendidikan\\" target=\\"\\" rel=\\"nofollow\\">#pendidikan<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/kesuksesan\\" target=\\"\\" rel=\\"nofollow\\">#kesuksesan<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/relasi\\" target=\\"\\" rel=\\"nofollow\\">#relasi<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/mengatur\\" target=\\"\\" rel=\\"nofollow\\">#mengatur<\\/a><\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"> waktu <\\/span><span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/pendapat\\" target=\\"\\" rel=\\"nofollow\\">#pendapat<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/berproses\\" target=\\"\\" rel=\\"nofollow\\">#berproses<\\/a><\\/span> <span class=\\"yt-core-attributed-string--link-inherit-color\\"><a class=\\"yt-core-attributed-string__link yt-core-attributed-string__link--display-type yt-core-attributed-string__link--call-to-action-color\\" tabindex=\\"0\\" href=\\"https:\\/\\/www.youtube.com\\/hashtag\\/kominfohariini\\" target=\\"\\" rel=\\"nofollow\\">#kominfohariini<\\/a><\\/span><\\/p><p>&nbsp;<\\/p><\\/p>\\n","excerpt":"Halawwww! Kaka-Kaka adik-adik kalian pernah dengar kan soal cinlok di KKN atau cinta lokasi?","counter":"3","date":"2023-09-03","status":"1","created_at":"2023-09-12 11:11:23","updated_at":"2023-09-13 12:19:47","user_id":"89"}',
+            ),
+            53 => 
+            array (
+                'id' => '1570',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 12:44:12',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.76.150","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/115.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            54 => 
+            array (
+                'id' => '1571',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:09:49',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            55 => 
+            array (
+                'id' => '1572',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:17:26',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.219.114","user_agent":"Mozilla\\/5.0 (Linux; U; Android 12; in-id; CPH2477 Build\\/SP1A.210812.016) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/91.0.4472.88 Mobile Safari\\/537.36 HeyTapBrowser\\/45.9.5.1.1"}',
+            ),
+            56 => 
+            array (
+                'id' => '1573',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:21:18',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"274","nomor_anggota":null,"nama":"Aldi Hartono","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2021","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"299","created_at":"2023-09-09 20:26:31","updated_at":"2023-09-09 20:26:31"}',
+            ),
+            57 => 
+            array (
+                'id' => '1574',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:21:28',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"274","nomor_anggota":null,"nama":"Aldi Hartono","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203110","village_id":"3203110008","alamat_lengkap":"kp.rahong Rt.01 Rw.02 no 25 Des.margaluyu kec.campaka kab.cianjur prov.Jawa barat","bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"299","created_at":"2023-09-09 20:26:31","updated_at":"2023-09-13 13:21:18"}',
+            ),
+            58 => 
+            array (
+                'id' => '1575',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:21:52',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"274","nomor_anggota":null,"nama":"Aldi Hartono","tanggal_lahir":"2001-02-17","jenis_kelamin":null,"angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203110","village_id":"3203110008","alamat_lengkap":"kp.rahong Rt.01 Rw.02 no 25 Des.margaluyu kec.campaka kab.cianjur prov.Jawa barat","bio":null,"profesi":null,"foto":null,"telepon":"085721336791","whatsapp":"12345678","status":null,"user_id":"299","created_at":"2023-09-09 20:26:31","updated_at":"2023-09-13 13:21:28"}',
+            ),
+            59 => 
+            array (
+                'id' => '1576',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 13:22:13',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":29,"nama":"Sepak Bola","anggota_id":"274","created_at":null,"updated_at":null}',
+            ),
+            60 => 
+            array (
+                'id' => '1577',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:25:14',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"5","nilai":"https:\\/\\/instagram.com\\/theycallme.widii?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D","updated_at":"2023-09-13T06:25:14.000000Z","created_at":"2023-09-13T06:25:14.000000Z","id":130}',
+            ),
+            61 => 
+            array (
+                'id' => '1578',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:28:24',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"1","nilai":"https:\\/\\/www.facebook.com\\/widia.mdev","updated_at":"2023-09-13T06:28:24.000000Z","created_at":"2023-09-13T06:28:24.000000Z","id":131}',
+            ),
+            62 => 
+            array (
+                'id' => '1579',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:30:16',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"2","nilai":"https:\\/\\/twitter.com\\/widiarhmwti_?t=CScEUSjOfy381erYYeNenQ&s=09","updated_at":"2023-09-13T06:30:16.000000Z","created_at":"2023-09-13T06:30:16.000000Z","id":132}',
+            ),
+            63 => 
+            array (
+                'id' => '1580',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:37:04',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"1","instansi":"Sd bimakarya","dari":"2011","sampai":"2016","jurusan":null,"keterangan":null,"updated_at":"2023-09-13T06:37:04.000000Z","created_at":"2023-09-13T06:37:04.000000Z","id":240}',
+            ),
+            64 => 
+            array (
+                'id' => '1581',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:38:33',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"3","instansi":"MTS leles","dari":"2016","sampai":"2019","jurusan":null,"keterangan":null,"updated_at":"2023-09-13T06:38:33.000000Z","created_at":"2023-09-13T06:38:33.000000Z","id":241}',
+            ),
+            65 => 
+            array (
+                'id' => '1582',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:39:17',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'edit',
+                'data' => '{"id":"240","jenis_id":"1","anggota_id":"283","dari":"2011","sampai":"2016","instansi":"Sd bimakarya","jurusan":null,"keterangan":null,"created_at":"2023-09-13 13:37:04","updated_at":"2023-09-13 13:37:04"}',
+            ),
+            66 => 
+            array (
+                'id' => '1583',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:39:30',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'edit',
+                'data' => '{"id":"240","jenis_id":"1","anggota_id":"283","dari":"2011","sampai":"2016","instansi":"SD Bimakarya","jurusan":null,"keterangan":null,"created_at":"2023-09-13 13:37:04","updated_at":"2023-09-13 13:39:17"}',
+            ),
+            67 => 
+            array (
+                'id' => '1584',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:40:29',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"4","instansi":"MA Leles","dari":"2019","sampai":"2022","jurusan":null,"keterangan":null,"updated_at":"2023-09-13T06:40:29.000000Z","created_at":"2023-09-13T06:40:29.000000Z","id":242}',
+            ),
+            68 => 
+            array (
+                'id' => '1585',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:41:03',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'edit',
+                'data' => '{"id":"242","jenis_id":"4","anggota_id":"283","dari":"2019","sampai":"2022","instansi":"MA Leles","jurusan":null,"keterangan":null,"created_at":"2023-09-13 13:40:29","updated_at":"2023-09-13 13:40:29"}',
+            ),
+            69 => 
+            array (
+                'id' => '1586',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:41:37',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","jenis_id":"5","instansi":"Stisip Guna Nusantara Cianjur","dari":"2022","sampai":null,"jurusan":"Ilmu Pemerintahan","keterangan":null,"updated_at":"2023-09-13T06:41:37.000000Z","created_at":"2023-09-13T06:41:37.000000Z","id":243}',
+            ),
+            70 => 
+            array (
+                'id' => '1587',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:43:10',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","nama":"Anggota Osis","dari":"2016","sampai":"2019","jabatan":"anggota","keterangan":null,"updated_at":"2023-09-13T06:43:10.000000Z","created_at":"2023-09-13T06:43:10.000000Z","id":47}',
+            ),
+            71 => 
+            array (
+                'id' => '1588',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:43:31',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+                'data' => '{"id":"47","nama":"Anggota Osis","dari":"2016","sampai":"2019","jabatan":"anggota","keterangan":null,"anggota_id":"283","created_at":"2023-09-13 13:43:10","updated_at":"2023-09-13 13:43:10"}',
+            ),
+            72 => 
+            array (
+                'id' => '1589',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:44:06',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","nama":"OSIS MA Leles","dari":"2019","sampai":"2020","jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-13T06:44:06.000000Z","created_at":"2023-09-13T06:44:06.000000Z","id":48}',
+            ),
+            73 => 
+            array (
+                'id' => '1590',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:44:16',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+                'data' => '{"id":"48","nama":"OSIS MA Leles","dari":"2019","sampai":"2020","jabatan":"Anggota","keterangan":null,"anggota_id":"283","created_at":"2023-09-13 13:44:06","updated_at":"2023-09-13 13:44:06"}',
+            ),
+            74 => 
+            array (
+                'id' => '1591',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:45:28',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","nama":"PRAMUKA PENGGALANG","dari":"2016","sampai":"2019","jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-13T06:45:28.000000Z","created_at":"2023-09-13T06:45:28.000000Z","id":49}',
+            ),
+            75 => 
+            array (
+                'id' => '1592',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 13:47:02',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"283","nama":"PRAMUKA PENEGAK","dari":"2019","sampai":"2022","jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-13T06:47:02.000000Z","created_at":"2023-09-13T06:47:02.000000Z","id":50}',
+            ),
+            76 => 
+            array (
+                'id' => '1593',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 14:03:25',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"299","name":"Aldi Hartono","email":"aldihartono@karmapack.id","foto":null,"username":"aldi-hartono20230909202631","email_verified_at":null,"password":"$2y$10$SbntSuqnMKm56M\\/koG9Y0eo63d8WnyhEQxEP\\/Yq.iAymBPi28LwvK","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:26:31","updated_at":"2023-09-09 20:26:31"}',
+            ),
+            77 => 
+            array (
+                'id' => '1594',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 14:03:25',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"274","nomor_anggota":null,"nama":"Aldi Hartono","tanggal_lahir":"2001-02-17","jenis_kelamin":null,"angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203110","village_id":"3203110008","alamat_lengkap":"kp.rahong Rt.01 Rw.02 no 25 Des.margaluyu kec.campaka kab.cianjur prov.Jawa barat","bio":null,"profesi":null,"foto":null,"telepon":"085721336791","whatsapp":"5721336791","status":null,"user_id":"299","created_at":"2023-09-09 20:26:31","updated_at":"2023-09-13 13:21:52"}',
+            ),
+            78 => 
+            array (
+                'id' => '1595',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 14:25:35',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"283","nomor_anggota":null,"nama":"Widia Rahmawati","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345","status":null,"user_id":"308","created_at":"2023-09-09 20:47:17","updated_at":"2023-09-09 20:47:17"}',
+            ),
+            79 => 
+            array (
+                'id' => '1596',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 14:25:39',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"283","nomor_anggota":null,"nama":"Widia Rahmawati","tanggal_lahir":"2004-07-03","jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":"085864948107","whatsapp":"85864948107","status":null,"user_id":"308","created_at":"2023-09-09 20:47:17","updated_at":"2023-09-13 14:25:35"}',
+            ),
+            80 => 
+            array (
+                'id' => '1597',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 14:27:36',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":30,"nama":"baca wattpad","anggota_id":"283","created_at":null,"updated_at":null}',
+            ),
+            81 => 
+            array (
+                'id' => '1598',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 14:27:49',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"308","name":"Widia Rahmawati","email":"widiarahmawati@karmapack.id","foto":null,"username":"widia-rahmawati20230909204717","email_verified_at":null,"password":"$2y$10$KjOunY0TADwP9tnM2wnz6e3m86OcZDILTGSOaSvERxjzCsyCR.G7m","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:47:17","updated_at":"2023-09-09 20:47:17"}',
+            ),
+            82 => 
+            array (
+                'id' => '1599',
+                'user_id' => '308',
+                'log_date' => '2023-09-13 14:27:49',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"283","nomor_anggota":null,"nama":"Widia Rahmawati","tanggal_lahir":"2004-07-03","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203011","village_id":"3203011010","alamat_lengkap":"Kp. Cijeruk, RT\\/RW 001\\/001, Desa Karyamukti, Kecamatan Leles","bio":null,"profesi":null,"foto":null,"telepon":"085864948107","whatsapp":"85864948107","status":null,"user_id":"308","created_at":"2023-09-09 20:47:17","updated_at":"2023-09-13 14:25:39"}',
+            ),
+            83 => 
+            array (
+                'id' => '1600',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 14:31:03',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"274","jenis_id":"4","instansi":"MA al Falah Campaka","dari":"2017","sampai":"2019","jurusan":"IPS","keterangan":null,"updated_at":"2023-09-13T07:31:03.000000Z","created_at":"2023-09-13T07:31:03.000000Z","id":244}',
+            ),
+            84 => 
+            array (
+                'id' => '1601',
+                'user_id' => '299',
+                'log_date' => '2023-09-13 14:33:45',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"274","jenis_id":"2","instansi":"SDN SUKALAKSANA","dari":"2007","sampai":"2013","jurusan":null,"keterangan":null,"updated_at":"2023-09-13T07:33:45.000000Z","created_at":"2023-09-13T07:33:45.000000Z","id":245}',
+            ),
+            85 => 
+            array (
+                'id' => '1602',
+                'user_id' => '93',
+                'log_date' => '2023-09-13 15:08:43',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.79","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            86 => 
+            array (
+                'id' => '1603',
+                'user_id' => '93',
+                'log_date' => '2023-09-13 15:08:45',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.249.79","visitors_id":"14000","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-13T08:08:45.000000Z","created_at":"2023-09-13T08:08:45.000000Z","id":844}',
+            ),
+            87 => 
+            array (
+                'id' => '1604',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 16:49:11',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.112.3","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            88 => 
+            array (
+                'id' => '1605',
+                'user_id' => '74',
+                'log_date' => '2023-09-13 16:53:01',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.212.215","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            89 => 
+            array (
+                'id' => '1606',
+                'user_id' => '74',
+                'log_date' => '2023-09-13 16:56:54',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"55","jenis_id":"5","instansi":"Universitas Sali Al-Aitaam Bandung","dari":"2022","sampai":"2026","jurusan":"Ilmu Hukum","keterangan":"Reguler 1 A","updated_at":"2023-09-13T09:56:54.000000Z","created_at":"2023-09-13T09:56:54.000000Z","id":246}',
+            ),
+            90 => 
+            array (
+                'id' => '1607',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:15:11',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"120.188.5.188","user_agent":"Mozilla\\/5.0 (Linux; Android 12; SM-A025F) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.88 Mobile Safari\\/537.36"}',
+            ),
+            91 => 
+            array (
+                'id' => '1608',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:20:57',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"277","nomor_anggota":null,"nama":"M Ruli Pahrulani","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"302","created_at":"2023-09-09 20:33:49","updated_at":"2023-09-09 20:33:49"}',
+            ),
+            92 => 
+            array (
+                'id' => '1609',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:24:00',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"277","nomor_anggota":null,"nama":"M Ruli Pahrulani","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203100","village_id":"3203100016","alamat_lengkap":"Jl. Selebu kp. Salegok rt.002\\/rw.002 patokan masjid jami al-islah kp, salegok","bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"302","created_at":"2023-09-09 20:33:49","updated_at":"2023-09-13 17:20:57"}',
+            ),
+            93 => 
+            array (
+                'id' => '1610',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:24:00',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"302","name":"M Ruli Pahrulani","email":"mrulipahrulani@karmapack.id","foto":null,"username":"m-ruli-pahrulani20230909203349","email_verified_at":null,"password":"$2y$10$Gsv5dZQgB9DTOZbl1sbSxergilkIfpQCfjCSh9MYnQykzRR7dNDQe","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:33:49","updated_at":"2023-09-09 20:33:49"}',
+            ),
+            94 => 
+            array (
+                'id' => '1611',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:32:19',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"302","name":"M Rulli Pahrulani","email":"mrulipahrulani@karmapack.id","foto":null,"username":"m-ruli-pahrulani20230909203349","email_verified_at":null,"password":"$2y$10$Gsv5dZQgB9DTOZbl1sbSxergilkIfpQCfjCSh9MYnQykzRR7dNDQe","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:33:49","updated_at":"2023-09-13 17:24:00"}',
+            ),
+            95 => 
+            array (
+                'id' => '1612',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:32:19',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"277","nomor_anggota":null,"nama":"M Rulli Pahrulani","tanggal_lahir":"2002-05-15","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203100","village_id":"3203100016","alamat_lengkap":"Jl. Selebu kp. Salegok rt.002\\/rw.002 patokan masjid jami al-islah kp, salegok","bio":null,"profesi":null,"foto":null,"telepon":"085720917186","whatsapp":"85220917196","status":null,"user_id":"302","created_at":"2023-09-09 20:33:49","updated_at":"2023-09-13 17:24:00"}',
+            ),
+            96 => 
+            array (
+                'id' => '1613',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:33:18',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"1","nilai":"https:\\/\\/www.facebook.com\\/rulli.pahrulani","updated_at":"2023-09-13T10:33:18.000000Z","created_at":"2023-09-13T10:33:18.000000Z","id":133}',
+            ),
+            97 => 
+            array (
+                'id' => '1614',
+                'user_id' => '302',
+                'log_date' => '2023-09-13 17:34:27',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"5","nilai":"https:\\/\\/instagram.com\\/muh.rullip?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==","updated_at":"2023-09-13T10:34:27.000000Z","created_at":"2023-09-13T10:34:27.000000Z","id":134}',
+            ),
+            98 => 
+            array (
+                'id' => '1615',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 17:50:04',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.71.24","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 12 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.28.0-gn"}',
+            ),
+            99 => 
+            array (
+                'id' => '1616',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 17:57:53',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"46","name":"ENCEP ABDUL HAKIM","email":"encep_abdul_hakim@karmapack.id","foto":"ncepkazama2720220901010244.png","username":"ncepkazama27","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-04-20 05:50:06"}',
+            ),
+            100 => 
+            array (
+                'id' => '1617',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 17:57:53',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"30","nomor_anggota":null,"nama":"ENCEP ABDUL HAKIM","tanggal_lahir":"2001-08-27","jenis_kelamin":"laki-laki","angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203050","village_id":"3203050005","alamat_lengkap":"Jl.cilubang \\nKp.cilubang rt\\/rw 019\\/004","bio":"Hidup dengan kebebasan","profesi":"Pelajar\\/Mahasiswa","foto":"ncepkazama2720220901010244.png","telepon":"085524947588","whatsapp":null,"status":"ANGGOTA BIASA","user_id":"46","created_at":"2023-02-11 00:40:12","updated_at":"2023-03-17 20:07:32"}',
+            ),
+            101 => 
+            array (
+                'id' => '1618',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:01:15',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":31,"nama":"Jalan-jalan \\ud83d\\ude06","anggota_id":"30","created_at":null,"updated_at":null}',
+            ),
+            102 => 
+            array (
+                'id' => '1619',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:03:31',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.71.24","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 12 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.28.0-gn"}',
+            ),
+            103 => 
+            array (
+                'id' => '1620',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:04:50',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+            'data' => '{"id":"9","nama":"Himpunan Mahasiswa Islam (HMI)","dari":"2021","sampai":null,"jabatan":"Kader","keterangan":null,"anggota_id":"30","created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            104 => 
+            array (
+                'id' => '1621',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:05:41',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+            'data' => '{"id":"13","nama":"Himpunan Mahasiswa Pendidikan Guru Sekolah Dasar (HIMASEDA) Invada","dari":"2021","sampai":"2022","jabatan":"Anggota","keterangan":null,"anggota_id":"30","created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            105 => 
+            array (
+                'id' => '1622',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:06:07',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+            'data' => '{"id":"9","nama":"Himpunan Mahasiswa Islam (HMI)","dari":"2021","sampai":"2026","jabatan":"Sekertaris Umum periode 2023-2024","keterangan":null,"anggota_id":"30","created_at":"2023-02-11 00:40:12","updated_at":"2023-09-13 18:04:50"}',
+            ),
+            106 => 
+            array (
+                'id' => '1623',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:07:37',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","nama":"BEM ITPS","dari":"2020","sampai":"2022","jabatan":"Sekertaris Umum","keterangan":null,"updated_at":"2023-09-13T11:07:37.000000Z","created_at":"2023-09-13T11:07:37.000000Z","id":51}',
+            ),
+            107 => 
+            array (
+                'id' => '1624',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:08:11',
+                'table_name' => 'anggota_pengalaman_lains',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","pengalaman":"PESIMA 2020","keterangan":null,"anggota_id":"30","created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            108 => 
+            array (
+                'id' => '1625',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 18:08:57',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"30","nomor_anggota":null,"nama":"ENCEP ABDUL HAKIM","tanggal_lahir":"2001-08-27","jenis_kelamin":"laki-laki","angkatan":"2021","province_id":"32","regency_id":"3203","district_id":"3203050","village_id":"3203050005","alamat_lengkap":"Jl.cilubang \\nKp.cilubang rt\\/rw 019\\/004","bio":"Kamu tidak terlalu tua untuk memulai hal yang baru dalam hidupmu \\u2728","profesi":"Pelajar\\/Mahasiswa","foto":"ncepkazama2720230913175753.jpg","telepon":"085524947588","whatsapp":null,"status":"ANGGOTA BIASA","user_id":"46","created_at":"2023-02-11 00:40:12","updated_at":"2023-09-13 17:57:53"}',
+            ),
+            109 => 
+            array (
+                'id' => '1626',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:09:13',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","nama":"IKAMICI","dari":"2021","sampai":"2024","jabatan":"Ketua Umum","keterangan":null,"updated_at":"2023-09-13T11:09:13.000000Z","created_at":"2023-09-13T11:09:13.000000Z","id":52}',
+            ),
+            110 => 
+            array (
+                'id' => '1627',
+                'user_id' => '89',
+                'log_date' => '2023-09-13 18:09:15',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"53","nomor_anggota":null,"nama":"SRI HASTUTI","tanggal_lahir":"2022-07-14","jenis_kelamin":null,"angkatan":"2020","province_id":"32","regency_id":"3203","district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":"sri_hastuti20220901012636.png","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"72","created_at":"2023-02-11 00:40:12","updated_at":"2023-02-11 00:40:12"}',
+            ),
+            111 => 
+            array (
+                'id' => '1628',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:09:37',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+            'data' => '{"id":"13","nama":"Himpunan Mahasiswa Pendidikan Guru Sekolah Dasar (HIMASEDA) Invada","dari":"2023","sampai":"2024","jabatan":"Ketua Bidang Pengembangan apatur organisasi kampus","keterangan":null,"anggota_id":"30","created_at":"2023-02-11 00:40:12","updated_at":"2023-09-13 18:05:41"}',
+            ),
+            112 => 
+            array (
+                'id' => '1629',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:12:26',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"30","nama":"KMPI JABAR","dari":"2021","sampai":"2026","jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-13T11:12:26.000000Z","created_at":"2023-09-13T11:12:26.000000Z","id":53}',
+            ),
+            113 => 
+            array (
+                'id' => '1630',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:13:23',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":32,"nama":"Jalan-jalan \\ud83d\\ude06","anggota_id":"30","created_at":null,"updated_at":null}',
+            ),
+            114 => 
+            array (
+                'id' => '1631',
+                'user_id' => '46',
+                'log_date' => '2023-09-13 18:16:12',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.71.24","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 12 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.28.0-gn"}',
+            ),
+            115 => 
+            array (
+                'id' => '1632',
+                'user_id' => '110',
+                'log_date' => '2023-09-13 18:32:44',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.213.79","user_agent":"Mozilla\\/5.0 (Linux; Android 13; V2110) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/105.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            116 => 
+            array (
+                'id' => '1633',
+                'user_id' => '110',
+                'log_date' => '2023-09-13 18:32:45',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.213.79","user_agent":"Mozilla\\/5.0 (Linux; Android 13; V2110) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/105.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            117 => 
+            array (
+                'id' => '1634',
+                'user_id' => '110',
+                'log_date' => '2023-09-13 18:32:45',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.213.79","user_agent":"Mozilla\\/5.0 (Linux; Android 13; V2110) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/105.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            118 => 
+            array (
+                'id' => '1635',
+                'user_id' => '110',
+                'log_date' => '2023-09-13 18:32:48',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.213.79","user_agent":"Mozilla\\/5.0 (Linux; Android 13; V2110) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/105.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            119 => 
+            array (
+                'id' => '1636',
+                'user_id' => '110',
+                'log_date' => '2023-09-13 18:32:48',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.213.79","visitors_id":"14045","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-13T11:32:48.000000Z","created_at":"2023-09-13T11:32:48.000000Z","id":865}',
+            ),
+            120 => 
+            array (
+                'id' => '1637',
+                'user_id' => '93',
+                'log_date' => '2023-09-14 02:03:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.79","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            121 => 
+            array (
+                'id' => '1638',
+                'user_id' => '93',
+                'log_date' => '2023-09-14 02:03:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.79","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            122 => 
+            array (
+                'id' => '1639',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:29:39',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.4.215.173","user_agent":"Mozilla\\/5.0 (Linux; Android 12; SM-A025F) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/99.0.4844.88 Mobile Safari\\/537.36"}',
+            ),
+            123 => 
+            array (
+                'id' => '1640',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:30:17',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"277","nomor_anggota":null,"nama":"M Rulli Pahrulani","tanggal_lahir":"2002-05-15","jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203100","village_id":"3203100016","alamat_lengkap":"Jl. Selebu kp. Salegok rt.002\\/rw.002 patokan masjid jami al-islah kp, salegok","bio":null,"profesi":"Pelajar\\/Mahasiswa","foto":"m-ruli-pahrulani2023090920334920230913173219.jpg","telepon":"085720917186","whatsapp":"85220917196","status":null,"user_id":"302","created_at":"2023-09-09 20:33:49","updated_at":"2023-09-13 17:32:19"}',
+            ),
+            124 => 
+            array (
+                'id' => '1641',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:34:55',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"2","instansi":"SDN SUKAMULYA","dari":"2009","sampai":"2015","jurusan":null,"keterangan":null,"updated_at":"2023-09-14T07:34:55.000000Z","created_at":"2023-09-14T07:34:55.000000Z","id":247}',
+            ),
+            125 => 
+            array (
+                'id' => '1642',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:35:46',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"3","instansi":"SMPN 2 PAGELARAN","dari":"2015","sampai":"2018","jurusan":null,"keterangan":null,"updated_at":"2023-09-14T07:35:46.000000Z","created_at":"2023-09-14T07:35:46.000000Z","id":248}',
+            ),
+            126 => 
+            array (
+                'id' => '1643',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:36:36',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"3","instansi":"SMK IPPS CIPANAS","dari":"2018","sampai":"2021","jurusan":null,"keterangan":null,"updated_at":"2023-09-14T07:36:36.000000Z","created_at":"2023-09-14T07:36:36.000000Z","id":249}',
+            ),
+            127 => 
+            array (
+                'id' => '1644',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:37:58',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","jenis_id":"5","instansi":"Universitas Suryakancana","dari":"2022","sampai":null,"jurusan":"Agribisnis","keterangan":null,"updated_at":"2023-09-14T07:37:58.000000Z","created_at":"2023-09-14T07:37:58.000000Z","id":250}',
+            ),
+            128 => 
+            array (
+                'id' => '1645',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:39:22',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","nama":"Majelis Perwakilan Kelas","dari":"2017","sampai":"2018","jabatan":"Ketua","keterangan":null,"updated_at":"2023-09-14T07:39:22.000000Z","created_at":"2023-09-14T07:39:22.000000Z","id":54}',
+            ),
+            129 => 
+            array (
+                'id' => '1646',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:41:46',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"277","nama":"bes smk ipps cipanas","dari":"2020","sampai":"2021","jabatan":"Ketua","keterangan":null,"updated_at":"2023-09-14T07:41:46.000000Z","created_at":"2023-09-14T07:41:46.000000Z","id":55}',
+            ),
+            130 => 
+            array (
+                'id' => '1647',
+                'user_id' => '302',
+                'log_date' => '2023-09-14 14:42:55',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":33,"nama":"Menyebutkan nama seseorang dalam setiap do\'a","anggota_id":"277","created_at":null,"updated_at":null}',
+            ),
+            131 => 
+            array (
+                'id' => '1648',
+                'user_id' => '34',
+                'log_date' => '2023-09-14 19:43:01',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"125.162.246.62","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
+            ),
         ));
         
         

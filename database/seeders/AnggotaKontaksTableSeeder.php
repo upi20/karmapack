@@ -1171,6 +1171,51 @@ class AnggotaKontaksTableSeeder extends Seeder
                 'created_at' => '2023-05-16 21:03:26',
                 'updated_at' => '2023-05-16 21:03:26',
             ),
+            128 => 
+            array (
+                'id' => '130',
+                'jenis_id' => '5',
+                'anggota_id' => '283',
+                'nilai' => 'https://instagram.com/theycallme.widii?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D',
+                'created_at' => '2023-09-13 13:25:14',
+                'updated_at' => '2023-09-13 13:25:14',
+            ),
+            129 => 
+            array (
+                'id' => '131',
+                'jenis_id' => '1',
+                'anggota_id' => '283',
+                'nilai' => 'https://www.facebook.com/widia.mdev',
+                'created_at' => '2023-09-13 13:28:24',
+                'updated_at' => '2023-09-13 13:28:24',
+            ),
+            130 => 
+            array (
+                'id' => '132',
+                'jenis_id' => '2',
+                'anggota_id' => '283',
+                'nilai' => 'https://twitter.com/widiarhmwti_?t=CScEUSjOfy381erYYeNenQ&s=09',
+                'created_at' => '2023-09-13 13:30:16',
+                'updated_at' => '2023-09-13 13:30:16',
+            ),
+            131 => 
+            array (
+                'id' => '133',
+                'jenis_id' => '1',
+                'anggota_id' => '277',
+                'nilai' => 'https://www.facebook.com/rulli.pahrulani',
+                'created_at' => '2023-09-13 17:33:18',
+                'updated_at' => '2023-09-13 17:33:18',
+            ),
+            132 => 
+            array (
+                'id' => '134',
+                'jenis_id' => '5',
+                'anggota_id' => '277',
+                'nilai' => 'https://instagram.com/muh.rullip?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==',
+                'created_at' => '2023-09-13 17:34:27',
+                'updated_at' => '2023-09-13 17:34:27',
+            ),
         ));
         
         
