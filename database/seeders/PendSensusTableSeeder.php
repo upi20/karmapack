@@ -604,6 +604,19 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2023-09-11 16:31:01',
                 'updated_at' => '2023-09-11 16:31:01',
             ),
+            45 => 
+            array (
+                'id' => '46',
+                'nama' => 'ALDI HARTONO',
+                'angkatan' => '2021',
+                'email' => 'aldihartono@karmapack.id',
+                'whatsapp' => '085721336791',
+                'telepon' => '085721336791',
+                'keterangan' => 'Email sudah digunakan',
+                'status' => '3',
+                'created_at' => '2023-09-13 13:10:41',
+                'updated_at' => '2023-09-13 13:10:41',
+            ),
         ));
         
         

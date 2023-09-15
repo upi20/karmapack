@@ -41,11 +41,11 @@ class AnggotaPengalamanLainsTableSeeder extends Seeder
             2 => 
             array (
                 'id' => '3',
-                'pengalaman' => 'PESIMA 2020',
+                'pengalaman' => 'PESIMA ITPS 2020',
                 'keterangan' => NULL,
                 'anggota_id' => '30',
                 'created_at' => '2023-02-11 00:40:12',
-                'updated_at' => '2023-02-11 00:40:12',
+                'updated_at' => '2023-09-13 18:08:11',
             ),
             3 => 
             array (

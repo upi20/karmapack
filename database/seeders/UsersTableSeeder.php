@@ -575,7 +575,7 @@ class UsersTableSeeder extends Seeder
                 'id' => '46',
                 'name' => 'ENCEP ABDUL HAKIM',
                 'email' => 'encep_abdul_hakim@karmapack.id',
-                'foto' => 'ncepkazama2720220901010244.png',
+                'foto' => 'ncepkazama2720230913175753.jpg',
                 'username' => 'ncepkazama27',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu',
@@ -587,7 +587,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => NULL,
-                'updated_at' => '2023-04-20 05:50:06',
+                'updated_at' => '2023-09-13 17:57:53',
             ),
             30 => 
             array (
@@ -5135,7 +5135,7 @@ class UsersTableSeeder extends Seeder
                 'id' => '299',
                 'name' => 'Aldi Hartono',
                 'email' => 'aldihartono@karmapack.id',
-                'foto' => NULL,
+                'foto' => 'aldi-hartono2023090920263120230913140325.jpg',
                 'username' => 'aldi-hartono20230909202631',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$SbntSuqnMKm56M/koG9Y0eo63d8WnyhEQxEP/Yq.iAymBPi28LwvK',
@@ -5147,7 +5147,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => '2023-09-09 20:26:31',
-                'updated_at' => '2023-09-09 20:26:31',
+                'updated_at' => '2023-09-13 14:03:25',
             ),
             270 => 
             array (
@@ -5190,9 +5190,9 @@ class UsersTableSeeder extends Seeder
             272 => 
             array (
                 'id' => '302',
-                'name' => 'M Ruli Pahrulani',
+                'name' => 'M Rulli Pahrulani',
                 'email' => 'mrulipahrulani@karmapack.id',
-                'foto' => NULL,
+                'foto' => 'm-ruli-pahrulani2023090920334920230913173219.jpg',
                 'username' => 'm-ruli-pahrulani20230909203349',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$Gsv5dZQgB9DTOZbl1sbSxergilkIfpQCfjCSh9MYnQykzRR7dNDQe',
@@ -5204,7 +5204,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => '2023-09-09 20:33:49',
-                'updated_at' => '2023-09-09 20:33:49',
+                'updated_at' => '2023-09-13 17:32:19',
             ),
             273 => 
             array (
@@ -5306,7 +5306,7 @@ class UsersTableSeeder extends Seeder
                 'id' => '308',
                 'name' => 'Widia Rahmawati',
                 'email' => 'widiarahmawati@karmapack.id',
-                'foto' => NULL,
+                'foto' => 'widia-rahmawati2023090920471720230913142748.jpg',
                 'username' => 'widia-rahmawati20230909204717',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$KjOunY0TADwP9tnM2wnz6e3m86OcZDILTGSOaSvERxjzCsyCR.G7m',
@@ -5318,7 +5318,7 @@ class UsersTableSeeder extends Seeder
                 'profile_photo_path' => NULL,
                 'remember_token' => NULL,
                 'created_at' => '2023-09-09 20:47:17',
-                'updated_at' => '2023-09-09 20:47:17',
+                'updated_at' => '2023-09-13 14:27:49',
             ),
             279 => 
             array (
