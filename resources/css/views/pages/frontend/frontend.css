@@ -29,6 +29,38 @@
     border: #FFF 3px solid;
 }
 
+@media screen and (max-width: 1199px) {
+    #back-to-top {
+        bottom: 90px;
+    }
+}
+
 #footer-text a {
     color: #0d6efd;
+}
+
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-light-6);
+    box-shadow: 0 -10px 20px -5px rgba(115, 115, 115, 0.17);
+    z-index: 99;
+}
+
+.navbar-bottom ul {
+    list-style-type: none;
+}
+
+.navbar-bottom ul li {
+    padding: 1.1em 1.1em 1.1em 0.8em;
+}
+
+.navbar-bottom ul li.active {
+    background-color: var(--color-dark-1);
+    color: white;
+}
+
+.navbar-bottom i {
+    font-size: 1.5em;
 }
