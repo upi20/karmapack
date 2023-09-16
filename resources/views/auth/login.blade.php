@@ -132,6 +132,11 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                     <div class="text-center mb-1">
                                         <p class="mb-0">Sistem Informasi Anggota <b>(SIA)</b></p>
                                     </div>
+                                    @if (session('message'))
+                                        <div class="alert alert-danger border-0">
+                                            {{ session('message') }}
+                                        </div>
+                                    @endif
                                     <div class="form-body">
                                         <form class="row g-3" action="javascript:void(0)" id="Loginform"
                                             name="Loginform" method="POST" enctype="multipart/form-data"
@@ -159,7 +164,8 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                             <div class="col-12">
                                                 <div class="d-grid  gap-2">
                                                     <button type="submit" class="btn btn-primary">Masuk</button>
-                                                    <a href="{{ url('auth/google') }}" class="btn btn-light">
+                                                    <a href="{{ route('login.porvider', 'google') . '?redirect=' . $redirect }}"
+                                                        class="btn btn-light">
                                                         <i class='bx bxl-google me-1'></i>Masuk Dengan Google</a>
                                                 </div>
                                             </div>

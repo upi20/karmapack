@@ -12,6 +12,9 @@ class SocialiteController extends Controller
 {
     public function redirectToProvider($provider)
     {
+        if (request('redirect')) {
+            session(['redirect' => request('redirect')]);
+        }
         return Socialite::driver($provider)->redirect();
     }
 
@@ -33,8 +36,12 @@ class SocialiteController extends Controller
         // login user
         Auth()->login($authUser, true);
 
-        // setelah login redirect ke dashboard
-        return redirect()->route('dashboard');
+        if (session('redirect')) {
+            return redirect(session('redirect'));
+        } else {
+            // setelah login redirect ke dashboard
+            return redirect()->route('dashboard');
+        }
     }
 
     public function findOrCreateUser($socialUser, $provider)

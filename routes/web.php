@@ -47,7 +47,7 @@ Route::controller(LoginController::class)->group(function () {
 });
 
 Route::controller(SocialiteController::class)->group(function () {
-    Route::get('/auth/{provider}', 'redirectToProvider');
+    Route::get('/auth/{provider}', 'redirectToProvider')->name('login.porvider');
     Route::get('/auth/{provider}/callback', 'handleProvideCallback');
 });
 // ====================================================================================================================
