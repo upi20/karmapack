@@ -36,8 +36,10 @@ class SocialiteController extends Controller
         // login user
         Auth()->login($authUser, true);
 
-        if (session('redirect')) {
-            return redirect(session('redirect'));
+        $redirect = session('redirect');
+        if ($redirect) {
+            session(['redirect' => null]);
+            return redirect($redirect);
         } else {
             // setelah login redirect ke dashboard
             return redirect()->route('dashboard');
