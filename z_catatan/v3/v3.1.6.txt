@@ -1,4 +1,4 @@
-[] Fix error set aktif kepengurusan
+[x] Fix error set aktif kepengurusan
 [] Tambahkan fitur whatsapp brodcast
     [] Implementasi di admin, dan sensus
 [] Status akun Aktif tidak aktif

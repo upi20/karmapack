@@ -230,7 +230,7 @@ function deleteFunc(id) {
 function activeFunc(id) {
     swal.fire({
         title: 'Apakah anda yakin?',
-        text: "Apakah anda yakin akan menghapus data ini ?",
+        text: "Apakah anda yakin akan mengaktifkan periode ini ?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes'
@@ -256,7 +256,7 @@ function activeFunc(id) {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Berhasil Menghapus Data',
+                        title: 'Berhasil Mengaktifkan Periode',
                         showConfirmButton: false,
                         timer: 1500
                     })
