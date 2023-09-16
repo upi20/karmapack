@@ -28,11 +28,11 @@
                 <i class="far fa-newspaper"></i>
             </a>
         </li>
-        <li class="{{ $galeri ? 'active' : '' }}">
+        {{-- <li class="{{ $galeri ? 'active' : '' }} d-md-block d-none">
             <a href="{{ $galeri ? 'javascript:void(0)' : route('galeri') }}" title="Daftar Galeri">
                 <i class="far fa-images"></i>
             </a>
-        </li>
+        </li> --}}
         <li class="{{ $login ? 'active' : '' }}">
             <a href="{{ $login ? 'javascript:void(0)' : route('login') }}" title="Login">
                 <i class="fas fa-user"></i>
