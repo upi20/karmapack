@@ -184,6 +184,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
             </div>
         </div>
     </div>
+    @include('layouts.frontend.body.footer-nav')
     <!--end wrapper-->
     <!-- Bootstrap JS -->
     <script src="{{ asset_admin('js/bootstrap.bundle.min.js') }}"></script>
