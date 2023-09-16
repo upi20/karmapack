@@ -53,7 +53,7 @@
     }
 
     .navbar-bottom ul li a i {
-        margin: 1.1em 1.1em 1.1em 0.8em;
+        margin: 1.1em 1.1em 0.8em 1.1em;
     }
 
     .navbar-bottom ul li a {
@@ -64,15 +64,23 @@
     .navbar-bottom ul li.active,
     .navbar-bottom ul li:hover {
         background-color: #140342;
+    }
+
+    .navbar-bottom ul li>a>i {
+        color: #140342;
+    }
+
+    .navbar-bottom ul li:hover>a>i {
         color: white;
     }
 
+    .navbar-bottom ul li.active>a>i,
     .navbar-bottom ul li a:hover {
-        color: white;
+        color: white !important;
     }
 
     .navbar-bottom i {
-        font-size: 1.5em;
+        font-size: 22px;
     }
 
     .navbar-bottom li {
