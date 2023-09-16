@@ -1,12 +1,13 @@
 @php
+    $home = request()->routeIs('home');
     $login = request()->routeIs('login');
     $artikel = request()->routeIs('artikel') || request()->routeIs('artikel.detail');
     $anggota = request()->routeIs('anggota') || request()->routeIs('anggota.username') || request()->routeIs('anggota.id');
 @endphp
 <nav class="navbar-bottom d-xl-none">
     <ul class="d-flex justify-content-sm-around justify-content-between align-items-center text-center p-0 m-0">
-        <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
-            <a href="{{ route('home') }}" title="Halaman Utama">
+        <li class="{{ $home ? 'active' : '' }}">
+            <a href="{{ $home ? 'javascript:void(0)' : route('home') }}" title="Halaman Utama">
                 <i class="fas fa-home"></i>
             </a>
         </li>
@@ -17,22 +18,35 @@
             </a>
         </li>
         <li class="{{ $anggota ? 'active' : '' }}">
-            <a href="{{ route('anggota') }}" title="Daftar Anggota">
+            <a href="{{ $anggota ? 'javascript:void(0)' : route('anggota') }}" title="Daftar Anggota">
                 <i class="fas fa-users"></i>
             </a>
         </li>
         <li class="{{ $artikel ? 'active' : '' }}">
-            <a href="{{ route('artikel') }}" title="Daftar Artikel">
+            <a href="{{ $artikel ? 'javascript:void(0)' : route('artikel') }}" title="Daftar Artikel">
                 <i class="far fa-newspaper"></i>
             </a>
         </li>
         <li class="{{ $login ? 'active' : '' }}">
-            <a href="{{ route('login') }}" title="Login">
+            <a href="{{ $login ? 'javascript:void(0)' : route('login') }}" title="Login">
                 <i class="far fa-user"></i>
             </a>
         </li>
     </ul>
 </nav>
+
+<script>
+    window.addEventListener('load', function() {
+        $('.navbar-bottom').find('li').each((i, e) => {
+            const href = $(e).find('a').attr('href');
+            if (href == 'javascript:void(0)') return;
+            $(e).attr('style', 'cursor: pointer');
+            $(e).click(() => {
+                window.location.href = href;
+            });
+        })
+    })
+</script>
 
 <style>
     #footer-text a {
