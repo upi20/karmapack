@@ -1,11 +1,22 @@
-[x] Fix error set aktif kepengurusan
-[] Tambahkan fitur whatsapp brodcast
-    [] Implementasi di admin, dan sensus
-[] Status akun Aktif tidak aktif
-[] Cek semua whatsapp
-    [] Frontend
-        [] Anggota detail
-        [] List Anggota
-    [] Admin
-        [] Anggota List
+# Anggota
+## Dashboard
+    [] Tampilkan menu di dashboard
 
+# Administrator
+## Kepengurusan
+    [x] Fix error set aktif kepengurusan
+
+## Fitur tambahan
+    [] Tambahkan fitur whatsapp brodcast
+        [] Implementasi di admin, dan sensus
+    [] Status akun Aktif tidak aktif
+    [] Cek semua whatsapp
+        [] Frontend
+            [] Anggota detail
+            [] List Anggota
+        [] Admin
+            [] Anggota List
+
+# Frontend
+    [x] Navigasi Mobile
+    [x] Navigasi Mobile tambah galeri

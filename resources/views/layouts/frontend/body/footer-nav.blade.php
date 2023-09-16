@@ -2,6 +2,7 @@
     $home = request()->routeIs('home');
     $login = request()->routeIs('login');
     $artikel = request()->routeIs('artikel') || request()->routeIs('artikel.detail');
+    $galeri = request()->routeIs('galeri') || request()->routeIs('galeri.detail');
     $anggota = request()->routeIs('anggota') || request()->routeIs('anggota.username') || request()->routeIs('anggota.id');
 @endphp
 <nav class="navbar-bottom d-xl-none">
@@ -27,9 +28,14 @@
                 <i class="far fa-newspaper"></i>
             </a>
         </li>
+        <li class="{{ $galeri ? 'active' : '' }}">
+            <a href="{{ $galeri ? 'javascript:void(0)' : route('galeri') }}" title="Daftar Galeri">
+                <i class="far fa-images"></i>
+            </a>
+        </li>
         <li class="{{ $login ? 'active' : '' }}">
             <a href="{{ $login ? 'javascript:void(0)' : route('login') }}" title="Login">
-                <i class="far fa-user"></i>
+                <i class="fas fa-user"></i>
             </a>
         </li>
     </ul>
