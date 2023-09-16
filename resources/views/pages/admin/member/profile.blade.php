@@ -85,20 +85,21 @@
                                 @endif
                             </select>
                         </div>
-                        <div class="text-end mt-3">
-                            <button type="submit" form="basic_profile" class="btn btn-primary my-1">
-                                <li class="fas fa-save mr-1"></li> Simpan Perubahan
-                            </button>
-                        </div>
                     </form>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" form="basic_profile" class="btn btn-primary my-1">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
                 </div>
             </div>
 
             {{-- profile address --}}
             <div class="card">
+                <div class="card-header">
+                    <h6 class="mt-2">Alamat Lengkap</h6>
+                </div>
                 <div class="card-body">
-                    <h6 class="mt-2 text-uppercase">Alamat</h6>
-                    <hr>
                     <form action="" id="address_profile">
                         <input type="hidden" name="id" value="{{ $anggota->id }}">
                         <div class="form-group">
@@ -149,11 +150,11 @@
                                 placeholder="Nama jalan, Rt/Rw, Patokan, Nomor Rumah Dan lain lain.">{{ $anggota->alamat_lengkap }}</textarea>
                         </div>
                     </form>
-                    <div class="text-end mt-3">
-                        <button type="submit" form="address_profile" class="btn btn-primary my-1">
-                            <li class="fas fa-save mr-1"></li> Simpan Perubahan
-                        </button>
-                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" form="address_profile" class="btn btn-primary my-1">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
                 </div>
             </div>
         </div>
@@ -161,9 +162,10 @@
         <div class="col-xl-8">
             {{-- Ubah Profil --}}
             <div class="card">
+                <div class="card-header">
+                    <h6 class="mt-2">Biodata profile</h6>
+                </div>
                 <div class="card-body">
-                    <h6 class="mt-2 text-uppercase">Ubah Profil</h6>
-                    <hr>
                     <form action="" id="detail_profile">
                         <input type="hidden" name="id" value="{{ $anggota->id }}">
                         <div class="form-group">
@@ -213,11 +215,11 @@
                             </div>
                         </div>
                     </form>
-                    <div class="text-end mt-3">
-                        <button type="submit" form="detail_profile" class="btn btn-primary my-1">
-                            <li class="fas fa-save mr-1"></li> Simpan Perubahan
-                        </button>
-                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" form="detail_profile" class="btn btn-primary my-1">
+                        <li class="fas fa-save mr-1"></li> Simpan Perubahan
+                    </button>
                 </div>
             </div>
 
@@ -227,20 +229,15 @@
                     {{-- google akun --}}
                     <div class="col-12">
                         <div class="card">
+                            <div class="card-header">
+                                <h6 class="mt-2">Akun Google Tertaut</h6>
+                            </div>
                             <div class="card-body p-0">
-                                <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
-                                    <div>
-                                        <h6 class="mt-2 text-uppercase">Akun Google</h6>
-                                    </div>
-                                </div>
-                                <hr class="m-0">
-
                                 <div class="list-group list-group-flush" id="akun-google-body">
                                     @foreach ($google_accounts as $akun)
                                         @php
                                             $detail = $akun->getProviderData();
                                         @endphp
-
                                         <div
                                             class="list-group-item list-group-item-action d-md-flex flex-row justify-content-between">
                                             <div>
@@ -277,20 +274,17 @@
                 {{-- kontak --}}
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body p-0">
-                            <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
-                                <div>
-                                    <h6 class="mt-2 text-uppercase">Kontak/Media Sosial</h6>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
-                                        data-bs-toggle="modal" href="#modal-kontak" onclick="kontakAdd()"
-                                        data-target="#modal-kontak" data-toggle="tooltip" title="Tambah Data">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
+                        <div class="card-header d-md-flex flex-row justify-content-between">
+                            <h6 class="mt-2">Kontak/Media Sosial</h6>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
+                                    data-bs-toggle="modal" href="#modal-kontak" onclick="kontakAdd()"
+                                    data-target="#modal-kontak">
+                                    <i class="fa fa-plus me-2"></i>Tambah Data
+                                </button>
                             </div>
-                            <hr class="m-0">
+                        </div>
+                        <div class="card-body p-0">
                             <div class="list-group list-group-flush" id="kontak-body"> </div>
                         </div>
                     </div>
@@ -299,19 +293,17 @@
                 {{-- Riwayat Pendidikan --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-body p-0">
-                            <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
-                                <div>
-                                    <h6 class="mt-2 text-uppercase">Riwayat Pendidikan</h6>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
-                                        data-bs-toggle="modal" href="#modal-pendidikan" onclick="pendidikanAdd()"
-                                        data-target="#modal-pendidikan" data-toggle="tooltip" title="Tambah Data"><i
-                                            class="fa fa-plus"></i></button>
-                                </div>
+                        <div class="card-header d-md-flex flex-row justify-content-between">
+                            <h6 class="mt-2">Riwayat Pendidikan</h6>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
+                                    data-bs-toggle="modal" href="#modal-pendidikan" onclick="pendidikanAdd()"
+                                    data-target="#modal-pendidikan">
+                                    <i class="fa fa-plus me-2"></i>Tambah Data
+                                </button>
                             </div>
-                            <hr class="m-0">
+                        </div>
+                        <div class="card-body p-0">
                             <div class="list-group list-group-flush" id="pendidikan-body"> </div>
                         </div>
                     </div>
@@ -320,19 +312,17 @@
                 {{-- Pengalaman Organisasi --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-body p-0">
-                            <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
-                                <div>
-                                    <h6 class="mt-2 text-uppercase">Pengalaman Organisasi</h6>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
-                                        data-bs-toggle="modal" href="#modal-pengalaman_organisasi"
-                                        onclick="pengalaman_organisasiAdd()" data-target="#modal-pengalaman_organisasi"
-                                        data-toggle="tooltip" title="Tambah Data"><i class="fa fa-plus"></i></button>
-                                </div>
+                        <div class="card-header d-md-flex flex-row justify-content-between">
+                            <h6 class="mt-2">Pengalaman Organisasi</h6>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
+                                    data-bs-toggle="modal" href="#modal-pengalaman_organisasi"
+                                    onclick="pengalaman_organisasiAdd()" data-target="#modal-pengalaman_organisasi">
+                                    <i class="fa fa-plus me-2"></i>Tambah Data
+                                </button>
                             </div>
-                            <hr class="m-0">
+                        </div>
+                        <div class="card-body p-0">
                             <div class="list-group list-group-flush" id="pengalaman_organisasi-body"> </div>
                         </div>
                     </div>
@@ -341,21 +331,17 @@
                 {{-- Pengalaman Lain --}}
                 <div class="col-lg-6">
                     <div class="card">
-                        <div class="card-body p-0">
-                            <div class="card-title d-md-flex flex-row justify-content-between mx-3 mt-3">
-                                <div>
-                                    <h6 class="mt-2 text-uppercase">Pengalaman Lain</h6>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
-                                        data-bs-toggle="modal" href="#modal-pengalaman_lain"
-                                        onclick="pengalaman_lainAdd()"
-                                        data-target="#modal-pengalaman_lain"data-toggle="tooltip" title="Tambah Data">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
+                        <div class="card-header d-md-flex flex-row justify-content-between">
+                            <h6 class="mt-2">Pengalaman Lain</h6>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-effect="effect-scale"
+                                    data-bs-toggle="modal" href="#modal-pengalaman_lain" onclick="pengalaman_lainAdd()"
+                                    data-target="#modal-pengalaman_lain">
+                                    <i class="fa fa-plus me-2"></i>Tambah Data
+                                </button>
                             </div>
-                            <hr class="m-0">
+                        </div>
+                        <div class="card-body p-0">
                             <div class="list-group list-group-flush" id="pengalaman_lain-body"> </div>
                         </div>
                     </div>

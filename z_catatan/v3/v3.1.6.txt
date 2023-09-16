@@ -1,21 +1,17 @@
 # Anggota
 ## Dashboard
-    [] Tampilkan menu di dashboard
+    [x] Tampilkan menu di dashboard
+## FAQ
+    [x] Detail permission
+## Kepengurusan
+    [x] Modal detail lebih baguskan lagi
+    [x] Modal Detail link profile
+## Profile
+    [x] icon plus ditambah teks tambah data
 
 # Administrator
 ## Kepengurusan
     [x] Fix error set aktif kepengurusan
-
-## Fitur tambahan
-    [] Tambahkan fitur whatsapp brodcast
-        [] Implementasi di admin, dan sensus
-    [] Status akun Aktif tidak aktif
-    [] Cek semua whatsapp
-        [] Frontend
-            [] Anggota detail
-            [] List Anggota
-        [] Admin
-            [] Anggota List
 
 # Frontend
     [x] Navigasi Mobile

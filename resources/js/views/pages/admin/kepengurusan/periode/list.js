@@ -293,7 +293,7 @@ function prosesTabelPengurus(pengurus) {
         <tr>
             <td>${number++}</td>
             <td>${e.angkatan}</td>
-            <td><a href="{{ route('member.profile') }}?id=${e.id}" target="_blank">${e.nama}</a></td>
+            <td><a href="{{ url('anggota') }}/${e.id}" target="_blank">${e.nama}</a></td>
             <td>${e.jabatan}</td>
         </tr>
         `;
@@ -304,6 +304,7 @@ function prosesTabelPengurus(pengurus) {
 
 function renderTable(element_table) {
     const tableUser = $(element_table).DataTable({
+        pageLength: 100,
         columnDefs: [{
             orderable: false,
             targets: [0]
@@ -337,16 +338,54 @@ function viewDetail(id) {
         const class_ = data.detail.status == 1 ? 'success' : 'danger';
         const text = data.detail.status == 1 ? 'Aktif' : 'Tidak Aktif';
         $('#modal-detail-body').html(`
-            <h4 class="h4">Nama:</h4><p>${data.detail.nama}</p>
-            <h4 class="h4">Periode:</h4><p>${data.detail.dari} - ${data.detail.sampai}</p>
-            <h4 class="h4">Slogan:</h4><p>${data.detail.slogan}</p>
-            <h4 class="h4">Visi:</h4><p>${data.detail.visi}</p>
-            <h4 class="h4">Misi:</h4><p>${data.detail.misi}</p>
-            <h4 class="h4">Slogan:</h4><p>${data.detail.slogan}</p>
-            <h4 class="h4">Filosofi Logo:</h4><p>${data.detail.filosofi_logo ?? ''}</p>
-            <h4 class="h4">Status:</h4><p><i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}</p>
-            <h4 class="h4">Foto:</h4><p><img src="${data.detail.foto}" alt="${data.detail.nama}" style="width:100%"/></p>
-            <h4 class="h4">Pengurus:</h4>
+            <table class="table table-striped table-hover w-100">
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td>${data.detail.nama}</td>
+                </tr>
+                <tr>
+                    <td>Periode</td>
+                    <td>:</td>
+                    <td>${data.detail.dari} - ${data.detail.sampai}</td>
+                </tr>
+                <tr>
+                    <td>Slogan</td>
+                    <td>:</td>
+                    <td>${data.detail.slogan}</td>
+                </tr>
+                <tr>
+                    <td>Visi</td>
+                    <td>:</td>
+                    <td>${data.detail.visi}</td>
+                </tr>
+                <tr>
+                    <td>Misi</td>
+                    <td>:</td>
+                    <td>${data.detail.misi}</td>
+                </tr>
+                <tr>
+                    <td>Slogan</td>
+                    <td>:</td>
+                    <td>${data.detail.slogan}</td>
+                </tr>
+                <tr>
+                    <td>Filosofi Logo</td>
+                    <td>:</td>
+                    <td>${data.detail.filosofi_logo ?? ''}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>:</td>
+                    <td><i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}</td>
+                </tr>
+                <tr>
+                    <td>Foto</td>
+                    <td>:</td>
+                    <td><img src="${data.detail.foto}" alt="${data.detail.nama}" style="max-height:500px"/></td>
+                </tr>
+            </table>
+            <h5>Tabel Pengurus Periode ${data.detail.nama}:</h5>
         `);
 
         // render table

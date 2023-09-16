@@ -4,54 +4,86 @@
     @php
         $jml_table = 0;
         $using_chart = 0;
+        $column = 'col-6 col-md-4 col-lg-3 col-xl-2 px-md-2 px-2 px-md-0 py-2';
     @endphp
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-        <div class="col">
-            <a href="{{ route('admin.anggota') }}">
-                <div class="card radius-10 border-start border-4 border-info">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Total Anggota</p>
-                                <h4 class="my-1 text-info">{{ $total_anggota }}</h4>
-                            </div>
-                            <div class="widgets-icons-2 rounded-circle bg-gradient-blues text-white ms-auto">
-                                <i class='fas fa-users'></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
+    <div class="grid mb-3">
+        <div class="grid-sizer {{ $column }}"></div>
+
+        {{-- Edit Biodata --}}
+        <div class="grid-item {{ $column }}">
             <a href="{{ route('member.profile') }}">
-                <div class="card radius-10 border-start border-4 border-danger">
+                <div class="card radius-10 card-main">
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Ubah Profile</p>
-                                <h4 class="my-1 text-danger"></h4>
+                        <div class="text-center">
+                            <div class="widgets-icons rounded-circle mx-auto bg-light-success text-success mb-3">
+                                <i class="fas fa-user-edit"></i>
                             </div>
-                            <div class="widgets-icons-2 rounded-circle bg-gradient-burning text-white ms-auto">
-                                <i class="fas fa-user"></i>
-                            </div>
+                            <p class="mb-0 text-secondary">Edit Biodata</p>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="col"> <a href="{{ route('admin.password') }}">
-                <div class="card radius-10 border-start border-4 border-warning">
+
+        {{-- Kata Alumni --}}
+        @if (auth_has_role(9))
+            <div class="grid-item {{ $column }}">
+                <a href="{{ route('member.kata_alumni') }}">
+                    <div class="card radius-10 card-main">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="widgets-icons rounded-circle mx-auto bg-light-primary text-primary mb-3">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <p class="mb-0 text-secondary">Input Kata Alumni</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endif
+
+        <div class="grid-item {{ $column }}">
+            <a href="{{ route('admin.anggota') }}">
+                <div class="card radius-10 card-main">
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Ganti Password</p>
-                                <h4 class="my-1 text-warning"></h4>
+                        <div class="text-center">
+                            <div class="widgets-icons rounded-circle mx-auto bg-light-warning text-warning mb-3">
+                                <i class="fas fa-book"></i>
                             </div>
-                            <div class="widgets-icons-2 rounded-circle bg-gradient-orange text-white ms-auto">
-                                <i class='bx bxs-key'></i>
+                            <p class="mb-0 text-secondary">Daftar Anggota</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="grid-item {{ $column }}">
+            <a href="{{ route('admin.kepengurusan.periode') }}">
+                <div class="card radius-10 card-main">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="widgets-icons rounded-circle mx-auto bg-light-secondary text-secondary mb-3">
+                                <i class="fas fa-sitemap"></i>
                             </div>
+                            <p class="mb-0 text-secondary">Daftar Periode Kepengurusan</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {{-- ganti password --}}
+        <div class="grid-item {{ $column }}">
+            <a href="{{ route('member.password') }}">
+                <div class="card radius-10 card-main">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <div class="widgets-icons rounded-circle mx-auto bg-light-danger text-danger mb-3">
+                                <i class="bx bxs-key"></i>
+                            </div>
+                            <p class="mb-0 text-secondary">Ganti Password</p>
                         </div>
                     </div>
                 </div>
@@ -59,51 +91,8 @@
         </div>
     </div>
 
-    @if ($setting->umumkan)
-        <hr>
-        <h5 class="page-title">Pengumuman seleksi calon ketua umum</h5>
-        <p>Keterangan:
-            <i class="fas fa-square text-success"></i> Lulus
-            <i class="fas fa-square text-danger"></i> Gagal
-        </p>
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title d-md-flex flex-row justify-content-between">
-                    <div>
-                        <h6 class="mt-2 text-uppercase">Hasil seleksi</h6>
-                    </div>
-                </div>
-                <table class="table table-striped table-hover w-100" id="tbl_seleksi">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Pengurus</th>
-                            <th>Nilai</th>
-                            <th>Peringkat</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($spk_ahp_hasil['body'] as $k => $hasil)
-                            <tr>
-                                <td>{{ $k + 1 }}</td>
-                                <td>{{ $hasil->anggota->angkatan }} | {{ $hasil->anggota->nama }}</td>
-                                <td title="{{ $hasil->total_prioritas }}">
-                                    {{ number_format($hasil->total_prioritas * 100, 4) }}
-                                </td>
-                                @php
-                                    $status = $k + 1 > $setting->jml_seleksi ? 'bg-danger' : 'bg-success';
-                                @endphp
-                                <td class="{{ $status }} text-white">{{ $hasil->rank }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    @endif
-
     <hr>
-    <h5 class="page-title">Statistik Anggota</h5>
+    <h5 class="page-title">Statistik Anggota (Total: {{ $total_anggota }} Anggota)</h5>
     <div class="row">
         {{-- Angkatan --}}
         <div class="col-lg-6 col-md-12">
@@ -124,7 +113,7 @@
                         @php $using_chart++; @endphp
                         <div id="chart-angkatan" class="chartsh"></div>
                     @else
-                        <table class="table table-striped" id="table{{ ++$jml_table }}">
+                        <table class="table table-striped w-100 table-hover datatable" id="table{{ ++$jml_table }}">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -166,9 +155,10 @@
                         @php $using_chart++; @endphp
                         <div id="chart-kecamatan" class="chartsh"></div>
                     @else
-                        <table class="table table-striped" id="table{{ ++$jml_table }}">
+                        <table class="table table-striped w-100 table-hove datatable" id="table{{ ++$jml_table }}">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Jumlah</th>
                                 </tr>
@@ -176,6 +166,7 @@
                             <tbody>
                                 @foreach ($anggota_by_address->kecamatan as $k => $v)
                                     <tr>
+                                        <td></td>
                                         <td>{{ $v->title }}</td>
                                         <td>{{ $v->value }}</td>
                                     </tr>
@@ -197,9 +188,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped" id="table{{ ++$jml_table }}">
+                    <table class="table table-striped w-100 table-hover datatable" id="table{{ ++$jml_table }}">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama</th>
                                 <th>KEC.</th>
                                 <th>Jumlah</th>
@@ -208,6 +200,7 @@
                         <tbody>
                             @foreach ($anggota_by_address->desa as $k => $v)
                                 <tr>
+                                    <td></td>
                                     <td>
                                         {{ $v->title }}
                                     </td>
@@ -240,9 +233,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped" id="table{{ ++$jml_table }}">
+                        <table class="table table-striped w-100 table-hover datatable" id="table{{ ++$jml_table }}">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Jumlah</th>
                                 </tr>
@@ -250,6 +244,7 @@
                             <tbody>
                                 @foreach ($p['data'] as $k => $v)
                                     <tr>
+                                        <td></td>
                                         <td>{{ $v->title }}</td>
                                         <td>{{ $v->value }}</td>
                                     </tr>
@@ -376,6 +371,7 @@
 @section('javascript')
     <script src="{{ asset_admin('plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset_admin('plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset_admin('plugins/mansory.min.js', name: 'sash') }}"></script>
     @if ($using_chart > 0)
         <script src="{{ asset_admin('js/jquery.sparkline.min.js', name: 'sash') }}"></script>
         <script src="{{ asset_admin('js/circle-progress.min.js', name: 'sash') }}"></script>
@@ -390,28 +386,22 @@
     <script>
         $(document).ready(() => {
             const umumkan = "{{ $setting->umumkan ? 'true' : 'false' }}" === "true";
+            var msnry = new Masonry(document.querySelector('.grid'), {
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer'
+            });
             if (umumkan) {
                 renderTable('#tbl_seleksi', 3);
             }
 
             @for ($i = 1; $i <= $jml_table; $i++)
-                const table_html_{{ $i }} = $('#table{{ $i }}');
-                const table_{{ $i }} = table_html_{{ $i }}.DataTable({
-                    // processing: true,
-                    // serverSide: false,
-                    // scrollX: true,
-                    // aAutoWidth: true,
-                    // bAutoWidth: true,
-
-                    language: {
-                        url: datatable_indonesia_language_url
-                    },
-                });
+                renderTable('#table{{ $i }}', 2, 'desc');
             @endfor
         })
 
-        function renderTable(element_table, order = 1) {
-            const tableUser = $(element_table).DataTable({
+        function renderTable(element_table, order = 1, orderdir = 'asc') {
+            var table_html = $(element_table);
+            var tableUser = table_html.DataTable({
                 columnDefs: [{
                     orderable: false,
                     targets: [0]
@@ -420,14 +410,15 @@
                 aAutoWidth: true,
                 bAutoWidth: true,
                 order: [
-                    [order, 'asc']
+                    [order, orderdir]
                 ],
                 language: {
                     url: datatable_indonesia_language_url
                 }
             });
+
             tableUser.on('draw.dt', function() {
-                var PageInfo = $(element_table).DataTable().page.info();
+                var PageInfo = table_html.DataTable().page.info();
                 tableUser.column(0, {
                     page: 'current'
                 }).nodes().each(function(cell, i) {

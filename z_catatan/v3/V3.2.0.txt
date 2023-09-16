@@ -1,1 +1,11 @@
 # Tambah fitur perpustakaan
+
+# Tambahkan fitur whatsapp brodcast
+    [] Implementasi di admin, dan sensus
+[] Status akun Aktif tidak aktif
+[] Cek semua whatsapp
+    [] Frontend
+        [] Anggota detail
+        [] List Anggota
+    [] Admin
+        [] Anggota List
