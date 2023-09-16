@@ -25,11 +25,11 @@ class NotifDepanAtasTableSeeder extends Seeder
                 'nama' => 'Sensus Anggota',
                 'deskripsi' => 'Sensus anggota sedang dilakukan, untuk semua anggota maupun alumni karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota',
                 'dari' => '2023-03-23',
-                'sampai' => NULL,
+                'sampai' => '2023-09-15',
                 'link' => 'https://karmapack.id/pendaftaran/sensus',
                 'link_nama' => 'Klik disini',
                 'created_at' => '2023-03-24 05:45:52',
-                'updated_at' => '2023-09-07 08:09:09',
+                'updated_at' => '2023-09-16 06:40:25',
             ),
         ));
         

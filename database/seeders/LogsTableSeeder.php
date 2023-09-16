@@ -14713,6 +14713,123 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"125.162.246.62","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
             ),
+            132 => 
+            array (
+                'id' => '1649',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 06:40:09',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            133 => 
+            array (
+                'id' => '1650',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 06:40:25',
+                'table_name' => 'notif_depan_atas',
+                'log_type' => 'edit',
+                'data' => '{"id":"3","nama":"Sensus Anggota","deskripsi":"Sensus anggota sedang dilakukan, untuk semua anggota maupun alumni karmapack yang belum tercatat pada Aplikasi Sistem Informasi Anggota","dari":"2023-03-23","sampai":null,"link":"https:\\/\\/karmapack.id\\/pendaftaran\\/sensus","link_nama":"Klik disini","created_at":"2023-03-24 05:45:52","updated_at":"2023-09-07 08:09:09"}',
+            ),
+            134 => 
+            array (
+                'id' => '1651',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 21:42:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            135 => 
+            array (
+                'id' => '1652',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 21:43:40',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"uDHAyJRXyXXEaHmnivy8pkBlnjAM7rbJi5gNWHfFfJxb037SvrUXeIixF54s","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            136 => 
+            array (
+                'id' => '1653',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 21:43:48',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            137 => 
+            array (
+                'id' => '1654',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 21:44:40',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"hF3oxEbxAWhdordqaIZFPEaBcgcxXZZztP6oGjijVGJMKTPSy0YSILF5uQYc","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            138 => 
+            array (
+                'id' => '1655',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:03:26',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            139 => 
+            array (
+                'id' => '1656',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:03:36',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"5e5VcTOGpVWCypNb8BNSkpTUQkf1fF4v0UDSgV3eBiau0polEuwrYkizlqB0","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            140 => 
+            array (
+                'id' => '1657',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:03:46',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            141 => 
+            array (
+                'id' => '1658',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:05:10',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"dpryxwilLAh8amiY74fMFYl43sSXJfConY9ooinFe80Ys5qXhPSYtvrEfWnb","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            142 => 
+            array (
+                'id' => '1659',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:05:25',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            143 => 
+            array (
+                'id' => '1660',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 22:15:44',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"go4ID5PIyxVIR7fCczArUG8Mm2iSrexL8TIsxDt3qyctxkiZ0Wev9mWOZJ5T","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            144 => 
+            array (
+                'id' => '1661',
+                'user_id' => '1',
+                'log_date' => '2023-09-16 23:11:15',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Mobile Safari\\/537.36"}',
+            ),
         ));
         
         
