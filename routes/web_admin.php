@@ -77,6 +77,7 @@ use App\Http\Controllers\Admin\Home\KataKataController;
 use App\Http\Controllers\Admin\Home\PengurusController;
 use App\Http\Controllers\Admin\Home\ProgramPembelajaranController;
 use App\Http\Controllers\Admin\Home\TestimonialController;
+use App\Http\Controllers\Admin\Setting\VersioningController;
 use App\Http\Controllers\Admin\Setting\WhatsappBrodcastController;
 // SPK ================================================================================================================
 use App\Http\Controllers\Admin\SPK\AHP\AlternatifController as SPK_AHP_AlternatifController;
@@ -572,6 +573,17 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
         Route::post('/setting', 'setting')->name("$name.setting")->middleware("permission:$name.setting");
+    });
+
+    $prefix = 'versioning';
+    Route::controller(VersioningController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
+        $name = "$name.$prefix"; // admin.setting.versioning
+        Route::get('/', 'index')->name($name)->middleware("permission:$name");
+        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
+        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
+        Route::post('/delete', 'delete_bulk')->name("$name.delete_bulk")->middleware("permission:$name.delete");
+        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
+        Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
     });
 });
 

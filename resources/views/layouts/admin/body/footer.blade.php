@@ -5,5 +5,7 @@
 <a href="javascript:void(0);" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 <!--End Back To Top Button-->
 <footer class="page-footer">
-    <p class="mb-0">{!! str_parse(setting_get(set_admin('app.copyright'))) !!}</p>
+    <p class="mb-0">{!! str_parse(setting_get(set_admin('app.copyright')), [
+        ['search' => '__version__', 'replace' => get_version()],
+    ]) !!}</p>
 </footer>

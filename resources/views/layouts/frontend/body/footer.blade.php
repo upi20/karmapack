@@ -35,7 +35,9 @@
 
         <div class="py-30 border-top-light-15" data-anim-child="slide-left delay-{{ $anim++ }}">
             <div class="d-flex flex-column" id="footer-text">
-                {!! str_parse(settings()->get(set_front('app.copyright'))) !!}
+                {!! str_parse(settings()->get(set_front('app.copyright')), [
+                    ['search' => '__version__', 'replace' => get_version()],
+                ]) !!}
             </div>
         </div>
     </div>

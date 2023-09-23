@@ -9,6 +9,7 @@ use MatthiasMullie\Minify\JS;
 use MatthiasMullie\Minify\CSS;
 use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\SettingActivity;
+use App\Models\Versioning;
 use Illuminate\Support\Facades\Route;
 
 if (!function_exists('h_prefix_uri')) {
@@ -424,5 +425,12 @@ if (!function_exists('notif_depan_atas')) {
     {
         $now = date('Y-m-d');
         return NotifDepanAtas::whereRaw("(dari <= '$now') and (sampai >= '$now' or sampai is null )")->get();
+    }
+}
+
+if (!function_exists('get_version')) {
+    function get_version()
+    {
+        return Versioning::current();
     }
 }

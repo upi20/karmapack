@@ -36,3 +36,13 @@ ALTER TABLE `whatsapp_brodcast`
 
 
 menu management
+
+
+Versioning
+
+# Clear Optimize
+# Clear Cache
+# Migrate database
+# Menu management
+# Ubah copyright depan
+# Ubah copyright admin
