@@ -73,7 +73,6 @@ class WhatsappBrodcastController extends Controller
     {
         try {
             $model->delete();
-            WhatsApp::feClearCache();
             return response()->json();
         } catch (ValidationException $error) {
             return response()->json([
