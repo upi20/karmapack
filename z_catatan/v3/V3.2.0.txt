@@ -2,10 +2,37 @@
 
 # Tambahkan fitur whatsapp brodcast
     [] Implementasi di admin, dan sensus
-[] Status akun Aktif tidak aktif
 [] Cek semua whatsapp
     [] Frontend
         [] Anggota detail
         [] List Anggota
     [] Admin
         [] Anggota List
+
+# Migrasi
+
+CREATE TABLE `whatsapp_brodcast` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `template` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `whatsapp_brodcast` (`id`, `nama`, `template`, `created_at`, `updated_at`) VALUES
+(1, 'Kurasi tahap 2', 'Hallo Kak *__nama_anggota__* , Salam Cempor! \nTerima kasih atas partisipasi Anda pada pendaftaran Pelatihan Dasar Woodcraft Cempor 2023,\nDispora Kota Bandung. Saat ini, tim kami masih dalam proses kurasi Tahap 2.', '2023-08-14 10:45:43', '2023-08-14 10:45:43'),
+(2, 'Konfirmasi kehadiran', '\"Halo Kak *__nama_anggota__*,\\n\nSalam Cempor!\\n\n\\n\nTerima kasih atas partisipasi Anda pada pendaftaran Pelatihan Dasar  *__nama_pelatihan__* Cempor 2023, Dispora Kota Bandung. Saat ini, tim kami sedang dalam proses kurasi Tahap 2.\n\\n\nBerikut info jadwal pelaksanaan kegiatan Pelatihan Dasar:\\n\n\\n\nHari       : Selasa & Rabu\\n\nTanggal : 26 & 27 Juli 2023\\n\nPukul     : 08.30 - 17.00 WIB\\n\n\\n\n*Bagi calon anggota yang masih bersedia untuk melanjutkan Pelatihan ini, dimohon untuk konfirmasi batas waktu pukul 15.00 WIB, 19 September 2023) :\\n\n\\n\n\\n\nCalon Peserta yang Lolos Tahap Akhir akan diumumkan melalui akun Instagram @cempor_disporabdg.\\n\n\\n\nJika Anda memiliki kendala atau pertanyaan, silakan sampaikan di sini.\\n\n\\n\nCempor, Wani diadu!\"\"\"\\n', '2023-08-14 11:13:12', '2023-09-19 03:01:36'),
+(3, 'Konfirmasi Pendaftar', 'Hallo Kak  *__nama_anggota__* , Kakak telah berhasil mendaftar Akun Cempor. Silahkan untuk update biodata di Akun cempor dan melanjutkan ke pemilihan pelatihan ya ....', '2023-08-14 12:13:55', '2023-08-14 12:13:55'),
+(4, 'Invite Grup', 'Hai Kak *__nama_anggota__*,\nSalam Cempor !!\n\nSelamat!! telah lolos Kurasi Tahap Akhir untuk mengikuti *Pelatihan Dasar Wood Craft Cempor Dispora Kota Bandung 2023.*\n\nSilahkan bergabung pada grup whatsapp, seluruh informasi akan diumumkan di grup.\n\nBuka tautan ini untuk bergabung ke grup WhatsApp saya: https://chat.whatsapp.com/HFR1NoLpbOk9uTPssphMQz\n\nCempor, Wani Diadu!', '2023-08-16 06:04:30', '2023-08-16 06:07:05'),
+(5, 'Kelengkapan Akun Cempor', 'Hallo Kak *__nama_anggota__* , Selamat ya kakak telah lolos di pelatihan Wood Craft. Untuk mempermudah pendataan silahkan login/masuk akun kakak di www.cempordigital.com menggunakan email : __email_anggota__ dengan password 12345678 . Silahkan rubah password dan lengkapi data yang masih kosong. Mengisi biodata hingga selesai penting untuk Absensi kehadiran, sertifikat dan fasilitas lainya . jika ada kendala bisa hubungi kami kembali. terima kasih :)', '2023-08-16 06:59:06', '2023-08-16 07:02:39'),
+(6, 'Kurasi Tahap 2 - Kesediaan', 'Halo Kak *__nama_anggota__*, \nSalam Cempor!\n\nTerima kasih atas partisipasi Anda pada pendaftaran *Pelatihan Dasar __nama_pelatihan__ Cempor 2023, Dispora Kota Bandung*. Saat ini, tim kami masih dalam proses kurasi Tahap 2.\n\nBagi calon anggota yang masih bersedia untuk melanjutkan Proses Kurasi tahap akhir, dimohon untuk mengisi formulir kesediaan pada tautan berikut (batas waktu pukul 10.00 WIB, 16 Agustus 2023) :\n\nhttps://bit.ly/FormKesediaanMengikutiSerangkaianPelatihanDasarCempor2023\n\nCalon Peserta yang Lolos Tahap Akhir akan diumumkan melalui akun Instagram @cempor_disporabdg.\n\nCempor, Wani diadu!', '2023-09-05 02:19:17', '2023-09-05 02:31:11'),
+(7, 'Meeting sebelum latsar', 'Halo Kak __nama_anggota__\nSalam Cempor!\n\nTerima kasih atas partisipasi Anda pada pendaftaran *Pelatihan Dasar Desain Produk Limbah Plastik Cempor 2023*, Dispora Kota Bandung. Saat ini, tim kami masih dalam proses kurasi Tahap 2.\n\nBagi calon anggota yang masih bersedia untuk melanjutkan dimohon konfirmasinya untuk mengikuti *Meeting Online* pada:\n\nHari        : *Jumat*\nTanggal : *15 September 2023*\nPukul     : *19.00 WIB sd selesai*\n\nLink room akan kami berikan sesaat sebelum meeting. Apabila ada pertanyaan silakan tanyakan disini.\n\nCempor, Wani diadu!', '2023-09-14 15:11:33', '2023-09-14 15:11:33');
+
+ALTER TABLE `whatsapp_brodcast`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `whatsapp_brodcast`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+
+menu management

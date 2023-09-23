@@ -99,7 +99,7 @@
                         <th>No</th>
                         <th>Foto</th>
                         <th>Nama</th>
-                        {!! $is_admin ? '<th>Email</th>' : '' !!}
+                        {!! $is_admin ? '<th>Kontak</th>' : '' !!}
                         <th>Tgl. Lahir</th>
                         {!! $can_delete || $can_update || $can_save_another ? '<th>Aksi</th>' : '' !!}
                     </tr>

@@ -101,5 +101,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SpkAhpKriteriaJenisPerbandinganTableSeeder::class);
         $this->call(SpkAhpAlternatifTableSeeder::class);
         $this->call(SpkAhpAlternatifKriteriaTableSeeder::class);
+        $this->call(WhatsappBrodcastTableSeeder::class);
     }
 }

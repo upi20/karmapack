@@ -25,6 +25,7 @@ use App\Models\Keanggotaan\PengalamanOrganisasi;
 use App\Models\Kepengurusan\Anggota as KepengurusanAnggota;
 use App\Models\Kepengurusan\Jabatan;
 use App\Models\Kepengurusan\Periode;
+use App\Models\Latsar\WhatsApp;
 use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\Menu\Frontend as MenuFrontend;
 use App\Models\Pendaftaran\GForm;
@@ -133,6 +134,7 @@ class backup extends Command
                 NotifDepanAtas::tableName,
                 NotifAdminAtas::tableName,
                 HariBesarNasional::tableName,
+                WhatsApp::tableName,
             ],
             'contact' => [
                 ListContact::tableName,

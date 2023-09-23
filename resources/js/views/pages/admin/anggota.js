@@ -91,8 +91,8 @@ $(document).ready(function () {
             render(data, type, full, meta) {
                 const class_ = full.active == 1 ? 'success' : 'danger';
                 const text = full.active == 1 ? 'Aktif' : 'Tidak Aktif';
-                return `${data}<br><small>
-                        <i class="fas fa-circle text-${class_} ms-0 me-2"></i>${text}</small>`;
+                return `<a href="{{url('admin/setting/wa/send')}}/${full.email}" target="_blank">${data}</a><br><small>
+                        <i class="fas fa-circle text-${class_} ms-0 me-2"></i>Akun ${text}</small>`;
             },
         }] : []),
         {
