@@ -182,7 +182,9 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                             </div>
                         </div>
                         <div class="mt-3 text-center">
-                            <p>{!! str_parse(settings()->get(set_front('app.copyright'))) !!}</p>
+                            <p>{!! str_parse(setting_get(set_admin('app.copyright')), [
+                                ['search' => '__version__', 'replace' => get_version()],
+                            ]) !!}</p>
                         </div>
                     </div>
                 </div>
