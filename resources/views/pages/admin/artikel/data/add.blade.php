@@ -13,7 +13,7 @@
     $status = $is_edit ? $artikel->status : 1;
     $status = [$status == 0 ? 'checked' : '', $status == 1 ? 'checked' : ''];
     $user_id = $is_edit ? $artikel->user_id : auth()->user()->id;
-    
+
     $kategori = isset($kategori) ? $kategori : [];
     $tag = isset($tag) ? $tag : [];
 @endphp
@@ -142,7 +142,7 @@
 @section('stylesheet')
     <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2-bootstrap-5-theme.min.css') }}" />
-    <script src="https://cdn.tiny.cloud/1/hdswucb0j2g4wl27cod7yrirjqdc9en0d6apd19en6cp8inr/tinymce/6/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/{{ config('app.tiny_mce_api_key') }}/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
 @endsection
 

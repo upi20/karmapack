@@ -221,5 +221,5 @@ return [
     'vistor_tracker_ip_ignore' => [
         '127.0.0.1'
     ],
-
+    'tiny_mce_api_key' => env('TINY_MCE_API_KEY', ''),
 ];
