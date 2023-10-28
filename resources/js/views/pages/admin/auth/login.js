@@ -4,17 +4,11 @@ $(document).ready(function () {
         var formData = new FormData(this);
         setBtnLoading('button[type=submit]', 'Masuk');
         if (formData.get('email').length == "") {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Oops...',
-                text: 'Email is required !'
-            });
+            Swal.fire({ icon: 'warning', title: 'Oops...', text: 'Email is required !' });
+            setBtnLoading('button[type=submit]', 'Masuk', false);
         } else if (password.length == "") {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Oops...',
-                text: 'Password is required !'
-            });
+            Swal.fire({ icon: 'warning', title: 'Oops...', text: 'Password is required !' });
+            setBtnLoading('button[type=submit]', 'Masuk', false);
         } else {
             $.ajax({
                 url: "{{ route('login.check_login') }}",
