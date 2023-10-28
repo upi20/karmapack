@@ -222,4 +222,6 @@ return [
         '127.0.0.1'
     ],
     'tiny_mce_api_key' => env('TINY_MCE_API_KEY', ''),
+    'login_provider' => env('LOGIN_PROVIDER'),
+    'google_loginler' => env('GOOGLE_LOGINLER', true),
 ];

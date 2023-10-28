@@ -7,19 +7,59 @@ use App\Models\SocialAccount;
 use App\Models\User;
 use Exception;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class SocialiteController extends Controller
 {
     public function redirectToProvider($provider)
     {
+        if (config('app.google_loginler')) { // using loginler
+            $provider_url = config('app.login_provider');
+            $provider_redirect = route('login.porvider.callback', $provider);
+            $token = $this->tokenGenerator();
+
+            session(['redirect' => request('redirect')]);
+            session(['token' => $token]);
+            return redirect("$provider_url?redirect=$provider_redirect&token=$token");
+        }
+
         if (request('redirect')) {
             session(['redirect' => request('redirect')]);
         }
         return Socialite::driver($provider)->redirect();
     }
 
-    public function handleProvideCallback($provider)
+    public function handleProvideCallback($provider, Request $request)
     {
+        if (config('app.google_loginler')) { // using loginler
+            // session
+            $redirect = session('redirect');
+            $token = session('token');
+            $email = $request->email;
+
+            // cek token
+            if ($token != $request->token) return redirect($redirect)->with('message', 'Akses token tidak sesuai. Silahkan hubungi administrator website.');
+
+            $authUser = User::where('email', $email)->first();
+
+            if (is_null($authUser)) {
+                return redirect()->route('login')->with('message', 'Akun google yang anda pilih tidak terdaftar');
+            }
+
+            // login user
+            Auth()->login($authUser, true);
+
+            $redirect = session('redirect');
+            if ($redirect) {
+                session(['redirect' => null]);
+                return redirect($redirect);
+            } else {
+                // setelah login redirect ke dashboard
+                return redirect()->route('dashboard');
+            }
+        }
+
         try {
             $user = Socialite::driver($provider)->stateless()->user();
         } catch (Exception $e) {
@@ -79,5 +119,14 @@ class SocialiteController extends Controller
             // return user
             return $user;
         }
+    }
+
+    public function tokenGenerator()
+    {
+        $result = Str::random(40);
+        $result = str_replace('$', '', $result);
+        $result = str_replace('&', '', $result);
+        $result = str_replace('/', '', $result);
+        return $result;
     }
 }
