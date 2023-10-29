@@ -1,4 +1,4 @@
-![Karmapack](public/assets/templates/admin/logo-hd.png "Karmapack")
+![Karmapack](public/assets/image/logo_default.png "Karmapack")
 
 Aplikasi Sistem Informasi Anggota (SIA) organisasi Keluarga Mahasiswa dan Pelajar Cianjur Kidul (Karmapack)
 
