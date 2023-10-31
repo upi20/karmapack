@@ -29,7 +29,7 @@ $(document).ready(e => {
         setBtnLoading('button[type=submit][form=form_password]', 'Simpan Perubahan');
         $.ajax({
             type: "POST",
-            url: "{{ route('admin.password.save') }}",
+            url: "{{ route(l_prefix($hpu,'save')) }}",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
