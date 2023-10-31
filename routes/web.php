@@ -152,6 +152,16 @@ Route::get('/dashboard', function () {
 })->name("dashboard");
 // ====================================================================================================================
 
+// ganti password =====================================================================================================
+Route::get('/password', function () {
+    if (auth_has_role(config('app.super_admin_role'))) {
+        return Redirect::route('admin.password');
+    } else {
+        return Redirect::route('member.password');
+    }
+})->name("password");
+// ====================================================================================================================
+
 // katalog ============================================================================================================
 $prefix = 'katalog';
 Route::controller(KatalogController::class)->prefix($prefix)->group(function () use ($prefix) {
