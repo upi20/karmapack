@@ -1216,6 +1216,51 @@ class AnggotaKontaksTableSeeder extends Seeder
                 'created_at' => '2023-09-13 17:34:27',
                 'updated_at' => '2023-09-13 17:34:27',
             ),
+            133 => 
+            array (
+                'id' => '135',
+                'jenis_id' => '1',
+                'anggota_id' => '280',
+                'nilai' => 'https://instagram.com/fitri_prnwati?igshid=OGQ5ZDc2ODk2ZA==',
+                'created_at' => '2023-09-25 10:10:12',
+                'updated_at' => '2023-09-25 10:10:12',
+            ),
+            134 => 
+            array (
+                'id' => '136',
+                'jenis_id' => '1',
+                'anggota_id' => '276',
+                'nilai' => 'Muhamadrizqizamzami',
+                'created_at' => '2023-10-31 09:53:14',
+                'updated_at' => '2023-10-31 09:53:14',
+            ),
+            135 => 
+            array (
+                'id' => '137',
+                'jenis_id' => '5',
+                'anggota_id' => '276',
+                'nilai' => 'Mr.zamy05',
+                'created_at' => '2023-10-31 09:58:00',
+                'updated_at' => '2023-10-31 09:58:00',
+            ),
+            136 => 
+            array (
+                'id' => '138',
+                'jenis_id' => '3',
+                'anggota_id' => '276',
+                'nilai' => '085659193486',
+                'created_at' => '2023-10-31 09:58:21',
+                'updated_at' => '2023-10-31 09:58:21',
+            ),
+            137 => 
+            array (
+                'id' => '139',
+                'jenis_id' => '5',
+                'anggota_id' => '279',
+                'nilai' => 'Finaziaah012',
+                'created_at' => '2023-10-31 10:11:00',
+                'updated_at' => '2023-10-31 10:11:00',
+            ),
         ));
         
         

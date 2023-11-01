@@ -3269,6 +3269,32 @@ class AnggotaPendidikansTableSeeder extends Seeder
                 'created_at' => '2023-09-14 14:37:58',
                 'updated_at' => '2023-09-14 14:37:58',
             ),
+            250 => 
+            array (
+                'id' => '251',
+                'jenis_id' => '5',
+                'anggota_id' => '280',
+                'dari' => '2022',
+                'sampai' => '2026',
+                'instansi' => 'Stisip Guna Nusantara Cianjur',
+                'jurusan' => 'Ilmu Pemerintahan',
+                'keterangan' => NULL,
+                'created_at' => '2023-09-25 10:10:52',
+                'updated_at' => '2023-09-25 10:10:52',
+            ),
+            251 => 
+            array (
+                'id' => '252',
+                'jenis_id' => '4',
+                'anggota_id' => '279',
+                'dari' => '2018',
+                'sampai' => '2021',
+                'instansi' => 'SMK assatinem',
+                'jurusan' => 'Otomatisasi tata kelola perkantoran',
+                'keterangan' => NULL,
+                'created_at' => '2023-10-31 10:12:52',
+                'updated_at' => '2023-10-31 10:12:52',
+            ),
         ));
         
         

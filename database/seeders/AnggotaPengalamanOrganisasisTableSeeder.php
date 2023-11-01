@@ -679,6 +679,42 @@ class AnggotaPengalamanOrganisasisTableSeeder extends Seeder
                 'created_at' => '2023-09-14 14:41:46',
                 'updated_at' => '2023-09-14 14:41:46',
             ),
+            55 => 
+            array (
+                'id' => '56',
+                'nama' => 'pmii',
+                'dari' => '2002',
+                'sampai' => '2026',
+                'jabatan' => 'Anggota',
+                'keterangan' => NULL,
+                'anggota_id' => '280',
+                'created_at' => '2023-09-25 10:11:20',
+                'updated_at' => '2023-09-25 10:11:20',
+            ),
+            56 => 
+            array (
+                'id' => '57',
+            'nama' => 'Himpunan Mahasiswa Islam (HMI)',
+                'dari' => '2022',
+                'sampai' => '2024',
+                'jabatan' => 'Pengurus',
+                'keterangan' => NULL,
+                'anggota_id' => '276',
+                'created_at' => '2023-10-31 09:55:05',
+                'updated_at' => '2023-10-31 09:55:20',
+            ),
+            57 => 
+            array (
+                'id' => '58',
+                'nama' => 'pergerakan mahasiswa Islam Indonesia',
+                'dari' => '2022',
+                'sampai' => '2024',
+                'jabatan' => 'Anggota',
+                'keterangan' => 'Salam pergerakan',
+                'anggota_id' => '279',
+                'created_at' => '2023-10-31 10:14:28',
+                'updated_at' => '2023-10-31 10:14:28',
+            ),
         ));
         
         

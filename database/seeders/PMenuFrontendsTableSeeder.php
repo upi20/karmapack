@@ -95,7 +95,7 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'active' => '1',
                 'type' => '1',
                 'created_at' => '2022-08-20 14:31:46',
-                'updated_at' => '2023-02-19 18:05:45',
+                'updated_at' => '2023-10-20 00:10:53',
             ),
             6 => 
             array (
@@ -108,7 +108,7 @@ class PMenuFrontendsTableSeeder extends Seeder
                 'active' => '0',
                 'type' => '1',
                 'created_at' => '2022-08-20 14:32:07',
-                'updated_at' => '2023-02-18 22:39:21',
+                'updated_at' => '2023-10-20 00:13:12',
             ),
             7 => 
             array (
