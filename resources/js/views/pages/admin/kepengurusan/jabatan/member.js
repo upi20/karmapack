@@ -60,9 +60,7 @@ $(document).ready(function () {
                 })
             },
             complete: function () {
-                setBtnLoading('#btn-save',
-                    '<li class="fas fa-save mr-1"></li> Simpan Perubahan',
-                    false);
+                setBtnLoading('#btn-save', '<li class="fas fa-save mr-1"></li> Simpan Perubahan', false);
             }
         });
     });

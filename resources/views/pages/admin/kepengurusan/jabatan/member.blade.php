@@ -21,7 +21,7 @@
                     <select class="form-control select2" id="anggotas" multiple name="anggotas[]" style="width: 100%">
                         @foreach ($anggotas as $anggota)
                             <option value="{{ $anggota->anggota->id }}" selected>
-                                {{ $anggota->anggota->nama }}
+                                {{ $anggota->anggota->angkatan }} | {{ $anggota->anggota->nama }}
                             </option>
                         @endforeach
                     </select>
@@ -48,13 +48,7 @@
     <script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>
     <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
     @php
-        $resource = resource_loader(
-            blade_path: $view,
-            params: [
-                'jabatan_id' => $jabatan->id,
-                'jabatan_periode_id' => $jabatan->periode_id,
-            ],
-        );
+        $resource = resource_loader(blade_path: $view, params: ['jabatan_id' => $jabatan->id, 'jabatan_periode_id' => $jabatan->periode_id]);
     @endphp
 
     <script src="{{ $resource }}"></script>

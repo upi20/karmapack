@@ -39,11 +39,7 @@ class JabatanMemberController extends Controller
     {
         try {
             $model = Anggota::select(['id', DB::raw("concat(angkatan,' | ',nama) as text")])
-                ->whereRaw("(
-                    `nama` like '%$request->search%' or
-                    `alamat_lengkap` like '%$request->search%' or
-                    `angkatan` like '%$request->search%'
-                    )")
+                ->whereRaw("( `nama` like ? or `alamat_lengkap` like ? or `angkatan` like ? )", ["%$request->search%", "%$request->search%", "%$request->search%",])
                 ->limit(10);
 
             $result = $model->get()->toArray();
@@ -57,7 +53,7 @@ class JabatanMemberController extends Controller
     {
         try {
             $request->validate([
-                'anggotas' => ['required'],
+                // 'anggotas' => ['required'],
                 'periode_id' => ['required', 'int'],
                 'jabatan_id' => ['required', 'int'],
             ]);
@@ -69,20 +65,15 @@ class JabatanMemberController extends Controller
             // check
             if (!auth_has_role(config('app.super_admin_role'))) {
                 $periode = KepengurusanPeriode::where('id', '=', $request->periode_id)->first();
-                if ($periode->status == 0) {
-                    throw new Error("Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)");
-                }
+                if ($periode->status == 0) return response()->json([ 'message' => "Anda tidak mempunyai izin untuk mengubah data di periode ini. (Status periode ini tidak aktif Silahkan hubungi administrator)", ], 500);
             }
 
 
             // delete anggota jabatan terlebih dahulu
-            $current = KepengurusanAnggota::where('jabatan_id', $request->jabatan_id)->get();
-            foreach ($current as $c) {
-                $c->delete();
-            }
+            KepengurusanAnggota::where('jabatan_id', $request->jabatan_id)->delete();
 
             // masukan ke jabatan
-            foreach ($request->anggotas as $anggota) {
+            foreach ($request->anggotas ?? [] as $anggota) {
                 // cek terlebih dahulu apakah anggota ini sudah ada jabatan di periode ini ?
                 $cek = KepengurusanAnggota::join($t_jabatan, "$t_jabatan.id", '=', "$t_anggota.jabatan_id")
                     ->where("$t_jabatan.periode_id", $request->periode_id)
@@ -91,10 +82,8 @@ class JabatanMemberController extends Controller
 
                 if ($cek != null) {
                     $jabatan_text = $cek->jabatan->nama;
-                    if ($cek->jabatan->parent) {
-                        $jabatan_text .= (" -> " . $cek->jabatan->parent->nama);
-                    }
-                    throw new Error($cek->anggota->nama . " Sudah terdaftar sebagai $jabatan_text");
+                    if ($cek->jabatan->parent) $jabatan_text .= (" -> " . $cek->jabatan->parent->nama);
+                    return response()->json([ 'message' => $cek->anggota->nama . " Sudah terdaftar sebagai $jabatan_text", ], 500);
                 }
 
                 // jika sudah aman maka masukan ke database
