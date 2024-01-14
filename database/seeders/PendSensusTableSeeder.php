@@ -617,6 +617,58 @@ class PendSensusTableSeeder extends Seeder
                 'created_at' => '2023-09-13 13:10:41',
                 'updated_at' => '2023-09-13 13:10:41',
             ),
+            46 => 
+            array (
+                'id' => '47',
+                'nama' => 'abib',
+                'angkatan' => '2011',
+                'email' => 'yoyosinurat@gmail.com',
+                'whatsapp' => '085362596515',
+                'telepon' => '085362596515',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: yoyosinurat@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-09-27 14:04:14',
+                'updated_at' => '2023-09-27 14:04:14',
+            ),
+            47 => 
+            array (
+                'id' => '48',
+                'nama' => 'Tiara Putri',
+                'angkatan' => '2010',
+                'email' => 'izm.sagiri405@gmail.com',
+                'whatsapp' => '085607869044',
+                'telepon' => '085607869044',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: izm.sagiri405@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-10-01 01:07:40',
+                'updated_at' => '2023-10-01 01:07:40',
+            ),
+            48 => 
+            array (
+                'id' => '49',
+                'nama' => 'irpan',
+                'angkatan' => '2019',
+                'email' => 'admin1@demo.com',
+                'whatsapp' => '232434',
+                'telepon' => '07893323',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: admin1@demo.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-10-21 22:16:14',
+                'updated_at' => '2023-10-21 22:16:14',
+            ),
+            49 => 
+            array (
+                'id' => '50',
+                'nama' => 'Dian Pratiwi',
+                'angkatan' => '2023',
+                'email' => 'rayggron573@gmail.com',
+                'whatsapp' => '0812-4567-8901',
+                'telepon' => '0812-4567-8901',
+                'keterangan' => 'Sudah dijadikan pengguna dengan email: rayggron573@gmail.com dan password: 12345678',
+                'status' => '2',
+                'created_at' => '2023-10-25 22:27:54',
+                'updated_at' => '2023-10-25 22:27:54',
+            ),
         ));
         
         

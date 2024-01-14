@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://karmapack.id</loc>
-        <lastmod>2023-09-16T01:10:44+07:00</lastmod>
+        <lastmod>2023-10-31T21:34:41+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -30,7 +30,7 @@
         </url>
     <url>
         <loc>https://karmapack.id/shared/files/shares/ad_art_dan_ghbo_karmapack.pdf</loc>
-        <lastmod>2023-02-19T18:05:45+07:00</lastmod>
+        <lastmod>2023-10-20T00:10:53+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
         </url>
@@ -108,7 +108,7 @@
         </url>
     <url>
         <loc>https://karmapack.id/iseplutpinur</loc>
-        <lastmod>2023-09-09T21:39:06+07:00</lastmod>
+        <lastmod>2023-09-17T00:47:53+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -2818,11 +2818,11 @@
 </url>
     <url>
         <loc>https://karmapack.id/m-rizqi-zamzami20230909203213</loc>
-        <lastmod>2023-09-09T20:32:13+07:00</lastmod>
+        <lastmod>2023-10-31T09:57:31+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/m-rizqi-zamzami2023090920321320231031095359.png</image:loc>
     <image:caption>M Rizqi Zamzami</image:caption>
 </image:image>
 </url>
@@ -2838,31 +2838,31 @@
 </url>
     <url>
         <loc>https://karmapack.id/siti-mulyati20230909203650</loc>
-        <lastmod>2023-09-09T20:36:50+07:00</lastmod>
+        <lastmod>2023-10-31T10:23:50+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/siti-mulyati2023090920365020231031102350.jpg</image:loc>
     <image:caption>Siti Mulyati</image:caption>
 </image:image>
 </url>
     <url>
         <loc>https://karmapack.id/finaziah20230909203751</loc>
-        <lastmod>2023-09-09T20:37:52+07:00</lastmod>
+        <lastmod>2023-10-31T10:09:47+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/finaziah2023090920375120231031100838.jpg</image:loc>
     <image:caption>Finaziah</image:caption>
 </image:image>
 </url>
     <url>
         <loc>https://karmapack.id/fitri-purnawati20230909204251</loc>
-        <lastmod>2023-09-09T20:42:51+07:00</lastmod>
+        <lastmod>2023-09-25T10:13:30+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
-    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:loc>https://karmapack.id/assets/anggota/fitri-purnawati2023090920425120230925101330.JPG</image:loc>
     <image:caption>Fitri Purnawati</image:caption>
 </image:image>
 </url>
@@ -2958,7 +2958,7 @@
 </url>
     <url>
         <loc>https://karmapack.id/rio-afrizal20230909205627</loc>
-        <lastmod>2023-09-09T20:56:28+07:00</lastmod>
+        <lastmod>2023-09-25T10:15:33+07:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -2974,6 +2974,46 @@
         <image:image>
     <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
     <image:caption>Daris Yusyfa Atqia</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/abib20230927140414</loc>
+        <lastmod>2023-09-27T14:04:14+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>abib</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/tiara-putri20231001010739</loc>
+        <lastmod>2023-10-01T01:07:40+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>Tiara Putri</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/irpan20231021221614</loc>
+        <lastmod>2023-10-30T12:17:40+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/irpan2023102122161420231030121740.jpg</image:loc>
+    <image:caption>irpan</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>https://karmapack.id/dian-pratiwi20231025222754</loc>
+        <lastmod>2023-10-25T22:27:54+07:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+    <image:loc>https://karmapack.id/assets/anggota/anggota_default.png</image:loc>
+    <image:caption>Dian Pratiwi</image:caption>
 </image:image>
 </url>
 </urlset>

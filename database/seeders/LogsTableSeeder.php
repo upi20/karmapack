@@ -14830,6 +14830,1707 @@ class LogsTableSeeder extends Seeder
                 'log_type' => 'login',
             'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Mobile Safari\\/537.36"}',
             ),
+            145 => 
+            array (
+                'id' => '1662',
+                'user_id' => '1',
+                'log_date' => '2023-09-17 00:34:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            146 => 
+            array (
+                'id' => '1663',
+                'user_id' => '1',
+                'log_date' => '2023-09-17 00:46:27',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.85","visitors_id":"14811","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-16T17:46:27.000000Z","created_at":"2023-09-16T17:46:27.000000Z","id":907}',
+            ),
+            147 => 
+            array (
+                'id' => '1664',
+                'user_id' => '1',
+                'log_date' => '2023-09-17 00:47:53',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","nomor_anggota":null,"nama":"Isep Lutpi Nur","tanggal_lahir":"2000-08-10","jenis_kelamin":"laki-laki","angkatan":"2019","province_id":"32","regency_id":"3203","district_id":"3203051","village_id":"3203051006","alamat_lengkap":"Samping SDN 1 Tipar, RT 012\\/RW 024","bio":"Hidup ini seperti gulali, kadang manis, kadang kocak. Tapi ingat, kamu adalah si penuai gulali dalam hidupmu sendiri. Teruslah berjalan dengan senyuman!","profesi":"Pelajar\\/Mahasiswa","foto":"iseplutpinur20230618175649.png","telepon":null,"whatsapp":null,"status":"ANGGOTA BIASA","user_id":"1","created_at":"2023-02-11 00:40:11","updated_at":"2023-09-09 21:39:06"}',
+            ),
+            148 => 
+            array (
+                'id' => '1665',
+                'user_id' => '1',
+                'log_date' => '2023-09-17 11:00:21',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.85","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36 Edg\\/116.0.1938.81"}',
+            ),
+            149 => 
+            array (
+                'id' => '1666',
+                'user_id' => '113',
+                'log_date' => '2023-09-18 14:32:35',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.84.49","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/114.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            150 => 
+            array (
+                'id' => '1667',
+                'user_id' => '113',
+                'log_date' => '2023-09-18 14:35:54',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"113","name":"Faisal Akbar","email":"faisal7794akbar@karmapack.id","foto":null,"username":"faisalakbar","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"iuv6nLCkq8Gz5gdM9IPnhQIXJzoHyV4ijVhDk6Q9QaFYCwVqMetehLFKtl54","created_at":"2023-03-16 16:19:35","updated_at":"2023-03-16 17:43:52"}',
+            ),
+            151 => 
+            array (
+                'id' => '1668',
+                'user_id' => '93',
+                'log_date' => '2023-09-21 16:50:17',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.219.244","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            152 => 
+            array (
+                'id' => '1669',
+                'user_id' => '93',
+                'log_date' => '2023-09-21 16:50:23',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.219.244","visitors_id":"15902","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-21T09:50:23.000000Z","created_at":"2023-09-21T09:50:23.000000Z","id":954}',
+            ),
+            153 => 
+            array (
+                'id' => '1670',
+                'user_id' => '89',
+                'log_date' => '2023-09-22 19:56:49',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"101.128.126.101","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/113.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            154 => 
+            array (
+                'id' => '1671',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 19:02:33',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.244.134.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.36"}',
+            ),
+            155 => 
+            array (
+                'id' => '1672',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 19:02:36',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"180.244.134.128","visitors_id":"16623","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-09-23T12:02:36.000000Z","created_at":"2023-09-23T12:02:36.000000Z","id":974}',
+            ),
+            156 => 
+            array (
+                'id' => '1673',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1251}',
+            ),
+            157 => 
+            array (
+                'id' => '1674',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":3,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1252}',
+            ),
+            158 => 
+            array (
+                'id' => '1675',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1253}',
+            ),
+            159 => 
+            array (
+                'id' => '1676',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1254}',
+            ),
+            160 => 
+            array (
+                'id' => '1677',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1255}',
+            ),
+            161 => 
+            array (
+                'id' => '1678',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":7,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1256}',
+            ),
+            162 => 
+            array (
+                'id' => '1679',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:19',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":8,"menu_id":361,"updated_at":"2023-09-23T13:11:19.000000Z","created_at":"2023-09-23T13:11:19.000000Z","id":1257}',
+            ),
+            163 => 
+            array (
+                'id' => '1680',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1258}',
+            ),
+            164 => 
+            array (
+                'id' => '1681',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":3,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1259}',
+            ),
+            165 => 
+            array (
+                'id' => '1682',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1260}',
+            ),
+            166 => 
+            array (
+                'id' => '1683',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1261}',
+            ),
+            167 => 
+            array (
+                'id' => '1684',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1262}',
+            ),
+            168 => 
+            array (
+                'id' => '1685',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":7,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1263}',
+            ),
+            169 => 
+            array (
+                'id' => '1686',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:29',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":8,"menu_id":405,"updated_at":"2023-09-23T13:11:29.000000Z","created_at":"2023-09-23T13:11:29.000000Z","id":1264}',
+            ),
+            170 => 
+            array (
+                'id' => '1687',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1265}',
+            ),
+            171 => 
+            array (
+                'id' => '1688',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":2,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1266}',
+            ),
+            172 => 
+            array (
+                'id' => '1689',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":3,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1267}',
+            ),
+            173 => 
+            array (
+                'id' => '1690',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1268}',
+            ),
+            174 => 
+            array (
+                'id' => '1691',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1269}',
+            ),
+            175 => 
+            array (
+                'id' => '1692',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1270}',
+            ),
+            176 => 
+            array (
+                'id' => '1693',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:36',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":7,"menu_id":406,"updated_at":"2023-09-23T13:11:36.000000Z","created_at":"2023-09-23T13:11:36.000000Z","id":1271}',
+            ),
+            177 => 
+            array (
+                'id' => '1694',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:58',
+                'table_name' => 'p_menu',
+                'log_type' => 'create',
+                'data' => '{"sequence":"58","parent_id":"364","active":"1","title":"WhatsApp Brodcast","icon":null,"route":"admin.setting.wa","type":"1","updated_at":"2023-09-23T13:11:58.000000Z","created_at":"2023-09-23T13:11:58.000000Z","id":417}',
+            ),
+            178 => 
+            array (
+                'id' => '1695',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 20:11:58',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":417,"updated_at":"2023-09-23T13:11:58.000000Z","created_at":"2023-09-23T13:11:58.000000Z","id":1272}',
+            ),
+            179 => 
+            array (
+                'id' => '1696',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:00:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.244.134.128","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.36"}',
+            ),
+            180 => 
+            array (
+                'id' => '1697',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:10',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.admin.app.title","value":"Karmapack","updated_at":"2023-09-23T16:01:10.000000Z","created_at":"2023-09-23T16:01:10.000000Z","id":3}',
+            ),
+            181 => 
+            array (
+                'id' => '1698',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:10',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.admin.app.copyright","value":"<div>\\u00a9  2023 Karmapack __version__<\\/div> <div> Persembahan Dari <a href=\\"__base_url__\\/iseplutpinur\\" class=\\"fw-bold\\">Isep Lutpi Nur<\\/a> Bidang Kominfo. <\\/div>","updated_at":"2023-09-23T16:01:10.000000Z","created_at":"2023-09-23T16:01:10.000000Z","id":4}',
+            ),
+            182 => 
+            array (
+                'id' => '1699',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:10',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.admin.app.preloader","value":0,"updated_at":"2023-09-23T16:01:10.000000Z","created_at":"2023-09-23T16:01:10.000000Z","id":5}',
+            ),
+            183 => 
+            array (
+                'id' => '1700',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.title","value":"Karmapack","updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":6}',
+            ),
+            184 => 
+            array (
+                'id' => '1701',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.copyright","value":"<div>\\u00a9  2023 Karmapack __version__<\\/div> <div> Persembahan Dari <a href=\\"__base_url__\\/iseplutpinur\\" class=\\"fw-bold\\">Isep Lutpi Nur<\\/a> Bidang Kominfo. <\\/div>","updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":7}',
+            ),
+            185 => 
+            array (
+                'id' => '1702',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.preloader","value":0,"updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":8}',
+            ),
+            186 => 
+            array (
+                'id' => '1703',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.no_telepon","value":null,"updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":9}',
+            ),
+            187 => 
+            array (
+                'id' => '1704',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.no_whatsapp","value":null,"updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":10}',
+            ),
+            188 => 
+            array (
+                'id' => '1705',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:01:22',
+                'table_name' => 'setting_activities',
+                'log_type' => 'create',
+                'data' => '{"key":"setting.front.app.address","value":null,"updated_at":"2023-09-23T16:01:22.000000Z","created_at":"2023-09-23T16:01:22.000000Z","id":11}',
+            ),
+            189 => 
+            array (
+                'id' => '1706',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:05:03',
+                'table_name' => 'p_menu',
+                'log_type' => 'create',
+                'data' => '{"sequence":"58","parent_id":"393","active":"1","title":"Versioning","icon":null,"route":"admin.setting.versioning","type":"1","updated_at":"2023-09-23T16:05:03.000000Z","created_at":"2023-09-23T16:05:03.000000Z","id":418}',
+            ),
+            190 => 
+            array (
+                'id' => '1707',
+                'user_id' => '1',
+                'log_date' => '2023-09-23 23:05:03',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":418,"updated_at":"2023-09-23T16:05:03.000000Z","created_at":"2023-09-23T16:05:03.000000Z","id":1273}',
+            ),
+            191 => 
+            array (
+                'id' => '1708',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:05:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.249.58","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            192 => 
+            array (
+                'id' => '1709',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:08:05',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"280","nomor_anggota":null,"nama":"Fitri Purnawati","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"123","status":null,"user_id":"305","created_at":"2023-09-09 20:42:51","updated_at":"2023-09-09 20:42:51"}',
+            ),
+            193 => 
+            array (
+                'id' => '1710',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:08:45',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"280","nomor_anggota":null,"nama":"Fitri Purnawati","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203061","village_id":"3203061006","alamat_lengkap":"KP. MEKARAHAYU RT 04 RW 06 DESA KALIBARU KECAMATAN PASIRKUDA","bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"123","status":null,"user_id":"305","created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:08:05"}',
+            ),
+            194 => 
+            array (
+                'id' => '1711',
+                'user_id' => '315',
+                'log_date' => '2023-09-25 10:09:37',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.78.179","user_agent":"Mozilla\\/5.0 (Linux; Android 8.1.0; vivo 1812) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/102.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            195 => 
+            array (
+                'id' => '1712',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:10:12',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"280","jenis_id":"1","nilai":"https:\\/\\/instagram.com\\/fitri_prnwati?igshid=OGQ5ZDc2ODk2ZA==","updated_at":"2023-09-25T03:10:12.000000Z","created_at":"2023-09-25T03:10:12.000000Z","id":135}',
+            ),
+            196 => 
+            array (
+                'id' => '1713',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:10:52',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"280","jenis_id":"5","instansi":"Stisip Guna Nusantara Cianjur","dari":"2022","sampai":"2026","jurusan":"Ilmu Pemerintahan","keterangan":null,"updated_at":"2023-09-25T03:10:52.000000Z","created_at":"2023-09-25T03:10:52.000000Z","id":251}',
+            ),
+            197 => 
+            array (
+                'id' => '1714',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:11:20',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"280","nama":"pmii","dari":"2002","sampai":"2026","jabatan":"Anggota","keterangan":null,"updated_at":"2023-09-25T03:11:20.000000Z","created_at":"2023-09-25T03:11:20.000000Z","id":56}',
+            ),
+            198 => 
+            array (
+                'id' => '1715',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:12:44',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"305","name":"Fitri Purnawati","email":"fitripurnawati@karmapack.id","foto":null,"username":"fitri-purnawati20230909204251","email_verified_at":null,"password":"$2y$10$UAbygUua74t9aRaP3ME03uThCdFLpxspoVEE4WF92CZHdXYnE3iX2","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:42:51","updated_at":"2023-09-09 20:42:51"}',
+            ),
+            199 => 
+            array (
+                'id' => '1716',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:12:44',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"280","nomor_anggota":null,"nama":"Fitri Purnawati","tanggal_lahir":"2002-12-22","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203061","village_id":"3203061006","alamat_lengkap":"KP. MEKARAHAYU RT 04 RW 06 DESA KALIBARU KECAMATAN PASIRKUDA","bio":null,"profesi":null,"foto":null,"telepon":"085778259686","whatsapp":"85778259686","status":null,"user_id":"305","created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:08:45"}',
+            ),
+            200 => 
+            array (
+                'id' => '1717',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:12:49',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"305","name":"Fitri Purnawati","email":"fitripurnawati@karmapack.id","foto":"fitri-purnawati2023090920425120230925101244.JPG","username":"fitri-purnawati20230909204251","email_verified_at":null,"password":"$2y$10$UAbygUua74t9aRaP3ME03uThCdFLpxspoVEE4WF92CZHdXYnE3iX2","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:12:44"}',
+            ),
+            201 => 
+            array (
+                'id' => '1718',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:12:49',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"280","nomor_anggota":null,"nama":"Fitri Purnawati","tanggal_lahir":"2002-12-22","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203061","village_id":"3203061006","alamat_lengkap":"KP. MEKARAHAYU RT 04 RW 06 DESA KALIBARU KECAMATAN PASIRKUDA","bio":"Let it flow","profesi":null,"foto":"fitri-purnawati2023090920425120230925101244.JPG","telepon":"085778259686","whatsapp":"85778259686","status":null,"user_id":"305","created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:12:44"}',
+            ),
+            202 => 
+            array (
+                'id' => '1719',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:13:17',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":34,"nama":"Menyanyi","anggota_id":"280","created_at":null,"updated_at":null}',
+            ),
+            203 => 
+            array (
+                'id' => '1720',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:13:30',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"305","name":"Fitri Purnawati","email":"fitripurnawati@karmapack.id","foto":"fitri-purnawati2023090920425120230925101249.JPG","username":"fitri-purnawati20230909204251","email_verified_at":null,"password":"$2y$10$UAbygUua74t9aRaP3ME03uThCdFLpxspoVEE4WF92CZHdXYnE3iX2","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:12:49"}',
+            ),
+            204 => 
+            array (
+                'id' => '1721',
+                'user_id' => '305',
+                'log_date' => '2023-09-25 10:13:30',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"280","nomor_anggota":null,"nama":"Fitri Purnawati","tanggal_lahir":"2002-12-22","jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203061","village_id":"3203061006","alamat_lengkap":"KP. MEKARAHAYU RT 04 RW 06 DESA KALIBARU KECAMATAN PASIRKUDA","bio":"Let it flow","profesi":"Pelajar\\/Mahasiswa","foto":"fitri-purnawati2023090920425120230925101249.JPG","telepon":"085778259686","whatsapp":"85778259686","status":null,"user_id":"305","created_at":"2023-09-09 20:42:51","updated_at":"2023-09-25 10:12:49"}',
+            ),
+            205 => 
+            array (
+                'id' => '1722',
+                'user_id' => '315',
+                'log_date' => '2023-09-25 10:15:25',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"290","nomor_anggota":null,"nama":"Rio Afrizal","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"123","status":null,"user_id":"315","created_at":"2023-09-09 20:56:28","updated_at":"2023-09-09 20:56:28"}',
+            ),
+            206 => 
+            array (
+                'id' => '1723',
+                'user_id' => '315',
+                'log_date' => '2023-09-25 10:15:28',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"290","nomor_anggota":null,"nama":"Rio Afrizal","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":"BERTANYALAH KETIKA KALIAN BENAR BENAR TIDAK TAU","profesi":"Pelajar\\/Mahasiswa","foto":null,"telepon":null,"whatsapp":"123","status":null,"user_id":"315","created_at":"2023-09-09 20:56:28","updated_at":"2023-09-25 10:15:25"}',
+            ),
+            207 => 
+            array (
+                'id' => '1724',
+                'user_id' => '315',
+                'log_date' => '2023-09-25 10:15:33',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"290","nomor_anggota":null,"nama":"Rio Afrizal","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203070","village_id":"3203070012","alamat_lengkap":"Kp nyalempet rt1 \\r\\nrw2","bio":"BERTANYALAH KETIKA KALIAN BENAR BENAR TIDAK TAU","profesi":"Pelajar\\/Mahasiswa","foto":null,"telepon":null,"whatsapp":"123","status":null,"user_id":"315","created_at":"2023-09-09 20:56:28","updated_at":"2023-09-25 10:15:28"}',
+            ),
+            208 => 
+            array (
+                'id' => '1725',
+                'user_id' => '315',
+                'log_date' => '2023-09-25 10:17:04',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":35,"nama":"Main bola","anggota_id":"290","created_at":null,"updated_at":null}',
+            ),
+            209 => 
+            array (
+                'id' => '1726',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 09:59:43',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.57","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.47"}',
+            ),
+            210 => 
+            array (
+                'id' => '1727',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 09:59:44',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"103.147.8.57","visitors_id":"19450","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-02T02:59:44.000000Z","created_at":"2023-10-02T02:59:44.000000Z","id":1092}',
+            ),
+            211 => 
+            array (
+                'id' => '1728',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 10:13:36',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.57","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36"}',
+            ),
+            212 => 
+            array (
+                'id' => '1729',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 13:06:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.70.45","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36"}',
+            ),
+            213 => 
+            array (
+                'id' => '1730',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 13:06:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.70.45","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36"}',
+            ),
+            214 => 
+            array (
+                'id' => '1731',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 13:06:08',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.70.45","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36"}',
+            ),
+            215 => 
+            array (
+                'id' => '1732',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 13:25:41',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.244.134.182","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.47"}',
+            ),
+            216 => 
+            array (
+                'id' => '1733',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 13:25:42',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"180.244.134.182","visitors_id":"19499","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-02T06:25:42.000000Z","created_at":"2023-10-02T06:25:42.000000Z","id":1094}',
+            ),
+            217 => 
+            array (
+                'id' => '1734',
+                'user_id' => '1',
+                'log_date' => '2023-10-02 22:21:46',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.57","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.47"}',
+            ),
+            218 => 
+            array (
+                'id' => '1735',
+                'user_id' => '1',
+                'log_date' => '2023-10-05 21:14:54',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.85.113","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.47"}',
+            ),
+            219 => 
+            array (
+                'id' => '1736',
+                'user_id' => '1',
+                'log_date' => '2023-10-05 21:14:56',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.122.85.113","visitors_id":"20474","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-05T14:14:56.000000Z","created_at":"2023-10-05T14:14:56.000000Z","id":1118}',
+            ),
+            220 => 
+            array (
+                'id' => '1737',
+                'user_id' => '93',
+                'log_date' => '2023-10-07 01:15:58',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.211.31","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            221 => 
+            array (
+                'id' => '1738',
+                'user_id' => '93',
+                'log_date' => '2023-10-07 01:16:02',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.211.31","visitors_id":"20866","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-06T18:16:02.000000Z","created_at":"2023-10-06T18:16:02.000000Z","id":1129}',
+            ),
+            222 => 
+            array (
+                'id' => '1739',
+                'user_id' => '93',
+                'log_date' => '2023-10-07 12:35:02',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.211.200","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            223 => 
+            array (
+                'id' => '1740',
+                'user_id' => '93',
+                'log_date' => '2023-10-07 12:35:02',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.211.200","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            224 => 
+            array (
+                'id' => '1741',
+                'user_id' => '93',
+                'log_date' => '2023-10-07 12:35:03',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.211.200","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            225 => 
+            array (
+                'id' => '1742',
+                'user_id' => '1',
+                'log_date' => '2023-10-09 17:36:51',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36"}',
+            ),
+            226 => 
+            array (
+                'id' => '1743',
+                'user_id' => '1',
+                'log_date' => '2023-10-09 17:51:17',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.90.64.253","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Safari\\/537.36 Edg\\/117.0.2045.47"}',
+            ),
+            227 => 
+            array (
+                'id' => '1744',
+                'user_id' => '316',
+                'log_date' => '2023-10-14 22:25:55',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.241.46.224","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/117.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            228 => 
+            array (
+                'id' => '1745',
+                'user_id' => '89',
+                'log_date' => '2023-10-14 22:31:00',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.85.111.233","user_agent":"Mozilla\\/5.0 (X11; Linux x86_64; rv:102.0) Gecko\\/20100101 Firefox\\/102.0"}',
+            ),
+            229 => 
+            array (
+                'id' => '1746',
+                'user_id' => '16',
+                'log_date' => '2023-10-16 22:16:24',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.241.46.143","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
+            ),
+            230 => 
+            array (
+                'id' => '1747',
+                'user_id' => '35',
+                'log_date' => '2023-10-16 22:21:12',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.241.46.143","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/116.0.0.0 Safari\\/537.36"}',
+            ),
+            231 => 
+            array (
+                'id' => '1748',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:19:32',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"125.164.17.79","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            232 => 
+            array (
+                'id' => '1749',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:22:26',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.23.130","visitors_id":"23428","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:22:26.000000Z","created_at":"2023-10-17T03:22:26.000000Z","id":1276}',
+            ),
+            233 => 
+            array (
+                'id' => '1750',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:24:24',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.19.138","visitors_id":"23429","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:24:24.000000Z","created_at":"2023-10-17T03:24:24.000000Z","id":1277}',
+            ),
+            234 => 
+            array (
+                'id' => '1751',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:25:48',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.20.83","visitors_id":"23430","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:25:48.000000Z","created_at":"2023-10-17T03:25:48.000000Z","id":1278}',
+            ),
+            235 => 
+            array (
+                'id' => '1752',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:26:59',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.16.153","visitors_id":"23432","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:26:59.000000Z","created_at":"2023-10-17T03:26:59.000000Z","id":1279}',
+            ),
+            236 => 
+            array (
+                'id' => '1753',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:27:56',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.18.7","visitors_id":"23433","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:27:56.000000Z","created_at":"2023-10-17T03:27:56.000000Z","id":1280}',
+            ),
+            237 => 
+            array (
+                'id' => '1754',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 10:42:54',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.17.79","visitors_id":"23437","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-17T03:42:54.000000Z","created_at":"2023-10-17T03:42:54.000000Z","id":1281}',
+            ),
+            238 => 
+            array (
+                'id' => '1755',
+                'user_id' => '89',
+                'log_date' => '2023-10-17 19:41:41',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"125.164.21.188","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            239 => 
+            array (
+                'id' => '1756',
+                'user_id' => '20',
+                'log_date' => '2023-10-20 00:03:23',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.85.109.35","user_agent":"Mozilla\\/5.0 (X11; Linux x86_64; rv:102.0) Gecko\\/20100101 Firefox\\/102.0"}',
+            ),
+            240 => 
+            array (
+                'id' => '1757',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:04:41',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.85.109.35","user_agent":"Mozilla\\/5.0 (X11; Linux x86_64; rv:102.0) Gecko\\/20100101 Firefox\\/102.0"}',
+            ),
+            241 => 
+            array (
+                'id' => '1758',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:10:00',
+                'table_name' => 'p_menu_frontends',
+                'log_type' => 'edit',
+                'data' => '{"id":"6","parent_id":"2","title":"Anggaran Dasar Anggaran Rumah Tangga","icon":null,"route":"__file_shared__\\/ad_art_dan_ghbo_karmapack.pdf","sequence":"6","active":"1","type":"1","created_at":"2022-08-20 14:31:46","updated_at":"2023-02-19 18:05:45"}',
+            ),
+            242 => 
+            array (
+                'id' => '1759',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:10:53',
+                'table_name' => 'p_menu_frontends',
+                'log_type' => 'edit',
+                'data' => '{"id":"6","parent_id":"2","title":"Anggaran Dasar Anggaran Rumah Tangga","icon":null,"route":"__file_shared__\\/ad_art_dan_ghbo_karmapack.pdf","sequence":"6","active":"0","type":"1","created_at":"2022-08-20 14:31:46","updated_at":"2023-10-20 00:10:00"}',
+            ),
+            243 => 
+            array (
+                'id' => '1760',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:12:36',
+                'table_name' => 'p_menu_frontends',
+                'log_type' => 'edit',
+                'data' => '{"id":"7","parent_id":null,"title":"Bidang","icon":null,"route":"#","sequence":"7","active":"0","type":"1","created_at":"2022-08-20 14:32:07","updated_at":"2023-02-18 22:39:21"}',
+            ),
+            244 => 
+            array (
+                'id' => '1761',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:13:12',
+                'table_name' => 'p_menu_frontends',
+                'log_type' => 'edit',
+                'data' => '{"id":"7","parent_id":null,"title":"Bidang","icon":null,"route":"#","sequence":"7","active":"1","type":"1","created_at":"2022-08-20 14:32:07","updated_at":"2023-10-20 00:12:36"}',
+            ),
+            245 => 
+            array (
+                'id' => '1762',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:22',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":"403","parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":"51","active":"0","type":"1","created_at":"2022-08-18 18:54:07","updated_at":"2023-05-09 14:18:58"}',
+            ),
+            246 => 
+            array (
+                'id' => '1763',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:22',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":403,"updated_at":"2023-10-19T17:17:22.000000Z","created_at":"2023-10-19T17:17:22.000000Z","id":1274}',
+            ),
+            247 => 
+            array (
+                'id' => '1764',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:22',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":403,"updated_at":"2023-10-19T17:17:22.000000Z","created_at":"2023-10-19T17:17:22.000000Z","id":1275}',
+            ),
+            248 => 
+            array (
+                'id' => '1765',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:22',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":403,"updated_at":"2023-10-19T17:17:22.000000Z","created_at":"2023-10-19T17:17:22.000000Z","id":1276}',
+            ),
+            249 => 
+            array (
+                'id' => '1766',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:22',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":403,"updated_at":"2023-10-19T17:17:22.000000Z","created_at":"2023-10-19T17:17:22.000000Z","id":1277}',
+            ),
+            250 => 
+            array (
+                'id' => '1767',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:56',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":"403","parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":"51","active":"1","type":"1","created_at":"2022-08-18 18:54:07","updated_at":"2023-10-20 00:17:22"}',
+            ),
+            251 => 
+            array (
+                'id' => '1768',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:56',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":403,"updated_at":"2023-10-19T17:17:56.000000Z","created_at":"2023-10-19T17:17:56.000000Z","id":1278}',
+            ),
+            252 => 
+            array (
+                'id' => '1769',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:56',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":403,"updated_at":"2023-10-19T17:17:56.000000Z","created_at":"2023-10-19T17:17:56.000000Z","id":1279}',
+            ),
+            253 => 
+            array (
+                'id' => '1770',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:56',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":403,"updated_at":"2023-10-19T17:17:56.000000Z","created_at":"2023-10-19T17:17:56.000000Z","id":1280}',
+            ),
+            254 => 
+            array (
+                'id' => '1771',
+                'user_id' => '89',
+                'log_date' => '2023-10-20 00:17:56',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":403,"updated_at":"2023-10-19T17:17:56.000000Z","created_at":"2023-10-19T17:17:56.000000Z","id":1281}',
+            ),
+            255 => 
+            array (
+                'id' => '1772',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 03:32:59',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.238.189","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            256 => 
+            array (
+                'id' => '1773',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 07:58:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.206.188","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            257 => 
+            array (
+                'id' => '1774',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 07:58:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.206.188","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            258 => 
+            array (
+                'id' => '1775',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 10:55:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.208.141","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            259 => 
+            array (
+                'id' => '1776',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 10:55:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.208.141","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            260 => 
+            array (
+                'id' => '1777',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 10:55:13',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.208.141","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            261 => 
+            array (
+                'id' => '1778',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 10:55:18',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.124.239.141","user_agent":"Mozilla\\/5.0 (Linux; Android 10; JNY-LX1) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/92.0.4515.159 Mobile Safari\\/537.36"}',
+            ),
+            262 => 
+            array (
+                'id' => '1779',
+                'user_id' => '290',
+                'log_date' => '2023-10-20 10:56:08',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.124.239.141","visitors_id":"24367","city":"Jakarta","region":"Jakarta","country_code":"ID","country":"Indonesia","loc":"-6.2146,106.8451","timezone":"Asia\\/Jakarta","updated_at":"2023-10-20T03:56:08.000000Z","created_at":"2023-10-20T03:56:08.000000Z","id":1335}',
+            ),
+            263 => 
+            array (
+                'id' => '1780',
+                'user_id' => '1',
+                'log_date' => '2023-10-20 20:06:29',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.83.96","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            264 => 
+            array (
+                'id' => '1781',
+                'user_id' => '1',
+                'log_date' => '2023-10-20 20:06:34',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.122.83.96","visitors_id":"24465","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-20T13:06:34.000000Z","created_at":"2023-10-20T13:06:34.000000Z","id":1344}',
+            ),
+            265 => 
+            array (
+                'id' => '1782',
+                'user_id' => '1',
+                'log_date' => '2023-10-20 20:06:48',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"rRDbIxDgH9hEToheyVMomvMgAE9FqKPmJqEntZTLWRoyNQgWbbpqSlWPix77","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            266 => 
+            array (
+                'id' => '1783',
+                'user_id' => '1',
+                'log_date' => '2023-10-20 20:07:01',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.70.100","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            267 => 
+            array (
+                'id' => '1784',
+                'user_id' => '89',
+                'log_date' => '2023-10-21 19:47:57',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.85.109.35","user_agent":"Mozilla\\/5.0 (X11; Linux x86_64; rv:102.0) Gecko\\/20100101 Firefox\\/102.0"}',
+            ),
+            268 => 
+            array (
+                'id' => '1785',
+                'user_id' => '293',
+                'log_date' => '2023-10-21 22:14:57',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.68.216.76","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            269 => 
+            array (
+                'id' => '1786',
+                'user_id' => '319',
+                'log_date' => '2023-10-21 22:16:42',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.162.237.9","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            270 => 
+            array (
+                'id' => '1787',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 10:12:22',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.100.9","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            271 => 
+            array (
+                'id' => '1788',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:29:22',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"180.241.46.125","user_agent":"Mozilla\\/5.0 (X11; Linux x86_64; rv:102.0) Gecko\\/20100101 Firefox\\/102.0"}',
+            ),
+            272 => 
+            array (
+                'id' => '1789',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:04',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":"403","parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":"51","active":"0","type":"1","created_at":"2022-08-18 18:54:07","updated_at":"2023-10-20 00:17:56"}',
+            ),
+            273 => 
+            array (
+                'id' => '1790',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:04',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":403,"updated_at":"2023-10-22T12:30:04.000000Z","created_at":"2023-10-22T12:30:04.000000Z","id":1282}',
+            ),
+            274 => 
+            array (
+                'id' => '1791',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:04',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":403,"updated_at":"2023-10-22T12:30:04.000000Z","created_at":"2023-10-22T12:30:04.000000Z","id":1283}',
+            ),
+            275 => 
+            array (
+                'id' => '1792',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:04',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":403,"updated_at":"2023-10-22T12:30:04.000000Z","created_at":"2023-10-22T12:30:04.000000Z","id":1284}',
+            ),
+            276 => 
+            array (
+                'id' => '1793',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:04',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":403,"updated_at":"2023-10-22T12:30:04.000000Z","created_at":"2023-10-22T12:30:04.000000Z","id":1285}',
+            ),
+            277 => 
+            array (
+                'id' => '1794',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:22',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"180.241.46.125","visitors_id":"24761","city":"Medan","region":"North Sumatra","country_code":"ID","country":"Indonesia","loc":"3.5833,98.6667","timezone":"Asia\\/Jakarta","updated_at":"2023-10-22T12:30:22.000000Z","created_at":"2023-10-22T12:30:22.000000Z","id":1383}',
+            ),
+            278 => 
+            array (
+                'id' => '1795',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:40',
+                'table_name' => 'p_menu',
+                'log_type' => 'edit',
+                'data' => '{"id":"403","parent_id":null,"title":"Laporan","icon":"fas fa-book","route":null,"sequence":"51","active":"1","type":"1","created_at":"2022-08-18 18:54:07","updated_at":"2023-10-22 19:30:04"}',
+            ),
+            279 => 
+            array (
+                'id' => '1796',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:40',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":1,"menu_id":403,"updated_at":"2023-10-22T12:30:40.000000Z","created_at":"2023-10-22T12:30:40.000000Z","id":1286}',
+            ),
+            280 => 
+            array (
+                'id' => '1797',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:40',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":4,"menu_id":403,"updated_at":"2023-10-22T12:30:40.000000Z","created_at":"2023-10-22T12:30:40.000000Z","id":1287}',
+            ),
+            281 => 
+            array (
+                'id' => '1798',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:40',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":5,"menu_id":403,"updated_at":"2023-10-22T12:30:40.000000Z","created_at":"2023-10-22T12:30:40.000000Z","id":1288}',
+            ),
+            282 => 
+            array (
+                'id' => '1799',
+                'user_id' => '89',
+                'log_date' => '2023-10-22 19:30:40',
+                'table_name' => 'p_role_has_menu',
+                'log_type' => 'create',
+                'data' => '{"role_id":6,"menu_id":403,"updated_at":"2023-10-22T12:30:40.000000Z","created_at":"2023-10-22T12:30:40.000000Z","id":1289}',
+            ),
+            283 => 
+            array (
+                'id' => '1800',
+                'user_id' => '319',
+                'log_date' => '2023-10-23 11:34:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.162.237.9","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            284 => 
+            array (
+                'id' => '1801',
+                'user_id' => '319',
+                'log_date' => '2023-10-23 11:37:51',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.162.237.9","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            285 => 
+            array (
+                'id' => '1802',
+                'user_id' => '89',
+                'log_date' => '2023-10-24 15:49:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"125.164.19.62","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            286 => 
+            array (
+                'id' => '1803',
+                'user_id' => '89',
+                'log_date' => '2023-10-24 15:54:26',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.22.185","visitors_id":"25119","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-24T08:54:26.000000Z","created_at":"2023-10-24T08:54:26.000000Z","id":1427}',
+            ),
+            287 => 
+            array (
+                'id' => '1804',
+                'user_id' => '89',
+                'log_date' => '2023-10-24 16:01:07',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.18.38","visitors_id":"25120","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-24T09:01:07.000000Z","created_at":"2023-10-24T09:01:07.000000Z","id":1428}',
+            ),
+            288 => 
+            array (
+                'id' => '1805',
+                'user_id' => '89',
+                'log_date' => '2023-10-24 16:07:44',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"125.164.23.27","visitors_id":"25121","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-24T09:07:44.000000Z","created_at":"2023-10-24T09:07:44.000000Z","id":1429}',
+            ),
+            289 => 
+            array (
+                'id' => '1806',
+                'user_id' => '319',
+                'log_date' => '2023-10-27 14:53:32',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"36.89.237.178","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            290 => 
+            array (
+                'id' => '1807',
+                'user_id' => '319',
+                'log_date' => '2023-10-29 13:51:57',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"182.2.39.26","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            291 => 
+            array (
+                'id' => '1808',
+                'user_id' => '1',
+                'log_date' => '2023-10-30 12:13:05',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.29","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
+            292 => 
+            array (
+                'id' => '1809',
+                'user_id' => '1',
+                'log_date' => '2023-10-30 12:13:16',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"4nAfhPCgbyathAZrEq0qaILOG1cOk4h2wl8f7hq6OH6aMRRRSrHitbDRpNue","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            293 => 
+            array (
+                'id' => '1810',
+                'user_id' => '52',
+                'log_date' => '2023-10-30 12:13:24',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.29","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
+            294 => 
+            array (
+                'id' => '1811',
+                'user_id' => '319',
+                'log_date' => '2023-10-30 12:15:50',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.162.237.4","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36"}',
+            ),
+            295 => 
+            array (
+                'id' => '1812',
+                'user_id' => '319',
+                'log_date' => '2023-10-30 12:17:40',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"319","name":"irpan","email":"admin1@demo.com","foto":null,"username":"irpan20231021221614","email_verified_at":null,"password":"$2y$10$hXAGGW\\/3WypR8gg3.bA0iO6xjHlhW3Ef\\/nBdvqiBjlYN0al5d4nZm","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-10-21 22:16:14","updated_at":"2023-10-21 22:16:14"}',
+            ),
+            296 => 
+            array (
+                'id' => '1813',
+                'user_id' => '319',
+                'log_date' => '2023-10-30 12:17:40',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"294","nomor_anggota":null,"nama":"irpan","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2019","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":"07893323","whatsapp":"232434","status":null,"user_id":"319","created_at":"2023-10-21 22:16:14","updated_at":"2023-10-21 22:16:14"}',
+            ),
+            297 => 
+            array (
+                'id' => '1814',
+                'user_id' => '93',
+                'log_date' => '2023-10-31 02:16:57',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.216.22","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi Note 11 Build\\/TKQ1.221114.001) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            298 => 
+            array (
+                'id' => '1815',
+                'user_id' => '93',
+                'log_date' => '2023-10-31 02:17:00',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.216.22","visitors_id":"26674","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-30T19:17:00.000000Z","created_at":"2023-10-30T19:17:00.000000Z","id":1512}',
+            ),
+            299 => 
+            array (
+                'id' => '1816',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:49:57',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.210.207","user_agent":"Mozilla\\/5.0 (Linux; U; Android 13; id-id; Redmi 10 2022 Build\\/TP1A.220624.014) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/100.0.4896.127 Mobile Safari\\/537.36 XiaoMi\\/MiuiBrowser\\/13.25.2.2-gn"}',
+            ),
+            300 => 
+            array (
+                'id' => '1817',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:51:18',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-09-09 20:32:13"}',
+            ),
+            301 => 
+            array (
+                'id' => '1818',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:51:25',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:51:18"}',
+            ),
+            302 => 
+            array (
+                'id' => '1819',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:52:18',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":null,"village_id":null,"alamat_lengkap":null,"bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:51:25"}',
+            ),
+            303 => 
+            array (
+                'id' => '1820',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:53:14',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"276","jenis_id":"1","nilai":"Muhamadrizqizamzami","updated_at":"2023-10-31T02:53:14.000000Z","created_at":"2023-10-31T02:53:14.000000Z","id":136}',
+            ),
+            304 => 
+            array (
+                'id' => '1821',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:53:59',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"301","name":"M Rizqi Zamzami","email":"mrizqizamzami@karmapack.id","foto":null,"username":"m-rizqi-zamzami20230909203213","email_verified_at":null,"password":"$2y$10$Kyjjcww92LKwWjQ3bhi0.OcoiDNaWNn5uq5ehngqFST5RiQRreu0W","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:32:13","updated_at":"2023-09-09 20:32:13"}',
+            ),
+            305 => 
+            array (
+                'id' => '1822',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:53:59',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":null,"village_id":null,"alamat_lengkap":"Kp. Rawatutut RT 03 RW 05","bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:52:18"}',
+            ),
+            306 => 
+            array (
+                'id' => '1823',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:55:05',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+            'data' => '{"anggota_id":"276","nama":"Himpunan Mahasiswa Islam (HMI)","dari":"2022","sampai":"2024","jabatan":"Anggota","keterangan":null,"updated_at":"2023-10-31T02:55:05.000000Z","created_at":"2023-10-31T02:55:05.000000Z","id":57}',
+            ),
+            307 => 
+            array (
+                'id' => '1824',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:55:20',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'edit',
+            'data' => '{"id":"57","nama":"Himpunan Mahasiswa Islam (HMI)","dari":"2022","sampai":"2024","jabatan":"Anggota","keterangan":null,"anggota_id":"276","created_at":"2023-10-31 09:55:05","updated_at":"2023-10-31 09:55:05"}',
+            ),
+            308 => 
+            array (
+                'id' => '1825',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:55:38',
+                'table_name' => 'anggota_hobis',
+                'log_type' => 'create',
+                'data' => '{"id":36,"nama":"Sepakbola","anggota_id":"276","created_at":null,"updated_at":null}',
+            ),
+            309 => 
+            array (
+                'id' => '1826',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:56:08',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":null,"village_id":null,"alamat_lengkap":"Kp. Rawatutut RT 03 RW 05","bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":null,"foto":"m-rizqi-zamzami2023090920321320231031095359.png","telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:53:59"}',
+            ),
+            310 => 
+            array (
+                'id' => '1827',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:56:53',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":null,"village_id":null,"alamat_lengkap":"Kp. Rawatutut RT 03 RW 05","bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":"Pelajar\\/Mahasiswa","foto":"m-rizqi-zamzami2023090920321320231031095359.png","telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:56:08"}',
+            ),
+            311 => 
+            array (
+                'id' => '1828',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:57:31',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"276","nomor_anggota":null,"nama":"M Rizqi Zamzami","tanggal_lahir":null,"jenis_kelamin":"laki-laki","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203060","village_id":"3203060001","alamat_lengkap":"Kp. Rawatutut RT 03 RW 05","bio":"Kalau Hidup sekedar hidup babi juga hidup","profesi":"Pelajar\\/Mahasiswa","foto":"m-rizqi-zamzami2023090920321320231031095359.png","telepon":null,"whatsapp":"12345678","status":null,"user_id":"301","created_at":"2023-09-09 20:32:13","updated_at":"2023-10-31 09:56:53"}',
+            ),
+            312 => 
+            array (
+                'id' => '1829',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:58:00',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"276","jenis_id":"5","nilai":"Mr.zamy05","updated_at":"2023-10-31T02:58:00.000000Z","created_at":"2023-10-31T02:58:00.000000Z","id":137}',
+            ),
+            313 => 
+            array (
+                'id' => '1830',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 09:58:21',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"276","jenis_id":"3","nilai":"085659193486","updated_at":"2023-10-31T02:58:21.000000Z","created_at":"2023-10-31T02:58:21.000000Z","id":138}',
+            ),
+            314 => 
+            array (
+                'id' => '1831',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 10:00:18',
+                'table_name' => 'artikel',
+                'log_type' => 'edit',
+            'data' => '{"id":"30","nama":"Peringatan Hari Hutan Internasional","slug":"peringatan-hari-hutan-internasional2022","foto":"\\/assets\\/artikel\\/peringatan16508596430.png","detail":"<p class=\\"MsoNormal\\" style=\\"text-align: center; margin-bottom: 0cm; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'><br><\\/span><img style=\\"width: 367.4px; height: 441.22px;\\" data-bs-filename=\\"276121008_719900469175542_1271108511653924704_n.webp\\" src=\\"\\/assets\\/artikel\\/peringatan16508596430.png\\"><p class=\\"MsoNormal\\" style=\\"text-align: center; margin-bottom: 0cm; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 800px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional.gif\\" src=\\"\\/assets\\/artikel\\/peringatan16508596431.png\\"><br><\\/p><p class=\\"MsoNormal\\" style=\\"text-align: center; margin-bottom: 0cm; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'>Peringatan Hari Hutan\\nInternasional<\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 0cm; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'><p><br><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 0cm; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'><p><br><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Sejak tahun 2012, Majelis Umum PBB telah menetapkan tanggal 21 Maret\\nsebagai peringatan Hari Hutan Internasional. Tahun 2022 bertema: &acirc;&#128;&#156;<i>Forests\\nand sustainable production and consumption<\\/i>&acirc;&#128;&#157;.<a name=\\"_ednref1\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn1\\"><span style=\\"color:#56C696\\">[i]<\\/span><\\/a>&nbsp;Tema\\ntersebut berarti seluruh pihak harus mengakhiri berbagai bentuk pola konsumsi\\ndan produksi yang tidak berkelanjutan sehingga berdampak negatif terhadap\\nkelestarian ekosistem hutan. Sudah saatnya, seluruh stakeholders turut\\nmemberikan dukungan yang nyata dan kredibel atas setiap upaya pengelolaan hutan\\nberkelanjutan yang telah dilaksanakan oleh negara dan masyarakat.<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Peringatan Hari Hutan Internasional meningkatkan kesadaran akan pentingnya\\nekosistem hutan. Menurut laporan PBB berjudul &acirc;&#128;&#156;<a href=\\"https:\\/\\/www.un.org\\/esa\\/forests\\/wp-content\\/uploads\\/2021\\/04\\/Global-Forest-Goals-Report-2021.pdf\\"><span style=\\"color:#56C696\\">the Global Forest Goals Report 2021<\\/span><\\/a>&acirc;&#128;&#157;\\nditerbitkan oleh Departemen Ekonomi dan Urusan Sosial PBB (the UN Department of\\nEconomic and Social Affairs\\/ UN DESA), melalui Sekretariat Forum PBB tentang\\nHutan (United Nations Forum on Forests Secretariat\\/ UNFFS), luasan hutan di\\npermukaan daratan bumi saat ini, mencapai 4 miliar hektar, atau setara 31% dari\\nluas daratan di dunia.<a name=\\"_ednref2\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn2\\"><span style=\\"color:#56C696\\">[ii]<\\/span><\\/a>&nbsp;Seluruh\\nnegara di dunia didorong untuk melakukan upaya secara lokal, nasional dan\\ninternasional untuk melaksanakan kegiatan terkait upaya pelestarian ekosistem\\nhutan. Mengingat berbagai manfaat yang telah diberikan oleh ekosistem hutan,\\nantara lain yaitu:<a name=\\"_ednref3\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn3\\"><span style=\\"color:#56C696\\">[iii]<\\/span><\\/a><p><\\/p><\\/span><\\/p><ul type=\\"disc\\">\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Sektor\\nkehutanan menciptakan lapangan kerja bagi sedikitnya 33 juta orang dan\\nhasil hutan digunakan oleh miliaran orang. Diperkirakan lebih dari\\nsetengah produksi ekonomi dunia (seperti PDB) bergantung pada jasa\\nekosistem, termasuk yang disediakan oleh hutan. Lebih dari setengah total\\npenduduk dunia diperkirakan menggunakan hasil hutan bukan kayu adalah\\npenunjang kesejahteraan dan sumber mata pencaharian masyarakat.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Hutan\\nsangat penting untuk kesehatan planet dan kesejahteraan manusia. Hutan\\nmenutupi hampir sepertiga dari permukaan tanah bumi dan menyediakan\\nbarang-barang seperti kayu, bahan bakar, makanan dan pakan ternak,\\nmembantu memerangi perubahan iklim, melindungi keanekaragaman hayati,\\ntanah, sungai dan waduk, dan berfungsi sebagai area di mana orang bisa\\ndekat dengan alam.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Menggunakan\\nhutan secara berkelanjutan akan membantu kita beralih ke ekonomi yang\\ndidasarkan atas bahan baku yang terbarukan, dapat digunakan kembali, dan\\ndapat didaur ulang. Kayu dapat digunakan untuk berbagai tujuan, dengan\\ndampak lingkungan yang lebih rendah daripada banyak bahan alternatif. Kayu\\nyang digunakan sekali dapat digunakan kembali dan didaur ulang, sehingga\\nmemperpanjang umurnya dan semakin mengurangi jejak materialnya.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Memperluas\\npenggunaan hasil hutan berkontribusi pada netralitas karbon. Ilmu pengetahuan\\ndan inovasi menghasilkan produk baru yang menarik dari kayu dan pohon,\\ntermasuk tekstil, makanan, bahan bangunan, kosmetik, biokimia, bioplastik,\\ndan obat-obatan. Mengganti bahan yang kurang berkelanjutan dengan kayu\\nterbarukan dan produk berbasis pohon dapat mengurangi jejak karbon.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Kayu\\nyang lestari adalah bahan penting untuk menghijaukan kota. Sektor bangunan\\ndan konstruksi bertanggung jawab atas hampir 40 persen emisi gas rumah\\nkaca terkait energi secara global. Inovasi memungkinkan penggunaan lebih\\nbanyak kayu di gedung-gedung tinggi dan infrastruktur lainnya, membantu\\n&acirc;&#128;&#156;menghijaukan&acirc;&#128;&#157; kota, karena kayu menyimpan karbon, membutuhkan lebih\\nsedikit energi untuk diproduksi daripada banyak bahan konstruksi lainnya,\\ndan menyediakan insulasi yang baik.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Hutan\\nsangat penting untuk menunjang produksi pangan. Jasa ekosistem hutan,\\nseperti habitat keanekaragaman hayati, pengaturan iklim, kualitas air dan\\ntanah, dan penyerbukan sangatlah penting untuk sistem pangan pertanian\\nberkelanjutan dan memberi makan populasi global yang terus bertambah.\\nSelain itu, lebih dari tiga perempat rumah tangga pedesaan di seluruh\\ndunia diperkirakan memanen makanan liar dari hutan dan lingkungan lainnya.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Diperlukan\\nlebih banyak tindakan untuk menghentikan deforestasi dan degradasi hutan.\\nSejak tahun 1990, dunia telah kehilangan 420 juta hektar hutan (lebih\\nbesar dari luas negara India), dan masih terjadi deforestasi seluas 10\\njuta hektar per\\/ tahun, terutama karena ekspansi lahan pertanian.\\nPengelolaan hutan secara lestari dapat mengurangi deforestasi dan\\ndegradasi, memulihkan lanskap yang terdegradasi, dan menyediakan lapangan\\nkerja dan material terbarukan bagi masyarakat.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Pilih\\nproduk kayu dari sumber yang legal dan berkelanjutan. Konsumen dapat\\nberkontribusi pada pemanfaatan hutan yang berkelanjutan dengan memilih\\nproduk kayu dengan label atau sertifikasi yang menegaskan bahwa produk\\ntersebut berasal dari sumber yang legal dan berkelanjutan.<p><\\/p><\\/span><\\/li>\\n<\\/ul><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>&nbsp;<\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"text-align: center; margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 709.247px; height: 319.388px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional-2.jpg\\" src=\\"\\/assets\\/artikel\\/peringatan16508596432.png\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'><br><\\/span><\\/p><p class=\\"MsoNormal\\" align=\\"center\\" style=\\"margin-bottom: 11.25pt; text-align: center; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><b><span style=\'font-size:10.5pt;\\nfont-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";\\ncolor:#222222;mso-fareast-language:IN\'>Foto: sertifikasi ramah lingkungan untuk\\nproduk kehutanan, yang menjadi salah satu indikator bagi konsumen untuk\\nmenentukan hasil produksi hutan yang lestari.<\\/span><\\/b><span style=\'font-size:\\n10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";\\ncolor:#222222;mso-fareast-language:IN\'><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Selaras dengan hal tersebut, Sekretaris Jenderal PBB Ant&Atilde;&sup3;nio Guterres juga\\nmengungkapkan, bahwa hutan yang sehat sangat penting bagi manusia dan planet\\nini. Hutan berfungsi sebagai filter alami, menyediakan udara dan air bersih,\\ndan mereka adalah surga keanekaragaman hayati. Membantu mengatur iklim kita\\ndengan mempengaruhi pola curah hujan, mendinginkan daerah perkotaan dan\\nmenyerap sepertiga dari emisi gas rumah kaca. Hutan menjadi sumber mata\\npencaharian bagi banyak komunitas dan masyarakat adat, serta sumber dari\\nobat-obatan, makanan, sekaligus tempat perlindungan. Sayangnya, masih terjadi\\nkerusakan atau kehancuran hutan sekitar 10 juta hektar hutan setiap tahunnya.<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Indonesia sebagai salah satu negara pemilik hutan terluas di dunia, sejak\\nera orde baru telah mengandalkan hutan sebagai penunjang pertumbuhan\\nekonominya. Karenanya kelestarian hutan menjadi suatu keniscayaan dalam upaya\\nmewujudkan pembangunan berkelanjutan di Indonesia. Menurut Laporan State Forest\\nIndonesian Tahun 2020, yang diterbitkan Kementerian Kehutanan dan Lingkungan\\nHidup bekerjasama dengan FAO (Food and Agriculture Organization) Perserikatan\\nBangsa-Bangsa, luasan kawasan di Indonesia yang ditetapkan sebagai Kawasan\\nHutan mencapai 120 Juta Ha, atau seluas 64 persen dari seluruh wilayah daratan\\nIndonesia. Karena letak geografisnya, Indonesia merupakan salah satu negara\\ndengan tingkat keanekaragaman hayati dan endemisitas yang sangat tinggi, serta\\nmemiliki tingkat keanekaragaman hayati yang lebih tinggi daripada negara lain\\ndi dunia.<a name=\\"_ednref4\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn4\\"><span style=\\"color:#56C696\\">[iv]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Kawasan yang ditetapkan sebagai kawasan Hutan Produksi Indonesia seluas\\n68,8 juta hektar, dimana luasan kawasan yang telah diberikan konsesi mencapai\\n34,18 juta hektar, sedangkan sisanya 34,62 juta hektar belum dibebankan izin.<a name=\\"_ednref5\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn5\\"><span style=\\"color:#56C696\\">[v]<\\/span><\\/a>&nbsp;Sedangkan\\nmenurut Laporan Status Hutan dan Kehutanan Indonesia pada tahun 2018, luasan\\nkawasan hutan yang telah diberikan izin konsesi mencapai 30,7 Juta Hektar, dan\\nseluas 38,1 juta hektar sisanya belum dibebani izin apapun.<a name=\\"_ednref6\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn6\\"><span style=\\"color:#56C696\\">[vi]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>&nbsp;<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 1113.2px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional-3.jpg\\" src=\\"\\/assets\\/artikel\\/peringatan16508596433.png\\"><br><\\/p><p class=\\"MsoNormal\\" align=\\"center\\" style=\\"margin-bottom: 11.25pt; text-align: center; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><b><span style=\'font-size:10.5pt;\\nfont-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";\\ncolor:#222222;mso-fareast-language:IN\'>Foto: Kayu bulat (<i>tangiable<\\/i>) yang\\nmasih menjadi tumpuan ekonomi hutan di Indonesia<\\/span><\\/b><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Menurut data Statistik Produksi Kehutanan 2020 yang diterbitkan oleh BPS,\\npada tahun 2020 Hutan di Indonesia menghasilkan kayu bulat sebesar 61,02 juta\\nm&Acirc;&sup3;. Sebesar 68,39 persen produksi kayu bulat di Indonesia berasal dari Pulau\\nSumatra, mencapai 41,73 juta m&Acirc;&sup3;. Produksi kayu bulat terbesar adalah kayu\\nakasia sebanyak 32,114 juta m&Acirc;&sup3; (52,63 persen), kayu kelompok rimba campuran\\nsebanyak 20,655 juta m&Acirc;&sup3; (33,85 persen), kayu kelompok meranti sebanyak 4,795\\njuta m&Acirc;&sup3; (7,86 persen), kayu kelompok indah sebanyak 0,492 juta m&Acirc;&sup3; (0,81\\npersen), kayu kelompok eboni sebanyak 0,001 juta m&Acirc;&sup3; (0,00 persen), sedangkan\\nsisanya kayu lainnya sebanyak 2,961 juta m&Acirc;&sup3; (4,85 persen).<a name=\\"_ednref7\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn7\\"><span style=\\"color:#56C696\\">[vii]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Sedangkan produksi kayu olahan pada tahun 2020, berupa chip dan partikel\\nsebesar 21,54 juta m&Acirc;&sup3; dan 12,33 juta ton, diikuti oleh bubur kayu sebesar 8,18\\njuta ton, kayu lapis sebesar 3,88 juta m&Acirc;&sup3;, kayu gergajian sebesar 3,72 juta m&Acirc;&sup3;,\\nveneer sebesar 2,04 juta m&Acirc;&sup3;, papan serat sebesar 0,69 juta m&Acirc;&sup3;, barecore sebesar\\n0,38 juta m&Acirc;&sup3;, moulding\\/dowel sebesar 0,28 juta m&Acirc;&sup3;, dan papan partikel sebesar\\n0,02 juta m&Acirc;&sup3;. Sedangkan sisa kayu olahan lainnya sebanyak 0,34 juta m&Acirc;&sup3; dan 0,03\\njuta ton. Sebagian besar produk kayu olahan dihasilkan di Pulau Sumatera dan\\nPulau Jawa. Produksi kayu olahan berupa chip &amp; partikel, bubur kayu, dan\\npapan serat sebagian besar berasal dari pulau Sumatera. Produksi kayu olahan\\ndengan jenis kayu lapis, kayu gergajian, veneer, barecore, dan moulding\\/ dowel\\nsebagian besar berasal dari pulau Jawa.<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Kemudian untuk produk hasil hutan bukan kayu (HHBK) dengan jenis rotan,\\ngetah karet, dan sagu banyak yang berasal dari pulau Sumatera. Produksi hutan\\nbukan kayu dengan jenis bambu, getah pinus, daun kayu putih, gondorukem, madu,\\ndan terpentin sebagian besar berasal dari pulau Jawa. Sementara, sebagian besar\\nproduksi hutan bukan kayu dengan jenis sagu dan minyak kayu putih berasal dari\\npulau Maluku dan Papua.<a name=\\"_ednref8\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn8\\"><span style=\\"color:#56C696\\">[viii]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Sampai saat ini, sebagian besar masyarakat Indonesia masih memiliki\\nketergantungan ekonomi terhadap potensi kawasan hutan. Sebanyak 25.800 desa,\\natau 34,1% dari total 74.954 desa di seluruh Indonesia, merupakan\\nwilayah-wilayah yang berbatasan langsung dengan kawasan hutan. Kawasan konservasi\\nterestrial seluas 22,1 juta hektar dikelilingi oleh 6.381 desa, dengan sebagian\\nbesar penduduknya memiliki ketergantungan terhadap sumberdaya alam untuk\\npemenuhan kebutuhan hidupnya.<a name=\\"_ednref9\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn9\\"><span style=\\"color:#56C696\\">[ix]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Pengelolaan hutan yang lestari dan pemanfaatannya atas sumber daya adalah\\nkunci untuk memerangi perubahan iklim dan berkontribusi pada kemakmuran dan\\nkesejahteraan generasi sekarang dan mendatang. Hutan juga memainkan peran\\npenting dalam pengentasan kemiskinan dan dalam pencapaian Tujuan Pembangunan\\nBerkelanjutan (SDGs). Selain itu, Hutan, melalui jasa ekosistemnya, adalah\\nsolusi kunci berbasis alam untuk membangun kembali ekonomi global pascapandemi\\ndengan cara melestarikan alam, sambil mendorong pertumbuhan ekonomi.<a name=\\"_ednref10\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn10\\"><span style=\\"color:#56C696\\">[x]<\\/span><\\/a><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"text-align: center; margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 920px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional-4.png\\" src=\\"\\/assets\\/artikel\\/peringatan16508596434.png\\"><br><\\/p><p class=\\"MsoNormal\\" align=\\"center\\" style=\\"margin-bottom: 11.25pt; text-align: center; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><b><span style=\'font-size:10.5pt;\\nfont-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";\\ncolor:#222222;mso-fareast-language:IN\'>Tema Hari Hutan Internasional Tahun\\n2022, &acirc;&#128;&#156;Choose Sustainable Wood for People and Planet&acirc;&#128;&#157;<\\/span><\\/b><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\n\\"Times New Roman\\";color:#222222;mso-fareast-language:IN\'><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Seluruh manfaat dan upaya pengelolaan ekosistem hutan telah terangkum dalam\\nRencana Strategis PBB untuk Hutan 2017&acirc;&#128;&#147;2030 (The United Nations Strategic Plan\\nfor Forests 2017&acirc;&#128;&#147;2030) yang memberikan kerangka kerja global untuk tindakan\\npengelolaan seluruh jenis hutan secara berkelanjutan dan untuk menghentikan\\ndeforestasi dan degradasi hutan.<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Rencana Strategis PBB untuk Hutan 2017-2030 dibuat dengan misi untuk\\nmempromosikan pengelolaan hutan lestari dan meningkatkan kontribusi hutan dan\\npohon ke Agenda 2030 untuk pembangunan berkelanjutan. Rencana tersebut juga\\nmenggariskan, bahwa untuk menciptakan dunia di mana hutan dapat memberikan\\nmanfaat ekonomi, sosial, lingkungan, dan budaya bagi generasi sekarang dan\\nmendatang, maka yang pertama dan utama, adalah dibutuhkan lebih banyak hutan.\\nSehingga berbagai anggapan yang mempertentangkan antara keberlanjutan pembangunan\\ndan kelestarian hutan, sehingga menciptakan pembenaran sebuah deforestasi,\\npatut dikaji kembali secara mendalam.<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Inti dari Rencana Strategis adalah enam Tujuan Hutan Global (Global Forest\\nGoals\\/ GFGs) dan 26 target terkait yang bersifat sukarela dan universal. Enam\\nTujuan Hutan Global yang secara langsung mendukung Tujuan Pembangunan\\nBerkelanjutan PBB, mencakup:<a name=\\"_ednref11\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_edn11\\"><span style=\\"color:#56C696\\">[xi]<\\/span><\\/a><p><\\/p><\\/span><\\/p><ol start=\\"1\\" type=\\"1\\">\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Membalikkan\\nkehilangan tutupan hutan di seluruh dunia melalui pengelolaan hutan\\nlestari, termasuk perlindungan, restorasi, aforestasi dan reboisasi, dan\\nmeningkatkan upaya untuk mencegah degradasi hutan dan berkontribusi pada\\nupaya dunia untuk mengatasi perubahan iklim.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Meningkatkan\\nmanfaat ekonomi, sosial dan lingkungan berbasis hutan, termasuk dengan\\nmeningkatkan mata pencaharian masyarakat yang bergantung pada hutan.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Meningkatkan\\nkawasan hutan lindung di seluruh dunia dan kawasan hutan yang dikelola\\nsecara lestari lainnya secara signifikan, serta proporsi hasil hutan dari\\nhutan yang dikelola secara lestari.<\\/span><\\/li><li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Memobilisasi\\nsumber daya keuangan baru dan tambahan yang meningkat secara signifikan\\ndari semua sumber untuk pelaksanaan pengelolaan hutan lestari dan\\nmemperkuat kerjasama dan kemitraan ilmiah dan teknis.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Mempromosikan\\nkerangka tata kelola untuk menerapkan pengelolaan hutan lestari, termasuk\\nmelalui instrumen hutan PBB, dan meningkatkan kontribusi hutan pada Agenda\\n2030 untuk Pembangunan Berkelanjutan.<p><\\/p><\\/span><\\/li>\\n<li class=\\"MsoNormal\\" style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'>Meningkatkan\\nkerja sama, koordinasi, koherensi, dan sinergi dalam isu-isu terkait hutan\\ndi semua tingkatan, termasuk di dalam sistem Perserikatan Bangsa-Bangsa\\ndan di seluruh organisasi anggota Kemitraan Kolaboratif di Hutan, serta\\nlintas sektor dan pemangku kepentingan terkait.<\\/span><\\/li><\\/ol><p style=\\"color: rgb(34, 34, 34); line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 1113.2px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional-5-1536x675.png\\" src=\\"\\/assets\\/artikel\\/peringatan16508596435.png\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";mso-fareast-language:IN\'><br><\\/span><\\/p><ol start=\\"1\\" type=\\"1\\">\\n<\\/ol><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><img style=\\"width: 1113.2px;\\" data-bs-filename=\\"Peringatan-Hari-Hutan-Internasional-6-1536x668.png\\" src=\\"\\/assets\\/artikel\\/peringatan16508596436.png\\"><br><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#222222;mso-fareast-language:\\nIN\'>Semoga peringatan Hari Hutan Internasional menjadi momentum untuk\\nmengingatkan kembali nilai dan manfaat keberadaan ekosistem hutan, sekaligus\\nmendorong komitmen atas pelestarian ekosistem hutan di seluruh dunia. Selamat\\nHari Hutan Internasional&acirc;&#128;&brvbar;<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn1\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref1\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[i]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Lihat dalam: (<a href=\\"https:\\/\\/www.fao.org\\/international-day-of-forests\\/en\\/\\"><span style=\\"color:#56C696\\">https:\\/\\/www.fao.org\\/international-day-of-forests\\/en\\/<\\/span><\\/a>)<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn2\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref2\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[ii]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;United Nations Department of Economic and Social\\nAffairs, United Nations Forum on Forests Secretariat (2021). The Global Forest\\nGoals Report 2021<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn3\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref3\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[iii]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Lihat dalam: (<a href=\\"https:\\/\\/www.fao.org\\/international-day-of-forests\\/key-messages\\/en\\/\\"><span style=\\"color:#56C696\\">https:\\/\\/www.fao.org\\/international-day-of-forests\\/key-messages\\/en\\/<\\/span><\\/a>)<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn4\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref4\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[iv]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Ministry of environment and Forestry, republic\\nof Indonesia (2021), State Forest Indonesian Tahun 2020<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn5\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref5\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[v]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;<i>Ibid.<\\/i><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn6\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref6\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[vi]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Kementerian Lingkungan Hidup dan Kehutanan,\\n(2019), Status Hutan dan Kehutanan Indonesia Tahun 2018<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn7\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref7\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[vii]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Badan Pusat Statistik, &acirc;&#128;&#156;Statistik Produksi\\nKehutanan 2020&acirc;&#128;&#157;, dokumen dapat diakses di (<a href=\\"https:\\/\\/www.bps.go.id\\/publication\\/2021\\/07\\/30\\/d45441e7214b3c12c9653c45\\/statistik-produksi-kehutanan-2020.html\\"><span style=\\"color:#56C696\\">https:\\/\\/www.bps.go.id\\/publication\\/2021\\/07\\/30\\/d45441e7214b3c12c9653c45\\/statistik-produksi-kehutanan-2020.html<\\/span><\\/a>)<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn8\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref8\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[viii]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;<i>Ibid.<\\/i><p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn9\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref9\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[ix]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Kementerian Lingkungan Hidup dan Kehutanan,\\n(2019), Status Hutan dan Kehutanan Indonesia Tahun 2018<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn10\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref10\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[x]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;Lihat dalam: (<a href=\\"https:\\/\\/www.unep.org\\/resources\\/factsheet\\/investing-forests-build-back-better-greener\\"><span style=\\"color:#56C696\\">https:\\/\\/www.unep.org\\/resources\\/factsheet\\/investing-forests-build-back-better-greener<\\/span><\\/a>)<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\"><a name=\\"_edn11\\"><\\/a><a href=\\"https:\\/\\/pslh.ugm.ac.id\\/peringatan-hari-hutan-internasional\\/#_ednref11\\"><span style=\'font-size:10.5pt;font-family:\\"Helvetica\\",sans-serif;\\nmso-fareast-font-family:\\"Times New Roman\\";color:#56C696;mso-fareast-language:\\nIN\'>[xi]<\\/span><\\/a><span style=\'font-size:10.5pt;font-family:\\n\\"Helvetica\\",sans-serif;mso-fareast-font-family:\\"Times New Roman\\";color:#222222;\\nmso-fareast-language:IN\'>&nbsp;United Nations Department of Economic and Social\\nAffairs, United Nations Forum on Forests Secretariat (2021). The Global Forest\\nGoals Report 2021<p><\\/p><\\/span><\\/p><p class=\\"MsoNormal\\" style=\\"margin-bottom: 11.25pt; line-height: 150%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\\">\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n<\\/p><p class=\\"MsoNormal\\"><p>&nbsp;<\\/p><\\/p><\\/p>\\n","excerpt":"Sejak tahun 2012, Majelis Umum PBB telah menetapkan tanggal 21 Maret sebagai peringatan Hari Hutan Internasional. Tahun 2022 bertema: \\u201cForests and sustainable production and consumption\\u201d","counter":"91","date":"2022-04-21","status":"1","created_at":"2022-04-25 04:07:23","updated_at":"2023-10-29 06:31:50","user_id":"1"}',
+            ),
+            315 => 
+            array (
+                'id' => '1832',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:06:19',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.5.212.255","user_agent":"Mozilla\\/5.0 (Linux; Android 10; K) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/112.0.0.0 Mobile Safari\\/537.36"}',
+            ),
+            316 => 
+            array (
+                'id' => '1833',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:08:15',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"279","nomor_anggota":null,"nama":"Finaziah","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"304","created_at":"2023-09-09 20:37:52","updated_at":"2023-09-09 20:37:52"}',
+            ),
+            317 => 
+            array (
+                'id' => '1834',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:08:38',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"304","name":"Finaziah","email":"finaziah@karmapack.id","foto":null,"username":"finaziah20230909203751","email_verified_at":null,"password":"$2y$10$NS\\/XI2e9tn3XptkXknRgxeMTHq1i4NGp1TlCFMnPJ2sNl4xMppouq","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:37:52","updated_at":"2023-09-09 20:37:52"}',
+            ),
+            318 => 
+            array (
+                'id' => '1835',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:08:38',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"279","nomor_anggota":null,"nama":"Finaziah","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203030","village_id":"3203030008","alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"12345678","status":null,"user_id":"304","created_at":"2023-09-09 20:37:52","updated_at":"2023-10-31 10:08:15"}',
+            ),
+            319 => 
+            array (
+                'id' => '1836',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:09:47',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"279","nomor_anggota":null,"nama":"Finaziah","tanggal_lahir":null,"jenis_kelamin":"perempuan","angkatan":"2022","province_id":"32","regency_id":"3203","district_id":"3203030","village_id":"3203030008","alamat_lengkap":null,"bio":"Lahir di cianjur","profesi":"Pelajar\\/Mahasiswa","foto":"finaziah2023090920375120231031100838.jpg","telepon":null,"whatsapp":"12345678","status":null,"user_id":"304","created_at":"2023-09-09 20:37:52","updated_at":"2023-10-31 10:08:38"}',
+            ),
+            320 => 
+            array (
+                'id' => '1837',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:11:00',
+                'table_name' => 'anggota_kontaks',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"279","jenis_id":"5","nilai":"Finaziaah012","updated_at":"2023-10-31T03:11:00.000000Z","created_at":"2023-10-31T03:11:00.000000Z","id":139}',
+            ),
+            321 => 
+            array (
+                'id' => '1838',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:12:52',
+                'table_name' => 'anggota_pendidikans',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"279","jenis_id":"4","instansi":"SMK assatinem","dari":"2018","sampai":"2021","jurusan":"Otomatisasi tata kelola perkantoran","keterangan":null,"updated_at":"2023-10-31T03:12:52.000000Z","created_at":"2023-10-31T03:12:52.000000Z","id":252}',
+            ),
+            322 => 
+            array (
+                'id' => '1839',
+                'user_id' => '304',
+                'log_date' => '2023-10-31 10:14:28',
+                'table_name' => 'anggota_pengalaman_organisasis',
+                'log_type' => 'create',
+                'data' => '{"anggota_id":"279","nama":"pergerakan mahasiswa Islam Indonesia","dari":"2022","sampai":"2024","jabatan":"Anggota","keterangan":"Salam pergerakan","updated_at":"2023-10-31T03:14:28.000000Z","created_at":"2023-10-31T03:14:28.000000Z","id":58}',
+            ),
+            323 => 
+            array (
+                'id' => '1840',
+                'user_id' => '303',
+                'log_date' => '2023-10-31 10:20:34',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"114.122.72.28","user_agent":"Mozilla\\/5.0 (Linux; Android 8.1.0; vivo 1820 Build\\/O11019; wv) AppleWebKit\\/537.36 (KHTML, like Gecko) Version\\/4.0 Chrome\\/87.0.4280.141 Mobile Safari\\/537.36 VivoBrowser\\/10.9.0.2"}',
+            ),
+            324 => 
+            array (
+                'id' => '1841',
+                'user_id' => '303',
+                'log_date' => '2023-10-31 10:23:50',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"303","name":"Siti Mulyati","email":"sitimulyati@karmapack.id","foto":null,"username":"siti-mulyati20230909203650","email_verified_at":null,"password":"$2y$10$RKMzM3k4pk\\/ngI4fvvirRu3PlBVyDIAYxsc7ZPZF5qwjX.KZvPLBS","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":"2023-09-09 20:36:50","updated_at":"2023-09-09 20:36:50"}',
+            ),
+            325 => 
+            array (
+                'id' => '1842',
+                'user_id' => '303',
+                'log_date' => '2023-10-31 10:23:50',
+                'table_name' => 'anggotas',
+                'log_type' => 'edit',
+                'data' => '{"id":"278","nomor_anggota":null,"nama":"Siti Mulyati","tanggal_lahir":null,"jenis_kelamin":null,"angkatan":"2022","province_id":null,"regency_id":null,"district_id":null,"village_id":null,"alamat_lengkap":null,"bio":null,"profesi":null,"foto":null,"telepon":null,"whatsapp":"1234678","status":null,"user_id":"303","created_at":"2023-09-09 20:36:50","updated_at":"2023-09-09 20:36:50"}',
+            ),
+            326 => 
+            array (
+                'id' => '1843',
+                'user_id' => '301',
+                'log_date' => '2023-10-31 10:24:38',
+                'table_name' => 'visitors_ip_detail',
+                'log_type' => 'create',
+                'data' => '{"ip":"114.5.212.208","visitors_id":"26768","city":"Bandung","region":"West Java","country_code":"ID","country":"Indonesia","loc":"-6.9222,107.6069","timezone":"Asia\\/Jakarta","updated_at":"2023-10-31T03:24:38.000000Z","created_at":"2023-10-31T03:24:38.000000Z","id":1518}',
+            ),
+            327 => 
+            array (
+                'id' => '1844',
+                'user_id' => '1',
+                'log_date' => '2023-10-31 15:40:52',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.109","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
+            328 => 
+            array (
+                'id' => '1845',
+                'user_id' => '23',
+                'log_date' => '2023-10-31 15:41:26',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.109","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
+            329 => 
+            array (
+                'id' => '1846',
+                'user_id' => '23',
+                'log_date' => '2023-10-31 15:50:19',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"23","name":"WIWIT AWALIYAH","email":"wiwit_awaliyah@karmapack.id","foto":"wiwit_awaliyah20220901013532.png","username":"wiwit_awaliyah","email_verified_at":null,"password":"$2y$10$qsdfd1sVrKFffagRNWzGve3m7kvJv.cfkgWquP7Bw04yZBIyyMcXu","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":null,"created_at":null,"updated_at":"2023-04-20 05:50:05"}',
+            ),
+            330 => 
+            array (
+                'id' => '1847',
+                'user_id' => '1',
+                'log_date' => '2023-10-31 15:58:28',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"tbbrtMsTJZvIjnz2kMBufXVgzv4DaZrkhnVQQDzzA2y3ytMwbSfFz7n5v8DB","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            331 => 
+            array (
+                'id' => '1848',
+                'user_id' => '1',
+                'log_date' => '2023-10-31 15:58:40',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.113","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
+            332 => 
+            array (
+                'id' => '1849',
+                'user_id' => '1',
+                'log_date' => '2023-10-31 15:58:45',
+                'table_name' => 'users',
+                'log_type' => 'edit',
+                'data' => '{"id":"1","name":"Isep Lutpi Nur","email":"iseplutpinur7@gmail.com","foto":"iseplutpinur20230618175649.png","username":"iseplutpinur","email_verified_at":null,"password":"$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B\\/FeOsR2Ra48FrNsSTBDiM.","active":"1","two_factor_secret":null,"two_factor_recovery_codes":null,"two_factor_confirmed_at":null,"current_team_id":null,"profile_photo_path":null,"remember_token":"QrMHXdEz5cqpOUWifmynDXmHYSc4L1B0JlrCj5ldfj2vdKZirdXaunfuJuNq","created_at":null,"updated_at":"2023-06-18 17:56:49"}',
+            ),
+            333 => 
+            array (
+                'id' => '1850',
+                'user_id' => '1',
+                'log_date' => '2023-10-31 15:59:07',
+                'table_name' => '',
+                'log_type' => 'login',
+            'data' => '{"ip":"103.147.8.113","user_agent":"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/118.0.0.0 Safari\\/537.36 Edg\\/118.0.2088.76"}',
+            ),
         ));
         
         

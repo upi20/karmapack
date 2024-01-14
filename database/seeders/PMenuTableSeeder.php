@@ -602,7 +602,7 @@ class PMenuTableSeeder extends Seeder
                 'active' => '0',
                 'type' => '1',
                 'created_at' => '2022-08-18 18:54:07',
-                'updated_at' => '2023-05-09 14:18:58',
+                'updated_at' => '2023-10-22 19:30:40',
             ),
             45 => 
             array (
@@ -772,6 +772,32 @@ class PMenuTableSeeder extends Seeder
                 'type' => '1',
                 'created_at' => '2023-05-09 14:18:10',
                 'updated_at' => '2023-05-09 20:56:34',
+            ),
+            58 => 
+            array (
+                'id' => '417',
+                'parent_id' => '364',
+                'title' => 'WhatsApp Brodcast',
+                'icon' => NULL,
+                'route' => 'admin.setting.wa',
+                'sequence' => '58',
+                'active' => '1',
+                'type' => '1',
+                'created_at' => '2023-09-23 20:11:58',
+                'updated_at' => '2023-09-23 20:11:58',
+            ),
+            59 => 
+            array (
+                'id' => '418',
+                'parent_id' => '393',
+                'title' => 'Versioning',
+                'icon' => NULL,
+                'route' => 'admin.setting.versioning',
+                'sequence' => '58',
+                'active' => '1',
+                'type' => '1',
+                'created_at' => '2023-09-23 23:05:03',
+                'updated_at' => '2023-09-23 23:05:03',
             ),
         ));
         
