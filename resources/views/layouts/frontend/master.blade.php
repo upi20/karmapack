@@ -132,10 +132,10 @@ $compact = array_merge($compact, compact('page_attr_title', 'search_master_key',
 
 
     <!-- JavaScript -->
-    <script src="{{ asset_admin('js/jquery.min.js', name: 'sash') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('assets/templates/frontend/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/templates/frontend/js/main_v2.js') }}"></script>
-    <script src="{{ asset_admin('plugins/jquery.lazy-master/jquery.lazy.min.js', name: 'sash') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js" integrity="sha512-eviLb3jW7+OaVLz5N3B5F0hpluwkLb8wTXHOTy0CyNaZM5IlShxX1nEbODak/C0k9UdsrWjqIBKOFY0ELCCArw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ resource_loader('pages/frontend/frontend.js') }}"></script>
     @yield('javascript')
 

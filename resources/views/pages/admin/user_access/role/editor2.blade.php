@@ -59,10 +59,8 @@
     </div>
 @endsection
 @section('javascript')
-    <script src="{{ asset_admin('plugins/sweet-alert/sweetalert2.all.js', name: 'sash') }}"></script>
-    <script
-        src="{{ asset_admin('plugins/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js', name: 'sash') }}">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.3/sweetalert2.all.min.js" integrity="sha512-1RuT3Xs+fbL5f+4MCot2I8PpBFRu4flycFf5s2x4PoBMTKbPgHBEEwQ1LovEIhrMaR3S8bJfnlBTbWJbKdj8Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/bootstrap4-duallistbox/4.0.1/jquery.bootstrap-duallistbox.min.js') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,
@@ -77,6 +75,5 @@
 @endsection
 
 @section('stylesheet')
-    <link rel="stylesheet"
-        href="{{ asset_admin('plugins/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css', name: 'sash') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/bootstrap4-duallistbox/4.0.1/bootstrap-duallistbox.min.css') }}">
 @endsection

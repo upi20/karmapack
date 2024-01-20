@@ -205,19 +205,6 @@ return [
     'super_admin_role' => env('SUPER_ADMIN_ROLE', 'Super Admin'),
     'artikel_tampilkan_penulis' => env('ARTIKEL_TAMPILKAN_PENULIS', false),
 
-    // assets admin
-    'admin_assets_list' => [
-        'sash' => [
-            'https://assets.iseplutpi.site/sash/assets/',
-            'http://localhost:8080/aplikasi/assets/sash/assets/',
-        ],
-        'rockeradmin_vertical' => [
-            'https://assets.iseplutpi.site/rockeradmin/vertical/',
-            'http://localhost:8080/aplikasi/assets/rockeradmin/vertical/',
-        ],
-    ],
-    'admin_assets_default' => env('ADMIN_ASSETS_DEFAULT', 'rockeradmin_vertical'),
-    'admin_assets_number' => env('ADMIN_ASSETS_NUMBER', 0),
     'vistor_tracker_ip_ignore' => [
         '127.0.0.1'
     ],

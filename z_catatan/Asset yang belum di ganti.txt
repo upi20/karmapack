@@ -1,0 +1,11 @@
+  <link href="{{ asset_admin('css/bootstrap-extended.css') }}" rel="stylesheet">
+  <link href="{{ asset_admin('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset_admin('css/icons.css') }}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css') }}" />
+  <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css') }}" />
+  <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css') }}" />
+
+  <link rel="stylesheet" href="{{ asset_admin('plugins/datatable/css/dataTables.bootstrap5.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset_admin('plugins/select2/css/select2-bootstrap-5-theme.min.css') }}" />
+  <script src="{{ asset_admin('plugins/select2/js/select2-custom.js') }}"></script>

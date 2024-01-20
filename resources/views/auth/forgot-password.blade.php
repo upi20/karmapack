@@ -69,28 +69,27 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <meta itemprop="image" content="{{ $page_attr->image }}">
 
     <!--plugins-->
-    <link href="{{ asset_admin('plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-    <link href="{{ asset_admin('plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.1.0/simplebar.min.css" integrity="sha512-dIhy/DDDYfWvU/sLgcz/+ZunLzmYXbdDZoGhBfeHx+lUr5dL/ixGDaxZDGUNn/B+O8a33/klJ2Nj1aYX/pNMTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.6/metisMenu.min.css" integrity="sha512-5EboFlZ4o5HKH5QVJUVf2omItNG8U5dLh23IVvCfs/QAEsNjoUYay+EsL+XlD14RpqD6300DKWuaIBjb3nHzDQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @if ($page_attr->loader)
         <!-- loader-->
-        <link href="{{ asset_admin('css/pace.min.css') }}" rel="stylesheet" />
-        <script src="{{ asset_admin('js/pace.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace-theme-default.min.css" integrity="sha512-Ai6m3x6GYjuLAcJXEGBxHPLNOj6eIxh+/21wGpXT9B2dmcdvaFqEZr+/H/aaup+Rrkw4t3FzifGIuYhVPuBsrg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @endif
 
     <!-- Bootstrap CSS -->
-    <link href="{{ asset_admin('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset_admin('css/bootstrap-extended.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css" integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{ asset('assets/templates/admin/css/bootstrap-extended.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="{{ asset_admin('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset_admin('css/icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/templates/admin/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet">
 
     <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css') }}" />
-    <link rel="stylesheet"
-        href="{{ asset_admin('plugins/fontawesome-free-5.15.4-web/css/all.min.css', name: 'sash') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/dark-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/semi-dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/header-colors.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @foreach (json_decode(setting_get(set_admin('meta_list'), '{}')) as $meta)
         <!-- custom {{ $meta->name }} -->
@@ -110,7 +109,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                             <div class="card-body">
                                 <div class="p-3">
                                     <div class="text-center">
-                                        <img src="{{ asset_admin('images/icons/forgot-2.png') }}" width="100"
+                                        <img src="{{ asset('assets/templates/admin/img/forgot-2.png') }}" width="100"
                                             alt="Logo" />
                                     </div>
                                     <h4 class="mt-5 font-weight-bold">Lupa Password?</h4>
@@ -157,6 +156,6 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
     <!-- end wrapper -->
 
     <!-- Bootstrap JS -->
-    <script src="{{ asset_admin('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js" integrity="sha512-Sct/LCTfkoqr7upmX9VZKEzXuRk5YulFoDTunGapYJdlCwA+Rl4RhgcPCLf7awTNLmIVrszTPNUFu4MSesep5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </html>
