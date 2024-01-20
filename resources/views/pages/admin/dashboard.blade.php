@@ -164,7 +164,7 @@
     <script src="{{ asset_admin('plugins/charts-c3/d3.v5.min.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/charts-c3/c3-chart.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/input-mask/jquery.mask.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/loading/loadingoverlay.min.js', name: 'sash') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js" integrity="sha512-hktawXAt9BdIaDoaO9DlLp6LYhbHMi5A36LcXQeHgVKUH6kJMOQsAtIw2kmQ9RERDpnSTlafajo6USh9JUXckw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset_admin('plugins/daterangepicker/moment.min.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/daterangepicker/daterangepicker.js', name: 'sash') }}"></script>
     <script src="{{ asset_admin('plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
