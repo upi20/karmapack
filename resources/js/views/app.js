@@ -1,7 +1,6 @@
 $(function () {
     "use strict";
     let render_bg_themes = true;
-    const asset_admin = "{{asset_admin('')}}";
     $(".mobile-search-icon").on("click", function () {
         $(".search-bar").addClass("full-search-bar");
     });
@@ -115,7 +114,7 @@ $(function () {
         }
         const totalSidebar = 8;
         for (let i = 1; i <= totalSidebar; i++) {
-            $(`.switcher-wrapper .sidebarcolor${i}`).css('background-image', `url(${asset_admin}images/bg-themes/${i}.png)`);
+            $(`.switcher-wrapper .sidebarcolor${i}`).css('background-image', `url(/assets/image/bg-themes/${i}.png)`);
         }
         render_bg_themes = false;
     });
@@ -173,7 +172,7 @@ function setSideBarColor(number) {
     }
 
     if (number != 0) {
-        $(`.sidebar-wrapper`).css('background-image', `url(${asset_admin}images/bg-themes/${number}.png)`)
+        $(`.sidebar-wrapper`).css('background-image', `url(/assets/image/bg-themes/${number}.png)`)
     }
 
     localStorage.setItem('sidebarcolor', number);
@@ -192,7 +191,6 @@ function setHeaderColor(number) {
     }
     localStorage.setItem('headercolor', number);
 }
-const asset_admin = "{{ asset_admin('') }}";
 // set theme
 if (templateTheme) {
     setTheme(templateTheme);

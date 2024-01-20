@@ -128,10 +128,6 @@
 @endsection
 
 @section('stylesheet')
-    <link rel="stylesheet" href="{{ asset_admin('plugins/fontawesome-free-5.15.4-web/css/all.min.css') }}">
-@endsection
-
-@section('stylesheet')
     <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" />
 @endsection
 

@@ -3,7 +3,6 @@
 @section('content')
     @php
         $jml_table = 0;
-        $using_chart = 0;
         $column = 'col-6 col-md-4 col-lg-3 col-xl-2 px-md-2 px-2 px-md-0 py-2';
     @endphp
 
@@ -109,29 +108,24 @@
                     </div> --}}
                 </div>
                 <div class="card-body">
-                    @if (count($anggota_by_angkatan) < 13)
-                        @php $using_chart++; @endphp
-                        <div id="chart-angkatan" class="chartsh"></div>
-                    @else
-                        <table class="table table-striped w-100 table-hover datatable" id="table{{ ++$jml_table }}">
-                            <thead>
+                    <table class="table table-striped w-100 table-hover datatable" id="table{{ ++$jml_table }}">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($anggota_by_angkatan as $k => $v)
                                 <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Jumlah</th>
+                                    <td>{{ $k + 1 }}</td>
+                                    <td>{{ $v->title }}</td>
+                                    <td>{{ $v->value }}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($anggota_by_angkatan as $k => $v)
-                                    <tr>
-                                        <td>{{ $k + 1 }}</td>
-                                        <td>{{ $v->title }}</td>
-                                        <td>{{ $v->value }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    @endif
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -151,29 +145,24 @@
                     </div> --}}
                 </div>
                 <div class="card-body">
-                    @if (count($anggota_by_address->kecamatan) < 13)
-                        @php $using_chart++; @endphp
-                        <div id="chart-kecamatan" class="chartsh"></div>
-                    @else
-                        <table class="table table-striped w-100 table-hove datatable" id="table{{ ++$jml_table }}">
-                            <thead>
+                    <table class="table table-striped w-100 table-hove datatable" id="table{{ ++$jml_table }}">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($anggota_by_address->kecamatan as $k => $v)
                                 <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Jumlah</th>
+                                    <td></td>
+                                    <td>{{ $v->title }}</td>
+                                    <td>{{ $v->value }}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($anggota_by_address->kecamatan as $k => $v)
-                                    <tr>
-                                        <td></td>
-                                        <td>{{ $v->title }}</td>
-                                        <td>{{ $v->value }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    @endif
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -372,16 +361,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables.net/2.1.1/jquery.dataTables.min.js" integrity="sha512-CKwcR6t3iAghHw93W7LcmVlSRCoGXiYyjITGKrFyDFqWHt6LIJ3j5f1dSjvL+OJbvG0KvPgP/zBEOikHUIu+3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('assets/templates/admin/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    @if ($using_chart > 0)
-        <script src="{{ asset_admin('js/jquery.sparkline.min.js', name: 'sash') }}"></script>
-        <script src="{{ asset_admin('js/circle-progress.min.js', name: 'sash') }}"></script>
-        <script src="{{ asset_admin('plugins/charts-c3/d3.v5.min.js', name: 'sash') }}"></script>
-        <script src="{{ asset_admin('plugins/charts-c3/c3-chart.js', name: 'sash') }}"></script>
-        <script src="{{ asset_admin('plugins/input-mask/jquery.mask.min.js', name: 'sash') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.full.min.js" integrity="sha512-PZUUFofP00wI366Au6XSNyN4Zg8M8Kma4JKIG7ywt8FEY1+Ur0H+FAlH6o0fKoCrdmM4+ZzMyW30msp8Z2zDaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js" integrity="sha512-hktawXAt9BdIaDoaO9DlLp6LYhbHMi5A36LcXQeHgVKUH6kJMOQsAtIw2kmQ9RERDpnSTlafajo6USh9JUXckw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.3/sweetalert2.all.min.js" integrity="sha512-1RuT3Xs+fbL5f+4MCot2I8PpBFRu4flycFf5s2x4PoBMTKbPgHBEEwQ1LovEIhrMaR3S8bJfnlBTbWJbKdj8Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    @endif
 
     <script>
         $(document).ready(() => {
@@ -427,103 +406,4 @@
             });
         }
     </script>
-    @if ($using_chart > 0)
-        <script>
-            const data_angkatan = JSON.parse(`{!! json_encode($anggota_by_angkatan ?? []) !!}`);
-            const data_kecamatan = JSON.parse(`{!! json_encode($anggota_by_address->kecamatan ?? []) !!}`);
-
-            function renderChartAngkatan() {
-                const columns = ['data1'];
-                const categories = [];
-
-                data_angkatan.forEach(e => {
-                    columns.push(e.value);
-                    categories.push(e.title);
-                })
-                var chart = c3.generate({
-                    bindto: '#chart-angkatan', // id of chart wrapper
-                    data: {
-                        columns: [
-                            // each columns data
-                            columns
-                        ],
-                        type: 'bar', // default type of chart
-                        colors: {
-                            data1: '#6c5ffc'
-                        },
-                        names: {
-                            // name of each serie
-                            'data1': 'Anggota'
-                        },
-                        labels: true,
-                    },
-                    axis: {
-                        x: {
-                            type: 'category',
-                            // name of each category
-                            categories: categories
-                        },
-                    },
-                    // bar: {
-                    //     width: 16
-                    // },
-                    legend: {
-                        show: false, //hide legend
-                    },
-                    padding: {
-                        bottom: 0,
-                        top: 0
-                    },
-                });
-            }
-
-            function renderChartKecamatan() {
-                const columns = ['data1'];
-                const categories = [];
-
-                data_kecamatan.forEach(e => {
-                    columns.push(e.value);
-                    categories.push(e.title);
-                })
-                var chart = c3.generate({
-                    bindto: '#chart-kecamatan', // id of chart wrapper
-                    data: {
-                        columns: [
-                            // each columns data
-                            columns
-                        ],
-                        type: 'bar', // default type of chart
-                        colors: {
-                            data1: '#6c5ffc'
-                        },
-                        names: {
-                            // name of each serie
-                            'data1': 'Anggota'
-                        },
-                        labels: true,
-                    },
-                    axis: {
-                        x: {
-                            type: 'category',
-                            // name of each category
-                            categories: categories
-                        },
-                        rotated: true
-                    },
-                    // bar: {
-                    //     width: 16
-                    // },
-                    legend: {
-                        show: false, //hide legend
-                    },
-                    padding: {
-                        bottom: 0,
-                        top: 0
-                    },
-                });
-            }
-            renderChartAngkatan();
-            renderChartKecamatan();
-        </script>
-    @endif
 @endsection

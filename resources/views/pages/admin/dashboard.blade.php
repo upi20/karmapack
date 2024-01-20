@@ -154,20 +154,20 @@
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
     </style>
-    <link rel="stylesheet" href="{{ asset_admin('plugins/daterangepicker/daterangepicker.css', name: 'sash') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/plugins/daterangepicker/daterangepicker.css') }}">
     @vite(['resources/css/_c3-chart.scss']);
 @endsection
 
 @section('javascript')
-    <script src="{{ asset_admin('js/jquery.sparkline.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('js/circle-progress.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/charts-c3/d3.v5.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/charts-c3/c3-chart.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/input-mask/jquery.mask.min.js', name: 'sash') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/js/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/charts-c3/d3.v5.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/charts-c3/c3-chart.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/input-mask/jquery.mask.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js" integrity="sha512-hktawXAt9BdIaDoaO9DlLp6LYhbHMi5A36LcXQeHgVKUH6kJMOQsAtIw2kmQ9RERDpnSTlafajo6USh9JUXckw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset_admin('plugins/daterangepicker/moment.min.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/daterangepicker/daterangepicker.js', name: 'sash') }}"></script>
-    <script src="{{ asset_admin('plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/daterangepicker/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('assets/templates/admin/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
     @php
         $resource = resource_loader(
             blade_path: $view,

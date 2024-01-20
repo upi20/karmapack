@@ -80,15 +80,15 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css" integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="{{ asset_admin('css/bootstrap-extended.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/templates/admin/css/bootstrap-extended.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="{{ asset_admin('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset_admin('css/icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/templates/admin/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/templates/admin/css/icons.css') }}" rel="stylesheet">
 
     <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="{{ asset_admin('css/dark-theme.css') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/semi-dark.css') }}" />
-    <link rel="stylesheet" href="{{ asset_admin('css/header-colors.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/dark-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/semi-dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/templates/admin/css/header-colors.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @foreach (json_decode(setting_get(set_admin('meta_list'), '{}')) as $meta)

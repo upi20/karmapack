@@ -264,20 +264,6 @@ if (!function_exists('text_cutter')) {
     }
 }
 
-if (!function_exists('asset_admin')) {
-    function asset_admin($asset, $name = null, $number = null)
-    {
-        $number = $number ?? config('app.admin_assets_number');
-        $name = $name ?? config('app.admin_assets_default');
-        $base_url = config("app.admin_assets_list");
-        if (isset($base_url[$name][$number])) {
-            return $base_url[$name][$number] . $asset;
-        } else {
-            return '';
-        }
-    }
-}
-
 if (!function_exists('url_params_generator')) {
     function url_params_generator(array $params = []): string
     {
