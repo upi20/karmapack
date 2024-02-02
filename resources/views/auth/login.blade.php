@@ -163,7 +163,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
                                             <div class="col-12">
                                                 <div class="d-grid  gap-2">
                                                     <button type="submit" class="btn btn-primary">Masuk</button>
-                                                    <a href="{{ route('login.porvider', 'google') . '?redirect=' . $redirect }}"
+                                                    <a href="{{ route('login.socialite', 'google') . '?redirect=' . $redirect }}"
                                                         class="btn btn-light">
                                                         <i class='bx bxl-google me-1'></i>Masuk Dengan Google</a>
                                                 </div>
