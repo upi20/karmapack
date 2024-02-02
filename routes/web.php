@@ -32,6 +32,7 @@ use App\Http\Controllers\Frontend\AnggotaController;
 use App\Http\Controllers\Frontend\ArtikelController;
 use App\Http\Controllers\Frontend\Pendaftaran\SensusController;
 use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\LoginSocialiteController;
 use Illuminate\Http\Request;
 
 // ====================================================================================================================
@@ -49,6 +50,11 @@ Route::controller(LoginController::class)->group(function () {
 Route::controller(SocialiteController::class)->group(function () {
     Route::get('/auth/{provider}', 'redirectToProvider')->name('login.porvider');
     Route::get('/auth/{provider}/callback', 'handleProvideCallback')->name('login.porvider.callback');
+});
+
+Route::controller(LoginSocialiteController::class)->group(function () {
+    Route::get('/login/{provider}', 'redirectToProvider')->name('login.socialite');
+    Route::get('/login/{provider}/callback', 'handleProvideCallback')->name('login.socialite.callback');
 });
 // ====================================================================================================================
 
@@ -161,34 +167,6 @@ Route::get('/password', function () {
     }
 })->name("password");
 // ====================================================================================================================
-
-// katalog ============================================================================================================
-$prefix = 'katalog';
-Route::controller(KatalogController::class)->prefix($prefix)->group(function () use ($prefix) {
-    Route::get('/', 'index')->name($prefix);
-    Route::get('/{model:slug}', 'detail')->name("$prefix.detail");
-});
-// ====================================================================================================================
-
-// AboutUs ============================================================================================================
-$name = 'about';
-Route::controller(AboutController::class)->prefix($name)->group(function () use ($name) {
-    Route::get('/', 'index')->name($name);
-});
-// ====================================================================================================================
-
-// Marketplace ========================================================================================================
-$name = 'marketplace';
-Route::controller(MarketplaceController::class)->prefix($name)->group(function () use ($name) {
-    Route::get('/', 'index')->name($name);
-});
-// ====================================================================================================================
-
-
-
-
-
-
 
 // Utility ============================================================================================================
 $prefix = 'loader';
