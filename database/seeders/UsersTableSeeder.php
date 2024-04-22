@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
                 'foto' => 'iseplutpinur20230618175649.png',
                 'username' => 'iseplutpinur',
                 'email_verified_at' => NULL,
-                'password' => '$2y$10$E..SpzmH0RxI6St97AS2pOJY022Qu6B/FeOsR2Ra48FrNsSTBDiM.',
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
                 'active' => '1',
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,

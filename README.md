@@ -284,7 +284,7 @@ Fitur pada Aplikasi ini meliputi:
 ### Cara Install
 
 1. Clone atau download source code
-    - Para terminal, clone repo `git clone git@github.com:upi20/karmapack.git`
+    - Buka terminal, clone repo `git clone git@github.com:upi20/karmapack.git`
     - atau `git clone https://github.com/upi20/karmapack.git`
     - Jika tidak menggunakan Git, silakan **Download Zip** dan *extract* pada direktori web server (misal: xampp/htdocs)
 2. `cd karmapack`
@@ -296,4 +296,5 @@ Fitur pada Aplikasi ini meliputi:
 7. **Setting database** pada file `.env`
 8. `php artisan migrate --seed`
 9. `php artisan serve`
-10. Selesai
+10. `email: iseplutpinur7@gmail.com password: password`
+11. Selesai
